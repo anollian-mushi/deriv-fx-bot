@@ -1,0 +1,9 @@
+{
+ "closed_days": [],
+ "days": {},
+ "granularity": "1m",
+ "history_start": "2025-10-29",
+ "skipped_days": {},
+ "source": "deriv",
+ "symbol": "frxGBPUSD"
+}
