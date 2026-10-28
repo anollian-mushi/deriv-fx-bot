@@ -52,6 +52,9 @@ Never change, loosen or work around these without explicit approval.
 - Report: net return, max drawdown, win rate, average win and loss,
   profit factor, trade count, Monte Carlo drawdowns.
 - "No strategy passes" is a valid result. Never tune to pass the holdout.
+- Dukascopy history is for training and validation. The final holdout must
+  be the most recent Deriv data, because that's the price feed the bot
+  actually trades on.
 
 ## Engineering rules
 - Secrets never go into the repo. Read settings from environment variables
