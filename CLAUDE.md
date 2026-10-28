@@ -51,14 +51,23 @@ Never change, loosen or work around these without explicit approval.
 - Every backtest includes Deriv commission, spread and a slippage
   assumption.
 - Every backtest also runs at 1.5x the measured commission (Deriv says
-  the rate varies with volatility). A pass is judged at the measured rate.
+  the rate varies with volatility) and shows MT5 costs side by side for
+  comparison only. A pass is judged at the measured Multiplier rate.
 - ON HOLD until reports/costs.md is done: minimum target vs cost (a
   strategy's average winning trade at least 3x the round-trip cost:
   EUR/USD and GBP/USD >= 25 pips, USD/JPY >= 40 pips). The pip figures
   came from one hour's rate and will be recomputed from the cost-by-hour
   table.
-- Split data into train, validation and a final holdout (the most recent
-  ~20%). The holdout is used once, at the end, and reported as-is.
+- Split data into train, validation and a final holdout.
+- Holdout: all Deriv data from 2026-04-28 onward. This start date is fixed
+  and never moves; data collected later is added to the holdout. It is
+  used once, at the end, and reported as-is. Because it is still small,
+  report its result as "consistent / inconsistent with validation", not
+  as proof.
+- No overlap: no data of any source dated 2026-04-28 or later may be used
+  for training, validation, parameter choices or strategy selection. That
+  includes Dukascopy. The holdout period is never seen in any form until
+  the single final test.
 - Walk-forward validation is required.
 - A strategy passes only if it is profitable after costs on at least 2 of
   the 3 pairs, with 200+ out-of-sample trades in total.
