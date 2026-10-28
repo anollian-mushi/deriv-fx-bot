@@ -90,18 +90,32 @@ exponential backoff, always send `req_id`, check `error` on every reply,
 `forget` streams you no longer need. Error code `RateLimit` (WebSocket) or
 HTTP 429 (REST) means slow down.
 
-### Candle history (measured)
+### Candle history (measured, Phase 1)
 
-- `ticks_history` with `style: "candles"` and `granularity` 900 (15 m) or
-  3600 (1 h) works on the public WebSocket.
-- 15 m candles for EUR/USD exist at least 1 year back.
-- One request returned at most about **700 candles**, even with
-  `count: 5000`, so downloads must be done in chunks (about 7 days of 15 m
-  candles per request).
-- **Pitfall:** asking for a window older than the available history did not
-  return an error. It returned the most recent candles instead. The
-  downloader must check that returned candle times fall inside the window
-  it asked for.
+- `ticks_history` with `style: "candles"` works on the public WebSocket for
+  `granularity` 60 (1m), 900 (15m) and 3600 (1h).
+- **History depth is about one year, at every granularity**, and it is a
+  rolling window: on 2026-10-28 the first full day was 2025-10-29 for all
+  three pairs. Older data cannot be fetched again later, which is why the
+  collector saves every day and a daily workflow keeps it up to date.
+- **Reply cap:** about 1,000 candles for 1m and about 700 for 15m/1h, even
+  with `count: 5000`. When a window has more, you get the most recent ones.
+  The collector asks for 600 candle slots at a time.
+- **Pitfall 1:** asking for a window older than the available history does
+  not return an error. It returns the most recent candles instead. The
+  collector checks that every returned candle lies inside the window it
+  asked for.
+- **Pitfall 2:** if `start` is not on a candle boundary, the first candle is
+  a partial one stamped with the `start` time (e.g. a 1h candle at 19:07).
+  The collector only asks for aligned windows and drops unaligned candles.
+- **Separate, stricter rate limit for history:** old-data requests count
+  against `ticks_history_expensive` (not on the Limits page): about 30
+  requests, then about 30 per minute. The error is `RateLimit` with the
+  message "You have reached the rate limit for ticks_history_expensive".
+  The collector waits 2.2 s between requests (~27 per minute) and backs off
+  30 s on this error.
+- Holiday hours: 24 and 31 December closed early at 22:15 GMT; 25 December
+  and 1 January were closed.
 
 ## 5. Multiplier contracts
 

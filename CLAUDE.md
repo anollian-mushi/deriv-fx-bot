@@ -76,7 +76,7 @@ Never change, loosen or work around these without explicit approval.
 Folders marked (later) are created in the phase that needs them.
 - src/fxbot/config.py: settings loader (env vars first, then .env)
 - src/fxbot/deriv/: Deriv API clients (public WS, REST + OTP, trading WS)
-- src/fxbot/data/ (later): candle downloader, daily compressed files
+- src/fxbot/data/: candle collectors (Deriv, Dukascopy), validation, calendar
 - src/fxbot/contracts/ (later): Multiplier contract math
 - src/fxbot/backtest/ (later): backtester, costs, walk-forward, Monte Carlo
 - src/fxbot/strategies/ (later): strategy code shared by backtest and live
@@ -87,5 +87,8 @@ Folders marked (later) are created in the phase that needs them.
 - deploy/ (later): systemd unit and VPS setup
 - tests/: pytest
 - docs/: API notes, checklists
-- data/: candle files; reports/: backtest reports
+- data/<symbol>/<1m|15m|1h>/YYYY-MM-DD.csv.gz: Deriv candles (source=deriv)
+- data_external/dukascopy/<symbol>/1m/: Dukascopy mid + spread, research only
+- .github/workflows/: daily Deriv collection, manual Dukascopy backfill
+- reports/: backtest and data quality reports
 - research/: research notes and log.md; reviews/: trade exports

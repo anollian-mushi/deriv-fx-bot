@@ -5,12 +5,12 @@ contracts on EUR/USD, GBP/USD and USD/JPY. Strategies are researched and
 backtested first, then run on a demo account, and only moved to real money
 once the go-live checklist is complete.
 
-**Status:** Phase 0 (project setup and API check). There is no trading code
-yet.
+**Status:** Phase 1 (historical candle data). There is no trading code yet.
 
 - Project rules, risk limits and research standards: [CLAUDE.md](CLAUDE.md)
 - Before trading real money: [docs/go_live_checklist.md](docs/go_live_checklist.md)
 - How the Deriv API and Multiplier contracts work: [docs/deriv_api_notes.md](docs/deriv_api_notes.md)
+- What the historical data looks like: [reports/data_quality.md](reports/data_quality.md)
 
 ## Settings
 
@@ -82,13 +82,42 @@ Running the bot as a systemd service is added in a later phase (`deploy/`).
   prints the balance. Refuses real accounts. Never prints the token or the
   one-time connection URL. Places no orders.
 
+## Historical data
+
+Two sources, kept apart. Every file has a `source` column, and the loaders
+refuse to mix sources.
+
+| Folder | Source | What | Use |
+|---|---|---|---|
+| `data/<symbol>/<1m\|15m\|1h>/YYYY-MM-DD.csv.gz` | Deriv | the bot's own price feed, ~1 year (Deriv keeps a rolling year) | everything, incl. the final holdout |
+| `data_external/dukascopy/<symbol>/1m/YYYY-MM-DD.csv.gz` | Dukascopy | mid price + spread, up to 5 years | training and validation only |
+
+One file per UTC day: `epoch,open,high,low,close[,spread],source`, where
+`epoch` is the candle start time in UTC seconds. Each folder has a
+`_manifest.json` with closed days (holidays), gaps and other per-day checks.
+
+Collecting (both are resumable: if a run stops, run it again):
+```bash
+.venv/bin/python scripts/collect_candles.py --max-minutes 9      # Deriv
+.venv/bin/python scripts/collect_dukascopy.py --max-minutes 9    # Dukascopy
+.venv/bin/python scripts/data_quality.py                         # summary tables
+```
+
+GitHub Actions:
+- **Collect Deriv candles** runs automatically at 00:15 UTC Tuesday to
+  Saturday and commits the new day's files. It needs no secrets. If it
+  fails, GitHub emails you.
+- **Backfill Dukascopy history** is started by hand (Actions tab, "Run
+  workflow"). Dukascopy throttles cloud-session downloads heavily, so bulk
+  downloads run on GitHub's machines.
+
 ## Folders
 
 - `src/fxbot/` the bot's code (see the Repo layout section of CLAUDE.md)
 - `scripts/` runnable scripts
 - `tests/` automated tests (`pytest`)
 - `docs/` API notes and checklists
-- `data/` compressed daily candle files
+- `data/` Deriv candle files; `data_external/` other sources (research only)
 - `research/` research notes and the log of every strategy variant tried
 - `reports/` backtest and performance reports
 - `reviews/` trade exports for reviews
