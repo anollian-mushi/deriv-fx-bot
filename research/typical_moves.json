@@ -1,0 +1,182 @@
+{
+ "frxEURUSD": {
+  "deriv_1y": {
+   "1h": {
+    "candles": 6034,
+    "range_median": 9.2,
+    "range_p25": 6.3,
+    "range_p75": 13.8,
+    "body_median": 3.8,
+    "body_mean": 5.6,
+    "price_median": 1.16027
+   },
+   "4h": {
+    "candles": 1548,
+    "range_median": 19.1,
+    "range_p25": 13.0,
+    "range_p75": 28.5,
+    "body_median": 7.7,
+    "body_mean": 11.2,
+    "price_median": 1.16028
+   },
+   "1d": {
+    "candles": 258,
+    "range_median": 54.6,
+    "range_p25": 41.6,
+    "range_p75": 72.2,
+    "body_median": 20.3,
+    "body_mean": 28.9,
+    "price_median": 1.16067
+   }
+  },
+  "dukascopy_5y": {
+   "1h": {
+    "candles": 30425,
+    "range_median": 11.1,
+    "range_p25": 7.2,
+    "range_p75": 17.5,
+    "body_median": 4.5,
+    "body_mean": 7.0,
+    "price_median": 1.09257
+   },
+   "4h": {
+    "candles": 7806,
+    "range_median": 23.0,
+    "range_p25": 14.8,
+    "range_p75": 35.5,
+    "body_median": 9.0,
+    "body_mean": 13.8,
+    "price_median": 1.09261
+   },
+   "1d": {
+    "candles": 1305,
+    "range_median": 67.8,
+    "range_p25": 50.2,
+    "range_p75": 94.2,
+    "body_median": 29.2,
+    "body_mean": 38.0,
+    "price_median": 1.09268
+   }
+  }
+ },
+ "frxGBPUSD": {
+  "deriv_1y": {
+   "1h": {
+    "candles": 6034,
+    "range_median": 12.3,
+    "range_p25": 8.2,
+    "range_p75": 18.6,
+    "body_median": 5.0,
+    "body_mean": 7.4,
+    "price_median": 1.34117
+   },
+   "4h": {
+    "candles": 1548,
+    "range_median": 25.3,
+    "range_p25": 17.4,
+    "range_p75": 37.8,
+    "body_median": 10.1,
+    "body_mean": 14.8,
+    "price_median": 1.34127
+   },
+   "1d": {
+    "candles": 258,
+    "range_median": 70.6,
+    "range_p25": 54.3,
+    "range_p75": 94.7,
+    "body_median": 31.1,
+    "body_mean": 39.8,
+    "price_median": 1.34146
+   }
+  },
+  "dukascopy_5y": {
+   "1h": {
+    "candles": 30425,
+    "range_median": 14.4,
+    "range_p25": 9.2,
+    "range_p75": 22.3,
+    "body_median": 5.7,
+    "body_mean": 8.8,
+    "price_median": 1.28252
+   },
+   "4h": {
+    "candles": 7806,
+    "range_median": 29.5,
+    "range_p25": 19.1,
+    "range_p75": 44.8,
+    "body_median": 11.6,
+    "body_mean": 17.6,
+    "price_median": 1.28247
+   },
+   "1d": {
+    "candles": 1305,
+    "range_median": 84.5,
+    "range_p25": 64.5,
+    "range_p75": 113.8,
+    "body_median": 36.7,
+    "body_mean": 48.2,
+    "price_median": 1.28245
+   }
+  }
+ },
+ "frxUSDJPY": {
+  "deriv_1y": {
+   "1h": {
+    "candles": 6034,
+    "range_median": 14.9,
+    "range_p25": 9.5,
+    "range_p75": 23.0,
+    "body_median": 5.9,
+    "body_mean": 9.1,
+    "price_median": 158.11
+   },
+   "4h": {
+    "candles": 1548,
+    "range_median": 31.7,
+    "range_p25": 19.7,
+    "range_p75": 46.4,
+    "body_median": 11.6,
+    "body_mean": 18.3,
+    "price_median": 158.1095
+   },
+   "1d": {
+    "candles": 258,
+    "range_median": 84.5,
+    "range_p25": 61.0,
+    "range_p75": 123.3,
+    "body_median": 32.2,
+    "body_mean": 49.6,
+    "price_median": 158.0765
+   }
+  },
+  "dukascopy_5y": {
+   "1h": {
+    "candles": 30425,
+    "range_median": 18.2,
+    "range_p25": 11.5,
+    "range_p75": 28.0,
+    "body_median": 7.1,
+    "body_mean": 11.1,
+    "price_median": 147.422
+   },
+   "4h": {
+    "candles": 7806,
+    "range_median": 37.9,
+    "range_p25": 23.9,
+    "range_p75": 58.3,
+    "body_median": 14.3,
+    "body_mean": 22.8,
+    "price_median": 147.4285
+   },
+   "1d": {
+    "candles": 1305,
+    "range_median": 108.7,
+    "range_p25": 74.4,
+    "range_p75": 152.6,
+    "body_median": 46.3,
+    "body_mean": 63.9,
+    "price_median": 147.425
+   }
+  }
+ }
+}
