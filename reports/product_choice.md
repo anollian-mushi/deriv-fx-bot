@@ -98,15 +98,26 @@ Linux install guide, mt5linux and Docker image pages (see Sources).
 
 ## 3. Cost per trade vs a typical move
 
+Updated 2026-10-28 after the holdout rule was added to CLAUDE.md. **Only data
+dated before 2026-04-28 is used** (Deriv 2025-10-29 to 2026-04-27, Dukascopy
+2021-10-27 to 2026-04-27). The holdout period is not looked at. The earlier
+version of this table used the whole year, including the holdout, so it has
+been replaced.
+
 "Typical move" means the median high-to-low range of one candle on Deriv's
-prices over the last year. Dukascopy's five-year figure is shown after the
-slash; the last year was about 20% quieter than the five-year average. Cost
-is per trade, open and close together, in pips, and shown as a share of that
-range.
+prices (first figure). Dukascopy's longer history comes after the slash.
+Cost is per trade, open and close together, in pips, and shown as a share
+of the Deriv range.
 
 Assumptions:
-- **Multipliers:** commission at the real rate, no spread, no swap (still to
-  be confirmed).
+- **Multipliers:**
+  - Commission at three rates, because the rate changes during the day: the
+    cheapest, the median and the dearest seen in the demo and real samples
+    so far (four samples, 16:35 to 20:03 UTC on 28 Oct).
+  - Price is the median close before 2026-04-28.
+  - No spread, and no swap (still to be confirmed).
+  - The cost-by-hour table in `reports/costs.md` (due Thursday) will replace
+    these three columns.
 - **MT5:** the published minimum spread, plus swap for the average number of
   nights held: 0.06 for a 1h hold, 0.23 for a 4h hold, 1.4 for a 1-day hold
   (counting Wednesday's triple swap). The swap is averaged over long and
@@ -114,36 +125,43 @@ Assumptions:
   not published.
 - Slippage is left out for both. Backtests add it separately.
 
-| Pair | Candle | Typical range | Multipliers (real) | MT5 Standard | MT5 Standard, 2× spread | MT5 micro |
-|---|---|---|---|---|---|---|
-| EUR/USD | 1h | 9.2 / 11.1 pips | 8.0 pips = **87%** | 1.1 pips = 12% | 2.2 pips = 24% | 0.7 pips = 8% |
-| EUR/USD | 4h | 19.1 / 23.0 pips | 8.0 pips = **42%** | 1.2 pips = 6% | 2.3 pips = 12% | 0.8 pips = 4% |
-| EUR/USD | 1d | 54.6 / 67.8 pips | 8.0 pips = **15%** | 1.7 pips = 3% | 2.8 pips = 5% | 1.3 pips = 2% |
-| GBP/USD | 1h | 12.3 / 14.4 pips | 8.1 pips = **66%** | 1.0 pips = 8% | 2.0 pips = 16% | 0.7 pips = 6% |
-| GBP/USD | 4h | 25.3 / 29.5 pips | 8.1 pips = **32%** | 1.1 pips = 4% | 2.1 pips = 8% | 0.8 pips = 3% |
-| GBP/USD | 1d | 70.6 / 84.5 pips | 8.1 pips = **11%** | 1.7 pips = 2% | 2.7 pips = 4% | 1.4 pips = 2% |
-| USD/JPY | 1h | 14.9 / 18.2 pips | 13.1 pips = **88%** | 1.4 pips = 10% | 2.8 pips = 19% | 0.9 pips = 6% |
-| USD/JPY | 4h | 31.7 / 37.9 pips | 13.1 pips = **41%** | 1.5 pips = 5% | 2.9 pips = 9% | 1.0 pips = 3% |
-| USD/JPY | 1d | 84.5 / 108.7 pips | 13.1 pips = **15%** | 2.2 pips = 3% | 3.6 pips = 4% | 1.7 pips = 2% |
+| Pair | Candle | Typical range | Multipliers, cheapest hour | Multipliers, median | Multipliers, dearest hour | MT5 Standard | MT5 Standard, 2× spread | MT5 micro |
+|---|---|---|---|---|---|---|---|---|
+| EUR/USD | 1h | 10.4 / 11.6 pips | 2.8 pips = 27% | 9.4 pips = **90%** | 10.4 pips = 100% | 1.1 pips = 11% | 2.2 pips = 21% | 0.7 pips = 7% |
+| EUR/USD | 4h | 21.2 / 23.9 pips | 2.8 pips = 13% | 9.4 pips = **44%** | 10.4 pips = 49% | 1.2 pips = 6% | 2.3 pips = 11% | 0.8 pips = 4% |
+| EUR/USD | 1d | 58.6 / 71.2 pips | 2.8 pips = 5% | 9.4 pips = **16%** | 10.4 pips = 18% | 1.7 pips = 3% | 2.8 pips = 5% | 1.3 pips = 2% |
+| GBP/USD | 1h | 14.2 / 14.8 pips | 2.7 pips = 19% | 9.1 pips = **64%** | 10.0 pips = 70% | 1.0 pips = 7% | 2.0 pips = 14% | 0.7 pips = 5% |
+| GBP/USD | 4h | 29.8 / 30.6 pips | 2.7 pips = 9% | 9.1 pips = **30%** | 10.0 pips = 33% | 1.1 pips = 4% | 2.1 pips = 7% | 0.8 pips = 3% |
+| GBP/USD | 1d | 81.1 / 87.7 pips | 2.7 pips = 3% | 9.1 pips = **11%** | 10.0 pips = 12% | 1.7 pips = 2% | 2.7 pips = 3% | 1.4 pips = 2% |
+| USD/JPY | 1h | 17.5 / 18.9 pips | 4.3 pips = 25% | 15.1 pips = **86%** | 17.2 pips = 99% | 1.4 pips = 8% | 2.8 pips = 16% | 0.9 pips = 5% |
+| USD/JPY | 4h | 36.7 / 39.5 pips | 4.3 pips = 12% | 15.1 pips = **41%** | 17.2 pips = 47% | 1.5 pips = 4% | 2.9 pips = 8% | 1.0 pips = 3% |
+| USD/JPY | 1d | 92.3 / 113.3 pips | 4.3 pips = 5% | 15.1 pips = **16%** | 17.2 pips = 19% | 2.2 pips = 2% | 3.6 pips = 4% | 1.7 pips = 2% |
 
-How to read this:
-- **On 1h candles, a real Multiplier trade starts about 70–90% of a typical
-  hour's move in the red.** Even a good signal has almost nothing left after
-  costs, so 1h (and 15m) are not worth researching on Multipliers.
-- **On 4h, costs are about a third to two fifths of a typical candle.** That
-  is hard, but a trade that rides 2–3 candles has room.
-- **On daily candles, costs are 11–15% of a typical day.** That is the first
-  timeframe where Multipliers look workable.
+How to read this (provisional until the cost-by-hour table is done):
+- **The hour matters enormously for Multipliers.** At the cheapest rate seen
+  (16:35 UTC), a 1h trade costs about a fifth to a quarter of a typical
+  hour's move. At the dearest (20:00 UTC), it costs nearly all of it.
+- **At the median rate seen so far, the earlier picture holds:**
+  - 1h: costs are 64–90% of a typical candle.
+  - 4h: 30–44%.
+  - Daily: 11–16%.
+
+  That median comes from only four samples, three of them taken at expensive
+  times. It is not yet a fair daily average.
 - **MT5 is cheap on every timeframe**, even at double the minimum spread.
-  Its costs on 1h are about what Multipliers cost on daily candles.
 - **The multiplier does not change the cost in pips.** It changes two other
   things:
-  - **How close the stop out is.** x100: about 100–145 pips on the real
-    account. x200: 48–66. x500: 14–19, which is less than a typical 4h range.
-  - **How big a share of the stake the commission takes.** x100: 6–8%.
-    x200: 12–17%. x500: 30–41%.
+  - **How close the stop out is.** x100: about 100–150 pips. x200: about
+    50–75 pips. x500: about 15–27 pips, less than a typical 4h range.
+  - **How big a share of the stake the commission takes.** It equals rate ×
+    multiplier: at x100 about 2–11% depending on the hour, at x200 twice
+    that.
 - **For 4h and daily trades only x100, and maybe x200, make sense.** Higher
   multipliers would be stopped out by normal daily movement.
+
+Rebuild: `python scripts/typical_moves.py` then
+`python scripts/product_costs.py`. Both refuse holdout data unless given
+`--include-holdout`.
 
 ## 4. Recommendation (ON HOLD, see the correction at the top)
 
