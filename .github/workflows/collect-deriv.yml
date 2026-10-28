@@ -1,0 +1,53 @@
+# Daily Deriv candle update. Runs after each weekday's forex close (Friday
+# closes at 20:55 GMT, other days at midnight), saves yesterday's candles and
+# commits only new files. No secrets needed: public market data only.
+name: Collect Deriv candles
+
+on:
+  schedule:
+    - cron: "15 0 * * 2-6"  # 00:15 UTC Tuesday-Saturday
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-commit
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Tests
+        run: python -m pytest -q
+
+      - name: Collect candles and commit new files
+        run: |
+          set -uo pipefail
+          python scripts/collect_candles.py --max-minutes 30
+          rc=$?   # 0 = complete, 2 = time limit (partial), 1 = error
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No new candles."
+          else
+            git diff --cached --stat | tail -1
+            git commit -q -m "Deriv candles up to $(date -u -d yesterday +%F)"
+            git pull -q --rebase origin main && git push -q origin HEAD:main || exit 1
+          fi
+          # Saved days are committed above; now fail the run loudly on errors.
+          [ "$rc" -eq 1 ] && { echo "::error::Collector failed"; exit 1; }
+          [ "$rc" -eq 2 ] && echo "::warning::Time limit reached; the next run continues."
+          exit 0

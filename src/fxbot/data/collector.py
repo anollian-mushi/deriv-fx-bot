@@ -110,11 +110,13 @@ class Manifest:
     data: dict[str, Any] = field(default_factory=dict)
 
     @classmethod
-    def load(cls, path: Path, symbol: str, granularity: str) -> "Manifest":
+    def load(cls, path: Path, symbol: str, granularity: str, source: str = SOURCE) -> "Manifest":
         data: dict[str, Any] = {}
         if path.is_file():
             data = json.loads(path.read_text())
-        data.setdefault("source", SOURCE)
+        data.setdefault("source", source)
+        if data["source"] != source:
+            raise ValueError(f"{path} belongs to source {data['source']!r}, not {source!r}")
         data.setdefault("symbol", symbol)
         data.setdefault("granularity", granularity)
         data.setdefault("history_start", None)

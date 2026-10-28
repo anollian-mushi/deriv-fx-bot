@@ -1,0 +1,59 @@
+# Manual backfill of Dukascopy 1m history (research only) into
+# data_external/dukascopy/. Start it from the Actions tab ("Run workflow").
+# Commits after every chunk, so progress is kept if the job is stopped;
+# running it again continues where it stopped.
+name: Backfill Dukascopy history
+
+on:
+  workflow_dispatch:
+    inputs:
+      years:
+        description: "Years of history to keep (newest first)"
+        default: "5"
+      chunks:
+        description: "Number of 30-minute chunks to run"
+        default: "10"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-commit
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Download in chunks and commit each one
+        env:
+          YEARS: ${{ inputs.years }}
+          CHUNKS: ${{ inputs.chunks }}
+        run: |
+          set -uo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in $(seq 1 "$CHUNKS"); do
+            python scripts/collect_dukascopy.py --years "$YEARS" --max-minutes 30
+            rc=$?
+            git add data_external/
+            if ! git diff --cached --quiet; then
+              git commit -q -m "Dukascopy 1m history (chunk $i)"
+              git pull -q --rebase origin main && git push -q origin HEAD:main || exit 1
+            fi
+            [ "$rc" -eq 2 ] && continue
+            [ "$rc" -eq 0 ] && { echo "Backfill complete."; exit 0; }
+            echo "Collector failed (exit $rc)"; exit 1
+          done
+          echo "Chunks used up; run the workflow again to continue."
+          du -sh data_external
