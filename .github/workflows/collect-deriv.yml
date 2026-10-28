@@ -35,8 +35,8 @@ jobs:
       - name: Collect candles and commit new files
         run: |
           set -uo pipefail
-          python scripts/collect_candles.py --max-minutes 30
-          rc=$?   # 0 = complete, 2 = time limit (partial), 1 = error
+          rc=0   # 0 = complete, 2 = time limit (partial), 1 = error
+          python scripts/collect_candles.py --max-minutes 30 || rc=$?
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
@@ -45,7 +45,11 @@ jobs:
           else
             git diff --cached --stat | tail -1
             git commit -q -m "Deriv candles up to $(date -u -d yesterday +%F)"
-            git pull -q --rebase origin main && git push -q origin HEAD:main || exit 1
+            for try in 1 2 3; do
+              git pull -q --rebase origin main && git push -q origin HEAD:main && break
+              [ "$try" -eq 3 ] && { echo "::error::Push failed"; exit 1; }
+              sleep 10
+            done
           fi
           # Saved days are committed above; now fail the run loudly on errors.
           [ "$rc" -eq 1 ] && { echo "::error::Collector failed"; exit 1; }

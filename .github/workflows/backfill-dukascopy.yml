@@ -1,7 +1,8 @@
 # Manual backfill of Dukascopy 1m history (research only) into
 # data_external/dukascopy/. Start it from the Actions tab ("Run workflow").
-# Commits after every chunk, so progress is kept if the job is stopped;
-# running it again continues where it stopped.
+# One job per pair, in parallel. Each job commits after every 30-minute
+# chunk, so progress is kept if a job stops; running the workflow again
+# continues where it stopped.
 name: Backfill Dukascopy history
 
 on:
@@ -11,20 +12,24 @@ on:
         description: "Years of history to keep (newest first)"
         default: "5"
       chunks:
-        description: "Number of 30-minute chunks to run"
+        description: "Number of 30-minute chunks per pair"
         default: "10"
 
 permissions:
   contents: write
 
 concurrency:
-  group: data-commit
+  group: dukascopy-backfill
   cancel-in-progress: false
 
 jobs:
   backfill:
     runs-on: ubuntu-latest
     timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        symbol: [frxEURUSD, frxGBPUSD, frxUSDJPY]
     steps:
       - uses: actions/checkout@v4
 
@@ -39,21 +44,25 @@ jobs:
         env:
           YEARS: ${{ inputs.years }}
           CHUNKS: ${{ inputs.chunks }}
+          SYMBOL: ${{ matrix.symbol }}
         run: |
           set -uo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           for i in $(seq 1 "$CHUNKS"); do
-            python scripts/collect_dukascopy.py --years "$YEARS" --max-minutes 30
-            rc=$?
-            git add data_external/
+            rc=0   # 0 = complete, 2 = time limit (run again), 1 = error
+            python scripts/collect_dukascopy.py --symbols "$SYMBOL" --years "$YEARS" --max-minutes 30 || rc=$?
+            git add "data_external/dukascopy/$SYMBOL"
             if ! git diff --cached --quiet; then
-              git commit -q -m "Dukascopy 1m history (chunk $i)"
-              git pull -q --rebase origin main && git push -q origin HEAD:main || exit 1
+              git commit -q -m "Dukascopy 1m history for $SYMBOL (chunk $i)"
+              for try in 1 2 3 4 5; do
+                git pull -q --rebase origin main && git push -q origin HEAD:main && break
+                [ "$try" -eq 5 ] && { echo "::error::Push failed"; exit 1; }
+                sleep $((RANDOM % 20 + 5))
+              done
             fi
             [ "$rc" -eq 2 ] && continue
-            [ "$rc" -eq 0 ] && { echo "Backfill complete."; exit 0; }
-            echo "Collector failed (exit $rc)"; exit 1
+            [ "$rc" -eq 0 ] && { echo "Backfill of $SYMBOL complete."; exit 0; }
+            echo "::error::Collector failed (exit $rc)"; exit 1
           done
-          echo "Chunks used up; run the workflow again to continue."
-          du -sh data_external
+          echo "::warning::Chunks used up; run the workflow again to continue."
