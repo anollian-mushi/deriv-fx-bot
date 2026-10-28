@@ -109,6 +109,12 @@ async def _sample_symbol(sym: str, open_ws) -> list[dict]:
     """
     rows: list[dict] = []
     async with open_ws() as ws:
+        # 0) if trading is paused (e.g. the daily 20:55-21:30 UTC pause), one
+        #    refused quote says so; record it and stop instead of asking 300 times.
+        probe = await _quote(ws, "grid", sym, DIRECTIONS[0], 100, STAKES[0])
+        if not probe["accepted"] and "not available" in probe.get("error", "").lower():
+            return [probe]
+
         # 1) every multiplier x stake, both directions
         for d in DIRECTIONS:
             for m in MULTIPLIERS:

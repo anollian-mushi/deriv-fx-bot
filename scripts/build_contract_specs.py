@@ -66,8 +66,22 @@ def spot_of(quotes: list[dict], sym: str) -> float:
                              if r["accepted"] and r["symbol"] == sym)
 
 
+def closed_windows(samples: list[dict]) -> list[dict]:
+    """Samples where Deriv refused every quote because trading was paused."""
+    out = []
+    for s in samples:
+        quotes = s["quotes"]
+        if quotes and not any(r["accepted"] for r in quotes):
+            msgs = sorted({r.get("error", "") for r in quotes})
+            out.append({"sample": s["time"], "connection": s["connection"], "messages": msgs})
+    return out
+
+
 def summarise(samples: list[dict]) -> dict:
     out: dict = {}
+    # A sample taken while trading was paused has no prices: it is listed in
+    # closed_windows instead of being averaged in.
+    samples = [s for s in samples if any(r["accepted"] for r in s["quotes"])]
     for conn in ("real", "demo", "public"):
         group = [s for s in samples if s["connection"] == conn]
         if not group:
@@ -214,6 +228,7 @@ def main() -> int:
         "notes": FINDINGS,
         "formulas": FORMULAS,
         "connections": summary,
+        "closed_windows": closed_windows(samples),
         "demo_trades": trade_summary(),
     }
     SPECS.parent.mkdir(exist_ok=True)
@@ -258,6 +273,10 @@ FINDINGS = {
     "tp_sl_close": (
         "Deriv checks TP/SL against the mid price on each tick and closes at the first tick at or past the "
         "level, at that tick's mid. A jump past a stop loss costs the size of the jump (0.6 pip seen)."),
+    "daily_pause": (
+        "Every weekday Deriv refuses new Multiplier trades from 20:55:00 to 21:30:00 UTC "
+        "('Trading is not available from 20:55:00 to 21:30:00.'), although active_symbols says the "
+        "market is open and trading_times does not list the pause. Seen 2026-10-28 21:14Z."),
     "status_field": "Contracts Deriv closes itself (TP/SL/stop out) come back with status null and is_sold 1.",
 }
 
