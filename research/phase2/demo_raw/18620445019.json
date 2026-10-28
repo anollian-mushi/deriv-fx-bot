@@ -1,0 +1,3012 @@
+{
+ "buy": {
+  "balance_after": 9973.16,
+  "buy_price": 1.0,
+  "contract_id": 18620445019,
+  "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+  "payout": 0,
+  "purchase_time": 1793205805,
+  "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+  "start_time": 1793205805,
+  "transaction_id": 35641157239
+ },
+ "contract_update_history": [
+  {
+   "display_name": "Take profit",
+   "order_amount": "0.5",
+   "order_date": 1793205807,
+   "order_type": "take_profit",
+   "value": "157.378"
+  },
+  {
+   "display_name": "Stop loss",
+   "order_amount": "-0.5",
+   "order_date": 1793205807,
+   "order_type": "stop_loss",
+   "value": "158.961"
+  },
+  {
+   "display_name": "Take profit",
+   "order_amount": "0.8",
+   "order_date": 1793205809,
+   "order_type": "take_profit",
+   "value": "156.903"
+  },
+  {
+   "display_name": "Stop loss",
+   "order_amount": "-0.3",
+   "order_date": 1793205809,
+   "order_type": "stop_loss",
+   "value": "158.645"
+  },
+  {
+   "display_name": "Stop loss",
+   "order_amount": "0",
+   "order_date": 1793205812,
+   "order_type": "stop_loss"
+  }
+ ],
+ "contract_update_steps": [
+  {
+   "deriv": {
+    "stop_loss": [
+     -0.5,
+     "158.961"
+    ],
+    "take_profit": [
+     0.5,
+     "157.378"
+    ]
+   },
+   "sl_formula": 158.956601,
+   "step": "set TP 0.50 + SL 0.50",
+   "tp_formula": 157.374471
+  },
+  {
+   "deriv": {
+    "stop_loss": [
+     -0.3,
+     "158.645"
+    ],
+    "take_profit": [
+     0.8,
+     "156.903"
+    ]
+   },
+   "sl_formula": 158.640175,
+   "step": "change TP 0.80 + SL 0.30",
+   "tp_formula": 156.899832
+  },
+  {
+   "deriv": {
+    "stop_loss": [
+     null,
+     null
+    ],
+    "take_profit": [
+     0.8,
+     "156.903"
+    ]
+   },
+   "step": "remove SL",
+   "tp_formula": 156.899832
+  }
+ ],
+ "final": {
+  "_received": 1793205837.5984643,
+  "audit_details": {
+   "contract_start": [
+    {
+     "epoch": 1793205803,
+     "tick": 158.213,
+     "tick_display_value": "158.213"
+    },
+    {
+     "epoch": 1793205804,
+     "tick": 158.213,
+     "tick_display_value": "158.213"
+    },
+    {
+     "epoch": 1793205805,
+     "flag": "highlight_time",
+     "name": "Start Time",
+     "tick": 158.213,
+     "tick_display_value": "158.213"
+    },
+    {
+     "epoch": 1793205806,
+     "flag": "highlight_tick",
+     "name": "Entry Spot",
+     "tick": 158.213,
+     "tick_display_value": "158.213"
+    },
+    {
+     "epoch": 1793205807,
+     "tick": 158.214,
+     "tick_display_value": "158.214"
+    },
+    {
+     "epoch": 1793205808,
+     "tick": 158.214,
+     "tick_display_value": "158.214"
+    }
+   ]
+  },
+  "barrier_count": 1,
+  "bid_price": "0.97",
+  "buy_price": "1.00",
+  "commission": "0.03",
+  "contract_id": 18620445019,
+  "contract_type": "MULTDOWN",
+  "currency": "USD",
+  "current_spot": "158.216",
+  "current_spot_time": 1793205837,
+  "date_expiry": 4946820900,
+  "date_settlement": 4947004800,
+  "date_start": 1793205805,
+  "entry_spot": "158.213",
+  "entry_spot_time": 1793205806,
+  "exit_spot": "158.216",
+  "exit_spot_time": 1793205836,
+  "expiry_time": 4946820900,
+  "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+  "is_expired": 0,
+  "is_intraday": 0,
+  "is_path_dependent": 1,
+  "is_settleable": 1,
+  "is_sold": 1,
+  "is_valid_to_cancel": 0,
+  "is_valid_to_sell": 0,
+  "is_valid_to_update": {
+   "stop_loss": 1,
+   "stop_out": 0,
+   "take_profit": 1
+  },
+  "limit_order": {
+   "stop_loss": {
+    "display_name": "Stop loss",
+    "display_order_amount": null,
+    "order_amount": null,
+    "order_date": 1793205812,
+    "value": null
+   },
+   "stop_out": {
+    "display_name": "Stop out",
+    "display_order_amount": "-1.00",
+    "order_amount": -1.0,
+    "order_date": 1793205805,
+    "value": "159.752"
+   },
+   "take_profit": {
+    "display_name": "Take profit",
+    "display_order_amount": "0.80",
+    "order_amount": 0.8,
+    "order_date": 1793205809,
+    "value": "156.903"
+   }
+  },
+  "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+  "multiplier": 100,
+  "profit": "-0.03",
+  "profit_percentage": -3,
+  "purchase_time": 1793205805,
+  "sell_price": "0.97",
+  "sell_time": 1793205837,
+  "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+  "status": "sold",
+  "transaction_ids": {
+   "buy": 35641157239,
+   "sell": 35641264139
+  },
+  "underlying_symbol": "frxUSDJPY",
+  "validation_error": "This contract has been sold.",
+  "validation_error_code": "ContractAlreadySold",
+  "validation_error_code_args": null,
+  "validation_params": {
+   "stake": {
+    "max": "2000.00",
+    "min": "1.00"
+   },
+   "stop_loss": {
+    "max": "1.00",
+    "min": "0.10"
+   },
+   "take_profit": {
+    "max": "50.00",
+    "min": "0.10"
+   }
+  }
+ },
+ "last_update_before_sell": {
+  "_received": 1793205836.8784192,
+  "barrier_count": 1,
+  "bid_price": "0.97",
+  "buy_price": "1.00",
+  "commission": "0.03",
+  "contract_id": 18620445019,
+  "contract_type": "MULTDOWN",
+  "currency": "USD",
+  "current_spot": "158.216",
+  "current_spot_time": 1793205836,
+  "date_expiry": 4946820900,
+  "date_settlement": 4947004800,
+  "date_start": 1793205805,
+  "entry_spot": "158.213",
+  "entry_spot_time": 1793205806,
+  "expiry_time": 4946820900,
+  "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+  "is_expired": 0,
+  "is_intraday": 0,
+  "is_path_dependent": 1,
+  "is_settleable": 0,
+  "is_sold": 0,
+  "is_valid_to_cancel": 0,
+  "is_valid_to_sell": 1,
+  "is_valid_to_update": {
+   "stop_loss": 1,
+   "stop_out": 0,
+   "take_profit": 1
+  },
+  "limit_order": {
+   "stop_loss": {
+    "display_name": "Stop loss",
+    "display_order_amount": null,
+    "order_amount": null,
+    "order_date": 1793205812,
+    "value": null
+   },
+   "stop_out": {
+    "display_name": "Stop out",
+    "display_order_amount": "-1.00",
+    "order_amount": -1.0,
+    "order_date": 1793205805,
+    "value": "159.752"
+   },
+   "take_profit": {
+    "display_name": "Take profit",
+    "display_order_amount": "0.80",
+    "order_amount": 0.8,
+    "order_date": 1793205809,
+    "value": "156.903"
+   }
+  },
+  "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+  "multiplier": 100,
+  "profit": "-0.03",
+  "profit_percentage": -3,
+  "purchase_time": 1793205805,
+  "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+  "status": "open",
+  "transaction_ids": {
+   "buy": 35641157239
+  },
+  "underlying_symbol": "frxUSDJPY",
+  "validation_params": {
+   "stake": {
+    "max": "2000.00",
+    "min": "1.00"
+   },
+   "stop_loss": {
+    "max": "1.00",
+    "min": "0.10"
+   },
+   "take_profit": {
+    "max": "50.00",
+    "min": "0.10"
+   }
+  }
+ },
+ "proposal": {
+  "ask_price": 1.0,
+  "commission": 0.03,
+  "contract_details": {
+   "maximum_stake": "2000.00",
+   "minimum_stake": "1.00"
+  },
+  "date_expiry": 4946820900,
+  "date_start": 1793205805,
+  "id": "bdd89469-571e-4c1f-a96f-88fbd829e767",
+  "limit_order": {
+   "stop_out": {
+    "display_name": "Stop out",
+    "display_order_amount": "-1.00",
+    "order_amount": -1.0,
+    "order_date": 1793205805,
+    "value": "159.752"
+   }
+  },
+  "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+  "multiplier": 100,
+  "payout": 0,
+  "spot": 158.213,
+  "spot_time": 1793205805,
+  "validation_params": {
+   "stake": {
+    "max": "2000.00",
+    "min": "1.00"
+   },
+   "stop_loss": {
+    "max": "1.00",
+    "min": "0.10"
+   },
+   "take_profit": {
+    "max": "50.00",
+    "min": "0.10"
+   }
+  }
+ },
+ "sell": {
+  "balance_after": 9974.13,
+  "contract_id": 18620445019,
+  "reference_id": 35641157239,
+  "sold_for": 0.97,
+  "transaction_id": 35641264139
+ },
+ "tick_before_buy": {
+  "_received": 1793205805.2404354,
+  "ask": 158.219,
+  "bid": 158.207,
+  "epoch": 1793205805,
+  "id": "f70ff5c6-1e0a-4604-8dff-36a5e6768989",
+  "pip_size": 3,
+  "quote": 158.213,
+  "symbol": "frxUSDJPY"
+ },
+ "ticks_around_buy": [
+  {
+   "_received": 1793205804.6939383,
+   "ask": 158.219,
+   "bid": 158.207,
+   "epoch": 1793205804,
+   "id": "f70ff5c6-1e0a-4604-8dff-36a5e6768989",
+   "pip_size": 3,
+   "quote": 158.213,
+   "symbol": "frxUSDJPY"
+  },
+  {
+   "_received": 1793205805.2404354,
+   "ask": 158.219,
+   "bid": 158.207,
+   "epoch": 1793205805,
+   "id": "f70ff5c6-1e0a-4604-8dff-36a5e6768989",
+   "pip_size": 3,
+   "quote": 158.213,
+   "symbol": "frxUSDJPY"
+  },
+  {
+   "_received": 1793205806.3581908,
+   "ask": 158.219,
+   "bid": 158.207,
+   "epoch": 1793205806,
+   "id": "f70ff5c6-1e0a-4604-8dff-36a5e6768989",
+   "pip_size": 3,
+   "quote": 158.213,
+   "symbol": "frxUSDJPY"
+  },
+  {
+   "_received": 1793205807.230342,
+   "ask": 158.219,
+   "bid": 158.208,
+   "epoch": 1793205807,
+   "id": "f70ff5c6-1e0a-4604-8dff-36a5e6768989",
+   "pip_size": 3,
+   "quote": 158.214,
+   "symbol": "frxUSDJPY"
+  }
+ ],
+ "updates": [
+  {
+   "_received": 1793205805.7168555,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.213",
+   "current_spot_time": 1793205805,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 0,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_error": "Waiting for entry tick.",
+   "validation_error_code": "EntryTickMissing",
+   "validation_error_code_args": null,
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205806.3582346,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.213",
+   "current_spot_time": 1793205806,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 0,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_error": "Waiting for entry tick.",
+   "validation_error_code": "EntryTickMissing",
+   "validation_error_code_args": null,
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205807.5463305,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.214",
+   "current_spot_time": 1793205807,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205808.6930978,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.214",
+   "current_spot_time": 1793205808,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.50",
+     "order_amount": -0.5,
+     "order_date": 1793205807,
+     "value": "158.961"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.50",
+     "order_amount": 0.5,
+     "order_date": 1793205807,
+     "value": "157.378"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205809.5762963,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.214",
+   "current_spot_time": 1793205809,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.50",
+     "order_amount": -0.5,
+     "order_date": 1793205807,
+     "value": "158.961"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.50",
+     "order_amount": 0.5,
+     "order_date": 1793205807,
+     "value": "157.378"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205810.765082,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.214",
+   "current_spot_time": 1793205810,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.50",
+     "order_amount": -0.5,
+     "order_date": 1793205807,
+     "value": "158.961"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.50",
+     "order_amount": 0.5,
+     "order_date": 1793205807,
+     "value": "157.378"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205811.247032,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.214",
+   "current_spot_time": 1793205811,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.50",
+     "order_amount": -0.5,
+     "order_date": 1793205807,
+     "value": "158.961"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.50",
+     "order_amount": 0.5,
+     "order_date": 1793205807,
+     "value": "157.378"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205812.7244558,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.214",
+   "current_spot_time": 1793205812,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205813.2729414,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.214",
+   "current_spot_time": 1793205813,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205814.6154373,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.216",
+   "current_spot_time": 1793205814,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205815.3218522,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.217",
+   "current_spot_time": 1793205815,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205816.3281481,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.217",
+   "current_spot_time": 1793205816,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205817.3434377,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.217",
+   "current_spot_time": 1793205817,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205818.6212883,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.217",
+   "current_spot_time": 1793205818,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205819.6407554,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.217",
+   "current_spot_time": 1793205819,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205820.5866375,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.217",
+   "current_spot_time": 1793205820,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205821.222104,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.217",
+   "current_spot_time": 1793205821,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205822.4770367,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.217",
+   "current_spot_time": 1793205822,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205823.582879,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.217",
+   "current_spot_time": 1793205823,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205824.4226081,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.217",
+   "current_spot_time": 1793205824,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205825.568006,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.217",
+   "current_spot_time": 1793205825,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205826.3258073,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.217",
+   "current_spot_time": 1793205826,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205827.3324423,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.218",
+   "current_spot_time": 1793205827,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205828.3280952,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.218",
+   "current_spot_time": 1793205828,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205829.558898,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.218",
+   "current_spot_time": 1793205829,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205830.7936428,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.218",
+   "current_spot_time": 1793205830,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205831.6693885,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.217",
+   "current_spot_time": 1793205831,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205832.6979449,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.217",
+   "current_spot_time": 1793205832,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205833.5246885,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.216",
+   "current_spot_time": 1793205833,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205834.837853,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.216",
+   "current_spot_time": 1793205834,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205835.3335166,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.216",
+   "current_spot_time": 1793205835,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205836.8784192,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.216",
+   "current_spot_time": 1793205836,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641157239
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205837.5984643,
+   "audit_details": {
+    "contract_start": [
+     {
+      "epoch": 1793205803,
+      "tick": 158.213,
+      "tick_display_value": "158.213"
+     },
+     {
+      "epoch": 1793205804,
+      "tick": 158.213,
+      "tick_display_value": "158.213"
+     },
+     {
+      "epoch": 1793205805,
+      "flag": "highlight_time",
+      "name": "Start Time",
+      "tick": 158.213,
+      "tick_display_value": "158.213"
+     },
+     {
+      "epoch": 1793205806,
+      "flag": "highlight_tick",
+      "name": "Entry Spot",
+      "tick": 158.213,
+      "tick_display_value": "158.213"
+     },
+     {
+      "epoch": 1793205807,
+      "tick": 158.214,
+      "tick_display_value": "158.214"
+     },
+     {
+      "epoch": 1793205808,
+      "tick": 158.214,
+      "tick_display_value": "158.214"
+     }
+    ]
+   },
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.03",
+   "contract_id": 18620445019,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "158.216",
+   "current_spot_time": 1793205837,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205805,
+   "entry_spot": "158.213",
+   "entry_spot_time": 1793205806,
+   "exit_spot": "158.216",
+   "exit_spot_time": 1793205836,
+   "expiry_time": 4946820900,
+   "id": "75b848c2-e1a7-4477-bf16-d0bbd6af3e83",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 1,
+   "is_sold": 1,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 0,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205812,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205805,
+     "value": "159.752"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205809,
+     "value": "156.903"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in USD/JPY, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793205805,
+   "sell_price": "0.97",
+   "sell_time": 1793205837,
+   "shortcode": "MULTDOWN_FRXUSDJPY_1.00_100_1793205805_4946820900_0_0.00_N1_0",
+   "status": "sold",
+   "transaction_ids": {
+    "buy": 35641157239,
+    "sell": 35641264139
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_error": "This contract has been sold.",
+   "validation_error_code": "ContractAlreadySold",
+   "validation_error_code_args": null,
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  }
+ ]
+}

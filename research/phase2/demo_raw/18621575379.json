@@ -1,0 +1,226 @@
+{
+ "buy": {
+  "balance_after": 9972.95,
+  "buy_price": 1.0,
+  "contract_id": 18621575379,
+  "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in GBP/USD, multiplied by 500, minus commissions.",
+  "payout": 0,
+  "purchase_time": 1793206495,
+  "shortcode": "MULTDOWN_FRXGBPUSD_1.00_500_1793206495_4946820900_0_0.10_N1_0",
+  "start_time": 1793206495,
+  "transaction_id": 35643367859
+ },
+ "final": {
+  "audit_details": {
+   "contract_end": [
+    {
+     "epoch": 1793207087,
+     "flag": "highlight_tick",
+     "name": "Exit Spot",
+     "tick": 1.33135,
+     "tick_display_value": "1.33135"
+    }
+   ],
+   "contract_start": [
+    {
+     "epoch": 1793206493,
+     "tick": 1.33187,
+     "tick_display_value": "1.33187"
+    },
+    {
+     "epoch": 1793206494,
+     "tick": 1.33187,
+     "tick_display_value": "1.33187"
+    },
+    {
+     "epoch": 1793206495,
+     "flag": "highlight_time",
+     "name": "Start Time",
+     "tick": 1.33191,
+     "tick_display_value": "1.33191"
+    },
+    {
+     "epoch": 1793206496,
+     "flag": "highlight_tick",
+     "name": "Entry Spot",
+     "tick": 1.3319,
+     "tick_display_value": "1.33190"
+    },
+    {
+     "epoch": 1793206497,
+     "tick": 1.33191,
+     "tick_display_value": "1.33191"
+    },
+    {
+     "epoch": 1793206498,
+     "tick": 1.33194,
+     "tick_display_value": "1.33194"
+    }
+   ]
+  },
+  "barrier_count": 1,
+  "bid_price": "1.10",
+  "buy_price": "1.00",
+  "commission": "0.10",
+  "contract_id": 18621575379,
+  "contract_type": "MULTDOWN",
+  "currency": "USD",
+  "current_spot": "1.33139",
+  "current_spot_time": 1793207542,
+  "date_expiry": 4946820900,
+  "date_settlement": 4947004800,
+  "date_start": 1793206495,
+  "entry_spot": "1.33190",
+  "entry_spot_time": 1793206496,
+  "exit_spot": "1.33135",
+  "exit_spot_time": 1793207087,
+  "expiry_time": 4946820900,
+  "is_expired": 1,
+  "is_intraday": 0,
+  "is_path_dependent": 1,
+  "is_settleable": 1,
+  "is_sold": 1,
+  "is_valid_to_cancel": 0,
+  "is_valid_to_sell": 0,
+  "is_valid_to_update": {
+   "stop_loss": 1,
+   "stop_out": 0,
+   "take_profit": 1
+  },
+  "limit_order": {
+   "stop_out": {
+    "display_name": "Stop out",
+    "display_order_amount": "-1.00",
+    "order_amount": -1.0,
+    "order_date": 1793206495,
+    "value": "1.33430"
+   },
+   "take_profit": {
+    "display_name": "Take profit",
+    "display_order_amount": "0.10",
+    "order_amount": 0.1,
+    "order_date": 1793206495,
+    "value": "1.33136"
+   }
+  },
+  "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in GBP/USD, multiplied by 500, minus commissions.",
+  "multiplier": 500,
+  "profit": "0.10",
+  "profit_percentage": 10,
+  "purchase_time": 1793206495,
+  "sell_price": "1.10",
+  "sell_time": 1793207089,
+  "shortcode": "MULTDOWN_FRXGBPUSD_1.00_500_1793206495_4946820900_0_0.10_N1_0",
+  "status": null,
+  "transaction_ids": {
+   "buy": 35643367859,
+   "sell": 35645174379
+  },
+  "underlying_symbol": "frxGBPUSD",
+  "validation_error": "This contract has been sold.",
+  "validation_error_code": "ContractAlreadySold",
+  "validation_error_code_args": null,
+  "validation_params": {
+   "stake": {
+    "max": "2000.00",
+    "min": "1.00"
+   },
+   "stop_loss": {
+    "max": "1.00",
+    "min": "0.11"
+   },
+   "take_profit": {
+    "max": "50.00",
+    "min": "0.11"
+   }
+  }
+ },
+ "proposal": {
+  "ask_price": 1.0,
+  "commission": 0.1,
+  "contract_details": {
+   "maximum_stake": "2000.00",
+   "minimum_stake": "1.00"
+  },
+  "date_expiry": 4946820900,
+  "date_start": 1793206495,
+  "id": "4b4c38c8-565a-4528-a6fa-7e74e0d7c141",
+  "limit_order": {
+   "stop_out": {
+    "display_name": "Stop out",
+    "display_order_amount": "-1.00",
+    "order_amount": -1.0,
+    "order_date": 1793206495,
+    "value": "1.33431"
+   },
+   "take_profit": {
+    "display_name": "Take profit",
+    "display_order_amount": "0.10",
+    "order_amount": 0.1,
+    "order_date": 1793206495,
+    "value": "1.33137"
+   }
+  },
+  "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in GBP/USD, multiplied by 500, minus commissions.",
+  "multiplier": 500,
+  "payout": 0,
+  "spot": 1.33191,
+  "spot_time": 1793206495,
+  "validation_params": {
+   "stake": {
+    "max": "2000.00",
+    "min": "1.00"
+   },
+   "stop_loss": {
+    "max": "1.00",
+    "min": "0.11"
+   },
+   "take_profit": {
+    "max": "50.00",
+    "min": "0.10"
+   }
+  }
+ },
+ "tick_before_buy": {
+  "_received": 1793206495.2530406,
+  "ask": 1.33197,
+  "bid": 1.33184,
+  "epoch": 1793206495,
+  "id": "a6397b9c-981d-47eb-b34f-7264aa084fdf",
+  "pip_size": 5,
+  "quote": 1.33191,
+  "symbol": "frxGBPUSD"
+ },
+ "ticks_around_buy": [
+  {
+   "_received": 1793206494.385322,
+   "ask": 1.33193,
+   "bid": 1.3318,
+   "epoch": 1793206494,
+   "id": "a6397b9c-981d-47eb-b34f-7264aa084fdf",
+   "pip_size": 5,
+   "quote": 1.33187,
+   "symbol": "frxGBPUSD"
+  },
+  {
+   "_received": 1793206495.2530406,
+   "ask": 1.33197,
+   "bid": 1.33184,
+   "epoch": 1793206495,
+   "id": "a6397b9c-981d-47eb-b34f-7264aa084fdf",
+   "pip_size": 5,
+   "quote": 1.33191,
+   "symbol": "frxGBPUSD"
+  },
+  {
+   "_received": 1793206496.2618635,
+   "ask": 1.33196,
+   "bid": 1.33184,
+   "epoch": 1793206496,
+   "id": "a6397b9c-981d-47eb-b34f-7264aa084fdf",
+   "pip_size": 5,
+   "quote": 1.3319,
+   "symbol": "frxGBPUSD"
+  }
+ ]
+}

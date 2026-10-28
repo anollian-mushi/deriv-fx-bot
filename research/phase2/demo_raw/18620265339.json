@@ -1,0 +1,3063 @@
+{
+ "buy": {
+  "balance_after": 9973.5,
+  "buy_price": 1.0,
+  "contract_id": 18620265339,
+  "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+  "payout": 0,
+  "purchase_time": 1793205698,
+  "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+  "start_time": 1793205698,
+  "transaction_id": 35640805659
+ },
+ "contract_update_history": [
+  {
+   "display_name": "Take profit",
+   "order_amount": "0.5",
+   "order_date": 1793205700,
+   "order_type": "take_profit",
+   "value": "1.33379"
+  },
+  {
+   "display_name": "Stop loss",
+   "order_amount": "-0.5",
+   "order_date": 1793205700,
+   "order_type": "stop_loss",
+   "value": "1.32935"
+  },
+  {
+   "display_name": "Take profit",
+   "order_amount": "0.8",
+   "order_date": 1793205703,
+   "order_type": "take_profit",
+   "value": "1.33513"
+  },
+  {
+   "display_name": "Stop loss",
+   "order_amount": "-0.3",
+   "order_date": 1793205703,
+   "order_type": "stop_loss",
+   "value": "1.33023"
+  },
+  {
+   "display_name": "Stop loss",
+   "order_amount": "0",
+   "order_date": 1793205705,
+   "order_type": "stop_loss"
+  }
+ ],
+ "contract_update_steps": [
+  {
+   "deriv": {
+    "stop_loss": [
+     -0.5,
+     "1.32935"
+    ],
+    "take_profit": [
+     0.5,
+     "1.33379"
+    ]
+   },
+   "sl_formula": 1.329347,
+   "step": "set TP 0.50 + SL 0.50",
+   "tp_formula": 1.333785
+  },
+  {
+   "deriv": {
+    "stop_loss": [
+     -0.3,
+     "1.33023"
+    ],
+    "take_profit": [
+     0.8,
+     "1.33513"
+    ]
+   },
+   "sl_formula": 1.330235,
+   "step": "change TP 0.80 + SL 0.30",
+   "tp_formula": 1.335116
+  },
+  {
+   "deriv": {
+    "stop_loss": [
+     null,
+     null
+    ],
+    "take_profit": [
+     0.8,
+     "1.33513"
+    ]
+   },
+   "step": "remove SL",
+   "tp_formula": 1.335116
+  }
+ ],
+ "final": {
+  "_received": 1793205731.47975,
+  "audit_details": {
+   "contract_start": [
+    {
+     "epoch": 1793205696,
+     "tick": 1.3313,
+     "tick_display_value": "1.33130"
+    },
+    {
+     "epoch": 1793205697,
+     "tick": 1.33131,
+     "tick_display_value": "1.33131"
+    },
+    {
+     "epoch": 1793205698,
+     "flag": "highlight_time",
+     "name": "Start Time",
+     "tick": 1.33131,
+     "tick_display_value": "1.33131"
+    },
+    {
+     "epoch": 1793205699,
+     "flag": "highlight_tick",
+     "name": "Entry Spot",
+     "tick": 1.3313,
+     "tick_display_value": "1.33130"
+    },
+    {
+     "epoch": 1793205700,
+     "tick": 1.3313,
+     "tick_display_value": "1.33130"
+    },
+    {
+     "epoch": 1793205701,
+     "tick": 1.3313,
+     "tick_display_value": "1.33130"
+    }
+   ]
+  },
+  "barrier_count": 1,
+  "bid_price": "0.93",
+  "buy_price": "1.00",
+  "commission": "0.06",
+  "contract_id": 18620265339,
+  "contract_type": "MULTUP",
+  "currency": "USD",
+  "current_spot": "1.33126",
+  "current_spot_time": 1793205731,
+  "date_expiry": 4946820900,
+  "date_settlement": 4947004800,
+  "date_start": 1793205698,
+  "entry_spot": "1.33130",
+  "entry_spot_time": 1793205699,
+  "exit_spot": "1.33127",
+  "exit_spot_time": 1793205730,
+  "expiry_time": 4946820900,
+  "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+  "is_expired": 0,
+  "is_intraday": 0,
+  "is_path_dependent": 1,
+  "is_settleable": 1,
+  "is_sold": 1,
+  "is_valid_to_cancel": 0,
+  "is_valid_to_sell": 0,
+  "is_valid_to_update": {
+   "stop_loss": 1,
+   "stop_out": 0,
+   "take_profit": 1
+  },
+  "limit_order": {
+   "stop_loss": {
+    "display_name": "Stop loss",
+    "display_order_amount": null,
+    "order_amount": null,
+    "order_date": 1793205705,
+    "value": null
+   },
+   "stop_out": {
+    "display_name": "Stop out",
+    "display_order_amount": "-1.00",
+    "order_amount": -1.0,
+    "order_date": 1793205698,
+    "value": "1.32713"
+   },
+   "take_profit": {
+    "display_name": "Take profit",
+    "display_order_amount": "0.80",
+    "order_amount": 0.8,
+    "order_date": 1793205703,
+    "value": "1.33513"
+   }
+  },
+  "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+  "multiplier": 300,
+  "profit": "-0.07",
+  "profit_percentage": -7,
+  "purchase_time": 1793205698,
+  "sell_price": "0.93",
+  "sell_time": 1793205730,
+  "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+  "status": "sold",
+  "transaction_ids": {
+   "buy": 35640805659,
+   "sell": 35640911599
+  },
+  "underlying_symbol": "frxGBPUSD",
+  "validation_error": "This contract has been sold.",
+  "validation_error_code": "ContractAlreadySold",
+  "validation_error_code_args": null,
+  "validation_params": {
+   "stake": {
+    "max": "2000.00",
+    "min": "1.00"
+   },
+   "stop_loss": {
+    "max": "1.00",
+    "min": "0.10"
+   },
+   "take_profit": {
+    "max": "50.00",
+    "min": "0.10"
+   }
+  }
+ },
+ "last_update_before_sell": {
+  "_received": 1793205729.5893338,
+  "barrier_count": 1,
+  "bid_price": "0.93",
+  "buy_price": "1.00",
+  "commission": "0.06",
+  "contract_id": 18620265339,
+  "contract_type": "MULTUP",
+  "currency": "USD",
+  "current_spot": "1.33127",
+  "current_spot_time": 1793205729,
+  "date_expiry": 4946820900,
+  "date_settlement": 4947004800,
+  "date_start": 1793205698,
+  "entry_spot": "1.33130",
+  "entry_spot_time": 1793205699,
+  "expiry_time": 4946820900,
+  "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+  "is_expired": 0,
+  "is_intraday": 0,
+  "is_path_dependent": 1,
+  "is_settleable": 0,
+  "is_sold": 0,
+  "is_valid_to_cancel": 0,
+  "is_valid_to_sell": 1,
+  "is_valid_to_update": {
+   "stop_loss": 1,
+   "stop_out": 0,
+   "take_profit": 1
+  },
+  "limit_order": {
+   "stop_loss": {
+    "display_name": "Stop loss",
+    "display_order_amount": null,
+    "order_amount": null,
+    "order_date": 1793205705,
+    "value": null
+   },
+   "stop_out": {
+    "display_name": "Stop out",
+    "display_order_amount": "-1.00",
+    "order_amount": -1.0,
+    "order_date": 1793205698,
+    "value": "1.32713"
+   },
+   "take_profit": {
+    "display_name": "Take profit",
+    "display_order_amount": "0.80",
+    "order_amount": 0.8,
+    "order_date": 1793205703,
+    "value": "1.33513"
+   }
+  },
+  "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+  "multiplier": 300,
+  "profit": "-0.07",
+  "profit_percentage": -7,
+  "purchase_time": 1793205698,
+  "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+  "status": "open",
+  "transaction_ids": {
+   "buy": 35640805659
+  },
+  "underlying_symbol": "frxGBPUSD",
+  "validation_params": {
+   "stake": {
+    "max": "2000.00",
+    "min": "1.00"
+   },
+   "stop_loss": {
+    "max": "1.00",
+    "min": "0.10"
+   },
+   "take_profit": {
+    "max": "50.00",
+    "min": "0.10"
+   }
+  }
+ },
+ "proposal": {
+  "ask_price": 1.0,
+  "commission": 0.06,
+  "contract_details": {
+   "maximum_stake": "2000.00",
+   "minimum_stake": "1.00"
+  },
+  "date_expiry": 4946820900,
+  "date_start": 1793205698,
+  "id": "9aa96b5b-f245-40e8-90b5-c8bdea6d035a",
+  "limit_order": {
+   "stop_out": {
+    "display_name": "Stop out",
+    "display_order_amount": "-1.00",
+    "order_amount": -1.0,
+    "order_date": 1793205698,
+    "value": "1.32714"
+   }
+  },
+  "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+  "multiplier": 300,
+  "payout": 0,
+  "spot": 1.33131,
+  "spot_time": 1793205698,
+  "validation_params": {
+   "stake": {
+    "max": "2000.00",
+    "min": "1.00"
+   },
+   "stop_loss": {
+    "max": "1.00",
+    "min": "0.10"
+   },
+   "take_profit": {
+    "max": "50.00",
+    "min": "0.10"
+   }
+  }
+ },
+ "sell": {
+  "balance_after": 9974.43,
+  "contract_id": 18620265339,
+  "reference_id": 35640805659,
+  "sold_for": 0.93,
+  "transaction_id": 35640911599
+ },
+ "tick_before_buy": {
+  "_received": 1793205698.2158887,
+  "ask": 1.33137,
+  "bid": 1.33125,
+  "epoch": 1793205698,
+  "id": "1d92034f-82d9-4738-a5c3-8bfcd30ae65a",
+  "pip_size": 5,
+  "quote": 1.33131,
+  "symbol": "frxGBPUSD"
+ },
+ "ticks_around_buy": [
+  {
+   "_received": 1793205697.970045,
+   "ask": 1.33136,
+   "bid": 1.33125,
+   "epoch": 1793205697,
+   "id": "1d92034f-82d9-4738-a5c3-8bfcd30ae65a",
+   "pip_size": 5,
+   "quote": 1.33131,
+   "symbol": "frxGBPUSD"
+  },
+  {
+   "_received": 1793205698.2158887,
+   "ask": 1.33137,
+   "bid": 1.33125,
+   "epoch": 1793205698,
+   "id": "1d92034f-82d9-4738-a5c3-8bfcd30ae65a",
+   "pip_size": 5,
+   "quote": 1.33131,
+   "symbol": "frxGBPUSD"
+  },
+  {
+   "_received": 1793205699.1479905,
+   "ask": 1.33135,
+   "bid": 1.33124,
+   "epoch": 1793205699,
+   "id": "1d92034f-82d9-4738-a5c3-8bfcd30ae65a",
+   "pip_size": 5,
+   "quote": 1.3313,
+   "symbol": "frxGBPUSD"
+  },
+  {
+   "_received": 1793205700.2048736,
+   "ask": 1.33136,
+   "bid": 1.33124,
+   "epoch": 1793205700,
+   "id": "1d92034f-82d9-4738-a5c3-8bfcd30ae65a",
+   "pip_size": 5,
+   "quote": 1.3313,
+   "symbol": "frxGBPUSD"
+  }
+ ],
+ "updates": [
+  {
+   "_received": 1793205698.8701508,
+   "barrier_count": 1,
+   "bid_price": "0.94",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33131",
+   "current_spot_time": 1793205698,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 0,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32714"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.06",
+   "profit_percentage": -6,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_error": "Waiting for entry tick.",
+   "validation_error_code": "EntryTickMissing",
+   "validation_error_code_args": null,
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205699.2354102,
+   "barrier_count": 1,
+   "bid_price": "0.94",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33130",
+   "current_spot_time": 1793205699,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 0,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.06",
+   "profit_percentage": -6,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_error": "Waiting for entry tick.",
+   "validation_error_code": "EntryTickMissing",
+   "validation_error_code_args": null,
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205700.69909,
+   "barrier_count": 1,
+   "bid_price": "0.94",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33130",
+   "current_spot_time": 1793205700,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.06",
+   "profit_percentage": -6,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205701.5431616,
+   "barrier_count": 1,
+   "bid_price": "0.94",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33130",
+   "current_spot_time": 1793205701,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.06",
+   "profit_percentage": -6,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205702.5706925,
+   "barrier_count": 1,
+   "bid_price": "0.93",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33128",
+   "current_spot_time": 1793205702,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.07",
+   "profit_percentage": -7,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205703.4794617,
+   "barrier_count": 1,
+   "bid_price": "0.94",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33129",
+   "current_spot_time": 1793205703,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.30",
+     "order_amount": -0.3,
+     "order_date": 1793205703,
+     "value": "1.33023"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.06",
+   "profit_percentage": -6,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205704.2641175,
+   "barrier_count": 1,
+   "bid_price": "0.93",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33127",
+   "current_spot_time": 1793205704,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.30",
+     "order_amount": -0.3,
+     "order_date": 1793205703,
+     "value": "1.33023"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.07",
+   "profit_percentage": -7,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205705.5132294,
+   "barrier_count": 1,
+   "bid_price": "0.93",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33124",
+   "current_spot_time": 1793205705,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.07",
+   "profit_percentage": -7,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205706.265042,
+   "barrier_count": 1,
+   "bid_price": "0.92",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33123",
+   "current_spot_time": 1793205706,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.08",
+   "profit_percentage": -8,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205707.3326504,
+   "barrier_count": 1,
+   "bid_price": "0.92",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33123",
+   "current_spot_time": 1793205707,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.08",
+   "profit_percentage": -8,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205708.2617528,
+   "barrier_count": 1,
+   "bid_price": "0.92",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33123",
+   "current_spot_time": 1793205708,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.08",
+   "profit_percentage": -8,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205709.2717767,
+   "barrier_count": 1,
+   "bid_price": "0.92",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33123",
+   "current_spot_time": 1793205709,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.08",
+   "profit_percentage": -8,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205710.3384461,
+   "barrier_count": 1,
+   "bid_price": "0.92",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33123",
+   "current_spot_time": 1793205710,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.08",
+   "profit_percentage": -8,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205711.2853172,
+   "barrier_count": 1,
+   "bid_price": "0.92",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33123",
+   "current_spot_time": 1793205711,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.08",
+   "profit_percentage": -8,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205712.6009226,
+   "barrier_count": 1,
+   "bid_price": "0.92",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33123",
+   "current_spot_time": 1793205712,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.08",
+   "profit_percentage": -8,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205713.273751,
+   "barrier_count": 1,
+   "bid_price": "0.92",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33123",
+   "current_spot_time": 1793205713,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.08",
+   "profit_percentage": -8,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205714.595628,
+   "barrier_count": 1,
+   "bid_price": "0.92",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33123",
+   "current_spot_time": 1793205714,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.08",
+   "profit_percentage": -8,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205715.4983969,
+   "barrier_count": 1,
+   "bid_price": "0.92",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33123",
+   "current_spot_time": 1793205715,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.08",
+   "profit_percentage": -8,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205716.6016734,
+   "barrier_count": 1,
+   "bid_price": "0.92",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33123",
+   "current_spot_time": 1793205716,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.08",
+   "profit_percentage": -8,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205717.260955,
+   "barrier_count": 1,
+   "bid_price": "0.92",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33123",
+   "current_spot_time": 1793205717,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.08",
+   "profit_percentage": -8,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205718.3810723,
+   "barrier_count": 1,
+   "bid_price": "0.92",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33123",
+   "current_spot_time": 1793205718,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.08",
+   "profit_percentage": -8,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205719.4161403,
+   "barrier_count": 1,
+   "bid_price": "0.92",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33123",
+   "current_spot_time": 1793205719,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.08",
+   "profit_percentage": -8,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205720.323551,
+   "barrier_count": 1,
+   "bid_price": "0.92",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33123",
+   "current_spot_time": 1793205720,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.08",
+   "profit_percentage": -8,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205721.4979527,
+   "barrier_count": 1,
+   "bid_price": "0.93",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33126",
+   "current_spot_time": 1793205721,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.07",
+   "profit_percentage": -7,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205722.2657828,
+   "barrier_count": 1,
+   "bid_price": "0.93",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33124",
+   "current_spot_time": 1793205722,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.07",
+   "profit_percentage": -7,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205723.3663251,
+   "barrier_count": 1,
+   "bid_price": "0.93",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33124",
+   "current_spot_time": 1793205723,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.07",
+   "profit_percentage": -7,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205724.725083,
+   "barrier_count": 1,
+   "bid_price": "0.93",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33128",
+   "current_spot_time": 1793205724,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.07",
+   "profit_percentage": -7,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205725.6631346,
+   "barrier_count": 1,
+   "bid_price": "0.93",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33128",
+   "current_spot_time": 1793205725,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.07",
+   "profit_percentage": -7,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205726.7028177,
+   "barrier_count": 1,
+   "bid_price": "0.93",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33128",
+   "current_spot_time": 1793205726,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.07",
+   "profit_percentage": -7,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205727.5664883,
+   "barrier_count": 1,
+   "bid_price": "0.93",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33128",
+   "current_spot_time": 1793205727,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.07",
+   "profit_percentage": -7,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205728.3687794,
+   "barrier_count": 1,
+   "bid_price": "0.93",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33127",
+   "current_spot_time": 1793205728,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.07",
+   "profit_percentage": -7,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205729.5893338,
+   "barrier_count": 1,
+   "bid_price": "0.93",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33127",
+   "current_spot_time": 1793205729,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.07",
+   "profit_percentage": -7,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205730.5385845,
+   "barrier_count": 1,
+   "bid_price": "0.93",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33127",
+   "current_spot_time": 1793205730,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.07",
+   "profit_percentage": -7,
+   "purchase_time": 1793205698,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35640805659
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205731.47975,
+   "audit_details": {
+    "contract_start": [
+     {
+      "epoch": 1793205696,
+      "tick": 1.3313,
+      "tick_display_value": "1.33130"
+     },
+     {
+      "epoch": 1793205697,
+      "tick": 1.33131,
+      "tick_display_value": "1.33131"
+     },
+     {
+      "epoch": 1793205698,
+      "flag": "highlight_time",
+      "name": "Start Time",
+      "tick": 1.33131,
+      "tick_display_value": "1.33131"
+     },
+     {
+      "epoch": 1793205699,
+      "flag": "highlight_tick",
+      "name": "Entry Spot",
+      "tick": 1.3313,
+      "tick_display_value": "1.33130"
+     },
+     {
+      "epoch": 1793205700,
+      "tick": 1.3313,
+      "tick_display_value": "1.33130"
+     },
+     {
+      "epoch": 1793205701,
+      "tick": 1.3313,
+      "tick_display_value": "1.33130"
+     }
+    ]
+   },
+   "barrier_count": 1,
+   "bid_price": "0.93",
+   "buy_price": "1.00",
+   "commission": "0.06",
+   "contract_id": 18620265339,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.33126",
+   "current_spot_time": 1793205731,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205698,
+   "entry_spot": "1.33130",
+   "entry_spot_time": 1793205699,
+   "exit_spot": "1.33127",
+   "exit_spot_time": 1793205730,
+   "expiry_time": 4946820900,
+   "id": "9cc00d5f-22bf-4932-ba87-b95a9fcfc07d",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 1,
+   "is_sold": 1,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 0,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205705,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205698,
+     "value": "1.32713"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205703,
+     "value": "1.33513"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in GBP/USD, multiplied by 300, minus commissions.",
+   "multiplier": 300,
+   "profit": "-0.07",
+   "profit_percentage": -7,
+   "purchase_time": 1793205698,
+   "sell_price": "0.93",
+   "sell_time": 1793205730,
+   "shortcode": "MULTUP_FRXGBPUSD_1.00_300_1793205698_4946820900_0_0.00_N1_0",
+   "status": "sold",
+   "transaction_ids": {
+    "buy": 35640805659,
+    "sell": 35640911599
+   },
+   "underlying_symbol": "frxGBPUSD",
+   "validation_error": "This contract has been sold.",
+   "validation_error_code": "ContractAlreadySold",
+   "validation_error_code_args": null,
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  }
+ ]
+}

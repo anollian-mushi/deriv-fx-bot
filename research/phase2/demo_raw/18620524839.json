@@ -1,0 +1,236 @@
+{
+ "buy": {
+  "balance_after": 9973.13,
+  "buy_price": 1.0,
+  "contract_id": 18620524839,
+  "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in EUR/USD, multiplied by 500, minus commissions.",
+  "payout": 0,
+  "purchase_time": 1793205852,
+  "shortcode": "MULTUP_FRXEURUSD_1.00_500_1793205852_4946820900_0_0.10_N1_0",
+  "start_time": 1793205852,
+  "transaction_id": 35641313119
+ },
+ "final": {
+  "audit_details": {
+   "contract_end": [
+    {
+     "epoch": 1793206491,
+     "flag": "highlight_tick",
+     "name": "Exit Spot",
+     "tick": 1.11508,
+     "tick_display_value": "1.11508"
+    }
+   ],
+   "contract_start": [
+    {
+     "epoch": 1793205850,
+     "tick": 1.11455,
+     "tick_display_value": "1.11455"
+    },
+    {
+     "epoch": 1793205851,
+     "tick": 1.11455,
+     "tick_display_value": "1.11455"
+    },
+    {
+     "epoch": 1793205852,
+     "flag": "highlight_time",
+     "name": "Start Time",
+     "tick": 1.11454,
+     "tick_display_value": "1.11454"
+    },
+    {
+     "epoch": 1793205853,
+     "flag": "highlight_tick",
+     "name": "Entry Spot",
+     "tick": 1.11459,
+     "tick_display_value": "1.11459"
+    },
+    {
+     "epoch": 1793205854,
+     "tick": 1.11459,
+     "tick_display_value": "1.11459"
+    },
+    {
+     "epoch": 1793205855,
+     "tick": 1.11459,
+     "tick_display_value": "1.11459"
+    }
+   ]
+  },
+  "barrier_count": 1,
+  "bid_price": "1.10",
+  "buy_price": "1.00",
+  "commission": "0.12",
+  "contract_id": 18620524839,
+  "contract_type": "MULTUP",
+  "currency": "USD",
+  "current_spot": "1.11483",
+  "current_spot_time": 1793207541,
+  "date_expiry": 4946820900,
+  "date_settlement": 4947004800,
+  "date_start": 1793205852,
+  "entry_spot": "1.11459",
+  "entry_spot_time": 1793205853,
+  "exit_spot": "1.11508",
+  "exit_spot_time": 1793206491,
+  "expiry_time": 4946820900,
+  "is_expired": 1,
+  "is_intraday": 0,
+  "is_path_dependent": 1,
+  "is_settleable": 1,
+  "is_sold": 1,
+  "is_valid_to_cancel": 0,
+  "is_valid_to_sell": 0,
+  "is_valid_to_update": {
+   "stop_loss": 1,
+   "stop_out": 0,
+   "take_profit": 1
+  },
+  "limit_order": {
+   "stop_out": {
+    "display_name": "Stop out",
+    "display_order_amount": "-1.00",
+    "order_amount": -1.0,
+    "order_date": 1793205852,
+    "value": "1.11262"
+   },
+   "take_profit": {
+    "display_name": "Take profit",
+    "display_order_amount": "0.10",
+    "order_amount": 0.1,
+    "order_date": 1793205852,
+    "value": "1.11508"
+   }
+  },
+  "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in EUR/USD, multiplied by 500, minus commissions.",
+  "multiplier": 500,
+  "profit": "0.10",
+  "profit_percentage": 10,
+  "purchase_time": 1793205852,
+  "sell_price": "1.10",
+  "sell_time": 1793206491,
+  "shortcode": "MULTUP_FRXEURUSD_1.00_500_1793205852_4946820900_0_0.10_N1_0",
+  "status": null,
+  "transaction_ids": {
+   "buy": 35641313119,
+   "sell": 35643355679
+  },
+  "underlying_symbol": "frxEURUSD",
+  "validation_error": "This contract has been sold.",
+  "validation_error_code": "ContractAlreadySold",
+  "validation_error_code_args": null,
+  "validation_params": {
+   "stake": {
+    "max": "2000.00",
+    "min": "1.00"
+   },
+   "stop_loss": {
+    "max": "1.00",
+    "min": "0.13"
+   },
+   "take_profit": {
+    "max": "50.00",
+    "min": "0.11"
+   }
+  }
+ },
+ "proposal": {
+  "ask_price": 1.0,
+  "commission": 0.12,
+  "contract_details": {
+   "maximum_stake": "2000.00",
+   "minimum_stake": "1.00"
+  },
+  "date_expiry": 4946820900,
+  "date_start": 1793205852,
+  "id": "fc5e3529-dcf1-433a-a363-d416784ac94e",
+  "limit_order": {
+   "stop_out": {
+    "display_name": "Stop out",
+    "display_order_amount": "-1.00",
+    "order_amount": -1.0,
+    "order_date": 1793205852,
+    "value": "1.11257"
+   },
+   "take_profit": {
+    "display_name": "Take profit",
+    "display_order_amount": "0.10",
+    "order_amount": 0.1,
+    "order_date": 1793205852,
+    "value": "1.11503"
+   }
+  },
+  "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in EUR/USD, multiplied by 500, minus commissions.",
+  "multiplier": 500,
+  "payout": 0,
+  "spot": 1.11454,
+  "spot_time": 1793205852,
+  "validation_params": {
+   "stake": {
+    "max": "2000.00",
+    "min": "1.00"
+   },
+   "stop_loss": {
+    "max": "1.00",
+    "min": "0.13"
+   },
+   "take_profit": {
+    "max": "50.00",
+    "min": "0.10"
+   }
+  }
+ },
+ "tick_before_buy": {
+  "_received": 1793205852.2310426,
+  "ask": 1.11458,
+  "bid": 1.1145,
+  "epoch": 1793205852,
+  "id": "784dc68d-7d0b-44bf-9c45-74794755dd01",
+  "pip_size": 5,
+  "quote": 1.11454,
+  "symbol": "frxEURUSD"
+ },
+ "ticks_around_buy": [
+  {
+   "_received": 1793205851.8324523,
+   "ask": 1.11458,
+   "bid": 1.11451,
+   "epoch": 1793205851,
+   "id": "784dc68d-7d0b-44bf-9c45-74794755dd01",
+   "pip_size": 5,
+   "quote": 1.11455,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793205852.2310426,
+   "ask": 1.11458,
+   "bid": 1.1145,
+   "epoch": 1793205852,
+   "id": "784dc68d-7d0b-44bf-9c45-74794755dd01",
+   "pip_size": 5,
+   "quote": 1.11454,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793205853.2458713,
+   "ask": 1.11463,
+   "bid": 1.11454,
+   "epoch": 1793205853,
+   "id": "784dc68d-7d0b-44bf-9c45-74794755dd01",
+   "pip_size": 5,
+   "quote": 1.11459,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793205854.2147613,
+   "ask": 1.11462,
+   "bid": 1.11455,
+   "epoch": 1793205854,
+   "id": "784dc68d-7d0b-44bf-9c45-74794755dd01",
+   "pip_size": 5,
+   "quote": 1.11459,
+   "symbol": "frxEURUSD"
+  }
+ ]
+}

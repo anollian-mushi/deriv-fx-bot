@@ -1,0 +1,101 @@
+{
+ "buy": {
+  "balance_after": 9971.95,
+  "buy_price": 1.0,
+  "contract_id": 18622407739,
+  "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 500, minus commissions.",
+  "payout": 0,
+  "purchase_time": 1793207027,
+  "shortcode": "MULTUP_FRXUSDJPY_1.00_500_1793207027_4946820900_0_0.00_N1_0",
+  "start_time": 1793207027,
+  "transaction_id": 35644990779
+ },
+ "proposal": {
+  "ask_price": 1.0,
+  "commission": 0.14,
+  "contract_details": {
+   "maximum_stake": "2000.00",
+   "minimum_stake": "1.00"
+  },
+  "date_expiry": 4946820900,
+  "date_start": 1793207027,
+  "id": "9bb8d292-4773-4b28-beed-3ec7bb74250e",
+  "limit_order": {
+   "stop_loss": {
+    "display_name": "Stop loss",
+    "display_order_amount": "-0.25",
+    "order_amount": -0.25,
+    "order_date": 1793207027,
+    "value": "158.131"
+   },
+   "stop_out": {
+    "display_name": "Stop out",
+    "display_order_amount": "-1.00",
+    "order_amount": -1.0,
+    "order_date": 1793207027,
+    "value": "157.894"
+   }
+  },
+  "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 500, minus commissions.",
+  "multiplier": 500,
+  "payout": 0,
+  "spot": 158.167,
+  "spot_time": 1793207027,
+  "validation_params": {
+   "stake": {
+    "max": "2000.00",
+    "min": "1.00"
+   },
+   "stop_loss": {
+    "max": "1.00",
+    "min": "0.15"
+   },
+   "take_profit": {
+    "max": "50.00",
+    "min": "0.10"
+   }
+  }
+ },
+ "tick_before_buy": {
+  "_received": 1793207027.2702863,
+  "ask": 158.172,
+  "bid": 158.161,
+  "epoch": 1793207027,
+  "id": "1061e790-178c-4091-b015-00e77ab9b279",
+  "pip_size": 3,
+  "quote": 158.167,
+  "symbol": "frxUSDJPY"
+ },
+ "ticks_around_buy": [
+  {
+   "_received": 1793207026.4992058,
+   "ask": 158.171,
+   "bid": 158.16,
+   "epoch": 1793207026,
+   "id": "1061e790-178c-4091-b015-00e77ab9b279",
+   "pip_size": 3,
+   "quote": 158.166,
+   "symbol": "frxUSDJPY"
+  },
+  {
+   "_received": 1793207027.2702863,
+   "ask": 158.172,
+   "bid": 158.161,
+   "epoch": 1793207027,
+   "id": "1061e790-178c-4091-b015-00e77ab9b279",
+   "pip_size": 3,
+   "quote": 158.167,
+   "symbol": "frxUSDJPY"
+  },
+  {
+   "_received": 1793207028.330105,
+   "ask": 158.171,
+   "bid": 158.16,
+   "epoch": 1793207028,
+   "id": "1061e790-178c-4091-b015-00e77ab9b279",
+   "pip_size": 3,
+   "quote": 158.166,
+   "symbol": "frxUSDJPY"
+  }
+ ]
+}

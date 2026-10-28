@@ -18,7 +18,7 @@ Commands (each opens at most one contract):
                                    if Deriv accepts it, the contract is sold at once
   settle                           check every logged contract that is still
                                    open or unsettled; with --close also sell
-                                   held contracts; fetches statement entries
+                                   any still open; fetches statement entries
 
 Every contract gets one row in research/demo_cost_trades.csv. The raw replies
 go to research/phase2/demo_raw/<contract_id>.json (login ids removed).
@@ -77,9 +77,9 @@ def _utc(epoch: float | int | None) -> str:
 
 
 def _scrub(obj: Any) -> Any:
-    """Drop login ids from raw replies before saving them."""
+    """Drop login and account ids from raw replies before saving them."""
     if isinstance(obj, dict):
-        return {k: _scrub(v) for k, v in obj.items() if k not in ("loginid", "binary_user_id")}
+        return {k: _scrub(v) for k, v in obj.items() if k not in ("loginid", "binary_user_id", "account_id")}
     if isinstance(obj, list):
         return [_scrub(v) for v in obj]
     return obj
@@ -206,7 +206,8 @@ def finish_row(row: dict, poc: dict) -> None:
     row["sell_price"] = poc.get("sell_price", "")
     row["exit_spot"] = poc.get("exit_spot") or poc.get("exit_tick") or poc.get("sell_spot") or ""
     row["exit_time_utc"] = _utc(poc.get("exit_tick_time") or poc.get("sell_time"))
-    row["status"] = poc.get("status", "")
+    # Contracts Deriv closes itself (TP, SL, stop out) come back with status null.
+    row["status"] = poc.get("status") or ("sold" if poc.get("is_sold") else "")
     row["profit"] = poc.get("profit", "")
     entry, comm = float(row["entry_spot"]), float(row["commission"])
     if row["exit_spot"]:
@@ -268,10 +269,11 @@ async def cmd_cycle(c: StreamClient, row: dict) -> None:
         upd = await update(c, cid, lo)
         s = _limit_summary(upd)
         check = {}
-        if "take_profit" in upd:
-            check["tp_formula"] = round(price_at_profit(d, STAKE, m, entry, float(upd["take_profit"]["order_amount"]), comm), 6)
-        if "stop_loss" in upd:
-            check["sl_formula"] = round(price_at_profit(d, STAKE, m, entry, float(upd["stop_loss"]["order_amount"]), comm), 6)
+        # A removed order comes back without order_amount/value.
+        for key, col in (("take_profit", "tp_formula"), ("stop_loss", "sl_formula")):
+            amount = (upd.get(key) or {}).get("order_amount")
+            if amount is not None:
+                check[col] = round(price_at_profit(d, STAKE, m, entry, float(amount), comm), 6)
         steps.append({"step": label, "deriv": s, **check})
         print(f"  {label}: {s} {check}")
         await asyncio.sleep(2)
@@ -312,7 +314,7 @@ async def cmd_settle(c: StreamClient, rows: list[dict], close: bool) -> None:
             finish_row(row, poc)
             save_raw(cid, {"final": poc})
             print(f"#{cid} was closed by Deriv: {row['status']} {row['close_reason']} profit {row['profit']}")
-        elif close and row["kind"] == "hold":
+        elif close:
             await c.request({"ticks": row["symbol"], "subscribe": 1})
             await wait_for(lambda: c.last_tick(row["symbol"]) and c.last_contract(cid), 15)
             await sell_now(c, row)
@@ -340,7 +342,7 @@ async def main() -> int:
     parser.add_argument("--tp", type=float)
     parser.add_argument("--sl", type=float)
     parser.add_argument("--wait", type=float, default=8, help="minutes to wait in 'tight'")
-    parser.add_argument("--close", action="store_true", help="'settle': also sell held contracts")
+    parser.add_argument("--close", action="store_true", help="'settle': also sell open contracts")
     parser.add_argument("--note", default="")
     args = parser.parse_args()
 
@@ -364,7 +366,12 @@ async def main() -> int:
             check_budget(rows)
             if args.command == "try":
                 try:
-                    row, raw = await buy(c, args.symbol, args.direction, args.multiplier)
+                    # Buy directly with parameters (no quote first), so the
+                    # order path itself is tested, not only the pricing check.
+                    bought = (await c.request({"buy": 1, "price": STAKE, "parameters": {
+                        "amount": STAKE, "basis": "stake", "contract_type": args.direction,
+                        "currency": "USD", "underlying_symbol": args.symbol,
+                        "multiplier": args.multiplier}}))["buy"]
                 except DerivError as err:
                     print(f"Deriv refused x{args.multiplier}: {err}")
                     rows.append({"trade_no": "", "kind": "try (refused)", "symbol": args.symbol,
@@ -373,6 +380,18 @@ async def main() -> int:
                                  "proposal_time_utc": _utc(time.time())})
                     write_rows(rows)
                     return 0
+                print("Deriv ACCEPTED the direct buy; it is sold at once.")
+                cid = int(bought["contract_id"])
+                await c.request({"ticks": args.symbol, "subscribe": 1})
+                await c.request({"proposal_open_contract": 1, "contract_id": cid, "subscribe": 1})
+                await wait_for(lambda: (c.last_contract(cid) or {}).get("entry_spot") is not None, 20)
+                poc = c.last_contract(cid) or {}
+                row = {"symbol": args.symbol, "direction": args.direction,
+                       "multiplier": args.multiplier, "stake": STAKE, "contract_id": cid,
+                       "buy_price": bought["buy_price"], "entry_spot": poc.get("entry_spot", ""),
+                       "commission": poc.get("commission", ""),
+                       "proposal_time_utc": _utc(bought.get("purchase_time"))}
+                raw = {"buy": bought}
             else:
                 lo = None
                 if args.command == "tight":

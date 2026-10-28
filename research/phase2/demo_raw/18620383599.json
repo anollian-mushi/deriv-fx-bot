@@ -1,0 +1,2987 @@
+{
+ "buy": {
+  "balance_after": 9973.34,
+  "buy_price": 1.0,
+  "contract_id": 18620383599,
+  "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+  "payout": 0,
+  "purchase_time": 1793205769,
+  "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+  "start_time": 1793205769,
+  "transaction_id": 35641036779
+ },
+ "contract_update_history": [
+  {
+   "display_name": "Take profit",
+   "order_amount": "0.5",
+   "order_date": 1793205770,
+   "order_type": "take_profit",
+   "value": "158.348"
+  },
+  {
+   "display_name": "Stop loss",
+   "order_amount": "-0.5",
+   "order_date": 1793205770,
+   "order_type": "stop_loss",
+   "value": "158.149"
+  },
+  {
+   "display_name": "Take profit",
+   "order_amount": "0.8",
+   "order_date": 1793205773,
+   "order_type": "take_profit",
+   "value": "158.407"
+  },
+  {
+   "display_name": "Stop loss",
+   "order_amount": "-0.3",
+   "order_date": 1793205773,
+   "order_type": "stop_loss",
+   "value": "158.189"
+  },
+  {
+   "display_name": "Stop loss",
+   "order_amount": "0",
+   "order_date": 1793205775,
+   "order_type": "stop_loss"
+  }
+ ],
+ "contract_update_steps": [
+  {
+   "deriv": {
+    "stop_loss": [
+     -0.5,
+     "158.149"
+    ],
+    "take_profit": [
+     0.5,
+     "158.348"
+    ]
+   },
+   "sl_formula": 158.149628,
+   "step": "set TP 0.50 + SL 0.50",
+   "tp_formula": 158.347385
+  },
+  {
+   "deriv": {
+    "stop_loss": [
+     -0.3,
+     "158.189"
+    ],
+    "take_profit": [
+     0.8,
+     "158.407"
+    ]
+   },
+   "sl_formula": 158.18918,
+   "step": "change TP 0.80 + SL 0.30",
+   "tp_formula": 158.406711
+  },
+  {
+   "deriv": {
+    "stop_loss": [
+     null,
+     null
+    ],
+    "take_profit": [
+     0.8,
+     "158.407"
+    ]
+   },
+   "step": "remove SL",
+   "tp_formula": 158.406711
+  }
+ ],
+ "final": {
+  "_received": 1793205801.60218,
+  "audit_details": {
+   "contract_start": [
+    {
+     "epoch": 1793205767,
+     "tick": 158.206,
+     "tick_display_value": "158.206"
+    },
+    {
+     "epoch": 1793205768,
+     "tick": 158.205,
+     "tick_display_value": "158.205"
+    },
+    {
+     "epoch": 1793205769,
+     "flag": "highlight_time",
+     "name": "Start Time",
+     "tick": 158.205,
+     "tick_display_value": "158.205"
+    },
+    {
+     "epoch": 1793205770,
+     "flag": "highlight_tick",
+     "name": "Entry Spot",
+     "tick": 158.205,
+     "tick_display_value": "158.205"
+    },
+    {
+     "epoch": 1793205771,
+     "tick": 158.205,
+     "tick_display_value": "158.205"
+    },
+    {
+     "epoch": 1793205772,
+     "tick": 158.205,
+     "tick_display_value": "158.205"
+    }
+   ]
+  },
+  "barrier_count": 1,
+  "bid_price": "0.82",
+  "buy_price": "1.00",
+  "commission": "0.22",
+  "contract_id": 18620383599,
+  "contract_type": "MULTUP",
+  "currency": "USD",
+  "current_spot": "158.213",
+  "current_spot_time": 1793205801,
+  "date_expiry": 4946820900,
+  "date_settlement": 4947004800,
+  "date_start": 1793205769,
+  "entry_spot": "158.205",
+  "entry_spot_time": 1793205770,
+  "exit_spot": "158.213",
+  "exit_spot_time": 1793205800,
+  "expiry_time": 4946820900,
+  "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+  "is_expired": 0,
+  "is_intraday": 0,
+  "is_path_dependent": 1,
+  "is_settleable": 1,
+  "is_sold": 1,
+  "is_valid_to_cancel": 0,
+  "is_valid_to_sell": 0,
+  "is_valid_to_update": {
+   "stop_loss": 1,
+   "stop_out": 0,
+   "take_profit": 1
+  },
+  "limit_order": {
+   "stop_loss": {
+    "display_name": "Stop loss",
+    "display_order_amount": null,
+    "order_amount": null,
+    "order_date": 1793205775,
+    "value": null
+   },
+   "stop_out": {
+    "display_name": "Stop out",
+    "display_order_amount": "-1.00",
+    "order_amount": -1.0,
+    "order_date": 1793205769,
+    "value": "158.050"
+   },
+   "take_profit": {
+    "display_name": "Take profit",
+    "display_order_amount": "0.80",
+    "order_amount": 0.8,
+    "order_date": 1793205773,
+    "value": "158.407"
+   }
+  },
+  "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+  "multiplier": 800,
+  "profit": "-0.18",
+  "profit_percentage": -18,
+  "purchase_time": 1793205769,
+  "sell_price": "0.82",
+  "sell_time": 1793205800,
+  "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+  "status": "sold",
+  "transaction_ids": {
+   "buy": 35641036779,
+   "sell": 35641139039
+  },
+  "underlying_symbol": "frxUSDJPY",
+  "validation_error": "This contract has been sold.",
+  "validation_error_code": "ContractAlreadySold",
+  "validation_error_code_args": null,
+  "validation_params": {
+   "stake": {
+    "max": "2000.00",
+    "min": "1.00"
+   },
+   "stop_loss": {
+    "max": "1.00",
+    "min": "0.23"
+   },
+   "take_profit": {
+    "max": "50.00",
+    "min": "0.10"
+   }
+  }
+ },
+ "last_update_before_sell": {
+  "_received": 1793205799.3131487,
+  "barrier_count": 1,
+  "bid_price": "0.82",
+  "buy_price": "1.00",
+  "commission": "0.22",
+  "contract_id": 18620383599,
+  "contract_type": "MULTUP",
+  "currency": "USD",
+  "current_spot": "158.213",
+  "current_spot_time": 1793205799,
+  "date_expiry": 4946820900,
+  "date_settlement": 4947004800,
+  "date_start": 1793205769,
+  "entry_spot": "158.205",
+  "entry_spot_time": 1793205770,
+  "expiry_time": 4946820900,
+  "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+  "is_expired": 0,
+  "is_intraday": 0,
+  "is_path_dependent": 1,
+  "is_settleable": 0,
+  "is_sold": 0,
+  "is_valid_to_cancel": 0,
+  "is_valid_to_sell": 1,
+  "is_valid_to_update": {
+   "stop_loss": 1,
+   "stop_out": 0,
+   "take_profit": 1
+  },
+  "limit_order": {
+   "stop_loss": {
+    "display_name": "Stop loss",
+    "display_order_amount": null,
+    "order_amount": null,
+    "order_date": 1793205775,
+    "value": null
+   },
+   "stop_out": {
+    "display_name": "Stop out",
+    "display_order_amount": "-1.00",
+    "order_amount": -1.0,
+    "order_date": 1793205769,
+    "value": "158.050"
+   },
+   "take_profit": {
+    "display_name": "Take profit",
+    "display_order_amount": "0.80",
+    "order_amount": 0.8,
+    "order_date": 1793205773,
+    "value": "158.407"
+   }
+  },
+  "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+  "multiplier": 800,
+  "profit": "-0.18",
+  "profit_percentage": -18,
+  "purchase_time": 1793205769,
+  "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+  "status": "open",
+  "transaction_ids": {
+   "buy": 35641036779
+  },
+  "underlying_symbol": "frxUSDJPY",
+  "validation_params": {
+   "stake": {
+    "max": "2000.00",
+    "min": "1.00"
+   },
+   "stop_loss": {
+    "max": "1.00",
+    "min": "0.23"
+   },
+   "take_profit": {
+    "max": "50.00",
+    "min": "0.10"
+   }
+  }
+ },
+ "proposal": {
+  "ask_price": 1.0,
+  "commission": 0.22,
+  "contract_details": {
+   "maximum_stake": "2000.00",
+   "minimum_stake": "1.00"
+  },
+  "date_expiry": 4946820900,
+  "date_start": 1793205769,
+  "id": "fe4a0abb-216f-45fe-810c-62a9e5226bfb",
+  "limit_order": {
+   "stop_out": {
+    "display_name": "Stop out",
+    "display_order_amount": "-1.00",
+    "order_amount": -1.0,
+    "order_date": 1793205769,
+    "value": "158.050"
+   }
+  },
+  "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+  "multiplier": 800,
+  "payout": 0,
+  "spot": 158.205,
+  "spot_time": 1793205769,
+  "validation_params": {
+   "stake": {
+    "max": "2000.00",
+    "min": "1.00"
+   },
+   "stop_loss": {
+    "max": "1.00",
+    "min": "0.23"
+   },
+   "take_profit": {
+    "max": "50.00",
+    "min": "0.10"
+   }
+  }
+ },
+ "sell": {
+  "balance_after": 9974.16,
+  "contract_id": 18620383599,
+  "reference_id": 35641036779,
+  "sold_for": 0.82,
+  "transaction_id": 35641139039
+ },
+ "tick_before_buy": {
+  "_received": 1793205769.218924,
+  "ask": 158.21,
+  "bid": 158.199,
+  "epoch": 1793205769,
+  "id": "aef171fd-1eec-47a8-999c-e12a0a392c39",
+  "pip_size": 3,
+  "quote": 158.205,
+  "symbol": "frxUSDJPY"
+ },
+ "ticks_around_buy": [
+  {
+   "_received": 1793205769.0473,
+   "ask": 158.21,
+   "bid": 158.2,
+   "epoch": 1793205768,
+   "id": "aef171fd-1eec-47a8-999c-e12a0a392c39",
+   "pip_size": 3,
+   "quote": 158.205,
+   "symbol": "frxUSDJPY"
+  },
+  {
+   "_received": 1793205769.218924,
+   "ask": 158.21,
+   "bid": 158.199,
+   "epoch": 1793205769,
+   "id": "aef171fd-1eec-47a8-999c-e12a0a392c39",
+   "pip_size": 3,
+   "quote": 158.205,
+   "symbol": "frxUSDJPY"
+  },
+  {
+   "_received": 1793205770.2595384,
+   "ask": 158.21,
+   "bid": 158.2,
+   "epoch": 1793205770,
+   "id": "aef171fd-1eec-47a8-999c-e12a0a392c39",
+   "pip_size": 3,
+   "quote": 158.205,
+   "symbol": "frxUSDJPY"
+  }
+ ],
+ "updates": [
+  {
+   "_received": 1793205769.7772627,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205769,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 0,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_error": "Waiting for entry tick.",
+   "validation_error_code": "EntryTickMissing",
+   "validation_error_code_args": null,
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205770.6004415,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205770,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205771.3682246,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205771,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205772.752098,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205772,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205773.298583,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205773,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.50",
+     "order_amount": -0.5,
+     "order_date": 1793205770,
+     "value": "158.149"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.50",
+     "order_amount": 0.5,
+     "order_date": 1793205770,
+     "value": "158.348"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205774.624439,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205774,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.50",
+     "order_amount": -0.5,
+     "order_date": 1793205770,
+     "value": "158.149"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.50",
+     "order_amount": 0.5,
+     "order_date": 1793205770,
+     "value": "158.348"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205775.2773561,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205775,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.50",
+     "order_amount": -0.5,
+     "order_date": 1793205770,
+     "value": "158.149"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.50",
+     "order_amount": 0.5,
+     "order_date": 1793205770,
+     "value": "158.348"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205776.6624215,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205776,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205777.5067382,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205777,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205778.679639,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205778,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205779.371251,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205779,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205780.7357507,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205780,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205781.2924461,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205781,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205782.3768406,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205782,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205783.58944,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205783,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205784.3388312,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205784,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205785.3056235,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205785,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205786.6816058,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205786,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205787.3826504,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205787,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205788.6136177,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205788,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205789.5279527,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205789,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205790.3381062,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205790,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205791.5060952,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205791,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205792.640786,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205792,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205793.2751074,
+   "barrier_count": 1,
+   "bid_price": "0.78",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.205",
+   "current_spot_time": 1793205793,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.22",
+   "profit_percentage": -22,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205794.6610749,
+   "barrier_count": 1,
+   "bid_price": "0.79",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.206",
+   "current_spot_time": 1793205794,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.21",
+   "profit_percentage": -21,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205795.3092582,
+   "barrier_count": 1,
+   "bid_price": "0.79",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.207",
+   "current_spot_time": 1793205795,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.21",
+   "profit_percentage": -21,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205796.8063138,
+   "barrier_count": 1,
+   "bid_price": "0.82",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.213",
+   "current_spot_time": 1793205796,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.18",
+   "profit_percentage": -18,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205797.2784965,
+   "barrier_count": 1,
+   "bid_price": "0.82",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.213",
+   "current_spot_time": 1793205797,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.18",
+   "profit_percentage": -18,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205798.3556032,
+   "barrier_count": 1,
+   "bid_price": "0.82",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.213",
+   "current_spot_time": 1793205798,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.18",
+   "profit_percentage": -18,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205799.3131487,
+   "barrier_count": 1,
+   "bid_price": "0.82",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.213",
+   "current_spot_time": 1793205799,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.18",
+   "profit_percentage": -18,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205800.6230035,
+   "barrier_count": 1,
+   "bid_price": "0.82",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.213",
+   "current_spot_time": 1793205800,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.18",
+   "profit_percentage": -18,
+   "purchase_time": 1793205769,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35641036779
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793205801.60218,
+   "audit_details": {
+    "contract_start": [
+     {
+      "epoch": 1793205767,
+      "tick": 158.206,
+      "tick_display_value": "158.206"
+     },
+     {
+      "epoch": 1793205768,
+      "tick": 158.205,
+      "tick_display_value": "158.205"
+     },
+     {
+      "epoch": 1793205769,
+      "flag": "highlight_time",
+      "name": "Start Time",
+      "tick": 158.205,
+      "tick_display_value": "158.205"
+     },
+     {
+      "epoch": 1793205770,
+      "flag": "highlight_tick",
+      "name": "Entry Spot",
+      "tick": 158.205,
+      "tick_display_value": "158.205"
+     },
+     {
+      "epoch": 1793205771,
+      "tick": 158.205,
+      "tick_display_value": "158.205"
+     },
+     {
+      "epoch": 1793205772,
+      "tick": 158.205,
+      "tick_display_value": "158.205"
+     }
+    ]
+   },
+   "barrier_count": 1,
+   "bid_price": "0.82",
+   "buy_price": "1.00",
+   "commission": "0.22",
+   "contract_id": 18620383599,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "158.213",
+   "current_spot_time": 1793205801,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793205769,
+   "entry_spot": "158.205",
+   "entry_spot_time": 1793205770,
+   "exit_spot": "158.213",
+   "exit_spot_time": 1793205800,
+   "expiry_time": 4946820900,
+   "id": "2f2ca1ed-2976-49f6-8682-c1b76aacdb75",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 1,
+   "is_sold": 1,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 0,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": null,
+     "order_amount": null,
+     "order_date": 1793205775,
+     "value": null
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793205769,
+     "value": "158.050"
+    },
+    "take_profit": {
+     "display_name": "Take profit",
+     "display_order_amount": "0.80",
+     "order_amount": 0.8,
+     "order_date": 1793205773,
+     "value": "158.407"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 800, minus commissions.",
+   "multiplier": 800,
+   "profit": "-0.18",
+   "profit_percentage": -18,
+   "purchase_time": 1793205769,
+   "sell_price": "0.82",
+   "sell_time": 1793205800,
+   "shortcode": "MULTUP_FRXUSDJPY_1.00_800_1793205769_4946820900_0_0.00_N1_0",
+   "status": "sold",
+   "transaction_ids": {
+    "buy": 35641036779,
+    "sell": 35641139039
+   },
+   "underlying_symbol": "frxUSDJPY",
+   "validation_error": "This contract has been sold.",
+   "validation_error_code": "ContractAlreadySold",
+   "validation_error_code_args": null,
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.23"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  }
+ ]
+}

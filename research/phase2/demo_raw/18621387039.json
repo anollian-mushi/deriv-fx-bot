@@ -1,0 +1,6353 @@
+{
+ "buy": {
+  "balance_after": 9972.13,
+  "buy_price": 1.0,
+  "contract_id": 18621387039,
+  "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+  "payout": 0,
+  "purchase_time": 1793206375,
+  "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+  "start_time": 1793206375,
+  "transaction_id": 35642998719
+ },
+ "final": {
+  "audit_details": {
+   "contract_end": [
+    {
+     "epoch": 1793206470,
+     "flag": "highlight_tick",
+     "name": "Exit Spot",
+     "tick": 1.11473,
+     "tick_display_value": "1.11473"
+    }
+   ],
+   "contract_start": [
+    {
+     "epoch": 1793206373,
+     "tick": 1.11437,
+     "tick_display_value": "1.11437"
+    },
+    {
+     "epoch": 1793206374,
+     "tick": 1.11437,
+     "tick_display_value": "1.11437"
+    },
+    {
+     "epoch": 1793206375,
+     "flag": "highlight_time",
+     "name": "Start Time",
+     "tick": 1.11437,
+     "tick_display_value": "1.11437"
+    },
+    {
+     "epoch": 1793206376,
+     "flag": "highlight_tick",
+     "name": "Entry Spot",
+     "tick": 1.11437,
+     "tick_display_value": "1.11437"
+    },
+    {
+     "epoch": 1793206377,
+     "tick": 1.11437,
+     "tick_display_value": "1.11437"
+    },
+    {
+     "epoch": 1793206378,
+     "tick": 1.11437,
+     "tick_display_value": "1.11437"
+    }
+   ]
+  },
+  "barrier_count": 1,
+  "bid_price": "0.72",
+  "buy_price": "1.00",
+  "commission": "0.12",
+  "contract_id": 18621387039,
+  "contract_type": "MULTDOWN",
+  "currency": "USD",
+  "current_spot": "1.11483",
+  "current_spot_time": 1793207542,
+  "date_expiry": 4946820900,
+  "date_settlement": 4947004800,
+  "date_start": 1793206375,
+  "entry_spot": "1.11437",
+  "entry_spot_time": 1793206376,
+  "exit_spot": "1.11473",
+  "exit_spot_time": 1793206470,
+  "expiry_time": 4946820900,
+  "is_expired": 1,
+  "is_intraday": 0,
+  "is_path_dependent": 1,
+  "is_settleable": 1,
+  "is_sold": 1,
+  "is_valid_to_cancel": 0,
+  "is_valid_to_sell": 0,
+  "is_valid_to_update": {
+   "stop_loss": 1,
+   "stop_out": 0,
+   "take_profit": 1
+  },
+  "limit_order": {
+   "stop_loss": {
+    "display_name": "Stop loss",
+    "display_order_amount": "-0.25",
+    "order_amount": -0.25,
+    "order_date": 1793206375,
+    "value": "1.11467"
+   },
+   "stop_out": {
+    "display_name": "Stop out",
+    "display_order_amount": "-1.00",
+    "order_amount": -1.0,
+    "order_date": 1793206375,
+    "value": "1.11634"
+   }
+  },
+  "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+  "multiplier": 500,
+  "profit": "-0.28",
+  "profit_percentage": -28,
+  "purchase_time": 1793206375,
+  "sell_price": "0.72",
+  "sell_time": 1793206471,
+  "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+  "status": null,
+  "transaction_ids": {
+   "buy": 35642998719,
+   "sell": 35643297519
+  },
+  "underlying_symbol": "frxEURUSD",
+  "validation_error": "This contract has been sold.",
+  "validation_error_code": "ContractAlreadySold",
+  "validation_error_code_args": null,
+  "validation_params": {
+   "stake": {
+    "max": "2000.00",
+    "min": "1.00"
+   },
+   "stop_loss": {
+    "max": "1.00",
+    "min": "0.29"
+   },
+   "take_profit": {
+    "max": "50.00",
+    "min": "0.10"
+   }
+  }
+ },
+ "proposal": {
+  "ask_price": 1.0,
+  "commission": 0.12,
+  "contract_details": {
+   "maximum_stake": "2000.00",
+   "minimum_stake": "1.00"
+  },
+  "date_expiry": 4946820900,
+  "date_start": 1793206375,
+  "id": "a0e70751-7359-4e4a-abd6-2f72dbc0ff10",
+  "limit_order": {
+   "stop_loss": {
+    "display_name": "Stop loss",
+    "display_order_amount": "-0.25",
+    "order_amount": -0.25,
+    "order_date": 1793206375,
+    "value": "1.11467"
+   },
+   "stop_out": {
+    "display_name": "Stop out",
+    "display_order_amount": "-1.00",
+    "order_amount": -1.0,
+    "order_date": 1793206375,
+    "value": "1.11634"
+   }
+  },
+  "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+  "multiplier": 500,
+  "payout": 0,
+  "spot": 1.11437,
+  "spot_time": 1793206375,
+  "validation_params": {
+   "stake": {
+    "max": "2000.00",
+    "min": "1.00"
+   },
+   "stop_loss": {
+    "max": "1.00",
+    "min": "0.13"
+   },
+   "take_profit": {
+    "max": "50.00",
+    "min": "0.10"
+   }
+  }
+ },
+ "tick_before_buy": {
+  "_received": 1793206375.2444286,
+  "ask": 1.11441,
+  "bid": 1.11433,
+  "epoch": 1793206375,
+  "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+  "pip_size": 5,
+  "quote": 1.11437,
+  "symbol": "frxEURUSD"
+ },
+ "ticks_around_buy": [
+  {
+   "_received": 1793206374.3404531,
+   "ask": 1.11441,
+   "bid": 1.11433,
+   "epoch": 1793206374,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11437,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793206375.2444286,
+   "ask": 1.11441,
+   "bid": 1.11433,
+   "epoch": 1793206375,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11437,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793206376.2713232,
+   "ask": 1.11441,
+   "bid": 1.11433,
+   "epoch": 1793206376,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11437,
+   "symbol": "frxEURUSD"
+  }
+ ],
+ "ticks_at_close": [
+  {
+   "_received": 1793206452.2519538,
+   "ask": 1.11449,
+   "bid": 1.11441,
+   "epoch": 1793206452,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11445,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793206453.2409072,
+   "ask": 1.11449,
+   "bid": 1.11441,
+   "epoch": 1793206453,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11445,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793206454.258975,
+   "ask": 1.11449,
+   "bid": 1.11442,
+   "epoch": 1793206454,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11446,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793206455.2493036,
+   "ask": 1.11449,
+   "bid": 1.11441,
+   "epoch": 1793206455,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11445,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793206456.3385925,
+   "ask": 1.1145,
+   "bid": 1.11442,
+   "epoch": 1793206456,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11446,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793206457.2412636,
+   "ask": 1.1145,
+   "bid": 1.11442,
+   "epoch": 1793206457,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11446,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793206458.2553298,
+   "ask": 1.1145,
+   "bid": 1.11442,
+   "epoch": 1793206458,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11446,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793206459.2376413,
+   "ask": 1.1145,
+   "bid": 1.11442,
+   "epoch": 1793206459,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11446,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793206460.253236,
+   "ask": 1.1145,
+   "bid": 1.11442,
+   "epoch": 1793206460,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11446,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793206461.1969612,
+   "ask": 1.1145,
+   "bid": 1.11442,
+   "epoch": 1793206461,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11446,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793206462.2417707,
+   "ask": 1.1145,
+   "bid": 1.11442,
+   "epoch": 1793206462,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11446,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793206463.237484,
+   "ask": 1.1145,
+   "bid": 1.11442,
+   "epoch": 1793206463,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11446,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793206464.2658083,
+   "ask": 1.1145,
+   "bid": 1.11442,
+   "epoch": 1793206464,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11446,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793206465.2386498,
+   "ask": 1.1145,
+   "bid": 1.11442,
+   "epoch": 1793206465,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11446,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793206466.261262,
+   "ask": 1.11467,
+   "bid": 1.11456,
+   "epoch": 1793206466,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11462,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793206467.2385666,
+   "ask": 1.11465,
+   "bid": 1.11456,
+   "epoch": 1793206467,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11461,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793206468.2499683,
+   "ask": 1.11467,
+   "bid": 1.11457,
+   "epoch": 1793206468,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11462,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793206469.265088,
+   "ask": 1.11467,
+   "bid": 1.11458,
+   "epoch": 1793206469,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11463,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793206470.1920717,
+   "ask": 1.11477,
+   "bid": 1.11468,
+   "epoch": 1793206470,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11473,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793206471.2690337,
+   "ask": 1.11479,
+   "bid": 1.11469,
+   "epoch": 1793206471,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11474,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793206472.3439736,
+   "ask": 1.11483,
+   "bid": 1.11473,
+   "epoch": 1793206472,
+   "id": "b6bfaf12-4283-4544-9d53-b0d9b72d73b9",
+   "pip_size": 5,
+   "quote": 1.11478,
+   "symbol": "frxEURUSD"
+  }
+ ],
+ "updates": [
+  {
+   "_received": 1793206393.3026323,
+   "barrier_count": 1,
+   "bid_price": "0.85",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11443",
+   "current_spot_time": 1793206393,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.15",
+   "profit_percentage": -15,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.16"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206394.3651888,
+   "barrier_count": 1,
+   "bid_price": "0.85",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11443",
+   "current_spot_time": 1793206394,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.15",
+   "profit_percentage": -15,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.16"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206395.5927563,
+   "barrier_count": 1,
+   "bid_price": "0.85",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11443",
+   "current_spot_time": 1793206395,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.15",
+   "profit_percentage": -15,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.16"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206396.6321738,
+   "barrier_count": 1,
+   "bid_price": "0.85",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11443",
+   "current_spot_time": 1793206396,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.15",
+   "profit_percentage": -15,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.16"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206397.6195643,
+   "barrier_count": 1,
+   "bid_price": "0.85",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11443",
+   "current_spot_time": 1793206397,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.15",
+   "profit_percentage": -15,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.16"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206398.8214064,
+   "barrier_count": 1,
+   "bid_price": "0.85",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11443",
+   "current_spot_time": 1793206398,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.15",
+   "profit_percentage": -15,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.16"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206399.42276,
+   "barrier_count": 1,
+   "bid_price": "0.85",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11443",
+   "current_spot_time": 1793206399,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.15",
+   "profit_percentage": -15,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.16"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206400.6876476,
+   "barrier_count": 1,
+   "bid_price": "0.85",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11444",
+   "current_spot_time": 1793206400,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.15",
+   "profit_percentage": -15,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.16"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206401.4474518,
+   "barrier_count": 1,
+   "bid_price": "0.85",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11444",
+   "current_spot_time": 1793206401,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.15",
+   "profit_percentage": -15,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.16"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206402.6727002,
+   "barrier_count": 1,
+   "bid_price": "0.85",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11444",
+   "current_spot_time": 1793206402,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.15",
+   "profit_percentage": -15,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.16"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206403.3365748,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11445",
+   "current_spot_time": 1793206403,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206404.5862527,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11445",
+   "current_spot_time": 1793206404,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206405.393033,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11446",
+   "current_spot_time": 1793206405,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206406.5876088,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11446",
+   "current_spot_time": 1793206406,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206407.6021764,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11446",
+   "current_spot_time": 1793206407,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206408.6372073,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11446",
+   "current_spot_time": 1793206408,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206409.5009532,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11446",
+   "current_spot_time": 1793206409,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206410.3345225,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11447",
+   "current_spot_time": 1793206410,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206411.4653234,
+   "barrier_count": 1,
+   "bid_price": "0.83",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11448",
+   "current_spot_time": 1793206411,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.17",
+   "profit_percentage": -17,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.18"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206412.2560868,
+   "barrier_count": 1,
+   "bid_price": "0.83",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11448",
+   "current_spot_time": 1793206412,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.17",
+   "profit_percentage": -17,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.18"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206413.4656365,
+   "barrier_count": 1,
+   "bid_price": "0.83",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11448",
+   "current_spot_time": 1793206413,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.17",
+   "profit_percentage": -17,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.18"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206414.3382013,
+   "barrier_count": 1,
+   "bid_price": "0.83",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11448",
+   "current_spot_time": 1793206414,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.17",
+   "profit_percentage": -17,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.18"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206415.6257026,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11447",
+   "current_spot_time": 1793206415,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206416.7359834,
+   "barrier_count": 1,
+   "bid_price": "0.83",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11448",
+   "current_spot_time": 1793206416,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.17",
+   "profit_percentage": -17,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.18"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206417.2612567,
+   "barrier_count": 1,
+   "bid_price": "0.83",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11448",
+   "current_spot_time": 1793206417,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.17",
+   "profit_percentage": -17,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.18"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206418.716124,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11447",
+   "current_spot_time": 1793206418,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206419.458626,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11447",
+   "current_spot_time": 1793206419,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206420.3570323,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11447",
+   "current_spot_time": 1793206420,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206421.4545836,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11447",
+   "current_spot_time": 1793206421,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206422.6020827,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11447",
+   "current_spot_time": 1793206422,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206423.319151,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11447",
+   "current_spot_time": 1793206423,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206424.6566665,
+   "barrier_count": 1,
+   "bid_price": "0.83",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11448",
+   "current_spot_time": 1793206424,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.17",
+   "profit_percentage": -17,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.18"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206425.494257,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11447",
+   "current_spot_time": 1793206425,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206426.6826131,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11447",
+   "current_spot_time": 1793206426,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206427.5009973,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11447",
+   "current_spot_time": 1793206427,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206428.6368134,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11447",
+   "current_spot_time": 1793206428,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206429.611109,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11447",
+   "current_spot_time": 1793206429,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206430.3125424,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11447",
+   "current_spot_time": 1793206430,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206431.589826,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11447",
+   "current_spot_time": 1793206431,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206432.338408,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11447",
+   "current_spot_time": 1793206432,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206433.288339,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11447",
+   "current_spot_time": 1793206433,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206434.2690024,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11447",
+   "current_spot_time": 1793206434,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206435.3512383,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11447",
+   "current_spot_time": 1793206435,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206436.3397634,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11447",
+   "current_spot_time": 1793206436,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206437.5361176,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11447",
+   "current_spot_time": 1793206437,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206438.6495433,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11447",
+   "current_spot_time": 1793206438,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206439.4278884,
+   "barrier_count": 1,
+   "bid_price": "0.83",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11448",
+   "current_spot_time": 1793206439,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.17",
+   "profit_percentage": -17,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.18"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206440.6319396,
+   "barrier_count": 1,
+   "bid_price": "0.83",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11448",
+   "current_spot_time": 1793206440,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.17",
+   "profit_percentage": -17,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.18"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206441.252913,
+   "barrier_count": 1,
+   "bid_price": "0.83",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11448",
+   "current_spot_time": 1793206441,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.17",
+   "profit_percentage": -17,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.18"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206442.5688233,
+   "barrier_count": 1,
+   "bid_price": "0.83",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11448",
+   "current_spot_time": 1793206442,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.17",
+   "profit_percentage": -17,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.18"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206443.4384382,
+   "barrier_count": 1,
+   "bid_price": "0.83",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11448",
+   "current_spot_time": 1793206443,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.17",
+   "profit_percentage": -17,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.18"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206444.268492,
+   "barrier_count": 1,
+   "bid_price": "0.83",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11448",
+   "current_spot_time": 1793206444,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.17",
+   "profit_percentage": -17,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.18"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206445.6036718,
+   "barrier_count": 1,
+   "bid_price": "0.83",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11448",
+   "current_spot_time": 1793206445,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.17",
+   "profit_percentage": -17,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.18"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206446.6278164,
+   "barrier_count": 1,
+   "bid_price": "0.83",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11448",
+   "current_spot_time": 1793206446,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.17",
+   "profit_percentage": -17,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.18"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206447.3220575,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11445",
+   "current_spot_time": 1793206447,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206448.339337,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11445",
+   "current_spot_time": 1793206448,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206449.3072662,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11445",
+   "current_spot_time": 1793206449,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206450.3395529,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11445",
+   "current_spot_time": 1793206450,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206451.3348353,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11445",
+   "current_spot_time": 1793206451,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206452.550849,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11445",
+   "current_spot_time": 1793206452,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206453.4775887,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11445",
+   "current_spot_time": 1793206453,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206454.550957,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11446",
+   "current_spot_time": 1793206454,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206455.249341,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11445",
+   "current_spot_time": 1793206455,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206456.4382367,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11446",
+   "current_spot_time": 1793206456,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206457.5876527,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11446",
+   "current_spot_time": 1793206457,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206458.3372192,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11446",
+   "current_spot_time": 1793206458,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206459.4362774,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11446",
+   "current_spot_time": 1793206459,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206460.613254,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11446",
+   "current_spot_time": 1793206460,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206461.2846854,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11446",
+   "current_spot_time": 1793206461,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206462.6247458,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11446",
+   "current_spot_time": 1793206462,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206463.5264568,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11446",
+   "current_spot_time": 1793206463,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206464.5815232,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11446",
+   "current_spot_time": 1793206464,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206465.464256,
+   "barrier_count": 1,
+   "bid_price": "0.84",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11446",
+   "current_spot_time": 1793206465,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.16",
+   "profit_percentage": -16,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.17"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206466.6632786,
+   "barrier_count": 1,
+   "bid_price": "0.77",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11462",
+   "current_spot_time": 1793206466,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.23",
+   "profit_percentage": -23,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.24"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206467.238628,
+   "barrier_count": 1,
+   "bid_price": "0.77",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11461",
+   "current_spot_time": 1793206467,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.23",
+   "profit_percentage": -23,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.24"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206468.6690967,
+   "barrier_count": 1,
+   "bid_price": "0.77",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11462",
+   "current_spot_time": 1793206468,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.23",
+   "profit_percentage": -23,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.24"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206469.584387,
+   "barrier_count": 1,
+   "bid_price": "0.76",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11463",
+   "current_spot_time": 1793206469,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.24",
+   "profit_percentage": -24,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.25"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206470.383358,
+   "audit_details": {
+    "contract_end": [
+     {
+      "epoch": 1793206470,
+      "flag": "highlight_tick",
+      "name": "Exit Spot",
+      "tick": 1.11473,
+      "tick_display_value": "1.11473"
+     }
+    ],
+    "contract_start": [
+     {
+      "epoch": 1793206373,
+      "tick": 1.11437,
+      "tick_display_value": "1.11437"
+     },
+     {
+      "epoch": 1793206374,
+      "tick": 1.11437,
+      "tick_display_value": "1.11437"
+     },
+     {
+      "epoch": 1793206375,
+      "flag": "highlight_time",
+      "name": "Start Time",
+      "tick": 1.11437,
+      "tick_display_value": "1.11437"
+     },
+     {
+      "epoch": 1793206376,
+      "flag": "highlight_tick",
+      "name": "Entry Spot",
+      "tick": 1.11437,
+      "tick_display_value": "1.11437"
+     },
+     {
+      "epoch": 1793206377,
+      "tick": 1.11437,
+      "tick_display_value": "1.11437"
+     },
+     {
+      "epoch": 1793206378,
+      "tick": 1.11437,
+      "tick_display_value": "1.11437"
+     }
+    ]
+   },
+   "barrier_count": 1,
+   "bid_price": "0.72",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11473",
+   "current_spot_time": 1793206470,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "exit_spot": "1.11473",
+   "exit_spot_time": 1793206470,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 1,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 1,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.28",
+   "profit_percentage": -28,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.29"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206471.5386875,
+   "audit_details": {
+    "contract_end": [
+     {
+      "epoch": 1793206470,
+      "flag": "highlight_tick",
+      "name": "Exit Spot",
+      "tick": 1.11473,
+      "tick_display_value": "1.11473"
+     }
+    ],
+    "contract_start": [
+     {
+      "epoch": 1793206373,
+      "tick": 1.11437,
+      "tick_display_value": "1.11437"
+     },
+     {
+      "epoch": 1793206374,
+      "tick": 1.11437,
+      "tick_display_value": "1.11437"
+     },
+     {
+      "epoch": 1793206375,
+      "flag": "highlight_time",
+      "name": "Start Time",
+      "tick": 1.11437,
+      "tick_display_value": "1.11437"
+     },
+     {
+      "epoch": 1793206376,
+      "flag": "highlight_tick",
+      "name": "Entry Spot",
+      "tick": 1.11437,
+      "tick_display_value": "1.11437"
+     },
+     {
+      "epoch": 1793206377,
+      "tick": 1.11437,
+      "tick_display_value": "1.11437"
+     },
+     {
+      "epoch": 1793206378,
+      "tick": 1.11437,
+      "tick_display_value": "1.11437"
+     }
+    ]
+   },
+   "barrier_count": 1,
+   "bid_price": "0.72",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11474",
+   "current_spot_time": 1793206471,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "exit_spot": "1.11473",
+   "exit_spot_time": 1793206470,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 1,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 1,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.28",
+   "profit_percentage": -28,
+   "purchase_time": 1793206375,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 35642998719
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.29"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  {
+   "_received": 1793206472.5740197,
+   "audit_details": {
+    "contract_end": [
+     {
+      "epoch": 1793206470,
+      "flag": "highlight_tick",
+      "name": "Exit Spot",
+      "tick": 1.11473,
+      "tick_display_value": "1.11473"
+     }
+    ],
+    "contract_start": [
+     {
+      "epoch": 1793206373,
+      "tick": 1.11437,
+      "tick_display_value": "1.11437"
+     },
+     {
+      "epoch": 1793206374,
+      "tick": 1.11437,
+      "tick_display_value": "1.11437"
+     },
+     {
+      "epoch": 1793206375,
+      "flag": "highlight_time",
+      "name": "Start Time",
+      "tick": 1.11437,
+      "tick_display_value": "1.11437"
+     },
+     {
+      "epoch": 1793206376,
+      "flag": "highlight_tick",
+      "name": "Entry Spot",
+      "tick": 1.11437,
+      "tick_display_value": "1.11437"
+     },
+     {
+      "epoch": 1793206377,
+      "tick": 1.11437,
+      "tick_display_value": "1.11437"
+     },
+     {
+      "epoch": 1793206378,
+      "tick": 1.11437,
+      "tick_display_value": "1.11437"
+     }
+    ]
+   },
+   "barrier_count": 1,
+   "bid_price": "0.72",
+   "buy_price": "1.00",
+   "commission": "0.12",
+   "contract_id": 18621387039,
+   "contract_type": "MULTDOWN",
+   "currency": "USD",
+   "current_spot": "1.11478",
+   "current_spot_time": 1793206472,
+   "date_expiry": 4946820900,
+   "date_settlement": 4947004800,
+   "date_start": 1793206375,
+   "entry_spot": "1.11437",
+   "entry_spot_time": 1793206376,
+   "exit_spot": "1.11473",
+   "exit_spot_time": 1793206470,
+   "expiry_time": 4946820900,
+   "id": "29943627-93cd-4d58-80a7-102ee0d5ec5f",
+   "is_expired": 1,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 1,
+   "is_sold": 1,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 0,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.25",
+     "order_amount": -0.25,
+     "order_date": 1793206375,
+     "value": "1.11467"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793206375,
+     "value": "1.11634"
+    }
+   },
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 500, minus commissions.",
+   "multiplier": 500,
+   "profit": "-0.28",
+   "profit_percentage": -28,
+   "purchase_time": 1793206375,
+   "sell_price": "0.72",
+   "sell_time": 1793206471,
+   "shortcode": "MULTDOWN_FRXEURUSD_1.00_500_1793206375_4946820900_0_0.00_N1_0",
+   "status": null,
+   "transaction_ids": {
+    "buy": 35642998719,
+    "sell": 35643297519
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_error": "This contract has been sold.",
+   "validation_error_code": "ContractAlreadySold",
+   "validation_error_code_args": null,
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.29"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  }
+ ]
+}
