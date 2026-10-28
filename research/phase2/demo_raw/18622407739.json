@@ -10,6 +10,131 @@
   "start_time": 1793207027,
   "transaction_id": 35644990779
  },
+ "final": {
+  "audit_details": {
+   "contract_end": [
+    {
+     "epoch": 1793212564,
+     "flag": "highlight_tick",
+     "name": "Exit Spot",
+     "tick": 158.126,
+     "tick_display_value": "158.126"
+    }
+   ],
+   "contract_start": [
+    {
+     "epoch": 1793207025,
+     "tick": 158.166,
+     "tick_display_value": "158.166"
+    },
+    {
+     "epoch": 1793207026,
+     "tick": 158.166,
+     "tick_display_value": "158.166"
+    },
+    {
+     "epoch": 1793207027,
+     "flag": "highlight_time",
+     "name": "Start Time",
+     "tick": 158.167,
+     "tick_display_value": "158.167"
+    },
+    {
+     "epoch": 1793207028,
+     "flag": "highlight_tick",
+     "name": "Entry Spot",
+     "tick": 158.166,
+     "tick_display_value": "158.166"
+    },
+    {
+     "epoch": 1793207029,
+     "tick": 158.166,
+     "tick_display_value": "158.166"
+    },
+    {
+     "epoch": 1793207030,
+     "tick": 158.166,
+     "tick_display_value": "158.166"
+    }
+   ]
+  },
+  "barrier_count": 1,
+  "bid_price": "0.74",
+  "buy_price": "1.00",
+  "commission": "0.14",
+  "contract_id": 18622407739,
+  "contract_type": "MULTUP",
+  "currency": "USD",
+  "current_spot": "157.885",
+  "current_spot_time": 1793217663,
+  "date_expiry": 4946820900,
+  "date_settlement": 4947004800,
+  "date_start": 1793207027,
+  "entry_spot": "158.166",
+  "entry_spot_time": 1793207028,
+  "exit_spot": "158.126",
+  "exit_spot_time": 1793212564,
+  "expiry_time": 4946820900,
+  "is_expired": 1,
+  "is_intraday": 0,
+  "is_path_dependent": 1,
+  "is_settleable": 1,
+  "is_sold": 1,
+  "is_valid_to_cancel": 0,
+  "is_valid_to_sell": 0,
+  "is_valid_to_update": {
+   "stop_loss": 1,
+   "stop_out": 0,
+   "take_profit": 1
+  },
+  "limit_order": {
+   "stop_loss": {
+    "display_name": "Stop loss",
+    "display_order_amount": "-0.25",
+    "order_amount": -0.25,
+    "order_date": 1793207027,
+    "value": "158.130"
+   },
+   "stop_out": {
+    "display_name": "Stop out",
+    "display_order_amount": "-1.00",
+    "order_amount": -1.0,
+    "order_date": 1793207027,
+    "value": "157.893"
+   }
+  },
+  "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 500, minus commissions.",
+  "multiplier": 500,
+  "profit": "-0.26",
+  "profit_percentage": -26,
+  "purchase_time": 1793207027,
+  "sell_price": "0.74",
+  "sell_time": 1793212565,
+  "shortcode": "MULTUP_FRXUSDJPY_1.00_500_1793207027_4946820900_0_0.00_N1_0",
+  "status": null,
+  "transaction_ids": {
+   "buy": 35644990779,
+   "sell": 35663493539
+  },
+  "underlying_symbol": "frxUSDJPY",
+  "validation_error": "This contract has been sold.",
+  "validation_error_code": "ContractAlreadySold",
+  "validation_error_code_args": null,
+  "validation_params": {
+   "stake": {
+    "max": "2000.00",
+    "min": "1.00"
+   },
+   "stop_loss": {
+    "max": "1.00",
+    "min": "0.27"
+   },
+   "take_profit": {
+    "max": "50.00",
+    "min": "0.10"
+   }
+  }
+ },
  "proposal": {
   "ask_price": 1.0,
   "commission": 0.14,

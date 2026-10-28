@@ -1,0 +1,104 @@
+{
+ "buy": {
+  "balance_after": 9972.79,
+  "buy_price": 1.0,
+  "contract_id": 18640410539,
+  "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in EUR/USD, multiplied by 100, minus commissions.",
+  "payout": 0,
+  "purchase_time": 1793217666,
+  "shortcode": "MULTUP_FRXEURUSD_1.00_100_1793217666_4946820900_0_0.00_N1_0",
+  "start_time": 1793217666,
+  "transaction_id": 35680193359
+ },
+ "proposal": {
+  "ask_price": 1.0,
+  "commission": 0.09,
+  "contract_details": {
+   "maximum_stake": "2000.00",
+   "minimum_stake": "1.00"
+  },
+  "date_expiry": 4946820900,
+  "date_start": 1793217666,
+  "id": "2f405ff8-0987-42a3-92d5-2e13b491be9f",
+  "limit_order": {
+   "stop_out": {
+    "display_name": "Stop out",
+    "display_order_amount": "-1.00",
+    "order_amount": -1.0,
+    "order_date": 1793217666,
+    "value": "1.10611"
+   }
+  },
+  "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in EUR/USD, multiplied by 100, minus commissions.",
+  "multiplier": 100,
+  "payout": 0,
+  "spot": 1.11628,
+  "spot_time": 1793217666,
+  "validation_params": {
+   "stake": {
+    "max": "2000.00",
+    "min": "1.00"
+   },
+   "stop_loss": {
+    "max": "1.00",
+    "min": "0.10"
+   },
+   "take_profit": {
+    "max": "50.00",
+    "min": "0.10"
+   }
+  }
+ },
+ "tick_before_buy": {
+  "_received": 1793217666.211,
+  "ask": 1.11635,
+  "bid": 1.1162,
+  "epoch": 1793217666,
+  "id": "2f337149-84fa-47cf-ad62-ae868afc1885",
+  "pip_size": 5,
+  "quote": 1.11628,
+  "symbol": "frxEURUSD"
+ },
+ "ticks_around_buy": [
+  {
+   "_received": 1793217665.5574963,
+   "ask": 1.11632,
+   "bid": 1.11618,
+   "epoch": 1793217665,
+   "id": "2f337149-84fa-47cf-ad62-ae868afc1885",
+   "pip_size": 5,
+   "quote": 1.11625,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793217666.211,
+   "ask": 1.11635,
+   "bid": 1.1162,
+   "epoch": 1793217666,
+   "id": "2f337149-84fa-47cf-ad62-ae868afc1885",
+   "pip_size": 5,
+   "quote": 1.11628,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793217667.2042682,
+   "ask": 1.11635,
+   "bid": 1.11621,
+   "epoch": 1793217667,
+   "id": "2f337149-84fa-47cf-ad62-ae868afc1885",
+   "pip_size": 5,
+   "quote": 1.11628,
+   "symbol": "frxEURUSD"
+  },
+  {
+   "_received": 1793217668.209743,
+   "ask": 1.1163,
+   "bid": 1.11618,
+   "epoch": 1793217668,
+   "id": "2f337149-84fa-47cf-ad62-ae868afc1885",
+   "pip_size": 5,
+   "quote": 1.11624,
+   "symbol": "frxEURUSD"
+  }
+ ]
+}

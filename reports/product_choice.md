@@ -9,12 +9,43 @@ account was used for price quotes only. Numbers come from:
 Rebuild the tables with `python scripts/typical_moves.py` and
 `python scripts/product_costs.py`.
 
-## The short version
+## Correction (2026-10-28, 20:10 UTC): read this first
 
-- **Real Multipliers are expensive.** The real account charges **3 times the
-  demo commission**. A trade must move about **8 pips** (EUR/USD, GBP/USD) or
-  **13 pips** (USD/JPY) in your favour just to break even. That is about one
-  whole typical 1-hour candle.
+An earlier version said the real account charges 3 times the demo
+commission. **That was wrong.** Checked side by side, three rounds on all
+three pairs, real and demo quote **exactly the same rate at the same moment**
+(`research/phase2/real_vs_demo.md`). The "3x" came from comparing a demo
+sample at 16:35 with a real sample at 18:07: **the rate changes strongly
+during the day.**
+
+| UTC time (Wed 28 Oct) | EUR/USD | GBP/USD | USD/JPY | Account |
+|---|---|---|---|---|
+| 16:35 | 0.0239% | 0.0203% | 0.0275% | demo |
+| 18:07 | 0.0717% | 0.0609% | 0.0825% | real |
+| 20:01-20:09 | 0.0893% | 0.0743% | 0.1101% | real and demo, identical |
+
+What this changes:
+- The cost figures below use the 18:07 rate: about 8 pips (EUR/USD,
+  GBP/USD) and 13 pips (USD/JPY). They are **one point in a daily range**:
+  - At 16:35, the same trade cost about 2.7 / 2.7 / 4.4 pips.
+  - At 20:00, about 10 / 10 / 17 pips.
+- **When a strategy trades may matter as much as which timeframe it uses.**
+  Trades in the cheap hours could cost a third of the expensive ones.
+- The public (no login) connection quotes a different, lower rate. That is
+  not what we trade, so the off-hours GitHub samples cannot answer this
+  question. Demo-connection samples through the night and tomorrow morning
+  will.
+- **Section 4 (recommendation) and section 5 (CLAUDE.md changes) are on hold**
+  until the cost-by-hour table is in `reports/costs.md` (Thursday morning).
+  The MT5 comparison and the integration findings (sections 2 and 6) are
+  not affected.
+
+## The short version (written before the correction above)
+
+- **Real Multipliers are expensive** at the 18:07 rate: a trade must move
+  about **8 pips** (EUR/USD, GBP/USD) or **13 pips** (USD/JPY) in your favour
+  just to break even. That is about one whole typical 1-hour candle. The
+  correction above shows this cost depends on the time of day.
 - **MT5 CFDs are about 5 to 10 times cheaper per trade.** The cost is the
   spread, from 1.0–1.4 pips (0.7–0.9 on "micro" symbols), plus a small
   overnight swap.
@@ -35,7 +66,7 @@ Rebuild the tables with `python scripts/typical_moves.py` and
 | | **Deriv Multipliers (real account)** | **Deriv MT5 forex CFD** |
 |---|---|---|
 | Spread | **None.** Entry and exit fill at the mid price (measured on 10 demo trades: entry 0.0–0.5 pip from the quote, sells exactly at the shown price) | Min spread EUR/USD 1.1 pips, GBP/USD 1.0, USD/JPY 1.4. Micro symbols: 0.7 / 0.7 / 0.9. Typical spreads are not published |
-| Commission | One fee at the start, measured 2026-10-28 on the real account: **0.0717%** (EUR/USD), **0.0609%** (GBP/USD), **0.0825%** (USD/JPY) of stake × multiplier, minimum 0.02 USD. That is 3× the demo rate. The KID says it "can be up to 0.5%" | Standard account: "0% commission". Zero Spread account: about 3–4 USD per 100,000 traded, per side (this figure is from a partner help page; see section 6) |
+| Commission | One fee at the start, as a share of stake × multiplier, minimum 0.02 USD. **It changes during the day** and is the same on real and demo. EUR/USD: 0.0239% at 16:35, 0.0717% at 18:07, 0.0893% at 20:00 UTC. The KID says it "can be up to 0.5%" | Standard account: "0% commission". Zero Spread account: about 3–4 USD per 100,000 traded, per side (this figure is from a partner help page; see section 6) |
 | Overnight / swap fees | **None mentioned** in the KID or the Multipliers page; our own API replies show none. **Not yet confirmed for forex**: tonight's demo trade held overnight tests it | Yes, every night at rollover, **triple on Wednesday**. Per lot per night (1 lot = 100,000): EUR/USD long −11.42 / short +2.66 points; GBP/USD −5.43 / −4.13; USD/JPY +9.95 / −21.98 (10 points = 1 pip) |
 | Weekend | Unknown: what a weekend gap does to an open contract (see Open questions) | Swap for the weekend is charged on Wednesday. Weekend gaps can jump past a stop |
 | Smallest trade | Stake 1 USD (max 2,000). At x100 that is a 100 USD position: 1 pip ≈ 0.009 USD | 0.01 lot = 1,000 units: 1 pip ≈ 0.10 USD. Micro symbols: 0.1 lot of 1,000 = 100 units: 1 pip ≈ 0.01 USD |
@@ -55,7 +86,7 @@ is its stake, and that limit holds even through gaps.
 
 | | How it works | Difficulty | Main problems |
 |---|---|---|---|
-| **Multipliers via the Deriv API** (what we have) | Pure Python. REST for a one-time login link, then a WebSocket. Runs under systemd on Ubuntu. Already built and tested on demo in Phases 0–2 | **Easy** (done) | The commission rate (3× on real) |
+| **Multipliers via the Deriv API** (what we have) | Pure Python. REST for a one-time login link, then a WebSocket. Runs under systemd on Ubuntu. Already built and tested on demo in Phases 0–2 | **Easy** (done) | The commission rate, which rises sharply at some hours |
 | MT5 + Wine on the Ubuntu VPS | Install MT5 and *Windows* Python under Wine with a virtual screen (Xvfb). The official `MetaTrader5` Python package talks to the terminal | **Hard** | The terminal updates itself and can break under Wine. It needs a watchdog for crashes. The MT5 password sits on disk |
 | MT5 Docker image + `mt5linux` bridge | A community image bundles Wine + MT5 + a remote-call bridge. Our Linux Python calls it over a local network port | **Medium** | Community projects, one maintainer each. The image is about 4 GB. The first login needs a web screen (VNC). The ports must be firewalled |
 | Windows VPS | Run the official package and terminal natively | **Easy–medium** | Costs more. No systemd, and Windows is harder to look after from a phone. A second deploy path |
@@ -114,7 +145,7 @@ How to read this:
 - **For 4h and daily trades only x100, and maybe x200, make sense.** Higher
   multipliers would be stopped out by normal daily movement.
 
-## 4. Recommendation
+## 4. Recommendation (ON HOLD, see the correction at the top)
 
 **Product: Deriv Multipliers, real-account costs, x100 (x200 at most).**
 
@@ -134,7 +165,8 @@ Why not switch to MT5 now, even though it is much cheaper:
 Plan for Phase 3 and Phase 4:
 - **Phase 3:** build the backtester with **two cost models** and show both in
   every report:
-  - **Main:** Multipliers, real commission from `config/contract_specs.yaml`.
+  - **Main:** Multipliers, commission from `config/contract_specs.yaml` at the
+    rate for the hour of each trade.
   - **For comparison:** MT5 micro, with spread and swap as in section 3.
 - **Phase 4:** research **4h and daily** candles (built from 1m data, on UTC
   boundaries) on all three pairs. A strategy passes only on the Multiplier
@@ -157,7 +189,7 @@ Things to know before agreeing:
   that. If Multipliers do charge overnight, section 3 must be redone before
   Phase 4.
 
-## 5. Proposed CLAUDE.md changes (not applied; waiting for approval)
+## 5. Proposed CLAUDE.md changes (ON HOLD; not applied)
 
 **Fixed decisions:** replace the Timeframe line.
 ```diff
@@ -173,9 +205,8 @@ Things to know before agreeing:
   - Contract: Multipliers (up/down). Model commission, stop out, take profit
     and stop loss exactly as Deriv documents them.
 + - Contract costs and rules come from config/contract_specs.yaml (measured).
-+   Backtests use the REAL-account commission rate. Demo commission is 1/3
-+   of real, so demo results must be re-priced at the real rate before they
-+   are judged.
++   Backtests use the commission rate for the hour each trade opens (it
++   changes during the day; real and demo are the same at the same moment).
 ```
 
 **Hard risk limits:** narrow the multiplier line. This tightens the limit,
@@ -216,9 +247,9 @@ rule stay unchanged.
    what clients are charged.
 4. **The Multipliers KID** is published by Deriv's EU entity and contains
    template errors. Its "up to 0.5%" commission ceiling shows the rate can
-   rise. Our measured real rate (0.0609–0.0825%) is from one moment on
-   2026-10-28; the Phase 2 samples tonight and tomorrow check whether it
-   moves.
+   rise. On 2026-10-28 the rate went from 0.024% to 0.089% (EUR/USD) in
+   under four hours. The demo samples tonight and tomorrow measure it
+   across the day.
 5. **MT5 automation details come from community projects**: the Docker image
    and the mt5linux bridge. Their maintenance and reliability are not
    guaranteed. That MT5's saved password is stored unencrypted is an
