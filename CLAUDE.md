@@ -70,4 +70,19 @@ Never change, loosen or work around these without explicit approval.
 - Show a plan and wait for approval before large changes.
 
 ## Repo layout
-Filled in during Phase 0.
+Folders marked (later) are created in the phase that needs them.
+- src/fxbot/config.py: settings loader (env vars first, then .env)
+- src/fxbot/deriv/: Deriv API clients (public WS, REST + OTP, trading WS)
+- src/fxbot/data/ (later): candle downloader, daily compressed files
+- src/fxbot/contracts/ (later): Multiplier contract math
+- src/fxbot/backtest/ (later): backtester, costs, walk-forward, Monte Carlo
+- src/fxbot/strategies/ (later): strategy code shared by backtest and live
+- src/fxbot/risk/ (later): all hard risk limits; every order passes here
+- src/fxbot/live/ (later): live bot, reconnect, reconciliation, journal
+- src/fxbot/telegram/ (later): alerts and commands
+- scripts/: runnable entry points and checks
+- deploy/ (later): systemd unit and VPS setup
+- tests/: pytest
+- docs/: API notes, checklists
+- data/: candle files; reports/: backtest reports
+- research/: research notes and log.md; reviews/: trade exports
