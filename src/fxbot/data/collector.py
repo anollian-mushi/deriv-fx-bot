@@ -21,7 +21,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Protocol
 
-from fxbot.data.calendar import DAY, day_start, find_gaps, is_trading_day, session_end, utc_date
+from fxbot.data.calendar import DAY, day_start, expected_epochs, find_gaps, is_trading_day, session_end, utc_date
 from fxbot.data.candles import GRANULARITIES, Candle, clean_candles, write_day
 from fxbot.deriv.api import WS_PUBLIC_URL, DerivError, ws_request
 
@@ -289,7 +289,7 @@ def _finish_day(
         result.closed += 1
         return
     gaps, small_missing, outside = find_gaps((c.epoch for c in candles), day, seconds)
-    expected = session_end(day) // seconds
+    expected = len(expected_epochs(day, seconds))
     coverage = len(candles) / expected
     if day == first_day and coverage < PARTIAL_DAY_COVERAGE:
         manifest.data["skipped_days"][key] = f"first day of history is partial ({coverage:.0%})"

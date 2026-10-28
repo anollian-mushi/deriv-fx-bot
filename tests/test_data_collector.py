@@ -55,6 +55,7 @@ def test_full_collection_files_manifest_and_holiday(tmp_path):
     assert manifest["history_start"] == "2026-10-12"
     assert manifest["closed_days"] == ["2026-10-20"]
     assert manifest["days"]["2026-10-16"]["candles"] == 84  # Friday early close
+    assert manifest["days"]["2026-10-16"]["expected"] == 84
     assert manifest["days"]["2026-10-16"]["gaps"] == []
     candles, source = read_day(day_file(tmp_path, "frxEURUSD", "15m", dt.date(2026, 10, 14)))
     assert source == "deriv" and len(candles) == 96
