@@ -1,0 +1,6 @@
+# Runtime
+websockets==17.3
+httpx==0.28.1
+
+# Tests
+pytest==9.2.0
