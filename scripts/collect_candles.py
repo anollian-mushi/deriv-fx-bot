@@ -45,7 +45,12 @@ async def main() -> int:
         for granularity in args.granularities:
             for symbol in args.symbols:
                 r = await collect_series(feed, args.data_dir, symbol, granularity, today, deadline)
-                status = "complete" if r.finished else f"{r.pending} days still to fetch"
+                if r.finished:
+                    status = "complete"
+                elif r.pending < 0:
+                    status = "not started (time limit)"
+                else:
+                    status = f"{r.pending} days still to fetch"
                 print(f"  {symbol:<10} {granularity:<3}: +{r.written} days saved, "
                       f"+{r.closed} closed days, {status}")
                 all_done &= r.finished

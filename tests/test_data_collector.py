@@ -88,6 +88,9 @@ def test_existing_files_are_not_rewritten(tmp_path):
 
 
 def test_deadline_stops_cleanly_and_reports_pending(tmp_path):
+    folder = tmp_path / "frxEURUSD" / "1m"
+    folder.mkdir(parents=True)
+    (folder / "_manifest.json").write_text(json.dumps({"history_start": "2026-10-12"}))
     r = run(FakeFeed(), tmp_path, granularity="1m", deadline=0)
     assert not r.finished and r.pending > 0 and r.written == 0
 
@@ -110,3 +113,10 @@ def test_batches_fit_request_limit():
         for batch in collector._batches(days, seconds):
             span = (day_start(batch[-1]) + 86400 - day_start(batch[0])) // seconds
             assert span <= collector.MAX_SLOTS
+
+
+def test_deadline_before_history_search_does_not_fetch(tmp_path):
+    feed = FakeFeed()
+    r = run(feed, tmp_path, deadline=0)
+    assert not r.finished and r.pending == -1
+    assert feed.requests == []

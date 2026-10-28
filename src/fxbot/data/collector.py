@@ -215,6 +215,9 @@ async def collect_series(
     manifest = Manifest.load(series_dir(root, symbol, granularity) / "_manifest.json", symbol, granularity)
 
     if manifest.data["history_start"] is None:
+        if time.monotonic() >= deadline:
+            result.pending = -1  # not started: history start still unknown
+            return result
         start = await find_history_start(feed, symbol, seconds, today)
         manifest.data["history_start"] = start.isoformat()
         manifest.save()
