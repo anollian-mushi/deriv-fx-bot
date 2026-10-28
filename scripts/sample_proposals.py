@@ -31,6 +31,7 @@ from pathlib import Path
 
 import _bootstrap  # noqa: F401
 from websockets.asyncio.client import connect
+from websockets.exceptions import WebSocketException
 
 from fxbot.deriv.api import WS_PUBLIC_URL, DerivError, ws_request
 
@@ -102,38 +103,69 @@ def _demo_ws():
     return connect(_demo_url(), open_timeout=20, ping_interval=30)  # one OTP URL per connection
 
 
-async def _sample_symbol(sym: str, open_ws) -> list[dict]:
-    """All quotes for one pair, on its own connection (pairs run in parallel).
+async def _sample_symbol(sym: str, open_ws, attempts: int = 2) -> list[dict]:
+    """_sample_pair with one retry on a fresh connection if the link drops.
 
-    open_ws() returns an async context manager yielding a WebSocket.
+    Quotes already collected are kept; the retry only asks for the rest.
+    If every attempt fails, an error row records it and the other pairs
+    are still saved.
     """
     rows: list[dict] = []
+    for attempt in range(1, attempts + 1):
+        try:
+            await _sample_pair(sym, open_ws, rows)
+            return rows
+        except (ConnectionError, OSError, WebSocketException) as err:
+            print(f"  {sym}: connection lost ({type(err).__name__}), attempt {attempt} of {attempts}")
+            await asyncio.sleep(5)
+    rows.append({"kind": "error", "symbol": sym, "error": "connection lost on every attempt"})
+    return rows
+
+
+async def _sample_pair(sym: str, open_ws, rows: list[dict]) -> None:
+    """All quotes for one pair, on its own connection (pairs run in parallel).
+
+    open_ws() returns an async context manager yielding a WebSocket. Appends
+    to rows; quotes already in rows (from an earlier attempt) are skipped.
+    """
+    done = {(r["kind"], r["direction"], r["multiplier"], r["stake"], json.dumps(r["limit_order"]))
+            for r in rows if r.get("kind") in ("grid", "edge")}
+
+    async def quote(kind, d, m, stake, lo=None):
+        key = (kind, d, m, stake, json.dumps(lo))
+        if key in done:
+            return next(r for r in rows if r.get("kind") == kind and r["direction"] == d
+                        and r["multiplier"] == m and r["stake"] == stake and r["limit_order"] == lo)
+        row = await _quote(ws, kind, sym, d, m, stake, lo)
+        rows.append(row)
+        done.add(key)
+        return row
+
     async with open_ws() as ws:
         # 0) if trading is paused (e.g. the daily 20:55-21:30 UTC pause), one
         #    refused quote says so; record it and stop instead of asking 300 times.
-        probe = await _quote(ws, "grid", sym, DIRECTIONS[0], 100, STAKES[0])
+        probe = await quote("grid", DIRECTIONS[0], 100, STAKES[0])
         if not probe["accepted"] and "not available" in probe.get("error", "").lower():
-            return [probe]
+            return
 
         # 1) every multiplier x stake, both directions
         for d in DIRECTIONS:
             for m in MULTIPLIERS:
-                first = await _quote(ws, "grid", sym, d, m, STAKES[0])
-                rows.append(first)
+                first = await quote("grid", d, m, STAKES[0])
                 if not first["accepted"] and "multiplier" in first.get("error", "").lower():
                     continue  # multiplier rejected; other stakes would say the same
                 for stake in STAKES[1:]:
-                    rows.append(await _quote(ws, "grid", sym, d, m, stake))
+                    await quote("grid", d, m, stake)
 
         # 2) stake edges and TP/SL edges, at the minimum stake and at 10 USD
-        working = sorted({r["multiplier"] for r in rows if r["accepted"]})
+        working = sorted({r["multiplier"] for r in rows if r.get("accepted")})
         if not working:
-            return rows
-        rows.append(await _quote(ws, "edge", sym, "MULTUP", working[0], 0.99))
-        rows.append(await _quote(ws, "edge", sym, "MULTUP", working[0], 500.01))
+            return
+        await quote("edge", "MULTUP", working[0], 0.99)
+        await quote("edge", "MULTUP", working[0], 500.01)
         for m in working:
             for stake in (1, 10):
-                base = next((r for r in rows if r["kind"] == "grid" and r["accepted"]
+                base = next((r for r in rows if r.get("kind") == "grid" and r["accepted"]
                              and r["multiplier"] == m and r["stake"] == stake), None)
                 if base is None:
                     continue
@@ -148,8 +180,7 @@ async def _sample_symbol(sym: str, open_ws) -> list[dict]:
                     {"stop_loss": sl_max}, {"stop_loss": round(sl_max + 0.01, 2)},
                 ]
                 for lo in probes:
-                    rows.append(await _quote(ws, "edge", sym, "MULTUP", m, stake, lo))
-    return rows
+                    await quote("edge", "MULTUP", m, stake, lo)
 
 
 async def run(label: str | None, connection: str, open_ws) -> Path:
@@ -187,7 +218,10 @@ async def run(label: str | None, connection: str, open_ws) -> Path:
 def report(path: Path, t0: float) -> None:
     with gzip.open(path, "rt") as f:
         rows = [json.loads(line) for line in f]
-    quotes = [r for r in rows if r["kind"] != "meta"]
+    quotes = [r for r in rows if r["kind"] in ("grid", "edge")]
+    for r in rows:
+        if r["kind"] == "error":
+            print(f"  {r['symbol']}: {r['error']}")
     ok = sum(r["accepted"] for r in quotes)
     print(f"{len(quotes)} quotes ({ok} accepted) in {time.time() - t0:.0f}s -> {path.name}")
     grid = [r for r in quotes if r["kind"] == "grid"]

@@ -277,6 +277,11 @@ FINDINGS = {
         "Every weekday Deriv refuses new Multiplier trades from 20:55:00 to 21:30:00 UTC "
         "('Trading is not available from 20:55:00 to 21:30:00.'), although active_symbols says the "
         "market is open and trading_times does not list the pause. Seen 2026-10-28 21:14Z."),
+    "after_pause_costs": (
+        "Right after the daily pause (21:36Z on 2026-10-28) the commission rate was about 12x the "
+        "16:35Z rate (EUR/USD 0.2868%, GBP/USD 0.2436%, USD/JPY 0.33%). x500 and x800 were refused "
+        "with 'Invalid stake/payout.' because rate x multiplier > 100%: the commission alone would "
+        "exceed the stake."),
     "status_field": "Contracts Deriv closes itself (TP/SL/stop out) come back with status null and is_sold 1.",
 }
 
