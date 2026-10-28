@@ -1,0 +1,73 @@
+# Phase 2: Multiplier price-quote samples at off-hours (public WebSocket, no
+# secrets, never buys). Scheduled for three times only:
+#   2026-10-28 21:30 UTC (quiet hour after the US close)
+#   2026-10-29 01:00 UTC (Asia)
+#   2026-10-29 07:30 UTC (London open)
+# GitHub may start a scheduled run 5-30 minutes late; the file name records
+# the real time. Each run commits its file to research/phase2/. The 07:30 run
+# disables this workflow afterwards, and the date check below skips any run
+# after 2026-10-29 in case disabling fails (these cron lines would otherwise
+# match again next October).
+name: Sample Multiplier proposals
+
+on:
+  schedule:
+    - cron: "30 21 28 10 *"
+    - cron: "0 1 29 10 *"
+    - cron: "30 7 29 10 *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write   # to disable this workflow after the last scheduled run
+
+concurrency:
+  group: data-commit
+  cancel-in-progress: false
+
+jobs:
+  sample:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Skip runs after the planned window
+        id: window
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$(date -u +%Y%m%d)" -gt 20261029 ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.window.outputs.run == 'true'
+
+      - uses: actions/setup-python@v5
+        if: steps.window.outputs.run == 'true'
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        if: steps.window.outputs.run == 'true'
+        run: pip install -r requirements.txt
+
+      - name: Sample and commit
+        if: steps.window.outputs.run == 'true'
+        run: |
+          set -euo pipefail
+          python scripts/sample_proposals.py --label actions
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/phase2/
+          git commit -q -m "Phase 2 proposal sample ($(date -u +%FT%H:%MZ), GitHub Actions)"
+          for try in 1 2 3 4 5; do
+            git pull -q --rebase origin main && git push -q origin HEAD:main && break
+            [ "$try" -eq 5 ] && { echo "::error::Push failed"; exit 1; }
+            sleep $((RANDOM % 20 + 5))
+          done
+
+      - name: Disable this workflow after the last scheduled run
+        if: always() && github.event_name == 'schedule' && (github.event.schedule == '30 7 29 10 *' || steps.window.outputs.run == 'false')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow disable "${{ github.workflow }}" --repo "${{ github.repository }}"
