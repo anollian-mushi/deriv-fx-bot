@@ -6,11 +6,16 @@ for a quote and records whether Deriv accepts it plus every cost and limit
 field. Then probes the take-profit / stop-loss limits at and just past the
 edges Deriv reports.
 
-One run takes a few minutes and writes one file:
-  research/phase2/proposals_<YYYYmmddTHHMM>Z.jsonl.gz
+One run takes about two minutes and writes one file:
+  research/phase2/proposals_<YYYYmmddTHHMM>Z_<label>.jsonl.gz
 Run it at different times of day to see whether anything changes.
 
-Run: python scripts/sample_proposals.py [--label NAME]
+--demo asks the same questions through the DEMO account's own WebSocket
+(needs DERIV_PAT and DERIV_APP_ID; still only quotes, never buys). This
+matters: in Phase 2 the demo account was offered different multipliers than
+the public connection.
+
+Run: python scripts/sample_proposals.py [--label NAME] [--demo]
 """
 
 from __future__ import annotations
@@ -76,10 +81,24 @@ async def _quote(ws, kind: str, symbol: str, direction: str, multiplier: int, st
     return row
 
 
-async def _sample_symbol(sym: str) -> list[dict]:
+def _demo_url() -> str:
+    """A fresh one-time URL for the demo account. Refuses anything else."""
+    from fxbot.config import load_settings
+    from fxbot.deriv.api import choose_demo_account, create_otp_url, is_demo_ws_url, list_accounts
+
+    settings = load_settings()
+    account = choose_demo_account(list_accounts(settings), settings.deriv_account_id)
+    url = create_otp_url(settings, account["account_id"])
+    if not is_demo_ws_url(url):
+        raise SystemExit("One-time URL is not for the demo gateway. Refusing.")
+    return url
+
+
+async def _sample_symbol(sym: str, demo: bool) -> list[dict]:
     """All quotes for one pair, on its own connection (pairs run in parallel)."""
     rows: list[dict] = []
-    async with connect(WS_PUBLIC_URL, open_timeout=20, ping_interval=30) as ws:
+    url = _demo_url() if demo else WS_PUBLIC_URL  # one OTP URL per connection
+    async with connect(url, open_timeout=20, ping_interval=30) as ws:
         # 1) every multiplier x stake, both directions
         for d in DIRECTIONS:
             for m in MULTIPLIERS:
@@ -117,16 +136,17 @@ async def _sample_symbol(sym: str) -> list[dict]:
     return rows
 
 
-async def run(label: str | None) -> Path:
+async def run(label: str | None, demo: bool) -> Path:
     started = datetime.now(timezone.utc)
-    name = f"proposals_{started:%Y%m%dT%H%M}Z" + (f"_{label}" if label else "")
+    name = f"proposals_{started:%Y%m%dT%H%M}Z" + (f"_{label}" if label else "") + ("_demo" if demo else "_public")
     path = OUT_DIR / f"{name}.jsonl.gz"
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     async with connect(WS_PUBLIC_URL, open_timeout=20, ping_interval=30) as ws:
         server_time = (await ws_request(ws, {"time": 1}))["time"]
         symbols = {s["underlying_symbol"]: s for s in
                    (await ws_request(ws, {"active_symbols": "brief"}))["active_symbols"]}
-        meta = {"kind": "meta", "started_utc": started.isoformat(), "server_time": server_time}
+        meta = {"kind": "meta", "started_utc": started.isoformat(), "server_time": server_time,
+                "connection": "demo" if demo else "public"}
         for sym in SYMBOLS:
             info = symbols.get(sym, {})
             avail = (await ws_request(ws, {"contracts_for": sym}))["contracts_for"]["available"]
@@ -139,7 +159,7 @@ async def run(label: str | None) -> Path:
                     for m in a.get("multiplier_range", [])
                 }),
             }
-    per_symbol = await asyncio.gather(*(_sample_symbol(sym) for sym in SYMBOLS))
+    per_symbol = await asyncio.gather(*(_sample_symbol(sym, demo) for sym in SYMBOLS))
     rows = [meta] + [r for rs in per_symbol for r in rs]
 
     with gzip.open(path, "wt", encoding="utf-8") as f:
@@ -151,9 +171,10 @@ async def run(label: str | None) -> Path:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--label", help="optional tag added to the file name")
+    parser.add_argument("--demo", action="store_true", help="quote through the demo account")
     args = parser.parse_args()
     t0 = time.time()
-    path = asyncio.run(run(args.label))
+    path = asyncio.run(run(args.label, args.demo))
     with gzip.open(path, "rt") as f:
         rows = [json.loads(line) for line in f]
     quotes = [r for r in rows if r["kind"] != "meta"]
