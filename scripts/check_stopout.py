@@ -1,0 +1,146 @@
+"""Phase 2: check the stop-out formula against every collected quote and demo trade.
+
+Formula (src/fxbot/contracts/multiplier.py):
+  commission  = max(0.02, rate x stake x multiplier), unrounded
+  stop out    = entry x (1 -/+ (stake - commission) / (stake x multiplier))
+                (minus for Up, plus for Down), rounded to the pip size
+                away from the entry price
+
+Two versions are checked:
+- "rate": commission from the commission rate, unrounded. The rate is read
+  from the stake-500 quote of the same pair and multiplier in the same sample
+  (big quotes show the rate to 4 significant digits).
+- "shown": commission as the quote shows it (rounded to cents). This is what
+  a bot has if it does not track the rate.
+
+Errors are in pip-size steps ("pipettes": 0.00001 for EUR/USD and GBP/USD,
+0.001 for USD/JPY; 10 pipettes = 1 pip).
+
+Run: python scripts/check_stopout.py   (writes research/phase2/stopout_check.md)
+"""
+
+from __future__ import annotations
+
+import csv
+import gzip
+import json
+import sys
+from collections import defaultdict
+from pathlib import Path
+
+import _bootstrap  # noqa: F401
+
+from fxbot.contracts.multiplier import commission, deriv_stop_out_price, price_at_profit, round_price
+
+ROOT = Path(__file__).resolve().parents[1]
+PHASE2 = ROOT / "research" / "phase2"
+PIP_SIZE = {"frxEURUSD": 0.00001, "frxGBPUSD": 0.00001, "frxUSDJPY": 0.001}
+
+
+def load_quotes() -> list[dict]:
+    quotes = []
+    for path in sorted(PHASE2.glob("proposals_*.jsonl.gz")):
+        connection = "demo" if path.name.endswith("_demo.jsonl.gz") else "public"
+        with gzip.open(path, "rt") as f:
+            for line in f:
+                r = json.loads(line)
+                if r.get("kind") == "grid" and r.get("accepted"):
+                    r["file"], r["connection"] = path.name, connection
+                    quotes.append(r)
+    return quotes
+
+
+def rates(quotes: list[dict]) -> dict[tuple, float]:
+    """(file, symbol, multiplier) -> commission rate from the largest quote."""
+    best: dict[tuple, tuple[float, float]] = {}
+    for r in quotes:
+        size = r["stake"] * r["multiplier"]
+        key = (r["file"], r["symbol"], r["multiplier"])
+        if size > best.get(key, (0, 0))[0]:
+            best[key] = (size, r["proposal"]["commission"] / size)
+    return {k: v[1] for k, v in best.items()}
+
+
+def error_steps(symbol: str, deriv_value: float, formula_value: float) -> float:
+    return round((deriv_value - formula_value) / PIP_SIZE[symbol], 3)
+
+
+def main() -> int:
+    quotes = load_quotes()
+    rate = rates(quotes)
+    results = defaultdict(list)  # (connection, version) -> [(abs err, row)]
+    for r in quotes:
+        p, sym = r["proposal"], r["symbol"]
+        d, s, m = r["direction"], r["stake"], r["multiplier"]
+        deriv = float(p["limit_order"]["stop_out"]["value"])
+        for version, comm in (("rate", commission(s, m, rate[(r["file"], sym, m)])),
+                              ("shown", p["commission"])):
+            f = deriv_stop_out_price(d, s, m, p["spot"], comm, PIP_SIZE[sym])
+            e = error_steps(sym, deriv, f)
+            results[(r["connection"], version)].append((abs(e), e, sym, d, s, m, p["spot"], deriv, f, r["file"]))
+
+    # Demo trades: stop out after the real entry, and every TP/SL Deriv set.
+    trades = list(csv.DictReader((ROOT / "research" / "demo_cost_trades.csv").open()))
+    demo_rate = {}
+    for (file, sym, m), v in rate.items():
+        if file.endswith("_demo.jsonl.gz"):
+            demo_rate.setdefault((sym, m), []).append((file, v))
+    trade_errors = []
+    for t in trades:
+        if not (t.get("contract_id") and t.get("entry_spot") and t.get("stop_out")):
+            continue
+        sym, d, s, m = t["symbol"], t["direction"], float(t["stake"]), int(t["multiplier"])
+        entry = float(t["entry_spot"])
+        # nearest-in-time demo sample (file names sort by time)
+        stamp = "proposals_" + t["proposal_time_utc"].replace("-", "").replace(":", "")[:13]
+        candidates = sorted(demo_rate.get((sym, m), []), key=lambda fv: abs(_minutes(fv[0]) - _minutes(stamp)))
+        if not candidates:
+            continue
+        comm = commission(s, m, candidates[0][1])
+        f = deriv_stop_out_price(d, s, m, entry, comm, PIP_SIZE[sym])
+        trade_errors.append(("stop out", t["trade_no"], sym, d, m, error_steps(sym, float(t["stop_out"]), f)))
+        for step in json.loads(t["tp_sl_updates"] or "[]"):
+            for key, (amount, value) in step["deriv"].items():
+                if amount is None or key == "stop_out":
+                    continue
+                target = float(amount)
+                raw = price_at_profit(d, s, m, entry, target, comm)
+                f = round_price(raw, PIP_SIZE[sym])
+                trade_errors.append((f"{key} ({step['step']})", t["trade_no"], sym, d, m,
+                                     error_steps(sym, float(value), f)))
+
+    lines = ["# Stop-out formula check", "",
+             f"Generated by `scripts/check_stopout.py` from {len(quotes)} accepted quotes "
+             f"in {len({r['file'] for r in quotes})} samples and {len(trades)} demo trade rows.", "",
+             "Errors are in pip-size steps (0.1 pip). 10 steps = 1 pip.", "",
+             "| Connection | Commission used | Quotes | Exact | Within 1 step | Largest error | Worst case |",
+             "|---|---|---|---|---|---|---|"]
+    for (conn, version), errs in sorted(results.items()):
+        errs.sort(key=lambda e: e[0], reverse=True)
+        worst = errs[0]
+        exact = sum(e[0] < 0.5 for e in errs)
+        within1 = sum(e[0] < 1.5 for e in errs)
+        lines.append(f"| {conn} | {version} | {len(errs)} | {exact} | {within1} | {worst[0]:.0f} | "
+                     f"{worst[2]} {worst[3]} stake {worst[4]} x{worst[5]} spot {worst[6]}: Deriv {worst[7]}, formula {worst[8]} |")
+    if trade_errors:
+        lines += ["", "Demo trades (entry spot from the trade, commission rate from the nearest demo sample):", "",
+                  "| Level | Trade | Pair | Direction | Multiplier | Error (steps) |", "|---|---|---|---|---|---|"]
+        for level, no, sym, d, m, e in trade_errors:
+            lines.append(f"| {level} | {no} | {sym} | {d} | {m} | {e:+.0f} |")
+        worst_t = max(abs(e[-1]) for e in trade_errors)
+        lines += ["", f"Largest error on demo trades: {worst_t:.0f} steps."]
+    out = PHASE2 / "stopout_check.md"
+    out.write_text("\n".join(lines) + "\n")
+    print("\n".join(lines))
+    return 0
+
+
+def _minutes(name: str) -> int:
+    """'proposals_20261028T1635Z...' -> minutes since an arbitrary epoch."""
+    stamp = name.split("_")[1][:13]  # 20261028T1635
+    day, hm = stamp.split("T")
+    return int(day) * 1440 + int(hm[:2]) * 60 + int(hm[2:4])
+
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -2,7 +2,9 @@
 
 Plain-language summary:
 - A trade with stake S and multiplier M behaves like a position of S x M.
-- Commission is charged once, at the start: rate x S x M.
+- Commission is charged once, at the start: rate x S x M, but never less than
+  MIN_COMMISSION. Deriv shows it rounded to cents but uses the unrounded
+  amount when it sets the TP / SL / stop-out prices (measured in Phase 2).
 - Profit = S x M x (price change / entry price) - commission, with the sign of
   the price change flipped for Down (MULTDOWN) trades.
 - Take profit, stop loss and stop out are all set as profit amounts in USD,
@@ -19,6 +21,8 @@ from typing import Literal
 
 Direction = Literal["MULTUP", "MULTDOWN"]
 
+MIN_COMMISSION = 0.02  # USD, measured Phase 2 (e.g. x50, stake 1 on EUR/USD)
+
 
 def _sign(direction: Direction) -> int:
     if direction == "MULTUP":
@@ -32,9 +36,9 @@ def position_size(stake: float, multiplier: float) -> float:
     return stake * multiplier
 
 
-def commission(stake: float, multiplier: float, rate: float) -> float:
-    """Commission in USD. rate is a fraction, e.g. 0.0002 for 0.02%."""
-    return rate * position_size(stake, multiplier)
+def commission(stake: float, multiplier: float, rate: float, minimum: float = MIN_COMMISSION) -> float:
+    """Commission in USD, unrounded. rate is a fraction, e.g. 0.0002 for 0.02%."""
+    return max(rate * position_size(stake, multiplier), minimum)
 
 
 def profit(
@@ -99,3 +103,16 @@ def round_price(price: float, pip_size: float, mode: Literal["nearest", "up", "d
         raise ValueError(f"unknown rounding mode {mode!r}")
     decimals = max(0, -int(math.floor(math.log10(pip_size))))
     return round(n * pip_size, decimals)
+
+
+def deriv_stop_out_price(
+    direction: Direction, stake: float, multiplier: float, entry: float, commission_usd: float,
+    pip_size: float,
+) -> float:
+    """Stop-out price as Deriv quotes it: rounded to the pip size, away from entry.
+
+    With the unrounded commission this matched 714 of 720 Phase 2 quotes
+    exactly and the rest within 1 pip-size step.
+    """
+    raw = stop_out_price(direction, stake, multiplier, entry, commission_usd)
+    return round_price(raw, pip_size, "down" if direction == "MULTUP" else "up")

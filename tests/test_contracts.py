@@ -2,6 +2,7 @@ import pytest
 
 from fxbot.contracts.multiplier import (
     commission,
+    deriv_stop_out_price,
     position_size,
     price_at_profit,
     profit,
@@ -21,6 +22,23 @@ def test_position_size_and_commission():
     assert position_size(10, 100) == 1000
     assert commission(10, 100, 0.0002) == pytest.approx(0.20)
     assert commission(1, 100, 0.0002) == pytest.approx(0.02)
+    # Unrounded: Deriv shows 0.02 but uses 0.0239 (demo EUR/USD, 0.0239%).
+    assert commission(1, 100, 0.000239) == pytest.approx(0.0239)
+
+
+def test_minimum_commission():
+    # x50, stake 1: 0.0199% x 50 = 0.00995 USD, but Deriv charges 0.02.
+    assert commission(1, 50, 0.000199) == 0.02
+    assert commission(1, 50, 0.000199, minimum=0) == pytest.approx(0.00995)
+
+
+def test_deriv_stop_out_rounds_away_from_entry():
+    # Real quote: frxEURUSD MULTDOWN stake 1 x100 spot 1.11448 -> stop out 1.12541
+    # (raw 1.125402 with 0.02 commission: Deriv rounds up, away from entry).
+    assert deriv_stop_out_price("MULTDOWN", 1, 100, SPOT, 0.02, 0.00001) == 1.12541
+    # Real quote: frxUSDJPY MULTUP stake 500 x500 spot 158.227, commission
+    # 68.75 -> stop out 157.954 (raw 157.95406: rounded down, away from entry).
+    assert deriv_stop_out_price("MULTUP", 500, 500, 158.227, 68.75, 0.001) == 157.954
 
 
 def test_take_profit_and_stop_loss_match_real_quote():
