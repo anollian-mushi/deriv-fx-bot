@@ -37,10 +37,16 @@ PHASE2 = ROOT / "research" / "phase2"
 PIP_SIZE = {"frxEURUSD": 0.00001, "frxGBPUSD": 0.00001, "frxUSDJPY": 0.001}
 
 
+def connection_of(name: str) -> str:
+    """'..._demo.jsonl.gz' -> demo; older files without a suffix were public."""
+    tail = name.removesuffix(".jsonl.gz").rsplit("_", 1)[-1]
+    return tail if tail in ("demo", "real", "public") else "public"
+
+
 def load_quotes() -> list[dict]:
     quotes = []
     for path in sorted(PHASE2.glob("proposals_*.jsonl.gz")):
-        connection = "demo" if path.name.endswith("_demo.jsonl.gz") else "public"
+        connection = connection_of(path.name)
         with gzip.open(path, "rt") as f:
             for line in f:
                 r = json.loads(line)

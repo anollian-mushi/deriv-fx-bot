@@ -94,11 +94,21 @@ def _demo_url() -> str:
     return url
 
 
-async def _sample_symbol(sym: str, demo: bool) -> list[dict]:
-    """All quotes for one pair, on its own connection (pairs run in parallel)."""
+def _public_ws():
+    return connect(WS_PUBLIC_URL, open_timeout=20, ping_interval=30)
+
+
+def _demo_ws():
+    return connect(_demo_url(), open_timeout=20, ping_interval=30)  # one OTP URL per connection
+
+
+async def _sample_symbol(sym: str, open_ws) -> list[dict]:
+    """All quotes for one pair, on its own connection (pairs run in parallel).
+
+    open_ws() returns an async context manager yielding a WebSocket.
+    """
     rows: list[dict] = []
-    url = _demo_url() if demo else WS_PUBLIC_URL  # one OTP URL per connection
-    async with connect(url, open_timeout=20, ping_interval=30) as ws:
+    async with open_ws() as ws:
         # 1) every multiplier x stake, both directions
         for d in DIRECTIONS:
             for m in MULTIPLIERS:
@@ -136,17 +146,17 @@ async def _sample_symbol(sym: str, demo: bool) -> list[dict]:
     return rows
 
 
-async def run(label: str | None, demo: bool) -> Path:
+async def run(label: str | None, connection: str, open_ws) -> Path:
     started = datetime.now(timezone.utc)
-    name = f"proposals_{started:%Y%m%dT%H%M}Z" + (f"_{label}" if label else "") + ("_demo" if demo else "_public")
+    name = f"proposals_{started:%Y%m%dT%H%M}Z" + (f"_{label}" if label else "") + f"_{connection}"
     path = OUT_DIR / f"{name}.jsonl.gz"
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    async with connect(WS_PUBLIC_URL, open_timeout=20, ping_interval=30) as ws:
+    async with open_ws() as ws:
         server_time = (await ws_request(ws, {"time": 1}))["time"]
         symbols = {s["underlying_symbol"]: s for s in
                    (await ws_request(ws, {"active_symbols": "brief"}))["active_symbols"]}
         meta = {"kind": "meta", "started_utc": started.isoformat(), "server_time": server_time,
-                "connection": "demo" if demo else "public"}
+                "connection": connection}
         for sym in SYMBOLS:
             info = symbols.get(sym, {})
             avail = (await ws_request(ws, {"contracts_for": sym}))["contracts_for"]["available"]
@@ -159,7 +169,7 @@ async def run(label: str | None, demo: bool) -> Path:
                     for m in a.get("multiplier_range", [])
                 }),
             }
-    per_symbol = await asyncio.gather(*(_sample_symbol(sym, demo) for sym in SYMBOLS))
+    per_symbol = await asyncio.gather(*(_sample_symbol(sym, open_ws) for sym in SYMBOLS))
     rows = [meta] + [r for rs in per_symbol for r in rs]
 
     with gzip.open(path, "wt", encoding="utf-8") as f:
@@ -168,13 +178,7 @@ async def run(label: str | None, demo: bool) -> Path:
     return path
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--label", help="optional tag added to the file name")
-    parser.add_argument("--demo", action="store_true", help="quote through the demo account")
-    args = parser.parse_args()
-    t0 = time.time()
-    path = asyncio.run(run(args.label, args.demo))
+def report(path: Path, t0: float) -> None:
     with gzip.open(path, "rt") as f:
         rows = [json.loads(line) for line in f]
     quotes = [r for r in rows if r["kind"] != "meta"]
@@ -185,6 +189,16 @@ def main() -> int:
         works = sorted({r["multiplier"] for r in grid if r["symbol"] == sym and r["accepted"]})
         fails = sorted({r["multiplier"] for r in grid if r["symbol"] == sym and not r["accepted"]})
         print(f"  {sym}: accepted {works}, rejected {fails}")
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--label", help="optional tag added to the file name")
+    parser.add_argument("--demo", action="store_true", help="quote through the demo account")
+    args = parser.parse_args()
+    t0 = time.time()
+    path = asyncio.run(run(args.label, *(("demo", _demo_ws) if args.demo else ("public", _public_ws))))
+    report(path, t0)
     return 0
 
 
