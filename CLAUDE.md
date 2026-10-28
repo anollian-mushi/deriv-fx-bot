@@ -15,8 +15,15 @@ plain language in every report.
   active_symbols).
 - Contract: Multipliers (up/down). Model commission, stop out, take profit
   and stop loss exactly as Deriv documents them.
+- Contract costs and rules come from config/contract_specs.yaml (measured).
+  Backtests use the commission rate for the hour each trade opens, from
+  the cost-by-hour table in reports/costs.md. Real and demo charge the
+  same rate at the same moment; the rate changes during the day.
 - Timeframe: research 15m to 1h candles. No tick scalping unless tests
   prove it beats costs.
+  ON HOLD until reports/costs.md is done: switch to 4h and daily candles
+  only (built from 1m data on UTC boundaries), dropping 15m and 1h
+  (reports/product_choice.md).
 - Stack: Python 3.12, pytest, Ubuntu VPS with systemd, Telegram for
   alerts and control.
 - Data: candles as compressed daily files in data/. No raw ticks in git.
@@ -32,8 +39,9 @@ Never change, loosen or work around these without explicit approval.
 - Daily loss limit: 10% of the start-of-day balance -> no new trades until
   the next UTC day.
 - Max open positions: 2, and at most 1 per pair.
-- Multiplier: chosen by testing within an allowed range. Never raise size
-  after losses: no martingale, no averaging down, no grids.
+- Multiplier: x100 or x200 only (x100 for trades held overnight), chosen
+  by testing. Never raise size after losses: no martingale, no averaging
+  down, no grids.
 - Orders only when TRADING_ENABLED=true. Real money only when the owner
   sets DERIV_MODE=real.
 - All limits live in a separate risk module. Every order passes through
@@ -42,6 +50,13 @@ Never change, loosen or work around these without explicit approval.
 ## Research rules
 - Every backtest includes Deriv commission, spread and a slippage
   assumption.
+- Every backtest also runs at 1.5x the measured commission (Deriv says
+  the rate varies with volatility). A pass is judged at the measured rate.
+- ON HOLD until reports/costs.md is done: minimum target vs cost (a
+  strategy's average winning trade at least 3x the round-trip cost:
+  EUR/USD and GBP/USD >= 25 pips, USD/JPY >= 40 pips). The pip figures
+  came from one hour's rate and will be recomputed from the cost-by-hour
+  table.
 - Split data into train, validation and a final holdout (the most recent
   ~20%). The holdout is used once, at the end, and reported as-is.
 - Walk-forward validation is required.
