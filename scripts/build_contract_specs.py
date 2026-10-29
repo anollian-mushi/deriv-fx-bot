@@ -282,6 +282,12 @@ FINDINGS = {
         "16:35Z rate (EUR/USD 0.2868%, GBP/USD 0.2436%, USD/JPY 0.33%). x500 and x800 were refused "
         "with 'Invalid stake/payout.' because rate x multiplier > 100%: the commission alone would "
         "exceed the stake."),
+    "overnight_hold": (
+        "Demo trade #11 (EUR/USD Up x100, 1 USD) was held 12.3 h from 2026-10-28 20:01Z to "
+        "2026-10-29 08:21Z, across the 20:55-21:30 pause, the rollover and the Wednesday night "
+        "(CFD triple-swap night). The statement shows only buy -1.00 and sell +0.70: no overnight "
+        "or swap charge. Profit -0.30 = price move + opening commission (formula -0.296). "
+        "Weekend holding is still untested (Phase 6)."),
     "status_field": "Contracts Deriv closes itself (TP/SL/stop out) come back with status null and is_sold 1.",
 }
 

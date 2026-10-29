@@ -1,6 +1,33 @@
 {
- "count": 20,
+ "count": 22,
  "transactions": [
+  {
+   "action_type": "sell",
+   "amount": 0.7,
+   "app_id": "33E1EFiiwCxheaIzatO7W",
+   "balance_after": 9973.49,
+   "contract_id": 18640410539,
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in EUR/USD, multiplied by 100, minus commissions.",
+   "payout": 0.0,
+   "purchase_time": 1793217666,
+   "reference_id": 35680193359,
+   "shortcode": "MULTUP_FRXEURUSD_1.00_100_1793217666_4946820900_0_0.00_N1_0",
+   "transaction_id": 35783105659,
+   "transaction_time": 1793262083
+  },
+  {
+   "action_type": "buy",
+   "amount": -1.0,
+   "app_id": "33E1EFiiwCxheaIzatO7W",
+   "balance_after": 9972.79,
+   "contract_id": 18640410539,
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in EUR/USD, multiplied by 100, minus commissions.",
+   "payout": 0.0,
+   "reference_id": null,
+   "shortcode": "MULTUP_FRXEURUSD_1.00_100_1793217666_4946820900_0_0.00_N1_0",
+   "transaction_id": 35680193359,
+   "transaction_time": 1793217666
+  },
   {
    "action_type": "sell",
    "amount": 0.74,
