@@ -1,8 +1,9 @@
-"""Typical price moves on 1h, 4h and daily candles, in pips.
+"""Typical price moves on 15m, 1h, 4h and daily candles, in pips.
 
 Used to compare trading costs with how far price usually moves in one
 candle (reports/product_choice.md). Reads Deriv 1h candles (about one year)
-and Dukascopy 1m mid prices (five years, research only), builds 4h and daily
+(15m candles from the 15m files) and Dukascopy 1m mid prices (five years,
+research only), builds 4h and daily
 candles on UTC boundaries, and writes research/typical_moves.json.
 
 "Move" measures per candle:
@@ -36,7 +37,7 @@ from fxbot.data.split import HOLDOUT_START, before_holdout, day_in_holdout
 ROOT = Path(__file__).resolve().parents[1]
 SYMBOLS = ("frxEURUSD", "frxGBPUSD", "frxUSDJPY")
 PIP = {"frxEURUSD": 0.0001, "frxGBPUSD": 0.0001, "frxUSDJPY": 0.01}
-FRAMES = {"1h": 3600, "4h": 4 * 3600, "1d": 86400}
+FRAMES = {"15m": 900, "1h": 3600, "4h": 4 * 3600, "1d": 86400}
 OUT = ROOT / "research" / "typical_moves.json"
 OUT_WITH_HOLDOUT = ROOT / "research" / "typical_moves_with_holdout.json"
 
@@ -80,6 +81,7 @@ def main() -> int:
     result: dict = {"_meta": {"includes_holdout": args.include_holdout,
                               "data_before": None if args.include_holdout else HOLDOUT_START.isoformat()}}
     for sym in SYMBOLS:
+        deriv_15m = load(ROOT / "data" / sym / "15m", args.include_holdout)
         sources = {
             "deriv": load(ROOT / "data" / sym / "1h", args.include_holdout),
             "dukascopy": load(ROOT / "data_external" / "dukascopy" / sym / "1m", args.include_holdout),
@@ -91,7 +93,12 @@ def main() -> int:
                     "last": datetime.fromtimestamp(base[-1].epoch, timezone.utc).date().isoformat()}
         for src, base in sources.items():
             for name, seconds in FRAMES.items():
-                bars = resample(base, seconds) if seconds > 3600 or src.startswith("dukascopy") else base
+                if src == "deriv" and seconds == 900:
+                    bars = deriv_15m
+                elif seconds > 3600 or src == "dukascopy":
+                    bars = resample(base, seconds)
+                else:
+                    bars = base
                 if name == "1d":
                     bars = [b for b in bars if datetime.fromtimestamp(b.epoch, timezone.utc).weekday() < 5]
                 result.setdefault(sym, {}).setdefault(src, {})[name] = stats(bars, PIP[sym])

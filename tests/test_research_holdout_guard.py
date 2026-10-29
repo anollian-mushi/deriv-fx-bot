@@ -26,8 +26,8 @@ def test_product_costs_refuses_mismatched_moves_file(tmp_path, monkeypatch):
     from fxbot.data.split import HoldoutError
 
     (tmp_path / "research").mkdir()
-    (tmp_path / "config").mkdir()
-    (tmp_path / "config" / "contract_specs.yaml").write_text("connections: {}\n")
+    (tmp_path / "research" / "phase2").mkdir()
+    (tmp_path / "research" / "phase2" / "cost_by_hour.json").write_text(json.dumps({"base_rate_pct": {}}))
     (tmp_path / "research" / "typical_moves.json").write_text(json.dumps({"_meta": {"includes_holdout": True}}))
     monkeypatch.setattr(product_costs, "ROOT", tmp_path)
     monkeypatch.setattr(sys, "argv", ["product_costs.py"])

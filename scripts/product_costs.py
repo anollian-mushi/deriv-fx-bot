@@ -13,9 +13,10 @@ stops. --include-holdout uses research/typical_moves_with_holdout.json and
 writes research/product_costs_with_holdout.json instead.
 
 Assumptions (all in pips, round trip):
-- Multipliers: commission = commission rate x price, at the cheapest,
-  median and dearest rate seen across the demo and real samples (the rate
-  changes during the day; real and demo are equal at the same moment).
+- Multipliers: commission = commission rate x price, at the base rate
+  (06:00-17:59 UTC outside news) and at 3x base (seen at news times and
+  18:00-19:59 UTC), from research/phase2/cost_by_hour.json (real and demo
+  are equal at the same moment).
   Price = median close before 2026-04-28. Entry and exit fill at the mid
   price (Phase 2 demo trades), no swap (NOT yet confirmed: overnight demo
   test pending).
@@ -33,13 +34,10 @@ from __future__ import annotations
 
 import argparse
 import json
-import statistics
 import sys
 from pathlib import Path
 
 import _bootstrap  # noqa: F401
-import yaml
-
 from fxbot.data.split import HoldoutError
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -53,17 +51,7 @@ MT5 = {
     "frxGBPUSD": {"spread": 0.0001, "spread_micro": 0.00007, "swap_long": -5.43, "swap_short": -4.13},
     "frxUSDJPY": {"spread": 0.014, "spread_micro": 0.009, "swap_long": 9.95, "swap_short": -21.98},
 }
-ROLLOVERS = {"1h": 0.06, "4h": 0.23, "1d": 1.4}
-
-
-def rates(specs: dict, sym: str) -> list[float]:
-    """Commission rates (fractions) at x100 from every demo and real sample."""
-    out = []
-    for conn in ("demo", "real"):
-        info = specs["connections"].get(conn, {}).get("symbols", {}).get(sym, {})
-        by_sample = info.get("multipliers", {}).get(100, {}).get("commission_rate_pct", {}).get("by_sample", {})
-        out += [v / 100 for v in by_sample.values()]
-    return sorted(out)
+ROLLOVERS = {"15m": 0.015, "1h": 0.06, "4h": 0.23, "1d": 1.4}
 
 
 def main() -> int:
@@ -72,28 +60,27 @@ def main() -> int:
                         help="use moves that include data dated 2026-04-28 or later (final test only)")
     args = parser.parse_args()
     suffix = "_with_holdout" if args.include_holdout else ""
-    specs = yaml.safe_load((ROOT / "config" / "contract_specs.yaml").read_text())
+    by_hour = json.loads((ROOT / "research" / "phase2" / "cost_by_hour.json").read_text())
     moves = json.loads((ROOT / "research" / f"typical_moves{suffix}.json").read_text())
     if moves.get("_meta", {}).get("includes_holdout") is not args.include_holdout:
         raise HoldoutError("typical_moves file does not match the holdout setting; re-run "
                            "scripts/typical_moves.py first")
-    out: dict = {"_meta": {**moves["_meta"], "samples_used": len(rates(specs, SYMBOLS[0]))}}
-    print("| Pair | Candle | Typical range (Deriv / Dukascopy) | Multipliers, cheapest hour | "
-          "Multipliers, median | Multipliers, dearest hour | MT5 Standard | MT5 Standard, 2x spread | MT5 micro |")
-    print("|---|---|---|---|---|---|---|---|---|")
+    out: dict = {"_meta": {**moves["_meta"], "base_rate_pct": by_hour["base_rate_pct"]}}
+    print("| Pair | Candle | Typical range (Deriv / Dukascopy) | Multipliers, base rate | "
+          "Multipliers, 3x base | MT5 Standard | MT5 Standard, 2x spread | MT5 micro |")
+    print("|---|---|---|---|---|---|---|---|")
     for sym in SYMBOLS:
         price = moves[sym]["deriv"]["1h"]["price_median"]
-        rs = rates(specs, sym)
+        base = by_hour["base_rate_pct"][sym] / 100
         m = MT5[sym]
         swap_night = (-m["swap_long"] - m["swap_short"]) / 2 / 10  # average cost per night, pips
-        for frame in ("1h", "4h", "1d"):
+        for frame in ("15m", "1h", "4h", "1d"):
             d = moves[sym]["deriv"][frame]["range_median"]
             k = moves[sym]["dukascopy"][frame]["range_median"]
             swap = swap_night * ROLLOVERS[frame]
             costs = {
-                "multipliers_min": rs[0] * price / PIP[sym],
-                "multipliers_median": statistics.median(rs) * price / PIP[sym],
-                "multipliers_max": rs[-1] * price / PIP[sym],
+                "multipliers_base": base * price / PIP[sym],
+                "multipliers_3x": 3 * base * price / PIP[sym],
                 "mt5_standard": m["spread"] / PIP[sym] + swap,
                 "mt5_standard_2x": 2 * m["spread"] / PIP[sym] + swap,
                 "mt5_micro": m["spread_micro"] / PIP[sym] + swap,

@@ -136,26 +136,37 @@ take profit or stop loss is hit, or it is stopped out.
 | Hours (GMT) | Mon–Fri 00:00–23:59:59 | same | same |
 | Early close | Fridays at 20:55 | same | same |
 | Holidays listed | 2026-12-25, 2027-01-01 | same | same |
-| Multipliers accepted by pricing | 50, 100, 150, 250, 500 | same | same |
-| Commission (share of stake × multiplier) | 0.020% | 0.020% | 0.028% |
-| Stake | 1 to 500 USD | same | same |
+| Multipliers (demo and real account) | 100, 200, 300, 500, 800 | same | same |
+| Base commission (share of stake × multiplier) | 0.0239% | 0.0203% | 0.0275% |
+| Stake | 1 to 2,000 USD | same | same |
 | Deal cancellation | not available | not available | not available |
 
-**Conflict:** `contracts_for` lists multipliers 100, 200, 300, 500, 800, but
-`proposal` rejects 800 and says it "Accepts 50,100,150,250,500". The pricing
-engine is the one that decides a trade, so we trust the `proposal` list. We
-will confirm with a demo buy before choosing a multiplier.
+**Updated in Phase 2 (2026-10-29), see `reports/costs.md`:**
+- The multiplier list depends on the connection:
+  - The **public** connection (no login) quotes 50/100/150/250/500.
+  - The **demo and real** accounts quote and buy 100/200/300/500/800, the
+    same as `contracts_for`.
+
+  The Phase 0 figures above this note came from the public connection.
+- **Commission changes during the day and around news**, and is identical on
+  real and demo at the same moment:
+  - base rate 06:00–17:59 UTC;
+  - 2–12× in the evening, highest just after the daily pause.
+- **New trades are refused 20:55–21:30 UTC daily.** This is not shown in
+  `trading_times`.
 
 ### How it is priced and charged
 
 Checked against real quotes (stake 10 USD on EUR/USD):
 
 - **Position size** = stake × multiplier. At x100, 10 USD acts like 1,000 USD.
-- **Commission** = commission rate × stake × multiplier, charged once when
-  the trade opens. At x100: 0.02% × 1,000 = **0.20 USD** (quote said 0.2).
-  At x50 it was 0.10 USD. Deriv says the rate varies by asset and market
-  volatility, so read the `commission` field of each quote instead of
-  hard-coding it.
+- **Commission** = max(0.02 USD, commission rate × stake × multiplier),
+  charged once when the trade opens. At x100: 0.02% × 1,000 = **0.20 USD**
+  (quote said 0.2). At x50 it was 0.10 USD.
+  - The rate varies by hour and around news (Phase 2), so read it from each
+    quote.
+  - The `commission` field is rounded to cents, but Deriv sets TP/SL/stop-out
+    prices with the **unrounded** amount.
 - **Profit/loss** = stake × multiplier × (price change ÷ entry price) −
   commission. For Down trades the sign of the price change is flipped.
   (Deriv's own formula: "(% of price difference × multiplier × stake) –
@@ -171,6 +182,8 @@ Checked against real quotes (stake 10 USD on EUR/USD):
    10, EUR/USD at 1.11249: stop out at 1.10158. That is a 0.98% move, which
    is (10 − 0.20) ÷ 1,000. Higher multiplier = stop out closer to the entry
    price.
+   - The price is rounded to the pip size **away from the entry**.
+   - Our formula matches every demo and real quote exactly (Phase 2).
 2. **Take profit (optional):** `limit_order.take_profit` in USD. The amount
    is **after** commission: take profit 5 USD at x100 was set at a +0.52%
    move = (5 + 0.20) ÷ 1,000. Allowed range from the quote: min 0.10, max
@@ -178,6 +191,10 @@ Checked against real quotes (stake 10 USD on EUR/USD):
 3. **Stop loss (optional):** `limit_order.stop_loss` in USD, also after
    commission. Must be larger than the commission (min 0.21 at x100, 0.11 at
    x50) and at most the stake.
+   - Use at least **commission + 0.02**: Deriv's own check sometimes rejects
+     the exact minimum.
+   - Deriv closes at the first tick at or past the level, at that tick's
+     mid, so a jump past the level costs the size of the jump.
 4. **Manual close:** `sell` with the `contract_id` and `price: 0` (sell at
    market). The fill can differ from the last price you saw (slippage).
 5. Take profit and stop loss can be changed or removed on an open trade with
@@ -185,6 +202,8 @@ Checked against real quotes (stake 10 USD on EUR/USD):
 6. Watch an open trade with `proposal_open_contract`: `bid_price`, `profit`,
    `commission`, `is_sold`, `is_valid_to_sell`, `status`
    (`open`/`sold`/`won`/`lost`/`cancelled`) and the current `limit_order`.
+   - Contracts Deriv closes itself (TP, SL, stop out) come back with
+     `status: null`, so check `is_sold`.
 
 ### Buying safely
 
@@ -204,13 +223,13 @@ Checked against real quotes (stake 10 USD on EUR/USD):
 
 ### Still unknown (to check on demo in later phases)
 
-- Whether there is any charge for holding a trade overnight or over the
-  weekend. The docs and quotes show none. Check `statement` and
-  `profit_table` after a demo trade held overnight.
-- How far the actual `entry_spot` lands from the quoted spot (slippage), and
-  whether a spread is built into the entry or exit price.
-- What happens to an open forex Multiplier at the Friday 20:55 close and over
-  the weekend gap. A gap past the stop-out price could close it at a worse
-  price.
-- Whether the max take-profit and other limits change with stake size and
-  multiplier.
+Answered in Phase 2 (`reports/costs.md`):
+- **Overnight charge:** none, on one weekday night.
+- **Entry slippage:** 0–0.5 pip. Entry and exit fill at the mid price, with
+  no spread.
+- **Limits:** do not change with stake size.
+
+Still open, for the Phase 6 demo run:
+- Weekend: any charge, and what a Monday gap does to an open contract (stop
+  loss fill, stop out).
+- Commission by hour on more than one day, especially on news days.

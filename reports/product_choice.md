@@ -9,70 +9,56 @@ account was used for price quotes only. Numbers come from:
 Rebuild the tables with `python scripts/typical_moves.py` and
 `python scripts/product_costs.py`.
 
-## Correction (2026-10-28, 20:10 UTC): read this first
+## Update (2026-10-29, 19:30 UTC): final version, read this first
 
-An earlier version said the real account charges 3 times the demo
-commission. **That was wrong.** Checked side by side, three rounds on all
-three pairs, real and demo quote **exactly the same rate at the same moment**
-(`research/phase2/real_vs_demo.md`). The "3x" came from comparing a demo
-sample at 16:35 with a real sample at 18:07: **the rate changes strongly
-during the day.**
+This report was first written on 28 Oct and then corrected twice:
+1. **Real and demo charge the same commission at the same moment.** An
+   earlier "real costs 3× demo" claim came from comparing samples taken 90
+   minutes apart.
+2. **The rate changes with the time of day and around news.** A full day of
+   hourly samples (`reports/costs.md`, section 3) shows:
+   - **06:00–17:59 UTC:** the base rate (EUR/USD 0.0239%), except around big
+     news.
+   - **00:00–05:59:** a little above base.
+   - **18:00–23:59:** 2× to 12× the base. The highest reading came just
+     after the daily 20:55–21:30 pause, when new trades are refused.
 
-| UTC time (Wed 28 Oct) | EUR/USD | GBP/USD | USD/JPY | Account |
-|---|---|---|---|---|
-| 16:35 | 0.0239% | 0.0203% | 0.0275% | demo |
-| 18:07 | 0.0717% | 0.0609% | 0.0825% | real |
-| 20:01-20:09 | 0.0893% | 0.0743% | 0.1101% | real and demo, identical |
+Sections 3, 4 and 5 below are rewritten with the full day of data. The MT5
+facts and integration findings (sections 1, 2, 6) did not change.
 
-What this changes:
-- The cost figures below use the 18:07 rate: about 8 pips (EUR/USD,
-  GBP/USD) and 13 pips (USD/JPY). They are **one point in a daily range**:
-  - At 16:35, the same trade cost about 2.7 / 2.7 / 4.4 pips.
-  - At 20:00, about 10 / 10 / 17 pips.
-- **When a strategy trades may matter as much as which timeframe it uses.**
-  Trades in the cheap hours could cost a third of the expensive ones.
-- The public (no login) connection quotes a different, lower rate. That is
-  not what we trade, so the off-hours GitHub samples cannot answer this
-  question. Demo-connection samples through the night and tomorrow morning
-  will.
-- **Section 4 (recommendation) and section 5 (CLAUDE.md changes) are on hold**
-  until the cost-by-hour table is in `reports/costs.md` (Thursday morning).
-  The MT5 comparison and the integration findings (sections 2 and 6) are
-  not affected.
+## The short version
 
-## The short version (written before the correction above)
+- **At the base rate, a Multiplier trade costs about 3 pips** (EUR/USD,
+  GBP/USD) or 4 pips (USD/JPY), paid once when it opens:
+  - no spread;
+  - no overnight fee (checked over one weekday night).
 
-- **Real Multipliers are expensive** at the 18:07 rate: a trade must move
-  about **8 pips** (EUR/USD, GBP/USD) or **13 pips** (USD/JPY) in your favour
-  just to break even. That is about one whole typical 1-hour candle. The
-  correction above shows this cost depends on the time of day.
-- **MT5 CFDs are about 5 to 10 times cheaper per trade.** The cost is the
-  spread, from 1.0–1.4 pips (0.7–0.9 on "micro" symbols), plus a small
-  overnight swap.
-- **But MT5 is a different, riskier product for this project:**
-  - Losses are **not capped** at a stake.
-  - Deriv's API **cannot trade MT5**.
-  - A Python bot on Linux needs the Windows-only MT5 terminal, running under
-    Wine or on a Windows server.
-- **Recommendation:** stay on **Multipliers**, but research **4h and daily**
-  candles only. Use **x100** (x200 at most), with real-account costs.
-  - Drop 15m and 1h: real costs eat 65–90% of a typical 1h candle.
-  - Every backtest will also report MT5 costs side by side. Then we will know
-    if a strategy only works at MT5 prices, and can decide on MT5 with real
-    evidence instead of guessing now.
+  **In the evening and around big news it costs 2–12 times more.**
+- **MT5 CFDs are still cheaper:** about 1.0–1.4 pips of spread, plus a
+  nightly swap. That is about 2–3 times cheaper than Multipliers at the base
+  rate, and far cheaper than Multipliers in the evening.
+- **MT5 is still the riskier product for this project:**
+  - losses are **not capped** at a stake;
+  - Deriv's API **cannot trade MT5**;
+  - it needs the Windows-only MT5 terminal running unattended.
+- **Recommendation:** stay on **Multipliers, x100 (x200 at most)**. Research
+  **1h and 4h** candles, with daily as a secondary check, and open new trades
+  only in **06:00–17:59 UTC**. Drop 15m: even at the base rate it costs about
+  half of a typical 15-minute candle. Every backtest still shows MT5 costs
+  side by side.
 
 ## 1. Costs side by side (EUR/USD, GBP/USD, USD/JPY)
 
 | | **Deriv Multipliers (real account)** | **Deriv MT5 forex CFD** |
 |---|---|---|
 | Spread | **None.** Entry and exit fill at the mid price (measured on 10 demo trades: entry 0.0–0.5 pip from the quote, sells exactly at the shown price) | Min spread EUR/USD 1.1 pips, GBP/USD 1.0, USD/JPY 1.4. Micro symbols: 0.7 / 0.7 / 0.9. Typical spreads are not published |
-| Commission | One fee at the start, as a share of stake × multiplier, minimum 0.02 USD. **It changes during the day** and is the same on real and demo. EUR/USD: 0.0239% at 16:35, 0.0717% at 18:07, 0.0893% at 20:00 UTC. The KID says it "can be up to 0.5%" | Standard account: "0% commission". Zero Spread account: about 3–4 USD per 100,000 traded, per side (this figure is from a partner help page; see section 6) |
-| Overnight / swap fees | **None mentioned** in the KID or the Multipliers page; our own API replies show none. **Not yet confirmed for forex**: tonight's demo trade held overnight tests it | Yes, every night at rollover, **triple on Wednesday**. Per lot per night (1 lot = 100,000): EUR/USD long −11.42 / short +2.66 points; GBP/USD −5.43 / −4.13; USD/JPY +9.95 / −21.98 (10 points = 1 pip) |
+| Commission | One fee at the start, as a share of stake × multiplier, minimum 0.02 USD. **It changes during the day** and is the same on real and demo. Base rate (06:00–17:59 UTC, outside big news): **0.0239%** EUR/USD, **0.0203%** GBP/USD, **0.0275%** USD/JPY. Evening and news: 2–12× that (`reports/costs.md`). The KID says it "can be up to 0.5%" | Standard account: "0% commission". Zero Spread account: about 3–4 USD per 100,000 traded, per side (this figure is from a partner help page; see section 6) |
+| Overnight / swap fees | **None.** No official page mentions any. A demo trade held 12.3 h over Wednesday night (CFD triple-swap night) was charged nothing beyond the opening commission | Yes, every night at rollover, **triple on Wednesday**. Per lot per night (1 lot = 100,000): EUR/USD long −11.42 / short +2.66 points; GBP/USD −5.43 / −4.13; USD/JPY +9.95 / −21.98 (10 points = 1 pip) |
 | Weekend | Unknown: what a weekend gap does to an open contract (see Open questions) | Swap for the weekend is charged on Wednesday. Weekend gaps can jump past a stop |
 | Smallest trade | Stake 1 USD (max 2,000). At x100 that is a 100 USD position: 1 pip ≈ 0.009 USD | 0.01 lot = 1,000 units: 1 pip ≈ 0.10 USD. Micro symbols: 0.1 lot of 1,000 = 100 units: 1 pip ≈ 0.01 USD |
 | Multipliers / leverage | x100, x200, x300, x500, x800 (real and demo, measured) | Up to 1:1000, fixed per asset; margin 0.10% |
 | **How losses are limited** | **Hard cap: you can never lose more than the stake.** Automatic stop out when the loss reaches the stake. Stop loss and take profit are optional. A stop loss is not guaranteed: we saw one close 0.6 pip past its level | **No cap per trade.** Margin call at 100% margin level; stop out at 50%, closing the biggest loser first. A stop loss "is not a guarantee". No guaranteed stop. Negative balance protection is only "at our sole discretion" |
-| Trading hours (GMT) | Mon–Fri 00:00–23:59:59, Friday to 20:55 | Sun 21:10 – Fri 20:55, daily break 20:59–21:10 |
+| Trading hours (GMT) | Mon–Fri 00:00–23:59:59, Friday to 20:55; **no new trades 20:55–21:30 daily** (measured, not in the published hours) | Sun 21:10 – Fri 20:55, daily break 20:59–21:10 |
 | Minimum deposit | 5 USD balance, 1 USD stake | "minimum deposit of 5 USD" |
 
 What "losses not capped" means in practice: on MT5 the bot's risk module
@@ -86,7 +72,7 @@ is its stake, and that limit holds even through gaps.
 
 | | How it works | Difficulty | Main problems |
 |---|---|---|---|
-| **Multipliers via the Deriv API** (what we have) | Pure Python. REST for a one-time login link, then a WebSocket. Runs under systemd on Ubuntu. Already built and tested on demo in Phases 0–2 | **Easy** (done) | The commission rate, which rises sharply at some hours |
+| **Multipliers via the Deriv API** (what we have) | Pure Python. REST for a one-time login link, then a WebSocket. Runs under systemd on Ubuntu. Already built and tested on demo in Phases 0–2 | **Easy** (done) | The commission rate, which rises sharply in the evening and around news |
 | MT5 + Wine on the Ubuntu VPS | Install MT5 and *Windows* Python under Wine with a virtual screen (Xvfb). The official `MetaTrader5` Python package talks to the terminal | **Hard** | The terminal updates itself and can break under Wine. It needs a watchdog for crashes. The MT5 password sits on disk |
 | MT5 Docker image + `mt5linux` bridge | A community image bundles Wine + MT5 + a remote-call bridge. Our Linux Python calls it over a local network port | **Medium** | Community projects, one maintainer each. The image is about 4 GB. The first login needs a web screen (VNC). The ports must be firewalled |
 | Windows VPS | Run the official package and terminal natively | **Easy–medium** | Costs more. No systemd, and Windows is harder to look after from a phone. A second deploy path |
@@ -98,76 +84,72 @@ Linux install guide, mt5linux and Docker image pages (see Sources).
 
 ## 3. Cost per trade vs a typical move
 
-Updated 2026-10-28 after the holdout rule was added to CLAUDE.md. **Only data
-dated before 2026-04-28 is used** (Deriv 2025-10-29 to 2026-04-27, Dukascopy
-2021-10-27 to 2026-04-27). The holdout period is not looked at. The earlier
-version of this table used the whole year, including the holdout, so it has
-been replaced.
+**Only data dated before 2026-04-28 is used** (Deriv 2025-10-29 to
+2026-04-27, Dukascopy 2021-10-27 to 2026-04-27), as the holdout rule
+requires.
 
 "Typical move" means the median high-to-low range of one candle on Deriv's
-prices (first figure). Dukascopy's longer history comes after the slash.
-Cost is per trade, open and close together, in pips, and shown as a share
-of the Deriv range.
+prices (first figure); Dukascopy's longer history comes after the slash.
+Cost is per trade, open and close together, in pips, and shown as a share of
+the Deriv range.
 
 Assumptions:
-- **Multipliers:**
-  - Commission at three rates, because the rate changes during the day: the
-    cheapest, the median and the dearest seen in the demo and real samples
-    so far (four samples, 16:35 to 20:03 UTC on 28 Oct).
-  - Price is the median close before 2026-04-28.
-  - No spread, and no swap (still to be confirmed).
-  - The cost-by-hour table in `reports/costs.md` (due Thursday) will replace
-    these three columns.
+- **Multipliers:** commission at the **base rate** (06:00–17:59 UTC, outside
+  big news) and at **3× base** (seen around news and at 18:00 UTC). From
+  `research/phase2/cost_by_hour.json`. Fills at the mid price: no spread,
+  and no swap (confirmed for one weekday night).
 - **MT5:** the published minimum spread, plus swap for the average number of
-  nights held: 0.06 for a 1h hold, 0.23 for a 4h hold, 1.4 for a 1-day hold
-  (counting Wednesday's triple swap). The swap is averaged over long and
-  short. The "2× spread" column is a stress case, because typical spreads are
-  not published.
+  nights held: 0.015 for a 15m hold, 0.06 for a 1h hold, 0.23 for a 4h hold,
+  1.4 for a 1-day hold (counting Wednesday's triple swap). The swap is
+  averaged over long and short. The "2× spread" column is a stress case,
+  because typical spreads are not published.
 - Slippage is left out for both. Backtests add it separately.
 
-| Pair | Candle | Typical range | Multipliers, cheapest hour | Multipliers, median | Multipliers, dearest hour | MT5 Standard | MT5 Standard, 2× spread | MT5 micro |
-|---|---|---|---|---|---|---|---|---|
-| EUR/USD | 1h | 10.4 / 11.6 pips | 2.8 pips = 27% | 9.4 pips = **90%** | 10.4 pips = 100% | 1.1 pips = 11% | 2.2 pips = 21% | 0.7 pips = 7% |
-| EUR/USD | 4h | 21.2 / 23.9 pips | 2.8 pips = 13% | 9.4 pips = **44%** | 10.4 pips = 49% | 1.2 pips = 6% | 2.3 pips = 11% | 0.8 pips = 4% |
-| EUR/USD | 1d | 58.6 / 71.2 pips | 2.8 pips = 5% | 9.4 pips = **16%** | 10.4 pips = 18% | 1.7 pips = 3% | 2.8 pips = 5% | 1.3 pips = 2% |
-| GBP/USD | 1h | 14.2 / 14.8 pips | 2.7 pips = 19% | 9.1 pips = **64%** | 10.0 pips = 70% | 1.0 pips = 7% | 2.0 pips = 14% | 0.7 pips = 5% |
-| GBP/USD | 4h | 29.8 / 30.6 pips | 2.7 pips = 9% | 9.1 pips = **30%** | 10.0 pips = 33% | 1.1 pips = 4% | 2.1 pips = 7% | 0.8 pips = 3% |
-| GBP/USD | 1d | 81.1 / 87.7 pips | 2.7 pips = 3% | 9.1 pips = **11%** | 10.0 pips = 12% | 1.7 pips = 2% | 2.7 pips = 3% | 1.4 pips = 2% |
-| USD/JPY | 1h | 17.5 / 18.9 pips | 4.3 pips = 25% | 15.1 pips = **86%** | 17.2 pips = 99% | 1.4 pips = 8% | 2.8 pips = 16% | 0.9 pips = 5% |
-| USD/JPY | 4h | 36.7 / 39.5 pips | 4.3 pips = 12% | 15.1 pips = **41%** | 17.2 pips = 47% | 1.5 pips = 4% | 2.9 pips = 8% | 1.0 pips = 3% |
-| USD/JPY | 1d | 92.3 / 113.3 pips | 4.3 pips = 5% | 15.1 pips = **16%** | 17.2 pips = 19% | 2.2 pips = 2% | 3.6 pips = 4% | 1.7 pips = 2% |
+| Pair | Candle | Typical range | Multipliers, base rate | Multipliers, 3× base | MT5 Standard | MT5 Standard, 2× spread | MT5 micro |
+|---|---|---|---|---|---|---|---|
+| EUR/USD | 15m | 5.0 / 5.6 pips | 2.8 pips = **56%** | 8.4 = 167% | 1.1 = 22% | 2.2 = 44% | 0.7 = 14% |
+| EUR/USD | 1h | 10.4 / 11.6 | 2.8 = **27%** | 8.4 = 80% | 1.1 = 11% | 2.2 = 21% | 0.7 = 7% |
+| EUR/USD | 4h | 21.2 / 23.9 | 2.8 = **13%** | 8.4 = 39% | 1.2 = 6% | 2.3 = 11% | 0.8 = 4% |
+| EUR/USD | 1d | 58.6 / 71.2 | 2.8 = **5%** | 8.4 = 14% | 1.7 = 3% | 2.8 = 5% | 1.3 = 2% |
+| GBP/USD | 15m | 6.7 / 7.3 | 2.7 = **41%** | 8.2 = 122% | 1.0 = 15% | 2.0 = 30% | 0.7 = 11% |
+| GBP/USD | 1h | 14.2 / 14.8 | 2.7 = **19%** | 8.2 = 58% | 1.0 = 7% | 2.0 = 14% | 0.7 = 5% |
+| GBP/USD | 4h | 29.8 / 30.6 | 2.7 = **9%** | 8.2 = 27% | 1.1 = 4% | 2.1 = 7% | 0.8 = 3% |
+| GBP/USD | 1d | 81.1 / 87.7 | 2.7 = **3%** | 8.2 = 10% | 1.7 = 2% | 2.7 = 3% | 1.4 = 2% |
+| USD/JPY | 15m | 8.4 / 9.1 | 4.3 = **51%** | 12.9 = 154% | 1.4 = 17% | 2.8 = 33% | 0.9 = 11% |
+| USD/JPY | 1h | 17.5 / 18.9 | 4.3 = **25%** | 12.9 = 74% | 1.4 = 8% | 2.8 = 16% | 0.9 = 5% |
+| USD/JPY | 4h | 36.7 / 39.5 | 4.3 = **12%** | 12.9 = 35% | 1.5 = 4% | 2.9 = 8% | 1.0 = 3% |
+| USD/JPY | 1d | 92.3 / 113.3 | 4.3 = **5%** | 12.9 = 14% | 2.2 = 2% | 3.6 = 4% | 1.7 = 2% |
 
-How to read this (provisional until the cost-by-hour table is done):
-- **The hour matters enormously for Multipliers.** At the cheapest rate seen
-  (16:35 UTC), a 1h trade costs about a fifth to a quarter of a typical
-  hour's move. At the dearest (20:00 UTC), it costs nearly all of it.
-- **At the median rate seen so far, the earlier picture holds:**
-  - 1h: costs are 64–90% of a typical candle.
-  - 4h: 30–44%.
-  - Daily: 11–16%.
+How to read this:
+- **15m is out on Multipliers.** Even at the base rate, a trade starts about
+  half a typical 15-minute candle behind. At 3× it starts more than a whole
+  candle behind.
+- **1h is workable at the base rate**, with targets several candles wide.
+  Costs are 19–27% of one typical hourly candle. In raised hours it is
+  hopeless (58–80%).
+- **4h and daily are comfortable at the base rate:** 3–13%.
+- **So *when* a trade opens matters as much as the timeframe.** Opening only
+  in 06:00–17:59 UTC keeps costs at the base rate most of the time.
+- **MT5 is still 2–3 times cheaper** than Multipliers at the base rate.
+- **The multiplier does not change the cost in pips.** It changes how close
+  the stop out is: x100 about 115–150 pips, x200 about 55–75. It also
+  changes how much of the stake the commission takes: 2–3% at x100, 4–6% at
+  x200 at the base rate.
 
-  That median comes from only four samples, three of them taken at expensive
-  times. It is not yet a fair daily average.
-- **MT5 is cheap on every timeframe**, even at double the minimum spread.
-- **The multiplier does not change the cost in pips.** It changes two other
-  things:
-  - **How close the stop out is.** x100: about 100–150 pips. x200: about
-    50–75 pips. x500: about 15–27 pips, less than a typical 4h range.
-  - **How big a share of the stake the commission takes.** It equals rate ×
-    multiplier: at x100 about 2–11% depending on the hour, at x200 twice
-    that.
-- **For 4h and daily trades only x100, and maybe x200, make sense.** Higher
-  multipliers would be stopped out by normal daily movement.
+Rebuild: `python scripts/typical_moves.py`, `python scripts/cost_by_hour.py`,
+then `python scripts/product_costs.py`. All three refuse holdout data unless
+given `--include-holdout`.
 
-Rebuild: `python scripts/typical_moves.py` then
-`python scripts/product_costs.py`. Both refuse holdout data unless given
-`--include-holdout`.
+## 4. Recommendation
 
-## 4. Recommendation (ON HOLD, see the correction at the top)
+**Product:** Deriv Multipliers, x100 (x200 at most).
 
-**Product: Deriv Multipliers, real-account costs, x100 (x200 at most).**
+**Timeframes for Phase 4:** 1h and 4h, with daily as a secondary check.
+15m is dropped.
 
-Why not switch to MT5 now, even though it is much cheaper:
+**When to open trades:** only 06:00–17:59 UTC.
+
+Why still Multipliers and not MT5, even though MT5 is 2–3× cheaper:
 1. **Loss limits.** Multipliers cap each loss at the stake, gaps included.
    That fits the owner's hard limits (3% per trade, 50% kill switch) on a
    50–100 USD account. MT5 has no such cap. Deriv's own documents say stops
@@ -176,86 +158,93 @@ Why not switch to MT5 now, even though it is much cheaper:
    works on demo. MT5 needs a Windows program running unattended, plus a
    stored password and a watchdog. That is a lot for an owner who works from
    a phone.
-3. **Evidence first.** We don't know yet whether any strategy has an edge.
-   Paying for MT5 infrastructure only makes sense if a strategy passes at
-   MT5 costs and fails at Multiplier costs.
+3. **The gap is smaller than first thought.** In normal hours, Multipliers
+   cost about 3 pips (4 on USD/JPY), which is workable on 1h and comfortable
+   on 4h. The early "8–13 pips" figure came from the expensive hours.
+4. **Evidence first.** Paying for MT5 infrastructure only makes sense if a
+   strategy passes at MT5 costs and fails at Multiplier costs.
 
 Plan for Phase 3 and Phase 4:
 - **Phase 3:** build the backtester with **two cost models** and show both in
   every report:
-  - **Main:** Multipliers, commission from `config/contract_specs.yaml` at the
-    rate for the hour of each trade.
+  - **Main:** Multipliers. Commission at the highest rate measured for the
+    UTC hour each trade opens (`research/phase2/cost_by_hour.json`), plus the
+    1.5× stress run. Also: no new trades 20:55–21:30 UTC, and the slippage
+    and rounding rules in `reports/costs.md` section 10.
   - **For comparison:** MT5 micro, with spread and swap as in section 3.
-- **Phase 4:** research **4h and daily** candles (built from 1m data, on UTC
-  boundaries) on all three pairs. A strategy passes only on the Multiplier
-  cost model, as the rules already require.
+- **Phase 4:** research **1h and 4h** candles, with daily as a secondary
+  check, built from 1m data on UTC boundaries, on all three pairs. New trades
+  open only 06:00–17:59 UTC. A strategy passes only on the Multiplier cost
+  model, as the rules require.
 - **When to come back to MT5:** if a strategy passes on MT5 costs but fails on
   Multiplier costs, write a separate MT5 decision note. It would cover the
   setup, the extra risk module work and a demo period, and needs the owner's
   approval.
 
 Things to know before agreeing:
-- **Fewer trades.** On 4h and daily candles, reaching 200+ out-of-sample
-  trades across 3 pairs is harder. A daily strategy trading about once a week
-  per pair makes about 50 trades per pair-year. "No strategy passes" becomes
-  more likely. That is a valid result, and the rule should stay as it is.
-- **Small final holdout.** The holdout must be the most recent Deriv data:
-  the last ~20% of one year, about 50 trading days. On daily candles that is
-  only a handful of trades per pair. It should still be used once and
-  reported as it is.
-- **A daily strategy assumes no overnight fee.** Tonight's demo trade checks
-  that. If Multipliers do charge overnight, section 3 must be redone before
-  Phase 4.
+- **Fewer chances per day.** The entry window is 12 of the 24 hours. On 4h
+  and daily candles, reaching 200+ out-of-sample trades across 3 pairs is
+  harder; 1h helps here. "No strategy passes" stays a valid result, and the
+  rule stays as it is.
+- **Holdout size.** The holdout is all Deriv data from 2026-04-28, about 6
+  months today and growing. On 1h and 4h that gives a reasonable number of
+  trades. On daily candles only a handful per pair, which is why its result
+  is reported as "consistent / inconsistent with validation".
+- **The cost-by-hour table is from one weekday.** News days can raise other
+  hours too. The table is used cautiously (the highest reading per hour,
+  plus the 1.5× stress run), and should be re-sampled for a few days during
+  the Phase 6 demo run.
+- **Weekend holding is still untested.** A daily strategy that holds over
+  the weekend is the riskiest case: costs and gap behaviour are unknown
+  until Phase 6.
 
-## 5. Proposed CLAUDE.md changes (ON HOLD; not applied)
+## 5. Proposed CLAUDE.md changes (waiting for approval; not applied)
 
-**Fixed decisions:** replace the Timeframe line.
+Already in CLAUDE.md (approved 28 Oct), unchanged:
+- the per-hour commission rule
+- x100/x200 only (x100 overnight)
+- the 1.5× stress test with MT5 costs side by side
+- the fixed holdout from 2026-04-28 and the no-overlap rule
+
+The two items marked ON HOLD can now be settled.
+
+**Timeframe** (replaces the current line and its ON HOLD note):
 ```diff
 - - Timeframe: research 15m to 1h candles. No tick scalping unless tests
 -   prove it beats costs.
-+ - Timeframe: research 4h and daily candles (built from 1m data on UTC
-+   boundaries). 15m and 1h are out: real-account costs are 65-90% of a
-+   typical 1h candle (reports/product_choice.md). No tick scalping.
+-   ON HOLD until reports/costs.md is done: switch to 4h and daily candles
+-   only (built from 1m data on UTC boundaries), dropping 15m and 1h
+-   (reports/product_choice.md).
++ - Timeframe: research 1h and 4h candles, with daily as a secondary check
++   (built from 1m data on UTC boundaries). 15m is out: even at the base
++   commission it costs about half a typical 15m candle (reports/costs.md).
++   No tick scalping.
++ - Entry window: new trades open only 06:00-17:59 UTC, where Deriv charges
++   its base commission outside big news. Never 20:55-21:30 UTC (Deriv
++   refuses new trades). Fixed, not a tunable parameter.
 ```
 
-**Fixed decisions:** add to the Contract line.
+**Minimum target vs cost** (replaces the ON HOLD item):
 ```diff
-  - Contract: Multipliers (up/down). Model commission, stop out, take profit
-    and stop loss exactly as Deriv documents them.
-+ - Contract costs and rules come from config/contract_specs.yaml (measured).
-+   Backtests use the commission rate for the hour each trade opens (it
-+   changes during the day; real and demo are the same at the same moment).
-```
-
-**Hard risk limits:** narrow the multiplier line. This tightens the limit,
-it does not loosen it.
-```diff
-- - Multiplier: chosen by testing within an allowed range. Never raise size
--   after losses: no martingale, no averaging down, no grids.
-+ - Multiplier: x100 or x200 only (x100 for trades held overnight), chosen
-+   by testing. Never raise size after losses: no martingale, no averaging
-+   down, no grids.
-```
-
-**Research rules:** add a minimum target and a cost stress test.
-```diff
+- - ON HOLD until reports/costs.md is done: minimum target vs cost (a
+-   strategy's average winning trade at least 3x the round-trip cost:
+-   EUR/USD and GBP/USD >= 25 pips, USD/JPY >= 40 pips). The pip figures
+-   came from one hour's rate and will be recomputed from the cost-by-hour
+-   table.
 + - Minimum target vs cost: a strategy's average winning trade must be at
-+   least 3x the round-trip cost (EUR/USD and GBP/USD >= 25 pips, USD/JPY
-+   >= 40 pips at today's real rate). Take-profit distances below that are
-+   not allowed.
-+ - Every backtest also runs at 1.5x the measured commission (Deriv says
-+   the rate varies with volatility) and reports MT5 costs side by side for
-+   comparison only. A pass is judged on Multiplier costs.
++   least 3x the average commission its trades actually paid (from the
++   cost-by-hour table). At the base rate that is about 9 pips EUR/USD,
++   8 pips GBP/USD, 13 pips USD/JPY.
 ```
 
-The 200+ out-of-sample trades rule, the 2-of-3 pairs rule and the holdout
-rule stay unchanged.
+The rule now compares a strategy's wins with the cost its own trades
+actually paid, instead of fixed pip numbers taken from one hour.
 
 ## 6. Open questions and caveats
 
-1. **Overnight cost on forex Multipliers.** No official page answers it. The
-   1 USD demo trade held overnight tonight (Phase 2) checks the statement.
-   Weekend gap behaviour stays open until the Phase 6 demo run.
+1. **Weekend holding on forex Multipliers.** One weekday night cost nothing
+   (demo trade #11). Weekend costs and gap behaviour are still unknown until
+   the Phase 6 demo run.
 2. **MT5 typical spreads are not published**, only minimums. The figures
    are for an unnamed account type, probably Standard, and come with a note
    that they "may not represent today's trading conditions". If MT5 is ever
@@ -265,9 +254,9 @@ rule stay unchanged.
    what clients are charged.
 4. **The Multipliers KID** is published by Deriv's EU entity and contains
    template errors. Its "up to 0.5%" commission ceiling shows the rate can
-   rise. On 2026-10-28 the rate went from 0.024% to 0.089% (EUR/USD) in
-   under four hours. The demo samples tonight and tomorrow measure it
-   across the day.
+   rise. We saw up to 0.287% on EUR/USD (12× base) just after the daily
+   pause. The cost-by-hour table comes from one weekday and should be
+   re-sampled in Phase 6.
 5. **MT5 automation details come from community projects**: the Docker image
    and the mt5linux bridge. Their maintenance and reliability are not
    guaranteed. That MT5's saved password is stored unencrypted is an

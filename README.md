@@ -5,12 +5,15 @@ contracts on EUR/USD, GBP/USD and USD/JPY. Strategies are researched and
 backtested first, then run on a demo account, and only moved to real money
 once the go-live checklist is complete.
 
-**Status:** Phase 1 (historical candle data). There is no trading code yet.
+**Status:** Phase 2 done (real trading costs and contract rules, see
+[reports/costs.md](reports/costs.md)). No strategy or live bot yet.
 
 - Project rules, risk limits and research standards: [CLAUDE.md](CLAUDE.md)
 - Before trading real money: [docs/go_live_checklist.md](docs/go_live_checklist.md)
 - How the Deriv API and Multiplier contracts work: [docs/deriv_api_notes.md](docs/deriv_api_notes.md)
 - What the historical data looks like: [reports/data_quality.md](reports/data_quality.md)
+- What a trade really costs: [reports/costs.md](reports/costs.md)
+- Multipliers vs MT5, and the research plan: [reports/product_choice.md](reports/product_choice.md)
 
 ## Settings
 
@@ -111,6 +114,25 @@ GitHub Actions:
   workflow"). Dukascopy throttles cloud-session downloads heavily, so bulk
   downloads run on GitHub's machines.
 
+## Phase 2 cost scripts
+
+All of these send price quotes only, except `demo_cost_trades.py`.
+- `scripts/sample_proposals.py [--demo]`: one quote sample on all pairs,
+  multipliers and stakes, written to `research/phase2/`. Without `--demo`
+  it uses the public connection, whose rate is not ours.
+- `scripts/check_real_quotes.py`: the same quote sample through the real
+  account. Quotes only: a guard blocks every other request type. It refuses
+  to run with `DERIV_MODE=real`.
+- `scripts/demo_cost_trades.py`: small trades on the **demo** account only.
+  Needs `TRADING_ENABLED=true`, uses the 1 USD minimum stake and stops at 20
+  trades.
+- `scripts/build_contract_specs.py`, `scripts/cost_by_hour.py`,
+  `scripts/check_stopout.py`: rebuild `config/contract_specs.yaml` and the
+  tables in `research/phase2/`.
+- `scripts/typical_moves.py`, `scripts/product_costs.py`: typical candle
+  moves and cost vs move. They use data before 2026-04-28 only, unless given
+  `--include-holdout`.
+
 ## Folders
 
 - `src/fxbot/` the bot's code (see the Repo layout section of CLAUDE.md)
@@ -118,6 +140,8 @@ GitHub Actions:
 - `tests/` automated tests (`pytest`)
 - `docs/` API notes and checklists
 - `data/` Deriv candle files; `data_external/` other sources (research only)
-- `research/` research notes and the log of every strategy variant tried
+- `config/` measured contract specs (`contract_specs.yaml`)
+- `research/` research notes, Phase 2 raw samples and the log of every
+  strategy variant tried
 - `reports/` backtest and performance reports
 - `reviews/` trade exports for reviews

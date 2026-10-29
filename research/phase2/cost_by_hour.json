@@ -1,0 +1,446 @@
+{
+ "base_rate_pct": {
+  "frxEURUSD": 0.0239,
+  "frxGBPUSD": 0.0203,
+  "frxUSDJPY": 0.0275
+ },
+ "price_used": {
+  "frxEURUSD": 1.1668,
+  "frxGBPUSD": 1.34082,
+  "frxUSDJPY": 156.6385
+ },
+ "hours": {
+  "0": {
+   "samples": "Thu 00:12",
+   "max_rate_pct": {
+    "frxEURUSD": 0.02694,
+    "frxGBPUSD": 0.02556,
+    "frxUSDJPY": 0.0288
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 1.13,
+    "frxGBPUSD": 1.26,
+    "frxUSDJPY": 1.05
+   },
+   "cost_pips": {
+    "frxEURUSD": 3.1,
+    "frxGBPUSD": 3.4,
+    "frxUSDJPY": 4.5
+   }
+  },
+  "1": {
+   "samples": "Thu 01:11",
+   "max_rate_pct": {
+    "frxEURUSD": 0.02836,
+    "frxGBPUSD": 0.02662,
+    "frxUSDJPY": 0.02986
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 1.19,
+    "frxGBPUSD": 1.31,
+    "frxUSDJPY": 1.09
+   },
+   "cost_pips": {
+    "frxEURUSD": 3.3,
+    "frxGBPUSD": 3.6,
+    "frxUSDJPY": 4.7
+   }
+  },
+  "2": {
+   "samples": "Thu 02:11",
+   "max_rate_pct": {
+    "frxEURUSD": 0.02758,
+    "frxGBPUSD": 0.02484,
+    "frxUSDJPY": 0.02832
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 1.15,
+    "frxGBPUSD": 1.22,
+    "frxUSDJPY": 1.03
+   },
+   "cost_pips": {
+    "frxEURUSD": 3.2,
+    "frxGBPUSD": 3.3,
+    "frxUSDJPY": 4.4
+   }
+  },
+  "3": {
+   "samples": "Thu 03:11",
+   "max_rate_pct": {
+    "frxEURUSD": 0.02746,
+    "frxGBPUSD": 0.02438,
+    "frxUSDJPY": 0.02794
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 1.15,
+    "frxGBPUSD": 1.2,
+    "frxUSDJPY": 1.02
+   },
+   "cost_pips": {
+    "frxEURUSD": 3.2,
+    "frxGBPUSD": 3.3,
+    "frxUSDJPY": 4.4
+   }
+  },
+  "4": {
+   "samples": "Thu 04:11",
+   "max_rate_pct": {
+    "frxEURUSD": 0.02736,
+    "frxGBPUSD": 0.02384,
+    "frxUSDJPY": 0.0275
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 1.14,
+    "frxGBPUSD": 1.17,
+    "frxUSDJPY": 1.0
+   },
+   "cost_pips": {
+    "frxEURUSD": 3.2,
+    "frxGBPUSD": 3.2,
+    "frxUSDJPY": 4.3
+   }
+  },
+  "5": {
+   "samples": "Thu 05:11",
+   "max_rate_pct": {
+    "frxEURUSD": 0.02646,
+    "frxGBPUSD": 0.02356,
+    "frxUSDJPY": 0.0275
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 1.11,
+    "frxGBPUSD": 1.16,
+    "frxUSDJPY": 1.0
+   },
+   "cost_pips": {
+    "frxEURUSD": 3.1,
+    "frxGBPUSD": 3.2,
+    "frxUSDJPY": 4.3
+   }
+  },
+  "6": {
+   "samples": "Thu 06:16",
+   "max_rate_pct": {
+    "frxEURUSD": 0.0239,
+    "frxGBPUSD": 0.0203,
+    "frxUSDJPY": 0.0275
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 1.0,
+    "frxGBPUSD": 1.0,
+    "frxUSDJPY": 1.0
+   },
+   "cost_pips": {
+    "frxEURUSD": 2.8,
+    "frxGBPUSD": 2.7,
+    "frxUSDJPY": 4.3
+   }
+  },
+  "7": {
+   "samples": "Thu 07:12",
+   "max_rate_pct": {
+    "frxEURUSD": 0.0239,
+    "frxGBPUSD": 0.0203,
+    "frxUSDJPY": 0.0275
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 1.0,
+    "frxGBPUSD": 1.0,
+    "frxUSDJPY": 1.0
+   },
+   "cost_pips": {
+    "frxEURUSD": 2.8,
+    "frxGBPUSD": 2.7,
+    "frxUSDJPY": 4.3
+   }
+  },
+  "8": {
+   "samples": "Thu 08:12, Thu 08:17",
+   "max_rate_pct": {
+    "frxEURUSD": 0.0239,
+    "frxGBPUSD": 0.0203,
+    "frxUSDJPY": 0.0275
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 1.0,
+    "frxGBPUSD": 1.0,
+    "frxUSDJPY": 1.0
+   },
+   "cost_pips": {
+    "frxEURUSD": 2.8,
+    "frxGBPUSD": 2.7,
+    "frxUSDJPY": 4.3
+   }
+  },
+  "9": {
+   "samples": "Thu 09:12",
+   "max_rate_pct": {
+    "frxEURUSD": 0.0239,
+    "frxGBPUSD": 0.0203,
+    "frxUSDJPY": 0.0275
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 1.0,
+    "frxGBPUSD": 1.0,
+    "frxUSDJPY": 1.0
+   },
+   "cost_pips": {
+    "frxEURUSD": 2.8,
+    "frxGBPUSD": 2.7,
+    "frxUSDJPY": 4.3
+   }
+  },
+  "10": {
+   "samples": "Thu 10:14",
+   "max_rate_pct": {
+    "frxEURUSD": 0.0239,
+    "frxGBPUSD": 0.0203,
+    "frxUSDJPY": 0.0275
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 1.0,
+    "frxGBPUSD": 1.0,
+    "frxUSDJPY": 1.0
+   },
+   "cost_pips": {
+    "frxEURUSD": 2.8,
+    "frxGBPUSD": 2.7,
+    "frxUSDJPY": 4.3
+   }
+  },
+  "11": {
+   "samples": "Thu 11:15",
+   "max_rate_pct": {
+    "frxEURUSD": 0.0239,
+    "frxGBPUSD": 0.0203,
+    "frxUSDJPY": 0.0275
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 1.0,
+    "frxGBPUSD": 1.0,
+    "frxUSDJPY": 1.0
+   },
+   "cost_pips": {
+    "frxEURUSD": 2.8,
+    "frxGBPUSD": 2.7,
+    "frxUSDJPY": 4.3
+   }
+  },
+  "12": {
+   "samples": "Thu 12:32",
+   "max_rate_pct": {
+    "frxEURUSD": 0.0717,
+    "frxGBPUSD": 0.0609,
+    "frxUSDJPY": 0.0825
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 3.0,
+    "frxGBPUSD": 3.0,
+    "frxUSDJPY": 3.0
+   },
+   "cost_pips": {
+    "frxEURUSD": 8.4,
+    "frxGBPUSD": 8.2,
+    "frxUSDJPY": 12.9
+   }
+  },
+  "13": {
+   "samples": "Thu 13:16",
+   "max_rate_pct": {
+    "frxEURUSD": 0.0717,
+    "frxGBPUSD": 0.0203,
+    "frxUSDJPY": 0.0275
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 3.0,
+    "frxGBPUSD": 1.0,
+    "frxUSDJPY": 1.0
+   },
+   "cost_pips": {
+    "frxEURUSD": 8.4,
+    "frxGBPUSD": 2.7,
+    "frxUSDJPY": 4.3
+   }
+  },
+  "14": {
+   "samples": "Thu 14:24",
+   "max_rate_pct": {
+    "frxEURUSD": 0.0239,
+    "frxGBPUSD": 0.0203,
+    "frxUSDJPY": 0.0275
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 1.0,
+    "frxGBPUSD": 1.0,
+    "frxUSDJPY": 1.0
+   },
+   "cost_pips": {
+    "frxEURUSD": 2.8,
+    "frxGBPUSD": 2.7,
+    "frxUSDJPY": 4.3
+   }
+  },
+  "15": {
+   "samples": "Thu 15:21",
+   "max_rate_pct": {
+    "frxEURUSD": 0.0239,
+    "frxGBPUSD": 0.0203,
+    "frxUSDJPY": 0.0275
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 1.0,
+    "frxGBPUSD": 1.0,
+    "frxUSDJPY": 1.0
+   },
+   "cost_pips": {
+    "frxEURUSD": 2.8,
+    "frxGBPUSD": 2.7,
+    "frxUSDJPY": 4.3
+   }
+  },
+  "16": {
+   "samples": "Wed 16:35, Thu 16:13",
+   "max_rate_pct": {
+    "frxEURUSD": 0.0239,
+    "frxGBPUSD": 0.0203,
+    "frxUSDJPY": 0.0275
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 1.0,
+    "frxGBPUSD": 1.0,
+    "frxUSDJPY": 1.0
+   },
+   "cost_pips": {
+    "frxEURUSD": 2.8,
+    "frxGBPUSD": 2.7,
+    "frxUSDJPY": 4.3
+   }
+  },
+  "17": {
+   "samples": "Thu 17:16",
+   "max_rate_pct": {
+    "frxEURUSD": 0.0239,
+    "frxGBPUSD": 0.0203,
+    "frxUSDJPY": 0.0275
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 1.0,
+    "frxGBPUSD": 1.0,
+    "frxUSDJPY": 1.0
+   },
+   "cost_pips": {
+    "frxEURUSD": 2.8,
+    "frxGBPUSD": 2.7,
+    "frxUSDJPY": 4.3
+   }
+  },
+  "18": {
+   "samples": "Wed 18:07, Thu 18:15",
+   "max_rate_pct": {
+    "frxEURUSD": 0.0717,
+    "frxGBPUSD": 0.0609,
+    "frxUSDJPY": 0.0825
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 3.0,
+    "frxGBPUSD": 3.0,
+    "frxUSDJPY": 3.0
+   },
+   "cost_pips": {
+    "frxEURUSD": 8.4,
+    "frxGBPUSD": 8.2,
+    "frxUSDJPY": 12.9
+   }
+  },
+  "19": {
+   "samples": "Thu 19:15",
+   "max_rate_pct": {
+    "frxEURUSD": 0.05554,
+    "frxGBPUSD": 0.04592,
+    "frxUSDJPY": 0.06782
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 2.32,
+    "frxGBPUSD": 2.26,
+    "frxUSDJPY": 2.47
+   },
+   "cost_pips": {
+    "frxEURUSD": 6.5,
+    "frxGBPUSD": 6.2,
+    "frxUSDJPY": 10.6
+   }
+  },
+  "20": {
+   "samples": "Wed 20:01, Wed 20:03",
+   "max_rate_pct": {
+    "frxEURUSD": 0.08934,
+    "frxGBPUSD": 0.0743,
+    "frxUSDJPY": 0.11006
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 3.74,
+    "frxGBPUSD": 3.66,
+    "frxUSDJPY": 4.0
+   },
+   "cost_pips": {
+    "frxEURUSD": 10.4,
+    "frxGBPUSD": 10.0,
+    "frxUSDJPY": 17.2
+   }
+  },
+  "21": {
+   "samples": "Wed 21:14 (paused), Wed 21:36",
+   "max_rate_pct": {
+    "frxEURUSD": 0.2868,
+    "frxGBPUSD": 0.2436,
+    "frxUSDJPY": 0.33
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 12.0,
+    "frxGBPUSD": 12.0,
+    "frxUSDJPY": 12.0
+   },
+   "cost_pips": {
+    "frxEURUSD": 33.5,
+    "frxGBPUSD": 32.7,
+    "frxUSDJPY": 51.7
+   }
+  },
+  "22": {
+   "samples": "Wed 22:13",
+   "max_rate_pct": {
+    "frxEURUSD": 0.1419,
+    "frxGBPUSD": 0.11948,
+    "frxUSDJPY": 0.16244
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 5.94,
+    "frxGBPUSD": 5.89,
+    "frxUSDJPY": 5.91
+   },
+   "cost_pips": {
+    "frxEURUSD": 16.6,
+    "frxGBPUSD": 16.0,
+    "frxUSDJPY": 25.4
+   }
+  },
+  "23": {
+   "samples": "Wed 23:11",
+   "max_rate_pct": {
+    "frxEURUSD": 0.10288,
+    "frxGBPUSD": 0.09372,
+    "frxUSDJPY": 0.11698
+   },
+   "multiple_of_base": {
+    "frxEURUSD": 4.3,
+    "frxGBPUSD": 4.62,
+    "frxUSDJPY": 4.25
+   },
+   "cost_pips": {
+    "frxEURUSD": 12.0,
+    "frxGBPUSD": 12.6,
+    "frxUSDJPY": 18.3
+   }
+  }
+ }
+}

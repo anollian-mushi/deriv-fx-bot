@@ -29,6 +29,15 @@
  },
  "frxEURUSD": {
   "deriv": {
+   "15m": {
+    "candles": 11866,
+    "range_median": 5.0,
+    "range_p25": 3.3,
+    "range_p75": 7.6,
+    "body_median": 2.1,
+    "body_mean": 3.1,
+    "price_median": 1.16673
+   },
    "1h": {
     "candles": 2968,
     "range_median": 10.4,
@@ -58,6 +67,15 @@
    }
   },
   "dukascopy": {
+   "15m": {
+    "candles": 109427,
+    "range_median": 5.6,
+    "range_p25": 3.6,
+    "range_p75": 8.8,
+    "body_median": 2.3,
+    "body_mean": 3.6,
+    "price_median": 1.08833
+   },
    "1h": {
     "candles": 27359,
     "range_median": 11.6,
@@ -89,6 +107,15 @@
  },
  "frxGBPUSD": {
   "deriv": {
+   "15m": {
+    "candles": 11866,
+    "range_median": 6.7,
+    "range_p25": 4.4,
+    "range_p75": 10.1,
+    "body_median": 2.9,
+    "body_mean": 4.2,
+    "price_median": 1.34076
+   },
    "1h": {
     "candles": 2968,
     "range_median": 14.2,
@@ -118,6 +145,15 @@
    }
   },
   "dukascopy": {
+   "15m": {
+    "candles": 109424,
+    "range_median": 7.3,
+    "range_p25": 4.6,
+    "range_p75": 11.2,
+    "body_median": 3.0,
+    "body_mean": 4.5,
+    "price_median": 1.27313
+   },
    "1h": {
     "candles": 27359,
     "range_median": 14.8,
@@ -149,6 +185,15 @@
  },
  "frxUSDJPY": {
   "deriv": {
+   "15m": {
+    "candles": 11866,
+    "range_median": 8.4,
+    "range_p25": 5.7,
+    "range_p75": 12.1,
+    "body_median": 3.7,
+    "body_mean": 5.1,
+    "price_median": 156.644
+   },
    "1h": {
     "candles": 2968,
     "range_median": 17.5,
@@ -178,6 +223,15 @@
    }
   },
   "dukascopy": {
+   "15m": {
+    "candles": 109431,
+    "range_median": 9.1,
+    "range_p25": 5.8,
+    "range_p75": 13.9,
+    "body_median": 3.7,
+    "body_mean": 5.7,
+    "price_median": 146.2795
+   },
    "1h": {
     "candles": 27359,
     "range_median": 18.9,

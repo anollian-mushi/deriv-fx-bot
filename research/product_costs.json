@@ -26,24 +26,44 @@
    "first": "2021-10-27",
    "last": "2026-04-27"
   },
-  "samples_used": 4
+  "base_rate_pct": {
+   "frxEURUSD": 0.0239,
+   "frxGBPUSD": 0.0203,
+   "frxUSDJPY": 0.0275
+  }
  },
  "frxEURUSD": {
+  "15m": {
+   "range_deriv": 5.0,
+   "range_dukascopy": 5.6,
+   "costs_pips": {
+    "multipliers_base": 2.79,
+    "multipliers_3x": 8.37,
+    "mt5_standard": 1.11,
+    "mt5_standard_2x": 2.21,
+    "mt5_micro": 0.71
+   },
+   "share_of_range_deriv": {
+    "multipliers_base": 0.558,
+    "multipliers_3x": 1.673,
+    "mt5_standard": 0.221,
+    "mt5_standard_2x": 0.441,
+    "mt5_micro": 0.141
+   }
+  },
   "1h": {
    "range_deriv": 10.4,
    "range_dukascopy": 11.6,
    "costs_pips": {
-    "multipliers_min": 2.79,
-    "multipliers_median": 9.4,
-    "multipliers_max": 10.42,
+    "multipliers_base": 2.79,
+    "multipliers_3x": 8.37,
     "mt5_standard": 1.13,
     "mt5_standard_2x": 2.23,
     "mt5_micro": 0.73
    },
    "share_of_range_deriv": {
-    "multipliers_min": 0.268,
-    "multipliers_median": 0.903,
-    "multipliers_max": 1.002,
+    "multipliers_base": 0.268,
+    "multipliers_3x": 0.804,
     "mt5_standard": 0.108,
     "mt5_standard_2x": 0.214,
     "mt5_micro": 0.07
@@ -53,17 +73,15 @@
    "range_deriv": 21.2,
    "range_dukascopy": 23.9,
    "costs_pips": {
-    "multipliers_min": 2.79,
-    "multipliers_median": 9.4,
-    "multipliers_max": 10.42,
+    "multipliers_base": 2.79,
+    "multipliers_3x": 8.37,
     "mt5_standard": 1.2,
     "mt5_standard_2x": 2.3,
     "mt5_micro": 0.8
    },
    "share_of_range_deriv": {
-    "multipliers_min": 0.132,
-    "multipliers_median": 0.443,
-    "multipliers_max": 0.492,
+    "multipliers_base": 0.132,
+    "multipliers_3x": 0.395,
     "mt5_standard": 0.057,
     "mt5_standard_2x": 0.109,
     "mt5_micro": 0.038
@@ -73,17 +91,15 @@
    "range_deriv": 58.6,
    "range_dukascopy": 71.2,
    "costs_pips": {
-    "multipliers_min": 2.79,
-    "multipliers_median": 9.4,
-    "multipliers_max": 10.42,
+    "multipliers_base": 2.79,
+    "multipliers_3x": 8.37,
     "mt5_standard": 1.71,
     "mt5_standard_2x": 2.81,
     "mt5_micro": 1.31
    },
    "share_of_range_deriv": {
-    "multipliers_min": 0.048,
-    "multipliers_median": 0.16,
-    "multipliers_max": 0.178,
+    "multipliers_base": 0.048,
+    "multipliers_3x": 0.143,
     "mt5_standard": 0.029,
     "mt5_standard_2x": 0.048,
     "mt5_micro": 0.022
@@ -91,21 +107,37 @@
   }
  },
  "frxGBPUSD": {
+  "15m": {
+   "range_deriv": 6.7,
+   "range_dukascopy": 7.3,
+   "costs_pips": {
+    "multipliers_base": 2.72,
+    "multipliers_3x": 8.17,
+    "mt5_standard": 1.01,
+    "mt5_standard_2x": 2.01,
+    "mt5_micro": 0.71
+   },
+   "share_of_range_deriv": {
+    "multipliers_base": 0.406,
+    "multipliers_3x": 1.219,
+    "mt5_standard": 0.15,
+    "mt5_standard_2x": 0.3,
+    "mt5_micro": 0.106
+   }
+  },
   "1h": {
    "range_deriv": 14.2,
    "range_dukascopy": 14.8,
    "costs_pips": {
-    "multipliers_min": 2.72,
-    "multipliers_median": 9.06,
-    "multipliers_max": 9.96,
+    "multipliers_base": 2.72,
+    "multipliers_3x": 8.17,
     "mt5_standard": 1.03,
     "mt5_standard_2x": 2.03,
     "mt5_micro": 0.73
    },
    "share_of_range_deriv": {
-    "multipliers_min": 0.192,
-    "multipliers_median": 0.638,
-    "multipliers_max": 0.702,
+    "multipliers_base": 0.192,
+    "multipliers_3x": 0.575,
     "mt5_standard": 0.072,
     "mt5_standard_2x": 0.143,
     "mt5_micro": 0.051
@@ -115,17 +147,15 @@
    "range_deriv": 29.8,
    "range_dukascopy": 30.6,
    "costs_pips": {
-    "multipliers_min": 2.72,
-    "multipliers_median": 9.06,
-    "multipliers_max": 9.96,
+    "multipliers_base": 2.72,
+    "multipliers_3x": 8.17,
     "mt5_standard": 1.11,
     "mt5_standard_2x": 2.11,
     "mt5_micro": 0.81
    },
    "share_of_range_deriv": {
-    "multipliers_min": 0.091,
-    "multipliers_median": 0.304,
-    "multipliers_max": 0.334,
+    "multipliers_base": 0.091,
+    "multipliers_3x": 0.274,
     "mt5_standard": 0.037,
     "mt5_standard_2x": 0.071,
     "mt5_micro": 0.027
@@ -135,17 +165,15 @@
    "range_deriv": 81.1,
    "range_dukascopy": 87.7,
    "costs_pips": {
-    "multipliers_min": 2.72,
-    "multipliers_median": 9.06,
-    "multipliers_max": 9.96,
+    "multipliers_base": 2.72,
+    "multipliers_3x": 8.17,
     "mt5_standard": 1.67,
     "mt5_standard_2x": 2.67,
     "mt5_micro": 1.37
    },
    "share_of_range_deriv": {
-    "multipliers_min": 0.034,
-    "multipliers_median": 0.112,
-    "multipliers_max": 0.123,
+    "multipliers_base": 0.034,
+    "multipliers_3x": 0.101,
     "mt5_standard": 0.021,
     "mt5_standard_2x": 0.033,
     "mt5_micro": 0.017
@@ -153,21 +181,37 @@
   }
  },
  "frxUSDJPY": {
+  "15m": {
+   "range_deriv": 8.4,
+   "range_dukascopy": 9.1,
+   "costs_pips": {
+    "multipliers_base": 4.31,
+    "multipliers_3x": 12.92,
+    "mt5_standard": 1.41,
+    "mt5_standard_2x": 2.81,
+    "mt5_micro": 0.91
+   },
+   "share_of_range_deriv": {
+    "multipliers_base": 0.513,
+    "multipliers_3x": 1.538,
+    "mt5_standard": 0.168,
+    "mt5_standard_2x": 0.334,
+    "mt5_micro": 0.108
+   }
+  },
   "1h": {
    "range_deriv": 17.5,
    "range_dukascopy": 18.9,
    "costs_pips": {
-    "multipliers_min": 4.31,
-    "multipliers_median": 15.08,
-    "multipliers_max": 17.24,
+    "multipliers_base": 4.31,
+    "multipliers_3x": 12.92,
     "mt5_standard": 1.44,
     "mt5_standard_2x": 2.84,
     "mt5_micro": 0.94
    },
    "share_of_range_deriv": {
-    "multipliers_min": 0.246,
-    "multipliers_median": 0.862,
-    "multipliers_max": 0.985,
+    "multipliers_base": 0.246,
+    "multipliers_3x": 0.738,
     "mt5_standard": 0.082,
     "mt5_standard_2x": 0.162,
     "mt5_micro": 0.053
@@ -177,17 +221,15 @@
    "range_deriv": 36.7,
    "range_dukascopy": 39.5,
    "costs_pips": {
-    "multipliers_min": 4.31,
-    "multipliers_median": 15.08,
-    "multipliers_max": 17.24,
+    "multipliers_base": 4.31,
+    "multipliers_3x": 12.92,
     "mt5_standard": 1.54,
     "mt5_standard_2x": 2.94,
     "mt5_micro": 1.04
    },
    "share_of_range_deriv": {
-    "multipliers_min": 0.117,
-    "multipliers_median": 0.411,
-    "multipliers_max": 0.47,
+    "multipliers_base": 0.117,
+    "multipliers_3x": 0.352,
     "mt5_standard": 0.042,
     "mt5_standard_2x": 0.08,
     "mt5_micro": 0.028
@@ -197,17 +239,15 @@
    "range_deriv": 92.3,
    "range_dukascopy": 113.3,
    "costs_pips": {
-    "multipliers_min": 4.31,
-    "multipliers_median": 15.08,
-    "multipliers_max": 17.24,
+    "multipliers_base": 4.31,
+    "multipliers_3x": 12.92,
     "mt5_standard": 2.24,
     "mt5_standard_2x": 3.64,
     "mt5_micro": 1.74
    },
    "share_of_range_deriv": {
-    "multipliers_min": 0.047,
-    "multipliers_median": 0.163,
-    "multipliers_max": 0.187,
+    "multipliers_base": 0.047,
+    "multipliers_3x": 0.14,
     "mt5_standard": 0.024,
     "mt5_standard_2x": 0.039,
     "mt5_micro": 0.019
