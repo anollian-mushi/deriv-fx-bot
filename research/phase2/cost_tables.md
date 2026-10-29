@@ -27,21 +27,21 @@ Commission rate = median over all samples on that connection.
 
 | Pair | Multiplier | Position size | Commission | Commission % of stake | Break-even move | Stop-out distance | Stop-out distance as 1h medians |
 |---|---|---|---|---|---|---|---|
-| frxEURUSD | x100 | 100 USD | 0.0280 USD | 2.8% | 3.1 pips | 108.4 pips | 11.8 |
-| frxEURUSD | x200 | 200 USD | 0.0559 USD | 5.6% | 3.1 pips | 52.6 pips | 5.7 |
-| frxEURUSD | x300 | 300 USD | 0.0839 USD | 8.4% | 3.1 pips | 34.0 pips | 3.7 |
-| frxEURUSD | x500 | 500 USD | 0.1379 USD | 13.8% | 3.1 pips | 19.2 pips | 2.1 |
-| frxEURUSD | x800 | 800 USD | 0.2202 USD | 22.0% | 3.1 pips | 10.9 pips | 1.2 |
-| frxGBPUSD | x100 | 100 USD | 0.0261 USD | 2.6% | 3.5 pips | 129.8 pips | 10.5 |
-| frxGBPUSD | x200 | 200 USD | 0.0522 USD | 5.2% | 3.5 pips | 63.1 pips | 5.1 |
-| frxGBPUSD | x300 | 300 USD | 0.0783 USD | 7.8% | 3.5 pips | 40.9 pips | 3.3 |
-| frxGBPUSD | x500 | 500 USD | 0.1278 USD | 12.8% | 3.4 pips | 23.2 pips | 1.9 |
-| frxGBPUSD | x800 | 800 USD | 0.2045 USD | 20.4% | 3.4 pips | 13.2 pips | 1.1 |
-| frxUSDJPY | x100 | 100 USD | 0.0293 USD | 2.9% | 4.6 pips | 153.2 pips | 10.4 |
-| frxUSDJPY | x200 | 200 USD | 0.0587 USD | 5.9% | 4.6 pips | 74.3 pips | 5.0 |
-| frxUSDJPY | x300 | 300 USD | 0.0880 USD | 8.8% | 4.6 pips | 48.0 pips | 3.2 |
-| frxUSDJPY | x500 | 500 USD | 0.1439 USD | 14.4% | 4.5 pips | 27.0 pips | 1.8 |
-| frxUSDJPY | x800 | 800 USD | 0.2285 USD | 22.8% | 4.5 pips | 15.2 pips | 1.0 |
+| frxEURUSD | x100 | 100 USD | 0.0276 USD | 2.8% | 3.1 pips | 108.4 pips | 11.8 |
+| frxEURUSD | x200 | 200 USD | 0.0552 USD | 5.5% | 3.1 pips | 52.7 pips | 5.7 |
+| frxEURUSD | x300 | 300 USD | 0.0827 USD | 8.3% | 3.1 pips | 34.1 pips | 3.7 |
+| frxEURUSD | x500 | 500 USD | 0.1376 USD | 13.8% | 3.1 pips | 19.2 pips | 2.1 |
+| frxEURUSD | x800 | 800 USD | 0.2197 USD | 22.0% | 3.1 pips | 10.9 pips | 1.2 |
+| frxGBPUSD | x100 | 100 USD | 0.0256 USD | 2.6% | 3.4 pips | 129.8 pips | 10.6 |
+| frxGBPUSD | x200 | 200 USD | 0.0511 USD | 5.1% | 3.4 pips | 63.2 pips | 5.1 |
+| frxGBPUSD | x300 | 300 USD | 0.0767 USD | 7.7% | 3.4 pips | 41.0 pips | 3.3 |
+| frxGBPUSD | x500 | 500 USD | 0.1260 USD | 12.6% | 3.4 pips | 23.3 pips | 1.9 |
+| frxGBPUSD | x800 | 800 USD | 0.2016 USD | 20.2% | 3.4 pips | 13.3 pips | 1.1 |
+| frxUSDJPY | x100 | 100 USD | 0.0288 USD | 2.9% | 4.5 pips | 153.3 pips | 10.4 |
+| frxUSDJPY | x200 | 200 USD | 0.0576 USD | 5.8% | 4.5 pips | 74.4 pips | 5.0 |
+| frxUSDJPY | x300 | 300 USD | 0.0864 USD | 8.6% | 4.5 pips | 48.1 pips | 3.2 |
+| frxUSDJPY | x500 | 500 USD | 0.1428 USD | 14.3% | 4.5 pips | 27.1 pips | 1.8 |
+| frxUSDJPY | x800 | 800 USD | 0.2266 USD | 22.7% | 4.5 pips | 15.3 pips | 1.0 |
 
 ## public connection
 
