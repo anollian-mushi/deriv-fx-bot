@@ -188,3 +188,53 @@ Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; s
 Stitched OOS (2023-10-27 to 2026-04-26): 1251 trades, net -123.27 USD, max drawdown 53.15%, per pair {'frxEURUSD': -47.17, 'frxGBPUSD': -38.11, 'frxUSDJPY': -37.99}, kill events 2, luck check beats p95: False (p95 -59.937000000000005). **Candidate: False**. Report: `reports/backtests/phase4_f3_trend_pullback_1h_oos/`, `research/phase4/f3_trend_pullback_1h/`.
 
 <!-- phase4:f3_trend_pullback_1h end -->
+
+<!-- phase4:f4_mean_reversion start -->
+
+### f4_mean_reversion (1h): 16 variants
+
+Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-30 | f4_mean_reversion v00 | length=20, stretch=2.0, er_max=0.2, sl_atr=1.5 | 2904 | -240.12 | 4 | - |
+| 2026-10-30 | f4_mean_reversion v01 | length=20, stretch=2.0, er_max=0.2, sl_atr=3.0 | 2167 | -203.04 | 4 | - |
+| 2026-10-30 | f4_mean_reversion v02 | length=20, stretch=2.0, er_max=0.35, sl_atr=1.5 | 3818 | -294.41 | 5 | - |
+| 2026-10-30 | f4_mean_reversion v03 | length=20, stretch=2.0, er_max=0.35, sl_atr=3.0 | 2710 | -242.24 | 4 | - |
+| 2026-10-30 | f4_mean_reversion v04 | length=20, stretch=3.0, er_max=0.2, sl_atr=1.5 | 1113 | -104.69 | 2 | 2 |
+| 2026-10-30 | f4_mean_reversion v05 | length=20, stretch=3.0, er_max=0.2, sl_atr=3.0 | 891 | -92.25 | 1 | 1, 3, 4 |
+| 2026-10-30 | f4_mean_reversion v06 | length=20, stretch=3.0, er_max=0.35, sl_atr=1.5 | 1671 | -139.11 | 2 | - |
+| 2026-10-30 | f4_mean_reversion v07 | length=20, stretch=3.0, er_max=0.35, sl_atr=3.0 | 1285 | -129.2 | 2 | 5 |
+| 2026-10-30 | f4_mean_reversion v08 | length=50, stretch=2.0, er_max=0.2, sl_atr=1.5 | 4325 | -286.4 | 5 | - |
+| 2026-10-30 | f4_mean_reversion v09 | length=50, stretch=2.0, er_max=0.2, sl_atr=3.0 | 3034 | -214.25 | 4 | - |
+| 2026-10-30 | f4_mean_reversion v10 | length=50, stretch=2.0, er_max=0.35, sl_atr=1.5 | 4646 | -307.74 | 6 | - |
+| 2026-10-30 | f4_mean_reversion v11 | length=50, stretch=2.0, er_max=0.35, sl_atr=3.0 | 3214 | -219.94 | 4 | - |
+| 2026-10-30 | f4_mean_reversion v12 | length=50, stretch=3.0, er_max=0.2, sl_atr=1.5 | 3069 | -190.29 | 3 | - |
+| 2026-10-30 | f4_mean_reversion v13 | length=50, stretch=3.0, er_max=0.2, sl_atr=3.0 | 2149 | -184.74 | 3 | - |
+| 2026-10-30 | f4_mean_reversion v14 | length=50, stretch=3.0, er_max=0.35, sl_atr=1.5 | 3397 | -219.76 | 4 | - |
+| 2026-10-30 | f4_mean_reversion v15 | length=50, stretch=3.0, er_max=0.35, sl_atr=3.0 | 2338 | -192.94 | 4 | - |
+
+Stitched OOS (2023-10-27 to 2026-04-26): 551 trades, net -61.63 USD, max drawdown 50.05%, per pair {'frxEURUSD': -25.77, 'frxGBPUSD': -15.94, 'frxUSDJPY': -19.92}, kill events 1, luck check beats p95: False (p95 -21.37900000000004). **Candidate: False**. Report: `reports/backtests/phase4_f4_mean_reversion_oos/`, `research/phase4/f4_mean_reversion/`.
+
+<!-- phase4:f4_mean_reversion end -->
+
+<!-- phase4:f4_mean_reversion_4h start -->
+
+### f4_mean_reversion_4h (4h): 8 variants
+
+Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-30 | f4_mean_reversion_4h v00 | length=20, stretch=2.0, er_max=0.2, sl_atr=2.0 | 721 | -23.9 | 0 | - |
+| 2026-10-30 | f4_mean_reversion_4h v01 | length=20, stretch=2.0, er_max=0.35, sl_atr=2.0 | 976 | -76.33 | 1 | - |
+| 2026-10-30 | f4_mean_reversion_4h v02 | length=20, stretch=3.0, er_max=0.2, sl_atr=2.0 | 247 | 18.1 | 0 | 1, 2, 3 |
+| 2026-10-30 | f4_mean_reversion_4h v03 | length=20, stretch=3.0, er_max=0.35, sl_atr=2.0 | 390 | -14.99 | 0 | 4, 5 |
+| 2026-10-30 | f4_mean_reversion_4h v04 | length=50, stretch=2.0, er_max=0.2, sl_atr=2.0 | 1257 | -82.54 | 1 | - |
+| 2026-10-30 | f4_mean_reversion_4h v05 | length=50, stretch=2.0, er_max=0.35, sl_atr=2.0 | 1312 | -49.05 | 1 | - |
+| 2026-10-30 | f4_mean_reversion_4h v06 | length=50, stretch=3.0, er_max=0.2, sl_atr=2.0 | 827 | -82.4 | 1 | - |
+| 2026-10-30 | f4_mean_reversion_4h v07 | length=50, stretch=3.0, er_max=0.35, sl_atr=2.0 | 888 | -51.68 | 1 | - |
+
+Stitched OOS (2023-10-27 to 2026-04-26): 167 trades, net -10.14 USD, max drawdown 26.28%, per pair {'frxEURUSD': -3.13, 'frxGBPUSD': 1.87, 'frxUSDJPY': -8.88}, kill events 0, luck check beats p95: False (p95 7.8689999999999864). **Candidate: False**. Report: `reports/backtests/phase4_f4_mean_reversion_4h_oos/`, `research/phase4/f4_mean_reversion_4h/`.
+
+<!-- phase4:f4_mean_reversion_4h end -->

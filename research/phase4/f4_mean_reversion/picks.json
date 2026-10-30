@@ -1,0 +1,72 @@
+[
+ {
+  "round": 1,
+  "train": "2021-10-27..2023-10-26",
+  "test": "2023-10-27..2024-04-26",
+  "variant": 5,
+  "params": {
+   "length": 20,
+   "stretch": 3.0,
+   "er_max": 0.2,
+   "sl_atr": 3.0
+  },
+  "train_score": -0.894,
+  "train_trades": 409
+ },
+ {
+  "round": 2,
+  "train": "2022-04-27..2024-04-26",
+  "test": "2024-04-27..2024-10-26",
+  "variant": 4,
+  "params": {
+   "length": 20,
+   "stretch": 3.0,
+   "er_max": 0.2,
+   "sl_atr": 1.5
+  },
+  "train_score": -0.841,
+  "train_trades": 536
+ },
+ {
+  "round": 3,
+  "train": "2022-10-27..2024-10-26",
+  "test": "2024-10-27..2025-04-26",
+  "variant": 5,
+  "params": {
+   "length": 20,
+   "stretch": 3.0,
+   "er_max": 0.2,
+   "sl_atr": 3.0
+  },
+  "train_score": -0.784,
+  "train_trades": 445
+ },
+ {
+  "round": 4,
+  "train": "2023-04-27..2025-04-26",
+  "test": "2025-04-27..2025-10-26",
+  "variant": 5,
+  "params": {
+   "length": 20,
+   "stretch": 3.0,
+   "er_max": 0.2,
+   "sl_atr": 3.0
+  },
+  "train_score": -0.868,
+  "train_trades": 419
+ },
+ {
+  "round": 5,
+  "train": "2023-10-27..2025-10-26",
+  "test": "2025-10-27..2026-04-26",
+  "variant": 7,
+  "params": {
+   "length": 20,
+   "stretch": 3.0,
+   "er_max": 0.35,
+   "sl_atr": 3.0
+  },
+  "train_score": -0.984,
+  "train_trades": 576
+ }
+]
