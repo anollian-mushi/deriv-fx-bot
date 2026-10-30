@@ -188,8 +188,13 @@ def stage_summary(family):
         luck = _jload(d / "luck.json") if (d / "luck.json").exists() else []
         m, s = met["measured"], met["stress_1_5x"]
         per_pair = {sym: round(sum(t["profit"] for t in trades if t["symbol"] == sym), 2) for sym in R.SYMBOLS}
+        pct, need_runs = R.luck_rule(family)
         nets = np.array([r["net_profit"] for r in luck]) if luck else np.array([])
-        p95 = float(np.percentile(nets, 95)) if len(nets) else None
+        p95 = float(np.percentile(nets, pct)) if len(nets) else None
+        raw = _grid_trades(name, len(grid))
+        gt = {i: r["trades"] for i, r in raw.items()}
+        rob = R.robustness([{**t, "entry_epoch": int(t["entry_epoch"])} for t in trades], gt,
+                           R.pick_per_window(gt), grid)
         checks = {
             "profitable_pairs_2_of_3": sum(v > 0 for v in per_pair.values()) >= 2,
             "net_profit_positive": m["net_profit"] > 0,
@@ -197,13 +202,17 @@ def stage_summary(family):
             "params_5_or_fewer": len(grid[0]) <= 5,
             "min_target_3x_commission": bool(m["min_target_met"]),
             "no_kill_switch": not met["kill_switch"],
-            "luck_check_beats_p95": p95 is not None and len(nets) >= 200 and m["net_profit"] > p95,
+            "luck_check_beats_p95": p95 is not None and len(nets) >= need_runs and m["net_profit"] > p95,
+            **rob["checks"],
         }
         res = {"sub_grid": name, "variants": len(grid), "oos": m, "stress_1_5x": s,
                "mt5_micro": met["mt5_micro_comparison_only"], "per_pair_net": per_pair,
                "kill_events": len(met.get("kill_events", [])),
                "kill_events_stress": len(met.get("kill_events_stress", [])),
-               "luck": {"runs": len(nets), "p50": float(np.median(nets)) if len(nets) else None, "p95": p95,
+               "robustness": rob["detail"], "round": R.ROUND[family],
+               "variants_running_total": R.variants_through_round(R.ROUND[family]),
+               "luck": {"runs": len(nets), "percentile": pct,
+                        "p50": float(np.median(nets)) if len(nets) else None, "p95": p95,
                         "share_beaten": float((nets < m["net_profit"]).mean()) if len(nets) else None},
                "checks": checks, "candidate": all(checks.values())}
         _jdump(d / "summary.json", res)
@@ -246,8 +255,10 @@ def write_log(family) -> None:
             lines += ["", f"Stitched OOS (2023-10-27 to 2026-04-26): {m['trades']} trades, net "
                           f"{m['net_profit']} USD, max drawdown {m['max_drawdown_pct']}%, per pair "
                           f"{summ['per_pair_net']}, kill events {summ['kill_events']}, luck check "
-                          f"beats p95: {summ['checks']['luck_check_beats_p95']} "
-                          f"(p95 {summ['luck']['p95']}). **Candidate: {summ['candidate']}**. "
+                          f"(p{summ['luck'].get('percentile', 95)} of {summ['luck']['runs']} random runs = "
+                          f"{summ['luck']['p95']}): {summ['checks']['luck_check_beats_p95']}. "
+                          f"Failed checks: {[k for k, v in summ['checks'].items() if not v] or 'none'}. "
+                          f"**Candidate: {summ['candidate']}**. "
                           f"Report: `reports/backtests/phase4_{name}_oos/`, `research/phase4/{name}/`."]
         lines += ["", f"<!-- phase4:{name} end -->"]
         block = "\n".join(lines)
@@ -282,7 +293,7 @@ def main() -> int:
     elif a.stage == "oos":
         ok = stage_oos(a.family)
     elif a.stage == "luck":
-        ok = stage_luck(a.family, budget, t0, max(a.runs, LUCK_RUNS))
+        ok = stage_luck(a.family, budget, t0, max(a.runs, R.luck_rule(a.family)[1]))
     else:
         ok = stage_summary(a.family)
         write_log(a.family)

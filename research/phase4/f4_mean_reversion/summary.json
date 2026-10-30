@@ -71,8 +71,49 @@
  },
  "kill_events": 1,
  "kill_events_stress": 1,
+ "robustness": {
+  "per_pair": {
+   "frxEURUSD": -25.77,
+   "frxGBPUSD": -15.94,
+   "frxUSDJPY": -19.92
+  },
+  "per_test_window": [
+   -23.1,
+   -1.83,
+   -15.83,
+   -14.41,
+   -6.46
+  ],
+  "net_without_top_trades": -81.64,
+  "top_trades_removed": 12,
+  "neighbour_window_returns_pct": [
+   -33.4,
+   -24.3,
+   -29.2,
+   -29.3,
+   -30.3,
+   3.6,
+   -8.2,
+   -4.6,
+   -25.3,
+   -19.2,
+   -23.7,
+   -35.8,
+   -40.8,
+   -28.2,
+   -18.9,
+   -33.0,
+   -31.7,
+   -7.7,
+   -14.7,
+   -33.6
+  ]
+ },
+ "round": 1,
+ "variants_running_total": 132,
  "luck": {
   "runs": 200,
+  "percentile": 95,
   "p50": -43.09,
   "p95": -21.37900000000004,
   "share_beaten": 0.09
@@ -84,7 +125,11 @@
   "params_5_or_fewer": true,
   "min_target_3x_commission": true,
   "no_kill_switch": false,
-  "luck_check_beats_p95": false
+  "luck_check_beats_p95": false,
+  "not_one_pair": false,
+  "not_one_period": false,
+  "not_few_big_trades": false,
+  "nearby_settings_work": false
  },
  "candidate": false
 }

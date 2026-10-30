@@ -131,3 +131,54 @@ def test_pick_per_window_takes_best_training_score():
     bad = [{"entry_epoch": t, "profit": -5.0, "balance_after": 95.0}]
     picks = R.pick_per_window({0: bad, 1: good})
     assert picks[0]["variant"] == 1
+
+
+def test_luck_rule_tightens_above_150_variants():
+    assert R.variants_through_round(1) == 132
+    assert R.luck_rule("f3") == (95, 200)
+    assert R.variants_through_round(2) > 150 and R.luck_rule("f7") == (99, 500)
+
+
+def test_neighbours_one_step_on_one_setting():
+    grid = R._grid(a=(1, 2, 3), b=(10, 20))
+    i = grid.index({"a": 2, "b": 10})
+    got = sorted((grid[j]["a"], grid[j]["b"]) for j in R.neighbours(grid, i))
+    assert got == [(1, 10), (2, 20), (3, 10)]
+
+
+def _tr(sym, epoch, profit):
+    return {"symbol": sym, "entry_epoch": epoch, "profit": profit, "balance_after": 100 + profit}
+
+
+def test_robustness_flags_one_pair_and_few_big_trades():
+    ws = R.windows()
+    trades = []
+    for w in ws:
+        t = R.epoch_of(w.valid_start) + 86400
+        trades += [_tr("frxEURUSD", t, 30.0)] + [_tr(s, t, -1.0) for s in ("frxGBPUSD", "frxUSDJPY")] * 5
+    grid = [{"x": 1}, {"x": 2}]
+    picks = [{"window": w, "variant": 0} for w in ws]
+    gt = {0: trades, 1: trades}
+    r = R.robustness(trades, gt, picks, grid)
+    assert not r["checks"]["not_one_pair"] and not r["checks"]["not_few_big_trades"]
+    assert r["checks"]["not_one_period"] and r["checks"]["nearby_settings_work"]
+
+
+def test_weekly_momentum_signals_only_on_friday_close():
+    s = F.WeeklyMomentum(lookback=3)
+    # Daily candles Mon 3 Mar .. Fri 7 Mar 2025 (ends Tue..Sat 00:00), rising.
+    b = bars([1.0, 1.01, 1.02, 1.03, 1.04], start=ep(2025, 3, 3), step=86400)
+    assert s.direction("frxEURUSD", b) == "MULTUP"
+    assert s.direction("frxEURUSD", b.slice(4)) is None          # Thursday's candle
+
+
+def test_morning_momentum_follows_a_strong_move():
+    # 15 days of 1h candles with a 20-pip daily range, then a morning that rises 30 pips by 10:00.
+    base = [1.1000 + 0.0010 * ((h % 24) >= 12) for h in range(15 * 24)]
+    day = [1.1010 + 0.0004 * (h + 1) for h in range(10)]      # candles ending 01:00 .. 10:00, +40 pips
+    b = bars(base + day, spread=0.00045)
+    s = F.MorningMomentum(entry_hour=10, k=0.3, sl_frac=0.5)
+    assert s.direction("frxEURUSD", b) == "MULTUP"
+    sl, tp = s.stops("frxEURUSD", b, "MULTUP")
+    assert sl == pytest.approx(20.0) and tp is None
+    assert s.direction("frxEURUSD", b.slice(len(b) - 1)) is None     # 09:00 candle: not the entry hour

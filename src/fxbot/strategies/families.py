@@ -371,5 +371,148 @@ class SessionDrift(FamilyStrategy):
         return t >= e - e % DAY + self.params["exit_hour"] * HOUR
 
 
+# =========================================================================== Round 2
+# Designed 30 Oct 2026 from what failed in round 1 (reports/strategy_research.md):
+# - 1h strategies with ~1,000 trades were eaten by the ~3-pip commission; the
+#   nearest misses held longer and won bigger. -> fewer trades, wider targets.
+# - The London breakout was the only entry that beat random entries, but its
+#   moves were too small. -> trade it only after a quiet Asian session, with a
+#   target sized on the daily range (family 6).
+# - Fading stretched moves and fading the session did worse than random: short-
+#   term moves tended to continue. -> follow a strong morning move (family 8).
+# - Breakouts of multi-day highs failed and the Friday close cuts trends. ->
+#   one trade per week, Monday to Friday, in the direction of the past months
+#   (family 7; time-series momentum, Moskowitz, Ooi and Pedersen 2012).
+
+def daily_ranges(c: Bars, days: int) -> np.ndarray:
+    """High-low range of the last `days` completed UTC days, from intraday candles."""
+    n = min(len(c), (days + 2) * 24)
+    end, hi, lo = c.end[-n:], c.high[-n:], c.low[-n:]
+    day = (end - 1) // DAY
+    starts = np.r_[0, np.flatnonzero(day[1:] != day[:-1]) + 1]
+    rng = np.maximum.reduceat(hi, starts) - np.minimum.reduceat(lo, starts)
+    if int(c.end[-1]) % DAY != 0:
+        rng = rng[:-1]
+    return rng[-days:]
+
+
+def daily_atr(c: Bars, days: int = 14) -> float | None:
+    r = daily_ranges(c, days)
+    return float(r.mean()) if len(r) == days else None
+
+
+class QuietLondonBreakout(LondonBreakout):
+    """Family 6: London breakout only after a quiet Asian session, wide target.
+
+    Same box (00:00-06:00 UTC) and entry as family 1, with entries until the
+    10:00 close (both fixed from round 1). New: trade only when the box is at
+    most box_max x the average daily range of the last 14 days (a quiet night,
+    so the day's range is still ahead); target = tp_atr x that daily range;
+    stop = sl_frac x the box. Closed at 20:00 UTC.
+    """
+    name = "f6_quiet_london_breakout"
+    family = "f6"
+    defaults = {"box_max": 0.4, "tp_atr": 0.8, "sl_frac": 1.0, "box_start": 0, "cutoff": 10}
+
+    def _quiet(self, symbol, c) -> tuple[float, float] | None:
+        box = self._box(symbol, c)
+        a = daily_atr(c)
+        if box is None or a is None:
+            return None
+        height = box[0] - box[1]
+        if height / PIP[symbol] < self.MIN_BOX_PIPS[symbol] or height > self.params["box_max"] * a:
+            return None
+        return height / PIP[symbol], a / PIP[symbol]
+
+    def direction(self, symbol, c):
+        return super().direction(symbol, c) if self._quiet(symbol, c) else None
+
+    def stops(self, symbol, c, direction):
+        q = self._quiet(symbol, c)
+        if q is None:
+            return None
+        height, a = q
+        return self.params["sl_frac"] * height, self.params["tp_atr"] * a
+
+
+class WeeklyMomentum(FamilyStrategy):
+    """Family 7: weekly time-series momentum (daily candles).
+
+    When Friday's daily candle closes (seen Monday 00:00, filled at 06:00),
+    go Up if the close is above the close `lookback` trading days earlier,
+    else Down. Held all week; the engine closes it Friday 20:30. Stop =
+    sl_atr x the 14-day average range (0 = no stop: the stop out caps the
+    loss at the stake). No target.
+    """
+    name = "f7_weekly_momentum"
+    family = "f7"
+    timeframe = "1d"
+    warmup_days = 200
+    defaults = {"lookback": 60, "sl_atr": 0}
+
+    def direction(self, symbol, c):
+        t = int(c.end[-1])
+        L = self.params["lookback"]
+        # Friday's candle ends Saturday 00:00 UTC (weekday 5).
+        if t % DAY or ((t // DAY) + 3) % 7 != 5 or len(c) < L + 1:
+            return None
+        return "MULTUP" if c.close[-1] > c.close[-1 - L] else "MULTDOWN"
+
+    def stops(self, symbol, c, direction):
+        k = self.params["sl_atr"]
+        if not k:
+            return None, None
+        a = atr(c)
+        return None if a is None else (k * a / PIP[symbol], None)
+
+
+class MorningMomentum(FamilyStrategy):
+    """Family 8: follow a strong morning move (1h).
+
+    At the close of the `entry_hour` candle, if price has moved at least
+    k x the 14-day average daily range since the day's open (00:00 UTC),
+    trade in the same direction. Stop = sl_frac x that morning move (at least
+    10 pips, 15 on USD/JPY); no target; closed at 20:00 UTC.
+    """
+    name = "f8_morning_momentum"
+    family = "f8"
+    timeframe = "1h"
+    defaults = {"entry_hour": 10, "k": 0.3, "sl_frac": 0.5}
+    EXIT_HOUR = 20
+    MIN_SL = {"frxEURUSD": 10, "frxGBPUSD": 10, "frxUSDJPY": 15}
+
+    def _move(self, symbol, c) -> tuple[float, float] | None:
+        t = int(c.end[-1])
+        if t % HOUR or hour_of(t) != self.params["entry_hour"]:
+            return None
+        d0 = t - t % DAY
+        n = min(len(c), 30)
+        today = c.epoch[-n:] >= d0
+        if today.sum() < self.params["entry_hour"] * 0.75:
+            return None
+        a = daily_atr(c)
+        if a is None:
+            return None
+        move = float(c.close[-1] - c.open[-n:][today][0])
+        return move, a
+
+    def direction(self, symbol, c):
+        m = self._move(symbol, c)
+        if m is None or abs(m[0]) < self.params["k"] * m[1]:
+            return None
+        return "MULTUP" if m[0] > 0 else "MULTDOWN"
+
+    def stops(self, symbol, c, direction):
+        m = self._move(symbol, c)
+        if m is None:
+            return None
+        return max(self.params["sl_frac"] * abs(m[0]) / PIP[symbol], self.MIN_SL[symbol]), None
+
+    def exit_now(self, symbol, c, position):
+        e = position.entry_epoch
+        return int(c.end[-1]) >= e - e % DAY + self.EXIT_HOUR * HOUR
+
+
 REGISTRY = {cls.name: cls for cls in (LondonBreakout, TrendBreakout, TrendBreakout1d, TrendPullback,
-                                     TrendPullback1h, MeanReversion, MeanReversion4h, SessionDrift)}
+                                     TrendPullback1h, MeanReversion, MeanReversion4h, SessionDrift,
+                                     QuietLondonBreakout, WeeklyMomentum, MorningMomentum)}

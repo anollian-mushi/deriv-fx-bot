@@ -79,7 +79,7 @@ Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; s
 | 2026-10-30 | f1_london_breakout v22 | box_start=3, cutoff=15, sl_frac=1.0, tp_mult=1.5 | 2634 | -153.56 | 3 | - |
 | 2026-10-30 | f1_london_breakout v23 | box_start=3, cutoff=15, sl_frac=1.0, tp_mult=2.5 | 2563 | -132.2 | 2 | 4 |
 
-Stitched OOS (2023-10-27 to 2026-04-26): 1256 trades, net -56.3 USD, max drawdown 54.95%, per pair {'frxEURUSD': -24.53, 'frxGBPUSD': -22.24, 'frxUSDJPY': -9.53}, kill events 1, luck check beats p95: True (p95 -59.582500000000046). **Candidate: False**. Report: `reports/backtests/phase4_f1_london_breakout_oos/`, `research/phase4/f1_london_breakout/`.
+Stitched OOS (2023-10-27 to 2026-04-26): 1256 trades, net -56.3 USD, max drawdown 54.95%, per pair {'frxEURUSD': -24.53, 'frxGBPUSD': -22.24, 'frxUSDJPY': -9.53}, kill events 1, luck check (p95 of 200 random runs = -59.582500000000046): True. Failed checks: ['profitable_pairs_2_of_3', 'net_profit_positive', 'no_kill_switch', 'not_one_pair', 'not_one_period', 'not_few_big_trades', 'nearby_settings_work']. **Candidate: False**. Report: `reports/backtests/phase4_f1_london_breakout_oos/`, `research/phase4/f1_london_breakout/`.
 
 <!-- phase4:f1_london_breakout end -->
 
@@ -110,7 +110,7 @@ Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; s
 | 2026-10-30 | f2_trend_breakout v16 | n=100, sl_atr=3.5, m=10 | 342 | -71.09 | 1 | - |
 | 2026-10-30 | f2_trend_breakout v17 | n=100, sl_atr=3.5, m=20 | 334 | -74.51 | 1 | - |
 
-Stitched OOS (2023-10-27 to 2026-04-26): 266 trades, net -40.83 USD, max drawdown 45.48%, per pair {'frxEURUSD': -22.25, 'frxGBPUSD': -16.2, 'frxUSDJPY': -2.38}, kill events 0, luck check beats p95: False (p95 18.917499999999972). **Candidate: False**. Report: `reports/backtests/phase4_f2_trend_breakout_oos/`, `research/phase4/f2_trend_breakout/`.
+Stitched OOS (2023-10-27 to 2026-04-26): 266 trades, net -40.83 USD, max drawdown 45.48%, per pair {'frxEURUSD': -22.25, 'frxGBPUSD': -16.2, 'frxUSDJPY': -2.38}, kill events 0, luck check (p95 of 200 random runs = 18.917499999999972): False. Failed checks: ['profitable_pairs_2_of_3', 'net_profit_positive', 'luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades', 'nearby_settings_work']. **Candidate: False**. Report: `reports/backtests/phase4_f2_trend_breakout_oos/`, `research/phase4/f2_trend_breakout/`.
 
 <!-- phase4:f2_trend_breakout end -->
 
@@ -135,7 +135,7 @@ Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; s
 | 2026-10-30 | f2_trend_breakout_1d v10 | n=55, sl_atr=1.25, m=5 | 142 | -29.59 | 0 | 1 |
 | 2026-10-30 | f2_trend_breakout_1d v11 | n=55, sl_atr=1.25, m=10 | 142 | -29.59 | 0 | - |
 
-Stitched OOS (2023-10-27 to 2026-04-26): 130 trades, net -26.97 USD, max drawdown 32.04%, per pair {'frxEURUSD': -10.75, 'frxGBPUSD': -5.45, 'frxUSDJPY': -10.77}, kill events 0, luck check beats p95: False (p95 28.161499999999993). **Candidate: False**. Report: `reports/backtests/phase4_f2_trend_breakout_1d_oos/`, `research/phase4/f2_trend_breakout_1d/`.
+Stitched OOS (2023-10-27 to 2026-04-26): 130 trades, net -26.97 USD, max drawdown 32.04%, per pair {'frxEURUSD': -10.75, 'frxGBPUSD': -5.45, 'frxUSDJPY': -10.77}, kill events 0, luck check (p95 of 200 random runs = 28.161499999999993): False. Failed checks: ['profitable_pairs_2_of_3', 'net_profit_positive', 'oos_trades_200_plus', 'luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades', 'nearby_settings_work']. **Candidate: False**. Report: `reports/backtests/phase4_f2_trend_breakout_1d_oos/`, `research/phase4/f2_trend_breakout_1d/`.
 
 <!-- phase4:f2_trend_breakout_1d end -->
 
@@ -164,7 +164,7 @@ Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; s
 | 2026-10-30 | f3_trend_pullback v14 | trend_len=50, pullback=30, sl_atr=2.5, tp_r=1.5 | 866 | -76.26 | 1 | - |
 | 2026-10-30 | f3_trend_pullback v15 | trend_len=50, pullback=30, sl_atr=2.5, tp_r=2.5 | 776 | -47.21 | 1 | - |
 
-Stitched OOS (2023-10-27 to 2026-04-26): 309 trades, net 0.7 USD, max drawdown 33.25%, per pair {'frxEURUSD': 19.31, 'frxGBPUSD': 10.98, 'frxUSDJPY': -29.59}, kill events 0, luck check beats p95: False (p95 34.59249999999997). **Candidate: False**. Report: `reports/backtests/phase4_f3_trend_pullback_oos/`, `research/phase4/f3_trend_pullback/`.
+Stitched OOS (2023-10-27 to 2026-04-26): 309 trades, net 0.7 USD, max drawdown 33.25%, per pair {'frxEURUSD': 19.31, 'frxGBPUSD': 10.98, 'frxUSDJPY': -29.59}, kill events 0, luck check (p95 of 200 random runs = 34.59249999999997): False. Failed checks: ['luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades', 'nearby_settings_work']. **Candidate: False**. Report: `reports/backtests/phase4_f3_trend_pullback_oos/`, `research/phase4/f3_trend_pullback/`.
 
 <!-- phase4:f3_trend_pullback end -->
 
@@ -185,7 +185,7 @@ Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; s
 | 2026-10-30 | f3_trend_pullback_1h v06 | trend_len=50, pullback=30, sl_atr=2.0, tp_r=1.5 | 3479 | -277.55 | 5 | - |
 | 2026-10-30 | f3_trend_pullback_1h v07 | trend_len=50, pullback=30, sl_atr=2.0, tp_r=2.5 | 3134 | -297.83 | 6 | - |
 
-Stitched OOS (2023-10-27 to 2026-04-26): 1251 trades, net -123.27 USD, max drawdown 53.15%, per pair {'frxEURUSD': -47.17, 'frxGBPUSD': -38.11, 'frxUSDJPY': -37.99}, kill events 2, luck check beats p95: False (p95 -59.937000000000005). **Candidate: False**. Report: `reports/backtests/phase4_f3_trend_pullback_1h_oos/`, `research/phase4/f3_trend_pullback_1h/`.
+Stitched OOS (2023-10-27 to 2026-04-26): 1251 trades, net -123.27 USD, max drawdown 53.15%, per pair {'frxEURUSD': -47.17, 'frxGBPUSD': -38.11, 'frxUSDJPY': -37.99}, kill events 2, luck check (p95 of 200 random runs = -59.937000000000005): False. Failed checks: ['profitable_pairs_2_of_3', 'net_profit_positive', 'no_kill_switch', 'luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades', 'nearby_settings_work']. **Candidate: False**. Report: `reports/backtests/phase4_f3_trend_pullback_1h_oos/`, `research/phase4/f3_trend_pullback_1h/`.
 
 <!-- phase4:f3_trend_pullback_1h end -->
 
@@ -214,7 +214,7 @@ Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; s
 | 2026-10-30 | f4_mean_reversion v14 | length=50, stretch=3.0, er_max=0.35, sl_atr=1.5 | 3397 | -219.76 | 4 | - |
 | 2026-10-30 | f4_mean_reversion v15 | length=50, stretch=3.0, er_max=0.35, sl_atr=3.0 | 2338 | -192.94 | 4 | - |
 
-Stitched OOS (2023-10-27 to 2026-04-26): 551 trades, net -61.63 USD, max drawdown 50.05%, per pair {'frxEURUSD': -25.77, 'frxGBPUSD': -15.94, 'frxUSDJPY': -19.92}, kill events 1, luck check beats p95: False (p95 -21.37900000000004). **Candidate: False**. Report: `reports/backtests/phase4_f4_mean_reversion_oos/`, `research/phase4/f4_mean_reversion/`.
+Stitched OOS (2023-10-27 to 2026-04-26): 551 trades, net -61.63 USD, max drawdown 50.05%, per pair {'frxEURUSD': -25.77, 'frxGBPUSD': -15.94, 'frxUSDJPY': -19.92}, kill events 1, luck check (p95 of 200 random runs = -21.37900000000004): False. Failed checks: ['profitable_pairs_2_of_3', 'net_profit_positive', 'no_kill_switch', 'luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades', 'nearby_settings_work']. **Candidate: False**. Report: `reports/backtests/phase4_f4_mean_reversion_oos/`, `research/phase4/f4_mean_reversion/`.
 
 <!-- phase4:f4_mean_reversion end -->
 
@@ -235,7 +235,7 @@ Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; s
 | 2026-10-30 | f4_mean_reversion_4h v06 | length=50, stretch=3.0, er_max=0.2, sl_atr=2.0 | 827 | -82.4 | 1 | - |
 | 2026-10-30 | f4_mean_reversion_4h v07 | length=50, stretch=3.0, er_max=0.35, sl_atr=2.0 | 888 | -51.68 | 1 | - |
 
-Stitched OOS (2023-10-27 to 2026-04-26): 167 trades, net -10.14 USD, max drawdown 26.28%, per pair {'frxEURUSD': -3.13, 'frxGBPUSD': 1.87, 'frxUSDJPY': -8.88}, kill events 0, luck check beats p95: False (p95 7.8689999999999864). **Candidate: False**. Report: `reports/backtests/phase4_f4_mean_reversion_4h_oos/`, `research/phase4/f4_mean_reversion_4h/`.
+Stitched OOS (2023-10-27 to 2026-04-26): 167 trades, net -10.14 USD, max drawdown 26.28%, per pair {'frxEURUSD': -3.13, 'frxGBPUSD': 1.87, 'frxUSDJPY': -8.88}, kill events 0, luck check (p95 of 200 random runs = 7.8689999999999864): False. Failed checks: ['profitable_pairs_2_of_3', 'net_profit_positive', 'oos_trades_200_plus', 'luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades', 'nearby_settings_work']. **Candidate: False**. Report: `reports/backtests/phase4_f4_mean_reversion_4h_oos/`, `research/phase4/f4_mean_reversion_4h/`.
 
 <!-- phase4:f4_mean_reversion_4h end -->
 
@@ -278,6 +278,6 @@ Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; s
 | 2026-10-30 | f5_session_drift v28 | entry_hour=17, exit_hour=21, stop_pips=0 | 2337 | -137.14 | 2 | - |
 | 2026-10-30 | f5_session_drift v29 | entry_hour=17, exit_hour=21, stop_pips=20 | 2448 | -174.3 | 3 | - |
 
-Stitched OOS (2023-10-27 to 2026-04-26): 1290 trades, net -107.92 USD, max drawdown 50.4%, per pair {'frxEURUSD': -55.26, 'frxGBPUSD': -52.66, 'frxUSDJPY': 0}, kill events 2, luck check beats p95: False (p95 -39.63000000000003). **Candidate: False**. Report: `reports/backtests/phase4_f5_session_drift_oos/`, `research/phase4/f5_session_drift/`.
+Stitched OOS (2023-10-27 to 2026-04-26): 1290 trades, net -107.92 USD, max drawdown 50.4%, per pair {'frxEURUSD': -55.26, 'frxGBPUSD': -52.66, 'frxUSDJPY': 0}, kill events 2, luck check (p95 of 200 random runs = -39.63000000000003): False. Failed checks: ['profitable_pairs_2_of_3', 'net_profit_positive', 'no_kill_switch', 'luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades', 'nearby_settings_work']. **Candidate: False**. Report: `reports/backtests/phase4_f5_session_drift_oos/`, `research/phase4/f5_session_drift/`.
 
 <!-- phase4:f5_session_drift end -->

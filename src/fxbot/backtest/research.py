@@ -180,7 +180,8 @@ def schedule_from(picks: list[dict], grid: list[dict]) -> list[tuple[int, dict]]
 
 def run_oos(strategy: Scheduled, stress: float = 1.0) -> Engine:
     v0, v1 = oos_span()
-    return run_engine(strategy, v0 - dt.timedelta(days=WARMUP_DAYS), v1, stress)
+    warm = getattr(strategy.cls, "warmup_days", WARMUP_DAYS)
+    return run_engine(strategy, v0 - dt.timedelta(days=warm), v1, stress)
 
 
 def entry_rates(s: Scheduled) -> dict:
@@ -220,6 +221,77 @@ FAMILIES = {
                                           sl_atr=(2.0,)))],
     "f5": [("f5_session_drift", _f5_grid())],
 }
+# Round 2 (owner, 30 Oct: up to 4 new families designed from round 1's failures).
+FAMILIES.update({
+    "f6": [("f6_quiet_london_breakout", _grid(box_max=(0.3, 0.5), tp_atr=(0.6, 1.0), sl_frac=(0.5, 1.0)))],
+    "f7": [("f7_weekly_momentum", _grid(lookback=(20, 60, 120), sl_atr=(0, 1.0, 1.5)))],
+    "f8": [("f8_morning_momentum", _grid(entry_hour=(9, 10, 11), k=(0.25, 0.4), sl_frac=(0.5, 1.0)))],
+})
+ROUND = {"f1": 1, "f2": 1, "f3": 1, "f4": 1, "f5": 1, "f6": 2, "f7": 2, "f8": 2}
 MAX_VARIANTS = 30
 for _f, _subs in FAMILIES.items():
     assert sum(len(g) for _, g in _subs) <= MAX_VARIANTS, _f
+
+
+def variants_through_round(r: int) -> int:
+    """Running total of variants tried, all families up to and including round r."""
+    return sum(len(g) for f, subs in FAMILIES.items() if ROUND[f] <= r for _, g in subs)
+
+
+def luck_rule(family: str) -> tuple[int, int]:
+    """(percentile to beat, random runs). Owner's rule: p95 while the running total is at most
+    150 variants, p99 above. Judged on the total at the end of the family's round. p99 needs
+    more runs to be stable, so 500 instead of 200."""
+    return (95, 200) if variants_through_round(ROUND[family]) <= 150 else (99, 500)
+
+
+# ----------------------------------------------------------------------------- "is it fake?"
+def neighbours(grid: list[dict], i: int) -> list[int]:
+    """Grid points one step away from point i on exactly one setting."""
+    axes = {k: sorted({g[k] for g in grid}) for k in grid[i]}
+    out = []
+    for j, g in enumerate(grid):
+        diff = [k for k in g if g[k] != grid[i][k]]
+        if len(diff) == 1:
+            k = diff[0]
+            if abs(axes[k].index(g[k]) - axes[k].index(grid[i][k])) == 1:
+                out.append(j)
+    return out
+
+
+def robustness(trades: list[dict], grid_trades: dict[int, list[dict]], picks: list[dict],
+               grid: list[dict]) -> dict:
+    """Owner's checks before calling anything a candidate (out-of-sample trades).
+
+    - not one pair: without its best pair, the other pairs together still make money
+    - not one period: profitable in at least 3 of the 5 half-year test windows, and
+      still profitable without the best window
+    - not a few huge trades: still profitable without its largest 2% of trades (at least 5)
+    - not one exact setting: in each round's test window, the picked setting's grid
+      neighbours made money on average, and at least half of them made money
+    """
+    net = lambda ts: sum(t["profit"] for t in ts)
+    pairs = {s: net([t for t in trades if t["symbol"] == s]) for s in SYMBOLS}
+    best_pair = max(pairs, key=pairs.get)
+    ws = windows()
+    per_win = [net([t for t in trades if epoch_of(w.valid_start) <= t["entry_epoch"]
+                    < epoch_of(w.valid_end + dt.timedelta(days=1))]) for w in ws]
+    k = max(5, math.ceil(0.02 * len(trades)))
+    rest = sorted(t["profit"] for t in trades)[:-k] if len(trades) > k else []
+    nb_returns = []
+    for p in picks:
+        w = p["window"]
+        t0, t1 = epoch_of(w.valid_start), epoch_of(w.valid_end + dt.timedelta(days=1))
+        nb_returns += [window_score(grid_trades[j], t0, t1)["net"] for j in neighbours(grid, p["variant"])]
+    nb = np.array(nb_returns)
+    checks = {
+        "not_one_pair": net([t for t in trades if t["symbol"] != best_pair]) > 0,
+        "not_one_period": sum(v > 0 for v in per_win) >= 3 and sum(per_win) - max(per_win) > 0,
+        "not_few_big_trades": sum(rest) > 0,
+        "nearby_settings_work": bool(len(nb)) and nb.mean() > 0 and (nb > 0).mean() >= 0.5,
+    }
+    detail = {"per_pair": {s: round(v, 2) for s, v in pairs.items()},
+              "per_test_window": [round(v, 2) for v in per_win],
+              "net_without_top_trades": round(sum(rest), 2), "top_trades_removed": k,
+              "neighbour_window_returns_pct": [round(x * 100, 1) for x in nb_returns]}
+    return {"checks": {k2: bool(v) for k2, v in checks.items()}, "detail": detail}
