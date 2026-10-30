@@ -1,26 +1,35 @@
 # Strategy research (Phase 4)
 
-Written 2026-10-30. Pre-holdout data only (Dukascopy 1m, 2021-10-27 to
+Written 2026-10-30, updated after each round. Pre-holdout data only (Dukascopy 1m, 2021-10-27 to
 2026-04-27). **The holdout (Deriv data from 2026-04-28) was not touched.**
 
-## The short version
+## Program status (updated at the end of each round)
 
-- **No strategy passed.** Five families were tested: 132 variants in total,
-  all logged in `research/log.md`.
-- **Nothing goes to the holdout.** The holdout is only for a shortlisted
-  strategy, and the shortlist is empty. It stays unseen, so it is still
-  valid for any future candidate.
-- The closest result was **buying dips in a daily trend on 4h candles**
-  (family 3). It broke even out of sample (+0.7 USD on 100 USD over 2.5
-  years) and met every CLAUDE.md rule on paper. But **random entries with
-  the same exits did as well about 1 time in 5.** That is not evidence of an
-  edge, so it fails.
-- The only entry idea that clearly did **better than random** was the
-  **London open breakout** (family 1). Its edge is far smaller than the
-  roughly 3-pip commission. It lost 56 USD at Multiplier costs and about
-  broke even at MT5's lower costs.
-- **Recommendation: do not trade any of these, on demo or real.** Section 5
-  suggests what to try next.
+| Round | Families | Variants | Running total | Luck check | Result |
+|---|---|---|---|---|---|
+| 1 | 1–5 (approved 30 Oct) | 132 | 132 | beat p95 of 200 random runs | **nothing passed** |
+| 2 | 6–8 (designed from round 1) | 38 (incl. 9 void) | 170 | beat p99 of 500 random runs | **nothing passed** |
+| 3 | to come | | | p99 of 500 | |
+
+The holdout has not been touched, and won't be until the whole program
+ends.
+
+## The short version (after round 2)
+
+- **No strategy passed in either round.** 170 variants tried, every one
+  logged in `research/log.md`.
+- The closest result is still round 1's **buy-the-dip in a daily trend, 4h**
+  (family 3). It broke even, but:
+  - random entries did as well 1 time in 5;
+  - its profit came from the first three half-years only;
+  - nearby settings did not work.
+- **Most strategies did no better than random entries before costs.**
+  Their losses are roughly the commission they paid. Several were close to
+  break-even at MT5 costs (−3 to −5 USD) and lost 23–40 USD at Multiplier
+  costs.
+- The one entry that beat random in round 1 (London breakout) lost that
+  edge when filtered and given wider targets in round 2.
+- **Recommendation so far:** do not trade any of these, on demo or real.
 
 ## 1. How the testing worked
 
@@ -174,6 +183,69 @@ grid results and luck runs are in `research/phase4/<name>/`.
   papers' data period.
 - **I did not try the opposite direction.** Flipping a rule because our
   data says so is exactly the data-mining the owner ruled out.
+
+## 3b. Round 2: new families designed from round 1's failures
+
+Round 2 used the stricter luck bar: the running total passed 150 variants,
+so a strategy had to beat the **99th percentile of 500** random runs. Before
+calling anything a candidate, four more checks were added (owner, 30 Oct):
+- **Not one pair:** without its best pair, the rest still makes money.
+- **Not one period:** it makes money in at least 3 of the 5 half-year test
+  windows, and still does without the best one.
+- **Not a few big trades:** it is still profitable without its largest 2%
+  of trades.
+- **Nearby settings work:** settings one step away also made money on
+  average in the test windows.
+
+Round 1 was re-checked against them for information. Every round 1
+strategy fails all four, including the near-miss trend pullback 4h. That
+one made money in its first three half-years (+7, +5, +22 USD) and lost in
+the last two (−10, −24).
+
+What round 1 taught, and how round 2 used it:
+1. **Many short trades lose to the commission; the near misses held
+   longer.** So round 2 aimed for fewer trades and wider targets.
+2. **The London breakout was the only entry better than random, but its
+   moves were too small.** Family 6 traded it only after a quiet Asian
+   night, with a target sized on the daily range.
+3. **Fading stretched moves did worse than random,** which suggests short
+   moves tend to continue. Family 8 follows a strong morning move instead.
+4. **Multi-day breakouts failed, and the Friday close cuts trends.**
+   Family 7 makes one trade per week in the direction of the past months
+   (time-series momentum, a documented effect at longer horizons).
+
+| Strategy (round 2) | Variants | Trades | Net (measured) | Worst fall | Win rate | Avg win / loss | Profit factor | Monte Carlo p95 fall | Kill switch | Net at 1.5× (kill) | Net at MT5 | Beat random runs | Result |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 6. Quiet-night London breakout, 1h | 8 | 872 | **−39.94** | 45% | 30% | 0.66 / −0.35 | 0.81 | 49% | 0 | −61.40 (1) | −5.35 | 41% | Fail |
+| 7. Weekly momentum, daily (Monday close) | 9 + 9 void | 260 | **−32.45** | 50% | 44% | 2.24 / −1.94 | 0.89 | 60% | 0 | −37.49 (0) | −29.53 | 34% | Fail |
+| 8. Morning momentum, 1h | 12 | 419 | **−23.46** | 30% | 43% | 0.70 / −0.64 | 0.85 | 38% | 0 | −34.26 (0) | −4.26 | 50% | Fail |
+
+| Strategy (round 2) | EUR/USD | GBP/USD | USD/JPY |
+|---|---|---|---|
+| 6. Quiet-night London breakout | −32.53 | −9.43 | +2.02 |
+| 7. Weekly momentum | +25.95 | −22.29 | −36.11 |
+| 8. Morning momentum | −8.07 | −12.41 | −2.98 |
+
+In plain language:
+- **Family 6:** the filter left fewer, weaker breakouts and lost the
+  original's slight edge over random entries (41%). It nearly broke even
+  at MT5 costs (−5 USD), so the commission is again most of the loss.
+- **Family 7:** holding a whole week makes results swing widely. The
+  99th-percentile random run made +82 USD, so only a big real edge would
+  show. There was none: it lost on 2 of 3 pairs, and its EUR/USD gain came
+  from one half-year.
+- **Family 8:** a strong morning did not predict the afternoon. It landed
+  exactly at the middle of the random runs, and its loss is close to the
+  commission it paid.
+
+**A rule side effect worth knowing.** Family 7's first version signalled
+on Friday's daily close and **made no trades at all**. The fixed 12-hour
+wait for daily signals expires a Friday-close signal before Monday's open.
+- The same rule silently dropped Friday signals in round 1's daily trend
+  test.
+- This is the rule working as written, not a bug.
+- Family 7 was moved to Monday's close. The 9 empty variants still count in
+  the running total.
 
 ## 4. How likely is a pass to be luck?
 
