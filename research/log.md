@@ -349,3 +349,24 @@ Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; s
 Stitched OOS (2023-10-27 to 2026-04-26): 419 trades, net -23.46 USD, max drawdown 30.46%, per pair {'frxEURUSD': -8.07, 'frxGBPUSD': -12.41, 'frxUSDJPY': -2.98}, kill events 0, luck check (p99 of 500 random runs = 3.0614999999999895): False. Failed checks: ['profitable_pairs_2_of_3', 'net_profit_positive', 'luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades', 'nearby_settings_work']. **Candidate: False**. Report: `reports/backtests/phase4_f8_morning_momentum_oos/`, `research/phase4/f8_morning_momentum/`.
 
 <!-- phase4:f8_morning_momentum end -->
+
+<!-- phase4:f9_eur_gbp_convergence start -->
+
+### f9_eur_gbp_convergence (1d): 8 variants
+
+Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-30 | f9_eur_gbp_convergence v00 | length=20, z_in=1.5, hold_days=3 | 279 | -4.71 | 0 | - |
+| 2026-10-30 | f9_eur_gbp_convergence v01 | length=20, z_in=1.5, hold_days=8 | 279 | -0.11 | 0 | - |
+| 2026-10-30 | f9_eur_gbp_convergence v02 | length=20, z_in=2.0, hold_days=3 | 119 | -16.72 | 0 | - |
+| 2026-10-30 | f9_eur_gbp_convergence v03 | length=20, z_in=2.0, hold_days=8 | 119 | -15.2 | 0 | - |
+| 2026-10-30 | f9_eur_gbp_convergence v04 | length=60, z_in=1.5, hold_days=3 | 231 | 33.29 | 0 | 1, 3 |
+| 2026-10-30 | f9_eur_gbp_convergence v05 | length=60, z_in=1.5, hold_days=8 | 230 | 30.31 | 0 | 2, 4, 5 |
+| 2026-10-30 | f9_eur_gbp_convergence v06 | length=60, z_in=2.0, hold_days=3 | 102 | 9.9 | 0 | - |
+| 2026-10-30 | f9_eur_gbp_convergence v07 | length=60, z_in=2.0, hold_days=8 | 101 | 13.52 | 0 | - |
+
+Stitched OOS (2023-10-27 to 2026-04-26): 122 trades, net 6.17 USD, max drawdown 7.63%, per pair {'frxEURUSD': -11.83, 'frxGBPUSD': 18.0, 'frxUSDJPY': 0}, kill events 0, luck check (p99 of 500 random runs = 12.958799999999991): False. Failed checks: ['profitable_pairs_2_of_3', 'oos_trades_200_plus', 'luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades']. **Candidate: False**. Report: `reports/backtests/phase4_f9_eur_gbp_convergence_oos/`, `research/phase4/f9_eur_gbp_convergence/`.
+
+<!-- phase4:f9_eur_gbp_convergence end -->

@@ -1,0 +1,67 @@
+[
+ {
+  "round": 1,
+  "train": "2021-10-27..2023-10-26",
+  "test": "2023-10-27..2024-04-26",
+  "variant": 4,
+  "params": {
+   "length": 60,
+   "z_in": 1.5,
+   "hold_days": 3
+  },
+  "train_score": 1.459,
+  "train_trades": 109
+ },
+ {
+  "round": 2,
+  "train": "2022-04-27..2024-04-26",
+  "test": "2024-04-27..2024-10-26",
+  "variant": 5,
+  "params": {
+   "length": 60,
+   "z_in": 1.5,
+   "hold_days": 8
+  },
+  "train_score": 1.529,
+  "train_trades": 121
+ },
+ {
+  "round": 3,
+  "train": "2022-10-27..2024-10-26",
+  "test": "2024-10-27..2025-04-26",
+  "variant": 4,
+  "params": {
+   "length": 60,
+   "z_in": 1.5,
+   "hold_days": 3
+  },
+  "train_score": 2.867,
+  "train_trades": 114
+ },
+ {
+  "round": 4,
+  "train": "2023-04-27..2025-04-26",
+  "test": "2025-04-27..2025-10-26",
+  "variant": 5,
+  "params": {
+   "length": 60,
+   "z_in": 1.5,
+   "hold_days": 8
+  },
+  "train_score": 0.634,
+  "train_trades": 112
+ },
+ {
+  "round": 5,
+  "train": "2023-10-27..2025-10-26",
+  "test": "2025-10-27..2026-04-26",
+  "variant": 5,
+  "params": {
+   "length": 60,
+   "z_in": 1.5,
+   "hold_days": 8
+  },
+  "train_score": 1.152,
+  "train_trades": 94
+ }
+]
