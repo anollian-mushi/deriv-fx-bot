@@ -4,6 +4,7 @@ httpx==0.28.1
 PyYAML==6.0.3
 numpy==2.5.3
 matplotlib==3.11.2
+scikit-learn==1.9.1     # Round 4 track A (ML strategy); pinned so results reproduce exactly
 
 # Tests
 pytest==9.2.0

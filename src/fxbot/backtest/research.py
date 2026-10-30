@@ -205,6 +205,36 @@ class RandomEntry(Scheduled):
         return "MULTUP" if d < 0.5 else "MULTDOWN"
 
 
+class SignalDays(Scheduled):
+    """The Round 4 luck check (owner, 30 Oct 2026): the candidate's own signal candles, the same
+    days and pairs, with a coin toss for the direction. Trade count, timing and commission then
+    match the candidate exactly; only the direction skill is tested.
+
+    signals: {(symbol, signal epoch)} recorded from the candidate's stitched out-of-sample run
+    (every Enter action, filled or not, so the random run meets the same fill rules)."""
+
+    def __init__(self, cls, schedule, signals, seed: int):
+        super().__init__(cls, schedule)
+        self.signals = {(str(s), int(t)) for s, t in signals}
+        self.seed = seed
+        for s in self.inner.values():
+            s.entry = self._entry
+
+    def _entry(self, symbol, c):
+        t = int(c.end[-1])
+        if (symbol, t) not in self.signals:
+            return None
+        # Keyed by seed, time and pair: the same run always draws the same directions, whatever
+        # the order the engine calls the pairs in.
+        u = np.random.default_rng([self.seed, t, SYMBOLS.index(symbol)]).random()
+        return "MULTUP" if u < 0.5 else "MULTDOWN"
+
+
+def entry_signals(state) -> list[tuple[str, int]]:
+    """(symbol, signal epoch) of every Enter action in an engine state."""
+    return [(sym, int(t)) for t, sym, a in state.signals if a.startswith("Enter(")]
+
+
 def oos_span() -> tuple[dt.date, dt.date]:
     ws = windows()
     return ws[0].valid_start, ws[-1].valid_end
@@ -285,16 +315,36 @@ FAMILIES.update({
     "f9": [("f9_eur_gbp_convergence", _grid(length=(20, 60), z_in=(1.5, 2.0), hold_days=(3, 8)))],
     "f10": [("f10_shock_day", _grid(k=(1.25, 1.6), hold_days=(1, 3), sl_atr=(0.75, 1.25)))],
 })
-ROUND = {"f1": 1, "f2": 1, "f3": 1, "f4": 1, "f5": 1, "f6": 2, "f7": 2, "f8": 2, "f9": 3, "f10": 3}
+# Round 4 (final, approved 30 Oct 2026): track B, two families reading all three pairs at once.
+# Decision at 08:00 or 10:00 UTC, exit 20:00, stop none or half a daily range.
+FAMILIES.update({
+    "f11": [("f11_dollar_catch_up", _grid(decision_hour=(8, 10), k=(0.2, 0.3, 0.45), stop=(0.0, 0.5)))],
+    "f12": [("f12_lone_mover_reverts", _grid(decision_hour=(8, 10), k=(0.2, 0.3, 0.45), stop=(0.0, 0.5)))],
+})
+# Round 4 track A: the machine-learning day strategy (fxbot.strategies.ml_day). Its model settings
+# are variants too (owner's rule): 2 models x 2 feature sets x 2 training setups x 3 margins.
+ML_NAME = "a1_ml_day"
+ML_GRID = _grid(model=("lr", "gb"), feats=("own", "peers"), pool=("all", "pair"), margin=(0.05, 0.08, 0.12))
+ML_ROUND = 4
+ROUND = {"f1": 1, "f2": 1, "f3": 1, "f4": 1, "f5": 1, "f6": 2, "f7": 2, "f8": 2, "f9": 3, "f10": 3,
+         "f11": 4, "f12": 4}
 MAX_VARIANTS = 30
 for _f, _subs in FAMILIES.items():
     assert sum(len(g) for _, g in _subs) + VOID_VARIANTS.get(_f, 0) <= MAX_VARIANTS, _f
+assert len(ML_GRID) <= MAX_VARIANTS
 
 
 def variants_through_round(r: int) -> int:
-    """Running total of variants tried, all families up to and including round r."""
+    """Running total of variants tried, all families (and the ML track) up to and including round r."""
     return sum(len(g) for f, subs in FAMILIES.items() if ROUND[f] <= r for _, g in subs) + \
-        sum(n for f, n in VOID_VARIANTS.items() if ROUND[f] <= r)
+        sum(n for f, n in VOID_VARIANTS.items() if ROUND[f] <= r) + (len(ML_GRID) if ML_ROUND <= r else 0)
+
+
+def luck_mode(family: str) -> str:
+    """How the random runs are built: Phase 4 rounds 1-3 matched the signal *rate* per (window,
+    pair, hour) (RandomEntry); from round 4 the random runs use the candidate's own signal
+    candles (SignalDays), so the trade count matches exactly (owner, 30 Oct 2026)."""
+    return "signals" if ROUND[family] >= 4 else "rates"
 
 
 def luck_rule(family: str) -> tuple[int, int]:

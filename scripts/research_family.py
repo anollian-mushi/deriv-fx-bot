@@ -68,9 +68,12 @@ def _grid_task(job):
 
 
 def _luck_task(job):
-    name, schedule, rates, seed = job
+    name, schedule, rates, seed, mode = job
     cls = REGISTRY[name]
-    s = R.RandomEntry(cls, [(t, p) for t, p in schedule], {tuple(k): v for k, v in rates}, seed)
+    if mode == "signals":          # Round 4: the candidate's own signal days and pairs, coin-toss direction
+        s = R.SignalDays(cls, [(t, p) for t, p in schedule], rates, seed)
+    else:
+        s = R.RandomEntry(cls, [(t, p) for t, p in schedule], {tuple(k): v for k, v in rates}, seed)
     eng = R.run_oos(s)
     tr = eng.state.trades
     out = {"seed": seed, "trades": len(tr), "net_profit": round(sum(t["profit"] for t in tr), 2),
@@ -151,6 +154,7 @@ def stage_oos(family):
                                      "train_trades": p["train"]["trades"]} for k, p in enumerate(picks)])
         _jdump(out / "oos_rates.json", {"schedule": schedule, "rates_key": ["window", "symbol", "hour"],
                                         "rates": [[list(k), v] for k, v in R.entry_rates(meas).items()]})
+        _jdump(out / "oos_signals.json", {"schedule": schedule, "signals": R.entry_signals(e_m.state)})
         print(f"{name}: OOS {len(e_m.state.trades)} trades, net "
               f"{round(sum(t['profit'] for t in e_m.state.trades), 2)} USD -> {rep.relative_to(ROOT)}")
     return True
@@ -158,11 +162,17 @@ def stage_oos(family):
 
 def stage_luck(family, budget_s, t0, runs):
     for name, _ in R.FAMILIES[family]:
-        cfg = _jload(OUT / name / "oos_rates.json")
-        if any(len(k) != 3 for k, _ in cfg["rates"]):
-            raise SystemExit(f"{name}: oos_rates.json has the old (symbol, hour) keys; "
-                             "run the oos stage again first (luck-check fix, audit 30 Oct 2026)")
-        jobs = [(name, cfg["schedule"], cfg["rates"], seed) for seed in range(runs)
+        mode = R.luck_mode(family)
+        if mode == "signals":
+            cfg = _jload(OUT / name / "oos_signals.json")
+            draws = [tuple(x) for x in cfg["signals"]]
+        else:
+            cfg = _jload(OUT / name / "oos_rates.json")
+            if any(len(k) != 3 for k, _ in cfg["rates"]):
+                raise SystemExit(f"{name}: oos_rates.json has the old (symbol, hour) keys; "
+                                 "run the oos stage again first (luck-check fix, audit 30 Oct 2026)")
+            draws = cfg["rates"]
+        jobs = [(name, cfg["schedule"], draws, seed, mode) for seed in range(runs)
                 if not (STATE / name / "luck" / f"s{seed:03d}.json").exists()]
         if jobs:
             R.market_data(REGISTRY[name].timeframe, *_oos_load_span())
@@ -212,7 +222,9 @@ def stage_summary(family):
                "kill_events_stress": len(met.get("kill_events_stress", [])),
                "robustness": rob["detail"], "round": R.ROUND[family],
                "variants_running_total": R.variants_through_round(R.ROUND[family]),
-               "luck": {k: lk[k] for k in ("runs", "percentile", "p50", "p95", "share_beaten")},
+               "luck": {k: lk[k] for k in ("runs", "percentile", "p50", "p95", "share_beaten"),
+                        "mode": R.luck_mode(family),
+                        "random_trades_mean": (round(sum(r["trades"] for r in luck) / len(luck), 1) if luck else None)},
                "checks": checks, "candidate": all(checks.values())}
         _jdump(d / "summary.json", res)
         out.append(res)

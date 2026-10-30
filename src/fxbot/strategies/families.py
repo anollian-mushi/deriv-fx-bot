@@ -614,7 +614,130 @@ class ShockDay(FamilyStrategy):
         return int(c.end[-1]) - position.entry_epoch >= self.params["hold_days"] * DAY - 6 * HOUR
 
 
+# =========================================================================== Round 4 (last)
+# Track B, approved 30 Oct 2026. Phase 4 looked at each pair on its own. These two
+# families read all three pairs at once to tell a dollar move from a move on one
+# pair alone. Measurement: each pair's move since 00:00 UTC in the dollar's
+# direction, as a fraction of its own 20-day average daily range.
+
+USD_SIGN = {"frxEURUSD": -1.0, "frxGBPUSD": -1.0, "frxUSDJPY": 1.0}   # pair up = dollar down / up
+ALL_PAIRS = ("frxEURUSD", "frxGBPUSD", "frxUSDJPY")
+
+
+def usd_moves(symbol: str, c: Bars, peers: dict, hour: int) -> dict | None:
+    """{pair: move since 00:00 UTC in the dollar's direction / 20-day average daily range} for
+    all three pairs at the close of the `hour` candle, or None if any pair's candle or history
+    is missing."""
+    t = int(c.end[-1])
+    if t % DAY != hour * HOUR:
+        return None
+    d0 = t - hour * HOUR
+    out = {}
+    for s in ALL_PAIRS:
+        b = c if s == symbol else peers.get(s)
+        if b is None or not len(b) or int(b.end[-1]) != t:
+            return None
+        r = daily_atr(b, 20)
+        if r is None or r <= 0:
+            return None
+        today = b.epoch >= d0
+        if today.sum() < hour * 0.75:
+            return None
+        out[s] = USD_SIGN[s] * float(b.close[-1] - b.open[today][0]) / r
+    return out
+
+
+def _pair_direction(symbol: str, usd_up: bool) -> str:
+    return "MULTUP" if usd_up == (USD_SIGN[symbol] > 0) else "MULTDOWN"
+
+
+class DollarWideCatchUp(FamilyStrategy):
+    """Family 11: dollar-wide move, catch-up (1h).
+
+    At the decision hour, if all three pairs point the same way for the dollar
+    and the average move is at least k daily ranges, buy the dollar on the two
+    pairs that have moved least (the leader is skipped). Exit at 20:00 UTC;
+    optional stop of `stop` daily ranges. Reason: a move on all three pairs at
+    once is a dollar flow, not pair noise; large flows take hours to work
+    through the market, and the pairs that moved least have the most left.
+    """
+    name = "f11_dollar_catch_up"
+    family = "f11"
+    timeframe = "1h"
+    needs_peers = True
+    defaults = {"decision_hour": 8, "k": 0.3, "stop": 0.0}
+    EXIT_HOUR = 20
+
+    def _signal(self, symbol, c) -> bool | None:
+        """True = dollar up, False = dollar down, None = no trade on this pair now."""
+        m = usd_moves(symbol, c, self.peers, self.params["decision_hour"])
+        if m is None:
+            return None
+        v = np.array([m[s] for s in ALL_PAIRS])
+        if not (np.all(v > 0) or np.all(v < 0)) or np.abs(v).mean() < self.params["k"]:
+            return None
+        leader = max(m, key=lambda s: abs(m[s]))
+        if symbol == leader:
+            return None
+        return bool(v[0] > 0)
+
+    def direction(self, symbol, c):
+        up = self._signal(symbol, c)
+        return None if up is None else _pair_direction(symbol, up)
+
+    def stops(self, symbol, c, direction):
+        if usd_moves(symbol, c, self.peers, self.params["decision_hour"]) is None:
+            return None
+        s = self.params["stop"]
+        return (s * daily_atr(c, 20) / PIP[symbol] if s else None), None
+
+    def exit_now(self, symbol, c, position):
+        e = position.entry_epoch
+        return int(c.end[-1]) >= e - e % DAY + self.EXIT_HOUR * HOUR
+
+
+class LoneMoverReverts(FamilyStrategy):
+    """Family 12: lone mover reverts (1h).
+
+    At the decision hour, if this pair has moved at least k daily ranges in
+    the dollar's direction while the other two together show the dollar
+    roughly flat (their average within k/3), trade this pair back toward where
+    it started. Exit at 20:00 UTC; optional stop of `stop` daily ranges.
+    Reason: a move on one pair with no dollar move behind it is most often a
+    single-currency order or thin-market push, which tends to be absorbed and
+    partly undone. Family 9, the only Phase 4 idea with a real before-cost
+    edge, worked by cancelling the dollar out; this does that intraday.
+    """
+    name = "f12_lone_mover_reverts"
+    family = "f12"
+    timeframe = "1h"
+    needs_peers = True
+    defaults = {"decision_hour": 8, "k": 0.3, "stop": 0.0}
+    EXIT_HOUR = 20
+
+    def direction(self, symbol, c):
+        m = usd_moves(symbol, c, self.peers, self.params["decision_hour"])
+        if m is None:
+            return None
+        own = m[symbol]
+        others = np.mean([m[s] for s in ALL_PAIRS if s != symbol])
+        k = self.params["k"]
+        if abs(own) < k or abs(others) > k / 3:
+            return None
+        return _pair_direction(symbol, usd_up=own < 0)       # against the pair's own dollar move
+
+    def stops(self, symbol, c, direction):
+        if usd_moves(symbol, c, self.peers, self.params["decision_hour"]) is None:
+            return None
+        s = self.params["stop"]
+        return (s * daily_atr(c, 20) / PIP[symbol] if s else None), None
+
+    def exit_now(self, symbol, c, position):
+        e = position.entry_epoch
+        return int(c.end[-1]) >= e - e % DAY + self.EXIT_HOUR * HOUR
+
+
 REGISTRY = {cls.name: cls for cls in (LondonBreakout, TrendBreakout, TrendBreakout1d, TrendPullback,
                                      TrendPullback1h, MeanReversion, MeanReversion4h, SessionDrift,
                                      QuietLondonBreakout, WeeklyMomentum, MorningMomentum,
-                                     EurGbpConvergence, ShockDay)}
+                                     EurGbpConvergence, ShockDay, DollarWideCatchUp, LoneMoverReverts)}

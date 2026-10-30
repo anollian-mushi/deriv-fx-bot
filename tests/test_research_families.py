@@ -35,15 +35,18 @@ def test_grids_within_budget_and_parameter_limit():
 @pytest.mark.parametrize("name", sorted(F.REGISTRY))
 def test_no_look_ahead(name):
     cls = F.REGISTRY[name]
-    long_history = cls.timeframe == "1d" or cls.family == "f3"     # needs ~50 days first
+    long_history = cls.timeframe == "1d" or cls.family == "f3" or getattr(cls, "needs_peers", False)
     days = 120 if long_history else 45
-    data = data_for(["frxEURUSD"], cls.timeframe, MON, days, seed=3)
+    symbols = list(R.SYMBOLS) if getattr(cls, "needs_peers", False) else ["frxEURUSD"]
+    data = data_for(symbols, cls.timeframe, MON, days, seed=3)
     cut = ep(2025, 6, 10) if long_history else ep(2025, 4, 1)
-    m1 = data["frxEURUSD"][0]
-    f = np.where(m1.epoch >= cut, 1.03, 1.0)
-    m1b = Bars(m1.epoch, m1.end, m1.open * f, m1.high * f, m1.low * f, m1.close * f)
+    data_b = {}
+    for sym, (m1, _) in data.items():             # every pair's future changed
+        f = np.where(m1.epoch >= cut, 1.03, 1.0)
+        m1b = Bars(m1.epoch, m1.end, m1.open * f, m1.high * f, m1.low * f, m1.close * f)
+        data_b[sym] = (m1b, aggregate(m1b, cls.timeframe))
     a = _run(cls(), data)
-    b = _run(cls(), {"frxEURUSD": (m1b, aggregate(m1b, cls.timeframe))})
+    b = _run(cls(), data_b)
     before = lambda st: [s for s in st.signals if s[0] < cut]
     assert before(a) == before(b)
     assert before(a) or cls.timeframe == "1d"      # daily breakouts may not fire in 4 weeks
