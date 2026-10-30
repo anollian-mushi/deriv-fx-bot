@@ -5,8 +5,10 @@ contracts on EUR/USD, GBP/USD and USD/JPY. Strategies are researched and
 backtested first, then run on a demo account, and only moved to real money
 once the go-live checklist is complete.
 
-**Status:** Phase 3 done: the backtesting engine (see "Backtesting" below).
-No researched strategy or live bot yet.
+**Status:** Phase 4 strategy research done: **no strategy passed**
+(132 variants across 5 families; see
+[reports/strategy_research.md](reports/strategy_research.md)). The holdout
+is still untouched. No live bot yet.
 
 - Project rules, risk limits and research standards: [CLAUDE.md](CLAUDE.md)
 - Before trading real money: [docs/go_live_checklist.md](docs/go_live_checklist.md)
@@ -181,6 +183,21 @@ How the engine works:
   pre-holdout data into train/validation windows.
 - **Strategies:** live in `src/fxbot/strategies/`.
   `ma_cross_example.py` is an engine test only, not for trading.
+
+## Strategy research (Phase 4)
+
+```bash
+python scripts/research_family.py grid    --family f1   # every variant, full pre-holdout period
+python scripts/research_family.py oos     --family f1   # walk-forward picks, stitched out-of-sample run
+python scripts/research_family.py luck    --family f1   # 200 random-entry runs (luck check)
+python scripts/research_family.py summary --family f1   # pass/fail checks, updates research/log.md
+```
+
+- Families f1-f5 and their declared grids are in `src/fxbot/backtest/research.py`;
+  strategy code in `src/fxbot/strategies/families.py`.
+- Each stage saves progress and stops before about 9 minutes (exit code 2);
+  run it again to continue.
+- Results: `research/phase4/<name>/` and `reports/backtests/phase4_<name>_oos/`.
 
 ## Folders
 
