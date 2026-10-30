@@ -1,0 +1,193 @@
+{
+ "run": "phase4_f3_trend_pullback_1h_oos",
+ "generated_utc": "2026-10-30T08:47Z",
+ "strategy": "fxbot.strategies.families:TrendPullback1h (walk-forward schedule)",
+ "timeframe": "1h",
+ "label": "Phase 4 family f3, stitched out-of-sample",
+ "params": {
+  "schedule": [
+   [
+    "2023-10-27",
+    {
+     "trend_len": 20,
+     "pullback": 15,
+     "sl_atr": 2.0,
+     "tp_r": 1.5
+    }
+   ],
+   [
+    "2024-04-27",
+    {
+     "trend_len": 20,
+     "pullback": 15,
+     "sl_atr": 2.0,
+     "tp_r": 1.5
+    }
+   ],
+   [
+    "2024-10-27",
+    {
+     "trend_len": 20,
+     "pullback": 15,
+     "sl_atr": 2.0,
+     "tp_r": 1.5
+    }
+   ],
+   [
+    "2025-04-27",
+    {
+     "trend_len": 20,
+     "pullback": 15,
+     "sl_atr": 2.0,
+     "tp_r": 1.5
+    }
+   ],
+   [
+    "2025-10-27",
+    {
+     "trend_len": 20,
+     "pullback": 15,
+     "sl_atr": 2.0,
+     "tp_r": 2.5
+    }
+   ]
+  ]
+ },
+ "symbols": [
+  "frxEURUSD",
+  "frxGBPUSD",
+  "frxUSDJPY"
+ ],
+ "start": "2023-10-27",
+ "end": "2026-04-26",
+ "include_holdout": false,
+ "starting_balance": 100.0,
+ "kill_switch_mode": "observe",
+ "measured": {
+  "trades": 1251,
+  "final_balance": 76.76,
+  "net_profit": -123.27,
+  "net_return_pct": -123.27,
+  "max_drawdown_pct": 53.15,
+  "win_rate_pct": 38.5,
+  "avg_win": 0.662,
+  "avg_loss": -0.575,
+  "profit_factor": 0.721,
+  "avg_commission": 0.0563,
+  "min_target_met": true,
+  "late_fills": 213,
+  "avg_delay_min": 53.7,
+  "monte_carlo_drawdown_pct": {
+   "p50": 81.53,
+   "p95": 82.94,
+   "p99": 83.58,
+   "runs": 1000
+  }
+ },
+ "stress_1_5x": {
+  "trades": 1250,
+  "final_balance": 102.62,
+  "net_profit": -147.59,
+  "net_return_pct": -147.59,
+  "max_drawdown_pct": 50.51,
+  "win_rate_pct": 38.1,
+  "avg_win": 0.591,
+  "avg_loss": -0.554,
+  "profit_factor": 0.656,
+  "avg_commission": 0.0788,
+  "min_target_met": true,
+  "late_fills": 214,
+  "avg_delay_min": 54.1,
+  "monte_carlo_drawdown_pct": {
+   "p50": 87.57,
+   "p95": 88.44,
+   "p99": 88.95,
+   "runs": 1000
+  }
+ },
+ "mt5_micro_comparison_only": {
+  "trades": 1251,
+  "final_balance": 23.43,
+  "net_profit": -76.57,
+  "net_return_pct": -76.57,
+  "max_drawdown_pct": 78.67,
+  "win_rate_pct": 39.4,
+  "avg_win": 0.683,
+  "avg_loss": -0.546,
+  "profit_factor": 0.815,
+  "avg_commission": 0.0563,
+  "min_target_met": null,
+  "late_fills": 213,
+  "avg_delay_min": 53.7,
+  "monte_carlo_drawdown_pct": {
+   "p50": 78.82,
+   "p95": 82.18,
+   "p99": 83.49,
+   "runs": 1000
+  }
+ },
+ "signals_blocked_first_reason": {
+  "outside_entry_window": 842,
+  "cost_gate": 127,
+  "daily_pause": 51,
+  "max_positions": 222
+ },
+ "signals_dropped": {
+  "expired": 1043
+ },
+ "gate_blocked_signals": 127,
+ "kill_switch": true,
+ "kill_switch_stress": true,
+ "kill_events": [
+  {
+   "time": "2024-08-06 11:10",
+   "epoch": 1722942600,
+   "equity": 49.98,
+   "balance_after_close": 49.98,
+   "trade_number": 405,
+   "top_up": 50.02
+  },
+  {
+   "time": "2025-12-17 08:04",
+   "epoch": 1765958640,
+   "equity": 49.99,
+   "balance_after_close": 49.99,
+   "trade_number": 1100,
+   "top_up": 50.01
+  }
+ ],
+ "kill_events_stress": [
+  {
+   "time": "2024-07-03 14:00",
+   "epoch": 1720015200,
+   "equity": 49.81,
+   "balance_after_close": 49.81,
+   "trade_number": 367,
+   "top_up": 50.19
+  },
+  {
+   "time": "2025-07-22 15:37",
+   "epoch": 1753198620,
+   "equity": 50.0,
+   "balance_after_close": 50.0,
+   "trade_number": 888,
+   "top_up": 50.0
+  },
+  {
+   "time": "2026-04-01 08:31",
+   "epoch": 1775032260,
+   "equity": 49.98,
+   "balance_after_close": 49.98,
+   "trade_number": 1220,
+   "top_up": 50.02
+  }
+ ],
+ "exit_reasons": {
+  "stop_loss": 661,
+  "forced_deadline": 112,
+  "take_profit": 291,
+  "strategy_exit": 183,
+  "stop_out": 1,
+  "kill_switch": 3
+ }
+}

@@ -138,3 +138,53 @@ Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; s
 Stitched OOS (2023-10-27 to 2026-04-26): 130 trades, net -26.97 USD, max drawdown 32.04%, per pair {'frxEURUSD': -10.75, 'frxGBPUSD': -5.45, 'frxUSDJPY': -10.77}, kill events 0, luck check beats p95: False (p95 28.161499999999993). **Candidate: False**. Report: `reports/backtests/phase4_f2_trend_breakout_1d_oos/`, `research/phase4/f2_trend_breakout_1d/`.
 
 <!-- phase4:f2_trend_breakout_1d end -->
+
+<!-- phase4:f3_trend_pullback start -->
+
+### f3_trend_pullback (4h): 16 variants
+
+Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-30 | f3_trend_pullback v00 | trend_len=20, pullback=15, sl_atr=1.5, tp_r=1.5 | 717 | 4.62 | 0 | - |
+| 2026-10-30 | f3_trend_pullback v01 | trend_len=20, pullback=15, sl_atr=1.5, tp_r=2.5 | 677 | 86.42 | 0 | - |
+| 2026-10-30 | f3_trend_pullback v02 | trend_len=20, pullback=15, sl_atr=2.5, tp_r=1.5 | 575 | 76.24 | 0 | - |
+| 2026-10-30 | f3_trend_pullback v03 | trend_len=20, pullback=15, sl_atr=2.5, tp_r=2.5 | 537 | 139.29 | 0 | 1, 2, 3, 4, 5 |
+| 2026-10-30 | f3_trend_pullback v04 | trend_len=20, pullback=30, sl_atr=1.5, tp_r=1.5 | 1273 | -83.66 | 1 | - |
+| 2026-10-30 | f3_trend_pullback v05 | trend_len=20, pullback=30, sl_atr=1.5, tp_r=2.5 | 1100 | -27.94 | 0 | - |
+| 2026-10-30 | f3_trend_pullback v06 | trend_len=20, pullback=30, sl_atr=2.5, tp_r=1.5 | 846 | -4.61 | 0 | - |
+| 2026-10-30 | f3_trend_pullback v07 | trend_len=20, pullback=30, sl_atr=2.5, tp_r=2.5 | 751 | 15.05 | 0 | - |
+| 2026-10-30 | f3_trend_pullback v08 | trend_len=50, pullback=15, sl_atr=1.5, tp_r=1.5 | 762 | -1.92 | 0 | - |
+| 2026-10-30 | f3_trend_pullback v09 | trend_len=50, pullback=15, sl_atr=1.5, tp_r=2.5 | 721 | 44.87 | 0 | - |
+| 2026-10-30 | f3_trend_pullback v10 | trend_len=50, pullback=15, sl_atr=2.5, tp_r=1.5 | 600 | 30.65 | 0 | - |
+| 2026-10-30 | f3_trend_pullback v11 | trend_len=50, pullback=15, sl_atr=2.5, tp_r=2.5 | 564 | 51.96 | 0 | - |
+| 2026-10-30 | f3_trend_pullback v12 | trend_len=50, pullback=30, sl_atr=1.5, tp_r=1.5 | 1315 | -138.65 | 2 | - |
+| 2026-10-30 | f3_trend_pullback v13 | trend_len=50, pullback=30, sl_atr=1.5, tp_r=2.5 | 1138 | -89.71 | 1 | - |
+| 2026-10-30 | f3_trend_pullback v14 | trend_len=50, pullback=30, sl_atr=2.5, tp_r=1.5 | 866 | -76.26 | 1 | - |
+| 2026-10-30 | f3_trend_pullback v15 | trend_len=50, pullback=30, sl_atr=2.5, tp_r=2.5 | 776 | -47.21 | 1 | - |
+
+Stitched OOS (2023-10-27 to 2026-04-26): 309 trades, net 0.7 USD, max drawdown 33.25%, per pair {'frxEURUSD': 19.31, 'frxGBPUSD': 10.98, 'frxUSDJPY': -29.59}, kill events 0, luck check beats p95: False (p95 34.59249999999997). **Candidate: False**. Report: `reports/backtests/phase4_f3_trend_pullback_oos/`, `research/phase4/f3_trend_pullback/`.
+
+<!-- phase4:f3_trend_pullback end -->
+
+<!-- phase4:f3_trend_pullback_1h start -->
+
+### f3_trend_pullback_1h (1h): 8 variants
+
+Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-30 | f3_trend_pullback_1h v00 | trend_len=20, pullback=15, sl_atr=2.0, tp_r=1.5 | 2307 | -125.12 | 2 | 1, 2, 3, 4 |
+| 2026-10-30 | f3_trend_pullback_1h v01 | trend_len=20, pullback=15, sl_atr=2.0, tp_r=2.5 | 2187 | -145.58 | 2 | 5 |
+| 2026-10-30 | f3_trend_pullback_1h v02 | trend_len=20, pullback=30, sl_atr=2.0, tp_r=1.5 | 3531 | -270.52 | 5 | - |
+| 2026-10-30 | f3_trend_pullback_1h v03 | trend_len=20, pullback=30, sl_atr=2.0, tp_r=2.5 | 3175 | -268.5 | 5 | - |
+| 2026-10-30 | f3_trend_pullback_1h v04 | trend_len=50, pullback=15, sl_atr=2.0, tp_r=1.5 | 2271 | -158.46 | 3 | - |
+| 2026-10-30 | f3_trend_pullback_1h v05 | trend_len=50, pullback=15, sl_atr=2.0, tp_r=2.5 | 2152 | -178.92 | 3 | - |
+| 2026-10-30 | f3_trend_pullback_1h v06 | trend_len=50, pullback=30, sl_atr=2.0, tp_r=1.5 | 3479 | -277.55 | 5 | - |
+| 2026-10-30 | f3_trend_pullback_1h v07 | trend_len=50, pullback=30, sl_atr=2.0, tp_r=2.5 | 3134 | -297.83 | 6 | - |
+
+Stitched OOS (2023-10-27 to 2026-04-26): 1251 trades, net -123.27 USD, max drawdown 53.15%, per pair {'frxEURUSD': -47.17, 'frxGBPUSD': -38.11, 'frxUSDJPY': -37.99}, kill events 2, luck check beats p95: False (p95 -59.937000000000005). **Candidate: False**. Report: `reports/backtests/phase4_f3_trend_pullback_1h_oos/`, `research/phase4/f3_trend_pullback_1h/`.
+
+<!-- phase4:f3_trend_pullback_1h end -->
