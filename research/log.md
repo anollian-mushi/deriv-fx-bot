@@ -82,3 +82,59 @@ Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; s
 Stitched OOS (2023-10-27 to 2026-04-26): 1256 trades, net -56.3 USD, max drawdown 54.95%, per pair {'frxEURUSD': -24.53, 'frxGBPUSD': -22.24, 'frxUSDJPY': -9.53}, kill events 1, luck check beats p95: True (p95 -59.582500000000046). **Candidate: False**. Report: `reports/backtests/phase4_f1_london_breakout_oos/`, `research/phase4/f1_london_breakout/`.
 
 <!-- phase4:f1_london_breakout end -->
+
+<!-- phase4:f2_trend_breakout start -->
+
+### f2_trend_breakout (4h): 18 variants
+
+Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-30 | f2_trend_breakout v00 | n=20, sl_atr=1.5, m=10 | 764 | -129.02 | 2 | - |
+| 2026-10-30 | f2_trend_breakout v01 | n=20, sl_atr=1.5, m=20 | 748 | -109.93 | 2 | - |
+| 2026-10-30 | f2_trend_breakout v02 | n=20, sl_atr=2.5, m=10 | 681 | -132.1 | 2 | 5 |
+| 2026-10-30 | f2_trend_breakout v03 | n=20, sl_atr=2.5, m=20 | 658 | -133.82 | 2 | - |
+| 2026-10-30 | f2_trend_breakout v04 | n=20, sl_atr=3.5, m=10 | 661 | -134.48 | 2 | - |
+| 2026-10-30 | f2_trend_breakout v05 | n=20, sl_atr=3.5, m=20 | 627 | -133.06 | 2 | - |
+| 2026-10-30 | f2_trend_breakout v06 | n=55, sl_atr=1.5, m=10 | 474 | -46.74 | 0 | - |
+| 2026-10-30 | f2_trend_breakout v07 | n=55, sl_atr=1.5, m=20 | 471 | -44.91 | 0 | 2, 3 |
+| 2026-10-30 | f2_trend_breakout v08 | n=55, sl_atr=2.5, m=10 | 442 | -69.48 | 1 | - |
+| 2026-10-30 | f2_trend_breakout v09 | n=55, sl_atr=2.5, m=20 | 439 | -74.3 | 1 | - |
+| 2026-10-30 | f2_trend_breakout v10 | n=55, sl_atr=3.5, m=10 | 434 | -60.63 | 1 | 1 |
+| 2026-10-30 | f2_trend_breakout v11 | n=55, sl_atr=3.5, m=20 | 423 | -53.31 | 1 | - |
+| 2026-10-30 | f2_trend_breakout v12 | n=100, sl_atr=1.5, m=10 | 366 | -47.76 | 0 | - |
+| 2026-10-30 | f2_trend_breakout v13 | n=100, sl_atr=1.5, m=20 | 364 | -47.84 | 0 | 4 |
+| 2026-10-30 | f2_trend_breakout v14 | n=100, sl_atr=2.5, m=10 | 344 | -71.02 | 1 | - |
+| 2026-10-30 | f2_trend_breakout v15 | n=100, sl_atr=2.5, m=20 | 340 | -74.67 | 1 | - |
+| 2026-10-30 | f2_trend_breakout v16 | n=100, sl_atr=3.5, m=10 | 342 | -71.09 | 1 | - |
+| 2026-10-30 | f2_trend_breakout v17 | n=100, sl_atr=3.5, m=20 | 334 | -74.51 | 1 | - |
+
+Stitched OOS (2023-10-27 to 2026-04-26): 266 trades, net -40.83 USD, max drawdown 45.48%, per pair {'frxEURUSD': -22.25, 'frxGBPUSD': -16.2, 'frxUSDJPY': -2.38}, kill events 0, luck check beats p95: False (p95 18.917499999999972). **Candidate: False**. Report: `reports/backtests/phase4_f2_trend_breakout_oos/`, `research/phase4/f2_trend_breakout/`.
+
+<!-- phase4:f2_trend_breakout end -->
+
+<!-- phase4:f2_trend_breakout_1d start -->
+
+### f2_trend_breakout_1d (1d): 12 variants
+
+Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-30 | f2_trend_breakout_1d v00 | n=10, sl_atr=0.75, m=5 | 327 | -35.1 | 0 | - |
+| 2026-10-30 | f2_trend_breakout_1d v01 | n=10, sl_atr=0.75, m=10 | 327 | -35.1 | 0 | - |
+| 2026-10-30 | f2_trend_breakout_1d v02 | n=10, sl_atr=1.25, m=5 | 318 | -35.45 | 0 | 2, 5 |
+| 2026-10-30 | f2_trend_breakout_1d v03 | n=10, sl_atr=1.25, m=10 | 318 | -35.45 | 0 | - |
+| 2026-10-30 | f2_trend_breakout_1d v04 | n=20, sl_atr=0.75, m=5 | 248 | -36.63 | 0 | - |
+| 2026-10-30 | f2_trend_breakout_1d v05 | n=20, sl_atr=0.75, m=10 | 248 | -36.63 | 0 | - |
+| 2026-10-30 | f2_trend_breakout_1d v06 | n=20, sl_atr=1.25, m=5 | 244 | -42.09 | 0 | 4 |
+| 2026-10-30 | f2_trend_breakout_1d v07 | n=20, sl_atr=1.25, m=10 | 244 | -42.09 | 0 | - |
+| 2026-10-30 | f2_trend_breakout_1d v08 | n=55, sl_atr=0.75, m=5 | 145 | -31.57 | 0 | 3 |
+| 2026-10-30 | f2_trend_breakout_1d v09 | n=55, sl_atr=0.75, m=10 | 145 | -31.57 | 0 | - |
+| 2026-10-30 | f2_trend_breakout_1d v10 | n=55, sl_atr=1.25, m=5 | 142 | -29.59 | 0 | 1 |
+| 2026-10-30 | f2_trend_breakout_1d v11 | n=55, sl_atr=1.25, m=10 | 142 | -29.59 | 0 | - |
+
+Stitched OOS (2023-10-27 to 2026-04-26): 130 trades, net -26.97 USD, max drawdown 32.04%, per pair {'frxEURUSD': -10.75, 'frxGBPUSD': -5.45, 'frxUSDJPY': -10.77}, kill events 0, luck check beats p95: False (p95 28.161499999999993). **Candidate: False**. Report: `reports/backtests/phase4_f2_trend_breakout_1d_oos/`, `research/phase4/f2_trend_breakout_1d/`.
+
+<!-- phase4:f2_trend_breakout_1d end -->
