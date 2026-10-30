@@ -1,0 +1,276 @@
+{
+ "f1_london_breakout": {
+  "trades": 1256,
+  "net": -56.3,
+  "gross": 39.11,
+  "commission": 70.92,
+  "entry_slippage": 11.81,
+  "sl_slippage": 12.67,
+  "gross_per_pair": {
+   "frxEURUSD": 8.2,
+   "frxGBPUSD": 11.46,
+   "frxUSDJPY": 19.44
+  },
+  "net_per_pair": {
+   "frxEURUSD": -24.53,
+   "frxGBPUSD": -22.24,
+   "frxUSDJPY": -9.53
+  },
+  "gross_pips_per_trade": 1.76,
+  "engine_no_cost_check": {
+   "engine_trades": 1252,
+   "engine_gross": 47.36,
+   "engine_gross_per_unit_stake": 14.821,
+   "repriced_gross_per_unit_stake": 16.316,
+   "commission_per_trade": 0.0565,
+   "zero_commission_recorded": true,
+   "gap_per_trade": 0.0066
+  }
+ },
+ "f2_trend_breakout": {
+  "trades": 266,
+  "net": -40.83,
+  "gross": -23.11,
+  "commission": 13.74,
+  "entry_slippage": 2.28,
+  "sl_slippage": 1.71,
+  "gross_per_pair": {
+   "frxEURUSD": -15.39,
+   "frxGBPUSD": -11.1,
+   "frxUSDJPY": 3.38
+  },
+  "net_per_pair": {
+   "frxEURUSD": -22.25,
+   "frxGBPUSD": -16.2,
+   "frxUSDJPY": -2.38
+  },
+  "gross_pips_per_trade": -2.87
+ },
+ "f2_trend_breakout_1d": {
+  "trades": 130,
+  "net": -26.97,
+  "gross": -17.13,
+  "commission": 7.94,
+  "entry_slippage": 1.3,
+  "sl_slippage": 0.61,
+  "gross_per_pair": {
+   "frxEURUSD": -7.12,
+   "frxGBPUSD": -2.62,
+   "frxUSDJPY": -7.39
+  },
+  "net_per_pair": {
+   "frxEURUSD": -10.75,
+   "frxGBPUSD": -5.45,
+   "frxUSDJPY": -10.77
+  },
+  "gross_pips_per_trade": -5.75
+ },
+ "f3_trend_pullback": {
+  "trades": 309,
+  "net": 0.7,
+  "gross": 33.5,
+  "commission": 25.94,
+  "entry_slippage": 4.21,
+  "sl_slippage": 2.66,
+  "gross_per_pair": {
+   "frxEURUSD": 31.14,
+   "frxGBPUSD": 19.46,
+   "frxUSDJPY": -17.1
+  },
+  "net_per_pair": {
+   "frxEURUSD": 19.31,
+   "frxGBPUSD": 10.98,
+   "frxUSDJPY": -29.59
+  },
+  "gross_pips_per_trade": 4.48
+ },
+ "f3_trend_pullback_1h": {
+  "trades": 1251,
+  "net": -123.27,
+  "gross": -28.82,
+  "commission": 70.49,
+  "entry_slippage": 11.64,
+  "sl_slippage": 12.32,
+  "gross_per_pair": {
+   "frxEURUSD": -14.4,
+   "frxGBPUSD": -7.51,
+   "frxUSDJPY": -6.91
+  },
+  "net_per_pair": {
+   "frxEURUSD": -47.17,
+   "frxGBPUSD": -38.11,
+   "frxUSDJPY": -37.99
+  },
+  "gross_pips_per_trade": -1.4
+ },
+ "f4_mean_reversion": {
+  "trades": 551,
+  "net": -61.63,
+  "gross": -22.09,
+  "commission": 29.96,
+  "entry_slippage": 4.96,
+  "sl_slippage": 4.61,
+  "gross_per_pair": {
+   "frxEURUSD": -11.35,
+   "frxGBPUSD": -3.37,
+   "frxUSDJPY": -7.37
+  },
+  "net_per_pair": {
+   "frxEURUSD": -25.77,
+   "frxGBPUSD": -15.94,
+   "frxUSDJPY": -19.92
+  },
+  "gross_pips_per_trade": -2.04
+ },
+ "f4_mean_reversion_4h": {
+  "trades": 167,
+  "net": -10.14,
+  "gross": 5.1,
+  "commission": 12.11,
+  "entry_slippage": 1.93,
+  "sl_slippage": 1.2,
+  "gross_per_pair": {
+   "frxEURUSD": 1.86,
+   "frxGBPUSD": 5.87,
+   "frxUSDJPY": -2.63
+  },
+  "net_per_pair": {
+   "frxEURUSD": -3.13,
+   "frxGBPUSD": 1.87,
+   "frxUSDJPY": -8.88
+  },
+  "gross_pips_per_trade": 1.6
+ },
+ "f5_session_drift": {
+  "trades": 1290,
+  "net": -107.92,
+  "gross": -39.33,
+  "commission": 57.67,
+  "entry_slippage": 10.92,
+  "sl_slippage": 0.0,
+  "gross_per_pair": {
+   "frxEURUSD": -18.19,
+   "frxGBPUSD": -21.14,
+   "frxUSDJPY": 0
+  },
+  "net_per_pair": {
+   "frxEURUSD": -55.26,
+   "frxGBPUSD": -52.66,
+   "frxUSDJPY": 0
+  },
+  "gross_pips_per_trade": -1.0,
+  "engine_no_cost_check": {
+   "engine_trades": 1290,
+   "engine_gross": -39.88,
+   "engine_gross_per_unit_stake": -13.308,
+   "repriced_gross_per_unit_stake": -11.549,
+   "commission_per_trade": 0.0447,
+   "zero_commission_recorded": true,
+   "gap_per_trade": -0.0004
+  }
+ },
+ "f6_quiet_london_breakout": {
+  "trades": 872,
+  "net": -39.94,
+  "gross": 23.77,
+  "commission": 45.36,
+  "entry_slippage": 7.94,
+  "sl_slippage": 10.4,
+  "gross_per_pair": {
+   "frxEURUSD": -7.11,
+   "frxGBPUSD": 17.28,
+   "frxUSDJPY": 13.6
+  },
+  "net_per_pair": {
+   "frxEURUSD": -32.53,
+   "frxGBPUSD": -9.43,
+   "frxUSDJPY": 2.02
+  },
+  "gross_pips_per_trade": 1.98
+ },
+ "f7_weekly_momentum_tue": {
+  "trades": 260,
+  "net": -32.45,
+  "gross": -10.7,
+  "commission": 17.64,
+  "entry_slippage": 2.85,
+  "sl_slippage": 1.26,
+  "gross_per_pair": {
+   "frxEURUSD": 33.16,
+   "frxGBPUSD": -15.97,
+   "frxUSDJPY": -27.9
+  },
+  "net_per_pair": {
+   "frxEURUSD": 25.95,
+   "frxGBPUSD": -22.29,
+   "frxUSDJPY": -36.11
+  },
+  "gross_pips_per_trade": -2.42
+ },
+ "f8_morning_momentum": {
+  "trades": 419,
+  "net": -23.46,
+  "gross": 8.5,
+  "commission": 25.1,
+  "entry_slippage": 3.98,
+  "sl_slippage": 2.88,
+  "gross_per_pair": {
+   "frxEURUSD": 1.44,
+   "frxGBPUSD": -3.03,
+   "frxUSDJPY": 10.09
+  },
+  "net_per_pair": {
+   "frxEURUSD": -8.07,
+   "frxGBPUSD": -12.41,
+   "frxUSDJPY": -2.98
+  },
+  "gross_pips_per_trade": 1.83
+ },
+ "f9_eur_gbp_convergence": {
+  "trades": 122,
+  "net": 6.17,
+  "gross": 16.59,
+  "commission": 8.38,
+  "entry_slippage": 1.59,
+  "sl_slippage": 0.44,
+  "gross_per_pair": {
+   "frxEURUSD": -6.11,
+   "frxGBPUSD": 22.69,
+   "frxUSDJPY": 0
+  },
+  "net_per_pair": {
+   "frxEURUSD": -11.83,
+   "frxGBPUSD": 18.0,
+   "frxUSDJPY": 0
+  },
+  "gross_pips_per_trade": 6.25,
+  "engine_no_cost_check": {
+   "engine_trades": 119,
+   "engine_gross": 16.78,
+   "engine_gross_per_unit_stake": 5.346,
+   "repriced_gross_per_unit_stake": 5.511,
+   "commission_per_trade": 0.0687,
+   "zero_commission_recorded": true,
+   "gap_per_trade": 0.0016
+  }
+ },
+ "f10_shock_day": {
+  "trades": 103,
+  "net": -26.09,
+  "gross": -17.97,
+  "commission": 6.39,
+  "entry_slippage": 1.05,
+  "sl_slippage": 0.68,
+  "gross_per_pair": {
+   "frxEURUSD": 2.77,
+   "frxGBPUSD": -6.07,
+   "frxUSDJPY": -14.67
+  },
+  "net_per_pair": {
+   "frxEURUSD": 0.04,
+   "frxGBPUSD": -8.59,
+   "frxUSDJPY": -17.54
+  },
+  "gross_pips_per_trade": -9.5
+ }
+}

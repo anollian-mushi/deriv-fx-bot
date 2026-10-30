@@ -1,0 +1,260 @@
+{
+ "f5_session_drift": {
+  "no_costs_original": {
+   "family": "f5_session_drift",
+   "flipped": false,
+   "costs": false,
+   "trades": 1290,
+   "net": -39.88,
+   "per_unit_stake": -13.308,
+   "kill_events": 0,
+   "exit_reasons": {
+    "strategy_exit": 1272,
+    "stop_out": 18
+   }
+  },
+  "no_costs_flipped": {
+   "family": "f5_session_drift",
+   "flipped": true,
+   "costs": false,
+   "trades": 1290,
+   "net": 36.43,
+   "per_unit_stake": 14.042,
+   "kill_events": 0,
+   "exit_reasons": {
+    "strategy_exit": 1276,
+    "stop_out": 14
+   }
+  },
+  "with_costs_original": {
+   "family": "f5_session_drift",
+   "flipped": false,
+   "costs": true,
+   "trades": 1290,
+   "net": -107.92,
+   "per_unit_stake": -45.443,
+   "kill_events": 2,
+   "exit_reasons": {
+    "strategy_exit": 1266,
+    "stop_out": 20,
+    "kill_switch": 4
+   }
+  },
+  "with_costs_flipped": {
+   "family": "f5_session_drift",
+   "flipped": true,
+   "costs": true,
+   "trades": 1290,
+   "net": -52.6,
+   "per_unit_stake": -20.383,
+   "kill_events": 1,
+   "exit_reasons": {
+    "strategy_exit": 1272,
+    "stop_out": 16,
+    "kill_switch": 2
+   }
+  },
+  "mirror_before_costs": {
+   "original_per_unit_stake": -13.308,
+   "flipped_per_unit_stake": 14.042,
+   "sum (0 = exact mirror)": 0.734
+  }
+ },
+ "f1_london_breakout": {
+  "no_costs_original": {
+   "family": "f1_london_breakout",
+   "flipped": false,
+   "costs": false,
+   "trades": 1252,
+   "net": 47.36,
+   "per_unit_stake": 14.821,
+   "kill_events": 0,
+   "exit_reasons": {
+    "stop_loss": 656,
+    "strategy_exit": 376,
+    "take_profit": 218,
+    "stop_out": 2
+   }
+  },
+  "no_costs_flipped": {
+   "family": "f1_london_breakout",
+   "flipped": true,
+   "costs": false,
+   "trades": 1262,
+   "net": -53.78,
+   "per_unit_stake": -22.907,
+   "kill_events": 1,
+   "exit_reasons": {
+    "stop_loss": 688,
+    "strategy_exit": 412,
+    "take_profit": 161,
+    "kill_switch": 1
+   }
+  },
+  "with_costs_original": {
+   "family": "f1_london_breakout",
+   "flipped": false,
+   "costs": true,
+   "trades": 1256,
+   "net": -56.3,
+   "per_unit_stake": -23.432,
+   "kill_events": 1,
+   "exit_reasons": {
+    "stop_loss": 664,
+    "strategy_exit": 376,
+    "take_profit": 213,
+    "stop_out": 2,
+    "kill_switch": 1
+   }
+  },
+  "with_costs_flipped": {
+   "family": "f1_london_breakout",
+   "flipped": true,
+   "costs": true,
+   "trades": 1266,
+   "net": -140.97,
+   "per_unit_stake": -62.294,
+   "kill_events": 2,
+   "exit_reasons": {
+    "stop_loss": 700,
+    "strategy_exit": 405,
+    "take_profit": 157,
+    "kill_switch": 4
+   }
+  },
+  "mirror_before_costs": {
+   "original_per_unit_stake": 14.821,
+   "flipped_per_unit_stake": -22.907,
+   "sum (0 = exact mirror)": -8.086
+  }
+ },
+ "f8_morning_momentum": {
+  "no_costs_original": {
+   "family": "f8_morning_momentum",
+   "flipped": false,
+   "costs": false,
+   "trades": 419,
+   "net": 11.54,
+   "per_unit_stake": 4.489,
+   "kill_events": 0,
+   "exit_reasons": {
+    "strategy_exit": 278,
+    "stop_loss": 139,
+    "stop_out": 2
+   }
+  },
+  "no_costs_flipped": {
+   "family": "f8_morning_momentum",
+   "flipped": true,
+   "costs": false,
+   "trades": 419,
+   "net": -34.21,
+   "per_unit_stake": -13.225,
+   "kill_events": 0,
+   "exit_reasons": {
+    "stop_loss": 162,
+    "strategy_exit": 257
+   }
+  },
+  "with_costs_original": {
+   "family": "f8_morning_momentum",
+   "flipped": false,
+   "costs": true,
+   "trades": 419,
+   "net": -23.46,
+   "per_unit_stake": -8.064,
+   "kill_events": 0,
+   "exit_reasons": {
+    "strategy_exit": 275,
+    "stop_loss": 142,
+    "stop_out": 2
+   }
+  },
+  "with_costs_flipped": {
+   "family": "f8_morning_momentum",
+   "flipped": true,
+   "costs": true,
+   "trades": 419,
+   "net": -64.31,
+   "per_unit_stake": -27.534,
+   "kill_events": 1,
+   "exit_reasons": {
+    "stop_loss": 167,
+    "strategy_exit": 250,
+    "kill_switch": 2
+   }
+  },
+  "mirror_before_costs": {
+   "original_per_unit_stake": 4.489,
+   "flipped_per_unit_stake": -13.225,
+   "sum (0 = exact mirror)": -8.736
+  }
+ },
+ "f3_trend_pullback": {
+  "no_costs_original": {
+   "family": "f3_trend_pullback",
+   "flipped": false,
+   "costs": false,
+   "trades": 308,
+   "net": 35.58,
+   "per_unit_stake": 13.209,
+   "kill_events": 0,
+   "exit_reasons": {
+    "stop_loss": 97,
+    "forced_deadline": 188,
+    "stop_out": 5,
+    "take_profit": 18
+   }
+  },
+  "no_costs_flipped": {
+   "family": "f3_trend_pullback",
+   "flipped": true,
+   "costs": false,
+   "trades": 277,
+   "net": 13.89,
+   "per_unit_stake": 6.481,
+   "kill_events": 0,
+   "exit_reasons": {
+    "forced_deadline": 175,
+    "stop_loss": 73,
+    "stop_out": 11,
+    "take_profit": 18
+   }
+  },
+  "with_costs_original": {
+   "family": "f3_trend_pullback",
+   "flipped": false,
+   "costs": true,
+   "trades": 309,
+   "net": 0.7,
+   "per_unit_stake": 3.322,
+   "kill_events": 0,
+   "exit_reasons": {
+    "stop_loss": 99,
+    "forced_deadline": 187,
+    "stop_out": 5,
+    "take_profit": 18
+   }
+  },
+  "with_costs_flipped": {
+   "family": "f3_trend_pullback",
+   "flipped": true,
+   "costs": true,
+   "trades": 277,
+   "net": -9.8,
+   "per_unit_stake": -1.325,
+   "kill_events": 0,
+   "exit_reasons": {
+    "forced_deadline": 174,
+    "stop_loss": 73,
+    "stop_out": 12,
+    "take_profit": 18
+   }
+  },
+  "mirror_before_costs": {
+   "original_per_unit_stake": 13.209,
+   "flipped_per_unit_stake": 6.481,
+   "sum (0 = exact mirror)": 19.69
+  }
+ }
+}

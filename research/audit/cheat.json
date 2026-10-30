@@ -1,0 +1,266 @@
+{
+ "period": "2024-01-01..2024-12-31",
+ "cheat": {
+  "seed": null,
+  "trades": 2190,
+  "net": 45805.12,
+  "gross": 58502.22,
+  "kill_events": 0,
+  "per_pair": {
+   "frxEURUSD": 11947.45,
+   "frxGBPUSD": 15682.24,
+   "frxUSDJPY": 18175.43
+  }
+ },
+ "random_direction_twins": {
+  "runs": 20,
+  "net_mean": -131.59,
+  "net_max": -92.79,
+  "net_min": -157.67,
+  "trades_mean": 2190.9,
+  "kill_events_total": 40
+ },
+ "cheat_beats_every_random_run": true,
+ "all_runs": [
+  {
+   "seed": 0,
+   "trades": 2191,
+   "net": -107.31,
+   "gross": 33.57,
+   "kill_events": 2,
+   "per_pair": {
+    "frxEURUSD": -31.46,
+    "frxGBPUSD": -31.61,
+    "frxUSDJPY": -44.24
+   }
+  },
+  {
+   "seed": 1,
+   "trades": 2192,
+   "net": -145.73,
+   "gross": -12.93,
+   "kill_events": 2,
+   "per_pair": {
+    "frxEURUSD": -48.01,
+    "frxGBPUSD": -20.64,
+    "frxUSDJPY": -77.08
+   }
+  },
+  {
+   "seed": 2,
+   "trades": 2190,
+   "net": -116.66,
+   "gross": 23.53,
+   "kill_events": 2,
+   "per_pair": {
+    "frxEURUSD": -35.14,
+    "frxGBPUSD": -42.24,
+    "frxUSDJPY": -39.28
+   }
+  },
+  {
+   "seed": 3,
+   "trades": 2191,
+   "net": -137.28,
+   "gross": -1.72,
+   "kill_events": 2,
+   "per_pair": {
+    "frxEURUSD": -45.83,
+    "frxGBPUSD": -33.43,
+    "frxUSDJPY": -58.02
+   }
+  },
+  {
+   "seed": 4,
+   "trades": 2190,
+   "net": -147.25,
+   "gross": -9.45,
+   "kill_events": 2,
+   "per_pair": {
+    "frxEURUSD": -42.76,
+    "frxGBPUSD": -38.65,
+    "frxUSDJPY": -65.84
+   }
+  },
+  {
+   "seed": 5,
+   "trades": 2192,
+   "net": -137.56,
+   "gross": 1.63,
+   "kill_events": 2,
+   "per_pair": {
+    "frxEURUSD": -43.11,
+    "frxGBPUSD": -44.39,
+    "frxUSDJPY": -50.06
+   }
+  },
+  {
+   "seed": 6,
+   "trades": 2192,
+   "net": -123.51,
+   "gross": 14.18,
+   "kill_events": 2,
+   "per_pair": {
+    "frxEURUSD": -42.0,
+    "frxGBPUSD": -38.03,
+    "frxUSDJPY": -43.48
+   }
+  },
+  {
+   "seed": 7,
+   "trades": 2191,
+   "net": -157.67,
+   "gross": -23.11,
+   "kill_events": 3,
+   "per_pair": {
+    "frxEURUSD": -36.63,
+    "frxGBPUSD": -47.67,
+    "frxUSDJPY": -73.37
+   }
+  },
+  {
+   "seed": 8,
+   "trades": 2193,
+   "net": -133.01,
+   "gross": 6.91,
+   "kill_events": 2,
+   "per_pair": {
+    "frxEURUSD": -27.95,
+    "frxGBPUSD": -45.78,
+    "frxUSDJPY": -59.28
+   }
+  },
+  {
+   "seed": 9,
+   "trades": 2191,
+   "net": -117.14,
+   "gross": 24.78,
+   "kill_events": 2,
+   "per_pair": {
+    "frxEURUSD": -42.77,
+    "frxGBPUSD": -37.47,
+    "frxUSDJPY": -36.9
+   }
+  },
+  {
+   "seed": 10,
+   "trades": 2190,
+   "net": -132.96,
+   "gross": 5.45,
+   "kill_events": 2,
+   "per_pair": {
+    "frxEURUSD": -22.52,
+    "frxGBPUSD": -60.13,
+    "frxUSDJPY": -50.31
+   }
+  },
+  {
+   "seed": 11,
+   "trades": 2190,
+   "net": -92.79,
+   "gross": 35.63,
+   "kill_events": 1,
+   "per_pair": {
+    "frxEURUSD": -27.96,
+    "frxGBPUSD": -35.48,
+    "frxUSDJPY": -29.35
+   }
+  },
+  {
+   "seed": 12,
+   "trades": 2190,
+   "net": -129.08,
+   "gross": 12.4,
+   "kill_events": 2,
+   "per_pair": {
+    "frxEURUSD": -32.2,
+    "frxGBPUSD": -27.37,
+    "frxUSDJPY": -69.51
+   }
+  },
+  {
+   "seed": 13,
+   "trades": 2193,
+   "net": -145.4,
+   "gross": -11.34,
+   "kill_events": 2,
+   "per_pair": {
+    "frxEURUSD": -34.66,
+    "frxGBPUSD": -48.97,
+    "frxUSDJPY": -61.77
+   }
+  },
+  {
+   "seed": 14,
+   "trades": 2191,
+   "net": -145.09,
+   "gross": -10.42,
+   "kill_events": 2,
+   "per_pair": {
+    "frxEURUSD": -40.31,
+    "frxGBPUSD": -46.46,
+    "frxUSDJPY": -58.32
+   }
+  },
+  {
+   "seed": 15,
+   "trades": 2191,
+   "net": -103.38,
+   "gross": 37.27,
+   "kill_events": 2,
+   "per_pair": {
+    "frxEURUSD": -28.14,
+    "frxGBPUSD": -34.12,
+    "frxUSDJPY": -41.12
+   }
+  },
+  {
+   "seed": 16,
+   "trades": 2190,
+   "net": -143.77,
+   "gross": -5.05,
+   "kill_events": 2,
+   "per_pair": {
+    "frxEURUSD": -30.3,
+    "frxGBPUSD": -45.91,
+    "frxUSDJPY": -67.56
+   }
+  },
+  {
+   "seed": 17,
+   "trades": 2190,
+   "net": -142.11,
+   "gross": -6.13,
+   "kill_events": 2,
+   "per_pair": {
+    "frxEURUSD": -44.72,
+    "frxGBPUSD": -36.51,
+    "frxUSDJPY": -60.88
+   }
+  },
+  {
+   "seed": 18,
+   "trades": 2190,
+   "net": -132.79,
+   "gross": 2.62,
+   "kill_events": 2,
+   "per_pair": {
+    "frxEURUSD": -33.12,
+    "frxGBPUSD": -40.75,
+    "frxUSDJPY": -58.92
+   }
+  },
+  {
+   "seed": 19,
+   "trades": 2191,
+   "net": -141.22,
+   "gross": -2.17,
+   "kill_events": 2,
+   "per_pair": {
+    "frxEURUSD": -49.72,
+    "frxGBPUSD": -39.16,
+    "frxUSDJPY": -52.34
+   }
+  }
+ ]
+}

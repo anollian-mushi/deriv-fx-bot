@@ -7,7 +7,10 @@ once the go-live checklist is complete.
 
 **Status:** Phase 4 strategy research finished: **no strategy passed**
 (186 variants across 10 families in 3 rounds; see
-[reports/strategy_research.md](reports/strategy_research.md)). The holdout
+[reports/strategy_research.md](reports/strategy_research.md)). An audit of
+the pipeline ([reports/audit_phase4.md](reports/audit_phase4.md)) confirmed
+it can see an edge and charges costs once; it found and fixed one bug in
+the luck check (families 6 and 8 need their luck check re-run). The holdout
 is still untouched. No live bot.
 
 - Project rules, risk limits and research standards: [CLAUDE.md](CLAUDE.md)
@@ -198,6 +201,23 @@ python scripts/research_family.py summary --family f1   # pass/fail checks, upda
 - Each stage saves progress and stops before about 9 minutes (exit code 2);
   run it again to continue.
 - Results: `research/phase4/<name>/` and `reports/backtests/phase4_<name>_oos/`.
+- The luck stage needs rate files keyed by (window, pair, hour); if `oos_rates.json`
+  predates the 30 Oct audit fix, run the `oos` stage again first.
+
+## Pipeline audit
+
+```bash
+python scripts/audit_phase4.py trades      # consistency of every committed OOS trades.csv
+python scripts/audit_phase4.py utc         # data is UTC (US jobs-report spike at 13:30 / 12:30)
+python scripts/audit_phase4.py cheat       # next-candle cheat control vs random-direction twins
+python scripts/audit_phase4.py grossnet    # gross (no cost) vs net, plus an engine no-cost check
+python scripts/audit_phase4.py flip        # reversed signals before and after costs
+python scripts/audit_phase4.py luck-preview --family f8 --runs 100   # corrected luck check, resumable
+```
+
+Diagnostics only (`src/fxbot/backtest/audit.py`, `tests/test_audit_phase4.py`);
+nothing in them is a strategy. Results go to `research/audit/`; the report is
+`reports/audit_phase4.md`.
 
 ## Folders
 

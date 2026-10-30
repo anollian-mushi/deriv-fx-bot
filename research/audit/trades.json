@@ -1,0 +1,52 @@
+{
+ "per_family": {
+  "f1_london_breakout": {
+   "trades": 1256,
+   "closed_in_the_entry_minute": 1
+  },
+  "f2_trend_breakout": {
+   "trades": 266
+  },
+  "f2_trend_breakout_1d": {
+   "trades": 130
+  },
+  "f3_trend_pullback": {
+   "trades": 309
+  },
+  "f3_trend_pullback_1h": {
+   "trades": 1251,
+   "closed_in_the_entry_minute": 3
+  },
+  "f4_mean_reversion": {
+   "trades": 551,
+   "closed_in_the_entry_minute": 1
+  },
+  "f4_mean_reversion_4h": {
+   "trades": 167
+  },
+  "f5_session_drift": {
+   "trades": 1290
+  },
+  "f6_quiet_london_breakout": {
+   "trades": 872,
+   "closed_in_the_entry_minute": 2
+  },
+  "f7_weekly_momentum_tue": {
+   "trades": 260
+  },
+  "f8_morning_momentum": {
+   "trades": 419
+  },
+  "f9_eur_gbp_convergence": {
+   "trades": 122
+  },
+  "f10_shock_day": {
+   "trades": 103
+  }
+ },
+ "total": {
+  "trades": 6996,
+  "closed_in_the_entry_minute": 7
+ },
+ "note": "every count other than 'trades' and 'closed_in_the_entry_minute' is a defect"
+}

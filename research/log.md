@@ -401,3 +401,17 @@ Stitched OOS (2023-10-27 to 2026-04-26): 103 trades, net -26.09 USD, max drawdow
 | 3 | f9-f10 | 16 | 186 | p99 of 500 |
 
 Result: no strategy passed; the holdout was not used. See reports/strategy_research.md.
+
+## Audit of the Phase 4 pipeline (2026-10-30)
+
+Not variants. Diagnostics only, to check that the research machinery could
+have seen an edge (`reports/audit_phase4.md`). Nothing was tested on the
+holdout; no strategy or rule was changed.
+
+| Date | What | Data | Result |
+|---|---|---|---|
+| 2026-10-30 | Cheat control: next-candle look-ahead, 1h, 3 pairs, vs 20 random-direction twins (`audit.Cheat`, never a candidate) | Dukascopy 2024-01-01 to 2024-12-31 (pre-holdout) | +45,805 USD net, beats every twin (twins −93 to −158 USD). Pipeline sees an edge |
+| 2026-10-30 | Gross (no-cost) vs net re-pricing of all 13 OOS runs; engine no-cost cross-check on f1, f5, f9 | OOS 2023-10-27 to 2026-04-26 | Costs charged once; gross edge +1.8 to +6.3 pips/trade on f1, f3-4h, f6, f8, f9, below ~4 pips of cost |
+| 2026-10-30 | Flipped signals before costs: f5, f1, f8, f3-4h (`audit.flipped`) | OOS span | f5 mirrors within 5%; families with asymmetric stops do not, as expected |
+| 2026-10-30 | **Luck-check bug found and fixed**: random runs made 41% (f8) / 30% (f6) fewer trades than the candidate (rate diluted across windows; stops() filters applied twice). Rates now keyed by (window, pair, hour) over tradeable candles | - | Committed luck.json files are stale; f8 and f6 need re-running (f1, f5 for a clean record). Re-runs count as new variants (owner's rule) |
+| 2026-10-30 | Preview of the corrected luck check, 100 random runs (not official; `research/audit/luck_preview_*.json`) | OOS span | pending (next commit) |

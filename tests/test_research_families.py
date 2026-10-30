@@ -111,12 +111,12 @@ def test_scheduled_switches_parameters_and_waits_for_first_window():
     st = _run(s, data_for(["frxEURUSD"], "1h", MON, 5))
     entries = sorted(t["entry_epoch"] for t in st.trades)
     assert entries == [ep(2025, 3, 5, 8), ep(2025, 3, 6, 10), ep(2025, 3, 7, 10)]
-    assert s.entries[("frxEURUSD", 8)] == 1 and s.entries[("frxEURUSD", 10)] == 2
+    assert s.entries[(0, "frxEURUSD", 8)] == 1 and s.entries[(1, "frxEURUSD", 10)] == 2
 
 
 def test_random_entry_keeps_hours_and_exits():
     sched = [(ep(2025, 3, 3), {"entry_hour": 8, "exit_hour": 12, "stop_pips": 0})]
-    r = R.RandomEntry(F.SessionDrift, sched, {("frxEURUSD", 9): 1.0}, seed=1)
+    r = R.RandomEntry(F.SessionDrift, sched, {(0, "frxEURUSD", 9): 1.0}, seed=1)
     st = _run(r, data_for(["frxEURUSD"], "1h", MON, 5))
     assert len(st.trades) == 5
     assert all(t["entry_time"].endswith("09:00") and t["exit_time"].endswith("12:00") for t in st.trades)
@@ -230,7 +230,8 @@ def test_eur_gbp_convergence_opens_opposite_legs():
 
 def test_random_entry_keeps_two_legs_hedged():
     sched = [(ep(2025, 3, 3), {"length": 20, "z_in": 1.5, "hold_days": 3})]
-    r = R.RandomEntry(F.EurGbpConvergence, sched, {("frxEURUSD", 0): 1.0, ("frxGBPUSD", 0): 1.0}, seed=4)
+    r = R.RandomEntry(F.EurGbpConvergence, sched, {(0, "frxEURUSD", 0): 1.0, (0, "frxGBPUSD", 0): 1.0},
+                      seed=4)
     st = _run(r, data_for(["frxEURUSD", "frxGBPUSD", "frxUSDJPY"], "1d", MON, 30))
     by_time = {}
     for t in st.trades:

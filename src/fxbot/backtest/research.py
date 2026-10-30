@@ -15,6 +15,13 @@ Pre-holdout data only (before 2026-04-28); every date here is checked.
 4. Luck check: the same run with random entries (RandomEntry): same stops and
    exits, same candle hours, same rate of signals per pair and hour, random
    direction. The candidate must beat the 95th percentile of >= 200 such runs.
+   The signal rate is kept per walk-forward window (the picked settings can
+   change the signal hour between windows) and is measured over the candles
+   where the family's stops() allowed a trade, so the random runs make about
+   as many trades as the candidate. (Audit, 30 Oct 2026: before this, a rate
+   measured over the whole run was diluted by windows with another signal
+   hour, and entry filters inside stops() were applied twice; the random runs
+   of families 6 and 8 made 30-41% fewer trades than the candidate.)
 
 Scoring a training window from a full-period run is fair: the engine has no
 look-ahead, so trades opened inside the window only used data up to their own
@@ -124,40 +131,54 @@ class Scheduled(Strategy):
         self.needs_peers = getattr(cls, "needs_peers", False)
         self.params = {"schedule": [(dt.datetime.fromtimestamp(t, dt.timezone.utc).date().isoformat(), p)
                                     for t, p in self.schedule]}
-        self.flat = Counter()         # (symbol, hour) -> candles seen while flat with nothing pending
-        self.entries = Counter()      # (symbol, hour) -> entry signals
+        # (window, symbol, hour) -> candles seen while flat, nothing pending and a trade possible
+        self.flat = Counter()
+        self.entries = Counter()      # (window, symbol, hour) -> entry signals
 
-    def _active(self, t: int) -> FamilyStrategy | None:
+    def _active(self, t: int) -> tuple[int | None, FamilyStrategy | None]:
         k = None
         for i, (t0, _) in enumerate(self.schedule):
             if t >= t0:
                 k = i
-        return None if k is None else self.inner[k]
+        return (None, None) if k is None else (k, self.inner[k])
+
+    @staticmethod
+    def could_trade(s: FamilyStrategy, symbol: str, candles) -> bool:
+        """Would the family's stops() allow a trade at this candle (in either direction)?
+
+        Counting only these candles keeps filters that live in stops() (no London box,
+        box too small, not a quiet night...) from being applied twice to the random runs.
+        """
+        return any(s.stops(symbol, candles, d) is not None for d in ("MULTUP", "MULTDOWN"))
 
     def on_candle(self, symbol, candles, position, pending):
         t = int(candles.end[-1])
-        s = self._active(t)
+        k, s = self._active(t)
         if s is None:
             return []
-        if position is None and not pending:
-            self.flat[(symbol, hour_of(t))] += 1
         s.peers = self.peers
         acts = s.on_candle(symbol, candles, position, pending)
-        if position is None and not pending and acts:
-            self.entries[(symbol, hour_of(t))] += 1
+        if position is None and not pending and self.could_trade(s, symbol, candles):
+            self.flat[(k, symbol, hour_of(t))] += 1
+            if acts:
+                self.entries[(k, symbol, hour_of(t))] += 1
         return acts
 
 
 class RandomEntry(Scheduled):
     """The luck check: same schedule, stops and exits, random entries.
 
-    At each candle where the candidate was flat, enter with the candidate's
-    own frequency for that pair and hour (entries / flat candles), in a
-    random direction.
+    At each candle where the candidate was flat and a trade was possible, enter
+    with the candidate's own frequency for that walk-forward window, pair and
+    hour (entries / flat candles, keys (window, symbol, hour)), in a random
+    direction.
     """
 
     def __init__(self, cls, schedule, rates: dict, seed: int):
         super().__init__(cls, schedule)
+        if any(len(k) != 3 for k in rates):
+            raise ValueError("luck-check rates must be keyed by (window, symbol, hour); "
+                             "re-run the oos stage to rebuild oos_rates.json")
         self.rates = rates
         self.rng = np.random.default_rng(seed)
         self.seed = seed
@@ -166,7 +187,8 @@ class RandomEntry(Scheduled):
 
     def _random_entry(self, symbol, c):
         t = int(c.end[-1])
-        p = self.rates.get((symbol, hour_of(t)), 0.0)
+        k, _ = self._active(t)
+        p = self.rates.get((k, symbol, hour_of(t)), 0.0)
         legs = getattr(self.cls, "LEGS", None)
         if legs:
             # Two-leg families: both legs draw the same numbers at the same candle, so a random
@@ -199,7 +221,21 @@ def run_oos(strategy: Scheduled, stress: float = 1.0) -> Engine:
 
 
 def entry_rates(s: Scheduled) -> dict:
+    """{(window, symbol, hour): entry signals / flat candles where a trade was possible}."""
     return {k: s.entries[k] / n for k, n in s.flat.items() if n and s.entries[k]}
+
+
+def luck_result(random_nets, net: float, pct: int, need_runs: int) -> dict:
+    """The luck check as judged in the summary: the candidate's net must beat the pct-th
+    percentile (numpy's default linear interpolation) of at least need_runs random runs."""
+    nets = np.asarray(list(random_nets), dtype=float)
+    if not len(nets):
+        return {"runs": 0, "percentile": pct, "p50": None, "p95": None, "share_beaten": None,
+                "passed": False}
+    bar = float(np.percentile(nets, pct))
+    return {"runs": int(len(nets)), "percentile": pct, "p50": float(np.median(nets)), "p95": bar,
+            "share_beaten": float((nets < net).mean()),
+            "passed": bool(len(nets) >= need_runs and net > bar)}
 
 
 # ----------------------------------------------------------------------------- the grids

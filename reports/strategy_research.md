@@ -3,6 +3,14 @@
 Written 2026-10-30, updated after each round. Pre-holdout data only (Dukascopy 1m, 2021-10-27 to
 2026-04-27). **The holdout (Deriv data from 2026-04-28) was not touched.**
 
+> **Audit note (30 Oct 2026, after this report):** `reports/audit_phase4.md`
+> checked the pipeline with positive controls and found one bug in the luck
+> check. The random-entry runs for families 6 and 8 made 30-41% fewer trades
+> than the candidate, so the "beat random runs" figures quoted below for
+> those two (41% and 50%) are understated and their luck checks need
+> re-running; the other families' luck figures are flattered, if anything.
+> No net result, pair result or pass/fail verdict in this report changes.
+
 ## Program status (updated at the end of each round)
 
 | Round | Families | Variants | Running total | Luck check | Result |

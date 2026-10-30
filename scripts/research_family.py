@@ -26,7 +26,6 @@ from pathlib import Path
 
 import _bootstrap  # noqa: F401
 
-import numpy as np
 
 from fxbot.backtest import research as R
 from fxbot.backtest.engine import EngineState
@@ -150,7 +149,7 @@ def stage_oos(family):
                                      "variant": p["variant"], "params": grid[p["variant"]],
                                      "train_score": round(p["train"]["score"], 3),
                                      "train_trades": p["train"]["trades"]} for k, p in enumerate(picks)])
-        _jdump(out / "oos_rates.json", {"schedule": schedule,
+        _jdump(out / "oos_rates.json", {"schedule": schedule, "rates_key": ["window", "symbol", "hour"],
                                         "rates": [[list(k), v] for k, v in R.entry_rates(meas).items()]})
         print(f"{name}: OOS {len(e_m.state.trades)} trades, net "
               f"{round(sum(t['profit'] for t in e_m.state.trades), 2)} USD -> {rep.relative_to(ROOT)}")
@@ -160,6 +159,9 @@ def stage_oos(family):
 def stage_luck(family, budget_s, t0, runs):
     for name, _ in R.FAMILIES[family]:
         cfg = _jload(OUT / name / "oos_rates.json")
+        if any(len(k) != 3 for k, _ in cfg["rates"]):
+            raise SystemExit(f"{name}: oos_rates.json has the old (symbol, hour) keys; "
+                             "run the oos stage again first (luck-check fix, audit 30 Oct 2026)")
         jobs = [(name, cfg["schedule"], cfg["rates"], seed) for seed in range(runs)
                 if not (STATE / name / "luck" / f"s{seed:03d}.json").exists()]
         if jobs:
@@ -189,8 +191,7 @@ def stage_summary(family):
         m, s = met["measured"], met["stress_1_5x"]
         per_pair = {sym: round(sum(t["profit"] for t in trades if t["symbol"] == sym), 2) for sym in R.SYMBOLS}
         pct, need_runs = R.luck_rule(family)
-        nets = np.array([r["net_profit"] for r in luck]) if luck else np.array([])
-        p95 = float(np.percentile(nets, pct)) if len(nets) else None
+        lk = R.luck_result([r["net_profit"] for r in luck], m["net_profit"], pct, need_runs)
         raw = _grid_trades(name, len(grid))
         gt = {i: r["trades"] for i, r in raw.items()}
         rob = R.robustness([{**t, "entry_epoch": int(t["entry_epoch"])} for t in trades], gt,
@@ -202,7 +203,7 @@ def stage_summary(family):
             "params_5_or_fewer": len(grid[0]) <= 5,
             "min_target_3x_commission": bool(m["min_target_met"]),
             "no_kill_switch": not met["kill_switch"],
-            "luck_check_beats_p95": p95 is not None and len(nets) >= need_runs and m["net_profit"] > p95,
+            "luck_check_beats_p95": lk["passed"],
             **rob["checks"],
         }
         res = {"sub_grid": name, "variants": len(grid), "oos": m, "stress_1_5x": s,
@@ -211,9 +212,7 @@ def stage_summary(family):
                "kill_events_stress": len(met.get("kill_events_stress", [])),
                "robustness": rob["detail"], "round": R.ROUND[family],
                "variants_running_total": R.variants_through_round(R.ROUND[family]),
-               "luck": {"runs": len(nets), "percentile": pct,
-                        "p50": float(np.median(nets)) if len(nets) else None, "p95": p95,
-                        "share_beaten": float((nets < m["net_profit"]).mean()) if len(nets) else None},
+               "luck": {k: lk[k] for k in ("runs", "percentile", "p50", "p95", "share_beaten")},
                "checks": checks, "candidate": all(checks.values())}
         _jdump(d / "summary.json", res)
         out.append(res)
