@@ -3,6 +3,11 @@
 Written 2026-10-30, updated after each round. Pre-holdout data only (Dukascopy 1m, 2021-10-27 to
 2026-04-27). **The holdout (Deriv data from 2026-04-28) was not touched.**
 
+> **Round 4 (30 Oct 2026, the final round) is in section 3d.** It added a
+> machine-learning strategy and two original rule families, 48 variants in
+> all, judged with a stricter luck check. Nothing passed. The totals below
+> and in section 4 include it.
+
 > **Audit note (30 Oct 2026, after this report):** `reports/audit_phase4.md`
 > checked the pipeline with positive controls and found one bug in the luck
 > check. The random-entry runs for families 6 and 8 made 30-41% fewer trades
@@ -17,16 +22,24 @@ Written 2026-10-30, updated after each round. Pre-holdout data only (Dukascopy 1
 |---|---|---|---|---|---|
 | 1 | 1–5 (approved 30 Oct) | 132 | 132 | beat p95 of 200 random runs | **nothing passed** |
 | 2 | 6–8 (designed from round 1) | 38 (incl. 9 void) | 170 | beat p99 of 500 random runs | **nothing passed** |
-| 3 (last) | 9–10 (designed from rounds 1–2) | 16 | **186** | beat p99 of 500 random runs | **nothing passed** |
+| 3 | 9–10 (designed from rounds 1–2) | 16 | 186 | beat p99 of 500 random runs | **nothing passed** |
+| 4 (final) | track A: ML day strategy (24 model settings); track B: families 11–12 (24) | 48 | **234** | beat p99 of 500 coin-toss runs on the candidate's own signal days | **nothing passed** |
 
 **The program is finished. No strategy passed.** With no final candidates,
 the holdout was not used. It is still untouched and valid for any future
 research.
 
-## The short version (final, after round 3)
+## The short version (final, after round 4)
 
-- **No strategy passed in any round.** 186 variants were tried across 10
-  families (13 strategy versions), every one logged in `research/log.md`.
+- **No strategy passed in any round.** 234 variants were tried: 10 rule
+  families (13 strategy versions) in rounds 1–3, then in round 4 a
+  machine-learning strategy (24 model settings) and 2 original families
+  (24 variants), every one logged in `research/log.md`.
+- **Round 4 in one line:** the model found a real but tiny signal (about 1
+  pip a trade before costs, beating 80% of coin-toss runs where 99% was
+  needed) and lost 32 USD after costs; the dollar-wide catch-up family lost
+  before costs; the lone-mover family made too few trades and lost. Section
+  3d has the details and what the models learned.
 - **Nothing was tested on the holdout.** That step is only for final
   candidates, and there are none.
 - **The common pattern: almost every idea had about zero edge before
@@ -312,22 +325,218 @@ a candidate.
 to continue. It lost in all five half-year test windows and did worse than
 90% of random entries.
 
+## 3d. Round 4 (final): a learned strategy and two original families
+
+Rounds 1–3 copied known ideas and found about zero edge before costs. Round 4
+(plan approved by the owner, 30 Oct 2026) tried two things of a different
+kind, with the same data and rules:
+- **Track A:** let a model find the direction from data instead of guessing
+  it. A machine-learning strategy makes one decision per pair per day.
+- **Track B:** two families of my own design that read all three pairs at
+  once, to tell a move of the dollar itself from a move on one pair alone.
+  No Phase 4 family had done that.
+
+**Fixed before any testing (both tracks)**
+- **Horizon 08:00 → 20:00 UTC** for everything. Chosen for cost: a 12-hour
+  move on EUR/USD is about 34 pips on average (45 pips standard deviation),
+  so the direction only has to be right about 56% of the time to pay the
+  4 pips of cost. A 1-hour move is about 8 pips and would need 80%.
+- **Luck check (stricter than rounds 1–3):** 500 random runs that enter on
+  **the candidate's own signal days and pairs** and only toss a coin for the
+  direction. Trade count, timing and commission then match the candidate
+  exactly; only the direction skill is tested. The candidate must beat the
+  99th percentile.
+- **Variants:** at most 30 per track, each model setting counts as one.
+  Running total 186 → 234.
+- **Everything else as before:** measured commission by hour, 0.5 / 1 pip
+  slippage, 1.5× and MT5 runs, all CLAUDE.md limits, the four "not fake"
+  checks, pre-holdout data only.
+
+**Three owner safeguards, each with a test** (`tests/test_round4.py`):
+1. Any scaling inside the model is fitted on the training window only
+   (the scaler and the model sit in one pipeline that sees training rows
+   only; the test checks the scaler's means equal the training rows' means
+   and not the whole table's).
+2. Every model has a fixed seed; fitting twice gives identical
+   probabilities (tested for both model types and both training setups).
+3. A saved model is **frozen**: it can predict, and any attempt to refit it
+   raises an error. The single holdout test, had there been one, would have
+   loaded the five pre-holdout models exactly as saved.
+
+Plus the look-ahead tests: scrambling every candle after a cut date changes
+no feature row and no prediction before it; features at 08:00 use only
+candles closed by 08:00; a row's label is the same day's 20:00 close, so no
+training label reaches past its training window.
+
+### Track A: the machine-learning day strategy
+
+**What it does.** At 08:00 UTC it computes 14 features from closed candles
+(moves since midnight, in the last hour and over 1, 3, 5 and 20 trading
+days; yesterday's range and the week's ranges relative to the month; where
+price sits in the month's range; where yesterday closed; the weekday), all
+divided by the pair's 20-day average daily range. A second feature set adds
+the three pairs' moves in the dollar's direction (since midnight, 1 day,
+5 days). The model gives the probability that the pair is higher at 20:00.
+It trades Up above 0.5 + margin, Down below 0.5 − margin. Exit at 20:00; no
+stop (as family 5).
+
+**24 settings, all logged:** 2 models (logistic regression; gradient
+boosting with 150 shallow trees) × 2 feature sets (own pair; with the other
+pairs) × 2 training setups (one model for all three pairs; one per pair) ×
+3 margins (55%, 58%, 62% sure).
+
+**Retraining and honest selection.** In each of the 5 walk-forward rounds,
+every setting was trained on the first 18 months of the 24-month training
+window and judged on the last 6 through the real engine (net profit ÷ worst
+fall, as in Phase 4). The best was retrained on all 24 months and traded on
+the next 6 test months. The picks were: round 1 per-pair logistic with
+peers (62%), round 2 pooled logistic, own features (58%), rounds 3 and 5
+pooled gradient boosting, own features (58%), round 4 pooled logistic with
+peers (62%). So the "strategy" changed model, features and margin from
+round to round; no single setting won twice in a row except boosting in
+rounds 3 and 5.
+
+| Track A | Variants | Trades | Net (measured) | Worst fall | Win rate | Avg win / loss (USD) | Profit factor | Monte Carlo p95 fall | Kill switch | Net at 1.5× (kill) | Net at MT5 | Beat coin-toss runs (p99 bar) | Result |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ML day strategy, 1h | 24 | 612 | **−32.16** | 46% | 46% | 0.72 / −0.71 | 0.86 | 49% | 0 | −46.56 (0) | −4.88 | 80% (bar +3.50) | Fail |
+
+| Track A | EUR/USD | GBP/USD | USD/JPY |
+|---|---|---|---|
+| ML day strategy | −11.59 (193 trades) | −15.60 (156) | −4.97 (263) |
+
+Before costs it made **+10.71 USD, about 1 pip a trade**; the commission
+was 37 USD. By half-year: +0.8, −17.9, −9.4, −7.6, +1.9. Without its 13
+biggest trades it loses 69 USD. Neighbouring settings lost on average.
+48 signals expired because both position slots were taken (three pairs,
+two slots).
+
+**The luck check is the interesting part.** The 500 coin-toss runs made
+exactly 612 trades each and lost 47.6 USD on average (median −45). The
+model's −32 USD beats 80% of them, and the 99th-percentile run made
++3.5 USD. So the models do carry a little real direction skill, worth about
+1 pip a trade; a pass needed about 4.
+
+**What the chosen models learned, in plain language** (from
+`research/phase4/a1_ml_day/explain.json`: logistic weights, or for boosting
+the permutation importance and the sign of the link to the prediction):
+- **The one rule that showed up in more than one round: a 3-day reversal.**
+  After the pair rose over the last three trading days, the model leaned
+  Down, and the other way round. It was the strongest feature in rounds 1
+  and 2 (for all three pairs in round 1).
+- **A month-scale pull toward the top of the range.** "Where price sits in
+  the last month's range" pushed the prediction Up in rounds 1 (GBP/USD,
+  USD/JPY), 2, 3, 4 and 5: near the monthly high, the model expected more
+  upside. In round 4 it was the top feature, but paired with "move over the
+  last month" pushing Down, which is nearly the same information with the
+  opposite sign: the model was splitting hairs between two correlated
+  features, a sign of fitting noise.
+- **The dollar carries across pairs.** In round 1, a dollar rise on GBP/USD
+  since midnight pushed the USD/JPY prediction Up, and a dollar rise on
+  USD/JPY over the last day pushed EUR/USD Down. That is exactly the
+  family 11 idea, found independently by the model, and family 11 then lost
+  out of sample.
+- **The boosting models (rounds 3 and 5) learned trend-following at several
+  scales** (last day, last week, last month all pushing the same way as the
+  move) and fitted their training rows far better (73% right) than the
+  logistic models (56–61%). Out of sample both won 46% of trades. A model
+  that is 73% right on data it has seen and 46% on data it has not is the
+  classic sign of memorising noise.
+- **Pair and weekday biases.** The pooled round 2 model leaned Up on
+  USD/JPY and Down on EUR/USD whatever the features (the dollar rose during
+  its training years); round 1 leaned Down on Tuesdays for EUR/USD and
+  Thursdays for USD/JPY. Those are the kind of patterns that exist in any
+  two-year sample and mean nothing.
+
+Does it make sense? A short reversal and a longer trend are the two most
+common shapes in price data, and a dollar move carrying across pairs is
+real economics. But the model could only turn them into about 1 pip a
+trade, and the rules it found shifted from round to round, which is what a
+weak, unstable signal looks like. The margin filter did not help: the
+62%-sure settings traded less but not better.
+
+### Track B: two original families
+
+Both start from one measurement at the decision hour: each pair's move
+since 00:00 UTC in the dollar's direction, as a fraction of its own 20-day
+average daily range. Three pairs give a reading of whether the dollar itself
+moved. Settings per family (12 variants): decision hour 08:00 or 10:00, size
+k = 0.2, 0.3 or 0.45 daily ranges, stop none or half a daily range. Exit
+20:00.
+
+- **Family 11, dollar-wide move, catch-up.** If all three pairs point the
+  same way for the dollar and the average move is at least k, buy the dollar
+  on the two pairs that moved least. Reason: a move on all three pairs at
+  once is a dollar flow, not pair noise; flows take hours to work through,
+  and the laggards have the most left.
+- **Family 12, lone mover reverts.** If one pair moved at least k while the
+  other two together show the dollar roughly flat (within k/3), trade that
+  pair back toward where it started. Reason: a move on one pair with no
+  dollar move behind it is most often a single-currency order or thin-market
+  push that gets absorbed and partly undone.
+
+| Track B | Variants | Trades | Net (measured) | Worst fall | Win rate | Avg win / loss (USD) | Profit factor | Monte Carlo p95 fall | Kill switch | Net at 1.5× (kill) | Net at MT5 | Beat coin-toss runs (p99 bar) | Result |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 11. Dollar-wide catch-up, 1h | 12 | 234 | **−27.28** | 31% | 50% | 0.66 / −0.88 | 0.74 | 37% | 0 | −32.84 (0) | −16.32 | 57% (bar +0.91) | Fail |
+| 12. Lone mover reverts, 1h | 12 | 92 | **−7.72** | 9% | 40% | 0.94 / −0.78 | 0.82 | 18% | 0 | −10.88 (0) | −2.59 | {{F12_LUCK}} | Fail |
+
+| Track B | EUR/USD | GBP/USD | USD/JPY |
+|---|---|---|---|
+| 11. Dollar-wide catch-up | −9.09 | −3.21 | −14.98 |
+| 12. Lone mover reverts | +2.62 | +0.67 | −11.01 |
+
+In plain language:
+- **Family 11 lost before costs** (−9.5 USD gross, −2.6 pips a trade). Every
+  one of its 12 variants lost over the full period, and it lost in 4 of the
+  5 half-years. When all three pairs had already moved for the dollar by
+  08:00 or 10:00, the laggards did not catch up; on average they drifted
+  back a little. The 500 coin-toss runs on its own signal days lost
+  28.9 USD on average; family 11 landed right in the middle of them (beat
+  57%), so its direction rule carried no information at all.
+- **Family 12 barely traded.** The "others flat" condition is rare: 92
+  trades in 30 months, 60 of them on USD/JPY, which lost 11 USD; the EUR
+  and GBP legs made a few USD on 32 trades. Before costs it broke even
+  (+0.4 USD). It fails on trade count whatever else happens, and its stop
+  was hit on 21 of 92 trades. {{F12_LUCK_TEXT}}
+- Both families reached the test with every walk-forward training score
+  negative in the early rounds: the harness picked the least bad setting
+  each time, as the rules require, and the test confirmed there was nothing
+  to pick.
+
+### What round 4 adds to the conclusion
+
+- A flexible model with 14–23 features, retrained every six months, found
+  about 1 pip a trade of real direction skill on these pairs at this
+  horizon. That is the clearest measurement of the available edge the
+  program has produced: it is not zero, and it is a quarter of the cost.
+- Reading the three pairs together did not help. The dollar-wide
+  continuation idea lost before costs; the lone-mover reversal was too rare
+  to judge and lost on the pair it mostly traded.
+- With 234 variants and 16 walk-forward results (section 4), one chance pass
+  would have been likely by now at the old p95 bar; the p99 bar and the
+  "not fake" checks were there to catch it, and nothing came close.
+
 ## 4. How likely is a pass to be luck?
 
-- Over the program: 186 variants, giving **13 walk-forward results** (one
-  per sub-grid).
+- Over the program: 234 variants, giving **16 walk-forward results** (one
+  per sub-grid; the ML track counts as one, with its 24 settings competing
+  inside each round).
 - At the p95 bar used in round 1 (8 results), the chance that at least
   one passes by luck alone is about 1 in 3.
 - From round 2 on, the bar was p99 of 500 random runs, plus the four "not
-  fake" checks, which cut that chance a lot.
+  fake" checks, which cut that chance a lot. Round 4 tightened the random
+  runs further (the candidate's own signal days, coin-toss direction).
 - None passed even the basic CLAUDE.md rules together with the luck check.
+  The closest on the luck check alone were the London breakout (round 1,
+  95.5% at the old p95 bar, a net loss) and the round 4 model (80% at the
+  p99 bar, a net loss).
 - So the honest conclusion is: **in 2023–2026, none of these ideas beat
   Deriv's Multiplier costs on EUR/USD, GBP/USD and USD/JPY.**
 
 ## 5. Final result, holdout and what could change it
 
-- **Final candidates: none. The holdout was not used.** It stays untouched
-  and valid.
+- **Final candidates: none, after four rounds. The holdout was not used.**
+  It stays untouched and valid. The five round-4 models are saved frozen in
+  `research/phase4/a1_ml_day/models/` for the record; none is a candidate.
 - **Re-check after 5 Nov** (`cost_by_hour.json`): nothing to re-run. Even
   if the cheap window moves, no result is near a pass. The losses are
   about the size of the commission, so it would have to fall a lot, not
@@ -388,8 +597,9 @@ data, pairs, the network list or CLAUDE.md. I have not done any of them.
 | Every variant tried | `research/log.md` (Phase 4 section) |
 | Walk-forward picks, grid, luck runs, pass checks per strategy | `research/phase4/<name>/` |
 | Out-of-sample reports (measured, 1.5×, MT5, Monte Carlo) | `reports/backtests/phase4_<name>_oos/` |
-| Strategy code (shared with the live bot) | `src/fxbot/strategies/families.py` |
-| Harness | `src/fxbot/backtest/research.py`, `scripts/research_family.py` |
+| Strategy code (shared with the live bot) | `src/fxbot/strategies/families.py` (families 1–12), `src/fxbot/strategies/ml_day.py` (round 4 model strategy) |
+| Harness | `src/fxbot/backtest/research.py`, `scripts/research_family.py`, `scripts/research_ml.py` (round 4 track A) |
+| Round 4 tests (look-ahead, train-only scaling, seeds, frozen models, families 11–12, signal-days luck check) | `tests/test_round4.py` |
 
 Rebuild any family:
 ```
@@ -398,4 +608,7 @@ python scripts/research_family.py oos --family f1
 python scripts/research_family.py luck --family f1
 python scripts/research_family.py summary --family f1
 ```
-Each stage resumes if stopped.
+Each stage resumes if stopped. The round 4 model strategy:
+```
+OMP_NUM_THREADS=1 python scripts/research_ml.py table    # then fit, oos, luck, summary
+```

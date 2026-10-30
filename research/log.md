@@ -399,8 +399,9 @@ Stitched OOS (2023-10-27 to 2026-04-26): 103 trades, net -26.09 USD, max drawdow
 | 1 | f1-f5 | 132 | 132 | p95 of 200 random runs |
 | 2 | f6-f8 (f7: 9 void variants from the Friday-close version, counted) | 38 | 170 | p99 of 500 |
 | 3 | f9-f10 | 16 | 186 | p99 of 500 |
+| 4 (final) | a1_ml_day (track A, 24 model settings), f11-f12 (track B, 24) | 48 | 234 | p99 of 500 coin-toss runs on the candidate's own signal days |
 
-Result: no strategy passed; the holdout was not used. See reports/strategy_research.md.
+Result: no strategy passed in any round; the holdout was not used. See reports/strategy_research.md.
 
 ## Audit of the Phase 4 pipeline (2026-10-30)
 
@@ -424,6 +425,17 @@ total, a low-cost broker model (1.0 / 1.3 pips plus swap) and no cost at all.
 No strategy, setting, rule or data changed, and the holdout was not read.
 This adds no variants to the running total (still 186). Result: no family
 passes at any cost, including zero. See reports/cost_whatif.md.
+
+## Round 4 (final, 2026-10-30): a learned strategy and two original families
+
+Rules (owner, 30 Oct 2026): horizon 08:00 -> 20:00 UTC; at most 30 variants
+per track, each model setting counts; luck check = 500 random runs on the
+candidate's own signal days and pairs with a coin-toss direction, beat the
+99th percentile; all CLAUDE.md rules and the four "not fake" checks; the
+model's scaling is fitted on the training window only, every model is
+seeded, saved models are frozen (never retrained). Pre-holdout data only;
+the holdout was not touched. Track A: `scripts/research_ml.py`; track B:
+`scripts/research_family.py --family f11 / f12`.
 
 <!-- phase4:a1_ml_day start -->
 
@@ -461,3 +473,28 @@ Each round: the variant is fitted on the first 18 months of the training window 
 Stitched OOS (2023-10-27 to 2026-04-26): 612 trades, net -32.16 USD, max drawdown 46.23%, per pair {'frxEURUSD': -11.59, 'frxGBPUSD': -15.6, 'frxUSDJPY': -4.97}, kill events 0, luck check (p99 of 500 random runs on the candidate's own signal days = 3.5028999999999972): False. Failed checks: ['profitable_pairs_2_of_3', 'net_profit_positive', 'luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades', 'nearby_settings_work']. **Candidate: False**. Report: `reports/backtests/phase4_a1_ml_day_oos/`, `research/phase4/a1_ml_day/`.
 
 <!-- phase4:a1_ml_day end -->
+
+<!-- phase4:f11_dollar_catch_up start -->
+
+### f11_dollar_catch_up (1h): 12 variants
+
+Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-30 | f11_dollar_catch_up v00 | decision_hour=8, k=0.2, stop=0.0 | 724 | -25.78 | 0 | - |
+| 2026-10-30 | f11_dollar_catch_up v01 | decision_hour=8, k=0.2, stop=0.5 | 724 | -22.9 | 0 | - |
+| 2026-10-30 | f11_dollar_catch_up v02 | decision_hour=8, k=0.3, stop=0.0 | 394 | -9.35 | 0 | 1, 5 |
+| 2026-10-30 | f11_dollar_catch_up v03 | decision_hour=8, k=0.3, stop=0.5 | 394 | -7.6 | 0 | 2 |
+| 2026-10-30 | f11_dollar_catch_up v04 | decision_hour=8, k=0.45, stop=0.0 | 156 | -23.91 | 0 | - |
+| 2026-10-30 | f11_dollar_catch_up v05 | decision_hour=8, k=0.45, stop=0.5 | 156 | -23.15 | 0 | - |
+| 2026-10-30 | f11_dollar_catch_up v06 | decision_hour=10, k=0.2, stop=0.0 | 876 | -31.99 | 1 | - |
+| 2026-10-30 | f11_dollar_catch_up v07 | decision_hour=10, k=0.2, stop=0.5 | 876 | -41.53 | 1 | - |
+| 2026-10-30 | f11_dollar_catch_up v08 | decision_hour=10, k=0.3, stop=0.0 | 588 | -38.31 | 0 | - |
+| 2026-10-30 | f11_dollar_catch_up v09 | decision_hour=10, k=0.3, stop=0.5 | 588 | -42.55 | 0 | 3 |
+| 2026-10-30 | f11_dollar_catch_up v10 | decision_hour=10, k=0.45, stop=0.0 | 272 | -26.91 | 0 | 4 |
+| 2026-10-30 | f11_dollar_catch_up v11 | decision_hour=10, k=0.45, stop=0.5 | 272 | -35.46 | 0 | - |
+
+Stitched OOS (2023-10-27 to 2026-04-26): 234 trades, net -27.28 USD, max drawdown 30.65%, per pair {'frxEURUSD': -9.09, 'frxGBPUSD': -3.21, 'frxUSDJPY': -14.98}, kill events 0, luck check (p99 of 500 random runs = 0.9092999999999825): False. Failed checks: ['profitable_pairs_2_of_3', 'net_profit_positive', 'luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades', 'nearby_settings_work']. **Candidate: False**. Report: `reports/backtests/phase4_f11_dollar_catch_up_oos/`, `research/phase4/f11_dollar_catch_up/`.
+
+<!-- phase4:f11_dollar_catch_up end -->

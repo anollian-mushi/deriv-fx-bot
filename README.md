@@ -5,13 +5,13 @@ contracts on EUR/USD, GBP/USD and USD/JPY. Strategies are researched and
 backtested first, then run on a demo account, and only moved to real money
 once the go-live checklist is complete.
 
-**Status:** Phase 4 strategy research finished: **no strategy passed**
-(186 variants across 10 families in 3 rounds; see
+**Status:** Phase 4 strategy research finished after a fourth and final
+round: **no strategy passed** (234 variants: 10 rule families in rounds 1-3,
+then a machine-learning strategy and 2 original families in round 4; see
 [reports/strategy_research.md](reports/strategy_research.md)). An audit of
 the pipeline ([reports/audit_phase4.md](reports/audit_phase4.md)) confirmed
-it can see an edge and charges costs once; it found and fixed one bug in
-the luck check (families 6 and 8 need their luck check re-run). The holdout
-is still untouched. No live bot.
+it can see an edge and charges costs once. The holdout is still untouched.
+No live bot.
 
 - Project rules, risk limits and research standards: [CLAUDE.md](CLAUDE.md)
 - Before trading real money: [docs/go_live_checklist.md](docs/go_live_checklist.md)
@@ -196,13 +196,32 @@ python scripts/research_family.py luck    --family f1   # 200 random-entry runs 
 python scripts/research_family.py summary --family f1   # pass/fail checks, updates research/log.md
 ```
 
-- Families f1-f10 (3 rounds) and their declared grids are in `src/fxbot/backtest/research.py`;
+- Families f1-f12 (4 rounds) and their declared grids are in `src/fxbot/backtest/research.py`;
   strategy code in `src/fxbot/strategies/families.py`.
 - Each stage saves progress and stops before about 9 minutes (exit code 2);
   run it again to continue.
 - Results: `research/phase4/<name>/` and `reports/backtests/phase4_<name>_oos/`.
-- The luck stage needs rate files keyed by (window, pair, hour); if `oos_rates.json`
-  predates the 30 Oct audit fix, run the `oos` stage again first.
+- Luck check: rounds 1-3 match the signal *rate* per (window, pair, hour)
+  (`oos_rates.json`; if it predates the 30 Oct audit fix, run `oos` again first).
+  Round 4 families use the candidate's own signal days and pairs with a
+  coin-toss direction (`oos_signals.json`), 500 runs, 99th percentile.
+
+### Round 4 track A: the machine-learning day strategy
+
+```bash
+python scripts/research_ml.py table     # feature rows at every 08:00 UTC close (research/phase4/a1_ml_day/table.npz)
+python scripts/research_ml.py fit       # per round: inner 18+6 month selection runs, full refit, test runs
+python scripts/research_ml.py oos       # picks (inner score only) and the stitched out-of-sample run
+python scripts/research_ml.py luck      # 500 coin-toss runs on the candidate's own signal days
+python scripts/research_ml.py summary   # checks, what the picked models learned, log rows
+```
+
+- Strategy and features: `src/fxbot/strategies/ml_day.py` (decision 08:00 UTC, exit 20:00).
+  Models are saved as `FrozenModel`s: they predict, and any attempt to refit
+  raises. The five picked models are in `research/phase4/a1_ml_day/models/`.
+- Run the fit and luck stages with `OMP_NUM_THREADS=1` (4 worker processes;
+  with more threads each, the gradient-boosting fits crawl).
+- Needs `scikit-learn` (pinned in `requirements.txt`).
 
 ## Pipeline audit
 
