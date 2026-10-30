@@ -281,3 +281,24 @@ Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; s
 Stitched OOS (2023-10-27 to 2026-04-26): 1290 trades, net -107.92 USD, max drawdown 50.4%, per pair {'frxEURUSD': -55.26, 'frxGBPUSD': -52.66, 'frxUSDJPY': 0}, kill events 2, luck check (p95 of 200 random runs = -39.63000000000003): False. Failed checks: ['profitable_pairs_2_of_3', 'net_profit_positive', 'no_kill_switch', 'luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades', 'nearby_settings_work']. **Candidate: False**. Report: `reports/backtests/phase4_f5_session_drift_oos/`, `research/phase4/f5_session_drift/`.
 
 <!-- phase4:f5_session_drift end -->
+
+<!-- phase4:f6_quiet_london_breakout start -->
+
+### f6_quiet_london_breakout (1h): 8 variants
+
+Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-30 | f6_quiet_london_breakout v00 | box_max=0.3, tp_atr=0.6, sl_frac=0.5 | 1284 | -81.57 | 1 | - |
+| 2026-10-30 | f6_quiet_london_breakout v01 | box_max=0.3, tp_atr=0.6, sl_frac=1.0 | 1251 | -76.96 | 1 | - |
+| 2026-10-30 | f6_quiet_london_breakout v02 | box_max=0.3, tp_atr=1.0, sl_frac=0.5 | 1283 | -66.48 | 1 | 1, 2 |
+| 2026-10-30 | f6_quiet_london_breakout v03 | box_max=0.3, tp_atr=1.0, sl_frac=1.0 | 1249 | -68.31 | 1 | 3 |
+| 2026-10-30 | f6_quiet_london_breakout v04 | box_max=0.5, tp_atr=0.6, sl_frac=0.5 | 2084 | -136.13 | 2 | - |
+| 2026-10-30 | f6_quiet_london_breakout v05 | box_max=0.5, tp_atr=0.6, sl_frac=1.0 | 1979 | -105.53 | 2 | - |
+| 2026-10-30 | f6_quiet_london_breakout v06 | box_max=0.5, tp_atr=1.0, sl_frac=0.5 | 2079 | -109.27 | 2 | - |
+| 2026-10-30 | f6_quiet_london_breakout v07 | box_max=0.5, tp_atr=1.0, sl_frac=1.0 | 1971 | -76.97 | 1 | 4, 5 |
+
+Stitched OOS (2023-10-27 to 2026-04-26): 872 trades, net -39.94 USD, max drawdown 44.82%, per pair {'frxEURUSD': -32.53, 'frxGBPUSD': -9.43, 'frxUSDJPY': 2.02}, kill events 0, luck check (p99 of 500 random runs = -5.40750000000003): False. Failed checks: ['profitable_pairs_2_of_3', 'net_profit_positive', 'luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades', 'nearby_settings_work']. **Candidate: False**. Report: `reports/backtests/phase4_f6_quiet_london_breakout_oos/`, `research/phase4/f6_quiet_london_breakout/`.
+
+<!-- phase4:f6_quiet_london_breakout end -->
