@@ -1,0 +1,132 @@
+{
+ "sub_grid": "f8_morning_momentum",
+ "variants": 12,
+ "oos": {
+  "trades": 419,
+  "final_balance": 76.54,
+  "net_profit": -23.46,
+  "net_return_pct": -23.46,
+  "max_drawdown_pct": 30.46,
+  "win_rate_pct": 43.4,
+  "avg_win": 0.702,
+  "avg_loss": -0.638,
+  "profit_factor": 0.845,
+  "avg_commission": 0.0599,
+  "min_target_met": true,
+  "late_fills": 1,
+  "avg_delay_min": 39.0,
+  "monte_carlo_drawdown_pct": {
+   "p50": 30.83,
+   "p95": 38.0,
+   "p99": 40.95,
+   "runs": 1000
+  }
+ },
+ "stress_1_5x": {
+  "trades": 419,
+  "final_balance": 65.74,
+  "net_profit": -34.26,
+  "net_return_pct": -34.26,
+  "max_drawdown_pct": 39.94,
+  "win_rate_pct": 41.8,
+  "avg_win": 0.649,
+  "avg_loss": -0.606,
+  "profit_factor": 0.768,
+  "avg_commission": 0.0836,
+  "min_target_met": true,
+  "late_fills": 1,
+  "avg_delay_min": 39.0,
+  "monte_carlo_drawdown_pct": {
+   "p50": 38.83,
+   "p95": 44.57,
+   "p99": 46.59,
+   "runs": 1000
+  }
+ },
+ "mt5_micro": {
+  "trades": 419,
+  "final_balance": 95.74,
+  "net_profit": -4.26,
+  "net_return_pct": -4.26,
+  "max_drawdown_pct": 20.7,
+  "win_rate_pct": 45.1,
+  "avg_win": 0.72,
+  "avg_loss": -0.61,
+  "profit_factor": 0.97,
+  "avg_commission": 0.0599,
+  "min_target_met": null,
+  "late_fills": 1,
+  "avg_delay_min": 39.0,
+  "monte_carlo_drawdown_pct": {
+   "p50": 19.37,
+   "p95": 27.03,
+   "p99": 30.72,
+   "runs": 1000
+  }
+ },
+ "per_pair_net": {
+  "frxEURUSD": -8.07,
+  "frxGBPUSD": -12.41,
+  "frxUSDJPY": -2.98
+ },
+ "kill_events": 0,
+ "kill_events_stress": 0,
+ "robustness": {
+  "per_pair": {
+   "frxEURUSD": -8.07,
+   "frxGBPUSD": -12.41,
+   "frxUSDJPY": -2.98
+  },
+  "per_test_window": [
+   -9.35,
+   -11.21,
+   -0.35,
+   -3.21,
+   0.66
+  ],
+  "net_without_top_trades": -45.42,
+  "top_trades_removed": 9,
+  "neighbour_window_returns_pct": [
+   2.2,
+   -15.7,
+   -7.8,
+   -2.3,
+   -8.8,
+   -10.0,
+   -0.8,
+   -9.0,
+   -5.3,
+   -7.2,
+   -15.3,
+   5.7,
+   -8.7,
+   -13.0,
+   -1.7,
+   -7.2,
+   0.6
+  ]
+ },
+ "round": 2,
+ "variants_running_total": 170,
+ "luck": {
+  "runs": 500,
+  "percentile": 99,
+  "p50": -23.475,
+  "p95": 3.0614999999999895,
+  "share_beaten": 0.5
+ },
+ "checks": {
+  "profitable_pairs_2_of_3": false,
+  "net_profit_positive": false,
+  "oos_trades_200_plus": true,
+  "params_5_or_fewer": true,
+  "min_target_3x_commission": true,
+  "no_kill_switch": true,
+  "luck_check_beats_p95": false,
+  "not_one_pair": false,
+  "not_one_period": false,
+  "not_few_big_trades": false,
+  "nearby_settings_work": false
+ },
+ "candidate": false
+}

@@ -324,3 +324,28 @@ Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; s
 Stitched OOS (2023-10-27 to 2026-04-26): 260 trades, net -32.45 USD, max drawdown 49.9%, per pair {'frxEURUSD': 25.95, 'frxGBPUSD': -22.29, 'frxUSDJPY': -36.11}, kill events 0, luck check (p99 of 500 random runs = 81.83969999999998): False. Failed checks: ['profitable_pairs_2_of_3', 'net_profit_positive', 'luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades', 'nearby_settings_work']. **Candidate: False**. Report: `reports/backtests/phase4_f7_weekly_momentum_tue_oos/`, `research/phase4/f7_weekly_momentum_tue/`.
 
 <!-- phase4:f7_weekly_momentum_tue end -->
+
+<!-- phase4:f8_morning_momentum start -->
+
+### f8_morning_momentum (1h): 12 variants
+
+Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-30 | f8_morning_momentum v00 | entry_hour=9, k=0.25, sl_frac=0.5 | 1286 | -84.55 | 1 | - |
+| 2026-10-30 | f8_morning_momentum v01 | entry_hour=9, k=0.25, sl_frac=1.0 | 1264 | -49.29 | 1 | - |
+| 2026-10-30 | f8_morning_momentum v02 | entry_hour=9, k=0.4, sl_frac=0.5 | 694 | -40.84 | 0 | - |
+| 2026-10-30 | f8_morning_momentum v03 | entry_hour=9, k=0.4, sl_frac=1.0 | 690 | -25.96 | 0 | 3, 4, 5 |
+| 2026-10-30 | f8_morning_momentum v04 | entry_hour=10, k=0.25, sl_frac=0.5 | 1406 | -79.19 | 1 | - |
+| 2026-10-30 | f8_morning_momentum v05 | entry_hour=10, k=0.25, sl_frac=1.0 | 1375 | -66.79 | 1 | - |
+| 2026-10-30 | f8_morning_momentum v06 | entry_hour=10, k=0.4, sl_frac=0.5 | 782 | -49.83 | 0 | 1, 2 |
+| 2026-10-30 | f8_morning_momentum v07 | entry_hour=10, k=0.4, sl_frac=1.0 | 775 | -43.04 | 0 | - |
+| 2026-10-30 | f8_morning_momentum v08 | entry_hour=11, k=0.25, sl_frac=0.5 | 1492 | -83.15 | 1 | - |
+| 2026-10-30 | f8_morning_momentum v09 | entry_hour=11, k=0.25, sl_frac=1.0 | 1460 | -69.51 | 1 | - |
+| 2026-10-30 | f8_morning_momentum v10 | entry_hour=11, k=0.4, sl_frac=0.5 | 855 | -45.55 | 0 | - |
+| 2026-10-30 | f8_morning_momentum v11 | entry_hour=11, k=0.4, sl_frac=1.0 | 848 | -48.65 | 0 | - |
+
+Stitched OOS (2023-10-27 to 2026-04-26): 419 trades, net -23.46 USD, max drawdown 30.46%, per pair {'frxEURUSD': -8.07, 'frxGBPUSD': -12.41, 'frxUSDJPY': -2.98}, kill events 0, luck check (p99 of 500 random runs = 3.0614999999999895): False. Failed checks: ['profitable_pairs_2_of_3', 'net_profit_positive', 'luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades', 'nearby_settings_work']. **Candidate: False**. Report: `reports/backtests/phase4_f8_morning_momentum_oos/`, `research/phase4/f8_morning_momentum/`.
+
+<!-- phase4:f8_morning_momentum end -->
