@@ -1,0 +1,39 @@
+{
+ "sub_grid": "f8_morning_momentum",
+ "candidate": {
+  "trades": 419,
+  "net_profit": -23.46,
+  "flat_candles": 1935,
+  "entry_signals": 452
+ },
+ "rule": {
+  "percentile": 99,
+  "runs_required": 500
+ },
+ "preview_runs": 100,
+ "preview_is_official": false,
+ "corrected": {
+  "random_trades_mean": 446.2,
+  "random_trades_min_max": [
+   396,
+   489
+  ],
+  "random_net_mean": -37.28,
+  "runs": 100,
+  "percentile": 99,
+  "p50": -39.295,
+  "p95": -8.267999999999871,
+  "share_beaten": 0.89,
+  "passed": false
+ },
+ "committed_before_fix": {
+  "runs": 500,
+  "random_trades_mean": 246.3,
+  "random_net_mean": -22.06,
+  "percentile": 99,
+  "p50": -23.475,
+  "p95": 3.0614999999999895,
+  "share_beaten": 0.5,
+  "passed": false
+ }
+}

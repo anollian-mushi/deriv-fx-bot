@@ -280,7 +280,18 @@ luck-preview`, 100 random runs each, saved in
 `research/audit/luck_preview_*.json`; committed `luck.json` files were not
 touched):
 
-*(preview running at the time of this commit; filled in by the next commit)*
+| Family | Candidate net | Random trades, before fix → corrected | Random net mean, before → corrected | Bar (p99), before → corrected | Share of random runs beaten, before → corrected | Passes? |
+|---|---|---|---|---|---|---|
+| 8. Morning momentum (419 trades) | −23.46 | 246 → 446 | −22.06 → −37.28 | +3.06 → −8.27 | 50% → **89%** | No: a net loss, and below the 99th percentile |
+| 6. Quiet London breakout (872 trades) | −39.94 | 614 → *(preview running; next commit)* | | | 41% → | |
+
+Reading family 8: with the random runs now trading as often as the
+candidate (446 against 419; the small overshoot is the residual described
+above), they pay the same commission and land near −37 USD on average,
+and the candidate's −23 USD beats 89% of them instead of 50%. That is a
+real change in how family 8 ranks against luck, and the reason it must be
+re-run officially. It does not change the verdict: it is still a loss of
+23 USD, and still short of the 99th-percentile bar (−8 USD).
 
 ## 5. Other things noticed (not bugs, but worth knowing)
 
