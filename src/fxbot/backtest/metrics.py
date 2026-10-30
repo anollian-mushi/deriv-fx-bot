@@ -62,7 +62,7 @@ def summarise(trades: list[dict], start: float, equity: list[float] | None = Non
         "avg_loss": round(statistics.mean(losses), 3) if losses else 0.0,
         "profit_factor": round(sum(wins) / -sum(losses), 3) if losses and sum(losses) < 0 else None,
         "avg_commission": round(avg_comm, 4),
-        "min_target_met": bool(trades) and avg_win >= 3 * avg_comm,
+        "min_target_met": bool(trades) and bool(avg_win >= 3 * avg_comm),
         "late_fills": len(late),
         "avg_delay_min": round(statistics.mean(late), 1) if late else 0.0,
         "monte_carlo_drawdown_pct": {k: round(v * 100, 2) if k != "runs" else v
