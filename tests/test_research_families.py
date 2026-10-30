@@ -1,0 +1,133 @@
+import datetime as dt
+
+import numpy as np
+import pytest
+
+from backtest_helpers import data_for
+from fxbot.backtest import research as R
+from fxbot.backtest.candles import Bars, aggregate
+from fxbot.backtest.engine import Engine
+from fxbot.strategies import families as F
+
+MON = dt.date(2025, 3, 3)
+
+
+def ep(y, m, d, hh=0, mm=0):
+    return int(dt.datetime(y, m, d, hh, mm, tzinfo=dt.timezone.utc).timestamp())
+
+
+def bars(closes, start=ep(2025, 3, 3), step=3600, spread=0.0002):
+    c = np.asarray(closes, dtype=float)
+    e = start + step * np.arange(len(c))
+    o = np.r_[c[0], c[:-1]]
+    return Bars(e, e + step, o, np.maximum(o, c) + spread, np.minimum(o, c) - spread, c)
+
+
+def test_grids_within_budget_and_parameter_limit():
+    for fam, subs in R.FAMILIES.items():
+        assert sum(len(g) for _, g in subs) <= 30
+        for name, grid in subs:
+            assert name in F.REGISTRY
+            assert all(len(p) <= 5 for p in grid)
+            assert len({tuple(sorted(p.items())) for p in grid}) == len(grid)
+
+
+@pytest.mark.parametrize("name", sorted(F.REGISTRY))
+def test_no_look_ahead(name):
+    cls = F.REGISTRY[name]
+    long_history = cls.timeframe == "1d" or cls.family == "f3"     # needs ~50 days first
+    days = 120 if long_history else 45
+    data = data_for(["frxEURUSD"], cls.timeframe, MON, days, seed=3)
+    cut = ep(2025, 6, 10) if long_history else ep(2025, 4, 1)
+    m1 = data["frxEURUSD"][0]
+    f = np.where(m1.epoch >= cut, 1.03, 1.0)
+    m1b = Bars(m1.epoch, m1.end, m1.open * f, m1.high * f, m1.low * f, m1.close * f)
+    a = _run(cls(), data)
+    b = _run(cls(), {"frxEURUSD": (m1b, aggregate(m1b, cls.timeframe))})
+    before = lambda st: [s for s in st.signals if s[0] < cut]
+    assert before(a) == before(b)
+    assert before(a) or cls.timeframe == "1d"      # daily breakouts may not fire in 4 weeks
+
+
+def _run(strategy, data):
+    e = Engine(strategy, list(data), MON, MON, data=data)
+    e.run()
+    return e.state
+
+
+def test_atr_and_daily_closes():
+    b = bars([1.0, 1.001, 1.002, 1.001], spread=0.0)
+    assert F.atr(b, 3) == pytest.approx(0.001)
+    # 30 hourly candles from Monday 00:00: Monday complete (24), Tuesday unfinished.
+    b = bars(np.arange(30) * 0.0001 + 1.0)
+    dc = F.daily_closes(b, 5)
+    assert len(dc) == 1 and dc[-1] == pytest.approx(1.0 + 23 * 0.0001)
+
+
+def test_trend_breakout_direction_and_trailing_exit():
+    s = F.TrendBreakout(n=5, m=3, sl_atr=2.0)
+    up = bars([1.0, 1.001, 1.0005, 1.001, 1.0008, 1.0009, 1.003], step=4 * 3600)
+    assert s.direction("frxEURUSD", up) == "MULTUP"
+    dn = bars([1.0, 1.001, 1.0005, 1.001, 1.0008, 1.0009, 0.998], step=4 * 3600)
+    assert s.direction("frxEURUSD", dn) == "MULTDOWN"
+    pos = F.PositionView("MULTUP", 100, 1.0, 0)
+    assert s.exit_now("frxEURUSD", dn, pos)
+
+
+def test_london_breakout_one_signal_per_day_and_box_stops():
+    # Monday 00:00-07:00 range 1.1000-1.1015, then a close above at the 08:00 candle close.
+    closes = [1.1005, 1.1015, 1.1000, 1.1010, 1.1005, 1.1008, 1.1007, 1.1030, 1.1040]
+    b = bars(closes, spread=0.0)
+    s = F.LondonBreakout(box_start=0, cutoff=11, sl_frac=0.5, tp_mult=2.0)
+    first, second = b.slice(8), b.slice(9)        # candles ending 08:00 and 09:00
+    assert s.direction("frxEURUSD", first) == "MULTUP"
+    sl, tp = s.stops("frxEURUSD", first, "MULTUP")
+    assert sl == pytest.approx(7.5) and tp == pytest.approx(30.0)
+    assert s.direction("frxEURUSD", second) is None             # already broke out today
+
+
+def test_session_drift_directions_fixed_from_research():
+    d = F.SessionDrift.session_direction
+    assert d("frxEURUSD", 8) == "MULTDOWN" and d("frxGBPUSD", 8) == "MULTDOWN"
+    assert d("frxUSDJPY", 8) is None
+    assert d("frxEURUSD", 16) == "MULTUP" and d("frxUSDJPY", 17) == "MULTDOWN"
+    assert d("frxEURUSD", 13) is None
+
+
+def test_window_score_compounds_trade_returns():
+    tr = [{"entry_epoch": 10, "profit": 10.0, "balance_after": 110.0},
+          {"entry_epoch": 20, "profit": -11.0, "balance_after": 99.0},
+          {"entry_epoch": 99, "profit": 50.0, "balance_after": 149.0}]
+    sc = R.window_score(tr, 0, 50)
+    assert sc["trades"] == 2 and sc["net"] == pytest.approx(-0.01)
+    assert sc["dd"] == pytest.approx(0.1) and sc["score"] == pytest.approx(-0.1)
+    assert R.window_score(tr, 200, 300)["score"] == -np.inf
+
+
+def test_scheduled_switches_parameters_and_waits_for_first_window():
+    sched = [(ep(2025, 3, 5), {"entry_hour": 8, "exit_hour": 12, "stop_pips": 0}),
+             (ep(2025, 3, 6), {"entry_hour": 10, "exit_hour": 12, "stop_pips": 0})]
+    s = R.Scheduled(F.SessionDrift, sched)
+    st = _run(s, data_for(["frxEURUSD"], "1h", MON, 5))
+    entries = sorted(t["entry_epoch"] for t in st.trades)
+    assert entries == [ep(2025, 3, 5, 8), ep(2025, 3, 6, 10), ep(2025, 3, 7, 10)]
+    assert s.entries[("frxEURUSD", 8)] == 1 and s.entries[("frxEURUSD", 10)] == 2
+
+
+def test_random_entry_keeps_hours_and_exits():
+    sched = [(ep(2025, 3, 3), {"entry_hour": 8, "exit_hour": 12, "stop_pips": 0})]
+    r = R.RandomEntry(F.SessionDrift, sched, {("frxEURUSD", 9): 1.0}, seed=1)
+    st = _run(r, data_for(["frxEURUSD"], "1h", MON, 5))
+    assert len(st.trades) == 5
+    assert all(t["entry_time"].endswith("09:00") and t["exit_time"].endswith("12:00") for t in st.trades)
+    none = R.RandomEntry(F.SessionDrift, sched, {}, seed=1)
+    assert not _run(none, data_for(["frxEURUSD"], "1h", MON, 5)).trades
+
+
+def test_pick_per_window_takes_best_training_score():
+    w = R.windows()[0]
+    t = R.epoch_of(w.train_start) + 86400
+    good = [{"entry_epoch": t, "profit": 5.0, "balance_after": 105.0}]
+    bad = [{"entry_epoch": t, "profit": -5.0, "balance_after": 95.0}]
+    picks = R.pick_per_window({0: bad, 1: good})
+    assert picks[0]["variant"] == 1
