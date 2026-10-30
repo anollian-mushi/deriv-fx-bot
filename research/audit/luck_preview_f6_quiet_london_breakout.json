@@ -1,0 +1,39 @@
+{
+ "sub_grid": "f6_quiet_london_breakout",
+ "candidate": {
+  "trades": 872,
+  "net_profit": -39.94,
+  "flat_candles": 18090,
+  "entry_signals": 945
+ },
+ "rule": {
+  "percentile": 99,
+  "runs_required": 500
+ },
+ "preview_runs": 100,
+ "preview_is_official": false,
+ "corrected": {
+  "random_trades_mean": 887.0,
+  "random_trades_min_max": [
+   843,
+   923
+  ],
+  "random_net_mean": -47.13,
+  "runs": 100,
+  "percentile": 99,
+  "p50": -46.355000000000004,
+  "p95": -19.916399999999864,
+  "share_beaten": 0.68,
+  "passed": false
+ },
+ "committed_before_fix": {
+  "runs": 500,
+  "random_trades_mean": 614.0,
+  "random_net_mean": -36.34,
+  "percentile": 99,
+  "p50": -37.2,
+  "p95": -5.40750000000003,
+  "share_beaten": 0.406,
+  "passed": false
+ }
+}

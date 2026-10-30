@@ -283,7 +283,7 @@ touched):
 | Family | Candidate net | Random trades, before fix → corrected | Random net mean, before → corrected | Bar (p99), before → corrected | Share of random runs beaten, before → corrected | Passes? |
 |---|---|---|---|---|---|---|
 | 8. Morning momentum (419 trades) | −23.46 | 246 → 446 | −22.06 → −37.28 | +3.06 → −8.27 | 50% → **89%** | No: a net loss, and below the 99th percentile |
-| 6. Quiet London breakout (872 trades) | −39.94 | 614 → *(preview running; next commit)* | | | 41% → | |
+| 6. Quiet London breakout (872 trades) | −39.94 | 614 → 887 | −36.34 → −47.13 | −5.41 → −19.92 | 41% → **68%** | No: a net loss, and below the 99th percentile |
 
 Reading family 8: with the random runs now trading as often as the
 candidate (446 against 419; the small overshoot is the residual described
@@ -291,7 +291,10 @@ above), they pay the same commission and land near −37 USD on average,
 and the candidate's −23 USD beats 89% of them instead of 50%. That is a
 real change in how family 8 ranks against luck, and the reason it must be
 re-run officially. It does not change the verdict: it is still a loss of
-23 USD, and still short of the 99th-percentile bar (−8 USD).
+23 USD, and still short of the 99th-percentile bar (−8 USD). Family 6
+moves the same way, from 41% to 68%, with a 40 USD loss against a bar of
+−20 USD. Both previews use 100 runs; the official rule is 500, so the
+exact percentages will shift a little when re-run, but not the pass/fail.
 
 ## 5. Other things noticed (not bugs, but worth knowing)
 
