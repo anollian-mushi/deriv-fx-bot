@@ -2,6 +2,8 @@
 
 Base rate (lowest seen): EUR/USD 0.0239%, GBP/USD 0.0203%, USD/JPY 0.0275%. New trades are refused 20:55-21:30 UTC.
 
+The 06:00-17:59 UTC base window is **provisional**: it was measured 28-29 Oct 2026, between the European (25 Oct) and US (1 Nov) clock changes, and is re-checked in the week after 1 Nov.
+
 | UTC hour | Samples | EUR/USD max rate (x base) | GBP/USD | USD/JPY | EUR/USD cost | GBP/USD cost | USD/JPY cost |
 |---|---|---|---|---|---|---|---|
 | 00 | Thu 00:12 | 0.0269% (1.1x) | 0.0256% (1.3x) | 0.0288% (1.0x) | 3.1 pips | 3.4 pips | 4.5 pips |

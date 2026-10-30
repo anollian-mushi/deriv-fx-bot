@@ -198,7 +198,18 @@ Things to know before agreeing:
   the weekend is the riskiest case: costs and gap behaviour are unknown
   until Phase 6.
 
-## 5. Proposed CLAUDE.md changes (waiting for approval; not applied)
+## 5. CLAUDE.md changes (approved and applied 30 Oct, with additions)
+
+Approved as proposed below. The owner added four more:
+1. A live cost gate: skip a trade if the quoted commission rate is above
+   1.5× base.
+2. No weekend holding until the Phase 6 test: close everything by Friday
+   20:30 UTC.
+3. Commission for backtests only from `research/phase2/cost_by_hour.json`.
+4. A post-1-Nov re-check of the entry window, which is provisional until
+   then.
+
+See CLAUDE.md and `reports/costs.md` section 11. The proposal as written:
 
 Already in CLAUDE.md (approved 28 Oct), unchanged:
 - the per-hour commission rule

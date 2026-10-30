@@ -268,7 +268,38 @@ uses the unrounded rate (`src/fxbot/contracts/multiplier.py`).
 6. **Profit** rounded to the nearest cent.
 7. **Stop loss** at least commission + 0.02 USD.
 
-## 11. Limits of this data
+## 11. Decisions taken after this report (owner, 30 Oct; in CLAUDE.md)
+
+- **Product:** Multipliers, x100 or x200 only (x100 for trades held
+  overnight).
+- **Timeframes:** 1h and 4h, with daily as a secondary check. 15m is out.
+- **Entry window:** new trades only 06:00–17:59 UTC, never 20:55–21:30.
+  **The window is provisional:** it was measured between the European (25
+  Oct) and US (1 Nov) clock changes. In the week after 1 Nov, 05:00–07:00
+  and 12:00–19:00 UTC are re-sampled on two weekdays (quotes only) to check
+  whether the cheap window moved, and whether 12:00–13:59 is raised every
+  day or only on news days.
+- **Live cost gate (risk module):** before every buy, the bot skips the trade
+  if the quoted commission rate is above 1.5× the pair's base rate:
+
+  | Pair | Base rate | Skip above |
+  |---|---|---|
+  | EUR/USD | 0.0239% | 0.0359% |
+  | GBP/USD | 0.0203% | 0.0305% |
+  | USD/JPY | 0.0275% | 0.0413% |
+
+  Every skip is logged with the rate seen.
+- **No weekend holding** until the Phase 6 weekend test. Every open trade is
+  closed by Friday 20:30 UTC, in the backtester too.
+- **Pricing source:** backtests take commission only from
+  `research/phase2/cost_by_hour.json`. The commission figures in
+  `config/contract_specs.yaml` mix different hours and must never be used
+  for pricing.
+- **Minimum target:** a strategy's average winning trade must be at least 3×
+  the average commission its trades actually paid. At the base rate that is
+  about 9 pips on EUR/USD, 8 on GBP/USD and 13 on USD/JPY.
+
+## 12. Limits of this data
 
 - **Only one weekday (Wednesday to Thursday), with one or two samples per
   hour.** Rates at the same hour on other days, especially heavy-news days,

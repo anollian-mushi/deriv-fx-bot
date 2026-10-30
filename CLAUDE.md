@@ -15,15 +15,21 @@ plain language in every report.
   active_symbols).
 - Contract: Multipliers (up/down). Model commission, stop out, take profit
   and stop loss exactly as Deriv documents them.
-- Contract costs and rules come from config/contract_specs.yaml (measured).
-  Backtests use the commission rate for the hour each trade opens, from
-  the cost-by-hour table in reports/costs.md. Real and demo charge the
-  same rate at the same moment; the rate changes during the day.
-- Timeframe: research 15m to 1h candles. No tick scalping unless tests
-  prove it beats costs.
-  ON HOLD until reports/costs.md is done: switch to 4h and daily candles
-  only (built from 1m data on UTC boundaries), dropping 15m and 1h
-  (reports/product_choice.md).
+- Contract rules come from config/contract_specs.yaml (measured).
+  Backtests take commission ONLY from research/phase2/cost_by_hour.json,
+  at the rate for the UTC hour each trade opens. The commission medians
+  in config/contract_specs.yaml mix different hours and must never be
+  used for pricing. Real and demo charge the same rate at the same
+  moment; the rate changes during the day and around news.
+- Timeframe: research 1h and 4h candles, with daily as a secondary check
+  (built from 1m data on UTC boundaries). 15m is out: even at the base
+  commission it costs about half a typical 15m candle (reports/costs.md).
+  No tick scalping.
+- Entry window: new trades open only 06:00-17:59 UTC, where Deriv charges
+  its base commission outside big news. Never 20:55-21:30 UTC (Deriv
+  refuses new trades). Fixed, not a tunable parameter. PROVISIONAL: it was
+  measured between the European (25 Oct) and US (1 Nov) clock changes and
+  is re-checked after 1 Nov (see Research rules).
 - Stack: Python 3.12, pytest, Ubuntu VPS with systemd, Telegram for
   alerts and control.
 - Data: candles as compressed daily files in data/. No raw ticks in git.
@@ -42,6 +48,12 @@ Never change, loosen or work around these without explicit approval.
 - Multiplier: x100 or x200 only (x100 for trades held overnight), chosen
   by testing. Never raise size after losses: no martingale, no averaging
   down, no grids.
+- Live cost gate: before every buy, the risk module reads the commission
+  rate in the quote and skips the trade if it is above 1.5x that pair's
+  base rate (EUR/USD 0.0239%, GBP/USD 0.0203%, USD/JPY 0.0275%). Every
+  skip is logged with the rate seen.
+- No weekend holding until the Phase 6 weekend test: every open trade is
+  closed by Friday 20:30 UTC. The backtester enforces the same rule.
 - Orders only when TRADING_ENABLED=true. Real money only when the owner
   sets DERIV_MODE=real.
 - All limits live in a separate risk module. Every order passes through
@@ -53,11 +65,15 @@ Never change, loosen or work around these without explicit approval.
 - Every backtest also runs at 1.5x the measured commission (Deriv says
   the rate varies with volatility) and shows MT5 costs side by side for
   comparison only. A pass is judged at the measured Multiplier rate.
-- ON HOLD until reports/costs.md is done: minimum target vs cost (a
-  strategy's average winning trade at least 3x the round-trip cost:
-  EUR/USD and GBP/USD >= 25 pips, USD/JPY >= 40 pips). The pip figures
-  came from one hour's rate and will be recomputed from the cost-by-hour
-  table.
+- Minimum target vs cost: a strategy's average winning trade must be at
+  least 3x the average commission its trades actually paid (from the
+  cost-by-hour table). At the base rate that is about 9 pips EUR/USD,
+  8 pips GBP/USD, 13 pips USD/JPY.
+- Clock-change re-check: in the week after 1 Nov, re-sample 05:00-07:00
+  and 12:00-19:00 UTC on two weekdays (quotes only). Report whether the
+  cheap window moved and whether 12:00-13:59 is raised every day or only
+  on news days, and update cost_by_hour.json. Runs alongside Phase 3 and
+  does not block it.
 - Split data into train, validation and a final holdout.
 - Holdout: all Deriv data from 2026-04-28 onward. This start date is fixed
   and never moves; data collected later is added to the holdout. It is
