@@ -121,6 +121,7 @@ class Scheduled(Strategy):
         self.schedule = sorted(schedule, key=lambda x: x[0])
         self.inner = {i: cls(**p) for i, (_, p) in enumerate(self.schedule)}
         self.name, self.timeframe = cls.name, cls.timeframe
+        self.needs_peers = getattr(cls, "needs_peers", False)
         self.params = {"schedule": [(dt.datetime.fromtimestamp(t, dt.timezone.utc).date().isoformat(), p)
                                     for t, p in self.schedule]}
         self.flat = Counter()         # (symbol, hour) -> candles seen while flat with nothing pending
@@ -140,6 +141,7 @@ class Scheduled(Strategy):
             return []
         if position is None and not pending:
             self.flat[(symbol, hour_of(t))] += 1
+        s.peers = self.peers
         acts = s.on_candle(symbol, candles, position, pending)
         if position is None and not pending and acts:
             self.entries[(symbol, hour_of(t))] += 1
@@ -158,11 +160,23 @@ class RandomEntry(Scheduled):
         super().__init__(cls, schedule)
         self.rates = rates
         self.rng = np.random.default_rng(seed)
+        self.seed = seed
         for s in self.inner.values():
             s.entry = self._random_entry
 
     def _random_entry(self, symbol, c):
-        p = self.rates.get((symbol, hour_of(int(c.end[-1]))), 0.0)
+        t = int(c.end[-1])
+        p = self.rates.get((symbol, hour_of(t)), 0.0)
+        legs = getattr(self.cls, "LEGS", None)
+        if legs:
+            # Two-leg families: both legs draw the same numbers at the same candle, so a random
+            # entry is still a hedged pair (one leg Up, the other Down).
+            if symbol not in legs:
+                return None
+            u, d = np.random.default_rng([self.seed, t]).random(2)
+            if u >= p:
+                return None
+            return "MULTUP" if (d < 0.5) == (legs[symbol] > 0) else "MULTDOWN"
         u, d = self.rng.random(), self.rng.random()
         if u >= p:
             return None
@@ -230,7 +244,12 @@ FAMILIES.update({
 # Variants run that produced no trades because of a design error, still counted (owner: count
 # every variant tried). f7 first signalled on Friday's close, which the fixed 12 h wait expires.
 VOID_VARIANTS = {"f7": 9}
-ROUND = {"f1": 1, "f2": 1, "f3": 1, "f4": 1, "f5": 1, "f6": 2, "f7": 2, "f8": 2}
+# Round 3 (last round): relative value and post-shock continuation.
+FAMILIES.update({
+    "f9": [("f9_eur_gbp_convergence", _grid(length=(20, 60), z_in=(1.5, 2.0), hold_days=(3, 8)))],
+    "f10": [("f10_shock_day", _grid(k=(1.25, 1.6), hold_days=(1, 3), sl_atr=(0.75, 1.25)))],
+})
+ROUND = {"f1": 1, "f2": 1, "f3": 1, "f4": 1, "f5": 1, "f6": 2, "f7": 2, "f8": 2, "f9": 3, "f10": 3}
 MAX_VARIANTS = 30
 for _f, _subs in FAMILIES.items():
     assert sum(len(g) for _, g in _subs) + VOID_VARIANTS.get(_f, 0) <= MAX_VARIANTS, _f

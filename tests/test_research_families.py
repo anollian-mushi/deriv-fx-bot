@@ -189,3 +189,59 @@ def test_morning_momentum_follows_a_strong_move():
     sl, tp = s.stops("frxEURUSD", b, "MULTUP")
     assert sl == pytest.approx(20.0) and tp is None
     assert s.direction("frxEURUSD", b.slice(len(b) - 1)) is None     # 09:00 candle: not the entry hour
+
+
+class _PeerSpy(F.FamilyStrategy):
+    name = "peer_spy"
+    timeframe = "1h"
+    needs_peers = True
+
+    def __init__(self):
+        super().__init__()
+        self.seen = []
+
+    def direction(self, symbol, c):
+        t = int(c.end[-1])
+        self.seen.append((t, {s: int(b.end[-1]) if len(b) else None for s, b in self.peers.items()}))
+        return None
+
+
+def test_peers_view_has_no_look_ahead():
+    spy = _PeerSpy()
+    _run(spy, data_for(["frxEURUSD", "frxGBPUSD"], "1h", MON, 3))
+    assert spy.seen
+    for t, peers in spy.seen:
+        assert all(v is None or v <= t for v in peers.values())
+    # The other pair's candle that closed at the same time is included.
+    assert any(v == t for t, peers in spy.seen for v in peers.values())
+
+
+def test_eur_gbp_convergence_opens_opposite_legs():
+    s = F.EurGbpConvergence(length=20, z_in=1.5, hold_days=3)
+    n = 25
+    eur = bars(np.r_[np.full(n - 1, 1.10), 1.08], step=86400)       # EUR drops vs GBP on the last day
+    gbp = bars(np.full(n, 1.30) + np.arange(n) * 1e-6, step=86400)
+    s.peers = {"frxGBPUSD": gbp}
+    assert s.direction("frxEURUSD", eur) == "MULTUP"
+    s.peers = {"frxEURUSD": eur}
+    assert s.direction("frxGBPUSD", gbp) == "MULTDOWN"
+    assert s.direction("frxUSDJPY", eur) is None
+
+
+def test_random_entry_keeps_two_legs_hedged():
+    sched = [(ep(2025, 3, 3), {"length": 20, "z_in": 1.5, "hold_days": 3})]
+    r = R.RandomEntry(F.EurGbpConvergence, sched, {("frxEURUSD", 0): 1.0, ("frxGBPUSD", 0): 1.0}, seed=4)
+    st = _run(r, data_for(["frxEURUSD", "frxGBPUSD", "frxUSDJPY"], "1d", MON, 30))
+    by_time = {}
+    for t in st.trades:
+        by_time.setdefault(t["entry_epoch"], {})[t["symbol"]] = t["direction"]
+    assert by_time and all(set(v) == {"frxEURUSD", "frxGBPUSD"} for v in by_time.values())
+    assert all(v["frxEURUSD"] != v["frxGBPUSD"] for v in by_time.values())
+
+
+def test_shock_day_follows_a_big_close_near_the_extreme():
+    closes = [1.10] * 21 + [1.115]
+    b = bars(closes, step=86400, spread=0.0005)
+    s = F.ShockDay(k=1.5, hold_days=1, sl_atr=1.0)
+    assert s.direction("frxEURUSD", b) == "MULTUP"
+    assert s.direction("frxEURUSD", b.slice(21)) is None

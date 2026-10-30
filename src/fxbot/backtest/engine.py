@@ -161,8 +161,12 @@ class Engine:
             i += 1
             pos = st.positions.get(sym)
             view = PositionView(pos.direction, pos.multiplier, pos.entry, pos.entry_epoch) if pos else None
-            actions = self.strategy.on_candle(sym, self.tf[sym].slice(i), view, sym in st.pending)
             sig_epoch = ends[i - 1]
+            if getattr(self.strategy, "needs_peers", False):
+                # Other pairs' candles closed by this candle's end (no look-ahead).
+                self.strategy.peers = {s: self.tf[s].slice(int(np.searchsorted(self.tf[s].end, sig_epoch, "right")))
+                                       for s in self.symbols if s != sym}
+            actions = self.strategy.on_candle(sym, self.tf[sym].slice(i), view, sym in st.pending)
             for a in actions or []:
                 st.signals.append((sig_epoch, sym, repr(a)))
                 if isinstance(a, Enter):

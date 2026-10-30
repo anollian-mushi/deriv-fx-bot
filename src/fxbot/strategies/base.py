@@ -68,6 +68,10 @@ class Strategy:
     name = "base"
     timeframe = "1h"                    # 1h, 4h or 1d (CLAUDE.md)
     params: dict = {}
+    # A strategy that compares pairs sets needs_peers; before each call the caller (backtester
+    # or live bot) sets self.peers = {other symbol: its candles closed by this candle's end}.
+    needs_peers = False
+    peers: dict = {}
 
     def on_candle(self, symbol: str, candles: Bars, position: PositionView | None,
                   pending: bool) -> list[Action]:

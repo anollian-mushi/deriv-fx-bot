@@ -516,6 +516,105 @@ class MorningMomentum(FamilyStrategy):
         return int(c.end[-1]) >= e - e % DAY + self.EXIT_HOUR * HOUR
 
 
+# =========================================================================== Round 3
+# Rounds 1-2: every single-pair price pattern had about zero edge before costs,
+# so the commission made each one a loss. Round 3 tries two kinds of idea not
+# yet tested: a hedged bet on two currencies against each other (family 9),
+# and following unusually large daily moves, which are often news (family 10).
+
+class EurGbpConvergence(FamilyStrategy):
+    """Family 9: EUR vs GBP convergence, two hedged legs (daily candles).
+
+    Gap = log(EUR/USD) - log(GBP/USD), i.e. EUR/GBP. z = (gap - its
+    `length`-day average) / its standard deviation. z <= -z_in (EUR cheap
+    against GBP): EUR/USD Up and GBP/USD Down; z >= z_in: the opposite. Both
+    legs open at 06:00 the next day and close after `hold_days` days. Stop
+    per leg 1.5 x the 14-day average range (fixed; usually the stop out
+    comes first at x100). USD/JPY is not traded.
+    """
+    name = "f9_eur_gbp_convergence"
+    family = "f9"
+    timeframe = "1d"
+    needs_peers = True
+    LEGS = {"frxEURUSD": 1, "frxGBPUSD": -1}
+    defaults = {"length": 20, "z_in": 2.0, "hold_days": 5}
+    SL_ATR = 1.5
+
+    def _z(self, symbol, c) -> float | None:
+        other = "frxGBPUSD" if symbol == "frxEURUSD" else "frxEURUSD"
+        o = self.peers.get(other)
+        L = self.params["length"]
+        if o is None or len(o) < L + 1 or len(c) < L + 1:
+            return None
+        common, ia, ib = np.intersect1d(c.end[-(L + 10):], o.end[-(L + 10):], return_indices=True)
+        if len(common) < L or common[-1] != c.end[-1]:
+            return None
+        a = c.close[-(L + 10):][ia][-L:]
+        b = o.close[-(L + 10):][ib][-L:]
+        eur, gbp = (a, b) if symbol == "frxEURUSD" else (b, a)
+        gap = np.log(eur) - np.log(gbp)
+        sd = gap.std()
+        return None if sd == 0 else float((gap[-1] - gap.mean()) / sd)
+
+    def direction(self, symbol, c):
+        if symbol not in self.LEGS:
+            return None
+        z = self._z(symbol, c)
+        if z is None or abs(z) < self.params["z_in"]:
+            return None
+        eur_up = z < 0
+        return "MULTUP" if eur_up == (self.LEGS[symbol] > 0) else "MULTDOWN"
+
+    def stops(self, symbol, c, direction):
+        a = atr(c)
+        return None if a is None else (self.SL_ATR * a / PIP[symbol], None)
+
+    def exit_now(self, symbol, c, position):
+        return int(c.end[-1]) - position.entry_epoch >= self.params["hold_days"] * DAY - 6 * HOUR
+
+
+class ShockDay(FamilyStrategy):
+    """Family 10: continuation after a shock day (daily candles).
+
+    A day whose range is at least k x the average range of the 20 days
+    before it, and which closes in the top third of its range (bottom
+    third), is followed by an Up (Down) trade opened at 06:00 the next day
+    and closed after `hold_days` days. Stop = sl_atr x that average range.
+    Fixed: the close must be in the outer third.
+    """
+    name = "f10_shock_day"
+    family = "f10"
+    timeframe = "1d"
+    defaults = {"k": 1.5, "hold_days": 1, "sl_atr": 1.0}
+
+    def _avg_range(self, c) -> float | None:
+        if len(c) < 21:
+            return None
+        return float((c.high[-21:-1] - c.low[-21:-1]).mean())
+
+    def direction(self, symbol, c):
+        a = self._avg_range(c)
+        if a is None:
+            return None
+        rng = c.high[-1] - c.low[-1]
+        if rng < self.params["k"] * a or rng <= 0:
+            return None
+        loc = (c.close[-1] - c.low[-1]) / rng
+        if loc >= 2 / 3:
+            return "MULTUP"
+        if loc <= 1 / 3:
+            return "MULTDOWN"
+        return None
+
+    def stops(self, symbol, c, direction):
+        a = self._avg_range(c)
+        return None if a is None else (self.params["sl_atr"] * a / PIP[symbol], None)
+
+    def exit_now(self, symbol, c, position):
+        return int(c.end[-1]) - position.entry_epoch >= self.params["hold_days"] * DAY - 6 * HOUR
+
+
 REGISTRY = {cls.name: cls for cls in (LondonBreakout, TrendBreakout, TrendBreakout1d, TrendPullback,
                                      TrendPullback1h, MeanReversion, MeanReversion4h, SessionDrift,
-                                     QuietLondonBreakout, WeeklyMomentum, MorningMomentum)}
+                                     QuietLondonBreakout, WeeklyMomentum, MorningMomentum,
+                                     EurGbpConvergence, ShockDay)}
