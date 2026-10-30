@@ -477,7 +477,7 @@ k = 0.2, 0.3 or 0.45 daily ranges, stop none or half a daily range. Exit
 | Track B | Variants | Trades | Net (measured) | Worst fall | Win rate | Avg win / loss (USD) | Profit factor | Monte Carlo p95 fall | Kill switch | Net at 1.5× (kill) | Net at MT5 | Beat coin-toss runs (p99 bar) | Result |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 11. Dollar-wide catch-up, 1h | 12 | 234 | **−27.28** | 31% | 50% | 0.66 / −0.88 | 0.74 | 37% | 0 | −32.84 (0) | −16.32 | 57% (bar +0.91) | Fail |
-| 12. Lone mover reverts, 1h | 12 | 92 | **−7.72** | 9% | 40% | 0.94 / −0.78 | 0.82 | 18% | 0 | −10.88 (0) | −2.59 | {{F12_LUCK}} | Fail |
+| 12. Lone mover reverts, 1h | 12 | 92 | **−7.72** | 9% | 40% | 0.94 / −0.78 | 0.82 | 18% | 0 | −10.88 (0) | −2.59 | 46% (bar +15.43) | Fail |
 
 | Track B | EUR/USD | GBP/USD | USD/JPY |
 |---|---|---|---|
@@ -496,7 +496,8 @@ In plain language:
   trades in 30 months, 60 of them on USD/JPY, which lost 11 USD; the EUR
   and GBP legs made a few USD on 32 trades. Before costs it broke even
   (+0.4 USD). It fails on trade count whatever else happens, and its stop
-  was hit on 21 of 92 trades. {{F12_LUCK_TEXT}}
+  was hit on 21 of 92 trades. Its coin-toss runs lost 6.8 USD on average and family 12
+  beat only 46% of them: the reversal rule was no better than a coin.
 - Both families reached the test with every walk-forward training score
   negative in the early rounds: the harness picked the least bad setting
   each time, as the rules require, and the test confirmed there was nothing

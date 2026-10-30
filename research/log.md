@@ -498,3 +498,28 @@ Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; s
 Stitched OOS (2023-10-27 to 2026-04-26): 234 trades, net -27.28 USD, max drawdown 30.65%, per pair {'frxEURUSD': -9.09, 'frxGBPUSD': -3.21, 'frxUSDJPY': -14.98}, kill events 0, luck check (p99 of 500 random runs = 0.9092999999999825): False. Failed checks: ['profitable_pairs_2_of_3', 'net_profit_positive', 'luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades', 'nearby_settings_work']. **Candidate: False**. Report: `reports/backtests/phase4_f11_dollar_catch_up_oos/`, `research/phase4/f11_dollar_catch_up/`.
 
 <!-- phase4:f11_dollar_catch_up end -->
+
+<!-- phase4:f12_lone_mover_reverts start -->
+
+### f12_lone_mover_reverts (1h): 12 variants
+
+Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-30 | f12_lone_mover_reverts v00 | decision_hour=8, k=0.2, stop=0.0 | 247 | -46.54 | 0 | - |
+| 2026-10-30 | f12_lone_mover_reverts v01 | decision_hour=8, k=0.2, stop=0.5 | 247 | -35.65 | 0 | - |
+| 2026-10-30 | f12_lone_mover_reverts v02 | decision_hour=8, k=0.3, stop=0.0 | 198 | -31.67 | 0 | 4 |
+| 2026-10-30 | f12_lone_mover_reverts v03 | decision_hour=8, k=0.3, stop=0.5 | 198 | -23.65 | 0 | 5 |
+| 2026-10-30 | f12_lone_mover_reverts v04 | decision_hour=8, k=0.45, stop=0.0 | 127 | -7.82 | 0 | - |
+| 2026-10-30 | f12_lone_mover_reverts v05 | decision_hour=8, k=0.45, stop=0.5 | 127 | -0.68 | 0 | 1 |
+| 2026-10-30 | f12_lone_mover_reverts v06 | decision_hour=10, k=0.2, stop=0.0 | 285 | -30.84 | 0 | - |
+| 2026-10-30 | f12_lone_mover_reverts v07 | decision_hour=10, k=0.2, stop=0.5 | 285 | -25.2 | 0 | - |
+| 2026-10-30 | f12_lone_mover_reverts v08 | decision_hour=10, k=0.3, stop=0.0 | 234 | -25.77 | 0 | - |
+| 2026-10-30 | f12_lone_mover_reverts v09 | decision_hour=10, k=0.3, stop=0.5 | 234 | -23.96 | 0 | - |
+| 2026-10-30 | f12_lone_mover_reverts v10 | decision_hour=10, k=0.45, stop=0.0 | 164 | -8.47 | 0 | 2 |
+| 2026-10-30 | f12_lone_mover_reverts v11 | decision_hour=10, k=0.45, stop=0.5 | 164 | -10.92 | 0 | 3 |
+
+Stitched OOS (2023-10-27 to 2026-04-26): 92 trades, net -7.72 USD, max drawdown 9.26%, per pair {'frxEURUSD': 2.62, 'frxGBPUSD': 0.67, 'frxUSDJPY': -11.01}, kill events 0, luck check (p99 of 500 random runs = 15.434799999999996): False. Failed checks: ['net_profit_positive', 'oos_trades_200_plus', 'luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades', 'nearby_settings_work']. **Candidate: False**. Report: `reports/backtests/phase4_f12_lone_mover_reverts_oos/`, `research/phase4/f12_lone_mover_reverts/`.
+
+<!-- phase4:f12_lone_mover_reverts end -->
