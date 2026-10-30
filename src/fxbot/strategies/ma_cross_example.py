@@ -7,7 +7,7 @@ Rules (fixed, no tuning): on each closed 1h candle, if the 20-candle simple
 average crosses above the 50-candle average, go Up; if it crosses below, go
 Down. An open trade in the other direction is closed first. x100, 3% stake,
 no stop loss or take profit (the stop out protects the stake). Signals wait
-up to the default 12 hours for an allowed minute.
+up to the fixed 1 hour (1h timeframe) for an allowed minute.
 """
 
 from __future__ import annotations

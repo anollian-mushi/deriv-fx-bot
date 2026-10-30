@@ -19,8 +19,8 @@ class Scripted(Strategy):
     """Fires given actions at given candle end times."""
     name = "scripted"
 
-    def __init__(self, plan, timeframe="1h", max_wait=12.0):
-        self.plan, self.timeframe, self.max_wait_hours = plan, timeframe, max_wait
+    def __init__(self, plan, timeframe="1h"):
+        self.plan, self.timeframe = plan, timeframe
 
     def on_candle(self, symbol, candles, position, pending):
         return self.plan.get((symbol, int(candles.end[-1])), [])
@@ -68,15 +68,46 @@ def test_no_look_ahead_future_changes_do_not_change_past_signals():
 
 
 def test_signal_outside_window_waits_and_fills_at_first_allowed_minute():
-    st = run(Scripted({("frxEURUSD", ep(2025, 3, 4, 3)): [Enter("MULTUP")]}))
+    st = run(Scripted({("frxEURUSD", ep(2025, 3, 4, 4)): [Enter("MULTUP")]}, timeframe="4h"))
     t = st.trades[0]
     assert t["entry_epoch"] == ep(2025, 3, 4, 6, 0)
-    assert t["delay_min"] == 180
+    assert t["delay_min"] == 120
     assert st.blocked["outside_entry_window"] == 1
 
 
+@pytest.mark.parametrize("tf, signal_hour, fills", [
+    ("1h", 5, True),      # waits exactly 1 hour -> fills at 06:00
+    ("1h", 4, False),     # would need 2 hours
+    ("4h", 4, True),      # 4h candle ending 04:00 fills at 06:00 (2 h <= 4 h)
+    ("1d", 0, True),      # daily candle ending 00:00 fills at 06:00 (6 h <= 12 h)
+])
+def test_fixed_max_wait_by_timeframe(tf, signal_hour, fills):
+    st = run(Scripted({("frxEURUSD", ep(2025, 3, 4, signal_hour)): [Enter("MULTUP")]}, timeframe=tf))
+    assert bool(st.trades) == fills
+    assert st.refused["expired"] == (0 if fills else 1)
+
+
+def test_fixed_max_wait_edges_4h_and_daily():
+    # 4h candle ending 20:00 Tue: next allowed minute is 06:00 Wed (10 h) -> expires.
+    st = run(Scripted({("frxEURUSD", ep(2025, 3, 4, 20)): [Enter("MULTUP")]}, timeframe="4h"))
+    assert not st.trades and st.refused["expired"] == 1
+    # 4h candle ending 12:00 on EUR/USD: blocked by cost gate until 14:00 (2 h <= 4 h) -> fills.
+    st = run(Scripted({("frxEURUSD", ep(2025, 3, 4, 12)): [Enter("MULTUP")]}, timeframe="4h"))
+    assert st.trades[0]["entry_epoch"] == ep(2025, 3, 4, 14, 0)
+    # Same signal on 1h: needs 2 hours, limit 1 hour -> dropped.
+    st = run(Scripted({("frxEURUSD", ep(2025, 3, 4, 12)): [Enter("MULTUP")]}))
+    assert not st.trades and st.refused["expired"] == 1
+
+
+def test_strategy_cannot_set_its_own_wait():
+    s = Scripted({})
+    s.max_wait_hours = 24
+    with pytest.raises(ValueError):
+        run(s)
+
+
 def test_signal_expires_after_max_wait_and_can_be_cancelled():
-    st = run(Scripted({("frxEURUSD", ep(2025, 3, 4, 3)): [Enter("MULTUP")]}, max_wait=2.0))
+    st = run(Scripted({("frxEURUSD", ep(2025, 3, 4, 3)): [Enter("MULTUP")]}))
     assert not st.trades and st.refused["expired"] == 1
     st = run(Scripted({("frxEURUSD", ep(2025, 3, 4, 3)): [Enter("MULTUP")],
                        ("frxEURUSD", ep(2025, 3, 4, 4)): [CancelPending()]}))
@@ -84,7 +115,7 @@ def test_signal_expires_after_max_wait_and_can_be_cancelled():
 
 
 def test_cost_gate_blocks_noon_hours_and_logs_rate():
-    st = run(Scripted({("frxEURUSD", ep(2025, 3, 4, 12)): [Enter("MULTUP")]}))
+    st = run(Scripted({("frxEURUSD", ep(2025, 3, 4, 12)): [Enter("MULTUP")]}, timeframe="4h"))
     # EUR/USD table: 12:00 and 13:00 at 3x base -> first allowed minute 14:00
     assert st.trades[0]["entry_epoch"] == ep(2025, 3, 4, 14, 0)
     assert st.blocked["cost_gate"] == 1

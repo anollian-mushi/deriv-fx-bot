@@ -11,7 +11,8 @@ work across pairs):
    b. TP / SL / stop out checks on this candle (fills.check_bar);
    c. a pending signal asks the risk module; if approved it opens at this
       open (+0.5 pip) and is checked against the rest of this candle; if the
-      answer is "not now" it waits until it expires.
+      answer is "not now" it waits, at most the fixed wait for its timeframe
+      (1h: 1 hour, 4h: 4 hours, daily: 12 hours; strategies.base).
 4. Equity = balance + open profit at this minute's close. Kill switch -> all
    trades closed at this close, run stops.
 
@@ -38,7 +39,8 @@ import numpy as np
 from fxbot.backtest import fills
 from fxbot.backtest.candles import Bars, load_candles
 from fxbot.risk.limits import AccountState, OrderRequest, RiskLimits, RiskManager
-from fxbot.strategies.base import CancelPending, Enter, ExitPosition, PositionView, Strategy
+from fxbot.strategies.base import (CancelPending, Enter, ExitPosition, PositionView, Strategy,
+                                   max_wait_seconds)
 
 ROOT = Path(__file__).resolve().parents[3]
 STATE_DIR = ROOT / "state" / "backtest"
@@ -85,6 +87,7 @@ class Engine:
         if kill_switch not in ("enforce", "observe"):
             raise ValueError("kill_switch must be 'enforce' or 'observe'")
         self.kill_switch = kill_switch
+        self.max_wait = max_wait_seconds(strategy)
         self.strategy, self.symbols, self.stress = strategy, list(symbols), stress
         self.table = table or fills.CommissionTable()
         self.risk = RiskManager(limits, self.table.base)
@@ -163,8 +166,7 @@ class Engine:
                 if isinstance(a, Enter):
                     req = OrderRequest(sym, a.direction, a.multiplier, a.risk_fraction,
                                        a.stop_loss_pips, a.take_profit_pips, self.strategy.name)
-                    st.pending[sym] = Pending(req, sig_epoch,
-                                              sig_epoch + int(self.strategy.max_wait_hours * 3600))
+                    st.pending[sym] = Pending(req, sig_epoch, sig_epoch + self.max_wait)
                 elif isinstance(a, ExitPosition) and sym in st.positions:
                     st.exit_requests.add(sym)
                 elif isinstance(a, CancelPending):
