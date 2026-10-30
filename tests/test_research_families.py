@@ -164,12 +164,19 @@ def test_robustness_flags_one_pair_and_few_big_trades():
     assert r["checks"]["not_one_period"] and r["checks"]["nearby_settings_work"]
 
 
-def test_weekly_momentum_signals_only_on_friday_close():
+def test_weekly_momentum_signals_only_on_monday_close_and_trades():
     s = F.WeeklyMomentum(lookback=3)
-    # Daily candles Mon 3 Mar .. Fri 7 Mar 2025 (ends Tue..Sat 00:00), rising.
-    b = bars([1.0, 1.01, 1.02, 1.03, 1.04], start=ep(2025, 3, 3), step=86400)
-    assert s.direction("frxEURUSD", b) == "MULTUP"
-    assert s.direction("frxEURUSD", b.slice(4)) is None          # Thursday's candle
+    # Daily candles Tue 25 Feb .. Mon 3 Mar 2025, falling: the last ends Tue 4 Mar 00:00.
+    b = bars([1.06, 1.05, 1.04, 1.03, 1.02, 1.01, 1.0], start=ep(2025, 2, 25), step=86400)
+    assert s.direction("frxEURUSD", b) == "MULTDOWN"
+    assert s.direction("frxEURUSD", b.slice(4)) is None          # Friday's candle
+    st = _run(F.WeeklyMomentum(lookback=3), data_for(["frxEURUSD"], "1d", MON, 19))
+    assert st.trades and all(t["entry_time"].endswith("06:00") for t in st.trades)
+    assert {dt.date.fromisoformat(t["entry_time"][:10]).weekday() for t in st.trades} == {1}
+
+
+def test_running_total_counts_void_variants():
+    assert R.variants_through_round(2) == 132 + 8 + 9 + 9 + 12
 
 
 def test_morning_momentum_follows_a_strong_move():

@@ -438,13 +438,16 @@ class QuietLondonBreakout(LondonBreakout):
 class WeeklyMomentum(FamilyStrategy):
     """Family 7: weekly time-series momentum (daily candles).
 
-    When Friday's daily candle closes (seen Monday 00:00, filled at 06:00),
+    When Monday's daily candle closes (Tuesday 00:00 UTC, filled at 06:00),
     go Up if the close is above the close `lookback` trading days earlier,
-    else Down. Held all week; the engine closes it Friday 20:30. Stop =
+    else Down. Held to the end of the week; the engine closes it Friday
+    20:30. (A first version signalled on Friday's close: under the fixed
+    12-hour wait for daily signals that signal expires over the weekend, so
+    it never traded. Its 9 variants still count in the running total.) Stop =
     sl_atr x the 14-day average range (0 = no stop: the stop out caps the
     loss at the stake). No target.
     """
-    name = "f7_weekly_momentum"
+    name = "f7_weekly_momentum_tue"
     family = "f7"
     timeframe = "1d"
     warmup_days = 200
@@ -453,8 +456,8 @@ class WeeklyMomentum(FamilyStrategy):
     def direction(self, symbol, c):
         t = int(c.end[-1])
         L = self.params["lookback"]
-        # Friday's candle ends Saturday 00:00 UTC (weekday 5).
-        if t % DAY or ((t // DAY) + 3) % 7 != 5 or len(c) < L + 1:
+        # Monday's candle ends Tuesday 00:00 UTC (weekday 1).
+        if t % DAY or ((t // DAY) + 3) % 7 != 1 or len(c) < L + 1:
             return None
         return "MULTUP" if c.close[-1] > c.close[-1 - L] else "MULTDOWN"
 

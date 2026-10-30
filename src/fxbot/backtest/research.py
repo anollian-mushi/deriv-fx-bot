@@ -224,18 +224,22 @@ FAMILIES = {
 # Round 2 (owner, 30 Oct: up to 4 new families designed from round 1's failures).
 FAMILIES.update({
     "f6": [("f6_quiet_london_breakout", _grid(box_max=(0.3, 0.5), tp_atr=(0.6, 1.0), sl_frac=(0.5, 1.0)))],
-    "f7": [("f7_weekly_momentum", _grid(lookback=(20, 60, 120), sl_atr=(0, 1.0, 1.5)))],
+    "f7": [("f7_weekly_momentum_tue", _grid(lookback=(20, 60, 120), sl_atr=(0, 1.0, 1.5)))],
     "f8": [("f8_morning_momentum", _grid(entry_hour=(9, 10, 11), k=(0.25, 0.4), sl_frac=(0.5, 1.0)))],
 })
+# Variants run that produced no trades because of a design error, still counted (owner: count
+# every variant tried). f7 first signalled on Friday's close, which the fixed 12 h wait expires.
+VOID_VARIANTS = {"f7": 9}
 ROUND = {"f1": 1, "f2": 1, "f3": 1, "f4": 1, "f5": 1, "f6": 2, "f7": 2, "f8": 2}
 MAX_VARIANTS = 30
 for _f, _subs in FAMILIES.items():
-    assert sum(len(g) for _, g in _subs) <= MAX_VARIANTS, _f
+    assert sum(len(g) for _, g in _subs) + VOID_VARIANTS.get(_f, 0) <= MAX_VARIANTS, _f
 
 
 def variants_through_round(r: int) -> int:
     """Running total of variants tried, all families up to and including round r."""
-    return sum(len(g) for f, subs in FAMILIES.items() if ROUND[f] <= r for _, g in subs)
+    return sum(len(g) for f, subs in FAMILIES.items() if ROUND[f] <= r for _, g in subs) + \
+        sum(n for f, n in VOID_VARIANTS.items() if ROUND[f] <= r)
 
 
 def luck_rule(family: str) -> tuple[int, int]:
