@@ -34,7 +34,9 @@ def write_run(name: str, info: dict, measured, stress, include_holdout: bool = F
         "signals_blocked_first_reason": dict(measured.blocked),
         "signals_dropped": dict(measured.refused),
         "gate_blocked_signals": measured.blocked.get("cost_gate", 0),
-        "kill_switch": measured.killed, "kill_switch_stress": stress.killed,
+        "kill_switch": measured.killed or bool(measured.kill_events),
+        "kill_switch_stress": stress.killed or bool(stress.kill_events),
+        "kill_events": measured.kill_events, "kill_events_stress": stress.kill_events,
         "exit_reasons": _count(trades, "reason"),
     }
     res["mt5_micro_comparison_only"]["min_target_met"] = None   # not meaningful without commission
@@ -112,7 +114,7 @@ def _markdown(name, r) -> str:
         row("Multipliers, 1.5x cost (stress)", r["stress_1_5x"]),
         row("MT5 micro (comparison only)", r["mt5_micro_comparison_only"]), "",
         "In plain language:",
-        f"- **{m['trades']} trades**, ending at **{m['final_balance']} USD** from "
+        f"- **{m['trades']} trades**, net result **{m['net_profit']} USD** on a start of "
         f"{r.get('starting_balance')} ({m['net_return_pct']}%). The worst fall from a high point was "
         f"{m['max_drawdown_pct']}%.",
         f"- Average commission per trade: {m['avg_commission']} USD. Minimum target (average win at "
@@ -123,7 +125,9 @@ def _markdown(name, r) -> str:
         f"The live cost gate blocked **{r['gate_blocked_signals']}** signals (`gate_skips.csv`).",
         f"- Signals dropped: {r['signals_dropped']}.",
         f"- How trades ended: {r['exit_reasons']}.",
-        f"- Kill switch hit: {r['kill_switch']} (stress run: {r['kill_switch_stress']}).",
+        f"- Kill switch hit: {r['kill_switch']} (stress run: {r['kill_switch_stress']}). "
+        f"Research restarts after a kill: {len(r['kill_events'])} (stress run: {len(r['kill_events_stress'])}); "
+        "any restart counts as a FAIL.",
         "- Monte Carlo: the same trades in 1,000 random orders. The p95 drawdown is the fall that only "
         "5% of orderings beat; it is a better guide to risk than the single historical drawdown.",
         "- MT5 micro re-prices the same trades with spread + swap and no stake cap. It is for "

@@ -42,6 +42,9 @@ def main() -> int:
     p.add_argument("--max-minutes", type=float, default=9.0)
     p.add_argument("--include-holdout", action="store_true")
     p.add_argument("--restart", action="store_true", help="discard saved progress for this name")
+    p.add_argument("--kill-switch", choices=("enforce", "observe"), default="enforce",
+                   help="observe (research only): record kill-switch events, restart at the starting "
+                        "balance and keep going; any event still counts as a fail")
     a = p.parse_args()
     if a.include_holdout:
         print("WARNING: holdout data included. This is only for the single final test.")
@@ -54,7 +57,8 @@ def main() -> int:
         if a.restart:
             (STATE_DIR / f"{run_name}.pkl").unlink(missing_ok=True)
         eng = Engine(load_strategy(a.strategy), symbols, start, end, RiskLimits(starting_balance=a.balance),
-                     stress=stress, include_holdout=a.include_holdout, run_name=run_name)
+                     stress=stress, include_holdout=a.include_holdout, run_name=run_name,
+                     kill_switch=a.kill_switch)
         left = a.max_minutes * 60 - (time.time() - t0)
         if not eng.run(max_seconds=max(left, 0)):
             print(f"{label} run paused at {eng.state.timeline_pos:,}/{len(eng.timeline):,} minutes. "
@@ -65,7 +69,8 @@ def main() -> int:
     strat = load_strategy(a.strategy)
     info = {"strategy": a.strategy, "timeframe": strat.timeframe, "label": getattr(strat, "label", ""),
             "params": getattr(strat, "params", {}), "symbols": symbols, "start": a.start, "end": a.end,
-            "include_holdout": a.include_holdout, "starting_balance": a.balance}
+            "include_holdout": a.include_holdout, "starting_balance": a.balance,
+            "kill_switch_mode": a.kill_switch}
     out = write_run(a.name, info, states["measured"], states["stress"], a.include_holdout)
     print(f"report: {out.relative_to(out.parents[2])} ({time.time() - t0:.0f}s)")
     return 0

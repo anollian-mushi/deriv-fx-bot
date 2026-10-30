@@ -15,6 +15,12 @@ work across pairs):
 4. Equity = balance + open profit at this minute's close. Kill switch -> all
    trades closed at this close, run stops.
 
+Research option kill_switch="observe" (never for live trading): when the kill
+switch fires, the event is recorded, all trades are closed as live would, and
+the "manual restart" is acted out by resetting the balance to the starting
+balance. The run continues, so results cover the whole period. Any recorded
+event still counts as a fail (`kill_switch_fired`).
+
 State is saved after every month so a long run can stop and resume.
 """
 
@@ -66,6 +72,7 @@ class EngineState:
     refused: Counter = field(default_factory=Counter)   # signals dropped: expired / rejected / too tight
     gate_skips: list = field(default_factory=list)      # (epoch, symbol, rate) first gate block per signal
     killed: bool = False
+    kill_events: list = field(default_factory=list)     # observe mode: each time the kill switch fired
     done: bool = False
     strategy_state: object = None
 
@@ -74,7 +81,10 @@ class Engine:
     def __init__(self, strategy: Strategy, symbols: list[str], start: dt.date, end: dt.date,
                  limits: RiskLimits = RiskLimits(), stress: float = 1.0, include_holdout: bool = False,
                  data: dict[str, tuple[Bars, Bars]] | None = None, run_name: str | None = None,
-                 table: fills.CommissionTable | None = None):
+                 table: fills.CommissionTable | None = None, kill_switch: str = "enforce"):
+        if kill_switch not in ("enforce", "observe"):
+            raise ValueError("kill_switch must be 'enforce' or 'observe'")
+        self.kill_switch = kill_switch
         self.strategy, self.symbols, self.stress = strategy, list(symbols), stress
         self.table = table or fills.CommissionTable()
         self.risk = RiskManager(limits, self.table.base)
@@ -194,6 +204,20 @@ class Engine:
         p.strategy = self.strategy.name
         st.positions[sym] = p
 
+    def _restart_after_kill(self, t: int, equity: float) -> None:
+        """Observe mode: record the event, then reset the balance as a manual restart would."""
+        st = self.state
+        st.kill_events.append({"time": _iso(t), "epoch": t, "equity": round(equity, 2),
+                               "balance_after_close": st.balance, "trade_number": len(st.trades),
+                               "top_up": round(st.starting_balance - st.balance, 2)})
+        st.balance = st.day_start_balance = st.starting_balance
+        st.pending.clear()
+        st.equity.append((t, st.balance))
+
+    @property
+    def kill_switch_fired(self) -> bool:
+        return self.state.killed or bool(self.state.kill_events)
+
     # ------------------------------------------------------------- main loop
     def run(self, max_seconds: float | None = None) -> bool:
         """Run (or continue). Returns True when finished, False if stopped for time."""
@@ -241,9 +265,13 @@ class Engine:
                             self._close(sym, ex)
                 st.last_close[sym] = c
             if self.risk.kill_switch_hit(self._account()):
+                equity = self._equity()
                 for sym, pos in list(st.positions.items()):
                     self._close(sym, fills.close_at(pos, t, st.last_close[sym], "kill_switch"))
-                st.killed = st.done = True
+                if self.kill_switch == "observe":
+                    self._restart_after_kill(t, equity)
+                else:
+                    st.killed = st.done = True
             if t % 3600 == 0:
                 st.equity.append((t, self._equity()))
             st.timeline_pos += 1

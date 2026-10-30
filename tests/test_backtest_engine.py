@@ -157,3 +157,47 @@ def test_resume_gives_same_result(tmp_path, monkeypatch):
     assert resumed.state.timeline_pos > 0
     assert resumed.run() is True
     assert resumed.state.trades == full.state.trades
+
+
+def _engine_near_kill(kill_switch):
+    from fxbot.backtest.fills import open_position
+    data = data_for(["frxEURUSD"], "1h", MON, 5)
+    plan = {("frxEURUSD", ep(2025, 3, 5, 10)): [Enter("MULTUP")]}
+    eng = Engine(Scripted(plan), ["frxEURUSD"], MON, MON, data=data, kill_switch=kill_switch)
+    eng.state.balance = 50.5
+    pos = open_position("frxEURUSD", "MULTUP", 100, 1.0, 1.1, ep(2025, 3, 3, 10), 0.000239)
+    pos.deadline = ep(2025, 3, 7, 20, 30)
+    eng.state.positions["frxEURUSD"] = pos
+    return eng
+
+
+def test_kill_switch_observe_records_resets_balance_and_keeps_running():
+    eng = _engine_near_kill("observe")
+    eng.run()
+    st = eng.state
+    assert not st.killed and len(st.kill_events) == 1 and eng.kill_switch_fired
+    ev = st.kill_events[0]
+    assert ev["equity"] <= 50.0 and st.trades[0]["reason"] == "kill_switch"
+    assert ev["top_up"] == round(100.0 - st.trades[0]["balance_after"], 2)
+    # Trading carried on after the restart, sized on the reset 100 USD balance.
+    later = [t for t in st.trades if t["entry_epoch"] >= ep(2025, 3, 5, 10)]
+    assert later and later[0]["stake"] == 3.0
+    assert st.timeline_pos == len(eng.timeline)
+
+
+def test_kill_switch_enforce_is_unchanged_and_default():
+    eng = _engine_near_kill("enforce")
+    eng.run()
+    assert eng.state.killed and not eng.state.kill_events and eng.kill_switch_fired
+    assert all(t["entry_epoch"] < ep(2025, 3, 5) for t in eng.state.trades)
+    with pytest.raises(ValueError):
+        Engine(Scripted({}), ["frxEURUSD"], MON, MON, data=data_for(["frxEURUSD"], "1h", MON, 2),
+               kill_switch="off")
+
+
+def test_metrics_use_real_balance_across_restarts():
+    from fxbot.backtest.metrics import summarise
+    trades = [{"profit": -50.0, "balance_after": 50.0, "commission": 0.02},
+              {"profit": 10.0, "balance_after": 110.0, "commission": 0.02}]   # reset to 100 between
+    s = summarise(trades, 100.0)
+    assert s["net_profit"] == -40.0 and s["net_return_pct"] == -40.0 and s["final_balance"] == 110.0

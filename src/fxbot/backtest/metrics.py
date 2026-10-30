@@ -38,10 +38,15 @@ def summarise(trades: list[dict], start: float, equity: list[float] | None = Non
     wins = [p for p in profits if p > 0]
     losses = [p for p in profits if p <= 0]
     balance, before, curve = start, [], [start]
-    for p in profits:
+    for t, p in zip(trades, profits):
+        # With research restarts (kill switch observe mode) the real balance before a trade
+        # can differ from the running sum; use it when the trade records it.
+        if profit_key == "profit" and "balance_after" in t:
+            balance = round(t["balance_after"] - p, 2)
         before.append(balance)
         balance = round(balance + p, 2)
         curve.append(balance)
+    net = round(sum(profits), 2)
     commissions = [t["commission"] for t in trades] if trades and "commission" in trades[0] else []
     late = [t["delay_min"] for t in trades if t.get("delay_min", 0) > 0]
     avg_win = statistics.mean(wins) if wins else 0.0
@@ -49,7 +54,8 @@ def summarise(trades: list[dict], start: float, equity: list[float] | None = Non
     return {
         "trades": len(trades),
         "final_balance": balance,
-        "net_return_pct": round((balance / start - 1) * 100, 2),
+        "net_profit": net,
+        "net_return_pct": round(net / start * 100, 2),
         "max_drawdown_pct": round(max_drawdown(equity or curve) * 100, 2),
         "win_rate_pct": round(len(wins) / len(trades) * 100, 1) if trades else 0.0,
         "avg_win": round(avg_win, 3),
