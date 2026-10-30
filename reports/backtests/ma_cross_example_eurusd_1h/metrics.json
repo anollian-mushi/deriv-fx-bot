@@ -1,0 +1,95 @@
+{
+ "run": "ma_cross_example_eurusd_1h",
+ "generated_utc": "2026-10-30T07:26Z",
+ "strategy": "fxbot.strategies.ma_cross_example:MaCrossExample",
+ "timeframe": "1h",
+ "label": "ENGINE TEST ONLY, NOT FOR TRADING",
+ "params": {
+  "fast": 20,
+  "slow": 50
+ },
+ "symbols": [
+  "frxEURUSD"
+ ],
+ "start": "2021-10-27",
+ "end": "2026-04-27",
+ "include_holdout": false,
+ "starting_balance": 100.0,
+ "measured": {
+  "trades": 368,
+  "final_balance": 50.0,
+  "net_return_pct": -50.0,
+  "max_drawdown_pct": 54.8,
+  "win_rate_pct": 37.0,
+  "avg_win": 0.977,
+  "avg_loss": -0.788,
+  "profit_factor": 0.727,
+  "avg_commission": 0.0517,
+  "min_target_met": true,
+  "late_fills": 213,
+  "avg_delay_min": 353.5,
+  "monte_carlo_drawdown_pct": {
+   "p50": 54.06,
+   "p95": 60.52,
+   "p99": 63.35,
+   "runs": 1000
+  }
+ },
+ "stress_1_5x": {
+  "trades": 347,
+  "final_balance": 49.99,
+  "net_return_pct": -50.01,
+  "max_drawdown_pct": 54.02,
+  "win_rate_pct": 36.0,
+  "avg_win": 0.97,
+  "avg_loss": -0.771,
+  "profit_factor": 0.708,
+  "avg_commission": 0.0743,
+  "min_target_met": true,
+  "late_fills": 202,
+  "avg_delay_min": 352.6,
+  "monte_carlo_drawdown_pct": {
+   "p50": 54.16,
+   "p95": 60.23,
+   "p99": 62.34,
+   "runs": 1000
+  }
+ },
+ "mt5_micro_comparison_only": {
+  "trades": 368,
+  "final_balance": 58.02,
+  "net_return_pct": -41.98,
+  "max_drawdown_pct": 46.97,
+  "win_rate_pct": 38.0,
+  "avg_win": 0.963,
+  "avg_loss": -0.775,
+  "profit_factor": 0.762,
+  "avg_commission": 0.0517,
+  "min_target_met": null,
+  "late_fills": 213,
+  "avg_delay_min": 353.5,
+  "monte_carlo_drawdown_pct": {
+   "p50": 47.27,
+   "p95": 54.66,
+   "p99": 57.67,
+   "runs": 1000
+  }
+ },
+ "signals_blocked_first_reason": {
+  "outside_entry_window": 189,
+  "cost_gate": 28,
+  "daily_pause": 16
+ },
+ "signals_dropped": {
+  "expired": 17
+ },
+ "gate_blocked_signals": 28,
+ "kill_switch": true,
+ "kill_switch_stress": true,
+ "exit_reasons": {
+  "strategy_exit": 215,
+  "forced_deadline": 133,
+  "stop_out": 19,
+  "kill_switch": 1
+ }
+}

@@ -5,8 +5,8 @@ contracts on EUR/USD, GBP/USD and USD/JPY. Strategies are researched and
 backtested first, then run on a demo account, and only moved to real money
 once the go-live checklist is complete.
 
-**Status:** Phase 2 done (real trading costs and contract rules, see
-[reports/costs.md](reports/costs.md)). No strategy or live bot yet.
+**Status:** Phase 3 done: the backtesting engine (see "Backtesting" below).
+No researched strategy or live bot yet.
 
 - Project rules, risk limits and research standards: [CLAUDE.md](CLAUDE.md)
 - Before trading real money: [docs/go_live_checklist.md](docs/go_live_checklist.md)
@@ -133,6 +133,47 @@ All of these send price quotes only, except `demo_cost_trades.py`.
   moves and cost vs move. They use data before 2026-04-28 only, unless given
   `--include-holdout`.
 
+## Backtesting (Phase 3)
+
+```bash
+.venv/bin/python scripts/build_candle_cache.py        # once: cache 1m data (about 40 s)
+.venv/bin/python scripts/run_backtest.py \
+    --strategy fxbot.strategies.ma_cross_example:MaCrossExample \
+    --symbols frxEURUSD --name ma_cross_example_eurusd_1h
+```
+
+- Each run makes two passes, one at the measured commission and one at 1.5x
+  commission. It also re-prices the same trades at MT5 micro costs, for
+  comparison only.
+- Output goes to `reports/backtests/<name>/`: `report.md`, `trades.csv`,
+  `equity.png`, `metrics.json` and `gate_skips.csv`.
+- **Resumable:** progress is saved monthly in `state/backtest/`. If a run
+  stops at its time limit (9 minutes by default, exit code 2), run the same
+  command again. Use `--restart` to start over.
+- **Holdout:** only data before 2026-04-28 is used. `--include-holdout` is
+  for the single final test only.
+
+How the engine works:
+- **Data:** 1m Dukascopy mid prices before 2026-04-28 and Deriv 1m candles
+  from then on. 1h, 4h and daily candles are built on UTC boundaries, and a
+  strategy only ever sees closed candles.
+- **Costs:** commission comes only from
+  `research/phase2/cost_by_hour.json`, for the hour each trade opens. Entry
+  slippage is 0.5 pip; stop-loss exits fill 1 pip past the level.
+  Take-profit, stop-out and SL-before-TP rules are as in
+  `reports/costs.md` section 10.
+- **Risk:** every order passes `fxbot.risk` (all CLAUDE.md hard limits plus
+  the live cost gate). The calendar is `fxbot.sessions`: entry window,
+  daily pause, closed days, closes by 20:30 before a weekend or closed day,
+  and x200 closed by 20:50.
+- **Delayed signals:** a signal that can't fill at once waits for the first
+  allowed minute. It expires after the strategy's maximum wait (default 12
+  hours) unless the strategy cancels it first.
+- **Walk-forward:** `fxbot.backtest.walkforward.rolling_windows()` splits
+  pre-holdout data into train/validation windows.
+- **Strategies:** live in `src/fxbot/strategies/`.
+  `ma_cross_example.py` is an engine test only, not for trading.
+
 ## Folders
 
 - `src/fxbot/` the bot's code (see the Repo layout section of CLAUDE.md)
@@ -141,6 +182,7 @@ All of these send price quotes only, except `demo_cost_trades.py`.
 - `docs/` API notes and checklists
 - `data/` Deriv candle files; `data_external/` other sources (research only)
 - `config/` measured contract specs (`contract_specs.yaml`)
+- `cache/` built candle arrays for the backtester (not committed)
 - `research/` research notes, Phase 2 raw samples and the log of every
   strategy variant tried
 - `reports/` backtest and performance reports
