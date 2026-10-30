@@ -370,3 +370,24 @@ Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; s
 Stitched OOS (2023-10-27 to 2026-04-26): 122 trades, net 6.17 USD, max drawdown 7.63%, per pair {'frxEURUSD': -11.83, 'frxGBPUSD': 18.0, 'frxUSDJPY': 0}, kill events 0, luck check (p99 of 500 random runs = 12.958799999999991): False. Failed checks: ['profitable_pairs_2_of_3', 'oos_trades_200_plus', 'luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades']. **Candidate: False**. Report: `reports/backtests/phase4_f9_eur_gbp_convergence_oos/`, `research/phase4/f9_eur_gbp_convergence/`.
 
 <!-- phase4:f9_eur_gbp_convergence end -->
+
+<!-- phase4:f10_shock_day start -->
+
+### f10_shock_day (1d): 8 variants
+
+Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-30 | f10_shock_day v00 | k=1.25, hold_days=1, sl_atr=0.75 | 428 | -43.27 | 0 | - |
+| 2026-10-30 | f10_shock_day v01 | k=1.25, hold_days=1, sl_atr=1.25 | 404 | -39.08 | 0 | - |
+| 2026-10-30 | f10_shock_day v02 | k=1.25, hold_days=3, sl_atr=0.75 | 391 | -76.68 | 1 | - |
+| 2026-10-30 | f10_shock_day v03 | k=1.25, hold_days=3, sl_atr=1.25 | 358 | -69.06 | 1 | - |
+| 2026-10-30 | f10_shock_day v04 | k=1.6, hold_days=1, sl_atr=0.75 | 188 | -16.44 | 0 | 5 |
+| 2026-10-30 | f10_shock_day v05 | k=1.6, hold_days=1, sl_atr=1.25 | 183 | -12.4 | 0 | 1, 2 |
+| 2026-10-30 | f10_shock_day v06 | k=1.6, hold_days=3, sl_atr=0.75 | 181 | -29.12 | 0 | 3, 4 |
+| 2026-10-30 | f10_shock_day v07 | k=1.6, hold_days=3, sl_atr=1.25 | 171 | -39.33 | 0 | - |
+
+Stitched OOS (2023-10-27 to 2026-04-26): 103 trades, net -26.09 USD, max drawdown 26.93%, per pair {'frxEURUSD': 0.04, 'frxGBPUSD': -8.59, 'frxUSDJPY': -17.54}, kill events 0, luck check (p99 of 500 random runs = 32.104999999999976): False. Failed checks: ['profitable_pairs_2_of_3', 'net_profit_positive', 'oos_trades_200_plus', 'luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades', 'nearby_settings_work']. **Candidate: False**. Report: `reports/backtests/phase4_f10_shock_day_oos/`, `research/phase4/f10_shock_day/`.
+
+<!-- phase4:f10_shock_day end -->
