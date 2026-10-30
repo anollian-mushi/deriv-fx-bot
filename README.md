@@ -5,10 +5,10 @@ contracts on EUR/USD, GBP/USD and USD/JPY. Strategies are researched and
 backtested first, then run on a demo account, and only moved to real money
 once the go-live checklist is complete.
 
-**Status:** Phase 4 strategy research done: **no strategy passed**
-(132 variants across 5 families; see
+**Status:** Phase 4 strategy research finished: **no strategy passed**
+(186 variants across 10 families in 3 rounds; see
 [reports/strategy_research.md](reports/strategy_research.md)). The holdout
-is still untouched. No live bot yet.
+is still untouched. No live bot.
 
 - Project rules, risk limits and research standards: [CLAUDE.md](CLAUDE.md)
 - Before trading real money: [docs/go_live_checklist.md](docs/go_live_checklist.md)
@@ -193,7 +193,7 @@ python scripts/research_family.py luck    --family f1   # 200 random-entry runs 
 python scripts/research_family.py summary --family f1   # pass/fail checks, updates research/log.md
 ```
 
-- Families f1-f5 and their declared grids are in `src/fxbot/backtest/research.py`;
+- Families f1-f10 (3 rounds) and their declared grids are in `src/fxbot/backtest/research.py`;
   strategy code in `src/fxbot/strategies/families.py`.
 - Each stage saves progress and stops before about 9 minutes (exit code 2);
   run it again to continue.

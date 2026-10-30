@@ -391,3 +391,13 @@ Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; s
 Stitched OOS (2023-10-27 to 2026-04-26): 103 trades, net -26.09 USD, max drawdown 26.93%, per pair {'frxEURUSD': 0.04, 'frxGBPUSD': -8.59, 'frxUSDJPY': -17.54}, kill events 0, luck check (p99 of 500 random runs = 32.104999999999976): False. Failed checks: ['profitable_pairs_2_of_3', 'net_profit_positive', 'oos_trades_200_plus', 'luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades', 'nearby_settings_work']. **Candidate: False**. Report: `reports/backtests/phase4_f10_shock_day_oos/`, `research/phase4/f10_shock_day/`.
 
 <!-- phase4:f10_shock_day end -->
+
+### Phase 4 running total (program finished 2026-10-30)
+
+| Round | Families | Variants | Running total | Luck bar |
+|---|---|---|---|---|
+| 1 | f1-f5 | 132 | 132 | p95 of 200 random runs |
+| 2 | f6-f8 (f7: 9 void variants from the Friday-close version, counted) | 38 | 170 | p99 of 500 |
+| 3 | f9-f10 | 16 | 186 | p99 of 500 |
+
+Result: no strategy passed; the holdout was not used. See reports/strategy_research.md.

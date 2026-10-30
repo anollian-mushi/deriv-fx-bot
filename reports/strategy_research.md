@@ -9,27 +9,35 @@ Written 2026-10-30, updated after each round. Pre-holdout data only (Dukascopy 1
 |---|---|---|---|---|---|
 | 1 | 1–5 (approved 30 Oct) | 132 | 132 | beat p95 of 200 random runs | **nothing passed** |
 | 2 | 6–8 (designed from round 1) | 38 (incl. 9 void) | 170 | beat p99 of 500 random runs | **nothing passed** |
-| 3 | to come | | | p99 of 500 | |
+| 3 (last) | 9–10 (designed from rounds 1–2) | 16 | **186** | beat p99 of 500 random runs | **nothing passed** |
 
-The holdout has not been touched, and won't be until the whole program
-ends.
+**The program is finished. No strategy passed.** With no final candidates,
+the holdout was not used. It is still untouched and valid for any future
+research.
 
-## The short version (after round 2)
+## The short version (final, after round 3)
 
-- **No strategy passed in either round.** 170 variants tried, every one
-  logged in `research/log.md`.
-- The closest result is still round 1's **buy-the-dip in a daily trend, 4h**
-  (family 3). It broke even, but:
-  - random entries did as well 1 time in 5;
-  - its profit came from the first three half-years only;
-  - nearby settings did not work.
-- **Most strategies did no better than random entries before costs.**
-  Their losses are roughly the commission they paid. Several were close to
-  break-even at MT5 costs (−3 to −5 USD) and lost 23–40 USD at Multiplier
-  costs.
-- The one entry that beat random in round 1 (London breakout) lost that
-  edge when filtered and given wider targets in round 2.
-- **Recommendation so far:** do not trade any of these, on demo or real.
+- **No strategy passed in any round.** 186 variants were tried across 10
+  families (13 strategy versions), every one logged in `research/log.md`.
+- **Nothing was tested on the holdout.** That step is only for final
+  candidates, and there are none.
+- **The common pattern: almost every idea had about zero edge before
+  costs.**
+  - Most did no better than random entries with the same exits.
+  - The commission, about 3 pips per trade, then turned them into steady
+    losses.
+  - Several were within a few USD of break-even at MT5's lower costs, and
+    lost 23–60 USD at Multiplier costs.
+- **The two nearest misses**, neither a candidate:
+  - **Buy the dip in a daily trend, 4h (family 3):** broke even. Its profit
+    faded after 2024, and random entries did as well 1 time in 5.
+  - **EUR vs GBP convergence (family 9):** +6 USD with a small 8%
+    drawdown, and nearby settings also worked. But it had only 122 trades,
+    its gain came mostly from one half-year, and it loses without its 5
+    best trades.
+- **Recommendation: do not trade any of these, on demo or real money.**
+  Section 5 lists what could change the picture. Every option there needs
+  your approval, because it changes data, pairs or CLAUDE.md.
 
 ## 1. How the testing worked
 
@@ -247,55 +255,123 @@ wait for daily signals expires a Friday-close signal before Monday's open.
 - Family 7 was moved to Monday's close. The 9 empty variants still count in
   the running total.
 
+## 3c. Round 3 (last): ideas of a different kind
+
+Rounds 1–2 showed that single-pair price patterns had about zero edge
+before costs. Round 3 tried two kinds of idea not yet tested. Both needed
+only the existing data and rules.
+- **Family 9, EUR vs GBP convergence (daily).**
+  - When EUR and GBP drift unusually far apart against the dollar, buy the
+    cheap one and sell the dear one, hold 3–8 days.
+  - The dollar's moves largely cancel between the two legs.
+  - It needed one small engine addition: a strategy can now see the other
+    pairs' closed candles. That is tested for no look-ahead.
+- **Family 10, after a shock day (daily).**
+  - After an unusually large daily move that closes near its extreme
+    (often a news day), trade its continuation for 1–3 days.
+
+| Strategy (round 3) | Variants | Trades | Net (measured) | Worst fall | Win rate | Avg win / loss | Profit factor | Monte Carlo p95 fall | Kill switch | Net at 1.5× (kill) | Net at MT5 | Beat random runs | Result |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 9. EUR vs GBP convergence, daily | 8 | 122 | **+6.17** | 8% | 52% | 1.76 / −1.77 | 1.06 | 28% | 0 | +2.44 (0) | +7.61 | 94% | Fail |
+| 10. Shock-day continuation, daily | 8 | 103 | **−26.09** | 27% | 39% | 1.26 / −1.21 | 0.66 | 36% | 0 | −28.74 (0) | −22.44 | 10% | Fail |
+
+| Strategy (round 3) | EUR/USD | GBP/USD | USD/JPY |
+|---|---|---|---|
+| 9. EUR vs GBP convergence | −11.83 | +18.00 | not traded |
+| 10. Shock-day continuation | +0.04 | −8.59 | −17.54 |
+
+**Family 9** is the most interesting result of the program, and still not
+a candidate.
+- **For it:**
+  - every training round was positive;
+  - out of sample it made money at all three cost levels;
+  - its worst fall was only 8%;
+  - settings one step away also made money on average (the only family to
+    pass that check).
+- **Against it:**
+  - only 122 trades, short of the 200 required;
+  - it beat 94% of random hedged runs, below the 99% needed;
+  - most of the gain came in its first half-year (+7 USD), then roughly
+    flat (−0.9, −2.0, +1.0, +1.1);
+  - without its 5 biggest trades it loses 19 USD.
+- **A rule question for the owner (no change made).** In a hedged pair
+  trade only the two legs together matter, so "profitable on 2 of 3 pairs"
+  fits it poorly: here the EUR leg lost and the GBP leg won. It made no
+  difference this time, because the strategy fails on trade count, luck
+  and robustness anyway.
+
+**Family 10:** after a big day, the next day was as likely to reverse as
+to continue. It lost in all five half-year test windows and did worse than
+90% of random entries.
+
 ## 4. How likely is a pass to be luck?
 
-- 132 variants across 8 sub-grids. Each sub-grid gave one walk-forward
-  result, so there were **8 chances to pass.**
-- With 8 independent tries at a 5% luck threshold, the chance that at
-  least one passes by pure luck is about **1 in 3** (1 − 0.95⁸ ≈ 34%).
-- So even a single pass would have needed the holdout to back it up.
-- With no passes, the honest conclusion is: **in this period, none of
-  these ideas beat Deriv's Multiplier costs on these pairs.**
+- Over the program: 186 variants, giving **13 walk-forward results** (one
+  per sub-grid).
+- At the p95 bar used in round 1 (8 results), the chance that at least
+  one passes by luck alone is about 1 in 3.
+- From round 2 on, the bar was p99 of 500 random runs, plus the four "not
+  fake" checks, which cut that chance a lot.
+- None passed even the basic CLAUDE.md rules together with the luck check.
+- So the honest conclusion is: **in 2023–2026, none of these ideas beat
+  Deriv's Multiplier costs on EUR/USD, GBP/USD and USD/JPY.**
 
-## 5. Shortlist, holdout and next steps
+## 5. Final result, holdout and what could change it
 
-- **Shortlist: empty.** No holdout test was run. The holdout is still
-  untouched, so it stays valid for any future candidate.
-- **Re-check after 5 Nov** (`cost_by_hour.json`): nothing to re-run. If
-  the cheap window moves, past results would shift only slightly, not
-  enough to turn any of these losses into a pass. Family 1, the most
-  cost-sensitive, would need the commission to roughly halve.
+- **Final candidates: none. The holdout was not used.** It stays untouched
+  and valid.
+- **Re-check after 5 Nov** (`cost_by_hour.json`): nothing to re-run. Even
+  if the cheap window moves, no result is near a pass. The losses are
+  about the size of the commission, so it would have to fall a lot, not
+  shift by an hour.
 - **MT5 decision note:** not needed. CLAUDE.md asks for one only if a
-  strategy passes at MT5 costs. None did: the London breakout came closest
-  at −3 USD, and the trend pullback made +11 USD at MT5 cost but would
-  still fail the luck check.
+  strategy passes at MT5 costs. None passed the full rules there either.
+  The nearest were trend pullback 4h (+11 USD) and EUR vs GBP (+8 USD),
+  and both fail the luck and robustness checks at any cost.
 
-**Recommendation:** do not run any of these strategies on demo or real
-money, and do not move to Phase 5/6 with them.
+**Recommendation:**
+- Do not trade any of these strategies, on demo or real money.
+- Do not move to Phase 5/6 with them.
+- Running the bot now would mostly pay commission to Deriv.
 
-Ideas worth trying next, in order of how promising they look. Each would be
-a new family with its own approved plan and budget, logged in the same way:
+What could change the picture. Every option needs your approval: it changes
+data, pairs, the network list or CLAUDE.md. I have not done any of them.
 
-1. **Fewer, bigger trades from the one real signal.** The London breakout
-   is the only entry that beat random. A version that trades only on wide
-   Asian ranges, or only on Tuesday–Thursday, with targets held into the
-   afternoon, would pay the same 3 pips for a larger move. The risk is
-   that this slices the same data again; the budget should be small (about
-   10 variants).
-2. **Wait for the Phase 6 weekend test.** If holding over the weekend
-   turns out to be safe and cheap, the trend families lose their worst
-   handicap, the Friday close. They could be re-tested once, on daily
-   candles only.
-3. **Add a news filter.** Skipping known big releases (US jobs, CPI, rate
-   decisions) removes the hours where Deriv's commission jumps and prices
-   gap past stops. This needs an economic calendar source first.
-4. **Accept the result.** These five are the standard ideas for 1h–daily
-   forex. If the next small round also fails, the honest answer is that
-   Multipliers at about 3 pips per trade are too expensive for these
-   approaches on these pairs.
+1. **More history (Dukascopy before 2021-10-27).**
+   - **Gain:** longer walk-forward and more out-of-sample trades. This is
+     the only way to judge low-frequency ideas like family 9 fairly: 122
+     trades is too few to tell an edge from luck.
+   - **Cost:** about 5 MB of compressed data per pair-year (the current
+     4.5 years are 22–24 MB per pair). The repo is about 75 MB on GitHub
+     now, so 3 more years for all three pairs (about 45 MB) stays under
+     150 MB.
+   - **Caveat:** re-testing family 9 on longer data counts as new
+     variants, and would be judged at p99.
+2. **More pairs, especially crosses such as EUR/GBP traded directly.**
+   - A direct cross would turn family 9's two legs into one trade with one
+     commission, which roughly halves its cost.
+   - Each new pair first needs quotes-only cost sampling, and its own
+     commission rate may be higher.
+3. **A news filter.**
+   - Skipping big releases removes the hours where the commission jumps
+     and prices gap past stops.
+   - Needs an economic-calendar source (a network change).
+4. **The Phase 6 weekend test.**
+   - If weekend holding is safe and cheap, trend ideas lose the forced
+     Friday close, which also kills Friday daily signals under the 12-hour
+     wait.
+   - That needs the test, and a CLAUDE.md change, first.
+5. **Accept the result.**
+   - Ten families covering the standard 1h–daily ideas found no edge large
+     enough to pay about 3 pips a trade.
+   - Stopping here is a legitimate outcome. It saves the starting capital,
+     which a bot running these strategies would most likely lose.
 
-Do not try more variants of families 2–5 on this same data. Each extra
-batch makes a lucky pass more likely, not a real one.
+**My view:**
+- **Options 1 and 2, aimed narrowly at the EUR vs GBP idea,** are the only
+  ones with a specific reason to hope. Even so, the odds are modest.
+- **If you'd rather not spend more time on this, option 5 is a sound
+  answer.**
 
 ## Files
 
