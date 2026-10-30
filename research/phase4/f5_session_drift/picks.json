@@ -1,0 +1,67 @@
+[
+ {
+  "round": 1,
+  "train": "2021-10-27..2023-10-26",
+  "test": "2023-10-27..2024-04-26",
+  "variant": 10,
+  "params": {
+   "entry_hour": 8,
+   "exit_hour": 16,
+   "stop_pips": 0
+  },
+  "train_score": -0.213,
+  "train_trades": 1044
+ },
+ {
+  "round": 2,
+  "train": "2022-04-27..2024-04-26",
+  "test": "2024-04-27..2024-10-26",
+  "variant": 8,
+  "params": {
+   "entry_hour": 8,
+   "exit_hour": 14,
+   "stop_pips": 0
+  },
+  "train_score": -0.307,
+  "train_trades": 1042
+ },
+ {
+  "round": 3,
+  "train": "2022-10-27..2024-10-26",
+  "test": "2024-10-27..2025-04-26",
+  "variant": 4,
+  "params": {
+   "entry_hour": 6,
+   "exit_hour": 16,
+   "stop_pips": 0
+  },
+  "train_score": -0.766,
+  "train_trades": 1040
+ },
+ {
+  "round": 4,
+  "train": "2023-04-27..2025-04-26",
+  "test": "2025-04-27..2025-10-26",
+  "variant": 4,
+  "params": {
+   "entry_hour": 6,
+   "exit_hour": 16,
+   "stop_pips": 0
+  },
+  "train_score": -0.9,
+  "train_trades": 1036
+ },
+ {
+  "round": 5,
+  "train": "2023-10-27..2025-10-26",
+  "test": "2025-10-27..2026-04-26",
+  "variant": 0,
+  "params": {
+   "entry_hour": 6,
+   "exit_hour": 12,
+   "stop_pips": 0
+  },
+  "train_score": -0.903,
+  "train_trades": 1034
+ }
+]

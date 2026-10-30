@@ -1,0 +1,90 @@
+{
+ "sub_grid": "f5_session_drift",
+ "variants": 30,
+ "oos": {
+  "trades": 1290,
+  "final_balance": 92.11,
+  "net_profit": -107.92,
+  "net_return_pct": -107.92,
+  "max_drawdown_pct": 50.4,
+  "win_rate_pct": 44.8,
+  "avg_win": 0.461,
+  "avg_loss": -0.526,
+  "profit_factor": 0.712,
+  "avg_commission": 0.0447,
+  "min_target_met": true,
+  "late_fills": 0,
+  "avg_delay_min": 0.0,
+  "monte_carlo_drawdown_pct": {
+   "p50": 78.23,
+   "p95": 80.42,
+   "p99": 81.58,
+   "runs": 1000
+  }
+ },
+ "stress_1_5x": {
+  "trades": 1290,
+  "final_balance": 58.11,
+  "net_profit": -141.97,
+  "net_return_pct": -141.97,
+  "max_drawdown_pct": 52.38,
+  "win_rate_pct": 43.2,
+  "avg_win": 0.528,
+  "avg_loss": -0.595,
+  "profit_factor": 0.674,
+  "avg_commission": 0.0772,
+  "min_target_met": true,
+  "late_fills": 0,
+  "avg_delay_min": 0.0,
+  "monte_carlo_drawdown_pct": {
+   "p50": 86.09,
+   "p95": 87.23,
+   "p99": 87.8,
+   "runs": 1000
+  }
+ },
+ "mt5_micro": {
+  "trades": 1290,
+  "final_balance": 34.34,
+  "net_profit": -65.66,
+  "net_return_pct": -65.66,
+  "max_drawdown_pct": 65.66,
+  "win_rate_pct": 46.9,
+  "avg_win": 0.473,
+  "avg_loss": -0.513,
+  "profit_factor": 0.813,
+  "avg_commission": 0.0447,
+  "min_target_met": null,
+  "late_fills": 0,
+  "avg_delay_min": 0.0,
+  "monte_carlo_drawdown_pct": {
+   "p50": 69.15,
+   "p95": 74.0,
+   "p99": 76.23,
+   "runs": 1000
+  }
+ },
+ "per_pair_net": {
+  "frxEURUSD": -55.26,
+  "frxGBPUSD": -52.66,
+  "frxUSDJPY": 0
+ },
+ "kill_events": 2,
+ "kill_events_stress": 2,
+ "luck": {
+  "runs": 200,
+  "p50": -82.49,
+  "p95": -39.63000000000003,
+  "share_beaten": 0.115
+ },
+ "checks": {
+  "profitable_pairs_2_of_3": false,
+  "net_profit_positive": false,
+  "oos_trades_200_plus": true,
+  "params_5_or_fewer": true,
+  "min_target_3x_commission": true,
+  "no_kill_switch": false,
+  "luck_check_beats_p95": false
+ },
+ "candidate": false
+}

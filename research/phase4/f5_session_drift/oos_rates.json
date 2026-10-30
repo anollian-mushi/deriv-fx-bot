@@ -1,0 +1,74 @@
+{
+ "schedule": [
+  [
+   1698364800,
+   {
+    "entry_hour": 8,
+    "exit_hour": 16,
+    "stop_pips": 0
+   }
+  ],
+  [
+   1714176000,
+   {
+    "entry_hour": 8,
+    "exit_hour": 14,
+    "stop_pips": 0
+   }
+  ],
+  [
+   1729987200,
+   {
+    "entry_hour": 6,
+    "exit_hour": 16,
+    "stop_pips": 0
+   }
+  ],
+  [
+   1745712000,
+   {
+    "entry_hour": 6,
+    "exit_hour": 16,
+    "stop_pips": 0
+   }
+  ],
+  [
+   1761523200,
+   {
+    "entry_hour": 6,
+    "exit_hour": 12,
+    "stop_pips": 0
+   }
+  ]
+ ],
+ "rates": [
+  [
+   [
+    "frxGBPUSD",
+    6
+   ],
+   0.5984496124031008
+  ],
+  [
+   [
+    "frxEURUSD",
+    6
+   ],
+   0.5984496124031008
+  ],
+  [
+   [
+    "frxEURUSD",
+    8
+   ],
+   0.9961538461538462
+  ],
+  [
+   [
+    "frxGBPUSD",
+    8
+   ],
+   0.9961538461538462
+  ]
+ ]
+}

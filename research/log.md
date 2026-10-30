@@ -238,3 +238,46 @@ Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; s
 Stitched OOS (2023-10-27 to 2026-04-26): 167 trades, net -10.14 USD, max drawdown 26.28%, per pair {'frxEURUSD': -3.13, 'frxGBPUSD': 1.87, 'frxUSDJPY': -8.88}, kill events 0, luck check beats p95: False (p95 7.8689999999999864). **Candidate: False**. Report: `reports/backtests/phase4_f4_mean_reversion_4h_oos/`, `research/phase4/f4_mean_reversion_4h/`.
 
 <!-- phase4:f4_mean_reversion_4h end -->
+
+<!-- phase4:f5_session_drift start -->
+
+### f5_session_drift (1h): 30 variants
+
+Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-30 | f5_session_drift v00 | entry_hour=6, exit_hour=12, stop_pips=0 | 2336 | -92.36 | 1 | 5 |
+| 2026-10-30 | f5_session_drift v01 | entry_hour=6, exit_hour=12, stop_pips=20 | 2336 | -140.82 | 2 | - |
+| 2026-10-30 | f5_session_drift v02 | entry_hour=6, exit_hour=14, stop_pips=0 | 2336 | -126.04 | 2 | - |
+| 2026-10-30 | f5_session_drift v03 | entry_hour=6, exit_hour=14, stop_pips=20 | 2336 | -137.33 | 2 | - |
+| 2026-10-30 | f5_session_drift v04 | entry_hour=6, exit_hour=16, stop_pips=0 | 2336 | -126.82 | 2 | 3, 4 |
+| 2026-10-30 | f5_session_drift v05 | entry_hour=6, exit_hour=16, stop_pips=20 | 2336 | -119.22 | 2 | - |
+| 2026-10-30 | f5_session_drift v06 | entry_hour=8, exit_hour=12, stop_pips=0 | 2336 | -99.86 | 1 | - |
+| 2026-10-30 | f5_session_drift v07 | entry_hour=8, exit_hour=12, stop_pips=20 | 2336 | -151.88 | 3 | - |
+| 2026-10-30 | f5_session_drift v08 | entry_hour=8, exit_hour=14, stop_pips=0 | 2336 | -126.49 | 2 | 2 |
+| 2026-10-30 | f5_session_drift v09 | entry_hour=8, exit_hour=14, stop_pips=20 | 2335 | -145.95 | 2 | - |
+| 2026-10-30 | f5_session_drift v10 | entry_hour=8, exit_hour=16, stop_pips=0 | 2336 | -129.54 | 2 | 1 |
+| 2026-10-30 | f5_session_drift v11 | entry_hour=8, exit_hour=16, stop_pips=20 | 2336 | -162.8 | 3 | - |
+| 2026-10-30 | f5_session_drift v12 | entry_hour=10, exit_hour=12, stop_pips=0 | 2336 | -86.06 | 1 | - |
+| 2026-10-30 | f5_session_drift v13 | entry_hour=10, exit_hour=12, stop_pips=20 | 2336 | -96.12 | 1 | - |
+| 2026-10-30 | f5_session_drift v14 | entry_hour=10, exit_hour=14, stop_pips=0 | 2336 | -111.14 | 2 | - |
+| 2026-10-30 | f5_session_drift v15 | entry_hour=10, exit_hour=14, stop_pips=20 | 2336 | -127.55 | 2 | - |
+| 2026-10-30 | f5_session_drift v16 | entry_hour=10, exit_hour=16, stop_pips=0 | 2336 | -114.61 | 2 | - |
+| 2026-10-30 | f5_session_drift v17 | entry_hour=10, exit_hour=16, stop_pips=20 | 2336 | -127.48 | 2 | - |
+| 2026-10-30 | f5_session_drift v18 | entry_hour=16, exit_hour=19, stop_pips=0 | 2336 | -146.9 | 2 | - |
+| 2026-10-30 | f5_session_drift v19 | entry_hour=16, exit_hour=19, stop_pips=20 | 2514 | -179.0 | 3 | - |
+| 2026-10-30 | f5_session_drift v20 | entry_hour=16, exit_hour=20, stop_pips=0 | 2336 | -142.87 | 2 | - |
+| 2026-10-30 | f5_session_drift v21 | entry_hour=16, exit_hour=20, stop_pips=20 | 2513 | -191.18 | 3 | - |
+| 2026-10-30 | f5_session_drift v22 | entry_hour=16, exit_hour=21, stop_pips=0 | 2336 | -140.77 | 2 | - |
+| 2026-10-30 | f5_session_drift v23 | entry_hour=16, exit_hour=21, stop_pips=20 | 2513 | -192.22 | 3 | - |
+| 2026-10-30 | f5_session_drift v24 | entry_hour=17, exit_hour=19, stop_pips=0 | 2337 | -138.59 | 2 | - |
+| 2026-10-30 | f5_session_drift v25 | entry_hour=17, exit_hour=19, stop_pips=20 | 2448 | -158.34 | 3 | - |
+| 2026-10-30 | f5_session_drift v26 | entry_hour=17, exit_hour=20, stop_pips=0 | 2336 | -141.03 | 2 | - |
+| 2026-10-30 | f5_session_drift v27 | entry_hour=17, exit_hour=20, stop_pips=20 | 2450 | -177.86 | 3 | - |
+| 2026-10-30 | f5_session_drift v28 | entry_hour=17, exit_hour=21, stop_pips=0 | 2337 | -137.14 | 2 | - |
+| 2026-10-30 | f5_session_drift v29 | entry_hour=17, exit_hour=21, stop_pips=20 | 2448 | -174.3 | 3 | - |
+
+Stitched OOS (2023-10-27 to 2026-04-26): 1290 trades, net -107.92 USD, max drawdown 50.4%, per pair {'frxEURUSD': -55.26, 'frxGBPUSD': -52.66, 'frxUSDJPY': 0}, kill events 2, luck check beats p95: False (p95 -39.63000000000003). **Candidate: False**. Report: `reports/backtests/phase4_f5_session_drift_oos/`, `research/phase4/f5_session_drift/`.
+
+<!-- phase4:f5_session_drift end -->
