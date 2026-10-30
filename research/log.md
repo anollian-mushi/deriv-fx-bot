@@ -302,3 +302,25 @@ Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; s
 Stitched OOS (2023-10-27 to 2026-04-26): 872 trades, net -39.94 USD, max drawdown 44.82%, per pair {'frxEURUSD': -32.53, 'frxGBPUSD': -9.43, 'frxUSDJPY': 2.02}, kill events 0, luck check (p99 of 500 random runs = -5.40750000000003): False. Failed checks: ['profitable_pairs_2_of_3', 'net_profit_positive', 'luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades', 'nearby_settings_work']. **Candidate: False**. Report: `reports/backtests/phase4_f6_quiet_london_breakout_oos/`, `research/phase4/f6_quiet_london_breakout/`.
 
 <!-- phase4:f6_quiet_london_breakout end -->
+
+<!-- phase4:f7_weekly_momentum_tue start -->
+
+### f7_weekly_momentum_tue (1d): 9 variants
+
+Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-30 | f7_weekly_momentum_tue v00 | lookback=20, sl_atr=0 | 460 | -56.88 | 1 | - |
+| 2026-10-30 | f7_weekly_momentum_tue v01 | lookback=20, sl_atr=1.0 | 462 | -47.17 | 1 | - |
+| 2026-10-30 | f7_weekly_momentum_tue v02 | lookback=20, sl_atr=1.5 | 460 | -56.08 | 1 | 3 |
+| 2026-10-30 | f7_weekly_momentum_tue v03 | lookback=60, sl_atr=0 | 444 | -57.34 | 1 | 2 |
+| 2026-10-30 | f7_weekly_momentum_tue v04 | lookback=60, sl_atr=1.0 | 448 | -47.75 | 1 | 4, 5 |
+| 2026-10-30 | f7_weekly_momentum_tue v05 | lookback=60, sl_atr=1.5 | 444 | -58.69 | 1 | 1 |
+| 2026-10-30 | f7_weekly_momentum_tue v06 | lookback=120, sl_atr=0 | 421 | -107.46 | 2 | - |
+| 2026-10-30 | f7_weekly_momentum_tue v07 | lookback=120, sl_atr=1.0 | 424 | -96.72 | 1 | - |
+| 2026-10-30 | f7_weekly_momentum_tue v08 | lookback=120, sl_atr=1.5 | 421 | -100.91 | 2 | - |
+
+Stitched OOS (2023-10-27 to 2026-04-26): 260 trades, net -32.45 USD, max drawdown 49.9%, per pair {'frxEURUSD': 25.95, 'frxGBPUSD': -22.29, 'frxUSDJPY': -36.11}, kill events 0, luck check (p99 of 500 random runs = 81.83969999999998): False. Failed checks: ['profitable_pairs_2_of_3', 'net_profit_positive', 'luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades', 'nearby_settings_work']. **Candidate: False**. Report: `reports/backtests/phase4_f7_weekly_momentum_tue_oos/`, `research/phase4/f7_weekly_momentum_tue/`.
+
+<!-- phase4:f7_weekly_momentum_tue end -->
