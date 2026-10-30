@@ -2856,6 +2856,17 @@
    "notes": [],
    "outside_session": 0,
    "small_missing": 0
+  },
+  "2026-10-29": {
+   "candles": 24,
+   "dropped_duplicates": 0,
+   "dropped_invalid": 0,
+   "dropped_unaligned": 0,
+   "expected": 24,
+   "gaps": [],
+   "notes": [],
+   "outside_session": 0,
+   "small_missing": 0
   }
  },
  "granularity": "1h",
