@@ -101,16 +101,17 @@ def own_features(c: Bars) -> dict | None:
     r20, r5 = float(rngs.mean()), float(rngs[-5:].mean())
     if r20 <= 0:
         return None
-    at8 = c.end % DAY == DECISION_HOUR * HOUR
-    c8 = c.close[at8]                            # closes at 08:00, today last
+    m = min(len(c), (LOOKBACK_DAYS + 3) * 24)    # only the tail is needed (speed; same values)
+    tail_end, tail_close, tail_epoch, tail_open = c.end[-m:], c.close[-m:], c.epoch[-m:], c.open[-m:]
+    c8 = tail_close[tail_end % DAY == DECISION_HOUR * HOUR]      # closes at 08:00, today last
     if len(c8) < LOOKBACK_DAYS + 1:
         return None
     d0 = t - DECISION_HOUR * HOUR
-    today = c.epoch >= d0
+    today = tail_epoch >= d0
     if today.sum() < 6:                          # most of the overnight candles must exist
         return None
     close = float(c.close[-1])
-    open_today = float(c.open[today][0])
+    open_today = float(tail_open[today][0])
     ry = float(rngs[-1])
     wd = ((t // DAY) + 3) % 7                    # 0 = Monday
     span = float(h.max() - low.min())

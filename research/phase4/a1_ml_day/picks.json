@@ -1,0 +1,82 @@
+[
+ {
+  "round": 1,
+  "train": "2021-10-27..2023-10-26",
+  "inner_validation": "2023-04-27..2023-10-26",
+  "test": "2023-10-27..2024-04-26",
+  "variant": 11,
+  "params": {
+   "model": "lr",
+   "feats": "peers",
+   "pool": "pair",
+   "margin": 0.12
+  },
+  "inner_score": 1.881,
+  "inner_trades": 151,
+  "model_file": "research/phase4/a1_ml_day/models/round1_full.pkl"
+ },
+ {
+  "round": 2,
+  "train": "2022-04-27..2024-04-26",
+  "inner_validation": "2023-10-27..2024-04-26",
+  "test": "2024-04-27..2024-10-26",
+  "variant": 1,
+  "params": {
+   "model": "lr",
+   "feats": "own",
+   "pool": "all",
+   "margin": 0.08
+  },
+  "inner_score": -0.172,
+  "inner_trades": 151,
+  "model_file": "research/phase4/a1_ml_day/models/round2_full.pkl"
+ },
+ {
+  "round": 3,
+  "train": "2022-10-27..2024-10-26",
+  "inner_validation": "2024-04-27..2024-10-26",
+  "test": "2024-10-27..2025-04-26",
+  "variant": 13,
+  "params": {
+   "model": "gb",
+   "feats": "own",
+   "pool": "all",
+   "margin": 0.08
+  },
+  "inner_score": -0.293,
+  "inner_trades": 178,
+  "model_file": "research/phase4/a1_ml_day/models/round3_full.pkl"
+ },
+ {
+  "round": 4,
+  "train": "2023-04-27..2025-04-26",
+  "inner_validation": "2024-10-27..2025-04-26",
+  "test": "2025-04-27..2025-10-26",
+  "variant": 8,
+  "params": {
+   "model": "lr",
+   "feats": "peers",
+   "pool": "all",
+   "margin": 0.12
+  },
+  "inner_score": 8.791,
+  "inner_trades": 39,
+  "model_file": "research/phase4/a1_ml_day/models/round4_full.pkl"
+ },
+ {
+  "round": 5,
+  "train": "2023-10-27..2025-10-26",
+  "inner_validation": "2025-04-27..2025-10-26",
+  "test": "2025-10-27..2026-04-26",
+  "variant": 13,
+  "params": {
+   "model": "gb",
+   "feats": "own",
+   "pool": "all",
+   "margin": 0.08
+  },
+  "inner_score": 0.184,
+  "inner_trades": 170,
+  "model_file": "research/phase4/a1_ml_day/models/round5_full.pkl"
+ }
+]

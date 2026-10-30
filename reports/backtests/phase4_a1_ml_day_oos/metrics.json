@@ -1,0 +1,149 @@
+{
+ "run": "phase4_a1_ml_day_oos",
+ "generated_utc": "2026-10-30T15:59Z",
+ "strategy": "fxbot.strategies.ml_day:MLDay (walk-forward schedule, model retrained per round)",
+ "timeframe": "1h",
+ "label": "Round 4 track A, stitched out-of-sample",
+ "params": {
+  "schedule": [
+   [
+    "2023-10-27",
+    {
+     "model": "lr",
+     "feats": "peers",
+     "pool": "pair",
+     "margin": 0.12,
+     "model_file": "research/phase4/a1_ml_day/models/round1_full.pkl"
+    }
+   ],
+   [
+    "2024-04-27",
+    {
+     "model": "lr",
+     "feats": "own",
+     "pool": "all",
+     "margin": 0.08,
+     "model_file": "research/phase4/a1_ml_day/models/round2_full.pkl"
+    }
+   ],
+   [
+    "2024-10-27",
+    {
+     "model": "gb",
+     "feats": "own",
+     "pool": "all",
+     "margin": 0.08,
+     "model_file": "research/phase4/a1_ml_day/models/round3_full.pkl"
+    }
+   ],
+   [
+    "2025-04-27",
+    {
+     "model": "lr",
+     "feats": "peers",
+     "pool": "all",
+     "margin": 0.12,
+     "model_file": "research/phase4/a1_ml_day/models/round4_full.pkl"
+    }
+   ],
+   [
+    "2025-10-27",
+    {
+     "model": "gb",
+     "feats": "own",
+     "pool": "all",
+     "margin": 0.08,
+     "model_file": "research/phase4/a1_ml_day/models/round5_full.pkl"
+    }
+   ]
+  ]
+ },
+ "symbols": [
+  "frxEURUSD",
+  "frxGBPUSD",
+  "frxUSDJPY"
+ ],
+ "start": "2023-10-27",
+ "end": "2026-04-26",
+ "include_holdout": false,
+ "starting_balance": 100.0,
+ "kill_switch_mode": "observe",
+ "measured": {
+  "trades": 612,
+  "final_balance": 67.84,
+  "net_profit": -32.16,
+  "net_return_pct": -32.16,
+  "max_drawdown_pct": 46.23,
+  "win_rate_pct": 46.2,
+  "avg_win": 0.715,
+  "avg_loss": -0.713,
+  "profit_factor": 0.863,
+  "avg_commission": 0.0606,
+  "min_target_met": true,
+  "late_fills": 0,
+  "avg_delay_min": 0.0,
+  "monte_carlo_drawdown_pct": {
+   "p50": 41.12,
+   "p95": 49.31,
+   "p99": 52.76,
+   "runs": 1000
+  }
+ },
+ "stress_1_5x": {
+  "trades": 612,
+  "final_balance": 53.44,
+  "net_profit": -46.56,
+  "net_return_pct": -46.56,
+  "max_drawdown_pct": 54.08,
+  "win_rate_pct": 44.3,
+  "avg_win": 0.643,
+  "avg_loss": -0.647,
+  "profit_factor": 0.789,
+  "avg_commission": 0.0816,
+  "min_target_met": true,
+  "late_fills": 0,
+  "avg_delay_min": 0.0,
+  "monte_carlo_drawdown_pct": {
+   "p50": 51.35,
+   "p95": 57.48,
+   "p99": 59.6,
+   "runs": 1000
+  }
+ },
+ "mt5_micro_comparison_only": {
+  "trades": 612,
+  "final_balance": 95.12,
+  "net_profit": -4.88,
+  "net_return_pct": -4.88,
+  "max_drawdown_pct": 29.71,
+  "win_rate_pct": 48.4,
+  "avg_win": 0.727,
+  "avg_loss": -0.696,
+  "profit_factor": 0.978,
+  "avg_commission": 0.0606,
+  "min_target_met": null,
+  "late_fills": 0,
+  "avg_delay_min": 0.0,
+  "monte_carlo_drawdown_pct": {
+   "p50": 24.7,
+   "p95": 34.37,
+   "p99": 38.7,
+   "runs": 1000
+  }
+ },
+ "signals_blocked_first_reason": {
+  "max_positions": 48
+ },
+ "signals_dropped": {
+  "expired": 48
+ },
+ "gate_blocked_signals": 0,
+ "kill_switch": false,
+ "kill_switch_stress": false,
+ "kill_events": [],
+ "kill_events_stress": [],
+ "exit_reasons": {
+  "strategy_exit": 596,
+  "stop_out": 16
+ }
+}

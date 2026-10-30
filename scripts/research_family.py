@@ -222,7 +222,7 @@ def stage_summary(family):
                "kill_events_stress": len(met.get("kill_events_stress", [])),
                "robustness": rob["detail"], "round": R.ROUND[family],
                "variants_running_total": R.variants_through_round(R.ROUND[family]),
-               "luck": {k: lk[k] for k in ("runs", "percentile", "p50", "p95", "share_beaten"),
+               "luck": {**{k: lk[k] for k in ("runs", "percentile", "p50", "p95", "share_beaten")},
                         "mode": R.luck_mode(family),
                         "random_trades_mean": (round(sum(r["trades"] for r in luck) / len(luck), 1) if luck else None)},
                "checks": checks, "candidate": all(checks.values())}
