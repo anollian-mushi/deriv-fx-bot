@@ -1,0 +1,222 @@
+{
+ "sub_grid": "a1_ml_day",
+ "variants": 24,
+ "oos": {
+  "trades": 612,
+  "final_balance": 67.84,
+  "net_profit": -32.16,
+  "net_return_pct": -32.16,
+  "max_drawdown_pct": 46.23,
+  "win_rate_pct": 46.2,
+  "avg_win": 0.715,
+  "avg_loss": -0.713,
+  "profit_factor": 0.863,
+  "avg_commission": 0.0606,
+  "min_target_met": true,
+  "late_fills": 0,
+  "avg_delay_min": 0.0,
+  "monte_carlo_drawdown_pct": {
+   "p50": 41.12,
+   "p95": 49.31,
+   "p99": 52.76,
+   "runs": 1000
+  }
+ },
+ "stress_1_5x": {
+  "trades": 612,
+  "final_balance": 53.44,
+  "net_profit": -46.56,
+  "net_return_pct": -46.56,
+  "max_drawdown_pct": 54.08,
+  "win_rate_pct": 44.3,
+  "avg_win": 0.643,
+  "avg_loss": -0.647,
+  "profit_factor": 0.789,
+  "avg_commission": 0.0816,
+  "min_target_met": true,
+  "late_fills": 0,
+  "avg_delay_min": 0.0,
+  "monte_carlo_drawdown_pct": {
+   "p50": 51.35,
+   "p95": 57.48,
+   "p99": 59.6,
+   "runs": 1000
+  }
+ },
+ "mt5_micro": {
+  "trades": 612,
+  "final_balance": 95.12,
+  "net_profit": -4.88,
+  "net_return_pct": -4.88,
+  "max_drawdown_pct": 29.71,
+  "win_rate_pct": 48.4,
+  "avg_win": 0.727,
+  "avg_loss": -0.696,
+  "profit_factor": 0.978,
+  "avg_commission": 0.0606,
+  "min_target_met": null,
+  "late_fills": 0,
+  "avg_delay_min": 0.0,
+  "monte_carlo_drawdown_pct": {
+   "p50": 24.7,
+   "p95": 34.37,
+   "p99": 38.7,
+   "runs": 1000
+  }
+ },
+ "per_pair_net": {
+  "frxEURUSD": -11.59,
+  "frxGBPUSD": -15.6,
+  "frxUSDJPY": -4.97
+ },
+ "kill_events": 0,
+ "kill_events_stress": 0,
+ "robustness": {
+  "per_pair": {
+   "frxEURUSD": -11.59,
+   "frxGBPUSD": -15.6,
+   "frxUSDJPY": -4.97
+  },
+  "per_test_window": [
+   0.78,
+   -17.9,
+   -9.38,
+   -7.58,
+   1.92
+  ],
+  "net_without_top_trades": -69.2,
+  "top_trades_removed": 13,
+  "neighbour_window_returns_pct": [
+   11.0,
+   10.8,
+   -7.8,
+   -14.3,
+   -10.8,
+   -10.6,
+   -30.8,
+   -25.7,
+   -11.7,
+   34.0,
+   -2.0,
+   6.2,
+   -23.1,
+   21.5,
+   -4.5,
+   -9.5,
+   -14.2,
+   -4.0,
+   2.0,
+   -9.3,
+   -3.9,
+   -11.3,
+   9.0
+  ]
+ },
+ "round": 4,
+ "variants_running_total": 234,
+ "luck": {
+  "runs": 500,
+  "percentile": 99,
+  "p50": -45.09,
+  "p95": 3.5028999999999972,
+  "share_beaten": 0.798,
+  "mode": "signals",
+  "random_trades_mean": 612.0
+ },
+ "checks": {
+  "profitable_pairs_2_of_3": false,
+  "net_profit_positive": false,
+  "oos_trades_200_plus": true,
+  "params_5_or_fewer": true,
+  "min_target_3x_commission": true,
+  "no_kill_switch": true,
+  "luck_check_beats_p95": false,
+  "not_one_pair": false,
+  "not_one_period": false,
+  "not_few_big_trades": false,
+  "nearby_settings_work": false
+ },
+ "candidate": false,
+ "picks": [
+  {
+   "round": 1,
+   "train": "2021-10-27..2023-10-26",
+   "inner_validation": "2023-04-27..2023-10-26",
+   "test": "2023-10-27..2024-04-26",
+   "variant": 11,
+   "params": {
+    "model": "lr",
+    "feats": "peers",
+    "pool": "pair",
+    "margin": 0.12
+   },
+   "inner_score": 1.881,
+   "inner_trades": 151,
+   "model_file": "research/phase4/a1_ml_day/models/round1_full.pkl"
+  },
+  {
+   "round": 2,
+   "train": "2022-04-27..2024-04-26",
+   "inner_validation": "2023-10-27..2024-04-26",
+   "test": "2024-04-27..2024-10-26",
+   "variant": 1,
+   "params": {
+    "model": "lr",
+    "feats": "own",
+    "pool": "all",
+    "margin": 0.08
+   },
+   "inner_score": -0.172,
+   "inner_trades": 151,
+   "model_file": "research/phase4/a1_ml_day/models/round2_full.pkl"
+  },
+  {
+   "round": 3,
+   "train": "2022-10-27..2024-10-26",
+   "inner_validation": "2024-04-27..2024-10-26",
+   "test": "2024-10-27..2025-04-26",
+   "variant": 13,
+   "params": {
+    "model": "gb",
+    "feats": "own",
+    "pool": "all",
+    "margin": 0.08
+   },
+   "inner_score": -0.293,
+   "inner_trades": 178,
+   "model_file": "research/phase4/a1_ml_day/models/round3_full.pkl"
+  },
+  {
+   "round": 4,
+   "train": "2023-04-27..2025-04-26",
+   "inner_validation": "2024-10-27..2025-04-26",
+   "test": "2025-04-27..2025-10-26",
+   "variant": 8,
+   "params": {
+    "model": "lr",
+    "feats": "peers",
+    "pool": "all",
+    "margin": 0.12
+   },
+   "inner_score": 8.791,
+   "inner_trades": 39,
+   "model_file": "research/phase4/a1_ml_day/models/round4_full.pkl"
+  },
+  {
+   "round": 5,
+   "train": "2023-10-27..2025-10-26",
+   "inner_validation": "2025-04-27..2025-10-26",
+   "test": "2025-10-27..2026-04-26",
+   "variant": 13,
+   "params": {
+    "model": "gb",
+    "feats": "own",
+    "pool": "all",
+    "margin": 0.08
+   },
+   "inner_score": 0.184,
+   "inner_trades": 170,
+   "model_file": "research/phase4/a1_ml_day/models/round5_full.pkl"
+  }
+ ]
+}

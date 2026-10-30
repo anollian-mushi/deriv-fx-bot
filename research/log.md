@@ -424,3 +424,40 @@ total, a low-cost broker model (1.0 / 1.3 pips plus swap) and no cost at all.
 No strategy, setting, rule or data changed, and the holdout was not read.
 This adds no variants to the running total (still 186). Result: no family
 passes at any cost, including zero. See reports/cost_whatif.md.
+
+<!-- phase4:a1_ml_day start -->
+
+### a1_ml_day (1h, track A, round 4): 24 variants
+
+Each round: the variant is fitted on the first 18 months of the training window and scored on the last 6 (inner validation, real engine, measured costs); the best inner score is picked, refitted on all 24 months and traded on the test window. Test-window columns are shown for every variant for the record (used only for the nearby-settings check, never to pick).
+
+| Date | Variant | Params | Inner-validation net % by round | Test-window net USD by round | Test trades | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-30 | a1_ml_day v00 | model=lr, feats=own, pool=all, margin=0.05 | 35.48 / -20.76 / -18.3 / 4.67 / -11.11 | -5.14 / -10.77 / 4.91 / -9.01 / -5.78 | 832 | - |
+| 2026-10-30 | a1_ml_day v01 | model=lr, feats=own, pool=all, margin=0.08 | 19.0 / -2.5 / -19.57 / 4.99 / -9.16 | -0.35 / -17.81 / 33.96 / -4.28 / 2.01 | 480 | 2 |
+| 2026-10-30 | a1_ml_day v02 | model=lr, feats=own, pool=all, margin=0.12 | -3.63 / -8.46 / -19.51 / 2.31 / -4.4 | 1.86 / -10.62 / 15.44 / -4.51 / 2.7 | 170 | - |
+| 2026-10-30 | a1_ml_day v03 | model=lr, feats=own, pool=pair, margin=0.05 | 25.78 / -14.62 / -23.06 / -16.81 / -21.82 | -8.98 / -27.88 / 6.5 / -21.3 / 5.91 | 958 | - |
+| 2026-10-30 | a1_ml_day v04 | model=lr, feats=own, pool=pair, margin=0.08 | 6.93 / -14.19 / -26.96 / -14.07 / -19.25 | -8.58 / -30.81 / 15.18 / -23.7 / -12.09 | 667 | - |
+| 2026-10-30 | a1_ml_day v05 | model=lr, feats=own, pool=pair, margin=0.12 | -1.48 / -8.17 / -18.4 / -3.06 / -7.69 | 11.0 / -23.15 / 11.74 / -17.99 / 0.16 | 371 | - |
+| 2026-10-30 | a1_ml_day v06 | model=lr, feats=peers, pool=all, margin=0.05 | -7.89 / -24.77 / -25.88 / -11.97 / -7.68 | -15.65 / -16.95 / -0.46 / -12.29 / -9.47 | 921 | - |
+| 2026-10-30 | a1_ml_day v07 | model=lr, feats=peers, pool=all, margin=0.08 | 9.47 / -8.49 / -30.56 / 6.51 / -22.86 | -9.71 / -25.75 / 20.3 / -9.48 / 2.29 | 595 | - |
+| 2026-10-30 | a1_ml_day v08 | model=lr, feats=peers, pool=all, margin=0.12 | 4.44 / -2.26 / -26.05 / 17.03 / -13.68 | 10.75 / -16.87 / 7.02 / -10.33 / -1.17 | 267 | 4 |
+| 2026-10-30 | a1_ml_day v09 | model=lr, feats=peers, pool=pair, margin=0.05 | -5.36 / -12.26 / -34.4 / -15.21 / -12.87 | -24.53 / -31.31 / 9.57 / -2.62 / -5.63 | 1040 | - |
+| 2026-10-30 | a1_ml_day v10 | model=lr, feats=peers, pool=pair, margin=0.08 | 9.37 / -14.23 / -38.14 / -6.41 / -10.41 | -7.78 / -22.16 / 18.86 / -13.45 / -6.01 | 804 | - |
+| 2026-10-30 | a1_ml_day v11 | model=lr, feats=peers, pool=pair, margin=0.12 | 26.12 / -10.63 / -35.52 / -1.95 / -3.82 | 0.78 / -20.01 / 3.92 / -14.18 / -2.34 | 473 | 1 |
+| 2026-10-30 | a1_ml_day v12 | model=gb, feats=own, pool=all, margin=0.05 | 9.02 / -10.93 / -14.99 / -23.85 / -7.93 | -22.6 / -22.09 / -1.98 / -8.95 / -9.33 | 1071 | - |
+| 2026-10-30 | a1_ml_day v13 | model=gb, feats=own, pool=all, margin=0.08 | -2.32 / -20.89 / -7.2 / -14.09 / 2.7 | -25.3 / -11.7 / -11.32 / 0.01 / 2.88 | 814 | 3, 5 |
+| 2026-10-30 | a1_ml_day v14 | model=gb, feats=own, pool=all, margin=0.12 | -7.28 / -10.78 / -14.34 / -7.6 / -10.43 | -12.93 / -8.75 / 6.24 / 4.85 / -3.93 | 465 | - |
+| 2026-10-30 | a1_ml_day v15 | model=gb, feats=own, pool=pair, margin=0.05 | 20.2 / -9.66 / -26.52 / -20.51 / -16.27 | -3.2 / -17.76 / -22.48 / -15.4 / -5.86 | 1173 | - |
+| 2026-10-30 | a1_ml_day v16 | model=gb, feats=own, pool=pair, margin=0.08 | 1.81 / -7.62 / -24.61 / -24.36 / -14.2 | -4.73 / -19.02 / -23.15 / -12.62 / -11.29 | 1032 | - |
+| 2026-10-30 | a1_ml_day v17 | model=gb, feats=own, pool=pair, margin=0.12 | -3.68 / -3.08 / -30.77 / -25.61 / -16.6 | -11.64 / -23.61 / -14.68 / -13.61 / -4.68 | 796 | - |
+| 2026-10-30 | a1_ml_day v18 | model=gb, feats=peers, pool=all, margin=0.05 | 19.31 / -30.63 / -28.22 / -30.2 / -25.98 | -24.9 / -24.56 / 27.12 / -5.19 / 11.24 | 1037 | - |
+| 2026-10-30 | a1_ml_day v19 | model=gb, feats=peers, pool=all, margin=0.08 | 8.72 / -28.81 / -9.6 / -25.04 / -18.22 | -22.89 / -23.61 / 21.51 / -13.33 / 8.95 | 768 | - |
+| 2026-10-30 | a1_ml_day v20 | model=gb, feats=peers, pool=all, margin=0.12 | -15.76 / -26.11 / -14.83 / -24.34 / -9.22 | -21.62 / -15.14 / 19.98 / -4.01 / -0.58 | 457 | - |
+| 2026-10-30 | a1_ml_day v21 | model=gb, feats=peers, pool=pair, margin=0.05 | 16.05 / -28.86 / -30.56 / -7.92 / -42.24 | -26.07 / -24.17 / -12.82 / -28.17 / 8.68 | 1197 | - |
+| 2026-10-30 | a1_ml_day v22 | model=gb, feats=peers, pool=pair, margin=0.08 | 6.35 / -22.18 / -32.43 / -7.68 / -42.0 | -23.76 / -24.97 / 0.92 / -24.85 / 7.15 | 1047 | - |
+| 2026-10-30 | a1_ml_day v23 | model=gb, feats=peers, pool=pair, margin=0.12 | 7.15 / -14.54 / -30.11 / -3.77 / -32.57 | -14.3 / -27.97 / -0.93 / -25.44 / 5.72 | 808 | - |
+
+Stitched OOS (2023-10-27 to 2026-04-26): 612 trades, net -32.16 USD, max drawdown 46.23%, per pair {'frxEURUSD': -11.59, 'frxGBPUSD': -15.6, 'frxUSDJPY': -4.97}, kill events 0, luck check (p99 of 500 random runs on the candidate's own signal days = 3.5028999999999972): False. Failed checks: ['profitable_pairs_2_of_3', 'net_profit_positive', 'luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades', 'nearby_settings_work']. **Candidate: False**. Report: `reports/backtests/phase4_a1_ml_day_oos/`, `research/phase4/a1_ml_day/`.
+
+<!-- phase4:a1_ml_day end -->

@@ -1,0 +1,707 @@
+[
+ {
+  "round": 1,
+  "variant": 11,
+  "params": {
+   "model": "lr",
+   "feats": "peers",
+   "pool": "pair",
+   "margin": 0.12
+  },
+  "trained_on": "2021-10-27..2023-10-26",
+  "training_rows": 1506,
+  "models": [
+   {
+    "model_for": "frxEURUSD",
+    "rows": 502,
+    "train_accuracy": 0.576,
+    "prob_spread_sd": 0.1131,
+    "share_beyond_margin": 0.386,
+    "importance": {
+     "r_3d": -0.2766,
+     "usd_USDJPY_1d": -0.2575,
+     "loc_y": -0.1927,
+     "usd_GBPUSD_5d": -0.1819,
+     "dow_tue": -0.1636,
+     "vol_ratio": 0.163,
+     "usd_GBPUSD_1d": -0.149,
+     "usd_USDJPY_5d": 0.1468,
+     "dow_wed": 0.1438,
+     "dow_fri": -0.1414,
+     "pos_20d": 0.1393,
+     "r_on": -0.123,
+     "usd_EURUSD_on": 0.123,
+     "dow_thu": -0.1056,
+     "range_y": -0.0941,
+     "usd_USDJPY_on": 0.083,
+     "r_l1": 0.0714,
+     "r_5d": -0.0599,
+     "usd_EURUSD_5d": 0.0599,
+     "r_1d": 0.0514,
+     "usd_EURUSD_1d": -0.0514,
+     "usd_GBPUSD_on": 0.0134,
+     "r_20d": -0.0011
+    },
+    "direction": {
+     "r_3d": -1.0,
+     "usd_USDJPY_1d": -1.0,
+     "loc_y": -1.0,
+     "usd_GBPUSD_5d": -1.0,
+     "dow_tue": -1.0,
+     "vol_ratio": 1.0,
+     "usd_GBPUSD_1d": -1.0,
+     "usd_USDJPY_5d": 1.0,
+     "dow_wed": 1.0,
+     "dow_fri": -1.0,
+     "pos_20d": 1.0,
+     "r_on": -1.0,
+     "usd_EURUSD_on": 1.0,
+     "dow_thu": -1.0,
+     "range_y": -1.0,
+     "usd_USDJPY_on": 1.0,
+     "r_l1": 1.0,
+     "r_5d": -1.0,
+     "usd_EURUSD_5d": 1.0,
+     "r_1d": 1.0,
+     "usd_EURUSD_1d": -1.0,
+     "usd_GBPUSD_on": 1.0,
+     "r_20d": -1.0
+    },
+    "top": [
+     {
+      "feature": "r_3d",
+      "plain": "move over the last 3 trading days",
+      "weight": -0.2766,
+      "pushes": "down"
+     },
+     {
+      "feature": "usd_USDJPY_1d",
+      "plain": "dollar move on USD/JPY over 1 day",
+      "weight": -0.2575,
+      "pushes": "down"
+     },
+     {
+      "feature": "loc_y",
+      "plain": "where yesterday closed within its own range",
+      "weight": -0.1927,
+      "pushes": "down"
+     },
+     {
+      "feature": "usd_GBPUSD_5d",
+      "plain": "dollar move on GBP/USD over 5 days",
+      "weight": -0.1819,
+      "pushes": "down"
+     },
+     {
+      "feature": "dow_tue",
+      "plain": "it is Tuesday",
+      "weight": -0.1636,
+      "pushes": "down"
+     },
+     {
+      "feature": "vol_ratio",
+      "plain": "this week's ranges vs this month's",
+      "weight": 0.163,
+      "pushes": "up"
+     }
+    ]
+   },
+   {
+    "model_for": "frxGBPUSD",
+    "rows": 502,
+    "train_accuracy": 0.61,
+    "prob_spread_sd": 0.0964,
+    "share_beyond_margin": 0.223,
+    "importance": {
+     "r_3d": -0.3817,
+     "usd_EURUSD_5d": 0.3218,
+     "pos_20d": 0.304,
+     "r_5d": 0.2659,
+     "usd_GBPUSD_5d": -0.2659,
+     "r_20d": -0.2566,
+     "vol_ratio": 0.1974,
+     "usd_USDJPY_1d": -0.151,
+     "range_y": -0.1359,
+     "dow_wed": 0.1165,
+     "loc_y": 0.11,
+     "dow_thu": 0.1099,
+     "usd_EURUSD_on": 0.1069,
+     "usd_EURUSD_1d": -0.0946,
+     "dow_fri": 0.0841,
+     "r_1d": -0.0821,
+     "usd_GBPUSD_1d": 0.0821,
+     "dow_tue": 0.0809,
+     "r_l1": 0.0741,
+     "usd_USDJPY_5d": 0.0665,
+     "r_on": 0.052,
+     "usd_GBPUSD_on": -0.052,
+     "usd_USDJPY_on": -0.0144
+    },
+    "direction": {
+     "r_3d": -1.0,
+     "usd_EURUSD_5d": 1.0,
+     "pos_20d": 1.0,
+     "r_5d": 1.0,
+     "usd_GBPUSD_5d": -1.0,
+     "r_20d": -1.0,
+     "vol_ratio": 1.0,
+     "usd_USDJPY_1d": -1.0,
+     "range_y": -1.0,
+     "dow_wed": 1.0,
+     "loc_y": 1.0,
+     "dow_thu": 1.0,
+     "usd_EURUSD_on": 1.0,
+     "usd_EURUSD_1d": -1.0,
+     "dow_fri": 1.0,
+     "r_1d": -1.0,
+     "usd_GBPUSD_1d": 1.0,
+     "dow_tue": 1.0,
+     "r_l1": 1.0,
+     "usd_USDJPY_5d": 1.0,
+     "r_on": 1.0,
+     "usd_GBPUSD_on": -1.0,
+     "usd_USDJPY_on": -1.0
+    },
+    "top": [
+     {
+      "feature": "r_3d",
+      "plain": "move over the last 3 trading days",
+      "weight": -0.3817,
+      "pushes": "down"
+     },
+     {
+      "feature": "usd_EURUSD_5d",
+      "plain": "dollar move on EUR/USD over 5 days",
+      "weight": 0.3218,
+      "pushes": "up"
+     },
+     {
+      "feature": "pos_20d",
+      "plain": "where price sits in the last month's high-low range (0 = at the low, 1 = at the high)",
+      "weight": 0.304,
+      "pushes": "up"
+     },
+     {
+      "feature": "r_5d",
+      "plain": "move over the last week",
+      "weight": 0.2659,
+      "pushes": "up"
+     },
+     {
+      "feature": "usd_GBPUSD_5d",
+      "plain": "dollar move on GBP/USD over 5 days",
+      "weight": -0.2659,
+      "pushes": "down"
+     },
+     {
+      "feature": "r_20d",
+      "plain": "move over the last month",
+      "weight": -0.2566,
+      "pushes": "down"
+     }
+    ]
+   },
+   {
+    "model_for": "frxUSDJPY",
+    "rows": 502,
+    "train_accuracy": 0.602,
+    "prob_spread_sd": 0.0993,
+    "share_beyond_margin": 0.396,
+    "importance": {
+     "usd_GBPUSD_on": 0.2877,
+     "pos_20d": 0.2721,
+     "dow_thu": -0.2497,
+     "usd_EURUSD_1d": 0.2439,
+     "r_20d": -0.2333,
+     "loc_y": 0.2231,
+     "usd_EURUSD_on": -0.2198,
+     "dow_wed": -0.1593,
+     "usd_GBPUSD_1d": -0.1334,
+     "vol_ratio": -0.1199,
+     "dow_fri": -0.1193,
+     "r_3d": -0.1166,
+     "dow_tue": -0.1053,
+     "usd_EURUSD_5d": -0.0687,
+     "r_on": 0.0399,
+     "usd_USDJPY_on": 0.0399,
+     "r_l1": 0.0398,
+     "range_y": 0.0388,
+     "r_1d": -0.0287,
+     "usd_USDJPY_1d": -0.0287,
+     "r_5d": -0.0284,
+     "usd_USDJPY_5d": -0.0284,
+     "usd_GBPUSD_5d": -0.0128
+    },
+    "direction": {
+     "usd_GBPUSD_on": 1.0,
+     "pos_20d": 1.0,
+     "dow_thu": -1.0,
+     "usd_EURUSD_1d": 1.0,
+     "r_20d": -1.0,
+     "loc_y": 1.0,
+     "usd_EURUSD_on": -1.0,
+     "dow_wed": -1.0,
+     "usd_GBPUSD_1d": -1.0,
+     "vol_ratio": -1.0,
+     "dow_fri": -1.0,
+     "r_3d": -1.0,
+     "dow_tue": -1.0,
+     "usd_EURUSD_5d": -1.0,
+     "r_on": 1.0,
+     "usd_USDJPY_on": 1.0,
+     "r_l1": 1.0,
+     "range_y": 1.0,
+     "r_1d": -1.0,
+     "usd_USDJPY_1d": -1.0,
+     "r_5d": -1.0,
+     "usd_USDJPY_5d": -1.0,
+     "usd_GBPUSD_5d": -1.0
+    },
+    "top": [
+     {
+      "feature": "usd_GBPUSD_on",
+      "plain": "dollar move on GBP/USD since midnight",
+      "weight": 0.2877,
+      "pushes": "up"
+     },
+     {
+      "feature": "pos_20d",
+      "plain": "where price sits in the last month's high-low range (0 = at the low, 1 = at the high)",
+      "weight": 0.2721,
+      "pushes": "up"
+     },
+     {
+      "feature": "dow_thu",
+      "plain": "it is Thursday",
+      "weight": -0.2497,
+      "pushes": "down"
+     },
+     {
+      "feature": "usd_EURUSD_1d",
+      "plain": "dollar move on EUR/USD over 1 day",
+      "weight": 0.2439,
+      "pushes": "up"
+     },
+     {
+      "feature": "r_20d",
+      "plain": "move over the last month",
+      "weight": -0.2333,
+      "pushes": "down"
+     },
+     {
+      "feature": "loc_y",
+      "plain": "where yesterday closed within its own range",
+      "weight": 0.2231,
+      "pushes": "up"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "round": 2,
+  "variant": 1,
+  "params": {
+   "model": "lr",
+   "feats": "own",
+   "pool": "all",
+   "margin": 0.08
+  },
+  "trained_on": "2022-04-27..2024-04-26",
+  "training_rows": 1563,
+  "models": [
+   {
+    "model_for": "all",
+    "rows": 1563,
+    "train_accuracy": 0.562,
+    "prob_spread_sd": 0.075,
+    "share_beyond_margin": 0.319,
+    "importance": {
+     "r_3d": -0.1992,
+     "pair_USDJPY": 0.141,
+     "pos_20d": 0.1112,
+     "pair_EURUSD": -0.1061,
+     "loc_y": 0.0995,
+     "range_y": -0.0983,
+     "dow_thu": -0.0813,
+     "dow_tue": -0.0778,
+     "r_20d": -0.0684,
+     "r_1d": 0.0549,
+     "vol_ratio": 0.0527,
+     "pair_GBPUSD": -0.0349,
+     "dow_wed": 0.0231,
+     "r_5d": 0.0154,
+     "dow_fri": -0.0144,
+     "r_l1": -0.0079,
+     "r_on": 0.0043
+    },
+    "direction": {
+     "r_3d": -1.0,
+     "pair_USDJPY": 1.0,
+     "pos_20d": 1.0,
+     "pair_EURUSD": -1.0,
+     "loc_y": 1.0,
+     "range_y": -1.0,
+     "dow_thu": -1.0,
+     "dow_tue": -1.0,
+     "r_20d": -1.0,
+     "r_1d": 1.0,
+     "vol_ratio": 1.0,
+     "pair_GBPUSD": -1.0,
+     "dow_wed": 1.0,
+     "r_5d": 1.0,
+     "dow_fri": -1.0,
+     "r_l1": -1.0,
+     "r_on": 1.0
+    },
+    "top": [
+     {
+      "feature": "r_3d",
+      "plain": "move over the last 3 trading days",
+      "weight": -0.1992,
+      "pushes": "down"
+     },
+     {
+      "feature": "pair_USDJPY",
+      "plain": "the row is USD/JPY",
+      "weight": 0.141,
+      "pushes": "up"
+     },
+     {
+      "feature": "pos_20d",
+      "plain": "where price sits in the last month's high-low range (0 = at the low, 1 = at the high)",
+      "weight": 0.1112,
+      "pushes": "up"
+     },
+     {
+      "feature": "pair_EURUSD",
+      "plain": "the row is EUR/USD",
+      "weight": -0.1061,
+      "pushes": "down"
+     },
+     {
+      "feature": "loc_y",
+      "plain": "where yesterday closed within its own range",
+      "weight": 0.0995,
+      "pushes": "up"
+     },
+     {
+      "feature": "range_y",
+      "plain": "yesterday's range vs the monthly normal",
+      "weight": -0.0983,
+      "pushes": "down"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "round": 3,
+  "variant": 13,
+  "params": {
+   "model": "gb",
+   "feats": "own",
+   "pool": "all",
+   "margin": 0.08
+  },
+  "trained_on": "2022-10-27..2024-10-26",
+  "training_rows": 1560,
+  "models": [
+   {
+    "model_for": "all",
+    "rows": 1560,
+    "train_accuracy": 0.735,
+    "prob_spread_sd": 0.1098,
+    "share_beyond_margin": 0.515,
+    "importance": {
+     "r_20d": 0.0311,
+     "pos_20d": 0.0202,
+     "vol_ratio": 0.0199,
+     "r_3d": 0.0198,
+     "r_1d": 0.0187,
+     "range_y": 0.0151,
+     "r_on": 0.0136,
+     "r_l1": 0.0109,
+     "r_5d": 0.0106,
+     "pair_USDJPY": 0.0078,
+     "loc_y": 0.0066,
+     "dow_tue": 0.0042,
+     "pair_EURUSD": 0.0029,
+     "dow_thu": 0.0018,
+     "dow_wed": 0.0007,
+     "dow_fri": 0.0005,
+     "pair_GBPUSD": 0.0
+    },
+    "direction": {
+     "r_20d": 1.0,
+     "pos_20d": 1.0,
+     "vol_ratio": -1.0,
+     "r_3d": 1.0,
+     "r_1d": 1.0,
+     "range_y": -1.0,
+     "r_on": 1.0,
+     "r_l1": 1.0,
+     "r_5d": 1.0,
+     "pair_USDJPY": 1.0,
+     "loc_y": 1.0,
+     "dow_tue": -1.0,
+     "pair_EURUSD": -1.0,
+     "dow_thu": -1.0,
+     "dow_wed": 1.0,
+     "dow_fri": 1.0,
+     "pair_GBPUSD": -1.0
+    },
+    "top": [
+     {
+      "feature": "r_20d",
+      "plain": "move over the last month",
+      "weight": 0.0311,
+      "pushes": "up"
+     },
+     {
+      "feature": "pos_20d",
+      "plain": "where price sits in the last month's high-low range (0 = at the low, 1 = at the high)",
+      "weight": 0.0202,
+      "pushes": "up"
+     },
+     {
+      "feature": "vol_ratio",
+      "plain": "this week's ranges vs this month's",
+      "weight": 0.0199,
+      "pushes": "down"
+     },
+     {
+      "feature": "r_3d",
+      "plain": "move over the last 3 trading days",
+      "weight": 0.0198,
+      "pushes": "up"
+     },
+     {
+      "feature": "r_1d",
+      "plain": "move over the last trading day",
+      "weight": 0.0187,
+      "pushes": "up"
+     },
+     {
+      "feature": "range_y",
+      "plain": "yesterday's range vs the monthly normal",
+      "weight": 0.0151,
+      "pushes": "down"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "round": 4,
+  "variant": 8,
+  "params": {
+   "model": "lr",
+   "feats": "peers",
+   "pool": "all",
+   "margin": 0.12
+  },
+  "trained_on": "2023-04-27..2025-04-26",
+  "training_rows": 1554,
+  "models": [
+   {
+    "model_for": "all",
+    "rows": 1554,
+    "train_accuracy": 0.558,
+    "prob_spread_sd": 0.0659,
+    "share_beyond_margin": 0.087,
+    "importance": {
+     "pos_20d": 0.3848,
+     "r_20d": -0.2472,
+     "usd_GBPUSD_5d": 0.1504,
+     "usd_GBPUSD_1d": 0.134,
+     "usd_EURUSD_5d": -0.1227,
+     "usd_EURUSD_on": 0.1207,
+     "r_3d": -0.1133,
+     "r_1d": 0.0992,
+     "usd_EURUSD_1d": -0.0915,
+     "usd_USDJPY_on": -0.0852,
+     "usd_GBPUSD_on": -0.071,
+     "dow_thu": -0.066,
+     "dow_wed": 0.0587,
+     "loc_y": -0.053,
+     "dow_tue": -0.0479,
+     "vol_ratio": -0.0402,
+     "pair_EURUSD": -0.0356,
+     "pair_USDJPY": 0.0344,
+     "range_y": -0.0245,
+     "dow_fri": -0.0137,
+     "r_on": 0.0103,
+     "r_l1": 0.0071,
+     "usd_USDJPY_1d": 0.0045,
+     "r_5d": -0.0022,
+     "pair_GBPUSD": 0.0013,
+     "usd_USDJPY_5d": -0.0007
+    },
+    "direction": {
+     "pos_20d": 1.0,
+     "r_20d": -1.0,
+     "usd_GBPUSD_5d": 1.0,
+     "usd_GBPUSD_1d": 1.0,
+     "usd_EURUSD_5d": -1.0,
+     "usd_EURUSD_on": 1.0,
+     "r_3d": -1.0,
+     "r_1d": 1.0,
+     "usd_EURUSD_1d": -1.0,
+     "usd_USDJPY_on": -1.0,
+     "usd_GBPUSD_on": -1.0,
+     "dow_thu": -1.0,
+     "dow_wed": 1.0,
+     "loc_y": -1.0,
+     "dow_tue": -1.0,
+     "vol_ratio": -1.0,
+     "pair_EURUSD": -1.0,
+     "pair_USDJPY": 1.0,
+     "range_y": -1.0,
+     "dow_fri": -1.0,
+     "r_on": 1.0,
+     "r_l1": 1.0,
+     "usd_USDJPY_1d": 1.0,
+     "r_5d": -1.0,
+     "pair_GBPUSD": 1.0,
+     "usd_USDJPY_5d": -1.0
+    },
+    "top": [
+     {
+      "feature": "pos_20d",
+      "plain": "where price sits in the last month's high-low range (0 = at the low, 1 = at the high)",
+      "weight": 0.3848,
+      "pushes": "up"
+     },
+     {
+      "feature": "r_20d",
+      "plain": "move over the last month",
+      "weight": -0.2472,
+      "pushes": "down"
+     },
+     {
+      "feature": "usd_GBPUSD_5d",
+      "plain": "dollar move on GBP/USD over 5 days",
+      "weight": 0.1504,
+      "pushes": "up"
+     },
+     {
+      "feature": "usd_GBPUSD_1d",
+      "plain": "dollar move on GBP/USD over 1 day",
+      "weight": 0.134,
+      "pushes": "up"
+     },
+     {
+      "feature": "usd_EURUSD_5d",
+      "plain": "dollar move on EUR/USD over 5 days",
+      "weight": -0.1227,
+      "pushes": "down"
+     },
+     {
+      "feature": "usd_EURUSD_on",
+      "plain": "dollar move on EUR/USD since midnight",
+      "weight": 0.1207,
+      "pushes": "up"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "round": 5,
+  "variant": 13,
+  "params": {
+   "model": "gb",
+   "feats": "own",
+   "pool": "all",
+   "margin": 0.08
+  },
+  "trained_on": "2023-10-27..2025-10-26",
+  "training_rows": 1551,
+  "models": [
+   {
+    "model_for": "all",
+    "rows": 1551,
+    "train_accuracy": 0.728,
+    "prob_spread_sd": 0.098,
+    "share_beyond_margin": 0.45,
+    "importance": {
+     "r_1d": 0.0307,
+     "r_5d": 0.0223,
+     "loc_y": 0.0211,
+     "pos_20d": 0.0173,
+     "r_3d": 0.0169,
+     "r_20d": 0.0158,
+     "range_y": 0.0155,
+     "vol_ratio": 0.0101,
+     "r_on": 0.0083,
+     "r_l1": 0.0083,
+     "dow_wed": 0.0019,
+     "dow_thu": 0.0006,
+     "pair_EURUSD": 0.0005,
+     "pair_USDJPY": 0.0004,
+     "dow_tue": 0.0,
+     "dow_fri": 0.0,
+     "pair_GBPUSD": 0.0
+    },
+    "direction": {
+     "r_1d": 1.0,
+     "r_5d": 1.0,
+     "loc_y": -1.0,
+     "pos_20d": 1.0,
+     "r_3d": 1.0,
+     "r_20d": -1.0,
+     "range_y": -1.0,
+     "vol_ratio": -1.0,
+     "r_on": 1.0,
+     "r_l1": 1.0,
+     "dow_wed": 1.0,
+     "dow_thu": -1.0,
+     "pair_EURUSD": -1.0,
+     "pair_USDJPY": 1.0,
+     "dow_tue": -1.0,
+     "dow_fri": -1.0,
+     "pair_GBPUSD": 1.0
+    },
+    "top": [
+     {
+      "feature": "r_1d",
+      "plain": "move over the last trading day",
+      "weight": 0.0307,
+      "pushes": "up"
+     },
+     {
+      "feature": "r_5d",
+      "plain": "move over the last week",
+      "weight": 0.0223,
+      "pushes": "up"
+     },
+     {
+      "feature": "loc_y",
+      "plain": "where yesterday closed within its own range",
+      "weight": 0.0211,
+      "pushes": "down"
+     },
+     {
+      "feature": "pos_20d",
+      "plain": "where price sits in the last month's high-low range (0 = at the low, 1 = at the high)",
+      "weight": 0.0173,
+      "pushes": "up"
+     },
+     {
+      "feature": "r_3d",
+      "plain": "move over the last 3 trading days",
+      "weight": 0.0169,
+      "pushes": "up"
+     },
+     {
+      "feature": "r_20d",
+      "plain": "move over the last month",
+      "weight": 0.0158,
+      "pushes": "down"
+     }
+    ]
+   }
+  ]
+ }
+]
