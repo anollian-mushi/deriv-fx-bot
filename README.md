@@ -167,8 +167,16 @@ How the engine works:
   daily pause, closed days, closes by 20:30 before a weekend or closed day,
   and x200 closed by 20:50.
 - **Delayed signals:** a signal that can't fill at once waits for the first
-  allowed minute. It expires after the strategy's maximum wait (default 12
-  hours) unless the strategy cancels it first.
+  allowed minute. It expires after a fixed wait set by the timeframe (1h: 1
+  hour, 4h: 4 hours, daily: 12 hours), unless the strategy cancels it first.
+  Strategies cannot change the wait.
+- **Pair order:** the order in which pairs are checked rotates from minute
+  to minute (`fxbot.sessions.pair_order`), so no pair always gets first
+  claim on the 2-position limit.
+- **Research kill-switch mode:** `--kill-switch observe` records each time
+  the kill switch would fire, closes the trades, restarts at the starting
+  balance and keeps going, so results cover the whole period. Any firing
+  still counts as a fail. The default (`enforce`) stops the run, as live.
 - **Walk-forward:** `fxbot.backtest.walkforward.rolling_windows()` splits
   pre-holdout data into train/validation windows.
 - **Strategies:** live in `src/fxbot/strategies/`.

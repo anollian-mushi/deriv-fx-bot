@@ -5,7 +5,8 @@ work across pairs):
 1. A new UTC day resets the start-of-day balance (daily loss limit).
 2. Every strategy candle that has closed by this minute is handed to the
    strategy, with only the candles up to and including it.
-3. Per pair with a 1m candle this minute:
+3. Per pair with a 1m candle this minute, in an order that rotates from
+   minute to minute (sessions.pair_order), so no pair is always first:
    a. manual exits, then forced exits (deadline passed: 20:30 before a
       weekend/closed day, 20:50 for x200), at the open, mid price;
    b. TP / SL / stop out checks on this candle (fills.check_bar);
@@ -36,6 +37,7 @@ from pathlib import Path
 
 import numpy as np
 
+from fxbot import sessions
 from fxbot.backtest import fills
 from fxbot.backtest.candles import Bars, load_candles
 from fxbot.risk.limits import AccountState, OrderRequest, RiskLimits, RiskManager
@@ -239,9 +241,10 @@ class Engine:
             if day != st.current_day:
                 st.current_day = day
                 st.day_start_balance = st.balance
-            for sym in self.symbols:
+            order = sessions.pair_order(self.symbols, t)      # no pair is always first
+            for sym in order:
                 self._strategy_step(sym, t)
-            for sym in self.symbols:
+            for sym in order:
                 ep, op, hi, lo, cl = self.m1[sym]
                 i = st.m1_pos[sym]
                 if i >= len(ep) or ep[i] != t:

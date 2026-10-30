@@ -99,3 +99,22 @@ def exit_deadline(open_epoch: int, multiplier: int) -> int:
                 break
         d += dt.timedelta(days=1)
     return deadline
+
+
+def pair_order(symbols: list[str], epoch: int) -> list[str]:
+    """The pairs rotated so a different one is checked first from minute to minute.
+
+    Used wherever pairs compete for the position limits (backtester and live
+    bot), so no pair is always first. A plain minute counter would not do: a
+    day has 1,440 minutes (divisible by 3), so the same pair would come first
+    at every 10:00. The offset is a fixed scramble of the minute number (a
+    32-bit integer mix): repeatable, but with no daily or hourly cycle.
+    """
+    n = len(symbols)
+    if n < 2:
+        return list(symbols)
+    x = (epoch // 60) & 0xFFFFFFFF
+    for _ in range(2):
+        x = ((x ^ (x >> 16)) * 0x45D9F3B) & 0xFFFFFFFF
+    k = (x ^ (x >> 16)) % n
+    return list(symbols[k:]) + list(symbols[:k])

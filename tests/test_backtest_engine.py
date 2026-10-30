@@ -232,3 +232,43 @@ def test_metrics_use_real_balance_across_restarts():
               {"profit": 10.0, "balance_after": 110.0, "commission": 0.02}]   # reset to 100 between
     s = summarise(trades, 100.0)
     assert s["net_profit"] == -40.0 and s["net_return_pct"] == -40.0 and s["final_balance"] == 110.0
+
+
+PAIRS = ["frxEURUSD", "frxGBPUSD", "frxUSDJPY"]
+
+
+def test_pair_order_is_a_rotation_and_fair_over_a_week():
+    from collections import Counter
+    from fxbot.sessions import pair_order
+    firsts = Counter()
+    for t in range(ep(2025, 3, 3), ep(2025, 3, 8), 60):
+        o = pair_order(PAIRS, t)
+        k = PAIRS.index(o[0])
+        assert o == PAIRS[k:] + PAIRS[:k]
+        firsts[o[0]] += 1
+    total = sum(firsts.values())
+    assert all(abs(c / total - 1 / 3) < 0.02 for c in firsts.values())
+
+
+def test_pair_order_changes_at_a_fixed_hour_across_days():
+    from collections import Counter
+    from fxbot.sessions import pair_order
+    for hh in (6, 10, 14):
+        firsts = Counter(pair_order(PAIRS, ep(2025, 3, 3, hh) + d * 86400)[0] for d in range(60))
+        assert len(firsts) == 3 and min(firsts.values()) >= 10
+
+
+def test_position_limit_loser_varies_across_days():
+    # All three pairs signal at 10:00 on several days; trades close by x200's 20:50 deadline.
+    days = [dt.date(2025, 3, 3) + dt.timedelta(days=i) for i in range(28)]
+    days = [d for d in days if d.weekday() < 5]
+    plan = {(s, ep(d.year, d.month, d.day, 10)): [Enter("MULTUP", multiplier=200)]
+            for d in days for s in PAIRS}
+    st = run(Scripted(plan), symbols=tuple(PAIRS), days=28)
+    left_out = set()
+    for d in days:
+        t0 = ep(d.year, d.month, d.day, 10)
+        filled = {t["symbol"] for t in st.trades if t["entry_epoch"] == t0}
+        assert len(filled) == 2
+        left_out |= set(PAIRS) - filled
+    assert left_out == set(PAIRS)
