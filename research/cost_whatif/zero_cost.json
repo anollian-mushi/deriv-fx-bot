@@ -1,0 +1,471 @@
+{
+ "f1_london_breakout": {
+  "net": 52.71,
+  "trades": 1255,
+  "per_pair": {
+   "frxEURUSD": 1.95,
+   "frxGBPUSD": 13.56,
+   "frxUSDJPY": 37.2
+  },
+  "kill_events": 0,
+  "avg_cost_usd": 0.0,
+  "avg_slippage_pips": 1.029,
+  "robustness": {
+   "per_pair": {
+    "frxEURUSD": 1.95,
+    "frxGBPUSD": 13.56,
+    "frxUSDJPY": 37.2
+   },
+   "per_test_window": [
+    9.01,
+    29.01,
+    -3.0,
+    11.2,
+    6.49
+   ],
+   "net_without_top_trades": -35.56,
+   "top_trades_removed": 26,
+   "neighbour_window_returns_pct": [
+    0.5,
+    0.9,
+    7.2,
+    -1.7,
+    32.4,
+    13.4,
+    28.9,
+    32.5,
+    2.8,
+    5.5,
+    -7.9,
+    11.2,
+    37.6,
+    7.1,
+    6.2,
+    -3.9,
+    7.0,
+    -1.8,
+    -9.4,
+    2.1
+   ]
+  },
+  "checks": {
+   "profitable_pairs_2_of_3": true,
+   "net_profit_positive": true,
+   "oos_trades_200_plus": true,
+   "params_5_or_fewer": true,
+   "min_target_3x_cost": true,
+   "no_kill_switch": true,
+   "not_one_pair": true,
+   "not_one_period": true,
+   "not_few_big_trades": false,
+   "nearby_settings_work": true
+  },
+  "passes_without_luck": false
+ },
+ "f2_trend_breakout": {
+  "net": -24.38,
+  "trades": 266,
+  "per_pair": {
+   "frxEURUSD": -15.79,
+   "frxGBPUSD": -12.68,
+   "frxUSDJPY": 4.09
+  },
+  "kill_events": 0,
+  "avg_cost_usd": 0.0,
+  "avg_slippage_pips": 0.876,
+  "checks": {
+   "profitable_pairs_2_of_3": false,
+   "net_profit_positive": false,
+   "oos_trades_200_plus": true,
+   "params_5_or_fewer": true,
+   "min_target_3x_cost": true,
+   "no_kill_switch": true,
+   "not_one_pair": null,
+   "not_one_period": null,
+   "not_few_big_trades": null,
+   "nearby_settings_work": null
+  },
+  "passes_without_luck": false
+ },
+ "f2_trend_breakout_1d": {
+  "net": -18.05,
+  "trades": 130,
+  "per_pair": {
+   "frxEURUSD": -7.23,
+   "frxGBPUSD": -2.79,
+   "frxUSDJPY": -8.03
+  },
+  "kill_events": 0,
+  "avg_cost_usd": 0.0,
+  "avg_slippage_pips": 0.723,
+  "checks": {
+   "profitable_pairs_2_of_3": false,
+   "net_profit_positive": false,
+   "oos_trades_200_plus": false,
+   "params_5_or_fewer": true,
+   "min_target_3x_cost": true,
+   "no_kill_switch": true,
+   "not_one_pair": null,
+   "not_one_period": null,
+   "not_few_big_trades": null,
+   "nearby_settings_work": null
+  },
+  "passes_without_luck": false
+ },
+ "f3_trend_pullback": {
+  "net": 33.48,
+  "trades": 309,
+  "per_pair": {
+   "frxEURUSD": 34.1,
+   "frxGBPUSD": 23.32,
+   "frxUSDJPY": -23.94
+  },
+  "kill_events": 0,
+  "avg_cost_usd": 0.0,
+  "avg_slippage_pips": 0.82,
+  "robustness": {
+   "per_pair": {
+    "frxEURUSD": 34.1,
+    "frxGBPUSD": 23.32,
+    "frxUSDJPY": -23.94
+   },
+   "per_test_window": [
+    13.86,
+    13.26,
+    31.33,
+    -2.1,
+    -22.87
+   ],
+   "net_without_top_trades": -23.34,
+   "top_trades_removed": 7,
+   "neighbour_window_returns_pct": [
+    10.8,
+    10.8,
+    0.7,
+    -0.9,
+    10.6,
+    5.1,
+    -2.1,
+    -1.6,
+    3.3,
+    17.9,
+    45.0,
+    22.5,
+    3.2,
+    -1.9,
+    -24.5,
+    -23.9,
+    -7.3,
+    -17.5,
+    -6.4,
+    -7.3
+   ]
+  },
+  "checks": {
+   "profitable_pairs_2_of_3": true,
+   "net_profit_positive": true,
+   "oos_trades_200_plus": true,
+   "params_5_or_fewer": true,
+   "min_target_3x_cost": true,
+   "no_kill_switch": true,
+   "not_one_pair": false,
+   "not_one_period": true,
+   "not_few_big_trades": false,
+   "nearby_settings_work": true
+  },
+  "passes_without_luck": false
+ },
+ "f3_trend_pullback_1h": {
+  "net": -36.7,
+  "trades": 1248,
+  "per_pair": {
+   "frxEURUSD": -16.27,
+   "frxGBPUSD": -8.51,
+   "frxUSDJPY": -11.92
+  },
+  "kill_events": 0,
+  "avg_cost_usd": 0.0,
+  "avg_slippage_pips": 1.028,
+  "checks": {
+   "profitable_pairs_2_of_3": false,
+   "net_profit_positive": false,
+   "oos_trades_200_plus": true,
+   "params_5_or_fewer": true,
+   "min_target_3x_cost": true,
+   "no_kill_switch": true,
+   "not_one_pair": null,
+   "not_one_period": null,
+   "not_few_big_trades": null,
+   "nearby_settings_work": null
+  },
+  "passes_without_luck": false
+ },
+ "f4_mean_reversion": {
+  "net": -25.81,
+  "trades": 550,
+  "per_pair": {
+   "frxEURUSD": -15.14,
+   "frxGBPUSD": -3.9,
+   "frxUSDJPY": -6.77
+  },
+  "kill_events": 0,
+  "avg_cost_usd": 0.0,
+  "avg_slippage_pips": 0.959,
+  "checks": {
+   "profitable_pairs_2_of_3": false,
+   "net_profit_positive": false,
+   "oos_trades_200_plus": true,
+   "params_5_or_fewer": true,
+   "min_target_3x_cost": true,
+   "no_kill_switch": true,
+   "not_one_pair": null,
+   "not_one_period": null,
+   "not_few_big_trades": null,
+   "nearby_settings_work": null
+  },
+  "passes_without_luck": false
+ },
+ "f4_mean_reversion_4h": {
+  "net": 4.54,
+  "trades": 167,
+  "per_pair": {
+   "frxEURUSD": 1.8,
+   "frxGBPUSD": 5.35,
+   "frxUSDJPY": -2.61
+  },
+  "kill_events": 0,
+  "avg_cost_usd": 0.0,
+  "avg_slippage_pips": 0.811,
+  "checks": {
+   "profitable_pairs_2_of_3": true,
+   "net_profit_positive": true,
+   "oos_trades_200_plus": false,
+   "params_5_or_fewer": true,
+   "min_target_3x_cost": true,
+   "no_kill_switch": true,
+   "not_one_pair": null,
+   "not_one_period": null,
+   "not_few_big_trades": null,
+   "nearby_settings_work": null
+  },
+  "passes_without_luck": false
+ },
+ "f5_session_drift": {
+  "net": -36.6,
+  "trades": 1290,
+  "per_pair": {
+   "frxEURUSD": -16.88,
+   "frxGBPUSD": -19.72,
+   "frxUSDJPY": 0
+  },
+  "kill_events": 0,
+  "avg_cost_usd": 0.0,
+  "avg_slippage_pips": 0.5,
+  "checks": {
+   "profitable_pairs_2_of_3": false,
+   "net_profit_positive": false,
+   "oos_trades_200_plus": true,
+   "params_5_or_fewer": true,
+   "min_target_3x_cost": true,
+   "no_kill_switch": true,
+   "not_one_pair": null,
+   "not_one_period": null,
+   "not_few_big_trades": null,
+   "nearby_settings_work": null
+  },
+  "passes_without_luck": false
+ },
+ "f6_quiet_london_breakout": {
+  "net": 39.1,
+  "trades": 870,
+  "per_pair": {
+   "frxEURUSD": -11.61,
+   "frxGBPUSD": 27.52,
+   "frxUSDJPY": 23.19
+  },
+  "kill_events": 0,
+  "avg_cost_usd": 0.0,
+  "avg_slippage_pips": 1.138,
+  "robustness": {
+   "per_pair": {
+    "frxEURUSD": -11.61,
+    "frxGBPUSD": 27.52,
+    "frxUSDJPY": 23.19
+   },
+   "per_test_window": [
+    -9.74,
+    16.51,
+    10.28,
+    25.77,
+    -3.72
+   ],
+   "net_without_top_trades": -12.31,
+   "top_trades_removed": 18,
+   "neighbour_window_returns_pct": [
+    -6.0,
+    -9.9,
+    -13.2,
+    15.9,
+    21.3,
+    29.4,
+    9.2,
+    4.8,
+    22.6,
+    -3.9,
+    16.2,
+    15.6,
+    -1.1,
+    -2.4,
+    1.9
+   ]
+  },
+  "checks": {
+   "profitable_pairs_2_of_3": true,
+   "net_profit_positive": true,
+   "oos_trades_200_plus": true,
+   "params_5_or_fewer": true,
+   "min_target_3x_cost": true,
+   "no_kill_switch": true,
+   "not_one_pair": true,
+   "not_one_period": true,
+   "not_few_big_trades": false,
+   "nearby_settings_work": true
+  },
+  "passes_without_luck": false
+ },
+ "f7_weekly_momentum_tue": {
+  "net": -14.87,
+  "trades": 260,
+  "per_pair": {
+   "frxEURUSD": 37.07,
+   "frxGBPUSD": -19.26,
+   "frxUSDJPY": -32.68
+  },
+  "kill_events": 0,
+  "avg_cost_usd": 0.0,
+  "avg_slippage_pips": 0.735,
+  "checks": {
+   "profitable_pairs_2_of_3": false,
+   "net_profit_positive": false,
+   "oos_trades_200_plus": true,
+   "params_5_or_fewer": true,
+   "min_target_3x_cost": true,
+   "no_kill_switch": true,
+   "not_one_pair": null,
+   "not_one_period": null,
+   "not_few_big_trades": null,
+   "nearby_settings_work": null
+  },
+  "passes_without_luck": false
+ },
+ "f8_morning_momentum": {
+  "net": 12.4,
+  "trades": 419,
+  "per_pair": {
+   "frxEURUSD": 1.66,
+   "frxGBPUSD": -2.16,
+   "frxUSDJPY": 12.9
+  },
+  "kill_events": 0,
+  "avg_cost_usd": 0.0,
+  "avg_slippage_pips": 0.839,
+  "robustness": {
+   "per_pair": {
+    "frxEURUSD": 1.66,
+    "frxGBPUSD": -2.16,
+    "frxUSDJPY": 12.9
+   },
+   "per_test_window": [
+    -2.35,
+    -4.91,
+    6.93,
+    4.21,
+    8.52
+   ],
+   "net_without_top_trades": -15.38,
+   "top_trades_removed": 9,
+   "neighbour_window_returns_pct": [
+    8.4,
+    -1.9,
+    -1.3,
+    5.0,
+    -1.3,
+    4.2,
+    6.9,
+    -1.3,
+    9.0,
+    0.7,
+    -7.8,
+    21.7,
+    -0.2,
+    -5.1,
+    11.9,
+    -0.0,
+    9.1
+   ]
+  },
+  "checks": {
+   "profitable_pairs_2_of_3": true,
+   "net_profit_positive": true,
+   "oos_trades_200_plus": true,
+   "params_5_or_fewer": true,
+   "min_target_3x_cost": true,
+   "no_kill_switch": true,
+   "not_one_pair": false,
+   "not_one_period": true,
+   "not_few_big_trades": false,
+   "nearby_settings_work": true
+  },
+  "passes_without_luck": false
+ },
+ "f9_eur_gbp_convergence": {
+  "net": 17.4,
+  "trades": 122,
+  "per_pair": {
+   "frxEURUSD": -6.34,
+   "frxGBPUSD": 23.74,
+   "frxUSDJPY": 0
+  },
+  "kill_events": 0,
+  "avg_cost_usd": 0.0,
+  "avg_slippage_pips": 0.639,
+  "checks": {
+   "profitable_pairs_2_of_3": false,
+   "net_profit_positive": true,
+   "oos_trades_200_plus": false,
+   "params_5_or_fewer": true,
+   "min_target_3x_cost": true,
+   "no_kill_switch": true,
+   "not_one_pair": null,
+   "not_one_period": null,
+   "not_few_big_trades": null,
+   "nearby_settings_work": null
+  },
+  "passes_without_luck": false
+ },
+ "f10_shock_day": {
+  "net": -18.84,
+  "trades": 103,
+  "per_pair": {
+   "frxEURUSD": 2.97,
+   "frxGBPUSD": -6.38,
+   "frxUSDJPY": -15.43
+  },
+  "kill_events": 0,
+  "avg_cost_usd": 0.0,
+  "avg_slippage_pips": 0.83,
+  "checks": {
+   "profitable_pairs_2_of_3": false,
+   "net_profit_positive": false,
+   "oos_trades_200_plus": false,
+   "params_5_or_fewer": true,
+   "min_target_3x_cost": true,
+   "no_kill_switch": true,
+   "not_one_pair": null,
+   "not_one_period": null,
+   "not_few_big_trades": null,
+   "nearby_settings_work": null
+  },
+  "passes_without_luck": false
+ }
+}

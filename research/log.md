@@ -415,3 +415,12 @@ holdout; no strategy or rule was changed.
 | 2026-10-30 | Flipped signals before costs: f5, f1, f8, f3-4h (`audit.flipped`) | OOS span | f5 mirrors within 5%; families with asymmetric stops do not, as expected |
 | 2026-10-30 | **Luck-check bug found and fixed**: random runs made 41% (f8) / 30% (f6) fewer trades than the candidate (rate diluted across windows; stops() filters applied twice). Rates now keyed by (window, pair, hour) over tradeable candles | - | Committed luck.json files are stale; f8 and f6 need re-running (f1, f5 for a clean record). Re-runs count as new variants (owner's rule) |
 | 2026-10-30 | Preview of the corrected luck check, 100 random runs (not official; `research/audit/luck_preview_*.json`) | OOS span | f8: random trades 246 → 446, share beaten 50% → 89%, still fails (net −23.46, p99 bar −8.27). f6: random trades 614 → 887, share beaten 41% → 68%, still fails (net −39.94, p99 bar −19.92) |
+
+### Cost what-if (2026-10-30, research only, not variants)
+
+Every Phase 4 family's recorded out-of-sample trades, with its walk-forward
+settings unchanged, were re-priced at other costs per trade: 0.5 to 5.0 pips
+total, a low-cost broker model (1.0 / 1.3 pips plus swap) and no cost at all.
+No strategy, setting, rule or data changed, and the holdout was not read.
+This adds no variants to the running total (still 186). Result: no family
+passes at any cost, including zero. See reports/cost_whatif.md.
