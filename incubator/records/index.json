@@ -1,0 +1,27 @@
+{
+ "candidates": {
+  "a1_ml_day_r5": {
+   "first_scored_day": "2026-11-01",
+   "registered": "2026-10-31",
+   "status": "waiting"
+  },
+  "f1_london_breakout_r5": {
+   "first_scored_day": "2026-11-01",
+   "registered": "2026-10-31",
+   "status": "waiting"
+  },
+  "f3_trend_pullback_4h_r5": {
+   "first_scored_day": "2026-11-01",
+   "registered": "2026-10-31",
+   "status": "waiting"
+  },
+  "f9_eur_gbp_convergence_r5": {
+   "first_scored_day": "2026-11-01",
+   "registered": "2026-10-31",
+   "status": "waiting"
+  }
+ },
+ "data_end": "2026-10-30",
+ "engine_fingerprint": "236ff6272ff3fdebbbdf5de1e0174e6b2c523db8da60dc53519c57c0798657bf",
+ "run_at": "2026-10-31T12:13:31Z"
+}
