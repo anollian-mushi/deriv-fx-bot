@@ -1,0 +1,54 @@
+# Strategy incubator weekly leaderboard: Mondays 07:00 UTC (GitHub may start it late).
+# Writes incubator/leaderboard.md, commits it (this weekly commit also keeps the repository
+# "active", so GitHub does not pause the scheduled jobs) and sends it to Telegram.
+name: Incubator weekly leaderboard
+
+on:
+  schedule:
+    - cron: "0 7 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-commit
+  cancel-in-progress: false
+
+jobs:
+  leaderboard:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Leaderboard to Telegram and commit
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          set -uo pipefail
+          rc=0
+          python scripts/incubator.py weekly || rc=$?
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add incubator/leaderboard.md
+          if ! git diff --cached --quiet; then
+            git commit -q -m "Incubator leaderboard $(date -u +%F)"
+            for try in 1 2 3; do
+              git pull -q --rebase origin main && git push -q origin HEAD:main && break
+              [ "$try" -eq 3 ] && { echo "::error::Push failed"; exit 1; }
+              sleep 10
+            done
+          fi
+          exit $rc

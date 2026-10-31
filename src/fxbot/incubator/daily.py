@@ -87,7 +87,7 @@ def run_daily(root: Path = INCUBATOR, data_dir: Path = fw.DATA, exam_budget_s: f
     t_start = time.time()
     notices, problems = [], []
     end = fw.latest_complete_day(data_dir)
-    index = {"run_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "data_end": end.isoformat() if end else None,
+    index = {"data_end": end.isoformat() if end else None,
              "engine_fingerprint": fw.engine_fingerprint(), "candidates": {}}
     cache: dict = {}
     for c in candidates(root):                      # raises TamperedError if the registry chain broke

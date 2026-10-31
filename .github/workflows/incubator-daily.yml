@@ -1,0 +1,73 @@
+# Strategy incubator, daily forward test (paper only: no Deriv secrets, never trades).
+# Runs right after each daily Deriv collection (and after the collector's backup run).
+# The 10:20 schedule is a fallback in case GitHub does not start the chained run;
+# a run that finds nothing new commits nothing. See incubator/README.md.
+name: Incubator daily forward test
+
+on:
+  workflow_run:
+    workflows: ["Collect Deriv candles"]
+    types: [completed]
+  schedule:
+    - cron: "20 10 * * 2-6"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-commit
+  cancel-in-progress: false
+
+jobs:
+  forward:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Incubator tests (registry intact, forward-only, exam rules)
+        run: python -m pytest -q tests/test_incubator_registry.py tests/test_incubator_forward.py tests/test_data_split.py
+
+      - name: Forward replay, exams, commit records
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          set -uo pipefail
+          rc=0
+          python scripts/incubator.py daily --exam-minutes 25 || rc=$?
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add incubator/
+          if git diff --cached --quiet; then
+            echo "No change in the forward records."
+          else
+            end=$(python -c "import json;print(json.load(open('incubator/records/index.json'))['data_end'])")
+            git commit -q -m "Incubator forward records up to $end"
+            for try in 1 2 3; do
+              git pull -q --rebase origin main && git push -q origin HEAD:main && break
+              [ "$try" -eq 3 ] && { echo "::error::Push failed"; exit 1; }
+              sleep 10
+            done
+          fi
+          exit $rc
+
+      - name: Telegram alert on failure
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          python scripts/incubator.py notify --text "ALERT: the daily forward test failed. Forward records were not (fully) updated today. It tries again with the next collection. If this repeats, see incubator/README.md 'Alerts'. Run: $RUN_URL"

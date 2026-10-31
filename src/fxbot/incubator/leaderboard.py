@@ -94,7 +94,8 @@ def markdown(index: dict, today: dt.date) -> str:
                    f"| {_fmt(m['win_rate_pct'], '.0f')} | {_fmt(m['profit_factor'], '.2f')} "
                    f"| {_fmt(m['avg_win'], '.2f')} | {_fmt(m['avg_loss'], '.2f')} | {' | '.join(pp)} "
                    f"| {_exam_text(r.get('exam'))} |")
-    out += ["", f"Engine fingerprint: `{index.get('engine_fingerprint', '')[:16]}`, last daily run {index.get('run_at')}."]
+    out += ["", f"Engine fingerprint: `{(index.get('engine_fingerprint') or '')[:16]}` (changes if the engine, risk limits "
+            "or cost table change)."]
     return "\n".join(out) + "\n"
 
 

@@ -1,0 +1,41 @@
+# Strategy incubator watchdog, daily 14:10 UTC: Telegram alert if the daily collector or
+# the daily forward test has not succeeded for 2 scheduled days (Tue-Sat; Sunday and
+# Monday never count), or the weekly leaderboard for more than 8 days.
+# Uses only the read-only GITHUB_TOKEN to read run history. See incubator/README.md.
+name: Incubator watchdog
+
+on:
+  schedule:
+    - cron: "10 14 * * *"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  watchdog:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Check recent runs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/incubator.py watchdog
+
+      - name: Telegram alert on failure
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          python scripts/incubator.py notify --text "ALERT: the incubator watchdog itself failed, so stale jobs may go unnoticed. Run: $RUN_URL"
