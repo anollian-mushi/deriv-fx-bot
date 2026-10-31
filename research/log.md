@@ -631,3 +631,20 @@ Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; s
 Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 1593 trades (2.05/day), net -141.9 USD (1.5x: -184.72), gross before costs -35.96 USD (-0.97 pips/trade), avg |move| 26.93 pips vs cost 4.31 pips (ratio 6.26), win rate 37.5%, PF 0.655, kill events 2, per pair net {EURUSD: -44.11 (373), GBPUSD: -38.41 (525), USDJPY: -59.38 (695)}, per window gross [-1.94, 2.46, -16.92, -5.29, -8.83, -5.45]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c6_gross_positive', 'c6_beats_random_median', 'no_kill_switch']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/round_bounce/`.
 
 <!-- prescreen:round_bounce end -->
+
+<!-- prescreen:round_break start -->
+
+### round_break (i4_round_break, 1h): 4 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | round_break v00 | thru=0.05, sl_frac=0.15 | 2905 | -240.37 | 4 | - |
+| 2026-10-31 | round_break v01 | thru=0.05, sl_frac=0.3 | 2370 | -214.5 | 4 | 3 |
+| 2026-10-31 | round_break v02 | thru=0.1, sl_frac=0.15 | 1894 | -141.97 | 2 | 1, 2, 4, 5 |
+| 2026-10-31 | round_break v03 | thru=0.1, sl_frac=0.3 | 1752 | -160.32 | 3 | 6 |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 1088 trades (1.4/day), net -107.6 USD (1.5x: -139.53), gross before costs -28.84 USD (-1.23 pips/trade), avg |move| 24.67 pips vs cost 4.38 pips (ratio 5.64), win rate 28.1%, PF 0.624, kill events 2, per pair net {EURUSD: -43.02 (293), GBPUSD: -28.63 (361), USDJPY: -35.95 (434)}, per window gross [0.33, -8.51, -25.69, 4.88, -0.31, 0.45]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_gross_positive', 'c6_beats_random_median', 'no_kill_switch']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/round_break/`.
+
+<!-- prescreen:round_break end -->
