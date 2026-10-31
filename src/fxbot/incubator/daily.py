@@ -88,7 +88,9 @@ def run_daily(root: Path = INCUBATOR, data_dir: Path = fw.DATA, exam_budget_s: f
     now = now or dt.datetime.now(dt.timezone.utc)
     t_start = time.time()
     notices, problems = [], []
-    end = fw.latest_complete_day(data_dir)
+    # The newest day every candidate's pairs have data for (candidates may trade different pairs).
+    all_symbols = sorted({s for c in candidates(root) for s in c.symbols}) or list(fw.SYMBOLS)
+    end = fw.latest_complete_day(data_dir, all_symbols)
     index = {"data_end": end.isoformat() if end else None,
              "engine_fingerprint": fw.engine_fingerprint(), "candidates": {}}
     cache: dict = {}
