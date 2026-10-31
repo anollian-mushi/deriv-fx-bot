@@ -732,3 +732,20 @@ Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; s
 Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 457 trades (0.59/day), net -28.53 USD (1.5x: -39.08), gross before costs 2.88 USD (0.52 pips/trade), avg |move| 23.61 pips vs cost 3.69 pips (ratio 6.4), win rate 45.3%, PF 0.748, kill events 0, per pair net {EURUSD: -8.44 (163), GBPUSD: -4.56 (159), USDJPY: -15.53 (135)}, per window gross [-6.85, 1.37, 0.6, 3.76, 1.74, 2.25]. Luck (200 coin-toss runs on the candidate's own signals): median net -33.17, share beaten 70%. Checks failed: ['c3_trades_per_day_1_5']. **Pre-screen (check 6): PASS**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/london_reversal/`.
 
 <!-- prescreen:london_reversal end -->
+
+<!-- prescreen:range_exhaustion start -->
+
+### range_exhaustion (i9_range_exhaustion, 1h): 4 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | range_exhaustion v00 | r=1.0, sl_frac=0.25 | 731 | -64.8 | 1 | - |
+| 2026-10-31 | range_exhaustion v01 | r=1.0, sl_frac=0.5 | 716 | -46.98 | 1 | 4, 5 |
+| 2026-10-31 | range_exhaustion v02 | r=1.3, sl_frac=0.25 | 359 | -40.39 | 0 | - |
+| 2026-10-31 | range_exhaustion v03 | r=1.3, sl_frac=0.5 | 350 | -34.69 | 0 | 1, 2, 3, 6 |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 271 trades (0.35/day), net -28.32 USD (1.5x: -34.91), gross before costs -8.83 USD (-1.46 pips/trade), avg |move| 24.96 pips vs cost 3.89 pips (ratio 6.42), win rate 43.2%, PF 0.63, kill events 0, per pair net {EURUSD: -8.12 (82), GBPUSD: -8.97 (99), USDJPY: -11.23 (90)}, per window gross [-7.32, 0.26, -1.46, -1.0, 0.25, 0.45]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_gross_positive', 'c6_beats_random_median']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/range_exhaustion/`.
+
+<!-- prescreen:range_exhaustion end -->
