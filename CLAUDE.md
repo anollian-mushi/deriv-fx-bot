@@ -86,6 +86,10 @@ Never change, loosen or work around these without explicit approval.
   for training, validation, parameter choices or strategy selection. That
   includes Dukascopy. The untouched period is only ever used to score
   registered incubator candidates forward.
+- Live trading reads are allowed and are not research (owner, 31 Oct
+  2026): the live bot (src/fxbot/live/) may read Deriv prices from
+  2026-10-31 onward for trading and indicator warm-up, through its own
+  reader. The research guard (fxbot.data.split, load_m1) stays unchanged.
 - Walk-forward validation is required.
 - A strategy passes only if it is profitable after costs on at least 2 of
   the 3 pairs, with 200+ out-of-sample trades in total.
