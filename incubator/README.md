@@ -145,7 +145,7 @@ could not change the verdict). Files: `research/incubator_prescreen/<idea>/`.
 | ny_cut_breakout (i11) | Trade the first break out of the range pinned before the 10:00 New York option cut, to 20:00 | 1,109 (1.43) | +15 (+1.0) | -54 / -85 | 94% | the direction carries real information, but about 1 pip a trade against 4 of cost; 1.43 trades a day; kill switch once |
 | twap_pullback (i12) | Buy a pullback to the day's average price on an up day (mirror for down) | 357 (0.46) | -13 (-2.2) | -40 / -47 | not run | loses before costs; too few trades |
 | morning_overnight (i13) | A strong move by 08:00 (at least 0.4 of a normal day's range), followed and held to 06:00 the next day | 297 (0.38) | +45 (+7.2) | +17 / +4 | 100% | **passes every check except trades per day**: at 0.38 a day it would need about a year, not 90 days, to reach 100 trades (see below) |
-| ny_cut_overnight (i14) | Idea 11 held to 06:00 the next day | 871 (1.12) | +20 (+1.1) | -44 / -68 | see log | the information is spent by 20:00: the longer hold adds nothing; loses after costs |
+| ny_cut_overnight (i14) | Idea 11 held to 06:00 the next day | 871 (1.12) | +20 (+1.1) | -44 / -68 | 88% | the information is spent by 20:00: the longer hold adds nothing; loses after costs |
 | knn_path (a2) | A nearest-neighbour model that matches the last 24 hours' shape to past days and votes on the direction to 20:00 | 443 (0.57) | +1 (+0.3) | -33 / -43 | not run | about zero before costs; every setting loses after costs; too few trades |
 
 **What the round taught.** At the 1-hour-to-1-day scale these pairs show mild
