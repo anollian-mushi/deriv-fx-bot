@@ -35,7 +35,8 @@ def test_grids_within_budget_and_parameter_limit():
 @pytest.mark.parametrize("name", sorted(F.REGISTRY))
 def test_no_look_ahead(name):
     cls = F.REGISTRY[name]
-    long_history = cls.timeframe == "1d" or cls.family == "f3" or getattr(cls, "needs_peers", False)
+    long_history = (cls.timeframe == "1d" or cls.family == "f3" or getattr(cls, "needs_peers", False)
+                    or cls.family.startswith("i"))        # incubator ideas use a 20-day daily range
     days = 120 if long_history else 45
     symbols = list(R.SYMBOLS) if getattr(cls, "needs_peers", False) else ["frxEURUSD"]
     data = data_for(symbols, cls.timeframe, MON, days, seed=3)

@@ -538,3 +538,79 @@ new research variants; no parameter was chosen for the incubator.
 | 2026-10-31 | f3_trend_pullback_4h_r5 | trend_len=20, pullback=15, sl_atr=2.5, tp_r=2.5 |
 | 2026-10-31 | f9_eur_gbp_convergence_r5 | length=60, z_in=1.5, hold_days=8 |
 | 2026-10-31 | a1_ml_day_r5 | gb, own features, pooled, margin=0.08, models/round5_full.pkl |
+## Incubator ideas (31 Oct 2026): new candidates for the strategy incubator
+
+Owner's rules for a new candidate (31 Oct 2026): a written reason for the edge
+and how it differs from everything Phase 4 and Round 4 tested; expected move per
+trade at least 3x the cost (about 4 pips with slippage); at least 1.5 expected
+trades per trading day across the three pairs; executable by the bot under
+every CLAUDE.md rule; at most 5 settings chosen before testing; a pre-screen on
+data before 2026-10-31 only (walk-forward as in Phase 4, extended by one round:
+Dukascopy to 2026-04-27, then the used-up Deriv holdout to 2026-10-30; six
+rounds, out of sample 2023-10-27 to 2026-10-26) that is profitable before costs
+and beats the median of 200 coin-toss runs on the idea's own signals; the
+engine's look-ahead test; and no two candidates that are minor variants.
+Harness: `src/fxbot/backtest/prescreen.py`, `scripts/prescreen.py`,
+`scripts/prescreen_ml.py`. The untouched period is never read (the data layer
+raises). Every idea pre-screened has its rows below; ideas rejected on reasoning
+alone (never run) are listed first.
+
+### Rejected without a run (fail a check by construction)
+
+| Date | Idea | Why it was not run |
+|---|---|---|
+| 2026-10-31 | Month-end fix flows (rebalancing into the last fix of the month) | about 1 signal day a month: fails the 1.5 trades/day check |
+| 2026-10-31 | Weekend gap fill on Monday morning | at most 3 signals a week, most gaps under 10 pips: fails trades/day |
+| 2026-10-31 | Friday afternoon squaring of the week's move | 3 signals a week at most: fails trades/day |
+| 2026-10-31 | Carry drift (always long USD/JPY, no overnight fee on Multipliers) | the expected drift over a day or two is 1-3 pips, below 3x cost; a spot position earns no interest, only the swap would, and Deriv pays none; re-entry each Monday after the Friday close |
+| 2026-10-31 | Tokyo fix (00:55 UTC) reversal on Japanese settlement days | the reversal is over before the 06:00 entry window opens |
+| 2026-10-31 | US jobs report (NFP) continuation | one signal a month, in the 12:00-13:59 cost-gate hours |
+| 2026-10-31 | Last-half-hour intraday momentum (Elaut et al. 2018) | the predicted interval is 21:30-22:00 UTC, inside Deriv's pause and 12x commission |
+| 2026-10-31 | Beta-residual reversion (a pair's move minus what the other two imply) | a smoother statistic for family 12 (lone mover reverts), which was at the coin-toss median; a minor variant |
+| 2026-10-31 | A 3-day reversal rule | the rule the Round 4 models learned; writing it as a rule is tuning to past data, which the owner ruled out |
+| 2026-10-31 | Asian-range sweep (Judas swing) | the same mechanism as idea 2 (turtle soup) with a different level: a minor variant |
+| 2026-10-31 | EUR/GBP traded directly as a new pair (family 9 with one commission) | family 9 made 0.1 trades a day; one leg instead of two halves the cost but not the frequency |
+| 2026-10-31 | High-volatility crosses (GBP/JPY, EUR/JPY) as new pairs | the cost is a percentage of the position, so the move-to-cost ratio improves only by the volatility ratio (about 1.5x), and the commission on crosses is unmeasured; no idea here is specific to a cross, so no new pair was prepared and no Monday cost sampling scheduled |
+| 2026-10-31 | Flipped versions of any idea that loses (fade instead of follow) | choosing the direction from our own data is the data-mining the owner ruled out with family 5 |
+
+<!-- prescreen:fix_reversal start -->
+
+### fix_reversal (i1_fix_reversal, 1h): 8 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | fix_reversal v00 | k=0.1, hold_hours=2, stop=0.0 | 1843 | -142.7 | 2 | - |
+| 2026-10-31 | fix_reversal v01 | k=0.1, hold_hours=2, stop=0.5 | 1852 | -141.38 | 2 | - |
+| 2026-10-31 | fix_reversal v02 | k=0.1, hold_hours=4, stop=0.0 | 1843 | -129.56 | 2 | 4 |
+| 2026-10-31 | fix_reversal v03 | k=0.1, hold_hours=4, stop=0.5 | 1852 | -133.57 | 2 | - |
+| 2026-10-31 | fix_reversal v04 | k=0.2, hold_hours=2, stop=0.0 | 988 | -89.84 | 1 | - |
+| 2026-10-31 | fix_reversal v05 | k=0.2, hold_hours=2, stop=0.5 | 989 | -84.34 | 1 | - |
+| 2026-10-31 | fix_reversal v06 | k=0.2, hold_hours=4, stop=0.0 | 988 | -90.33 | 1 | 3, 6 |
+| 2026-10-31 | fix_reversal v07 | k=0.2, hold_hours=4, stop=0.5 | 989 | -86.17 | 1 | 1, 2, 5 |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 670 trades (0.86/day), net -57.17 USD (1.5x: -77.91), gross before costs -11.18 USD (-1.4 pips/trade), avg |move| 18.24 pips vs cost 3.59 pips (ratio 5.09), win rate 40.3%, PF 0.606, kill events 1, per pair net {EURUSD: -17.93 (247), GBPUSD: -15.92 (257), USDJPY: -23.32 (166)}, per window gross [-3.12, -4.53, 2.07, -15.19, 12.18, -2.58]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_gross_positive', 'c6_beats_random_median', 'no_kill_switch']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/fix_reversal/`.
+
+<!-- prescreen:fix_reversal end -->
+
+<!-- prescreen:turtle_soup start -->
+
+### turtle_soup (i2_turtle_soup, 1h): 8 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | turtle_soup v00 | sl_frac=0.25, tp_frac=0.5, cutoff=12 | 561 | -39.05 | 0 | 1, 4 |
+| 2026-10-31 | turtle_soup v01 | sl_frac=0.25, tp_frac=0.5, cutoff=17 | 955 | -69.99 | 1 | - |
+| 2026-10-31 | turtle_soup v02 | sl_frac=0.25, tp_frac=0.75, cutoff=12 | 561 | -43.37 | 0 | 3, 5 |
+| 2026-10-31 | turtle_soup v03 | sl_frac=0.25, tp_frac=0.75, cutoff=17 | 952 | -77.37 | 1 | - |
+| 2026-10-31 | turtle_soup v04 | sl_frac=0.5, tp_frac=0.5, cutoff=12 | 558 | -46.67 | 0 | 2, 6 |
+| 2026-10-31 | turtle_soup v05 | sl_frac=0.5, tp_frac=0.5, cutoff=17 | 947 | -83.97 | 1 | - |
+| 2026-10-31 | turtle_soup v06 | sl_frac=0.5, tp_frac=0.75, cutoff=12 | 557 | -57.09 | 1 | - |
+| 2026-10-31 | turtle_soup v07 | sl_frac=0.5, tp_frac=0.75, cutoff=17 | 943 | -94.58 | 1 | - |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 327 trades (0.42/day), net -27.89 USD (1.5x: -35.03), gross before costs 0.23 USD (-0.1 pips/trade), avg |move| 25.67 pips vs cost 4.1 pips (ratio 6.26), win rate 35.8%, PF 0.734, kill events 0, per pair net {EURUSD: -11.98 (112), GBPUSD: -10.19 (137), USDJPY: -5.72 (78)}, per window gross [6.43, 5.06, -0.79, -6.12, 1.19, -5.56]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_beats_random_median']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/turtle_soup/`.
+
+<!-- prescreen:turtle_soup end -->
