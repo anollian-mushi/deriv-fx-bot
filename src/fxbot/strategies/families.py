@@ -1355,8 +1355,52 @@ class TwapPullback(IdeaStrategy):
         return self._stop_pips(symbol, c, self.params["sl_frac"]), None
 
 
+# --------------------------------------------------------------------------- i13
+class MorningOvernight(IdeaStrategy):
+    """Idea 13: a strong London morning, held through New York and Asia (1h, x100 overnight).
+    At the `decision_hour` close, if the move since 00:00 UTC is at least k daily ranges,
+    follow it and exit at 06:00 UTC the next day. Family 8 followed the same move but closed
+    at 20:00; its before-cost edge (about 2 pips) was real but smaller than the cost. A flow
+    big enough to move a pair a third of its daily range by mid-morning takes more than one
+    session to absorb, and the horizon is what sets the pips available against a fixed cost.
+    No signal on Fridays (the weekend close would cut the hold). Optional stop of `stop`
+    daily ranges. Loser: the intraday fader, and the Asian desk reacting a session late.
+    """
+    name = "i13_morning_overnight"
+    family = "i13"
+    timeframe = "1h"
+    defaults = {"decision_hour": 8, "k": 0.3, "stop": 0.0}
+    EXIT_HOUR = 6
+
+    def _move(self, symbol, c):
+        v = today_view(c)
+        if v is None:
+            return None
+        t, d0, ep, end, op, hi, lo, cl = v
+        h = self.params["decision_hour"]
+        if t % HOUR or hour_of(t) != h or len(ep) < h * 0.75 or ((t // DAY) + 3) % 7 == 4:
+            return None
+        a = self._adr(c)
+        return None if a is None else float(cl[-1] - op[0]) / a
+
+    def direction(self, symbol, c):
+        m = self._move(symbol, c)
+        if m is None or abs(m) < self.params["k"]:
+            return None
+        return "MULTUP" if m > 0 else "MULTDOWN"
+
+    def stops(self, symbol, c, direction):
+        if self._move(symbol, c) is None:
+            return None
+        return self._stop_pips(symbol, c, self.params["stop"]), None
+
+    def exit_now(self, symbol, c, position):
+        e = position.entry_epoch
+        return int(c.end[-1]) >= e - e % DAY + DAY + self.EXIT_HOUR * HOUR
+
+
 IDEA_CLASSES = (FixReversal, TurtleSoup, RoundBounce, RoundBreak, AsiaFade, UsDataDrift, NyIntoAsia,
-                LondonReversal, RangeExhaustion, TrendIntraday, NyCutBreakout, TwapPullback)
+                LondonReversal, RangeExhaustion, TrendIntraday, NyCutBreakout, TwapPullback, MorningOvernight)
 
 
 REGISTRY = {cls.name: cls for cls in (LondonBreakout, TrendBreakout, TrendBreakout1d, TrendPullback,
