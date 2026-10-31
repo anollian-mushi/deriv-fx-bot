@@ -523,3 +523,18 @@ Full-period result (2021-10-27 to 2026-04-27, measured cost) is for reference; s
 Stitched OOS (2023-10-27 to 2026-04-26): 92 trades, net -7.72 USD, max drawdown 9.26%, per pair {'frxEURUSD': 2.62, 'frxGBPUSD': 0.67, 'frxUSDJPY': -11.01}, kill events 0, luck check (p99 of 500 random runs = 15.434799999999996): False. Failed checks: ['net_profit_positive', 'oos_trades_200_plus', 'luck_check_beats_p95', 'not_one_pair', 'not_one_period', 'not_few_big_trades', 'nearby_settings_work']. **Candidate: False**. Report: `reports/backtests/phase4_f12_lone_mover_reverts_oos/`, `research/phase4/f12_lone_mover_reverts/`.
 
 <!-- phase4:f12_lone_mover_reverts end -->
+
+## Strategy incubator (2026-10-31)
+
+The 2026-04-28 holdout is used up. Deriv data from 2026-10-31 onward is the
+untouched period, read only by the incubator (`incubator/README.md`).
+Registered on 2026-10-31, frozen at their walk-forward round 5 picks, scored
+from 2026-11-01 under the fixed graduation rule in CLAUDE.md. These are not
+new research variants; no parameter was chosen for the incubator.
+
+| Date | Candidate | Settings |
+|---|---|---|
+| 2026-10-31 | f1_london_breakout_r5 | box_start=0, cutoff=10, sl_frac=1.0, tp_mult=2.5 |
+| 2026-10-31 | f3_trend_pullback_4h_r5 | trend_len=20, pullback=15, sl_atr=2.5, tp_r=2.5 |
+| 2026-10-31 | f9_eur_gbp_convergence_r5 | length=60, z_in=1.5, hold_days=8 |
+| 2026-10-31 | a1_ml_day_r5 | gb, own features, pooled, margin=0.08, models/round5_full.pkl |

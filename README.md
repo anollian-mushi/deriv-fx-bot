@@ -10,8 +10,16 @@ round: **no strategy passed** (234 variants: 10 rule families in rounds 1-3,
 then a machine-learning strategy and 2 original families in round 4; see
 [reports/strategy_research.md](reports/strategy_research.md)). An audit of
 the pipeline ([reports/audit_phase4.md](reports/audit_phase4.md)) confirmed
-it can see an edge and charges costs once. The holdout is still untouched.
+it can see an edge and charges costs once. The 2026-04-28 holdout is now
+used up; Deriv data from **2026-10-31** onward is the new untouched period.
 No live bot.
+
+**Strategy incubator (from 31 Oct 2026):** four frozen candidates (the
+Phase 4 near-misses f1, f3-4h, f9 and the Round 4 ML model) are replayed
+every weekday on new Deriv data with pretend money, on GitHub Actions, with
+a weekly Telegram leaderboard and alerts. Paper only: it never trades. Manual
+for running it alone: [incubator/README.md](incubator/README.md). Latest
+numbers: [incubator/leaderboard.md](incubator/leaderboard.md).
 
 - Project rules, risk limits and research standards: [CLAUDE.md](CLAUDE.md)
 - Before trading real money: [docs/go_live_checklist.md](docs/go_live_checklist.md)
@@ -33,7 +41,7 @@ logged. See [.env.example](.env.example) for the full list.
 | `DERIV_PAT` | account access | Personal Access Token with the `trade` scope |
 | `DERIV_ACCOUNT_ID` | optional | if empty, the demo account is picked automatically |
 | `DERIV_MODE` | | `demo` (default) or `real` |
-| `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | alerts (later) | |
+| `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | alerts | also GitHub Secrets for the incubator jobs ([incubator/README.md](incubator/README.md#one-time-setup-telegram)) |
 | `TRADING_ENABLED` | | `false` (default). The bot only places orders when `true` |
 
 ## Setup: cloud sessions (claude.ai/code)
@@ -252,3 +260,5 @@ nothing in them is a strategy. Results go to `research/audit/`; the report is
   strategy variant tried
 - `reports/` backtest and performance reports
 - `reviews/` trade exports for reviews
+- `incubator/` strategy incubator: frozen candidates, forward records,
+  leaderboard ([manual](incubator/README.md))
