@@ -1,0 +1,43 @@
+{
+ "closed_days": [],
+ "days": {
+  "2026-04-28": {
+   "candles": 1440,
+   "dropped_duplicates": 0,
+   "dropped_invalid": 0,
+   "dropped_unaligned": 0,
+   "expected": 1440,
+   "gaps": [],
+   "notes": [],
+   "outside_session": 0,
+   "small_missing": 0
+  },
+  "2026-04-29": {
+   "candles": 1440,
+   "dropped_duplicates": 0,
+   "dropped_invalid": 0,
+   "dropped_unaligned": 0,
+   "expected": 1440,
+   "gaps": [],
+   "notes": [],
+   "outside_session": 0,
+   "small_missing": 0
+  },
+  "2026-04-30": {
+   "candles": 1440,
+   "dropped_duplicates": 0,
+   "dropped_invalid": 0,
+   "dropped_unaligned": 0,
+   "expected": 1440,
+   "gaps": [],
+   "notes": [],
+   "outside_session": 0,
+   "small_missing": 0
+  }
+ },
+ "granularity": "1m",
+ "history_start": "2026-04-28",
+ "skipped_days": {},
+ "source": "deriv",
+ "symbol": "frxEURJPY"
+}
