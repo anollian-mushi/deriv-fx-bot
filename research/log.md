@@ -787,3 +787,20 @@ Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; s
 Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 1109 trades (1.43/day), net -54.09 USD (1.5x: -85.1), gross before costs 14.87 USD (1.02 pips/trade), avg |move| 16.65 pips vs cost 3.85 pips (ratio 4.32), win rate 39.3%, PF 0.699, kill events 1, per pair net {EURUSD: -21.05 (356), GBPUSD: -13.28 (389), USDJPY: -19.76 (364)}, per window gross [-1.41, 3.62, 1.67, 14.24, -7.76, 4.51]. Luck (200 coin-toss runs on the candidate's own signals): median net -75.7, share beaten 94%. Checks failed: ['c3_trades_per_day_1_5', 'no_kill_switch']. **Pre-screen (check 6): PASS**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/ny_cut_breakout/`.
 
 <!-- prescreen:ny_cut_breakout end -->
+
+<!-- prescreen:twap_pullback start -->
+
+### twap_pullback (i12_twap_pullback, 1h): 4 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | twap_pullback v00 | k=0.3, sl_frac=0.2 | 1385 | -95.76 | 1 | - |
+| 2026-10-31 | twap_pullback v01 | k=0.3, sl_frac=0.4 | 1230 | -81.5 | 1 | 6 |
+| 2026-10-31 | twap_pullback v02 | k=0.5, sl_frac=0.2 | 462 | -24.9 | 0 | 3, 5 |
+| 2026-10-31 | twap_pullback v03 | k=0.5, sl_frac=0.4 | 431 | -24.7 | 0 | 1, 2, 4 |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 357 trades (0.46/day), net -40.3 USD (1.5x: -47.48), gross before costs -12.82 USD (-2.15 pips/trade), avg |move| 25.73 pips vs cost 4.25 pips (ratio 6.05), win rate 35.6%, PF 0.625, kill events 0, per pair net {EURUSD: -12.67 (100), GBPUSD: -6.87 (106), USDJPY: -20.76 (151)}, per window gross [12.35, -5.31, -10.8, -4.59, 1.35, -5.82]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_gross_positive', 'c6_beats_random_median']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/twap_pullback/`.
+
+<!-- prescreen:twap_pullback end -->
