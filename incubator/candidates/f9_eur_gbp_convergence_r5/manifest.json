@@ -1,0 +1,36 @@
+{
+ "class": "EurGbpConvergence",
+ "files": {
+  "code/__init__.py": "a47882cd49293bd29d43097da092e721fe08b07580e1c08ff79fa900f0b47b40",
+  "code/families.py": "49903ab4484fa438dbc932754a1017b3a407db2c9fa7cf8bd68a4395b104f987",
+  "code/ml_day.py": "7b2bf9fffce333455df98503a01a3ef72535974d367ad46bdb2811423243c041"
+ },
+ "first_scored_day": "2026-11-01",
+ "id": "f9_eur_gbp_convergence_r5",
+ "legs": {
+  "frxEURUSD": 1,
+  "frxGBPUSD": -1
+ },
+ "model_source": {},
+ "module": "families",
+ "notes": "Phase 4 near-miss, family 9 (EUR vs GBP convergence, daily, two hedged legs), frozen at its round 5 walk-forward pick.",
+ "origin": {
+  "pick": "walk-forward round 5 (train 2023-10-27..2025-10-26)",
+  "research": "research/phase4/f9_eur_gbp_convergence"
+ },
+ "params": {
+  "hold_days": 8,
+  "length": 60,
+  "z_in": 1.5
+ },
+ "registered": "2026-10-31",
+ "registered_at": "2026-10-31T12:08:40Z",
+ "source_commit": "be853423593471a2fa3ea41a81159737b166b340",
+ "source_sha256": {
+  "families.py": "49903ab4484fa438dbc932754a1017b3a407db2c9fa7cf8bd68a4395b104f987",
+  "ml_day.py": "209ebde218ed48bd2032685915f7c12e52e37fa0e565741ba5f8dea819eb6c47"
+ },
+ "strategy_name": "f9_eur_gbp_convergence",
+ "timeframe": "1d",
+ "warmup_days": 120
+}

@@ -1,0 +1,34 @@
+{
+ "class": "LondonBreakout",
+ "files": {
+  "code/__init__.py": "a83331c7a5772e8ae9d7b538e90babf088f59c5656f9c40e72f7194b6aa51a00",
+  "code/families.py": "49903ab4484fa438dbc932754a1017b3a407db2c9fa7cf8bd68a4395b104f987",
+  "code/ml_day.py": "7b2bf9fffce333455df98503a01a3ef72535974d367ad46bdb2811423243c041"
+ },
+ "first_scored_day": "2026-11-01",
+ "id": "f1_london_breakout_r5",
+ "legs": null,
+ "model_source": {},
+ "module": "families",
+ "notes": "Phase 4 near-miss, family 1 (London breakout, 1h), frozen at its round 5 walk-forward pick.",
+ "origin": {
+  "pick": "walk-forward round 5 (train 2023-10-27..2025-10-26)",
+  "research": "research/phase4/f1_london_breakout"
+ },
+ "params": {
+  "box_start": 0,
+  "cutoff": 10,
+  "sl_frac": 1.0,
+  "tp_mult": 2.5
+ },
+ "registered": "2026-10-31",
+ "registered_at": "2026-10-31T12:08:39Z",
+ "source_commit": "be853423593471a2fa3ea41a81159737b166b340",
+ "source_sha256": {
+  "families.py": "49903ab4484fa438dbc932754a1017b3a407db2c9fa7cf8bd68a4395b104f987",
+  "ml_day.py": "209ebde218ed48bd2032685915f7c12e52e37fa0e565741ba5f8dea819eb6c47"
+ },
+ "strategy_name": "f1_london_breakout",
+ "timeframe": "1h",
+ "warmup_days": 120
+}

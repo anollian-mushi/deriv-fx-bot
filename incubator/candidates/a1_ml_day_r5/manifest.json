@@ -1,0 +1,38 @@
+{
+ "class": "MLDay",
+ "files": {
+  "code/__init__.py": "b39bec274d5560726848b63fb020b073724680f30504fe6bdcd9b0f2e53c9569",
+  "code/families.py": "49903ab4484fa438dbc932754a1017b3a407db2c9fa7cf8bd68a4395b104f987",
+  "code/ml_day.py": "7b2bf9fffce333455df98503a01a3ef72535974d367ad46bdb2811423243c041",
+  "models/round5_full.pkl": "ebb6f397c6e24f2dc07295a7ef6cda8706915f3c3ee57bec18a401296739109a"
+ },
+ "first_scored_day": "2026-11-01",
+ "id": "a1_ml_day_r5",
+ "legs": null,
+ "model_source": {
+  "round5_full.pkl": "research/phase4/a1_ml_day/models/round5_full.pkl"
+ },
+ "module": "ml_day",
+ "notes": "Round 4 track A ML day strategy, frozen at its round 5 model and settings, never retrained.",
+ "origin": {
+  "pick": "walk-forward round 5 (train 2023-10-27..2025-10-26, inner validation 2025-04-27..2025-10-26)",
+  "research": "research/phase4/a1_ml_day"
+ },
+ "params": {
+  "feats": "own",
+  "margin": 0.08,
+  "model": "gb",
+  "model_file": "models/round5_full.pkl",
+  "pool": "all"
+ },
+ "registered": "2026-10-31",
+ "registered_at": "2026-10-31T12:08:40Z",
+ "source_commit": "be853423593471a2fa3ea41a81159737b166b340",
+ "source_sha256": {
+  "families.py": "49903ab4484fa438dbc932754a1017b3a407db2c9fa7cf8bd68a4395b104f987",
+  "ml_day.py": "209ebde218ed48bd2032685915f7c12e52e37fa0e565741ba5f8dea819eb6c47"
+ },
+ "strategy_name": "a1_ml_day",
+ "timeframe": "1h",
+ "warmup_days": 60
+}

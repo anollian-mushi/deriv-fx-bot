@@ -1,0 +1,34 @@
+{
+ "class": "TrendPullback",
+ "files": {
+  "code/__init__.py": "e5342396a016e84fea3ea3b9cb8009863d83ad6bb842c0cda4785ef92e9b780a",
+  "code/families.py": "49903ab4484fa438dbc932754a1017b3a407db2c9fa7cf8bd68a4395b104f987",
+  "code/ml_day.py": "7b2bf9fffce333455df98503a01a3ef72535974d367ad46bdb2811423243c041"
+ },
+ "first_scored_day": "2026-11-01",
+ "id": "f3_trend_pullback_4h_r5",
+ "legs": null,
+ "model_source": {},
+ "module": "families",
+ "notes": "Phase 4 near-miss, family 3 (trend pullback, 4h), frozen at its round 5 walk-forward pick.",
+ "origin": {
+  "pick": "walk-forward round 5 (train 2023-10-27..2025-10-26)",
+  "research": "research/phase4/f3_trend_pullback"
+ },
+ "params": {
+  "pullback": 15,
+  "sl_atr": 2.5,
+  "tp_r": 2.5,
+  "trend_len": 20
+ },
+ "registered": "2026-10-31",
+ "registered_at": "2026-10-31T12:08:40Z",
+ "source_commit": "be853423593471a2fa3ea41a81159737b166b340",
+ "source_sha256": {
+  "families.py": "49903ab4484fa438dbc932754a1017b3a407db2c9fa7cf8bd68a4395b104f987",
+  "ml_day.py": "209ebde218ed48bd2032685915f7c12e52e37fa0e565741ba5f8dea819eb6c47"
+ },
+ "strategy_name": "f3_trend_pullback",
+ "timeframe": "4h",
+ "warmup_days": 120
+}

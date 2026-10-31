@@ -1,0 +1,34 @@
+[
+ {
+  "id": "f1_london_breakout_r5",
+  "registered": "2026-10-31",
+  "fingerprint": "e2188755c22739276c7e52586249343131e7ce0df79eea944923959dbe5f8ea4",
+  "seq": 0,
+  "prev": "",
+  "entry_hash": "2a73b0a39bbaf286e2691daf46cc71ae057dd8f59d772b1a7ef4c005017c03dd"
+ },
+ {
+  "id": "f3_trend_pullback_4h_r5",
+  "registered": "2026-10-31",
+  "fingerprint": "bd17ae2181ec6f5d41762810927c144ae56871092f6d71434dac628afbffbc5a",
+  "seq": 1,
+  "prev": "2a73b0a39bbaf286e2691daf46cc71ae057dd8f59d772b1a7ef4c005017c03dd",
+  "entry_hash": "bcc2ee1ad2fbebf426715e6c1c0668ad8b0eb871b3c8bfadeeda696a49d677aa"
+ },
+ {
+  "id": "f9_eur_gbp_convergence_r5",
+  "registered": "2026-10-31",
+  "fingerprint": "bdb1434fa3c7f5f13f60002c5cab74452c67b3b37c5c94fc07b6bb9fd7f067a8",
+  "seq": 2,
+  "prev": "bcc2ee1ad2fbebf426715e6c1c0668ad8b0eb871b3c8bfadeeda696a49d677aa",
+  "entry_hash": "cb3c6ec6e12fab4b7520a5c97b0be543d1647388e5d0ca942b5e5bd144f33deb"
+ },
+ {
+  "id": "a1_ml_day_r5",
+  "registered": "2026-10-31",
+  "fingerprint": "0ea5db6d8e8b26d484f3fd6936f594e24239659f0b3857f5a68b26111bf2a840",
+  "seq": 3,
+  "prev": "cb3c6ec6e12fab4b7520a5c97b0be543d1647388e5d0ca942b5e5bd144f33deb",
+  "entry_hash": "138f266e9f95d73ee5a0e53e676fa820dfacc8f5e9b6c0cfd4f85661caa1b8c7"
+ }
+]
