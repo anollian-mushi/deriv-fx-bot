@@ -538,6 +538,7 @@ new research variants; no parameter was chosen for the incubator.
 | 2026-10-31 | f3_trend_pullback_4h_r5 | trend_len=20, pullback=15, sl_atr=2.5, tp_r=2.5 |
 | 2026-10-31 | f9_eur_gbp_convergence_r5 | length=60, z_in=1.5, hold_days=8 |
 | 2026-10-31 | a1_ml_day_r5 | gb, own features, pooled, margin=0.08, models/round5_full.pkl |
+| 2026-10-31 | i13_morning_overnight_v1 | decision_hour=8, k=0.4, stop=0.0 (pre-screen pick; registered by the owner's approved exception to the 1.5 trades/day check, graduation rules unchanged) |
 ## Incubator ideas (31 Oct 2026): new candidates for the strategy incubator
 
 Owner's rules for a new candidate (31 Oct 2026): a written reason for the edge
@@ -864,10 +865,12 @@ Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 871 trades (1.12/day)
 
 <!-- prescreen:ny_cut_overnight end -->
 
-### Pre-screen round of 31 Oct 2026: summary (none registered)
+### Pre-screen round of 31 Oct 2026: summary (one registered by exception)
 
 Fifteen ideas pre-screened (rows above), thirteen rejected on reasoning. No idea
-passes all eight owner checks; none was registered, N stays at 4. Columns: OOS
+passes all eight owner checks. One (morning_overnight) was registered as
+`i13_morning_overnight_v1` on the owner's approval of an exception to the
+1.5 trades/day check (31 Oct 2026); N is now 5. Columns: OOS
 2023-10-27 to 2026-10-26 (776 trading days), gross = before costs (pips/trade in
 brackets), net at the measured commission / at 1.5x, luck = share of 200
 coin-toss runs beaten (not run when the gross result was negative or the

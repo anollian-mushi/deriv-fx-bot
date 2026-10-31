@@ -14,18 +14,21 @@ it can see an edge and charges costs once. The 2026-04-28 holdout is now
 used up; Deriv data from **2026-10-31** onward is the new untouched period.
 No live bot.
 
-**Strategy incubator (from 31 Oct 2026):** four frozen candidates (the
-Phase 4 near-misses f1, f3-4h, f9 and the Round 4 ML model) are replayed
+**Strategy incubator (from 31 Oct 2026):** five frozen candidates (the
+Phase 4 near-misses f1, f3-4h, f9, the Round 4 ML model, and the 31 Oct
+near miss below) are replayed
 every weekday on new Deriv data with pretend money, on GitHub Actions, with
 a weekly Telegram leaderboard and alerts. Paper only: it never trades. Manual
 for running it alone: [incubator/README.md](incubator/README.md). Latest
 numbers: [incubator/leaderboard.md](incubator/leaderboard.md).
 On 31 Oct 2026 fifteen new ideas (fourteen rule-based, one nearest-neighbour
 model) were pre-screened for the incubator under the owner's eight checks;
-none passed all of them and none was registered. The one near miss (a strong
-morning move held overnight: profitable after costs, beat every coin-toss
-run, but only 0.38 trades a day) is left to the owner's decision in
-[incubator/README.md](incubator/README.md#new-ideas-pre-screened-on-31-oct-2026-none-registered).
+none passed all of them. The one near miss (a strong morning move held
+overnight: profitable after costs, beat every coin-toss run, but only 0.38
+trades a day) was registered as `i13_morning_overnight_v1` by the owner's
+approved exception to the frequency check; it needs about a year to reach
+100 forward trades. Details in
+[incubator/README.md](incubator/README.md#new-ideas-pre-screened-on-31-oct-2026-one-registered-by-exception).
 
 - Project rules, risk limits and research standards: [CLAUDE.md](CLAUDE.md)
 - Before trading real money: [docs/go_live_checklist.md](docs/go_live_checklist.md)

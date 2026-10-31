@@ -13,7 +13,7 @@ message.
 2. [One-time setup: Telegram](#one-time-setup-telegram)
 3. [What runs when](#what-runs-when)
 4. [The candidates](#the-candidates)
-4b. [New ideas pre-screened on 31 Oct 2026: none registered](#new-ideas-pre-screened-on-31-oct-2026-none-registered)
+4b. [New ideas pre-screened on 31 Oct 2026: one registered by exception](#new-ideas-pre-screened-on-31-oct-2026-one-registered-by-exception)
 5. [Reading the leaderboard](#reading-the-leaderboard)
 6. [The graduation rule](#the-graduation-rule)
 7. [Alerts: what they mean and what to do](#alerts-what-they-mean-and-what-to-do)
@@ -45,8 +45,9 @@ message.
 - If a candidate meets the [graduation rule](#the-graduation-rule), you get a
   Telegram message saying what to do next. Nothing else happens.
 
-"No candidate graduates" is a normal and useful result. All four starting
-candidates narrowly failed the earlier research, so expect most or all of
+"No candidate graduates" is a normal and useful result. The four starting
+candidates narrowly failed the earlier research, and the fifth was registered
+by an approved exception to the frequency check, so expect most or all of
 them to fail here too.
 
 ## One-time setup: Telegram
@@ -91,9 +92,10 @@ takes about 2-5 minutes. An exam adds up to 25 minutes a day while it runs.
 
 ## The candidates
 
-All four were registered on 2026-10-31 and are scored from 2026-11-01. Each
-is frozen exactly as the research left it: the settings it would have used
-next, with the model file unchanged.
+All five were registered on 2026-10-31 and are scored from 2026-11-01. The
+first four are frozen exactly as the research left them: the settings they
+would have used next, with the model file unchanged. The fifth is frozen with
+the settings its pre-screen picked.
 
 | Candidate | Idea, in plain words | Candles |
 |---|---|---|
@@ -101,8 +103,9 @@ next, with the model file unchanged.
 | `f3_trend_pullback_4h_r5` | In a clear trend, wait for a short dip against it, then trade with the trend. | 4h |
 | `f9_eur_gbp_convergence_r5` | When EUR and GBP drift unusually far apart, buy the cheap one and sell the dear one (two trades at once), held up to 8 days. | daily |
 | `a1_ml_day_r5` | A machine-learning model, trained only on old data and never retrained, guesses each morning whether a pair rises by evening. It trades only when fairly sure. | 1h |
+| `i13_morning_overnight_v1` | When a pair has already moved at least 0.4 of a normal day's range by 08:00 UTC, follow that move and hold it until 06:00 the next morning (no stop beyond Deriv's stop out; no new trades on Fridays). Registered 31 Oct 2026 by the owner's approved exception to the 1.5-trades-a-day check: it signals about 0.38 times a day, so it needs **about a year, not 90 days, to reach the 100 forward trades** the graduation rule asks for. Its pre-screen gain leaned on USD/JPY (+13 USD of +17; GBP/USD lost), so watch the per-pair line. | 1h |
 
-## New ideas pre-screened on 31 Oct 2026: none registered
+## New ideas pre-screened on 31 Oct 2026: one registered by exception
 
 On 31 Oct 2026 the owner asked for new candidate ideas, each to pass eight
 checks before registration: a written reason for the edge and how it differs
@@ -115,12 +118,13 @@ at most 5 settings chosen before testing; a pre-screen on data before
 and beats the median of 200 coin-toss runs on the idea's own signals; the
 engine's look-ahead test; and no two candidates that are minor variants.
 
-**Result: fifteen ideas were pre-screened and none passes all eight checks,
-so no new candidate was registered.** Thirteen more were rejected on
-reasoning alone (too rare to reach 1.5 trades a day, outside the entry
-window, or a minor variant of something already tested); they are listed in
-`research/log.md`. N stays at 4 for the graduation rule. "No new candidate"
-is a normal result under these rules, and the one near miss is below.
+**Result: fifteen ideas were pre-screened and none passes all eight checks.**
+Thirteen more were rejected on reasoning alone (too rare to reach 1.5 trades
+a day, outside the entry window, or a minor variant of something already
+tested); they are listed in `research/log.md`. One idea, the near miss
+described below, was then registered on the owner's explicit approval of an
+exception to the frequency check (31 Oct 2026); every graduation rule stays
+unchanged. N is now 5 for the graduation rule.
 
 How to read the table: *gross* is the profit before any cost (the cost added
 back), in USD from a 100 USD start over the 36 months, with the average pips
@@ -144,7 +148,7 @@ could not change the verdict). Files: `research/incubator_prescreen/<idea>/`.
 | trend_intraday (i10) | Trade the 5-10 day trend during the day session only | 1,227 (1.58) | -54 (-2.3) | -134 / -164 | not run | loses before costs; kill switch twice |
 | ny_cut_breakout (i11) | Trade the first break out of the range pinned before the 10:00 New York option cut, to 20:00 | 1,109 (1.43) | +15 (+1.0) | -54 / -85 | 94% | the direction carries real information, but about 1 pip a trade against 4 of cost; 1.43 trades a day; kill switch once |
 | twap_pullback (i12) | Buy a pullback to the day's average price on an up day (mirror for down) | 357 (0.46) | -13 (-2.2) | -40 / -47 | not run | loses before costs; too few trades |
-| morning_overnight (i13) | A strong move by 08:00 (at least 0.4 of a normal day's range), followed and held to 06:00 the next day | 297 (0.38) | +45 (+7.2) | +17 / +4 | 100% | **passes every check except trades per day**: at 0.38 a day it would need about a year, not 90 days, to reach 100 trades (see below) |
+| morning_overnight (i13) | A strong move by 08:00 (at least 0.4 of a normal day's range), followed and held to 06:00 the next day | 297 (0.38) | +45 (+7.2) | +17 / +4 | 100% | **passes every check except trades per day**: at 0.38 a day it needs about a year, not 90 days, to reach 100 trades. **Registered as `i13_morning_overnight_v1` by the owner's approved exception** (see below) |
 | ny_cut_overnight (i14) | Idea 11 held to 06:00 the next day | 871 (1.12) | +20 (+1.1) | -44 / -68 | 88% | the information is spent by 20:00: the longer hold adds nothing; loses after costs |
 | knn_path (a2) | A nearest-neighbour model that matches the last 24 hours' shape to past days and votes on the direction to 20:00 | 443 (0.57) | +1 (+0.3) | -33 / -43 | not run | about zero before costs; every setting loses after costs; too few trades |
 
@@ -158,7 +162,7 @@ That is the conflict with the 1.5-trades-a-day rule: the signals that are
 frequent enough are worth less than the 4 pips of cost, and the one signal
 worth more than the cost fires about twice a week.
 
-**A decision for the owner (nothing was registered).** `i13_morning_overnight`
+**The exception, approved by the owner on 31 Oct 2026.** `i13_morning_overnight`
 (settings: decision hour 08:00, move at least 0.4 of the 20-day average daily
 range, no stop, exit 06:00 the next day, no Friday signals) is the only idea
 of the whole project so far that is profitable after costs out of sample
@@ -167,17 +171,14 @@ switch, profit before costs in 5 of 6 half-years, beat all 200 coin-toss
 runs; per pair EUR/USD +12, GBP/USD -8, USD/JPY +13). Its weaknesses: only
 0.38 trades a day, so the 100-trade bar would take about a year; the gain
 leans on USD/JPY; the neighbouring threshold (0.25 of a day's range) lost
-money, so the edge sits on rare, large moves only. Registering it would be a
-deliberate exception to the frequency check and would raise N to 5 for every
-candidate. The code is committed (`src/fxbot/strategies/families.py`,
-class `MorningOvernight`), so it can be registered in one command if you
-decide so:
-
-```
-python scripts/incubator.py register --id i13_morning_overnight_v1 --module families \
-    --class MorningOvernight --params '{"decision_hour": 8, "k": 0.4, "stop": 0.0}' \
-    --notes "pre-screen 31 Oct 2026: passes all checks except 1.5 trades/day (0.38)"
-```
+money, so the edge sits on rare, large moves only. The owner approved the
+exception to the frequency check and it was registered the same day as
+`i13_morning_overnight_v1`, with exactly the pre-screened settings and every
+graduation rule unchanged (so it still needs 90 days *and* 100 closed trades,
+which at its rate means about a year of forward data, and the luck check at
+N = 5 or more). This raised N from 4 to 5 for every candidate. Two things to
+watch on the leaderboard: whether USD/JPY alone carries its result, as in the
+pre-screen, and whether the trade count grows at roughly 8 a month.
 
 **Running the pre-screen on a new idea** (for a developer or an AI): add the
 strategy class to `src/fxbot/strategies/families.py`, declare its grid (at
@@ -238,13 +239,13 @@ must hold on forward data (days after registration):
    these coin-toss runs:
    - It must beat the **(1 - 0.05/N)** share of them. **N** counts every
      candidate ever registered plus every exam attempt ever started,
-     including the current one. With 4 candidates the first exam has N = 5,
-     so the candidate must beat 99% of the coin-toss runs.
+     including the current one. With 5 candidates the first exam has N = 6,
+     so the candidate must beat 99.2% of the coin-toss runs.
    - N only ever grows. Every new candidate and every retake makes the bar
      a little higher. The more ideas you test, the more likely one passes
      by pure luck, and the growing bar corrects for that.
    - Number of coin-toss runs: at least 2,000, or 20 × N / 0.05 if that is
-     more (2,400 at N = 6). That leaves at least 20 runs above the bar, so
+     more (2,400 at N = 6, 2,800 at N = 7). That leaves at least 20 runs above the bar, so
      the bar itself is measured reliably.
 
 **How an exam runs:** it starts automatically on the first daily run where
