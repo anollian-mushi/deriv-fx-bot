@@ -237,7 +237,7 @@ def stage_summary():
                                           "move_vs_cost", "per_pair", "per_window_gross", "checks",
                                           "prescreen_pass", "all_checks")}, default=str))
     print("  luck:", {k: (round(v, 2) if isinstance(v, float) else v) for k, v in lk.items()})
-    P.IDEAS[IDEA] = (NAME, GRID)
+    P.IDEAS[IDEA] = P.Idea(NAME, GRID)
     write_log(IDEA)
     return True
 

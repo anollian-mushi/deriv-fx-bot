@@ -33,6 +33,8 @@ from functools import lru_cache
 import numpy as np
 
 from fxbot import sessions
+from fxbot import symbols as symbols_mod
+from fxbot.backtest import fills
 from fxbot.backtest import research as R
 from fxbot.backtest.audit import cost_of, gross_of
 from fxbot.backtest.candles import Bars, aggregate, load_m1
@@ -40,9 +42,12 @@ from fxbot.backtest.engine import Engine
 from fxbot.backtest.walkforward import Window, _add_months
 from fxbot.data.split import UNTOUCHED_START, UntouchedError
 from fxbot.strategies.base import Strategy
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
 
 SYMBOLS = R.SYMBOLS
-PIP = {"frxEURUSD": 0.0001, "frxGBPUSD": 0.0001, "frxUSDJPY": 0.01}
+PIP = symbols_mod.PIP
 DATA_START = dt.date(2021, 10, 27)
 DATA_END = UNTOUCHED_START - dt.timedelta(days=1)          # 2026-10-30, the last allowed day
 TRAIN_MONTHS, VALID_MONTHS = 24, 6
@@ -85,20 +90,27 @@ def _m1(symbol: str) -> Bars:
 
 
 @lru_cache(maxsize=None)
-def market_data(timeframe: str, start: dt.date, end: dt.date) -> dict:
+def market_data(timeframe: str, start: dt.date, end: dt.date, symbols: tuple = SYMBOLS) -> dict:
     if end >= UNTOUCHED_START:
         raise UntouchedError("pre-screen data must end before the untouched period")
     out = {}
-    for s in SYMBOLS:
+    for s in symbols:
         m1 = R.slice_bars(_m1(s), epoch_of(start), epoch_of(end + dt.timedelta(days=1)))
         out[s] = (m1, aggregate(m1, timeframe))
     return out
 
 
+@lru_cache(maxsize=None)
+def cost_table(path: str | None):
+    """The commission table for a run: the Phase 2 majors table, or another file (pairs2)."""
+    return fills.CommissionTable(ROOT / path) if path else fills.CommissionTable()
+
+
 def run_engine(strategy: Strategy, start: dt.date = DATA_START, end: dt.date = DATA_END,
-               stress: float = 1.0) -> Engine:
-    eng = Engine(strategy, list(SYMBOLS), start, end, stress=stress,
-                 data=market_data(strategy.timeframe, start, end), kill_switch="observe")
+               stress: float = 1.0, symbols: tuple = SYMBOLS, table: str | None = None) -> Engine:
+    eng = Engine(strategy, list(symbols), start, end, stress=stress,
+                 data=market_data(strategy.timeframe, start, end, tuple(symbols)), kill_switch="observe",
+                 table=cost_table(table))
     eng.run()
     return eng
 
@@ -118,10 +130,10 @@ def schedule_from(picks: list[dict], grid: list[dict]) -> list[tuple[int, dict]]
     return [(epoch_of(p["window"].valid_start), grid[p["variant"]]) for p in picks]
 
 
-def run_oos(strategy: R.Scheduled, stress: float = 1.0) -> Engine:
+def run_oos(strategy: R.Scheduled, stress: float = 1.0, table: str | None = None) -> Engine:
     v0, v1 = oos_span()
     warm = getattr(strategy.cls, "warmup_days", WARMUP_DAYS)
-    return run_engine(strategy, v0 - dt.timedelta(days=warm), v1, stress)
+    return run_engine(strategy, v0 - dt.timedelta(days=warm), v1, stress, strategy.symbols, table)
 
 
 # ----------------------------------------------------------------------------- checks
@@ -163,7 +175,7 @@ def luck_summary(random_nets, random_gross, net: float, gross: float) -> dict:
 
 
 def summary(trades: list[dict], stress_trades: list[dict], kill_events: int, luck: dict, grid_size: int,
-            params: int) -> dict:
+            params: int, symbols: tuple = SYMBOLS) -> dict:
     v0, v1 = oos_span()
     days = trading_days(v0, v1)
     net = round(sum(t["profit"] for t in trades), 2)
@@ -175,7 +187,7 @@ def summary(trades: list[dict], stress_trades: list[dict], kill_events: int, luc
                                < epoch_of(w.valid_end + dt.timedelta(days=1))), 2) for w in ws]
     per_pair = {s: {"trades": sum(t["symbol"] == s for t in trades),
                     "net": round(sum(t["profit"] for t in trades if t["symbol"] == s), 2),
-                    "gross": round(sum(gross_of(t) for t in trades if t["symbol"] == s), 2)} for s in SYMBOLS}
+                    "gross": round(sum(gross_of(t) for t in trades if t["symbol"] == s), 2)} for s in symbols}
     wins = [t["profit"] for t in trades if t["profit"] > 0]
     losses = [t["profit"] for t in trades if t["profit"] <= 0]
     mc = move_and_cost_pips(trades)
@@ -213,10 +225,28 @@ def _grid(**axes) -> list[dict]:
     return out
 
 
-# idea -> (strategy name, grid). Declared before testing; every grid point is one variant;
-# at most 8 variants and 5 settings per idea (the settings are chosen before testing, the
-# walk-forward only picks among them).
-IDEAS: dict[str, tuple[str, list[dict]]] = {
+class Idea(tuple):
+    """(strategy name, grid) plus the symbols and commission table the idea runs on. Declared
+    before testing; every grid point is one variant; at most 8 variants and 5 settings per idea
+    (the settings are chosen before testing, the walk-forward only picks among them)."""
+    symbols: tuple = SYMBOLS
+    table: str | None = None            # None = research/phase2/cost_by_hour.json (the majors)
+
+    def __new__(cls, name, grid, symbols=SYMBOLS, table=None):
+        self = super().__new__(cls, (name, grid))
+        self.symbols, self.table = symbols_mod.check(symbols), table
+        return self
+
+    @property
+    def name(self):
+        return self[0]
+
+    @property
+    def grid(self):
+        return self[1]
+
+
+IDEAS: dict[str, Idea] = {
     "fix_reversal": ("i1_fix_reversal", _grid(k=(0.1, 0.2), hold_hours=(2, 4), stop=(0.0, 0.5))),
     "turtle_soup": ("i2_turtle_soup", _grid(sl_frac=(0.25, 0.5), tp_frac=(0.5, 0.75), cutoff=(12, 17))),
     "round_bounce": ("i3_round_bounce", _grid(sl_frac=(0.15, 0.3), tp_frac=(0.3, 0.6))),
@@ -232,6 +262,13 @@ IDEAS: dict[str, tuple[str, list[dict]]] = {
     "morning_overnight": ("i13_morning_overnight", _grid(decision_hour=(8, 10), k=(0.25, 0.4), stop=(0.0, 0.5))),
     "ny_cut_overnight": ("i14_ny_cut_overnight", _grid(range_hours=(2, 3), sl_frac=(0.5, 1.0))),
 }
+IDEAS = {k: Idea(*v) for k, v in IDEAS.items()}
+# Owner's request (31 Oct 2026): the i13 rule, settings unchanged, on six more Deriv pairs with
+# their own measured commission table (research/phase2/cost_by_hour_pairs2.json, built on Monday
+# 2 Nov from quotes-only samples). One variant: nothing is tuned per pair. The pair list is
+# fixed here before the data is seen; pairs are dropped only by the cost rule, never by result.
+IDEAS["morning_overnight_pairs2"] = Idea("i13_morning_overnight", [{"decision_hour": 8, "k": 0.4, "stop": 0.0}],
+                                         symbols_mod.PAIRS2, "research/phase2/cost_by_hour_pairs2.json")
 MAX_VARIANTS = 8
 for _k, (_n, _g) in IDEAS.items():
     assert len(_g) <= MAX_VARIANTS and all(len(p) <= 5 for p in _g), _k

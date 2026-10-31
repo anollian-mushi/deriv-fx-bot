@@ -22,8 +22,12 @@ import _bootstrap  # noqa: F401
 from fxbot.config import REPO_ROOT
 from fxbot.data.collector import DerivCandleFeed, collect_series
 
-SYMBOLS = ["frxEURUSD", "frxGBPUSD", "frxUSDJPY"]
+SYMBOLS = ["frxEURUSD", "frxGBPUSD", "frxUSDJPY",
+           # added 31 Oct 2026 for the multi-pair test of the i13 rule (1m only: the engine builds
+           # 1h/4h/daily candles from 1m; the extra 1h and 15m series are kept for the majors only)
+           "frxAUDUSD", "frxUSDCAD", "frxUSDCHF", "frxEURGBP", "frxEURJPY", "frxGBPJPY"]
 GRANULARITIES = ["1h", "15m", "1m"]  # cheap ones first
+ONLY_1M = {"frxAUDUSD", "frxUSDCAD", "frxUSDCHF", "frxEURGBP", "frxEURJPY", "frxGBPJPY"}
 
 
 async def main() -> int:
@@ -32,6 +36,8 @@ async def main() -> int:
     parser.add_argument("--granularities", nargs="+", default=GRANULARITIES)
     parser.add_argument("--max-minutes", type=float, default=9)
     parser.add_argument("--data-dir", type=Path, default=REPO_ROOT / "data")
+    parser.add_argument("--start", type=dt.date.fromisoformat, default=None,
+                        help="for a new series: first day to keep (default: the oldest Deriv has)")
     args = parser.parse_args()
 
     started = time.monotonic()
@@ -44,7 +50,10 @@ async def main() -> int:
     async with DerivCandleFeed() as feed:
         for granularity in args.granularities:
             for symbol in args.symbols:
-                r = await collect_series(feed, args.data_dir, symbol, granularity, today, deadline)
+                if symbol in ONLY_1M and granularity != "1m":
+                    continue
+                r = await collect_series(feed, args.data_dir, symbol, granularity, today, deadline,
+                                         not_before=args.start)
                 if r.finished:
                     status = "complete"
                 elif r.pending < 0:

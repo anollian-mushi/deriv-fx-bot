@@ -41,6 +41,8 @@ STRATEGY_SRC = ROOT / "src" / "fxbot" / "strategies"
 # Strategy modules frozen with every candidate. base.py is not frozen: it defines the action
 # types (Enter, ExitPosition) the engine and risk module understand.
 FROZEN_MODULES = ("families.py", "ml_day.py")
+DEFAULT_SYMBOLS = ("frxEURUSD", "frxGBPUSD", "frxUSDJPY")
+DEFAULT_COST_TABLE = "research/phase2/cost_by_hour.json"
 ID_RE = re.compile(r"^[a-z0-9][a-z0-9_]{2,60}$")
 IGNORED = {"__pycache__"}
 
@@ -135,6 +137,16 @@ class Candidate:
     @property
     def legs(self) -> dict | None:
         return self.manifest.get("legs")
+
+    @property
+    def symbols(self) -> tuple[str, ...]:
+        """The pairs this candidate trades (the three majors unless the manifest says otherwise)."""
+        return tuple(self.manifest.get("symbols") or DEFAULT_SYMBOLS)
+
+    @property
+    def cost_table(self) -> str:
+        """Commission table (repo-relative path) its replays use."""
+        return self.manifest.get("cost_table") or DEFAULT_COST_TABLE
 
 
 def registry_path(root: Path = INCUBATOR) -> Path:
@@ -261,9 +273,20 @@ def _freeze_source(text: str) -> str:
 
 def register(cid: str, module: str, class_name: str, params: dict, model_files: list[Path] = (),
              notes: str = "", origin: dict | None = None, *, root: Path = INCUBATOR,
-             now: dt.datetime | None = None, require_clean: bool = True) -> Candidate:
+             now: dt.datetime | None = None, require_clean: bool = True,
+             symbols=DEFAULT_SYMBOLS, cost_table: str = DEFAULT_COST_TABLE) -> Candidate:
     """Register a new candidate. Refuses an existing id, a date earlier than the last
-    registration, unknown classes, and (by default) uncommitted strategy code or models."""
+    registration, unknown classes, unknown symbols, a commission table without every symbol,
+    and (by default) uncommitted strategy code or models."""
+    from fxbot import symbols as symbols_mod
+    from fxbot.backtest.fills import CommissionTable
+    symbols = symbols_mod.check(symbols)
+    table_path = ROOT / cost_table
+    if not table_path.exists():
+        raise RegistryError(f"commission table {cost_table} does not exist")
+    missing = [s for s in symbols if s not in CommissionTable(table_path).base]
+    if missing:
+        raise RegistryError(f"commission table {cost_table} has no base rate for {missing}")
     now = now or dt.datetime.now(dt.timezone.utc)
     registered = now.astimezone(dt.timezone.utc).date()
     if not ID_RE.match(cid):
@@ -326,6 +349,8 @@ def register(cid: str, module: str, class_name: str, params: dict, model_files: 
         "timeframe": strat.timeframe,
         "warmup_days": int(getattr(strat, "warmup_days", 120)),
         "legs": getattr(strat, "LEGS", None),
+        "symbols": list(symbols),
+        "cost_table": cost_table,
         "params": params,
         "source_commit": commit,
         "source_sha256": source_sha,

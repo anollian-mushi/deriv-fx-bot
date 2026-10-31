@@ -65,7 +65,8 @@ def _registry():
 # ----------------------------------------------------------------------------- workers
 def _grid_task(job):
     idea, name, i, params = job
-    eng = P.run_engine(_registry()[name](**params))
+    spec = P.IDEAS[idea]
+    eng = P.run_engine(_registry()[name](**params), symbols=spec.symbols, table=spec.table)
     trades = [{k: t[k] for k in KEEP} for t in eng.state.trades]
     _jdump(STATE / idea / "grid" / f"v{i:02d}.json.gz",
            {"params": params, "trades": trades, "kill_events": eng.state.kill_events})
@@ -75,8 +76,9 @@ def _grid_task(job):
 def _luck_task(job):
     idea, name, schedule, signals, seed = job
     cls = _registry()[name]
-    s = R.SignalDays(cls, [(t, p) for t, p in schedule], signals, seed)
-    eng = P.run_oos(s)
+    spec = P.IDEAS[idea]
+    s = R.SignalDays(cls, [(t, p) for t, p in schedule], signals, seed, symbols=spec.symbols)
+    eng = P.run_oos(s, table=spec.table)
     tr = eng.state.trades
     from fxbot.backtest.audit import gross_of
     out = {"seed": seed, "trades": len(tr), "net_profit": round(sum(t["profit"] for t in tr), 2),
@@ -111,7 +113,7 @@ def stage_grid(idea, budget_s, t0):
     jobs = [(idea, name, i, p) for i, p in enumerate(grid)
             if not (STATE / idea / "grid" / f"v{i:02d}.json.gz").exists()]
     if jobs:
-        P.market_data(_registry()[name].timeframe, P.DATA_START, P.DATA_END)   # load once before forking
+        P.market_data(_registry()[name].timeframe, P.DATA_START, P.DATA_END, P.IDEAS[idea].symbols)   # load once before forking
     done, left = _pool_run(_grid_task, jobs, budget_s, t0)
     print(f"{idea} grid: {done} variants run now, {left} left")
     return left == 0
@@ -136,9 +138,10 @@ def stage_oos(idea):
             row[f"train{k + 1}_score"] = round(sc["score"], 3) if sc["score"] > -1e9 else None
         rows.append(row)
     schedule = P.schedule_from(picks, grid)
-    meas = R.Scheduled(cls, schedule)
-    e_m = P.run_oos(meas)
-    e_s = P.run_oos(R.Scheduled(cls, schedule), stress=1.5)
+    spec = P.IDEAS[idea]
+    meas = R.Scheduled(cls, schedule, spec.symbols)
+    e_m = P.run_oos(meas, table=spec.table)
+    e_s = P.run_oos(R.Scheduled(cls, schedule, spec.symbols), stress=1.5, table=spec.table)
     out = OUT / idea
     _jdump(out / "grid.json", rows)
     _jdump(out / "picks.json", [{"round": k + 1, "train": f"{p['window'].train_start}..{p['window'].train_end}",
@@ -164,7 +167,7 @@ def stage_luck(idea, budget_s, t0, runs):
             if not (STATE / idea / "luck" / f"s{seed:03d}.json").exists()]
     if jobs:
         v0, v1 = P.oos_span()
-        P.market_data(_registry()[name].timeframe, v0 - dt.timedelta(days=P.WARMUP_DAYS), v1)
+        P.market_data(_registry()[name].timeframe, v0 - dt.timedelta(days=P.WARMUP_DAYS), v1, P.IDEAS[idea].symbols)
     done, left = _pool_run(_luck_task, jobs, budget_s, t0)
     print(f"{idea}: luck runs {done} done now, {left} left")
     if left:
@@ -185,7 +188,9 @@ def stage_summary(idea):
     gross = round(sum(gross_of(t) for t in trades), 2)
     lk = P.luck_summary([r["net_profit"] for r in luck], [r["gross"] for r in luck], net, gross)
     res = {"idea": idea, "strategy": name, "timeframe": _registry()[name].timeframe,
-           **P.summary(trades, oos["stress_1_5x"], oos["kill_events"], lk, len(grid), len(grid[0])),
+           "symbols": list(P.IDEAS[idea].symbols), "cost_table": P.IDEAS[idea].table,
+           **P.summary(trades, oos["stress_1_5x"], oos["kill_events"], lk, len(grid), len(grid[0]),
+                       P.IDEAS[idea].symbols),
            "picks": [p for p in _jload(d / "picks.json")], "blocked": oos["blocked"], "refused": oos["refused"]}
     _jdump(d / "summary.json", res)
     print(json.dumps({k: res[k] for k in ("idea", "trades", "trades_per_day", "net_measured", "net_1_5x", "gross",
@@ -228,7 +233,7 @@ def write_log(idea) -> None:
                       f"({summ['gross_pips_per_trade']} pips/trade), avg |move| {summ['move_vs_cost']['avg_abs_move_pips']} pips "
                       f"vs cost {summ['move_vs_cost']['avg_cost_pips']} pips (ratio {summ['move_vs_cost']['ratio']}), "
                       f"win rate {summ['win_rate_pct']}%, PF {summ['profit_factor']}, kill events {summ['kill_events']}, "
-                      f"per pair net {{{', '.join(f'{s[3:]}: {v['net']} ({v['trades']})' for s, v in summ['per_pair'].items())}}}, "
+                      f"per pair net/gross {{{', '.join(f'{s[3:]}: {v['net']}/{v['gross']} ({v['trades']})' for s, v in summ['per_pair'].items())}}}, "
                       f"per window gross {summ['per_window_gross']}. Luck ({lk.get('runs', 0)} coin-toss runs on the "
                       f"candidate's own signals): median net {round(lk.get('median_net', 0), 2)}, share beaten "
                       f"{round(100 * lk.get('share_beaten_net', 0))}%. Checks failed: "

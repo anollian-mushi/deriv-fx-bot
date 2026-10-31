@@ -123,8 +123,9 @@ class Scheduled(Strategy):
     indicators). Exits of an open trade keep working across a switch.
     """
 
-    def __init__(self, cls: type[FamilyStrategy], schedule: list[tuple[int, dict]]):
+    def __init__(self, cls: type[FamilyStrategy], schedule: list[tuple[int, dict]], symbols=SYMBOLS):
         self.cls = cls
+        self.symbols = tuple(symbols)
         self.schedule = sorted(schedule, key=lambda x: x[0])
         self.inner = {i: cls(**p) for i, (_, p) in enumerate(self.schedule)}
         self.name, self.timeframe = cls.name, cls.timeframe
@@ -213,8 +214,8 @@ class SignalDays(Scheduled):
     signals: {(symbol, signal epoch)} recorded from the candidate's stitched out-of-sample run
     (every Enter action, filled or not, so the random run meets the same fill rules)."""
 
-    def __init__(self, cls, schedule, signals, seed: int):
-        super().__init__(cls, schedule)
+    def __init__(self, cls, schedule, signals, seed: int, symbols=SYMBOLS):
+        super().__init__(cls, schedule, symbols)
         self.signals = {(str(s), int(t)) for s, t in signals}
         self.seed = seed
         for s in self.inner.values():
@@ -226,7 +227,7 @@ class SignalDays(Scheduled):
             return None
         # Keyed by seed, time and pair: the same run always draws the same directions, whatever
         # the order the engine calls the pairs in.
-        u = np.random.default_rng([self.seed, t, SYMBOLS.index(symbol)]).random()
+        u = np.random.default_rng([self.seed, t, self.symbols.index(symbol)]).random()
         return "MULTUP" if u < 0.5 else "MULTDOWN"
 
 

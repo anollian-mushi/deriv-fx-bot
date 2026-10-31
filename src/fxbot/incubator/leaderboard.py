@@ -11,6 +11,7 @@ from pathlib import Path
 
 from fxbot.incubator import exam
 from fxbot.incubator.daily import PAIR, records_dir
+from fxbot.symbols import display as pair_name
 from fxbot.incubator.registry import INCUBATOR
 
 ORDER = {"graduated": 0, "active": 1, "waiting": 2, "dead": 3, "tampered": 4}
@@ -65,7 +66,7 @@ def telegram_text(index: dict, today: dt.date) -> str:
         lines.append(f"   Net {m['net_profit']:+.2f}  Net1.5x {r['stress_net']:+.2f}  DD {m['max_drawdown_pct']:.1f}%")
         lines.append(f"   Win {_fmt(m['win_rate_pct'], '.0f')}%  PF {_fmt(m['profit_factor'], '.2f')}  "
                      f"AvgW {_fmt(m['avg_win'], '.2f')}  AvgL {_fmt(m['avg_loss'], '.2f')}")
-        lines.append("   " + "  ".join(f"{PAIR[s][:3]}{PAIR[s][4:]} {v['net']:+.2f}" for s, v in m["per_pair"].items()))
+        lines.append("   " + "  ".join(f"{pair_name(s).replace('/', '')} {v['net']:+.2f}" for s, v in m["per_pair"].items()))
         if r["status"] == "dead":
             lines.append("   kill switch fired: out for good")
         else:
@@ -81,14 +82,16 @@ def markdown(index: dict, today: dt.date) -> str:
            f"Paper only. Forward Deriv data up to {index.get('data_end')}. Starting balance 100 USD per candidate.",
            "Column meanings: [README](README.md#reading-the-leaderboard).", "",
            "| # | Candidate | Status | Days | Trades | Open | Net | Net 1.5x | Max DD | Win % | PF | Avg win | Avg loss "
-           "| EUR/USD | GBP/USD | USD/JPY | Exam |",
-           "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
+           "| EUR/USD | GBP/USD | USD/JPY | Other pairs | Exam |",
+           "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
     for i, (cid, r) in enumerate(_rows(index), 1):
         if "measured" not in r:
-            out.append(f"| {i} | {cid} | {r['status']} |" + " - |" * 13 + f" scoring from {r['first_scored_day']} |")
+            out.append(f"| {i} | {cid} | {r['status']} |" + " - |" * 14 + f" scoring from {r['first_scored_day']} |")
             continue
         m = r["measured"]
-        pp = [f"{m['per_pair'][s]['net']:+.2f} ({m['per_pair'][s]['trades']})" for s in PAIR]
+        pp = [f"{m['per_pair'][s]['net']:+.2f} ({m['per_pair'][s]['trades']})" if s in m["per_pair"] else "-" for s in PAIR]
+        pp.append(", ".join(f"{pair_name(s)} {v['net']:+.2f} ({v['trades']})" for s, v in m["per_pair"].items()
+                            if s not in PAIR) or "-")
         out.append(f"| {i} | {cid} | {r['status']} | {r['forward_days']} | {m['trades']} | {m['open_trades']} "
                    f"| {m['net_profit']:+.2f} | {r['stress_net']:+.2f} | {m['max_drawdown_pct']:.1f}% "
                    f"| {_fmt(m['win_rate_pct'], '.0f')} | {_fmt(m['profit_factor'], '.2f')} "

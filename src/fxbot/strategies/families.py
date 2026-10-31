@@ -22,7 +22,10 @@ import numpy as np
 from fxbot.backtest.candles import Bars
 from fxbot.strategies.base import Enter, ExitPosition, PositionView, Strategy
 
-PIP = {"frxEURUSD": 0.0001, "frxGBPUSD": 0.0001, "frxUSDJPY": 0.01}
+PIP = {"frxEURUSD": 0.0001, "frxGBPUSD": 0.0001, "frxUSDJPY": 0.01,
+       # pairs added 31 Oct 2026 (fxbot.symbols); listed here so a frozen copy stays self-contained
+       "frxAUDUSD": 0.0001, "frxUSDCAD": 0.0001, "frxUSDCHF": 0.0001, "frxEURGBP": 0.0001,
+       "frxEURJPY": 0.01, "frxGBPJPY": 0.01}
 DAY = 86400
 HOUR = 3600
 
