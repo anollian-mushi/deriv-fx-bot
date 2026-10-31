@@ -14,6 +14,12 @@ on:
       chunks:
         description: "Number of 30-minute chunks per pair"
         default: "10"
+      symbols:
+        description: "JSON list of Deriv symbols to fetch"
+        default: '["frxEURUSD", "frxGBPUSD", "frxUSDJPY"]'
+      end:
+        description: "Last day to fetch (YYYY-MM-DD; blank = yesterday)"
+        default: ""
 
 permissions:
   contents: write
@@ -29,7 +35,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        symbol: [frxEURUSD, frxGBPUSD, frxUSDJPY]
+        symbol: ${{ fromJSON(inputs.symbols) }}
     steps:
       - uses: actions/checkout@v4
 
@@ -45,13 +51,14 @@ jobs:
           YEARS: ${{ inputs.years }}
           CHUNKS: ${{ inputs.chunks }}
           SYMBOL: ${{ matrix.symbol }}
+          END: ${{ inputs.end }}
         run: |
           set -uo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           for i in $(seq 1 "$CHUNKS"); do
             rc=0   # 0 = complete, 2 = time limit (run again), 1 = error
-            python scripts/collect_dukascopy.py --symbols "$SYMBOL" --years "$YEARS" --max-minutes 30 || rc=$?
+            python scripts/collect_dukascopy.py --symbols "$SYMBOL" --years "$YEARS" --max-minutes 30 ${END:+--end "$END"} || rc=$?
             git add "data_external/dukascopy/$SYMBOL"
             if ! git diff --cached --quiet; then
               git commit -q -m "Dukascopy 1m history for $SYMBOL (chunk $i)"
