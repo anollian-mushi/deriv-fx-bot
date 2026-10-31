@@ -19,6 +19,7 @@ No live bot.
 - What the historical data looks like: [reports/data_quality.md](reports/data_quality.md)
 - What a trade really costs: [reports/costs.md](reports/costs.md)
 - Multipliers vs MT5, and the research plan: [reports/product_choice.md](reports/product_choice.md)
+- Are public "verified" traders worth copying or testing? (no; red flags to spot): [reports/trader_research.md](reports/trader_research.md)
 
 ## Settings
 
