@@ -899,3 +899,27 @@ Ideas 13 and 14 were designed after the batch-1 results (idea 13 from family
 tradition of designing from the previous round's near misses; they are logged
 as such and were judged on the same pre-screen. Running total of variants
 tried in this round: 100 (12 ideas x 4-8 rule variants, 8 kNN settings).
+
+### Multi-pair test of the i13 rule (set up 31 Oct 2026, decided Monday 2 Nov)
+
+Owner's request (31 Oct 2026): run the i13 rule with EXACTLY the same settings
+(decision hour 08:00, move at least 0.4 of the 20-day average daily range, no
+stop, exit 06:00 next day, no Friday signals) on six more Deriv pairs, to
+raise its trade count honestly. Pairs fixed before any data was seen:
+AUD/USD, USD/CAD, USD/CHF, EUR/GBP, EUR/JPY, GBP/JPY (all offer x100/x200
+Multipliers; NZD/USD does not). Steps: Dukascopy 1m history to 2026-10-30
+(GitHub Actions backfill) and Deriv 1m from 2026-04-28; quotes-only commission
+sampling on Monday 2 Nov, hourly 06:07-18:07 UTC on the demo connection
+(research/phase2/pairs2/), then research/phase2/cost_by_hour_pairs2.json; a
+pair is dropped only if the rule's expected move is under 3x its cost at the
+base rate (scripts/pairs2_cost_rule.py), never for its result; then the
+pre-screen of the unchanged rule on the survivors (idea
+`morning_overnight_pairs2`, one variant) with per-pair results; if it passes,
+ONE candidate covering exactly the surviving new pairs (never the three majors,
+so it does not duplicate i13_morning_overnight_v1's trades).
+
+Owner's decisions before the results (31 Oct 2026): check 3 (1.5 trades a
+day) is waived for this candidate as for i13 (its expected trades per day is
+reported, never used to reject it); check 8 (diversity) is waived because it
+is deliberately the same rule as i13 on other pairs. All other checks apply
+unchanged. Results are appended below by the Monday run.
