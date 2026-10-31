@@ -749,3 +749,24 @@ Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; s
 Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 271 trades (0.35/day), net -28.32 USD (1.5x: -34.91), gross before costs -8.83 USD (-1.46 pips/trade), avg |move| 24.96 pips vs cost 3.89 pips (ratio 6.42), win rate 43.2%, PF 0.63, kill events 0, per pair net {EURUSD: -8.12 (82), GBPUSD: -8.97 (99), USDJPY: -11.23 (90)}, per window gross [-7.32, 0.26, -1.46, -1.0, 0.25, 0.45]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_gross_positive', 'c6_beats_random_median']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/range_exhaustion/`.
 
 <!-- prescreen:range_exhaustion end -->
+
+<!-- prescreen:trend_intraday start -->
+
+### trend_intraday (i10_trend_intraday, 1h): 8 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | trend_intraday v00 | lookback=5, k=0.5, stop=0.0 | 2229 | -208.11 | 4 | - |
+| 2026-10-31 | trend_intraday v01 | lookback=5, k=0.5, stop=0.5 | 2235 | -200.09 | 4 | - |
+| 2026-10-31 | trend_intraday v02 | lookback=5, k=1.0, stop=0.0 | 1570 | -133.88 | 2 | 1 |
+| 2026-10-31 | trend_intraday v03 | lookback=5, k=1.0, stop=0.5 | 1573 | -117.27 | 2 | 6 |
+| 2026-10-31 | trend_intraday v04 | lookback=10, k=0.5, stop=0.0 | 2391 | -150.97 | 3 | 4 |
+| 2026-10-31 | trend_intraday v05 | lookback=10, k=0.5, stop=0.5 | 2397 | -156.97 | 3 | 3, 5 |
+| 2026-10-31 | trend_intraday v06 | lookback=10, k=1.0, stop=0.0 | 2008 | -147.61 | 2 | 2 |
+| 2026-10-31 | trend_intraday v07 | lookback=10, k=1.0, stop=0.5 | 2012 | -147.92 | 2 | - |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 1227 trades (1.58/day), net -134.4 USD (1.5x: -164.36), gross before costs -53.55 USD (-2.3 pips/trade), avg |move| 40.76 pips vs cost 3.87 pips (ratio 10.52), win rate 42.8%, PF 0.733, kill events 2, per pair net {EURUSD: -42.31 (410), GBPUSD: -38.55 (409), USDJPY: -53.54 (408)}, per window gross [-10.96, -4.89, -0.99, -15.97, -20.21, -0.52]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c6_gross_positive', 'c6_beats_random_median', 'no_kill_switch']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/trend_intraday/`.
+
+<!-- prescreen:trend_intraday end -->
