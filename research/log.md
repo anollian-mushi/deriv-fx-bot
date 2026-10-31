@@ -822,7 +822,7 @@ Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; s
 | 2026-10-31 | morning_overnight v06 | decision_hour=10, k=0.4, stop=0.0 | 688 | -54.58 | 1 | - |
 | 2026-10-31 | morning_overnight v07 | decision_hour=10, k=0.4, stop=0.5 | 690 | -68.87 | 1 | - |
 
-Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 297 trades (0.38/day), net 17.47 USD (1.5x: 3.9), gross before costs 44.62 USD (7.15 pips/trade), avg |move| 47.79 pips vs cost 4.03 pips (ratio 11.86), win rate 50.2%, PF 1.117, kill events 0, per pair net {EURUSD: 11.95 (76), GBPUSD: -7.51 (83), USDJPY: 13.03 (138)}, per window gross [6.77, 3.41, -1.45, 18.05, 8.25, 9.6]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_beats_random_median']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/morning_overnight/`.
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 297 trades (0.38/day), net 17.47 USD (1.5x: 3.9), gross before costs 44.62 USD (7.15 pips/trade), avg |move| 47.79 pips vs cost 4.03 pips (ratio 11.86), win rate 50.2%, PF 1.117, kill events 0, per pair net {EURUSD: 11.95 (76), GBPUSD: -7.51 (83), USDJPY: 13.03 (138)}, per window gross [6.77, 3.41, -1.45, 18.05, 8.25, 9.6]. Luck (200 coin-toss runs on the candidate's own signals): median net -31.65, share beaten 100%. Checks failed: ['c3_trades_per_day_1_5']. **Pre-screen (check 6): PASS**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/morning_overnight/`.
 
 <!-- prescreen:morning_overnight end -->
 
