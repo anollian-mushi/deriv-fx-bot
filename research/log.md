@@ -770,3 +770,20 @@ Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; s
 Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 1227 trades (1.58/day), net -134.4 USD (1.5x: -164.36), gross before costs -53.55 USD (-2.3 pips/trade), avg |move| 40.76 pips vs cost 3.87 pips (ratio 10.52), win rate 42.8%, PF 0.733, kill events 2, per pair net {EURUSD: -42.31 (410), GBPUSD: -38.55 (409), USDJPY: -53.54 (408)}, per window gross [-10.96, -4.89, -0.99, -15.97, -20.21, -0.52]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c6_gross_positive', 'c6_beats_random_median', 'no_kill_switch']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/trend_intraday/`.
 
 <!-- prescreen:trend_intraday end -->
+
+<!-- prescreen:ny_cut_breakout start -->
+
+### ny_cut_breakout (i11_ny_cut_breakout, 1h): 4 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | ny_cut_breakout v00 | range_hours=2, sl_frac=0.5 | 1992 | -115.56 | 2 | - |
+| 2026-10-31 | ny_cut_breakout v01 | range_hours=2, sl_frac=1.0 | 1891 | -93.07 | 1 | 2, 4, 5, 6 |
+| 2026-10-31 | ny_cut_breakout v02 | range_hours=3, sl_frac=0.5 | 1787 | -116.83 | 2 | 1 |
+| 2026-10-31 | ny_cut_breakout v03 | range_hours=3, sl_frac=1.0 | 1718 | -94.31 | 1 | 3 |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 1109 trades (1.43/day), net -54.09 USD (1.5x: -85.1), gross before costs 14.87 USD (1.02 pips/trade), avg |move| 16.65 pips vs cost 3.85 pips (ratio 4.32), win rate 39.3%, PF 0.699, kill events 1, per pair net {EURUSD: -21.05 (356), GBPUSD: -13.28 (389), USDJPY: -19.76 (364)}, per window gross [-1.41, 3.62, 1.67, 14.24, -7.76, 4.51]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_beats_random_median', 'no_kill_switch']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/ny_cut_breakout/`.
+
+<!-- prescreen:ny_cut_breakout end -->

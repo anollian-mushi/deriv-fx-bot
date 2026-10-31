@@ -1,0 +1,58 @@
+[
+ {
+  "variant": 0,
+  "range_hours": 2,
+  "sl_frac": 0.5,
+  "trades": 1992,
+  "net_profit": -115.56,
+  "kill_events": 2,
+  "train1_score": -0.971,
+  "train2_score": -0.952,
+  "train3_score": -0.939,
+  "train4_score": -0.94,
+  "train5_score": -0.968,
+  "train6_score": -0.975
+ },
+ {
+  "variant": 1,
+  "range_hours": 2,
+  "sl_frac": 1.0,
+  "trades": 1891,
+  "net_profit": -93.07,
+  "kill_events": 1,
+  "train1_score": -0.973,
+  "train2_score": -0.944,
+  "train3_score": -0.919,
+  "train4_score": -0.874,
+  "train5_score": -0.75,
+  "train6_score": -0.964
+ },
+ {
+  "variant": 2,
+  "range_hours": 3,
+  "sl_frac": 0.5,
+  "trades": 1787,
+  "net_profit": -116.83,
+  "kill_events": 2,
+  "train1_score": -0.959,
+  "train2_score": -0.967,
+  "train3_score": -0.93,
+  "train4_score": -0.988,
+  "train5_score": -0.98,
+  "train6_score": -0.974
+ },
+ {
+  "variant": 3,
+  "range_hours": 3,
+  "sl_frac": 1.0,
+  "trades": 1718,
+  "net_profit": -94.31,
+  "kill_events": 1,
+  "train1_score": -0.966,
+  "train2_score": -0.965,
+  "train3_score": -0.912,
+  "train4_score": -0.97,
+  "train5_score": -0.87,
+  "train6_score": -0.967
+ }
+]
