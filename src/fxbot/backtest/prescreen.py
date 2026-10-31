@@ -230,6 +230,7 @@ IDEAS: dict[str, tuple[str, list[dict]]] = {
     "ny_cut_breakout": ("i11_ny_cut_breakout", _grid(range_hours=(2, 3), sl_frac=(0.5, 1.0))),
     "twap_pullback": ("i12_twap_pullback", _grid(k=(0.3, 0.5), sl_frac=(0.2, 0.4))),
     "morning_overnight": ("i13_morning_overnight", _grid(decision_hour=(8, 10), k=(0.25, 0.4), stop=(0.0, 0.5))),
+    "ny_cut_overnight": ("i14_ny_cut_overnight", _grid(range_hours=(2, 3), sl_frac=(0.5, 1.0))),
 }
 MAX_VARIANTS = 8
 for _k, (_n, _g) in IDEAS.items():

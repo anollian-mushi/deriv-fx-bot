@@ -1399,8 +1399,33 @@ class MorningOvernight(IdeaStrategy):
         return int(c.end[-1]) >= e - e % DAY + DAY + self.EXIT_HOUR * HOUR
 
 
+# --------------------------------------------------------------------------- i14
+class NyCutOvernight(NyCutBreakout):
+    """Idea 14: the post-cut break (idea 11) held overnight to 06:00 UTC the next day.
+    Designed from idea 11's pre-screen (31 Oct 2026): the break direction after the New York
+    option cut beat 94% of coin-toss runs but earned about 1 pip a trade against 4 pips of
+    cost by the 20:00 close. If the release of the pinned rate is a flow that keeps going
+    through the US afternoon and Asia, a longer horizon collects more of it for the same
+    cost; if the information is spent by 20:00, this loses it back. No signal on Fridays.
+    Same settings as idea 11 (pre-cut range hours, stop as a fraction of that range).
+    """
+    name = "i14_ny_cut_overnight"
+    family = "i14"
+    EXIT_HOUR = 6
+
+    def _setup(self, symbol, c):
+        t = int(c.end[-1])
+        if ((t // DAY) + 3) % 7 == 4:                      # Friday: the weekend close would cut the hold
+            return None
+        return super()._setup(symbol, c)
+
+    def exit_now(self, symbol, c, position):
+        e = position.entry_epoch
+        return int(c.end[-1]) >= e - e % DAY + DAY + self.EXIT_HOUR * HOUR
+
+
 IDEA_CLASSES = (FixReversal, TurtleSoup, RoundBounce, RoundBreak, AsiaFade, UsDataDrift, NyIntoAsia,
-                LondonReversal, RangeExhaustion, TrendIntraday, NyCutBreakout, TwapPullback, MorningOvernight)
+                LondonReversal, RangeExhaustion, TrendIntraday, NyCutBreakout, TwapPullback, MorningOvernight, NyCutOvernight)
 
 
 REGISTRY = {cls.name: cls for cls in (LondonBreakout, TrendBreakout, TrendBreakout1d, TrendPullback,
