@@ -1,0 +1,8 @@
+[Unit]
+Description=Deriv FX bot weekly check: does the running candidate still lead the incubator?
+
+[Service]
+Type=oneshot
+User=fxbot
+Environment=BOT_HOME=/opt/fxbot/shared/home
+ExecStart=/opt/fxbot/current/deploy/leader_check.sh

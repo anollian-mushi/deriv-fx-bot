@@ -1,0 +1,8 @@
+[Unit]
+Description=Deriv FX bot health check (heartbeat older than 5 minutes -> Telegram)
+
+[Service]
+Type=oneshot
+User=fxbot
+Environment=BOT_HOME=/opt/fxbot/shared/home
+ExecStart=/opt/fxbot/current/deploy/healthcheck.sh

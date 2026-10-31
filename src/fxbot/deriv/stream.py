@@ -23,11 +23,17 @@ from websockets.asyncio.client import connect
 from fxbot.deriv.api import DerivError
 
 
+APP_PING_SECONDS = 25   # Deriv closes a connection after 120 s without an application message
+
+
 class StreamClient:
-    def __init__(self, url: str):
+    def __init__(self, url: str, app_ping: bool = True):
         self._url = url
         self._ws: Any = None
         self._reader: asyncio.Task | None = None
+        self._pinger: asyncio.Task | None = None
+        self._app_ping = app_ping
+        self.close_info = ""
         self._pending: dict[int, asyncio.Future] = {}
         self._ids = itertools.count(1)
         self.ticks: dict[str, list[dict]] = {}       # symbol -> ticks (with local receive time)
@@ -37,9 +43,23 @@ class StreamClient:
     async def __aenter__(self) -> "StreamClient":
         self._ws = await connect(self._url, open_timeout=20, ping_interval=30)
         self._reader = asyncio.create_task(self._read())
+        if self._app_ping:
+            self._pinger = asyncio.create_task(self._ping_loop())
         return self
 
+    async def _ping_loop(self) -> None:
+        """Send Deriv's {"ping": 1} every 25 s. WebSocket protocol pings alone do not keep the
+        connection open: measured 2026-10-31, an idle trading connection closed (1006) after 120 s."""
+        try:
+            while True:
+                await asyncio.sleep(APP_PING_SECONDS)
+                await self._ws.send(json.dumps({"ping": 1, "req_id": next(self._ids)}))
+        except Exception:
+            return          # the reader notices the closed connection
+
     async def __aexit__(self, *exc: Any) -> None:
+        if self._pinger:
+            self._pinger.cancel()
         if self._reader:
             self._reader.cancel()
         if self._ws:
@@ -66,9 +86,18 @@ class StreamClient:
                 if fut and not fut.done():
                     fut.set_result(msg)
         except Exception as err:  # connection closed: fail everyone still waiting
+            self.close_info = (f"{type(err).__name__} code={getattr(self._ws, 'close_code', None)} "
+                               f"reason={getattr(self._ws, 'close_reason', None)!r}")
             for fut in self._pending.values():
                 if not fut.done():
                     fut.set_exception(ConnectionError(type(err).__name__))
+            self._pending.clear()
+        else:                     # the server closed the connection cleanly
+            self.close_info = (f"closed code={getattr(self._ws, 'close_code', None)} "
+                               f"reason={getattr(self._ws, 'close_reason', None)!r}")
+            for fut in self._pending.values():
+                if not fut.done():
+                    fut.set_exception(ConnectionError("closed"))
             self._pending.clear()
 
     async def request(self, payload: dict[str, Any], timeout: float = 30) -> dict[str, Any]:

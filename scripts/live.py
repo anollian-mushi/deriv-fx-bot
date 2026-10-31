@@ -32,7 +32,9 @@ def main() -> int:
     r.add_argument("--hours", type=float)
     sub.add_parser("check")
     sub.add_parser("status")
-    sub.add_parser("leader")
+    ld = sub.add_parser("leader")
+    ld.add_argument("--index", help="a leaderboard index.json (default: incubator/records/index.json)")
+    ld.add_argument("--plain", action="store_true", help="print only the id (empty if none is active)")
     t = sub.add_parser("test-trade")
     t.add_argument("--symbol", default="frxEURUSD", choices=["frxEURUSD", "frxGBPUSD", "frxUSDJPY"])
     t.add_argument("--direction", default="MULTUP", choices=["MULTUP", "MULTDOWN"])
@@ -42,6 +44,7 @@ def main() -> int:
     sub.add_parser("unhalt")
     e = sub.add_parser("export")
     e.add_argument("--days", type=float, default=7)
+    e.add_argument("--out", help="folder (default: reviews/)")
     a = ap.parse_args()
     ls = load_live_settings()
 
@@ -69,8 +72,19 @@ def main() -> int:
         print("heartbeat age:", f"{time.time() - hb:.0f} s" if hb else "none")
         return 0
     if a.cmd == "leader":
-        lid = cand.leader_id()
-        print(lid or f"No active candidate yet; STRATEGY_ID=leader would use {ls.leader_fallback}")
+        if a.index:
+            import tempfile
+            from pathlib import Path
+            tmp = Path(tempfile.mkdtemp())
+            (tmp / "records").mkdir()
+            (tmp / "records" / "index.json").write_text(Path(a.index).read_text())
+            lid = cand.leader_id(tmp)
+        else:
+            lid = cand.leader_id()
+        if a.plain:
+            print(lid or "")
+        else:
+            print(lid or f"No active candidate yet; STRATEGY_ID=leader would use {ls.leader_fallback}")
         return 0
     if a.cmd == "test-trade":
         if ls.base.deriv_mode != "demo":
@@ -97,12 +111,18 @@ def main() -> int:
         from fxbot.live.journal import Journal
         j = Journal(ls.journal_path)
         since = time.time() - a.days * 86400
-        out = REPO_ROOT / "reviews"
-        out.mkdir(exist_ok=True)
+        from pathlib import Path
+        out = Path(a.out) if a.out else REPO_ROOT / "reviews"
+        out.mkdir(parents=True, exist_ok=True)
         stamp = time.strftime("%Y%m%d_%H%M", time.gmtime())
         (out / f"live_orders_{stamp}.csv").write_text(j.orders_csv(since))
         (out / f"live_events_{stamp}.csv").write_text(j.events_csv(since))
-        print("Wrote", out / f"live_orders_{stamp}.csv", "and", out / f"live_events_{stamp}.csv")
+        rows = ["utc,symbol,contract_type,multiplier,stake,commission,size,rate_pct,spot,purpose"]
+        rows += [f"{time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(q['ts']))},{q['symbol']},{q['contract_type']},"
+                 f"{q['multiplier']},{q['stake']},{q['commission']},{q['size']},{(q['rate'] or 0) * 100:.6f},"
+                 f"{q['spot']},{q['purpose']}" for q in j.quotes(since)]
+        (out / f"live_quotes_{stamp}.csv").write_text("\n".join(rows) + "\n")
+        print("Wrote orders, events and quotes CSV files to", out)
         return 0
     return 1
 

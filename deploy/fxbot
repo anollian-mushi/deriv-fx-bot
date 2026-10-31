@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+# Short commands for the VPS (installed as /usr/local/bin/fxbot by setup.sh). See deploy/DEPLOY.md.
+set -uo pipefail
+ROOT=/opt/fxbot
+HOME_DIR=$ROOT/shared/home
+ENV_FILE=$ROOT/shared/.env
+py() { sudo -u fxbot -H env BOT_HOME=$HOME_DIR $ROOT/current/.venv/bin/python $ROOT/current/scripts/live.py "$@"; }
+cmd=${1:-help}; shift || true
+case "$cmd" in
+  start|stop|restart) sudo systemctl "$cmd" fxbot && echo "fxbot: $cmd done"; sudo systemctl is-active fxbot ;;
+  status)   sudo systemctl status fxbot --no-pager -n 0; py status ;;
+  check)    py check ;;
+  logs)     sudo journalctl -u fxbot -n "${1:-50}" --no-pager ;;
+  follow)   sudo journalctl -u fxbot -f ;;
+  errors)   sudo journalctl -u fxbot -p warning -n "${1:-50}" --no-pager ;;
+  leader)   py leader ;;
+  test-trade) py test-trade "$@" ;;
+  unhalt)   py unhalt && sudo systemctl restart fxbot ;;
+  update)   sudo $ROOT/current/deploy/update.sh "$@" ;;
+  rollback) sudo $ROOT/current/deploy/rollback.sh "$@" ;;
+  version)  basename "$(readlink -f $ROOT/current)"; echo "installed: $(ls $ROOT/releases | tr '\n' ' ')" ;;
+  get)      sudo grep -E "^${1}=" "$ENV_FILE" | sed -E 's/^(DERIV_PAT|TELEGRAM_BOT_TOKEN)=.+/\1=(hidden)/' ;;
+  set)      # fxbot set STRATEGY_ID f3_trend_pullback_4h_r5
+            [ $# -eq 2 ] || { echo "usage: fxbot set NAME VALUE"; exit 1; }
+            case "$1" in DERIV_PAT|TELEGRAM_BOT_TOKEN) echo "Edit secrets with: sudo nano $ENV_FILE"; exit 1;; esac
+            if sudo grep -qE "^$1=" "$ENV_FILE"; then sudo sed -i -E "s|^$1=.*|$1=$2|" "$ENV_FILE"
+            else echo "$1=$2" | sudo tee -a "$ENV_FILE" >/dev/null; fi
+            echo "$1=$2 saved. Apply it with: fxbot restart" ;;
+  journal)  # safe copy of the journal while the bot runs, readable by you
+            out=${1:-$HOME/journal_$(date -u +%Y%m%d_%H%M).sqlite}
+            sudo sqlite3 $HOME_DIR/journal.sqlite ".backup '/tmp/fxbot_journal_copy.sqlite'" \
+              && sudo mv /tmp/fxbot_journal_copy.sqlite "$out" && sudo chown "$(id -un)": "$out" && echo "Copied to $out"
+            ;;
+  export)   # CSV files of the last N days (default 7) into your home folder
+            tmp=$(mktemp -d /tmp/fxbot_export.XXXX); chmod 777 "$tmp"
+            out=$HOME/fxbot_export_$(date -u +%Y%m%d_%H%M)
+            py export --days "${1:-7}" --out "$tmp" && sudo mv "$tmp" "$out" && sudo chown -R "$(id -un)": "$out" \
+              && chmod 755 "$out" && echo "Files are in $out" ;;
+  *) cat <<'H'
+fxbot start | stop | restart     start, stop or restart the bot
+fxbot status                     is it running? balance, open trades, heartbeat
+fxbot check                      check settings, candidate fingerprint and mode (no trading)
+fxbot logs [N] | follow | errors last N log lines / live log (Ctrl+C) / warnings only
+fxbot set NAME VALUE             change a setting in .env, e.g. fxbot set STRATEGY_ID leader
+fxbot get NAME                   show a setting (secrets hidden)
+fxbot leader                     which candidate leads the incubator (in this release)
+fxbot test-trade [--symbol frxEURUSD --direction MULTUP --hold-minutes 10]
+fxbot unhalt                     clear a halt (kill switch or /stop) and restart
+fxbot update [TAG] | rollback    install a release (tests must pass) / go back to the previous one
+fxbot version                    which release runs
+fxbot journal [FILE]             copy the journal (SQLite) to your home folder
+fxbot export [DAYS]              journal as CSV files into your home folder
+H
+  ;;
+esac

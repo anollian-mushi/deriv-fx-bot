@@ -1,0 +1,25 @@
+[Unit]
+Description=Deriv FX Multiplier bot (live trading loop)
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=fxbot
+Group=fxbot
+WorkingDirectory=/opt/fxbot/current
+Environment=BOT_HOME=/opt/fxbot/shared/home
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/fxbot/current/.venv/bin/python scripts/live.py run
+# Restart after a crash, after 30 s. Exit code 2 means "refused to start" (bad settings,
+# tampered candidate, real-money checks failed): do not loop on it.
+Restart=on-failure
+RestartSec=30
+RestartPreventExitStatus=2
+# Give the bot time to send its "stopped" message.
+TimeoutStopSec=30
+KillSignal=SIGTERM
+
+[Install]
+WantedBy=multi-user.target

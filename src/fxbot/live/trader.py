@@ -708,7 +708,8 @@ class Trader:
             minute = int(now) - int(now) % 60
             try:
                 if not self.broker.alive:
-                    raise BrokerDisconnected("connection dropped")
+                    info = getattr(self.broker.conn, "close_info", "") if self.broker.conn else ""
+                    raise BrokerDisconnected(f"connection dropped {info}".strip())
                 if minute > self.last_minute and now - minute >= TICK_SECOND:
                     self.last_minute = minute
                     await self.tick(now)
