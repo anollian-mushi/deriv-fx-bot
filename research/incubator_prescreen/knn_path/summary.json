@@ -1,0 +1,177 @@
+{
+ "idea": "knn_path",
+ "strategy": "a2_knn_path",
+ "timeframe": "1h",
+ "oos_span": [
+  "2023-10-27",
+  "2026-10-26"
+ ],
+ "trading_days": 776,
+ "trades": 443,
+ "trades_per_day": 0.57,
+ "net_measured": -32.9,
+ "net_1_5x": -42.63,
+ "gross": 1.41,
+ "gross_pips_per_trade": 0.25,
+ "win_rate_pct": 47.0,
+ "avg_win": 0.814,
+ "avg_loss": -0.86,
+ "profit_factor": 0.837,
+ "kill_events": 0,
+ "per_pair": {
+  "frxEURUSD": {
+   "trades": 115,
+   "net": -17.44,
+   "gross": -8.86
+  },
+  "frxGBPUSD": {
+   "trades": 91,
+   "net": 3.81,
+   "gross": 9.42
+  },
+  "frxUSDJPY": {
+   "trades": 237,
+   "net": -19.27,
+   "gross": 0.84
+  }
+ },
+ "per_window_net": [
+  2.15,
+  -3.46,
+  -14.09,
+  -10.63,
+  -3.84,
+  -3.03
+ ],
+ "per_window_gross": [
+  15.5,
+  4.67,
+  -7.83,
+  -9.24,
+  -0.12,
+  -1.57
+ ],
+ "move_vs_cost": {
+  "avg_abs_move_pips": 42.69,
+  "avg_cost_pips": 3.94,
+  "ratio": 10.84
+ },
+ "luck": {
+  "runs": 0
+ },
+ "grid_size": 8,
+ "checks": {
+  "c2_move_3x_cost": true,
+  "c3_trades_per_day_1_5": false,
+  "c5_params_5_or_fewer": true,
+  "c6_gross_positive": true,
+  "c6_beats_random_median": false,
+  "no_kill_switch": true
+ },
+ "prescreen_pass": false,
+ "all_checks": false,
+ "picks": [
+  {
+   "round": 1,
+   "train": "2021-10-27..2023-10-26",
+   "inner_validation": "2023-04-27..2023-10-26",
+   "test": "2023-10-27..2024-04-26",
+   "variant": 1,
+   "params": {
+    "model": "knn50",
+    "feats": "path",
+    "pool": "pair",
+    "margin": 0.1
+   },
+   "train_score": 2.461,
+   "train_trades": 137,
+   "model_file": "research/incubator_prescreen/knn_path/models/round1_full.pkl"
+  },
+  {
+   "round": 2,
+   "train": "2022-04-27..2024-04-26",
+   "inner_validation": "2023-10-27..2024-04-26",
+   "test": "2024-04-27..2024-10-26",
+   "variant": 3,
+   "params": {
+    "model": "knn50",
+    "feats": "pathpeers",
+    "pool": "pair",
+    "margin": 0.1
+   },
+   "train_score": 0.179,
+   "train_trades": 136,
+   "model_file": "research/incubator_prescreen/knn_path/models/round2_full.pkl"
+  },
+  {
+   "round": 3,
+   "train": "2022-10-27..2024-10-26",
+   "inner_validation": "2024-04-27..2024-10-26",
+   "test": "2024-10-27..2025-04-26",
+   "variant": 3,
+   "params": {
+    "model": "knn50",
+    "feats": "pathpeers",
+    "pool": "pair",
+    "margin": 0.1
+   },
+   "train_score": 0.345,
+   "train_trades": 118,
+   "model_file": "research/incubator_prescreen/knn_path/models/round3_full.pkl"
+  },
+  {
+   "round": 4,
+   "train": "2023-04-27..2025-04-26",
+   "inner_validation": "2024-10-27..2025-04-26",
+   "test": "2025-04-27..2025-10-26",
+   "variant": 5,
+   "params": {
+    "model": "knn200",
+    "feats": "path",
+    "pool": "pair",
+    "margin": 0.1
+   },
+   "train_score": 0.05,
+   "train_trades": 30,
+   "model_file": "research/incubator_prescreen/knn_path/models/round4_full.pkl"
+  },
+  {
+   "round": 5,
+   "train": "2023-10-27..2025-10-26",
+   "inner_validation": "2025-04-27..2025-10-26",
+   "test": "2025-10-27..2026-04-26",
+   "variant": 3,
+   "params": {
+    "model": "knn50",
+    "feats": "pathpeers",
+    "pool": "pair",
+    "margin": 0.1
+   },
+   "train_score": 0.031,
+   "train_trades": 101,
+   "model_file": "research/incubator_prescreen/knn_path/models/round5_full.pkl"
+  },
+  {
+   "round": 6,
+   "train": "2024-04-27..2026-04-26",
+   "inner_validation": "2025-10-27..2026-04-26",
+   "test": "2026-04-27..2026-10-26",
+   "variant": 6,
+   "params": {
+    "model": "knn200",
+    "feats": "pathpeers",
+    "pool": "pair",
+    "margin": 0.05
+   },
+   "train_score": 3.03,
+   "train_trades": 5,
+   "model_file": "research/incubator_prescreen/knn_path/models/round6_full.pkl"
+  }
+ ],
+ "blocked": {
+  "max_positions": 7
+ },
+ "refused": {
+  "expired": 7
+ }
+}

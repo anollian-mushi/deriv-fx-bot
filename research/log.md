@@ -804,3 +804,45 @@ Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; s
 Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 357 trades (0.46/day), net -40.3 USD (1.5x: -47.48), gross before costs -12.82 USD (-2.15 pips/trade), avg |move| 25.73 pips vs cost 4.25 pips (ratio 6.05), win rate 35.6%, PF 0.625, kill events 0, per pair net {EURUSD: -12.67 (100), GBPUSD: -6.87 (106), USDJPY: -20.76 (151)}, per window gross [12.35, -5.31, -10.8, -4.59, 1.35, -5.82]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_gross_positive', 'c6_beats_random_median']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/twap_pullback/`.
 
 <!-- prescreen:twap_pullback end -->
+
+<!-- prescreen:morning_overnight start -->
+
+### morning_overnight (i13_morning_overnight, 1h): 8 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | morning_overnight v00 | decision_hour=8, k=0.25, stop=0.0 | 958 | -23.81 | 1 | - |
+| 2026-10-31 | morning_overnight v01 | decision_hour=8, k=0.25, stop=0.5 | 960 | -54.65 | 1 | - |
+| 2026-10-31 | morning_overnight v02 | decision_hour=8, k=0.4, stop=0.0 | 457 | 5.99 | 0 | 1, 4, 5, 6 |
+| 2026-10-31 | morning_overnight v03 | decision_hour=8, k=0.4, stop=0.5 | 458 | -5.25 | 0 | 2, 3 |
+| 2026-10-31 | morning_overnight v04 | decision_hour=10, k=0.25, stop=0.0 | 1227 | -31.01 | 1 | - |
+| 2026-10-31 | morning_overnight v05 | decision_hour=10, k=0.25, stop=0.5 | 1229 | -69.45 | 1 | - |
+| 2026-10-31 | morning_overnight v06 | decision_hour=10, k=0.4, stop=0.0 | 688 | -54.58 | 1 | - |
+| 2026-10-31 | morning_overnight v07 | decision_hour=10, k=0.4, stop=0.5 | 690 | -68.87 | 1 | - |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 297 trades (0.38/day), net 17.47 USD (1.5x: 3.9), gross before costs 44.62 USD (7.15 pips/trade), avg |move| 47.79 pips vs cost 4.03 pips (ratio 11.86), win rate 50.2%, PF 1.117, kill events 0, per pair net {EURUSD: 11.95 (76), GBPUSD: -7.51 (83), USDJPY: 13.03 (138)}, per window gross [6.77, 3.41, -1.45, 18.05, 8.25, 9.6]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_beats_random_median']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/morning_overnight/`.
+
+<!-- prescreen:morning_overnight end -->
+
+<!-- prescreen:knn_path start -->
+
+### knn_path (a2_knn_path, 1h): 8 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | knn_path v00 | model=knn50, feats=path, pool=pair, margin=0.05 | 1146 | -80.18 | 0 | - |
+| 2026-10-31 | knn_path v01 | model=knn50, feats=path, pool=pair, margin=0.1 | 636 | -25.56 | 0 | 1 |
+| 2026-10-31 | knn_path v02 | model=knn50, feats=pathpeers, pool=pair, margin=0.05 | 1072 | -111.77 | 0 | - |
+| 2026-10-31 | knn_path v03 | model=knn50, feats=pathpeers, pool=pair, margin=0.1 | 520 | -15.89 | 0 | 2, 3, 5 |
+| 2026-10-31 | knn_path v04 | model=knn200, feats=path, pool=pair, margin=0.05 | 803 | -57.17 | 0 | - |
+| 2026-10-31 | knn_path v05 | model=knn200, feats=path, pool=pair, margin=0.1 | 237 | -21.41 | 0 | 4 |
+| 2026-10-31 | knn_path v06 | model=knn200, feats=pathpeers, pool=pair, margin=0.05 | 759 | -78.18 | 0 | 6 |
+| 2026-10-31 | knn_path v07 | model=knn200, feats=pathpeers, pool=pair, margin=0.1 | 140 | -0.28 | 0 | - |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 443 trades (0.57/day), net -32.9 USD (1.5x: -42.63), gross before costs 1.41 USD (0.25 pips/trade), avg |move| 42.69 pips vs cost 3.94 pips (ratio 10.84), win rate 47.0%, PF 0.837, kill events 0, per pair net {EURUSD: -17.44 (115), GBPUSD: 3.81 (91), USDJPY: -19.27 (237)}, per window gross [15.5, 4.67, -7.83, -9.24, -0.12, -1.57]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_beats_random_median']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/knn_path/`.
+
+<!-- prescreen:knn_path end -->

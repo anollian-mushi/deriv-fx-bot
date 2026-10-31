@@ -1,0 +1,159 @@
+{
+ "idea": "morning_overnight",
+ "strategy": "i13_morning_overnight",
+ "timeframe": "1h",
+ "oos_span": [
+  "2023-10-27",
+  "2026-10-26"
+ ],
+ "trading_days": 776,
+ "trades": 297,
+ "trades_per_day": 0.38,
+ "net_measured": 17.47,
+ "net_1_5x": 3.9,
+ "gross": 44.62,
+ "gross_pips_per_trade": 7.15,
+ "win_rate_pct": 50.2,
+ "avg_win": 1.12,
+ "avg_loss": -1.01,
+ "profit_factor": 1.117,
+ "kill_events": 0,
+ "per_pair": {
+  "frxEURUSD": {
+   "trades": 76,
+   "net": 11.95,
+   "gross": 18.91
+  },
+  "frxGBPUSD": {
+   "trades": 83,
+   "net": -7.51,
+   "gross": -0.9
+  },
+  "frxUSDJPY": {
+   "trades": 138,
+   "net": 13.03,
+   "gross": 26.61
+  }
+ },
+ "per_window_net": [
+  3.53,
+  -1.35,
+  -6.53,
+  13.07,
+  3.58,
+  5.17
+ ],
+ "per_window_gross": [
+  6.77,
+  3.41,
+  -1.45,
+  18.05,
+  8.25,
+  9.6
+ ],
+ "move_vs_cost": {
+  "avg_abs_move_pips": 47.79,
+  "avg_cost_pips": 4.03,
+  "ratio": 11.86
+ },
+ "luck": {
+  "runs": 0
+ },
+ "grid_size": 8,
+ "checks": {
+  "c2_move_3x_cost": true,
+  "c3_trades_per_day_1_5": false,
+  "c5_params_5_or_fewer": true,
+  "c6_gross_positive": true,
+  "c6_beats_random_median": false,
+  "no_kill_switch": true
+ },
+ "prescreen_pass": false,
+ "all_checks": false,
+ "picks": [
+  {
+   "round": 1,
+   "train": "2021-10-27..2023-10-26",
+   "test": "2023-10-27..2024-04-26",
+   "variant": 2,
+   "params": {
+    "decision_hour": 8,
+    "k": 0.4,
+    "stop": 0.0
+   },
+   "train_score": -0.516,
+   "train_trades": 161
+  },
+  {
+   "round": 2,
+   "train": "2022-04-27..2024-04-26",
+   "test": "2024-04-27..2024-10-26",
+   "variant": 3,
+   "params": {
+    "decision_hour": 8,
+    "k": 0.4,
+    "stop": 0.5
+   },
+   "train_score": 0.025,
+   "train_trades": 160
+  },
+  {
+   "round": 3,
+   "train": "2022-10-27..2024-10-26",
+   "test": "2024-10-27..2025-04-26",
+   "variant": 3,
+   "params": {
+    "decision_hour": 8,
+    "k": 0.4,
+    "stop": 0.5
+   },
+   "train_score": -0.782,
+   "train_trades": 157
+  },
+  {
+   "round": 4,
+   "train": "2023-04-27..2025-04-26",
+   "test": "2025-04-27..2025-10-26",
+   "variant": 2,
+   "params": {
+    "decision_hour": 8,
+    "k": 0.4,
+    "stop": 0.0
+   },
+   "train_score": -0.425,
+   "train_trades": 182
+  },
+  {
+   "round": 5,
+   "train": "2023-10-27..2025-10-26",
+   "test": "2025-10-27..2026-04-26",
+   "variant": 2,
+   "params": {
+    "decision_hour": 8,
+    "k": 0.4,
+    "stop": 0.0
+   },
+   "train_score": 0.481,
+   "train_trades": 200
+  },
+  {
+   "round": 6,
+   "train": "2024-04-27..2026-04-26",
+   "test": "2026-04-27..2026-10-26",
+   "variant": 2,
+   "params": {
+    "decision_hour": 8,
+    "k": 0.4,
+    "stop": 0.0
+   },
+   "train_score": 0.47,
+   "train_trades": 212
+  }
+ ],
+ "blocked": {
+  "max_positions": 21
+ },
+ "refused": {
+  "expired": 20
+ }
+}
