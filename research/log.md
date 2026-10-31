@@ -711,3 +711,24 @@ Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; s
 Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 471 trades (0.61/day), net -37.3 USD (1.5x: -46.89), gross before costs -4.71 USD (-0.33 pips/trade), avg |move| 18.29 pips vs cost 3.59 pips (ratio 5.1), win rate 35.7%, PF 0.643, kill events 0, per pair net {EURUSD: -22.42 (164), GBPUSD: -13.58 (186), USDJPY: -1.3 (121)}, per window gross [-3.66, 9.19, -0.87, -2.06, -2.19, -5.12]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_gross_positive', 'c6_beats_random_median']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/ny_into_asia/`.
 
 <!-- prescreen:ny_into_asia end -->
+
+<!-- prescreen:london_reversal start -->
+
+### london_reversal (i8_london_reversal, 1h): 8 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | london_reversal v00 | k=0.4, exit_hour=17, stop=0.0 | 1164 | -78.1 | 1 | - |
+| 2026-10-31 | london_reversal v01 | k=0.4, exit_hour=17, stop=0.5 | 1177 | -73.98 | 1 | 3 |
+| 2026-10-31 | london_reversal v02 | k=0.4, exit_hour=20, stop=0.0 | 1164 | -73.89 | 1 | - |
+| 2026-10-31 | london_reversal v03 | k=0.4, exit_hour=20, stop=0.5 | 1177 | -67.75 | 1 | 2 |
+| 2026-10-31 | london_reversal v04 | k=0.6, exit_hour=17, stop=0.0 | 598 | -34.66 | 0 | 4, 5, 6 |
+| 2026-10-31 | london_reversal v05 | k=0.6, exit_hour=17, stop=0.5 | 605 | -34.89 | 0 | - |
+| 2026-10-31 | london_reversal v06 | k=0.6, exit_hour=20, stop=0.0 | 598 | -41.26 | 0 | - |
+| 2026-10-31 | london_reversal v07 | k=0.6, exit_hour=20, stop=0.5 | 605 | -37.28 | 0 | 1 |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 457 trades (0.59/day), net -28.53 USD (1.5x: -39.08), gross before costs 2.88 USD (0.52 pips/trade), avg |move| 23.61 pips vs cost 3.69 pips (ratio 6.4), win rate 45.3%, PF 0.748, kill events 0, per pair net {EURUSD: -8.44 (163), GBPUSD: -4.56 (159), USDJPY: -15.53 (135)}, per window gross [-6.85, 1.37, 0.6, 3.76, 1.74, 2.25]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_beats_random_median']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/london_reversal/`.
+
+<!-- prescreen:london_reversal end -->
