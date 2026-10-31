@@ -9,3 +9,4 @@ state/
 *.sqlite
 *.tmp
 cache/
+research/experiment/variants/

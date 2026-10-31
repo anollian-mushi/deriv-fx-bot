@@ -1,0 +1,79 @@
+{
+ "picked_from": {
+  "key": "ml:knn_1:518:0.3",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL30 TP30 hold1",
+  "screen": {
+   "trades": 5401,
+   "net_pct": 4007713.106465254,
+   "dd_pct": 0.0,
+   "score": 8015426.212930508
+  },
+  "engine": {
+   "trades": 5533,
+   "net_usd": 3870034.7,
+   "net_pct": 3870034.7,
+   "dd_pct": 1.29,
+   "score": 2995147.011,
+   "win_rate": 97.8,
+   "killed": false
+  }
+ },
+ "exit": {
+  "mult": 200,
+  "sl": 30,
+  "tp": 30,
+  "hold": 1
+ },
+ "features": [
+  "sym",
+  "hour",
+  "weekday",
+  "atr14_pips",
+  "atr_ratio",
+  "rsi14",
+  "body",
+  "upper_wick",
+  "lower_wick",
+  "today_ret",
+  "today_range_pos",
+  "prevday_range_pos",
+  "prevday_ret",
+  "d5_ret",
+  "d20_ret",
+  "ret_1",
+  "ret_2",
+  "ret_3",
+  "ret_4",
+  "ret_6",
+  "ret_8",
+  "ret_12",
+  "ret_24",
+  "ret_48",
+  "ret_120",
+  "rng_pos_12",
+  "rng_pos_24",
+  "rng_pos_72",
+  "rng_pos_240",
+  "sma_dist_10",
+  "sma_dist_24",
+  "sma_dist_50",
+  "sma_dist_100",
+  "sma_dist_200",
+  "peer1_ret_1",
+  "peer1_ret_4",
+  "peer1_ret_24",
+  "peer2_ret_1",
+  "peer2_ret_4",
+  "peer2_ret_24"
+ ],
+ "trained_on": "2021-10-27 to 2026-04-27 (Dukascopy 1m, pre-holdout)",
+ "threshold": 0.3,
+ "model": {
+  "kind": "knn",
+  "k": 1,
+  "name": "knn_1"
+ }
+}

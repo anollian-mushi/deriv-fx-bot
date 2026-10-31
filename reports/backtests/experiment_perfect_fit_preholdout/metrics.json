@@ -1,0 +1,110 @@
+{
+ "run": "experiment_perfect_fit_preholdout",
+ "generated_utc": "2026-10-31T09:56Z",
+ "strategy": "fxbot.strategies.perfect_fit:PerfectFit",
+ "timeframe": "1h",
+ "label": "EXPERIMENT ONLY: fitted to the pre-holdout period on purpose",
+ "params": {
+  "model": {
+   "kind": "knn",
+   "k": 1,
+   "name": "knn_1"
+  },
+  "exit": {
+   "mult": 200,
+   "sl": 30,
+   "tp": 30,
+   "hold": 1
+  },
+  "threshold": 0.3
+ },
+ "symbols": [
+  "frxEURUSD",
+  "frxGBPUSD",
+  "frxUSDJPY"
+ ],
+ "start": "2021-10-27",
+ "end": "2026-04-27",
+ "include_holdout": false,
+ "starting_balance": 100.0,
+ "kill_switch_mode": "enforce",
+ "measured": {
+  "trades": 5533,
+  "final_balance": 3870134.7,
+  "net_profit": 3870034.7,
+  "net_return_pct": 3870034.7,
+  "max_drawdown_pct": 1.29,
+  "win_rate_pct": 97.8,
+  "avg_win": 728.701,
+  "avg_loss": -576.698,
+  "profit_factor": 55.118,
+  "avg_commission": 88.4945,
+  "min_target_met": true,
+  "late_fills": 361,
+  "avg_delay_min": 23.9,
+  "monte_carlo_drawdown_pct": {
+   "p50": 1.61,
+   "p95": 1.74,
+   "p99": 2.16,
+   "runs": 1000
+  }
+ },
+ "stress_1_5x": {
+  "trades": 5533,
+  "final_balance": 3604216.2,
+  "net_profit": 3604116.2,
+  "net_return_pct": 3604116.2,
+  "max_drawdown_pct": 1.44,
+  "win_rate_pct": 97.7,
+  "avg_win": 681.071,
+  "avg_loss": -602.137,
+  "profit_factor": 47.762,
+  "avg_commission": 132.0638,
+  "min_target_met": true,
+  "late_fills": 361,
+  "avg_delay_min": 23.9,
+  "monte_carlo_drawdown_pct": {
+   "p50": 1.68,
+   "p95": 1.89,
+   "p99": 2.31,
+   "runs": 1000
+  }
+ },
+ "mt5_micro_comparison_only": {
+  "trades": 5533,
+  "final_balance": 4236186.48,
+  "net_profit": 4236086.48,
+  "net_return_pct": 4236086.48,
+  "max_drawdown_pct": 1.41,
+  "win_rate_pct": 98.0,
+  "avg_win": 793.126,
+  "avg_loss": -566.505,
+  "profit_factor": 67.764,
+  "avg_commission": 88.4945,
+  "min_target_met": null,
+  "late_fills": 361,
+  "avg_delay_min": 23.9,
+  "monte_carlo_drawdown_pct": {
+   "p50": 1.41,
+   "p95": 1.5,
+   "p99": 1.87,
+   "runs": 1000
+  }
+ },
+ "signals_blocked_first_reason": {
+  "max_positions": 364
+ },
+ "signals_dropped": {
+  "expired": 3
+ },
+ "gate_blocked_signals": 0,
+ "kill_switch": false,
+ "kill_switch_stress": false,
+ "kill_events": [],
+ "kill_events_stress": [],
+ "exit_reasons": {
+  "take_profit": 4280,
+  "strategy_exit": 1205,
+  "stop_loss": 48
+ }
+}

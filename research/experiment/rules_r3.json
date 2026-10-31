@@ -1,0 +1,4402 @@
+[
+ {
+  "id": "r3-12870",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    23,
+    11
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "ret_48 < q10 -> Up AND prevday_range_pos > q80",
+  "trades": 9,
+  "net_pct": 16.0743448606506,
+  "dd_pct": 0.0,
+  "score": 32.1486897213012,
+  "killed": false
+ },
+ {
+  "id": "r3-34468",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    24,
+    33
+   ],
+   "q": [
+    0.3,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "ret_120 < q30 -> Up AND sma_dist_200 > q70",
+  "trades": 4,
+  "net_pct": 14.244988954067228,
+  "dd_pct": 0.0,
+  "score": 28.489977908134456,
+  "killed": false
+ },
+ {
+  "id": "r3-41026",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    31,
+    23
+   ],
+   "q": [
+    0.8,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_50 > q80 -> Up AND ret_48 < q30",
+  "trades": 11,
+  "net_pct": 13.382744096107778,
+  "dd_pct": 0.3064920568604199,
+  "score": 26.765488192215557,
+  "killed": false
+ },
+ {
+  "id": "r3-34950",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    11,
+    10
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND today_range_pos > q70",
+  "trades": 7,
+  "net_pct": 11.926841541528699,
+  "dd_pct": 0.0,
+  "score": 23.853683083057398,
+  "killed": false
+ },
+ {
+  "id": "r3-41018",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    31,
+    23
+   ],
+   "q": [
+    0.8,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_50 > q80 -> Up AND ret_48 < q20",
+  "trades": 2,
+  "net_pct": 10.330473477840417,
+  "dd_pct": 0.0,
+  "score": 20.660946955680835,
+  "killed": false
+ },
+ {
+  "id": "r3-34956",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    11,
+    10
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND today_range_pos > q80",
+  "trades": 5,
+  "net_pct": 10.319887700080855,
+  "dd_pct": 0.0,
+  "score": 20.63977540016171,
+  "killed": false
+ },
+ {
+  "id": "r3-34949",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    11,
+    10
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND today_range_pos > q70",
+  "trades": 8,
+  "net_pct": 10.318595497310156,
+  "dd_pct": 0.0,
+  "score": 20.637190994620312,
+  "killed": false
+ },
+ {
+  "id": "r3-34955",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    11,
+    10
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND today_range_pos > q80",
+  "trades": 5,
+  "net_pct": 9.790709348917016,
+  "dd_pct": 0.0,
+  "score": 19.58141869783403,
+  "killed": false
+ },
+ {
+  "id": "r3-12868",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    23,
+    11
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "ret_48 < q10 -> Up AND prevday_range_pos > q80",
+  "trades": 9,
+  "net_pct": 9.652610890790836,
+  "dd_pct": 0.0,
+  "score": 19.305221781581672,
+  "killed": false
+ },
+ {
+  "id": "r3-48900",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    32,
+    27
+   ],
+   "q": [
+    0.9,
+    0.5
+   ],
+   "sign": -1
+  },
+  "desc": "sma_dist_100 > q90 -> Down AND rng_pos_72 < q50",
+  "trades": 1,
+  "net_pct": 9.451517343521122,
+  "dd_pct": 0.0,
+  "score": 18.903034687042243,
+  "killed": false
+ },
+ {
+  "id": "r3-41024",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    31,
+    23
+   ],
+   "q": [
+    0.8,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_50 > q80 -> Up AND ret_48 < q30",
+  "trades": 11,
+  "net_pct": 9.341979551799561,
+  "dd_pct": 0.30612245113976333,
+  "score": 18.683959103599122,
+  "killed": false
+ },
+ {
+  "id": "r3-22340",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    32,
+    23
+   ],
+   "q": [
+    0.1,
+    0.501
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q10 -> Up AND ret_48 > q50",
+  "trades": 5,
+  "net_pct": 9.099156236499528,
+  "dd_pct": 0.0,
+  "score": 18.198312472999056,
+  "killed": false
+ },
+ {
+  "id": "r3-46367",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    27,
+    26
+   ],
+   "q": [
+    0.1,
+    0.501
+   ],
+   "sign": 1
+  },
+  "desc": "rng_pos_72 < q10 -> Up AND rng_pos_24 > q50",
+  "trades": 2,
+  "net_pct": 7.521617285907278,
+  "dd_pct": 0.0,
+  "score": 15.043234571814557,
+  "killed": false
+ },
+ {
+  "id": "r3-24707",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    11,
+    23
+   ],
+   "q": [
+    0.9,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND ret_48 < q30",
+  "trades": 19,
+  "net_pct": 24.918663467615822,
+  "dd_pct": 1.6713837210616613,
+  "score": 14.909002136138739,
+  "killed": false
+ },
+ {
+  "id": "r3-34954",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    11,
+    10
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND today_range_pos > q80",
+  "trades": 6,
+  "net_pct": 7.441649264395234,
+  "dd_pct": 0.0,
+  "score": 14.883298528790467,
+  "killed": false
+ },
+ {
+  "id": "r3-34471",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    24,
+    33
+   ],
+   "q": [
+    0.3,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "ret_120 < q30 -> Up AND sma_dist_200 > q70",
+  "trades": 4,
+  "net_pct": 7.40228268086911,
+  "dd_pct": 0.0,
+  "score": 14.80456536173822,
+  "killed": false
+ },
+ {
+  "id": "r3-29236",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    5,
+    18
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "rsi14 < q10 -> Up AND ret_4 > q80",
+  "trades": 9,
+  "net_pct": 7.095548023208997,
+  "dd_pct": 0.34651850296254744,
+  "score": 14.191096046417995,
+  "killed": false
+ },
+ {
+  "id": "r3-25022",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    11,
+    32
+   ],
+   "q": [
+    0.9,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND sma_dist_100 < q20",
+  "trades": 2,
+  "net_pct": 7.0415606796741415,
+  "dd_pct": 0.0,
+  "score": 14.083121359348283,
+  "killed": false
+ },
+ {
+  "id": "r3-47377",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    11,
+    23
+   ],
+   "q": [
+    0.8,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q80 -> Up AND ret_48 < q30",
+  "trades": 69,
+  "net_pct": 100.37615746635007,
+  "dd_pct": 7.572847221847996,
+  "score": 13.254744817346962,
+  "killed": false
+ },
+ {
+  "id": "r3-34921",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    11,
+    9
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND today_ret > q70",
+  "trades": 3,
+  "net_pct": 6.617074022293079,
+  "dd_pct": 0.0,
+  "score": 13.234148044586158,
+  "killed": false
+ },
+ {
+  "id": "r3-35256",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    11,
+    21
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND ret_12 > q80",
+  "trades": 3,
+  "net_pct": 6.447670719623555,
+  "dd_pct": 0.0,
+  "score": 12.89534143924711,
+  "killed": false
+ },
+ {
+  "id": "r3-22339",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    32,
+    23
+   ],
+   "q": [
+    0.1,
+    0.501
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q10 -> Up AND ret_48 > q50",
+  "trades": 5,
+  "net_pct": 6.364796877503398,
+  "dd_pct": 0.41056342530581363,
+  "score": 12.729593755006796,
+  "killed": false
+ },
+ {
+  "id": "r3-30258",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    32,
+    13
+   ],
+   "q": [
+    0.2,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q20 -> Up AND d5_ret > q80",
+  "trades": 5,
+  "net_pct": 6.356902450844637,
+  "dd_pct": 0.07505500582640487,
+  "score": 12.713804901689274,
+  "killed": false
+ },
+ {
+  "id": "r3-29237",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    5,
+    18
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "rsi14 < q10 -> Up AND ret_4 > q80",
+  "trades": 9,
+  "net_pct": 6.0534234854904945,
+  "dd_pct": 0.18292967589703604,
+  "score": 12.106846970980989,
+  "killed": false
+ },
+ {
+  "id": "r3-33013",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    26,
+    22
+   ],
+   "q": [
+    0.7,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "rng_pos_24 > q70 -> Up AND ret_24 < q30",
+  "trades": 1,
+  "net_pct": 6.050027847290029,
+  "dd_pct": 0.0,
+  "score": 12.100055694580059,
+  "killed": false
+ },
+ {
+  "id": "r3-35255",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    11,
+    21
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND ret_12 > q80",
+  "trades": 3,
+  "net_pct": 5.9381015181541486,
+  "dd_pct": 0.0,
+  "score": 11.876203036308297,
+  "killed": false
+ },
+ {
+  "id": "r3-47958",
+  "family": "R3",
+  "k": 6,
+  "rule": {
+   "f": [
+    23,
+    13
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "ret_48 < q10 -> Up AND d5_ret > q80",
+  "trades": 16,
+  "net_pct": 10.11293728768825,
+  "dd_pct": 0.875567912303493,
+  "score": 11.550146077284365,
+  "killed": false
+ },
+ {
+  "id": "r3-24702",
+  "family": "R3",
+  "k": 382,
+  "rule": {
+   "f": [
+    11,
+    23
+   ],
+   "q": [
+    0.9,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND ret_48 < q20",
+  "trades": 7,
+  "net_pct": 10.942521703839315,
+  "dd_pct": 0.9474179586520507,
+  "score": 11.549835638969634,
+  "killed": false
+ },
+ {
+  "id": "r3-29234",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    5,
+    18
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "rsi14 < q10 -> Up AND ret_4 > q80",
+  "trades": 9,
+  "net_pct": 5.742178164410872,
+  "dd_pct": 0.18288335293860417,
+  "score": 11.484356328821743,
+  "killed": false
+ },
+ {
+  "id": "r3-22338",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    32,
+    23
+   ],
+   "q": [
+    0.1,
+    0.501
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q10 -> Up AND ret_48 > q50",
+  "trades": 5,
+  "net_pct": 5.726590196043246,
+  "dd_pct": 0.0,
+  "score": 11.453180392086493,
+  "killed": false
+ },
+ {
+  "id": "r3-29565",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    5,
+    29
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "rsi14 < q10 -> Up AND sma_dist_10 > q80",
+  "trades": 1,
+  "net_pct": 5.703937053680419,
+  "dd_pct": 0.0,
+  "score": 11.407874107360838,
+  "killed": false
+ },
+ {
+  "id": "r3-22345",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    32,
+    23
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q10 -> Up AND ret_48 > q70",
+  "trades": 3,
+  "net_pct": 5.5089192509651275,
+  "dd_pct": 0.0,
+  "score": 11.017838501930255,
+  "killed": false
+ },
+ {
+  "id": "r3-47375",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    11,
+    23
+   ],
+   "q": [
+    0.8,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q80 -> Up AND ret_48 < q20",
+  "trades": 29,
+  "net_pct": 32.920080648853926,
+  "dd_pct": 2.9974913069017997,
+  "score": 10.982544160530043,
+  "killed": false
+ },
+ {
+  "id": "r3-48071",
+  "family": "R3",
+  "k": 6,
+  "rule": {
+   "f": [
+    23,
+    33
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "ret_48 < q10 -> Up AND sma_dist_200 > q70",
+  "trades": 11,
+  "net_pct": 5.474898213483392,
+  "dd_pct": 0.3565976499885354,
+  "score": 10.949796426966785,
+  "killed": false
+ },
+ {
+  "id": "r3-35422",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    11,
+    27
+   ],
+   "q": [
+    0.1,
+    0.501
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND rng_pos_72 > q50",
+  "trades": 40,
+  "net_pct": 28.094519119225446,
+  "dd_pct": 2.5784477395811862,
+  "score": 10.895904030922418,
+  "killed": false
+ },
+ {
+  "id": "r3-22045",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    32,
+    13
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q10 -> Up AND d5_ret > q70",
+  "trades": 3,
+  "net_pct": 5.348274158239352,
+  "dd_pct": 0.0,
+  "score": 10.696548316478705,
+  "killed": false
+ },
+ {
+  "id": "r3-22344",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    32,
+    23
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q10 -> Up AND ret_48 > q70",
+  "trades": 3,
+  "net_pct": 5.312390422225,
+  "dd_pct": 0.0,
+  "score": 10.62478084445,
+  "killed": false
+ },
+ {
+  "id": "r3-24705",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    11,
+    23
+   ],
+   "q": [
+    0.9,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND ret_48 < q30",
+  "trades": 20,
+  "net_pct": 17.52253201931715,
+  "dd_pct": 1.6732001613451137,
+  "score": 10.472466130549792,
+  "killed": false
+ },
+ {
+  "id": "r3-34918",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    11,
+    9
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND today_ret > q70",
+  "trades": 3,
+  "net_pct": 5.170008183270691,
+  "dd_pct": 0.0,
+  "score": 10.340016366541382,
+  "killed": false
+ },
+ {
+  "id": "r3-47380",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    11,
+    23
+   ],
+   "q": [
+    0.8,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q80 -> Up AND ret_48 < q30",
+  "trades": 69,
+  "net_pct": 50.87620746648525,
+  "dd_pct": 4.99005763335966,
+  "score": 10.195515002946326,
+  "killed": false
+ },
+ {
+  "id": "r3-12869",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    23,
+    11
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "ret_48 < q10 -> Up AND prevday_range_pos > q80",
+  "trades": 9,
+  "net_pct": 8.908457122109859,
+  "dd_pct": 0.876124186176103,
+  "score": 10.16803012937168,
+  "killed": false
+ },
+ {
+  "id": "r3-35252",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    11,
+    21
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND ret_12 > q80",
+  "trades": 3,
+  "net_pct": 4.800692553520203,
+  "dd_pct": 0.0,
+  "score": 9.601385107040405,
+  "killed": false
+ },
+ {
+  "id": "r3-22042",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    32,
+    13
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q10 -> Up AND d5_ret > q70",
+  "trades": 3,
+  "net_pct": 4.7287308961153185,
+  "dd_pct": 0.0,
+  "score": 9.457461792230637,
+  "killed": false
+ },
+ {
+  "id": "r3-24774",
+  "family": "R3",
+  "k": 382,
+  "rule": {
+   "f": [
+    11,
+    25
+   ],
+   "q": [
+    0.9,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND rng_pos_12 < q20",
+  "trades": 6,
+  "net_pct": 5.519260367453094,
+  "dd_pct": 0.5872576613892283,
+  "score": 9.398362474142308,
+  "killed": false
+ },
+ {
+  "id": "r3-12866",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    23,
+    11
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "ret_48 < q10 -> Up AND prevday_range_pos > q80",
+  "trades": 9,
+  "net_pct": 8.233973774723701,
+  "dd_pct": 0.8770723686912677,
+  "score": 9.388020953174147,
+  "killed": false
+ },
+ {
+  "id": "r3-34469",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    24,
+    33
+   ],
+   "q": [
+    0.3,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "ret_120 < q30 -> Up AND sma_dist_200 > q70",
+  "trades": 4,
+  "net_pct": 4.655088205635538,
+  "dd_pct": 0.0,
+  "score": 9.310176411271076,
+  "killed": false
+ },
+ {
+  "id": "r3-40003",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    33,
+    27
+   ],
+   "q": [
+    0.9,
+    0.3
+   ],
+   "sign": -1
+  },
+  "desc": "sma_dist_200 > q90 -> Down AND rng_pos_72 < q30",
+  "trades": 3,
+  "net_pct": 4.599563276171681,
+  "dd_pct": 0.0,
+  "score": 9.199126552343362,
+  "killed": false
+ },
+ {
+  "id": "r3-47622",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    11,
+    31
+   ],
+   "q": [
+    0.8,
+    0.5
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q80 -> Up AND sma_dist_50 < q50",
+  "trades": 12,
+  "net_pct": 27.544022537469882,
+  "dd_pct": 2.99729685643901,
+  "score": 9.189621134222264,
+  "killed": false
+ },
+ {
+  "id": "r3-40006",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    33,
+    27
+   ],
+   "q": [
+    0.9,
+    0.3
+   ],
+   "sign": -1
+  },
+  "desc": "sma_dist_200 > q90 -> Down AND rng_pos_72 < q30",
+  "trades": 3,
+  "net_pct": 4.530547631978998,
+  "dd_pct": 0.0,
+  "score": 9.061095263957997,
+  "killed": false
+ },
+ {
+  "id": "r3-30257",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    32,
+    13
+   ],
+   "q": [
+    0.2,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q20 -> Up AND d5_ret > q80",
+  "trades": 5,
+  "net_pct": 4.4718189308419865,
+  "dd_pct": 0.07496821079215937,
+  "score": 8.943637861683973,
+  "killed": false
+ },
+ {
+  "id": "r3-46277",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    27,
+    23
+   ],
+   "q": [
+    0.1,
+    0.501
+   ],
+   "sign": 1
+  },
+  "desc": "rng_pos_72 < q10 -> Up AND ret_48 > q50",
+  "trades": 1,
+  "net_pct": 4.462089300155636,
+  "dd_pct": 0.0,
+  "score": 8.924178600311272,
+  "killed": false
+ },
+ {
+  "id": "r3-24848",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    11,
+    27
+   ],
+   "q": [
+    0.9,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND rng_pos_72 < q30",
+  "trades": 2,
+  "net_pct": 4.292022709473975,
+  "dd_pct": 0.0,
+  "score": 8.58404541894795,
+  "killed": false
+ },
+ {
+  "id": "r3-34926",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    11,
+    9
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND today_ret > q80",
+  "trades": 2,
+  "net_pct": 4.175320395827309,
+  "dd_pct": 0.0,
+  "score": 8.350640791654618,
+  "killed": false
+ },
+ {
+  "id": "r3-34801",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    11,
+    5
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND rsi14 > q70",
+  "trades": 2,
+  "net_pct": 4.173959264159199,
+  "dd_pct": 0.0,
+  "score": 8.347918528318399,
+  "killed": false
+ },
+ {
+  "id": "r3-34806",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    11,
+    5
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND rsi14 > q80",
+  "trades": 2,
+  "net_pct": 4.173959264159199,
+  "dd_pct": 0.0,
+  "score": 8.347918528318399,
+  "killed": false
+ },
+ {
+  "id": "r3-25170",
+  "family": "R3",
+  "k": 382,
+  "rule": {
+   "f": [
+    11,
+    36
+   ],
+   "q": [
+    0.9,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND peer1_ret_24 < q20",
+  "trades": 158,
+  "net_pct": 99.06657640501857,
+  "dd_pct": 11.869278602396047,
+  "score": 8.346469884447739,
+  "killed": false
+ },
+ {
+  "id": "r3-27201",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    12,
+    27
+   ],
+   "q": [
+    0.8,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_ret > q80 -> Up AND rng_pos_72 < q20",
+  "trades": 51,
+  "net_pct": 29.45818747840827,
+  "dd_pct": 3.549204116185817,
+  "score": 8.299941765554404,
+  "killed": false
+ },
+ {
+  "id": "r3-22041",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    32,
+    13
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q10 -> Up AND d5_ret > q70",
+  "trades": 3,
+  "net_pct": 4.147939948737633,
+  "dd_pct": 0.22643572837114334,
+  "score": 8.295879897475267,
+  "killed": false
+ },
+ {
+  "id": "r3-35516",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    11,
+    30
+   ],
+   "q": [
+    0.1,
+    0.501
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND sma_dist_24 > q50",
+  "trades": 2,
+  "net_pct": 4.134560644626628,
+  "dd_pct": 0.0,
+  "score": 8.269121289253256,
+  "killed": false
+ },
+ {
+  "id": "r3-24854",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    11,
+    27
+   ],
+   "q": [
+    0.9,
+    0.5
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND rng_pos_72 < q50",
+  "trades": 41,
+  "net_pct": 61.506302004989124,
+  "dd_pct": 7.4480660336563185,
+  "score": 8.258023187100445,
+  "killed": false
+ },
+ {
+  "id": "r3-48899",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    32,
+    27
+   ],
+   "q": [
+    0.9,
+    0.5
+   ],
+   "sign": -1
+  },
+  "desc": "sma_dist_100 > q90 -> Down AND rng_pos_72 < q50",
+  "trades": 1,
+  "net_pct": 4.1236002445220965,
+  "dd_pct": 0.0,
+  "score": 8.247200489044193,
+  "killed": false
+ },
+ {
+  "id": "r3-48739",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    32,
+    22
+   ],
+   "q": [
+    0.9,
+    0.2
+   ],
+   "sign": -1
+  },
+  "desc": "sma_dist_100 > q90 -> Down AND ret_24 < q20",
+  "trades": 9,
+  "net_pct": 8.319072678089135,
+  "dd_pct": 1.009317899788613,
+  "score": 8.242272013437436,
+  "killed": false
+ },
+ {
+  "id": "r3-34919",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    11,
+    9
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND today_ret > q70",
+  "trades": 3,
+  "net_pct": 4.022871910631642,
+  "dd_pct": 0.0,
+  "score": 8.045743821263285,
+  "killed": false
+ },
+ {
+  "id": "r3-34797",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    11,
+    5
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND rsi14 > q70",
+  "trades": 2,
+  "net_pct": 3.992458641529084,
+  "dd_pct": 0.0,
+  "score": 7.984917283058168,
+  "killed": false
+ },
+ {
+  "id": "r3-34802",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    11,
+    5
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND rsi14 > q80",
+  "trades": 2,
+  "net_pct": 3.992458641529084,
+  "dd_pct": 0.0,
+  "score": 7.984917283058168,
+  "killed": false
+ },
+ {
+  "id": "r3-30256",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    32,
+    13
+   ],
+   "q": [
+    0.2,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q20 -> Up AND d5_ret > q80",
+  "trades": 5,
+  "net_pct": 3.97622032936662,
+  "dd_pct": 0.07508357540624618,
+  "score": 7.95244065873324,
+  "killed": false
+ },
+ {
+  "id": "r3-35254",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    11,
+    21
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND ret_12 > q80",
+  "trades": 3,
+  "net_pct": 3.9249681523442215,
+  "dd_pct": 0.0,
+  "score": 7.849936304688443,
+  "killed": false
+ },
+ {
+  "id": "r3-46136",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    27,
+    18
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "rng_pos_72 < q10 -> Up AND ret_4 > q80",
+  "trades": 3,
+  "net_pct": 3.9179276123642914,
+  "dd_pct": 0.0,
+  "score": 7.835855224728583,
+  "killed": false
+ },
+ {
+  "id": "r3-35425",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    11,
+    27
+   ],
+   "q": [
+    0.1,
+    0.501
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND rng_pos_72 > q50",
+  "trades": 40,
+  "net_pct": 19.55563787298278,
+  "dd_pct": 2.578204778807365,
+  "score": 7.584982400827328,
+  "killed": false
+ },
+ {
+  "id": "r3-46370",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    27,
+    26
+   ],
+   "q": [
+    0.1,
+    0.501
+   ],
+   "sign": 1
+  },
+  "desc": "rng_pos_72 < q10 -> Up AND rng_pos_24 > q50",
+  "trades": 2,
+  "net_pct": 3.7827379614114642,
+  "dd_pct": 0.0,
+  "score": 7.5654759228229285,
+  "killed": false
+ },
+ {
+  "id": "r3-34945",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    11,
+    10
+   ],
+   "q": [
+    0.1,
+    0.501
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND today_range_pos > q50",
+  "trades": 61,
+  "net_pct": 34.710529245634156,
+  "dd_pct": 4.595584497123861,
+  "score": 7.5530173076695,
+  "killed": false
+ },
+ {
+  "id": "r3-48742",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    32,
+    22
+   ],
+   "q": [
+    0.9,
+    0.2
+   ],
+   "sign": -1
+  },
+  "desc": "sma_dist_100 > q90 -> Down AND ret_24 < q20",
+  "trades": 9,
+  "net_pct": 7.600733472257848,
+  "dd_pct": 1.0098551307451349,
+  "score": 7.526558256578394,
+  "killed": false
+ },
+ {
+  "id": "r3-22343",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    32,
+    23
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q10 -> Up AND ret_48 > q70",
+  "trades": 3,
+  "net_pct": 3.7613431417941934,
+  "dd_pct": 0.0,
+  "score": 7.522686283588387,
+  "killed": false
+ },
+ {
+  "id": "r3-46222",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    27,
+    21
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "rng_pos_72 < q10 -> Up AND ret_12 > q70",
+  "trades": 1,
+  "net_pct": 3.731279969215384,
+  "dd_pct": 0.0,
+  "score": 7.462559938430768,
+  "killed": false
+ },
+ {
+  "id": "r3-48740",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    32,
+    22
+   ],
+   "q": [
+    0.9,
+    0.2
+   ],
+   "sign": -1
+  },
+  "desc": "sma_dist_100 > q90 -> Down AND ret_24 < q20",
+  "trades": 9,
+  "net_pct": 9.055066145956525,
+  "dd_pct": 1.213566581884158,
+  "score": 7.46153221514869,
+  "killed": false
+ },
+ {
+  "id": "r3-30253",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    32,
+    13
+   ],
+   "q": [
+    0.2,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q20 -> Up AND d5_ret > q70",
+  "trades": 30,
+  "net_pct": 22.29392348186576,
+  "dd_pct": 2.9999879913573184,
+  "score": 7.431337574047778,
+  "killed": false
+ },
+ {
+  "id": "r3-22375",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    32,
+    24
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q10 -> Up AND ret_120 > q70",
+  "trades": 2,
+  "net_pct": 3.683005214929569,
+  "dd_pct": 0.0,
+  "score": 7.366010429859138,
+  "killed": false
+ },
+ {
+  "id": "r3-34925",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    11,
+    9
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND today_ret > q80",
+  "trades": 2,
+  "net_pct": 3.6771838366985277,
+  "dd_pct": 0.0,
+  "score": 7.354367673397055,
+  "killed": false
+ },
+ {
+  "id": "r3-34800",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    11,
+    5
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND rsi14 > q70",
+  "trades": 2,
+  "net_pct": 3.6758227050304404,
+  "dd_pct": 0.0,
+  "score": 7.351645410060881,
+  "killed": false
+ },
+ {
+  "id": "r3-34805",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    11,
+    5
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND rsi14 > q80",
+  "trades": 2,
+  "net_pct": 3.6758227050304404,
+  "dd_pct": 0.0,
+  "score": 7.351645410060881,
+  "killed": false
+ },
+ {
+  "id": "r3-22585",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    32,
+    31
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q10 -> Up AND sma_dist_50 > q70",
+  "trades": 2,
+  "net_pct": 3.6645467650890273,
+  "dd_pct": 0.0,
+  "score": 7.329093530178055,
+  "killed": false
+ },
+ {
+  "id": "r3-35515",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    11,
+    30
+   ],
+   "q": [
+    0.1,
+    0.501
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND sma_dist_24 > q50",
+  "trades": 2,
+  "net_pct": 3.6445902585983347,
+  "dd_pct": 0.0,
+  "score": 7.2891805171966695,
+  "killed": false
+ },
+ {
+  "id": "r3-22043",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    32,
+    13
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q10 -> Up AND d5_ret > q70",
+  "trades": 3,
+  "net_pct": 3.606217703819259,
+  "dd_pct": 0.0,
+  "score": 7.212435407638518,
+  "killed": false
+ },
+ {
+  "id": "r3-46139",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    27,
+    18
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "rng_pos_72 < q10 -> Up AND ret_4 > q80",
+  "trades": 3,
+  "net_pct": 3.591016971766958,
+  "dd_pct": 0.0,
+  "score": 7.182033943533916,
+  "killed": false
+ },
+ {
+  "id": "r3-24882",
+  "family": "R3",
+  "k": 382,
+  "rule": {
+   "f": [
+    11,
+    28
+   ],
+   "q": [
+    0.9,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND rng_pos_240 < q20",
+  "trades": 9,
+  "net_pct": 11.729989777207361,
+  "dd_pct": 1.636322210221786,
+  "score": 7.168508563858879,
+  "killed": false
+ },
+ {
+  "id": "r3-4507",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    38,
+    37
+   ],
+   "q": [
+    0.9,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "peer2_ret_4 > q90 -> Up AND peer2_ret_1 < q30",
+  "trades": 232,
+  "net_pct": 132.56898859222028,
+  "dd_pct": 18.66939321894032,
+  "score": 7.1008729120198435,
+  "killed": false
+ },
+ {
+  "id": "r3-3622",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    38,
+    7
+   ],
+   "q": [
+    0.9,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "peer2_ret_4 > q90 -> Up AND upper_wick > q70",
+  "trades": 438,
+  "net_pct": 151.31435665439858,
+  "dd_pct": 21.333425594568112,
+  "score": 7.092829793492051,
+  "killed": false
+ },
+ {
+  "id": "r3-25025",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    11,
+    32
+   ],
+   "q": [
+    0.9,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND sma_dist_100 < q20",
+  "trades": 2,
+  "net_pct": 3.5310182183980965,
+  "dd_pct": 0.0,
+  "score": 7.062036436796193,
+  "killed": false
+ },
+ {
+  "id": "r3-45863",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    27,
+    9
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "rng_pos_72 < q10 -> Up AND today_ret > q70",
+  "trades": 4,
+  "net_pct": 3.5139462751150097,
+  "dd_pct": 0.0,
+  "score": 7.027892550230019,
+  "killed": false
+ },
+ {
+  "id": "r3-45174",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    33,
+    24
+   ],
+   "q": [
+    0.2,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_200 < q20 -> Up AND ret_120 > q70",
+  "trades": 2,
+  "net_pct": 3.431639677286147,
+  "dd_pct": 0.0,
+  "score": 6.863279354572294,
+  "killed": false
+ },
+ {
+  "id": "r3-45175",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    33,
+    24
+   ],
+   "q": [
+    0.2,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_200 < q20 -> Up AND ret_120 > q70",
+  "trades": 2,
+  "net_pct": 3.431639677286147,
+  "dd_pct": 0.0,
+  "score": 6.863279354572294,
+  "killed": false
+ },
+ {
+  "id": "r3-45861",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    27,
+    9
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "rng_pos_72 < q10 -> Up AND today_ret > q70",
+  "trades": 4,
+  "net_pct": 3.4306684510409635,
+  "dd_pct": 0.4761920635847323,
+  "score": 6.861336902081927,
+  "killed": false
+ },
+ {
+  "id": "r3-34922",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    11,
+    9
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND today_ret > q80",
+  "trades": 2,
+  "net_pct": 3.386538863182076,
+  "dd_pct": 0.0,
+  "score": 6.773077726364152,
+  "killed": false
+ },
+ {
+  "id": "r3-40008",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    33,
+    27
+   ],
+   "q": [
+    0.9,
+    0.5
+   ],
+   "sign": -1
+  },
+  "desc": "sma_dist_200 > q90 -> Down AND rng_pos_72 < q50",
+  "trades": 20,
+  "net_pct": 23.762417138963965,
+  "dd_pct": 3.5285518726875393,
+  "score": 6.734325580670917,
+  "killed": false
+ },
+ {
+  "id": "r3-22044",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    32,
+    13
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q10 -> Up AND d5_ret > q70",
+  "trades": 3,
+  "net_pct": 3.3385291746258705,
+  "dd_pct": 0.22643572837114334,
+  "score": 6.677058349251741,
+  "killed": false
+ },
+ {
+  "id": "r3-24714",
+  "family": "R3",
+  "k": 382,
+  "rule": {
+   "f": [
+    11,
+    23
+   ],
+   "q": [
+    0.9,
+    0.5
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND ret_48 < q50",
+  "trades": 78,
+  "net_pct": 49.202661015819785,
+  "dd_pct": 7.39965237929459,
+  "score": 6.649320602342982,
+  "killed": false
+ },
+ {
+  "id": "r3-47373",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    11,
+    23
+   ],
+   "q": [
+    0.8,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q80 -> Up AND ret_48 < q20",
+  "trades": 29,
+  "net_pct": 19.521409956943224,
+  "dd_pct": 2.9978626392101826,
+  "score": 6.511775990539159,
+  "killed": false
+ },
+ {
+  "id": "r3-22584",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    32,
+    31
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q10 -> Up AND sma_dist_50 > q70",
+  "trades": 2,
+  "net_pct": 3.24997473299502,
+  "dd_pct": 0.0,
+  "score": 6.49994946599004,
+  "killed": false
+ },
+ {
+  "id": "r3-35512",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    11,
+    30
+   ],
+   "q": [
+    0.1,
+    0.501
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND sma_dist_24 > q50",
+  "trades": 2,
+  "net_pct": 3.235789954662316,
+  "dd_pct": 0.0,
+  "score": 6.471579909324632,
+  "killed": false
+ },
+ {
+  "id": "r3-4532",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    38,
+    39
+   ],
+   "q": [
+    0.9,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "peer2_ret_4 > q90 -> Up AND peer2_ret_24 < q20",
+  "trades": 58,
+  "net_pct": 48.03368163879966,
+  "dd_pct": 7.4277448150066565,
+  "score": 6.466792119965502,
+  "killed": false
+ },
+ {
+  "id": "r3-24847",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    11,
+    27
+   ],
+   "q": [
+    0.9,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND rng_pos_72 < q30",
+  "trades": 2,
+  "net_pct": 3.2304687494039586,
+  "dd_pct": 0.0,
+  "score": 6.460937498807917,
+  "killed": false
+ },
+ {
+  "id": "r3-25140",
+  "family": "R3",
+  "k": 382,
+  "rule": {
+   "f": [
+    11,
+    35
+   ],
+   "q": [
+    0.9,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND peer1_ret_4 < q30",
+  "trades": 334,
+  "net_pct": 108.00965621258128,
+  "dd_pct": 16.734077320282097,
+  "score": 6.454473356691798,
+  "killed": false
+ },
+ {
+  "id": "r3-12959",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    23,
+    14
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "ret_48 < q10 -> Up AND d20_ret > q80",
+  "trades": 51,
+  "net_pct": 19.347214006513248,
+  "dd_pct": 2.9985583673517344,
+  "score": 6.45217188938707,
+  "killed": false
+ },
+ {
+  "id": "r3-1173",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    32,
+    2
+   ],
+   "q": [
+    0.3,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q30 -> Up AND weekday < q20",
+  "trades": 364,
+  "net_pct": 111.42915012965524,
+  "dd_pct": 17.325562186384186,
+  "score": 6.431488279048468,
+  "killed": false
+ },
+ {
+  "id": "r3-1178",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    32,
+    2
+   ],
+   "q": [
+    0.3,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q30 -> Up AND weekday < q30",
+  "trades": 364,
+  "net_pct": 111.42915012965524,
+  "dd_pct": 17.325562186384186,
+  "score": 6.431488279048468,
+  "killed": false
+ },
+ {
+  "id": "r3-24054",
+  "family": "R3",
+  "k": 382,
+  "rule": {
+   "f": [
+    11,
+    4
+   ],
+   "q": [
+    0.9,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND atr_ratio < q20",
+  "trades": 134,
+  "net_pct": 61.48630523491649,
+  "dd_pct": 9.574402554278954,
+  "score": 6.421946945132078,
+  "killed": false
+ },
+ {
+  "id": "r3-28959",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    5,
+    9
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "rsi14 < q10 -> Up AND today_ret > q70",
+  "trades": 7,
+  "net_pct": 4.67634774322867,
+  "dd_pct": 0.7380681509731127,
+  "score": 6.335929462696767,
+  "killed": false
+ },
+ {
+  "id": "r3-47374",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    11,
+    23
+   ],
+   "q": [
+    0.8,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q80 -> Up AND ret_48 < q20",
+  "trades": 29,
+  "net_pct": 14.484605900468273,
+  "dd_pct": 2.2880001795363802,
+  "score": 6.330683900297291,
+  "killed": false
+ },
+ {
+  "id": "r3-24966",
+  "family": "R3",
+  "k": 382,
+  "rule": {
+   "f": [
+    11,
+    30
+   ],
+   "q": [
+    0.9,
+    0.5
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND sma_dist_24 < q50",
+  "trades": 3,
+  "net_pct": 3.15584136202931,
+  "dd_pct": 0.0,
+  "score": 6.31168272405862,
+  "killed": false
+ },
+ {
+  "id": "r3-24857",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    11,
+    27
+   ],
+   "q": [
+    0.9,
+    0.5
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND rng_pos_72 < q50",
+  "trades": 43,
+  "net_pct": 30.808536457756407,
+  "dd_pct": 4.883949860358068,
+  "score": 6.308118907571601,
+  "killed": false
+ },
+ {
+  "id": "r3-4545",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    38,
+    39
+   ],
+   "q": [
+    0.9,
+    0.5
+   ],
+   "sign": 1
+  },
+  "desc": "peer2_ret_4 > q90 -> Up AND peer2_ret_24 < q50",
+  "trades": 302,
+  "net_pct": 92.51487388513063,
+  "dd_pct": 14.712130959676955,
+  "score": 6.2883394756813695,
+  "killed": false
+ },
+ {
+  "id": "r3-37018",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    36,
+    3
+   ],
+   "q": [
+    0.9,
+    0.7
+   ],
+   "sign": -1
+  },
+  "desc": "peer1_ret_24 > q90 -> Down AND atr14_pips > q70",
+  "trades": 289,
+  "net_pct": 121.93419202865581,
+  "dd_pct": 19.611450952126717,
+  "score": 6.217499782464232,
+  "killed": false
+ },
+ {
+  "id": "r3-24697",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    11,
+    23
+   ],
+   "q": [
+    0.9,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND ret_48 < q20",
+  "trades": 7,
+  "net_pct": 6.605394417047505,
+  "dd_pct": 1.071876877580954,
+  "score": 6.162456299976141,
+  "killed": false
+ },
+ {
+  "id": "r3-36244",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    3,
+    16
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "atr14_pips < q10 -> Up AND ret_2 > q80",
+  "trades": 202,
+  "net_pct": 58.00481590932558,
+  "dd_pct": 9.42957055543863,
+  "score": 6.151374080961782,
+  "killed": false
+ },
+ {
+  "id": "r3-8011",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    35,
+    2
+   ],
+   "q": [
+    0.7,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "peer1_ret_4 > q70 -> Up AND weekday < q20",
+  "trades": 402,
+  "net_pct": 77.8320371079413,
+  "dd_pct": 12.653538693795968,
+  "score": 6.151009531120521,
+  "killed": false
+ },
+ {
+  "id": "r3-8016",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    35,
+    2
+   ],
+   "q": [
+    0.7,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "peer1_ret_4 > q70 -> Up AND weekday < q30",
+  "trades": 402,
+  "net_pct": 77.8320371079413,
+  "dd_pct": 12.653538693795968,
+  "score": 6.151009531120521,
+  "killed": false
+ },
+ {
+  "id": "r3-28343",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    17,
+    27
+   ],
+   "q": [
+    0.7,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "ret_3 > q70 -> Up AND rng_pos_72 < q20",
+  "trades": 345,
+  "net_pct": 96.19209571962944,
+  "dd_pct": 16.008307535745498,
+  "score": 6.008886042752415,
+  "killed": false
+ },
+ {
+  "id": "r3-48743",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    32,
+    22
+   ],
+   "q": [
+    0.9,
+    0.2
+   ],
+   "sign": -1
+  },
+  "desc": "sma_dist_100 > q90 -> Down AND ret_24 < q20",
+  "trades": 9,
+  "net_pct": 7.276359858810899,
+  "dd_pct": 1.212497598119704,
+  "score": 6.001133420878364,
+  "killed": false
+ },
+ {
+  "id": "r3-29023",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    5,
+    11
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "rsi14 < q10 -> Up AND prevday_range_pos > q70",
+  "trades": 3,
+  "net_pct": 2.997941169440743,
+  "dd_pct": 0.23110162485922786,
+  "score": 5.995882338881486,
+  "killed": false
+ },
+ {
+  "id": "r3-11781",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    33,
+    13
+   ],
+   "q": [
+    0.3,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_200 < q30 -> Up AND d5_ret > q70",
+  "trades": 2,
+  "net_pct": 2.99525569617749,
+  "dd_pct": 0.0,
+  "score": 5.99051139235498,
+  "killed": false
+ },
+ {
+  "id": "r3-44239",
+  "family": "R3",
+  "k": 52,
+  "rule": {
+   "f": [
+    14,
+    2
+   ],
+   "q": [
+    0.1,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "d20_ret < q10 -> Up AND weekday < q20",
+  "trades": 113,
+  "net_pct": 46.5650758797594,
+  "dd_pct": 7.77702128769438,
+  "score": 5.987520691686874,
+  "killed": false
+ },
+ {
+  "id": "r3-44240",
+  "family": "R3",
+  "k": 52,
+  "rule": {
+   "f": [
+    14,
+    2
+   ],
+   "q": [
+    0.1,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "d20_ret < q10 -> Up AND weekday < q30",
+  "trades": 113,
+  "net_pct": 46.5650758797594,
+  "dd_pct": 7.77702128769438,
+  "score": 5.987520691686874,
+  "killed": false
+ },
+ {
+  "id": "r3-22372",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    32,
+    24
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q10 -> Up AND ret_120 > q70",
+  "trades": 2,
+  "net_pct": 2.993500524759307,
+  "dd_pct": 0.0,
+  "score": 5.987001049518614,
+  "killed": false
+ },
+ {
+  "id": "r3-39587",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    33,
+    13
+   ],
+   "q": [
+    0.9,
+    0.5
+   ],
+   "sign": -1
+  },
+  "desc": "sma_dist_200 > q90 -> Down AND d5_ret < q50",
+  "trades": 1,
+  "net_pct": 2.99152368307114,
+  "dd_pct": 0.0,
+  "score": 5.98304736614228,
+  "killed": false
+ },
+ {
+  "id": "r3-41023",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    31,
+    23
+   ],
+   "q": [
+    0.8,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_50 > q80 -> Up AND ret_48 < q30",
+  "trades": 11,
+  "net_pct": 17.76504230026155,
+  "dd_pct": 2.992676887479828,
+  "score": 5.936171183258518,
+  "killed": false
+ },
+ {
+  "id": "r3-39917",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    33,
+    24
+   ],
+   "q": [
+    0.9,
+    0.5
+   ],
+   "sign": -1
+  },
+  "desc": "sma_dist_200 > q90 -> Down AND ret_120 < q50",
+  "trades": 2,
+  "net_pct": 2.961230838932094,
+  "dd_pct": 0.14396879659225292,
+  "score": 5.922461677864188,
+  "killed": false
+ },
+ {
+  "id": "r3-25021",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    11,
+    32
+   ],
+   "q": [
+    0.9,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND sma_dist_100 < q20",
+  "trades": 2,
+  "net_pct": 2.936485030129554,
+  "dd_pct": 0.0,
+  "score": 5.872970060259108,
+  "killed": false
+ },
+ {
+  "id": "r3-12867",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    23,
+    11
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "ret_48 < q10 -> Up AND prevday_range_pos > q80",
+  "trades": 9,
+  "net_pct": 17.582965074740354,
+  "dd_pct": 2.99472915109512,
+  "score": 5.871303943567175,
+  "killed": false
+ },
+ {
+  "id": "r3-28962",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    5,
+    9
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "rsi14 < q10 -> Up AND today_ret > q70",
+  "trades": 7,
+  "net_pct": 4.292259040118962,
+  "dd_pct": 0.7383147985895998,
+  "score": 5.81358933657899,
+  "killed": false
+ },
+ {
+  "id": "r3-40004",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    33,
+    27
+   ],
+   "q": [
+    0.9,
+    0.3
+   ],
+   "sign": -1
+  },
+  "desc": "sma_dist_200 > q90 -> Down AND rng_pos_72 < q30",
+  "trades": 3,
+  "net_pct": 2.904682042300699,
+  "dd_pct": 0.0,
+  "score": 5.809364084601398,
+  "killed": false
+ },
+ {
+  "id": "r3-36271",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    3,
+    17
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "atr14_pips < q10 -> Up AND ret_3 > q70",
+  "trades": 227,
+  "net_pct": 60.247017603751644,
+  "dd_pct": 10.377369222707616,
+  "score": 5.8056156922623465,
+  "killed": false
+ },
+ {
+  "id": "r3-24703",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    11,
+    23
+   ],
+   "q": [
+    0.9,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND ret_48 < q30",
+  "trades": 19,
+  "net_pct": 12.707505631260574,
+  "dd_pct": 2.19535031045765,
+  "score": 5.788372621320524,
+  "killed": false
+ },
+ {
+  "id": "r3-39609",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    33,
+    14
+   ],
+   "q": [
+    0.9,
+    0.2
+   ],
+   "sign": -1
+  },
+  "desc": "sma_dist_200 > q90 -> Down AND d20_ret < q20",
+  "trades": 13,
+  "net_pct": 9.15627230763436,
+  "dd_pct": 1.5921502858997134,
+  "score": 5.750884441452216,
+  "killed": false
+ },
+ {
+  "id": "r3-28143",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    17,
+    20
+   ],
+   "q": [
+    0.7,
+    0.5
+   ],
+   "sign": 1
+  },
+  "desc": "ret_3 > q70 -> Up AND ret_8 < q50",
+  "trades": 816,
+  "net_pct": 142.61405918489558,
+  "dd_pct": 24.951267652938604,
+  "score": 5.715703954147572,
+  "killed": false
+ },
+ {
+  "id": "r3-46138",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    27,
+    18
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "rng_pos_72 < q10 -> Up AND ret_4 > q80",
+  "trades": 3,
+  "net_pct": 2.8551006644964128,
+  "dd_pct": 0.0,
+  "score": 5.7102013289928255,
+  "killed": false
+ },
+ {
+  "id": "r3-36301",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    3,
+    18
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "atr14_pips < q10 -> Up AND ret_4 > q70",
+  "trades": 226,
+  "net_pct": 63.30533174124528,
+  "dd_pct": 11.150168285061506,
+  "score": 5.67752253802832,
+  "killed": false
+ },
+ {
+  "id": "r3-43126",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    36,
+    2
+   ],
+   "q": [
+    0.7,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "peer1_ret_24 > q70 -> Up AND weekday < q20",
+  "trades": 305,
+  "net_pct": 60.24654616892562,
+  "dd_pct": 10.627966884196258,
+  "score": 5.6686802683316575,
+  "killed": false
+ },
+ {
+  "id": "r3-43131",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    36,
+    2
+   ],
+   "q": [
+    0.7,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "peer1_ret_24 > q70 -> Up AND weekday < q30",
+  "trades": 305,
+  "net_pct": 60.24654616892562,
+  "dd_pct": 10.627966884196258,
+  "score": 5.6686802683316575,
+  "killed": false
+ },
+ {
+  "id": "r3-47946",
+  "family": "R3",
+  "k": 6,
+  "rule": {
+   "f": [
+    23,
+    11
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "ret_48 < q10 -> Up AND prevday_range_pos > q80",
+  "trades": 9,
+  "net_pct": 6.037645560055971,
+  "dd_pct": 1.0690444600974074,
+  "score": 5.647702958496079,
+  "killed": false
+ },
+ {
+  "id": "r3-35882",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    3,
+    4
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "atr14_pips < q10 -> Up AND atr_ratio > q80",
+  "trades": 6,
+  "net_pct": 2.7869912540167796,
+  "dd_pct": 0.45828527319743745,
+  "score": 5.573982508033559,
+  "killed": false
+ },
+ {
+  "id": "r3-34986",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    11,
+    12
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND prevday_ret > q80",
+  "trades": 17,
+  "net_pct": 13.663938600495506,
+  "dd_pct": 2.4857189220984575,
+  "score": 5.496976540276056,
+  "killed": false
+ },
+ {
+  "id": "r3-49596",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    3,
+    5
+   ],
+   "q": [
+    0.9,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "atr14_pips > q90 -> Up AND rsi14 < q30",
+  "trades": 393,
+  "net_pct": 97.70866295344192,
+  "dd_pct": 17.90521189982432,
+  "score": 5.456995622285856,
+  "killed": false
+ },
+ {
+  "id": "r3-10829",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    36,
+    19
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "peer1_ret_24 < q10 -> Up AND ret_6 > q80",
+  "trades": 237,
+  "net_pct": 42.860786681093835,
+  "dd_pct": 7.891823914925008,
+  "score": 5.431036873495817,
+  "killed": false
+ },
+ {
+  "id": "r3-47625",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    11,
+    31
+   ],
+   "q": [
+    0.8,
+    0.5
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q80 -> Up AND sma_dist_50 < q50",
+  "trades": 12,
+  "net_pct": 16.092949861586092,
+  "dd_pct": 2.9988852311087397,
+  "score": 5.366310685933203,
+  "killed": false
+ },
+ {
+  "id": "r3-12956",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    23,
+    14
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "ret_48 < q10 -> Up AND d20_ret > q80",
+  "trades": 49,
+  "net_pct": 15.82494642521608,
+  "dd_pct": 2.991790880329208,
+  "score": 5.289456067689714,
+  "killed": false
+ },
+ {
+  "id": "r3-17817",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    4,
+    25
+   ],
+   "q": [
+    0.2,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "atr_ratio < q20 -> Up AND rng_pos_12 > q80",
+  "trades": 424,
+  "net_pct": 113.98330679503279,
+  "dd_pct": 21.589951624591137,
+  "score": 5.279460962997473,
+  "killed": false
+ },
+ {
+  "id": "r3-30555",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    32,
+    23
+   ],
+   "q": [
+    0.2,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q20 -> Up AND ret_48 > q80",
+  "trades": 2,
+  "net_pct": 2.637656699419022,
+  "dd_pct": 0.42046138644218445,
+  "score": 5.275313398838044,
+  "killed": false
+ },
+ {
+  "id": "r3-4509",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    38,
+    37
+   ],
+   "q": [
+    0.9,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "peer2_ret_4 > q90 -> Up AND peer2_ret_1 < q30",
+  "trades": 285,
+  "net_pct": 45.41796629534327,
+  "dd_pct": 8.647228383113918,
+  "score": 5.252314878607149,
+  "killed": false
+ },
+ {
+  "id": "r3-29020",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    5,
+    11
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "rsi14 < q10 -> Up AND prevday_range_pos > q70",
+  "trades": 3,
+  "net_pct": 2.6128094145655645,
+  "dd_pct": 0.23110162485922786,
+  "score": 5.225618829131129,
+  "killed": false
+ },
+ {
+  "id": "r3-22373",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    32,
+    24
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q10 -> Up AND ret_120 > q70",
+  "trades": 2,
+  "net_pct": 2.609599384367467,
+  "dd_pct": 0.0,
+  "score": 5.219198768734934,
+  "killed": false
+ },
+ {
+  "id": "r3-24706",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    11,
+    23
+   ],
+   "q": [
+    0.9,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND ret_48 < q30",
+  "trades": 19,
+  "net_pct": 11.397134286649525,
+  "dd_pct": 2.193346662661704,
+  "score": 5.196230254281235,
+  "killed": false
+ },
+ {
+  "id": "r3-35813",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    3,
+    1
+   ],
+   "q": [
+    0.1,
+    0.501
+   ],
+   "sign": 1
+  },
+  "desc": "atr14_pips < q10 -> Up AND hour > q50",
+  "trades": 91,
+  "net_pct": 35.16797787976466,
+  "dd_pct": 6.821944772795288,
+  "score": 5.155124975506743,
+  "killed": false
+ },
+ {
+  "id": "r3-35244",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    11,
+    21
+   ],
+   "q": [
+    0.1,
+    0.501
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND ret_12 > q50",
+  "trades": 32,
+  "net_pct": 18.832138420037392,
+  "dd_pct": 3.6793701613834893,
+  "score": 5.118304925578967,
+  "killed": false
+ },
+ {
+  "id": "r3-4542",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    38,
+    39
+   ],
+   "q": [
+    0.9,
+    0.5
+   ],
+   "sign": 1
+  },
+  "desc": "peer2_ret_4 > q90 -> Up AND peer2_ret_24 < q50",
+  "trades": 265,
+  "net_pct": 115.26861270895927,
+  "dd_pct": 22.561248239928165,
+  "score": 5.109141634502324,
+  "killed": false
+ },
+ {
+  "id": "r3-34924",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    11,
+    9
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND today_ret > q80",
+  "trades": 2,
+  "net_pct": 2.550187331736087,
+  "dd_pct": 0.0,
+  "score": 5.100374663472174,
+  "killed": false
+ },
+ {
+  "id": "r3-34799",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    11,
+    5
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND rsi14 > q70",
+  "trades": 2,
+  "net_pct": 2.549336624443521,
+  "dd_pct": 0.0,
+  "score": 5.098673248887042,
+  "killed": false
+ },
+ {
+  "id": "r3-34804",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    11,
+    5
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND rsi14 > q80",
+  "trades": 2,
+  "net_pct": 2.549336624443521,
+  "dd_pct": 0.0,
+  "score": 5.098673248887042,
+  "killed": false
+ },
+ {
+  "id": "r3-35514",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    11,
+    30
+   ],
+   "q": [
+    0.1,
+    0.501
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND sma_dist_24 > q50",
+  "trades": 2,
+  "net_pct": 2.5481975796818768,
+  "dd_pct": 0.0,
+  "score": 5.0963951593637535,
+  "killed": false
+ },
+ {
+  "id": "r3-41505",
+  "family": "R3",
+  "k": 323,
+  "rule": {
+   "f": [
+    14,
+    2
+   ],
+   "q": [
+    0.2,
+    0.5
+   ],
+   "sign": 1
+  },
+  "desc": "d20_ret < q20 -> Up AND weekday < q50",
+  "trades": 311,
+  "net_pct": 116.32431391498076,
+  "dd_pct": 22.926608785942964,
+  "score": 5.073768868351037,
+  "killed": false
+ },
+ {
+  "id": "r3-45289",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    33,
+    28
+   ],
+   "q": [
+    0.2,
+    0.501
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_200 < q20 -> Up AND rng_pos_240 > q50",
+  "trades": 3,
+  "net_pct": 2.52848097318783,
+  "dd_pct": 0.0,
+  "score": 5.05696194637566,
+  "killed": false
+ },
+ {
+  "id": "r3-3625",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    38,
+    7
+   ],
+   "q": [
+    0.9,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "peer2_ret_4 > q90 -> Up AND upper_wick > q70",
+  "trades": 565,
+  "net_pct": 124.64958594512892,
+  "dd_pct": 24.66015491039858,
+  "score": 5.054695982163812,
+  "killed": false
+ },
+ {
+  "id": "r3-41021",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    31,
+    23
+   ],
+   "q": [
+    0.8,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_50 > q80 -> Up AND ret_48 < q20",
+  "trades": 2,
+  "net_pct": 2.5165806818008507,
+  "dd_pct": 0.0,
+  "score": 5.033161363601701,
+  "killed": false
+ },
+ {
+  "id": "r3-1175",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    32,
+    2
+   ],
+   "q": [
+    0.3,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q30 -> Up AND weekday < q20",
+  "trades": 324,
+  "net_pct": 124.19846875581335,
+  "dd_pct": 24.801345303105002,
+  "score": 5.007731122563918,
+  "killed": false
+ },
+ {
+  "id": "r3-1180",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    32,
+    2
+   ],
+   "q": [
+    0.3,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_100 < q30 -> Up AND weekday < q30",
+  "trades": 324,
+  "net_pct": 124.19846875581335,
+  "dd_pct": 24.801345303105002,
+  "score": 5.007731122563918,
+  "killed": false
+ },
+ {
+  "id": "r3-35543",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    11,
+    31
+   ],
+   "q": [
+    0.1,
+    0.501
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND sma_dist_50 > q50",
+  "trades": 1,
+  "net_pct": 2.50269895792008,
+  "dd_pct": 0.0,
+  "score": 5.00539791584016,
+  "killed": false
+ },
+ {
+  "id": "r3-24708",
+  "family": "R3",
+  "k": 382,
+  "rule": {
+   "f": [
+    11,
+    23
+   ],
+   "q": [
+    0.9,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND ret_48 < q30",
+  "trades": 19,
+  "net_pct": 14.947304280921813,
+  "dd_pct": 2.996690485253598,
+  "score": 4.987937311002235,
+  "killed": false
+ },
+ {
+  "id": "r3-38107",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    37,
+    2
+   ],
+   "q": [
+    0.1,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "peer2_ret_1 < q10 -> Up AND weekday < q20",
+  "trades": 295,
+  "net_pct": 67.83862027628173,
+  "dd_pct": 13.6469086951983,
+  "score": 4.970988067074188,
+  "killed": false
+ },
+ {
+  "id": "r3-38112",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    37,
+    2
+   ],
+   "q": [
+    0.1,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "peer2_ret_1 < q10 -> Up AND weekday < q30",
+  "trades": 295,
+  "net_pct": 67.83862027628173,
+  "dd_pct": 13.6469086951983,
+  "score": 4.970988067074188,
+  "killed": false
+ },
+ {
+  "id": "r3-47353",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    11,
+    22
+   ],
+   "q": [
+    0.8,
+    0.5
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q80 -> Up AND ret_24 < q50",
+  "trades": 2,
+  "net_pct": 2.4806325611472113,
+  "dd_pct": 0.0,
+  "score": 4.961265122294423,
+  "killed": false
+ },
+ {
+  "id": "r3-2311",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    14,
+    2
+   ],
+   "q": [
+    0.1,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "d20_ret < q10 -> Up AND weekday < q20",
+  "trades": 75,
+  "net_pct": 41.07442561537029,
+  "dd_pct": 8.28943999428342,
+  "score": 4.955030212378172,
+  "killed": false
+ },
+ {
+  "id": "r3-2316",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    14,
+    2
+   ],
+   "q": [
+    0.1,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "d20_ret < q10 -> Up AND weekday < q30",
+  "trades": 75,
+  "net_pct": 41.07442561537029,
+  "dd_pct": 8.28943999428342,
+  "score": 4.955030212378172,
+  "killed": false
+ },
+ {
+  "id": "r3-45864",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    27,
+    9
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "rng_pos_72 < q10 -> Up AND today_ret > q70",
+  "trades": 4,
+  "net_pct": 2.4633151674270604,
+  "dd_pct": 0.4760515918037238,
+  "score": 4.926630334854121,
+  "killed": false
+ },
+ {
+  "id": "r3-36631",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    3,
+    29
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "atr14_pips < q10 -> Up AND sma_dist_10 > q70",
+  "trades": 218,
+  "net_pct": 61.12698138149077,
+  "dd_pct": 12.430145574034098,
+  "score": 4.917640024199051,
+  "killed": false
+ },
+ {
+  "id": "r3-25026",
+  "family": "R3",
+  "k": 382,
+  "rule": {
+   "f": [
+    11,
+    32
+   ],
+   "q": [
+    0.9,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND sma_dist_100 < q20",
+  "trades": 2,
+  "net_pct": 2.4473261824250248,
+  "dd_pct": 0.0,
+  "score": 4.8946523648500495,
+  "killed": false
+ },
+ {
+  "id": "r3-24701",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    11,
+    23
+   ],
+   "q": [
+    0.9,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND ret_48 < q20",
+  "trades": 7,
+  "net_pct": 7.984459064640115,
+  "dd_pct": 1.6364532837286319,
+  "score": 4.879124350221386,
+  "killed": false
+ },
+ {
+  "id": "r3-49482",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    3,
+    1
+   ],
+   "q": [
+    0.9,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "atr14_pips > q90 -> Up AND hour < q20",
+  "trades": 172,
+  "net_pct": 82.09508685660538,
+  "dd_pct": 16.864998717664545,
+  "score": 4.867779015637771,
+  "killed": false
+ },
+ {
+  "id": "r3-23958",
+  "family": "R3",
+  "k": 382,
+  "rule": {
+   "f": [
+    11,
+    1
+   ],
+   "q": [
+    0.9,
+    0.5
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND hour < q50",
+  "trades": 394,
+  "net_pct": 96.40683705584007,
+  "dd_pct": 19.94177010153188,
+  "score": 4.834417234026498,
+  "killed": false
+ },
+ {
+  "id": "r3-24700",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    11,
+    23
+   ],
+   "q": [
+    0.9,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND ret_48 < q20",
+  "trades": 7,
+  "net_pct": 5.126364444792264,
+  "dd_pct": 1.071591698681883,
+  "score": 4.783878459583044,
+  "killed": false
+ },
+ {
+  "id": "r3-24855",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    11,
+    27
+   ],
+   "q": [
+    0.9,
+    0.5
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND rng_pos_72 < q50",
+  "trades": 47,
+  "net_pct": 21.86927241725849,
+  "dd_pct": 4.581892026684065,
+  "score": 4.772978562108409,
+  "killed": false
+ },
+ {
+  "id": "r3-41148",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    31,
+    27
+   ],
+   "q": [
+    0.8,
+    0.5
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_50 > q80 -> Up AND rng_pos_72 < q50",
+  "trades": 41,
+  "net_pct": 29.75148447842335,
+  "dd_pct": 6.233553267360032,
+  "score": 4.772797023201405,
+  "killed": false
+ },
+ {
+  "id": "r3-17606",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    4,
+    18
+   ],
+   "q": [
+    0.2,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "atr_ratio < q20 -> Up AND ret_4 > q80",
+  "trades": 466,
+  "net_pct": 67.97827976209598,
+  "dd_pct": 14.261400919684528,
+  "score": 4.766592016094847,
+  "killed": false
+ },
+ {
+  "id": "r3-36629",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    3,
+    29
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "atr14_pips < q10 -> Up AND sma_dist_10 > q70",
+  "trades": 246,
+  "net_pct": 53.24370297275076,
+  "dd_pct": 11.22868923173177,
+  "score": 4.741755860718493,
+  "killed": false
+ },
+ {
+  "id": "r3-11818",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    33,
+    14
+   ],
+   "q": [
+    0.3,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_200 < q30 -> Up AND d20_ret > q80",
+  "trades": 61,
+  "net_pct": 20.841596157462373,
+  "dd_pct": 4.406763201751483,
+  "score": 4.729456792499949,
+  "killed": false
+ },
+ {
+  "id": "r3-47372",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    11,
+    23
+   ],
+   "q": [
+    0.8,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q80 -> Up AND ret_48 < q20",
+  "trades": 29,
+  "net_pct": 31.217626861585313,
+  "dd_pct": 6.6200319776278365,
+  "score": 4.71563082581537,
+  "killed": false
+ },
+ {
+  "id": "r3-35818",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    3,
+    1
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "atr14_pips < q10 -> Up AND hour > q70",
+  "trades": 67,
+  "net_pct": 27.700211839955347,
+  "dd_pct": 5.912611352729856,
+  "score": 4.684937024850474,
+  "killed": false
+ },
+ {
+  "id": "r3-13498",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    23,
+    33
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "ret_48 < q10 -> Up AND sma_dist_200 > q80",
+  "trades": 3,
+  "net_pct": 2.3348712394013926,
+  "dd_pct": 0.12216233519123111,
+  "score": 4.669742478802785,
+  "killed": false
+ },
+ {
+  "id": "r3-35245",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    11,
+    21
+   ],
+   "q": [
+    0.1,
+    0.501
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND ret_12 > q50",
+  "trades": 31,
+  "net_pct": 20.31828274362093,
+  "dd_pct": 4.353069993191766,
+  "score": 4.667575475560668,
+  "killed": false
+ },
+ {
+  "id": "r3-36304",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    3,
+    18
+   ],
+   "q": [
+    0.1,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "atr14_pips < q10 -> Up AND ret_4 > q80",
+  "trades": 174,
+  "net_pct": 48.64398519632731,
+  "dd_pct": 10.458220798277203,
+  "score": 4.6512677571638665,
+  "killed": false
+ },
+ {
+  "id": "r3-24851",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    11,
+    27
+   ],
+   "q": [
+    0.9,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND rng_pos_72 < q30",
+  "trades": 2,
+  "net_pct": 2.3199557695537942,
+  "dd_pct": 0.0,
+  "score": 4.6399115391075885,
+  "killed": false
+ },
+ {
+  "id": "r3-35037",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    11,
+    14
+   ],
+   "q": [
+    0.1,
+    0.7
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos < q10 -> Up AND d20_ret > q70",
+  "trades": 149,
+  "net_pct": 47.20940268353087,
+  "dd_pct": 10.196037210631468,
+  "score": 4.630171674374172,
+  "killed": false
+ },
+ {
+  "id": "r3-46368",
+  "family": "R3",
+  "k": 53,
+  "rule": {
+   "f": [
+    27,
+    26
+   ],
+   "q": [
+    0.1,
+    0.501
+   ],
+   "sign": 1
+  },
+  "desc": "rng_pos_72 < q10 -> Up AND rng_pos_24 > q50",
+  "trades": 2,
+  "net_pct": 2.3107224744558286,
+  "dd_pct": 0.0,
+  "score": 4.621444948911657,
+  "killed": false
+ },
+ {
+  "id": "r3-24709",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    11,
+    23
+   ],
+   "q": [
+    0.9,
+    0.5
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND ret_48 < q50",
+  "trades": 77,
+  "net_pct": 30.948120657233467,
+  "dd_pct": 6.710937517720971,
+  "score": 4.611594218469706,
+  "killed": false
+ },
+ {
+  "id": "r3-24856",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    11,
+    27
+   ],
+   "q": [
+    0.9,
+    0.5
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND rng_pos_72 < q50",
+  "trades": 43,
+  "net_pct": 13.812904380150105,
+  "dd_pct": 2.9991008953046316,
+  "score": 4.6056817900909826,
+  "killed": false
+ },
+ {
+  "id": "r3-41228",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    31,
+    30
+   ],
+   "q": [
+    0.8,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_50 > q80 -> Up AND sma_dist_24 < q20",
+  "trades": 3,
+  "net_pct": 2.2978408187627863,
+  "dd_pct": 0.0,
+  "score": 4.595681637525573,
+  "killed": false
+ },
+ {
+  "id": "r3-41231",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    31,
+    30
+   ],
+   "q": [
+    0.8,
+    0.2
+   ],
+   "sign": 1
+  },
+  "desc": "sma_dist_50 > q80 -> Up AND sma_dist_24 < q20",
+  "trades": 3,
+  "net_pct": 2.2978408187627863,
+  "dd_pct": 0.0,
+  "score": 4.595681637525573,
+  "killed": false
+ },
+ {
+  "id": "r3-50142",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    3,
+    20
+   ],
+   "q": [
+    0.9,
+    0.5
+   ],
+   "sign": 1
+  },
+  "desc": "atr14_pips > q90 -> Up AND ret_8 < q50",
+  "trades": 502,
+  "net_pct": 85.04052104664368,
+  "dd_pct": 18.564152811620076,
+  "score": 4.580899646194103,
+  "killed": false
+ },
+ {
+  "id": "r3-23397",
+  "family": "R3",
+  "k": 8,
+  "rule": {
+   "f": [
+    27,
+    20
+   ],
+   "q": [
+    0.3,
+    0.8
+   ],
+   "sign": 1
+  },
+  "desc": "rng_pos_72 < q30 -> Up AND ret_8 > q80",
+  "trades": 201,
+  "net_pct": 79.85529034325613,
+  "dd_pct": 17.51913246916655,
+  "score": 4.558176067439437,
+  "killed": false
+ },
+ {
+  "id": "r3-48753",
+  "family": "R3",
+  "k": 62,
+  "rule": {
+   "f": [
+    32,
+    22
+   ],
+   "q": [
+    0.9,
+    0.5
+   ],
+   "sign": -1
+  },
+  "desc": "sma_dist_100 > q90 -> Down AND ret_24 < q50",
+  "trades": 73,
+  "net_pct": 29.3472189127421,
+  "dd_pct": 6.44895327252856,
+  "score": 4.550694922501027,
+  "killed": false
+ },
+ {
+  "id": "r3-39617",
+  "family": "R3",
+  "k": 7,
+  "rule": {
+   "f": [
+    33,
+    14
+   ],
+   "q": [
+    0.9,
+    0.5
+   ],
+   "sign": -1
+  },
+  "desc": "sma_dist_200 > q90 -> Down AND d20_ret < q50",
+  "trades": 90,
+  "net_pct": 35.46520031141584,
+  "dd_pct": 7.827171206506077,
+  "score": 4.531036740570664,
+  "killed": false
+ },
+ {
+  "id": "r3-24850",
+  "family": "R3",
+  "k": 61,
+  "rule": {
+   "f": [
+    11,
+    27
+   ],
+   "q": [
+    0.9,
+    0.3
+   ],
+   "sign": 1
+  },
+  "desc": "prevday_range_pos > q90 -> Up AND rng_pos_72 < q30",
+  "trades": 2,
+  "net_pct": 2.2633156381547614,
+  "dd_pct": 0.0,
+  "score": 4.526631276309523,
+  "killed": false
+ }
+]

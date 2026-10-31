@@ -1,0 +1,2602 @@
+[
+ {
+  "id": "r1-9",
+  "family": "R1",
+  "k": 8,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 372,
+  "net_pct": 17.514739888515173,
+  "dd_pct": 39.977351281016695,
+  "score": 0.43811656668790044,
+  "killed": false
+ },
+ {
+  "id": "r1-383",
+  "family": "R1",
+  "k": 382,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 1167,
+  "net_pct": 16.801688586567654,
+  "dd_pct": 54.1705153504295,
+  "score": 0.3101629821661728,
+  "killed": false
+ },
+ {
+  "id": "r1-323",
+  "family": "R1",
+  "k": 322,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 1187,
+  "net_pct": 5.6664671902198815,
+  "dd_pct": 39.128025296792885,
+  "score": 0.14481863439922515,
+  "killed": false
+ },
+ {
+  "id": "r1-324",
+  "family": "R1",
+  "k": 323,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 681,
+  "net_pct": 5.272608836512105,
+  "dd_pct": 44.32282058785171,
+  "score": 0.11895923514301922,
+  "killed": false
+ },
+ {
+  "id": "r1-377",
+  "family": "R1",
+  "k": 376,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 1157,
+  "net_pct": 1.5408317617256362,
+  "dd_pct": 32.21642319415375,
+  "score": 0.04782752425493492,
+  "killed": false
+ },
+ {
+  "id": "r1-260",
+  "family": "R1",
+  "k": 259,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 1157,
+  "net_pct": -4.592368762706767,
+  "dd_pct": 31.688582020975726,
+  "score": -0.14492187626656583,
+  "killed": false
+ },
+ {
+  "id": "r1-62",
+  "family": "R1",
+  "k": 61,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 1161,
+  "net_pct": -8.388453098399362,
+  "dd_pct": 39.44530262926199,
+  "score": -0.21266038131943488,
+  "killed": false
+ },
+ {
+  "id": "r1-261",
+  "family": "R1",
+  "k": 260,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 821,
+  "net_pct": -12.38137153381469,
+  "dd_pct": 43.1594390341035,
+  "score": -0.2868751728684713,
+  "killed": false
+ },
+ {
+  "id": "r1-503",
+  "family": "R1",
+  "k": 502,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 1157,
+  "net_pct": -16.741009346803224,
+  "dd_pct": 49.18284225334091,
+  "score": -0.3403831210195266,
+  "killed": false
+ },
+ {
+  "id": "r1-63",
+  "family": "R1",
+  "k": 62,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 815,
+  "net_pct": -16.844567634593723,
+  "dd_pct": 45.3997189791832,
+  "score": -0.3710280154447066,
+  "killed": false
+ },
+ {
+  "id": "r1-315",
+  "family": "R1",
+  "k": 314,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 1131,
+  "net_pct": -18.29002930505196,
+  "dd_pct": 44.58717045520185,
+  "score": -0.41020834285567714,
+  "killed": false
+ },
+ {
+  "id": "r1-378",
+  "family": "R1",
+  "k": 377,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 1009,
+  "net_pct": -27.037274359983076,
+  "dd_pct": 51.619789282662055,
+  "score": -0.5237773097431899,
+  "killed": false
+ },
+ {
+  "id": "r1-1",
+  "family": "R1",
+  "k": 0,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-2",
+  "family": "R1",
+  "k": 1,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-3",
+  "family": "R1",
+  "k": 2,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-4",
+  "family": "R1",
+  "k": 3,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-5",
+  "family": "R1",
+  "k": 4,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-6",
+  "family": "R1",
+  "k": 5,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-7",
+  "family": "R1",
+  "k": 6,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-8",
+  "family": "R1",
+  "k": 7,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-10",
+  "family": "R1",
+  "k": 9,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-11",
+  "family": "R1",
+  "k": 10,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-12",
+  "family": "R1",
+  "k": 11,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-13",
+  "family": "R1",
+  "k": 12,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-14",
+  "family": "R1",
+  "k": 13,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-15",
+  "family": "R1",
+  "k": 14,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-16",
+  "family": "R1",
+  "k": 15,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-17",
+  "family": "R1",
+  "k": 16,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-18",
+  "family": "R1",
+  "k": 17,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-19",
+  "family": "R1",
+  "k": 18,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-20",
+  "family": "R1",
+  "k": 19,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-21",
+  "family": "R1",
+  "k": 20,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-22",
+  "family": "R1",
+  "k": 21,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-23",
+  "family": "R1",
+  "k": 22,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-24",
+  "family": "R1",
+  "k": 23,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-25",
+  "family": "R1",
+  "k": 24,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-26",
+  "family": "R1",
+  "k": 25,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-27",
+  "family": "R1",
+  "k": 26,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-28",
+  "family": "R1",
+  "k": 27,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-29",
+  "family": "R1",
+  "k": 28,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-30",
+  "family": "R1",
+  "k": 29,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-31",
+  "family": "R1",
+  "k": 30,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-32",
+  "family": "R1",
+  "k": 31,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-33",
+  "family": "R1",
+  "k": 32,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-34",
+  "family": "R1",
+  "k": 33,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-35",
+  "family": "R1",
+  "k": 34,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-36",
+  "family": "R1",
+  "k": 35,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-37",
+  "family": "R1",
+  "k": 36,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-38",
+  "family": "R1",
+  "k": 37,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-39",
+  "family": "R1",
+  "k": 38,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-40",
+  "family": "R1",
+  "k": 39,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-41",
+  "family": "R1",
+  "k": 40,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-42",
+  "family": "R1",
+  "k": 41,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-43",
+  "family": "R1",
+  "k": 42,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-44",
+  "family": "R1",
+  "k": 43,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-45",
+  "family": "R1",
+  "k": 44,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-46",
+  "family": "R1",
+  "k": 45,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-47",
+  "family": "R1",
+  "k": 46,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-48",
+  "family": "R1",
+  "k": 47,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-49",
+  "family": "R1",
+  "k": 48,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-50",
+  "family": "R1",
+  "k": 49,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-51",
+  "family": "R1",
+  "k": 50,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-52",
+  "family": "R1",
+  "k": 51,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-53",
+  "family": "R1",
+  "k": 52,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-54",
+  "family": "R1",
+  "k": 53,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-55",
+  "family": "R1",
+  "k": 54,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-56",
+  "family": "R1",
+  "k": 55,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-57",
+  "family": "R1",
+  "k": 56,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-58",
+  "family": "R1",
+  "k": 57,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-59",
+  "family": "R1",
+  "k": 58,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-60",
+  "family": "R1",
+  "k": 59,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-61",
+  "family": "R1",
+  "k": 60,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-64",
+  "family": "R1",
+  "k": 63,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-65",
+  "family": "R1",
+  "k": 64,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-66",
+  "family": "R1",
+  "k": 65,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-67",
+  "family": "R1",
+  "k": 66,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-68",
+  "family": "R1",
+  "k": 67,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-69",
+  "family": "R1",
+  "k": 68,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-70",
+  "family": "R1",
+  "k": 69,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-71",
+  "family": "R1",
+  "k": 70,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-72",
+  "family": "R1",
+  "k": 71,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-73",
+  "family": "R1",
+  "k": 72,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-74",
+  "family": "R1",
+  "k": 73,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-75",
+  "family": "R1",
+  "k": 74,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-76",
+  "family": "R1",
+  "k": 75,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-77",
+  "family": "R1",
+  "k": 76,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-78",
+  "family": "R1",
+  "k": 77,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-79",
+  "family": "R1",
+  "k": 78,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-80",
+  "family": "R1",
+  "k": 79,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-81",
+  "family": "R1",
+  "k": 80,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-82",
+  "family": "R1",
+  "k": 81,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-83",
+  "family": "R1",
+  "k": 82,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-84",
+  "family": "R1",
+  "k": 83,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-85",
+  "family": "R1",
+  "k": 84,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-86",
+  "family": "R1",
+  "k": 85,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-87",
+  "family": "R1",
+  "k": 86,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-88",
+  "family": "R1",
+  "k": 87,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-89",
+  "family": "R1",
+  "k": 88,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-90",
+  "family": "R1",
+  "k": 89,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-91",
+  "family": "R1",
+  "k": 90,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-92",
+  "family": "R1",
+  "k": 91,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-93",
+  "family": "R1",
+  "k": 92,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-94",
+  "family": "R1",
+  "k": 93,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-95",
+  "family": "R1",
+  "k": 94,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-96",
+  "family": "R1",
+  "k": 95,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-97",
+  "family": "R1",
+  "k": 96,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-98",
+  "family": "R1",
+  "k": 97,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-99",
+  "family": "R1",
+  "k": 98,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-100",
+  "family": "R1",
+  "k": 99,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-101",
+  "family": "R1",
+  "k": 100,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-102",
+  "family": "R1",
+  "k": 101,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-103",
+  "family": "R1",
+  "k": 102,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-104",
+  "family": "R1",
+  "k": 103,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-105",
+  "family": "R1",
+  "k": 104,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-106",
+  "family": "R1",
+  "k": 105,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-107",
+  "family": "R1",
+  "k": 106,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-108",
+  "family": "R1",
+  "k": 107,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-109",
+  "family": "R1",
+  "k": 108,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-110",
+  "family": "R1",
+  "k": 109,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-111",
+  "family": "R1",
+  "k": 110,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-112",
+  "family": "R1",
+  "k": 111,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-113",
+  "family": "R1",
+  "k": 112,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-114",
+  "family": "R1",
+  "k": 113,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-115",
+  "family": "R1",
+  "k": 114,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-116",
+  "family": "R1",
+  "k": 115,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-117",
+  "family": "R1",
+  "k": 116,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-118",
+  "family": "R1",
+  "k": 117,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-119",
+  "family": "R1",
+  "k": 118,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-120",
+  "family": "R1",
+  "k": 119,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-121",
+  "family": "R1",
+  "k": 120,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-122",
+  "family": "R1",
+  "k": 121,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-123",
+  "family": "R1",
+  "k": 122,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-124",
+  "family": "R1",
+  "k": 123,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-125",
+  "family": "R1",
+  "k": 124,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-126",
+  "family": "R1",
+  "k": 125,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-127",
+  "family": "R1",
+  "k": 126,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-128",
+  "family": "R1",
+  "k": 127,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-129",
+  "family": "R1",
+  "k": 128,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-130",
+  "family": "R1",
+  "k": 129,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-131",
+  "family": "R1",
+  "k": 130,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-132",
+  "family": "R1",
+  "k": 131,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-133",
+  "family": "R1",
+  "k": 132,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-134",
+  "family": "R1",
+  "k": 133,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-135",
+  "family": "R1",
+  "k": 134,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-136",
+  "family": "R1",
+  "k": 135,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-137",
+  "family": "R1",
+  "k": 136,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-138",
+  "family": "R1",
+  "k": 137,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-139",
+  "family": "R1",
+  "k": 138,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-140",
+  "family": "R1",
+  "k": 139,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-141",
+  "family": "R1",
+  "k": 140,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-142",
+  "family": "R1",
+  "k": 141,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-143",
+  "family": "R1",
+  "k": 142,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-144",
+  "family": "R1",
+  "k": 143,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-145",
+  "family": "R1",
+  "k": 144,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-146",
+  "family": "R1",
+  "k": 145,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-147",
+  "family": "R1",
+  "k": 146,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-148",
+  "family": "R1",
+  "k": 147,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-149",
+  "family": "R1",
+  "k": 148,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-150",
+  "family": "R1",
+  "k": 149,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-151",
+  "family": "R1",
+  "k": 150,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-152",
+  "family": "R1",
+  "k": 151,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-153",
+  "family": "R1",
+  "k": 152,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-154",
+  "family": "R1",
+  "k": 153,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-155",
+  "family": "R1",
+  "k": 154,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-156",
+  "family": "R1",
+  "k": 155,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-157",
+  "family": "R1",
+  "k": 156,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-158",
+  "family": "R1",
+  "k": 157,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-159",
+  "family": "R1",
+  "k": 158,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-160",
+  "family": "R1",
+  "k": 159,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-161",
+  "family": "R1",
+  "k": 160,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-162",
+  "family": "R1",
+  "k": 161,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-163",
+  "family": "R1",
+  "k": 162,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-164",
+  "family": "R1",
+  "k": 163,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-165",
+  "family": "R1",
+  "k": 164,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-166",
+  "family": "R1",
+  "k": 165,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-167",
+  "family": "R1",
+  "k": 166,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-168",
+  "family": "R1",
+  "k": 167,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-169",
+  "family": "R1",
+  "k": 168,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-170",
+  "family": "R1",
+  "k": 169,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-171",
+  "family": "R1",
+  "k": 170,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-172",
+  "family": "R1",
+  "k": 171,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-173",
+  "family": "R1",
+  "k": 172,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-174",
+  "family": "R1",
+  "k": 173,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-175",
+  "family": "R1",
+  "k": 174,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-176",
+  "family": "R1",
+  "k": 175,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-177",
+  "family": "R1",
+  "k": 176,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-178",
+  "family": "R1",
+  "k": 177,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-179",
+  "family": "R1",
+  "k": 178,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-180",
+  "family": "R1",
+  "k": 179,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-181",
+  "family": "R1",
+  "k": 180,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-182",
+  "family": "R1",
+  "k": 181,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-183",
+  "family": "R1",
+  "k": 182,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-184",
+  "family": "R1",
+  "k": 183,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-185",
+  "family": "R1",
+  "k": 184,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-186",
+  "family": "R1",
+  "k": 185,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-187",
+  "family": "R1",
+  "k": 186,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-188",
+  "family": "R1",
+  "k": 187,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-189",
+  "family": "R1",
+  "k": 188,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-190",
+  "family": "R1",
+  "k": 189,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ },
+ {
+  "id": "r1-191",
+  "family": "R1",
+  "k": 190,
+  "rule": {
+   "type": "cells"
+  },
+  "trades": 0,
+  "net_pct": 0.0,
+  "dd_pct": 0.0,
+  "score": -1000000000.0,
+  "killed": false
+ }
+]

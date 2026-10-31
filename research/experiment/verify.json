@@ -1,0 +1,2518 @@
+[
+ {
+  "key": "r1:r1-9",
+  "source": "r1",
+  "desc": null,
+  "config": "x100 SL- TP- holdmax",
+  "screen": {
+   "trades": 372,
+   "net_pct": 17.514739888515173,
+   "dd_pct": 39.977351281016695,
+   "score": 0.43811656668790044
+  },
+  "engine": {
+   "trades": 370,
+   "net_usd": 24.49,
+   "net_pct": 24.49,
+   "dd_pct": 43.73,
+   "score": 0.56,
+   "win_rate": 47.8,
+   "killed": false
+  }
+ },
+ {
+  "key": "r1:r1-383",
+  "source": "r1",
+  "desc": null,
+  "config": "x200 SL- TP- holdmax",
+  "screen": {
+   "trades": 1167,
+   "net_pct": 16.801688586567654,
+   "dd_pct": 54.1705153504295,
+   "score": 0.3101629821661728
+  },
+  "engine": {
+   "trades": 1166,
+   "net_usd": 20.53,
+   "net_pct": 20.53,
+   "dd_pct": 53.05,
+   "score": 0.387,
+   "win_rate": 52.4,
+   "killed": false
+  }
+ },
+ {
+  "key": "r1:r1-323",
+  "source": "r1",
+  "desc": null,
+  "config": "x100 SL50 TP- hold24",
+  "screen": {
+   "trades": 1187,
+   "net_pct": 5.6664671902198815,
+   "dd_pct": 39.128025296792885,
+   "score": 0.14481863439922515
+  },
+  "engine": {
+   "trades": 1042,
+   "net_usd": 3.51,
+   "net_pct": 3.51,
+   "dd_pct": 35.39,
+   "score": 0.099,
+   "win_rate": 45.0,
+   "killed": false
+  }
+ },
+ {
+  "key": "r2:r2-41193",
+  "source": "r2",
+  "desc": "upper_wick > q70 -> Up",
+  "config": "x100 SL- TP- holdmax",
+  "screen": {
+   "trades": 653,
+   "net_pct": 80.99998777602781,
+   "dd_pct": 44.58114117354159,
+   "score": 1.8169114931517365
+  },
+  "engine": {
+   "trades": 660,
+   "net_usd": 70.09,
+   "net_pct": 70.09,
+   "dd_pct": 38.47,
+   "score": 1.822,
+   "win_rate": 47.6,
+   "killed": false
+  }
+ },
+ {
+  "key": "r2:r2-198591",
+  "source": "r2",
+  "desc": "sma_dist_100 < q30 -> Up",
+  "config": "x100 SL- TP80 holdmax",
+  "screen": {
+   "trades": 922,
+   "net_pct": 56.46964554684843,
+   "dd_pct": 38.32791399872812,
+   "score": 1.4733294785811284
+  },
+  "engine": {
+   "trades": 924,
+   "net_usd": 56.37,
+   "net_pct": 56.37,
+   "dd_pct": 31.56,
+   "score": 1.786,
+   "win_rate": 58.0,
+   "killed": false
+  }
+ },
+ {
+  "key": "r2:r2-82431",
+  "source": "r2",
+  "desc": "d20_ret < q10 -> Up",
+  "config": "x100 SL- TP80 holdmax",
+  "screen": {
+   "trades": 345,
+   "net_pct": 30.76938619991305,
+   "dd_pct": 23.512314370600986,
+   "score": 1.3086498298264533
+  },
+  "engine": {
+   "trades": 341,
+   "net_usd": 30.53,
+   "net_pct": 30.53,
+   "dd_pct": 23.17,
+   "score": 1.318,
+   "win_rate": 60.7,
+   "killed": false
+  }
+ },
+ {
+  "key": "r3:r3-12870",
+  "source": "r3",
+  "desc": "ret_48 < q10 -> Up AND prevday_range_pos > q80",
+  "config": "x100 SL- TP80 holdmax",
+  "screen": {
+   "trades": 9,
+   "net_pct": 16.0743448606506,
+   "dd_pct": 0.0,
+   "score": 32.1486897213012
+  },
+  "engine": {
+   "trades": 9,
+   "net_usd": 16.07,
+   "net_pct": 16.07,
+   "dd_pct": 1.96,
+   "score": 8.211,
+   "win_rate": 100.0,
+   "killed": false
+  }
+ },
+ {
+  "key": "r3:r3-34468",
+  "source": "r3",
+  "desc": "ret_120 < q30 -> Up AND sma_dist_200 > q70",
+  "config": "x100 SL- TP- holdmax",
+  "screen": {
+   "trades": 4,
+   "net_pct": 14.244988954067228,
+   "dd_pct": 0.0,
+   "score": 28.489977908134456
+  },
+  "engine": {
+   "trades": 4,
+   "net_usd": 14.24,
+   "net_pct": 14.24,
+   "dd_pct": 3.13,
+   "score": 4.544,
+   "win_rate": 100.0,
+   "killed": false
+  }
+ },
+ {
+  "key": "r3:r3-41026",
+  "source": "r3",
+  "desc": "sma_dist_50 > q80 -> Up AND ret_48 < q30",
+  "config": "x100 SL- TP80 holdmax",
+  "screen": {
+   "trades": 11,
+   "net_pct": 13.382744096107778,
+   "dd_pct": 0.3064920568604199,
+   "score": 26.765488192215557
+  },
+  "engine": {
+   "trades": 11,
+   "net_usd": 13.37,
+   "net_pct": 13.37,
+   "dd_pct": 2.98,
+   "score": 4.48,
+   "win_rate": 81.8,
+   "killed": false
+  }
+ },
+ {
+  "key": "r4:r4-100",
+  "source": "r4",
+  "desc": "peer2_ret_4 > q90 -> Up AND peer2_ret_24 < q20 | only profitable pair x hour cells (15)",
+  "config": "x100 SL- TP- holdmax",
+  "screen": {
+   "trades": 39,
+   "net_pct": 73.71086091192439,
+   "dd_pct": 1.6212218764683761,
+   "score": 45.46623875597709
+  },
+  "engine": {
+   "trades": 39,
+   "net_usd": 73.71,
+   "net_pct": 73.71,
+   "dd_pct": 4.54,
+   "score": 16.245,
+   "win_rate": 74.4,
+   "killed": false
+  }
+ },
+ {
+  "key": "r4:r4-1",
+  "source": "r4",
+  "desc": "ret_48 < q10 -> Up AND prevday_range_pos > q80 | only profitable pair x hour cells (14)",
+  "config": "x100 SL- TP80 holdmax",
+  "screen": {
+   "trades": 9,
+   "net_pct": 16.0743448606506,
+   "dd_pct": 0.0,
+   "score": 32.1486897213012
+  },
+  "engine": {
+   "trades": 9,
+   "net_usd": 16.07,
+   "net_pct": 16.07,
+   "dd_pct": 1.96,
+   "score": 8.211,
+   "win_rate": 100.0,
+   "killed": false
+  }
+ },
+ {
+  "key": "r4:r4-2",
+  "source": "r4",
+  "desc": "ret_120 < q30 -> Up AND sma_dist_200 > q70 | only profitable pair x hour cells (8)",
+  "config": "x100 SL- TP- holdmax",
+  "screen": {
+   "trades": 4,
+   "net_pct": 14.244988954067228,
+   "dd_pct": 0.0,
+   "score": 28.489977908134456
+  },
+  "engine": {
+   "trades": 4,
+   "net_usd": 14.24,
+   "net_pct": 14.24,
+   "dd_pct": 3.13,
+   "score": 4.544,
+   "win_rate": 100.0,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:378:0.05",
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL- TP- hold1",
+  "screen": {
+   "trades": 17933,
+   "net_pct": 7381835.657437537,
+   "dd_pct": 0.0,
+   "score": 14763671.314875074
+  },
+  "engine": {
+   "trades": 12997,
+   "net_usd": 4941090.11,
+   "net_pct": 4941090.11,
+   "dd_pct": 3.4,
+   "score": 1451896.031,
+   "win_rate": 95.8,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:403:0.05",
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL- TP50 hold1",
+  "screen": {
+   "trades": 17970,
+   "net_pct": 7355279.497278138,
+   "dd_pct": 0.0,
+   "score": 14710558.994556276
+  },
+  "engine": {
+   "trades": 13353,
+   "net_usd": 5076089.79,
+   "net_pct": 5076089.79,
+   "dd_pct": 3.61,
+   "score": 1405552.917,
+   "win_rate": 95.6,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:498:0.05",
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL30 TP- hold1",
+  "screen": {
+   "trades": 17830,
+   "net_pct": 7303674.209178071,
+   "dd_pct": 0.0,
+   "score": 14607348.418356141
+  },
+  "engine": {
+   "trades": 12967,
+   "net_usd": 4907146.24,
+   "net_pct": 4907146.24,
+   "dd_pct": 2.07,
+   "score": 2375757.061,
+   "win_rate": 95.8,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:523:0.05",
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL30 TP50 hold1",
+  "screen": {
+   "trades": 17872,
+   "net_pct": 7295032.422708808,
+   "dd_pct": 0.0,
+   "score": 14590064.845417617
+  },
+  "engine": {
+   "trades": 13322,
+   "net_usd": 5049020.83,
+   "net_pct": 5049020.83,
+   "dd_pct": 2.28,
+   "score": 2217791.53,
+   "win_rate": 95.6,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_25:380:0.1",
+  "source": "ml",
+  "desc": "knn_25",
+  "config": "x200 SL- TP- hold4",
+  "screen": {
+   "trades": 3655,
+   "net_pct": 1452989.4125744584,
+   "dd_pct": 7.53331753646072,
+   "score": 192875.1052298132
+  },
+  "engine": {
+   "trades": 3447,
+   "net_usd": 1279315.1,
+   "net_pct": 1279315.1,
+   "dd_pct": 9.92,
+   "score": 129004.399,
+   "win_rate": 69.1,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_25:377:0.1",
+  "source": "ml",
+  "desc": "knn_25",
+  "config": "x100 SL50 TP80 holdmax",
+  "screen": {
+   "trades": 1797,
+   "net_pct": 582017.6373936418,
+   "dd_pct": 4.360749324542044,
+   "score": 133467.34565045513
+  },
+  "engine": {
+   "trades": 1860,
+   "net_usd": 584862.22,
+   "net_pct": 584862.22,
+   "dd_pct": 7.06,
+   "score": 82793.156,
+   "win_rate": 68.8,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_25:3:0.05",
+  "source": "ml",
+  "desc": "knn_25",
+  "config": "x100 SL- TP- hold4",
+  "screen": {
+   "trades": 3736,
+   "net_pct": 569912.0619627603,
+   "dd_pct": 4.494485879705893,
+   "score": 126802.50360471792
+  },
+  "engine": {
+   "trades": 3511,
+   "net_usd": 490949.88,
+   "net_pct": 490949.88,
+   "dd_pct": 6.58,
+   "score": 74601.633,
+   "win_rate": 68.8,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_25:380:0.05",
+  "source": "ml",
+  "desc": "knn_25",
+  "config": "x200 SL- TP- hold4",
+  "screen": {
+   "trades": 5641,
+   "net_pct": 1728212.6038732543,
+   "dd_pct": 14.745951357991864,
+   "score": 117199.12550346335
+  },
+  "engine": {
+   "trades": 5221,
+   "net_usd": 1442563.1,
+   "net_pct": 1442563.1,
+   "dd_pct": 14.56,
+   "score": 99099.181,
+   "win_rate": 63.2,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_5:377:0.5",
+  "source": "ml",
+  "desc": "knn_5",
+  "config": "x100 SL50 TP80 holdmax",
+  "screen": {
+   "trades": 885,
+   "net_pct": 709706.1336396545,
+   "dd_pct": 0.03157625747490389,
+   "score": 1419412.267279309
+  },
+  "engine": {
+   "trades": 890,
+   "net_usd": 711279.71,
+   "net_pct": 711279.71,
+   "dd_pct": 3.28,
+   "score": 217037.259,
+   "win_rate": 99.6,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_5:462:0.2",
+  "source": "ml",
+  "desc": "knn_5",
+  "config": "x200 SL15 TP30 holdmax",
+  "screen": {
+   "trades": 3183,
+   "net_pct": 1845008.1884872194,
+   "dd_pct": 2.0041852388748413,
+   "score": 920577.6755061899
+  },
+  "engine": {
+   "trades": 3217,
+   "net_usd": 1842738.34,
+   "net_pct": 1842738.34,
+   "dd_pct": 2.57,
+   "score": 717390.048,
+   "win_rate": 90.0,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_5:302:0.2",
+  "source": "ml",
+  "desc": "knn_5",
+  "config": "x100 SL30 TP50 hold8",
+  "screen": {
+   "trades": 2151,
+   "net_pct": 928540.8846060244,
+   "dd_pct": 1.0252653451642673,
+   "score": 905659.0949704384
+  },
+  "engine": {
+   "trades": 2164,
+   "net_usd": 927887.44,
+   "net_pct": 927887.44,
+   "dd_pct": 1.63,
+   "score": 570827.689,
+   "win_rate": 94.8,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_5:380:0.3",
+  "source": "ml",
+  "desc": "knn_5",
+  "config": "x200 SL- TP- hold4",
+  "screen": {
+   "trades": 2957,
+   "net_pct": 2658724.8656249745,
+   "dd_pct": 2.9953015836686765,
+   "score": 887631.7764198357
+  },
+  "engine": {
+   "trades": 2830,
+   "net_usd": 2438758.85,
+   "net_pct": 2438758.85,
+   "dd_pct": 6.78,
+   "score": 359854.869,
+   "win_rate": 85.3,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:378:0.05",
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL- TP- hold1",
+  "screen": {
+   "trades": 17563,
+   "net_pct": 7360039.1234328635,
+   "dd_pct": 0.0,
+   "score": 14720078.246865727
+  },
+  "engine": {
+   "trades": 12773,
+   "net_usd": 4950477.31,
+   "net_pct": 4950477.31,
+   "dd_pct": 3.4,
+   "score": 1454681.042,
+   "win_rate": 96.0,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:403:0.05",
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL- TP50 hold1",
+  "screen": {
+   "trades": 17597,
+   "net_pct": 7335249.207466517,
+   "dd_pct": 0.0,
+   "score": 14670498.414933033
+  },
+  "engine": {
+   "trades": 13134,
+   "net_usd": 5100622.18,
+   "net_pct": 5100622.18,
+   "dd_pct": 3.61,
+   "score": 1412374.007,
+   "win_rate": 95.9,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:498:0.05",
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL30 TP- hold1",
+  "screen": {
+   "trades": 17439,
+   "net_pct": 7280475.112527981,
+   "dd_pct": 0.0,
+   "score": 14560950.225055963
+  },
+  "engine": {
+   "trades": 12711,
+   "net_usd": 4917944.6,
+   "net_pct": 4917944.6,
+   "dd_pct": 2.07,
+   "score": 2381053.02,
+   "win_rate": 95.9,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:523:0.05",
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL30 TP50 hold1",
+  "screen": {
+   "trades": 17511,
+   "net_pct": 7272998.8621590845,
+   "dd_pct": 0.0,
+   "score": 14545997.724318169
+  },
+  "engine": {
+   "trades": 13106,
+   "net_usd": 5070120.51,
+   "net_pct": 5070120.51,
+   "dd_pct": 2.28,
+   "score": 2227045.065,
+   "win_rate": 95.8,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:523:0.0",
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL30 TP50 hold1",
+  "screen": {
+   "trades": 13011,
+   "net_pct": 5908691.726895043,
+   "dd_pct": 0.4530894916013779,
+   "score": 11817383.453790085
+  },
+  "engine": {
+   "trades": 10026,
+   "net_usd": 4336173.62,
+   "net_pct": 4336173.62,
+   "dd_pct": 2.6,
+   "score": 1666096.128,
+   "win_rate": 92.6,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:518:0.0",
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL30 TP30 hold1",
+  "screen": {
+   "trades": 13429,
+   "net_pct": 5907919.385646008,
+   "dd_pct": 0.3241868049142248,
+   "score": 11815838.771292016
+  },
+  "engine": {
+   "trades": 11365,
+   "net_usd": 4731885.97,
+   "net_pct": 4731885.97,
+   "dd_pct": 2.19,
+   "score": 2155955.587,
+   "win_rate": 92.6,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:468:0.0",
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL20 TP- hold1",
+  "screen": {
+   "trades": 12612,
+   "net_pct": 5806785.238419808,
+   "dd_pct": 0.5029238272220196,
+   "score": 11546053.147838548
+  },
+  "engine": {
+   "trades": 9480,
+   "net_usd": 4131890.84,
+   "net_pct": 4131890.84,
+   "dd_pct": 1.81,
+   "score": 2284719.64,
+   "win_rate": 92.8,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:462:0.05",
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL15 TP30 holdmax",
+  "screen": {
+   "trades": 7275,
+   "net_pct": 5741334.011449926,
+   "dd_pct": 0.07519722680883886,
+   "score": 11482668.022899851
+  },
+  "engine": {
+   "trades": 7779,
+   "net_usd": 5567072.5,
+   "net_pct": 5567072.5,
+   "dd_pct": 2.06,
+   "score": 2704017.924,
+   "win_rate": 95.6,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_s:302:0.0",
+  "source": "ml",
+  "desc": "lgbm_s",
+  "config": "x100 SL30 TP50 hold8",
+  "screen": {
+   "trades": 3589,
+   "net_pct": 736187.2646085348,
+   "dd_pct": 2.1455588767477054,
+   "score": 343121.4461588054
+  },
+  "engine": {
+   "trades": 3560,
+   "net_usd": 698603.27,
+   "net_pct": 698603.27,
+   "dd_pct": 2.89,
+   "score": 242017.091,
+   "win_rate": 72.9,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_s:380:0.0",
+  "source": "ml",
+  "desc": "lgbm_s",
+  "config": "x200 SL- TP- hold4",
+  "screen": {
+   "trades": 4167,
+   "net_pct": 1973279.8008293326,
+   "dd_pct": 5.919216283273307,
+   "score": 333368.42352010077
+  },
+  "engine": {
+   "trades": 3852,
+   "net_usd": 1743691.05,
+   "net_pct": 1743691.05,
+   "dd_pct": 8.77,
+   "score": 198752.806,
+   "win_rate": 68.5,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_s:380:0.05",
+  "source": "ml",
+  "desc": "lgbm_s",
+  "config": "x200 SL- TP- hold4",
+  "screen": {
+   "trades": 1457,
+   "net_pct": 1120036.958920118,
+   "dd_pct": 3.8176947594946378,
+   "score": 293380.4375361799
+  },
+  "engine": {
+   "trades": 1374,
+   "net_usd": 975565.15,
+   "net_pct": 975565.15,
+   "dd_pct": 9.83,
+   "score": 99279.748,
+   "win_rate": 78.2,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_s:3:0.0",
+  "source": "ml",
+  "desc": "lgbm_s",
+  "config": "x100 SL- TP- hold4",
+  "screen": {
+   "trades": 4193,
+   "net_pct": 793620.6202972245,
+   "dd_pct": 3.0637389625983396,
+   "score": 259036.63137937814
+  },
+  "engine": {
+   "trades": 3865,
+   "net_usd": 652381.72,
+   "net_pct": 652381.72,
+   "dd_pct": 4.81,
+   "score": 135566.426,
+   "win_rate": 68.2,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:498:0.0",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL30 TP- hold1",
+  "screen": {
+   "trades": 13166,
+   "net_pct": 5938616.904109044,
+   "dd_pct": 1.0877557152383472,
+   "score": 5459513.40077104
+  },
+  "engine": {
+   "trades": 9723,
+   "net_usd": 4180258.87,
+   "net_pct": 4180258.87,
+   "dd_pct": 2.53,
+   "score": 1651523.812,
+   "win_rate": 92.4,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:498:0.05",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL30 TP- hold1",
+  "screen": {
+   "trades": 6424,
+   "net_pct": 4264985.997875073,
+   "dd_pct": 0.1070851451815613,
+   "score": 8529971.995750146
+  },
+  "engine": {
+   "trades": 5027,
+   "net_usd": 3209414.92,
+   "net_pct": 3209414.92,
+   "dd_pct": 2.55,
+   "score": 1258971.529,
+   "win_rate": 97.4,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:498:0.1",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL30 TP- hold1",
+  "screen": {
+   "trades": 3504,
+   "net_pct": 2932169.0340043753,
+   "dd_pct": 0.00919460816756358,
+   "score": 5864338.068008751
+  },
+  "engine": {
+   "trades": 2860,
+   "net_usd": 2306913.88,
+   "net_pct": 2306913.88,
+   "dd_pct": 1.85,
+   "score": 1247622.027,
+   "win_rate": 98.0,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:498:0.2",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL30 TP- hold1",
+  "screen": {
+   "trades": 1312,
+   "net_pct": 1411307.66068918,
+   "dd_pct": 0.0,
+   "score": 2822615.32137836
+  },
+  "engine": {
+   "trades": 1119,
+   "net_usd": 1159836.38,
+   "net_pct": 1159836.38,
+   "dd_pct": 3.1,
+   "score": 373923.112,
+   "win_rate": 99.1,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:498:0.3",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL30 TP- hold1",
+  "screen": {
+   "trades": 614,
+   "net_pct": 712148.5501682082,
+   "dd_pct": 0.0,
+   "score": 1424297.1003364164
+  },
+  "engine": {
+   "trades": 530,
+   "net_usd": 586080.05,
+   "net_pct": 586080.05,
+   "dd_pct": 1.83,
+   "score": 319404.617,
+   "win_rate": 99.1,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:498:0.5",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL30 TP- hold1",
+  "screen": {
+   "trades": 160,
+   "net_pct": 55116.55521372318,
+   "dd_pct": 0.0,
+   "score": 110233.11042744636
+  },
+  "engine": {
+   "trades": 150,
+   "net_usd": 36521.98,
+   "net_pct": 36521.98,
+   "dd_pct": 1.84,
+   "score": 19861.931,
+   "win_rate": 98.7,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:523:0.05",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL30 TP50 hold1",
+  "screen": {
+   "trades": 6511,
+   "net_pct": 4296706.267465145,
+   "dd_pct": 0.12705616267745498,
+   "score": 8593412.53493029
+  },
+  "engine": {
+   "trades": 5384,
+   "net_usd": 3408918.02,
+   "net_pct": 3408918.02,
+   "dd_pct": 2.17,
+   "score": 1567472.95,
+   "win_rate": 97.5,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:523:0.1",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL30 TP50 hold1",
+  "screen": {
+   "trades": 3625,
+   "net_pct": 2952697.3178010914,
+   "dd_pct": 0.12400893595185909,
+   "score": 5905394.635602183
+  },
+  "engine": {
+   "trades": 3190,
+   "net_usd": 2502834.1,
+   "net_pct": 2502834.1,
+   "dd_pct": 2.12,
+   "score": 1180584.001,
+   "win_rate": 98.2,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:523:0.2",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL30 TP50 hold1",
+  "screen": {
+   "trades": 1380,
+   "net_pct": 1325931.3997150175,
+   "dd_pct": 0.0,
+   "score": 2651862.799430035
+  },
+  "engine": {
+   "trades": 1315,
+   "net_usd": 1207061.09,
+   "net_pct": 1207061.09,
+   "dd_pct": 1.46,
+   "score": 824649.969,
+   "win_rate": 98.6,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:523:0.3",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL30 TP50 hold1",
+  "screen": {
+   "trades": 593,
+   "net_pct": 461181.8333063874,
+   "dd_pct": 0.0,
+   "score": 922363.6666127748
+  },
+  "engine": {
+   "trades": 590,
+   "net_usd": 440745.62,
+   "net_pct": 440745.62,
+   "dd_pct": 1.78,
+   "score": 247000.855,
+   "win_rate": 99.2,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:523:0.5",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL30 TP50 hold1",
+  "screen": {
+   "trades": 54,
+   "net_pct": 270.5037906664609,
+   "dd_pct": 0.0,
+   "score": 541.0075813329217
+  },
+  "engine": {
+   "trades": 56,
+   "net_usd": 279.54,
+   "net_pct": 279.54,
+   "dd_pct": 0.98,
+   "score": 286.575,
+   "win_rate": 100.0,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:518:0.05",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL30 TP30 hold1",
+  "screen": {
+   "trades": 6918,
+   "net_pct": 4156759.730438376,
+   "dd_pct": 0.3275268191756865,
+   "score": 8313519.460876752
+  },
+  "engine": {
+   "trades": 6466,
+   "net_usd": 3693194.64,
+   "net_pct": 3693194.64,
+   "dd_pct": 2.14,
+   "score": 1723749.432,
+   "win_rate": 97.2,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:518:0.1",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL30 TP30 hold1",
+  "screen": {
+   "trades": 3799,
+   "net_pct": 2555843.006451063,
+   "dd_pct": 0.0,
+   "score": 5111686.012902126
+  },
+  "engine": {
+   "trades": 3749,
+   "net_usd": 2411900.26,
+   "net_pct": 2411900.26,
+   "dd_pct": 1.29,
+   "score": 1873260.849,
+   "win_rate": 98.4,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:518:0.2",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL30 TP30 hold1",
+  "screen": {
+   "trades": 1005,
+   "net_pct": 516886.57688031555,
+   "dd_pct": 0.0,
+   "score": 1033773.1537606311
+  },
+  "engine": {
+   "trades": 1011,
+   "net_usd": 507554.72,
+   "net_pct": 507554.72,
+   "dd_pct": 1.54,
+   "score": 329856.698,
+   "win_rate": 99.3,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:518:0.3",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL30 TP30 hold1",
+  "screen": {
+   "trades": 162,
+   "net_pct": 885.6700442531705,
+   "dd_pct": 0.0,
+   "score": 1771.340088506341
+  },
+  "engine": {
+   "trades": 162,
+   "net_usd": 885.63,
+   "net_pct": 885.63,
+   "dd_pct": 1.25,
+   "score": 711.291,
+   "win_rate": 100.0,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:468:0.05",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL20 TP- hold1",
+  "screen": {
+   "trades": 6220,
+   "net_pct": 4156676.8672312386,
+   "dd_pct": 0.04440828768790451,
+   "score": 8313353.734462477
+  },
+  "engine": {
+   "trades": 4963,
+   "net_usd": 3174968.21,
+   "net_pct": 3174968.21,
+   "dd_pct": 3.12,
+   "score": 1018533.449,
+   "win_rate": 97.5,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:468:0.1",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL20 TP- hold1",
+  "screen": {
+   "trades": 3400,
+   "net_pct": 2861723.9708131803,
+   "dd_pct": 0.006308757483857983,
+   "score": 5723447.941626361
+  },
+  "engine": {
+   "trades": 2804,
+   "net_usd": 2287754.19,
+   "net_pct": 2287754.19,
+   "dd_pct": 1.28,
+   "score": 1792642.744,
+   "win_rate": 98.0,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:468:0.2",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL20 TP- hold1",
+  "screen": {
+   "trades": 1263,
+   "net_pct": 1366300.056488421,
+   "dd_pct": 0.0,
+   "score": 2732600.112976842
+  },
+  "engine": {
+   "trades": 1080,
+   "net_usd": 1128678.6,
+   "net_pct": 1128678.6,
+   "dd_pct": 4.4,
+   "score": 256546.859,
+   "win_rate": 99.0,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:468:0.3",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL20 TP- hold1",
+  "screen": {
+   "trades": 585,
+   "net_pct": 678724.286507409,
+   "dd_pct": 0.0,
+   "score": 1357448.573014818
+  },
+  "engine": {
+   "trades": 515,
+   "net_usd": 566098.91,
+   "net_pct": 566098.91,
+   "dd_pct": 1.45,
+   "score": 389978.524,
+   "win_rate": 99.0,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:468:0.5",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL20 TP- hold1",
+  "screen": {
+   "trades": 158,
+   "net_pct": 56861.83880800902,
+   "dd_pct": 0.0,
+   "score": 113723.67761601805
+  },
+  "engine": {
+   "trades": 150,
+   "net_usd": 40691.15,
+   "net_pct": 40691.15,
+   "dd_pct": 1.37,
+   "score": 29664.646,
+   "win_rate": 98.7,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:462:0.0",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL15 TP30 holdmax",
+  "screen": {
+   "trades": 8056,
+   "net_pct": 6077131.053343663,
+   "dd_pct": 0.8986258479446084,
+   "score": 6762693.358135253
+  },
+  "engine": {
+   "trades": 8803,
+   "net_usd": 5830700.3,
+   "net_pct": 5830700.3,
+   "dd_pct": 2.43,
+   "score": 2400826.156,
+   "win_rate": 93.2,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:462:0.1",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL15 TP30 holdmax",
+  "screen": {
+   "trades": 5876,
+   "net_pct": 4745025.559041314,
+   "dd_pct": 0.0011045741393775539,
+   "score": 9490051.118082628
+  },
+  "engine": {
+   "trades": 6161,
+   "net_usd": 4686883.38,
+   "net_pct": 4686883.38,
+   "dd_pct": 1.8,
+   "score": 2604203.713,
+   "win_rate": 97.3,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:462:0.2",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL15 TP30 holdmax",
+  "screen": {
+   "trades": 2448,
+   "net_pct": 1893049.7888432413,
+   "dd_pct": 0.0,
+   "score": 3786099.5776864826
+  },
+  "engine": {
+   "trades": 2465,
+   "net_usd": 1887131.0,
+   "net_pct": 1887131.0,
+   "dd_pct": 1.59,
+   "score": 1189578.107,
+   "win_rate": 99.6,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_m:462:0.3",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_m",
+  "config": "x200 SL15 TP30 holdmax",
+  "screen": {
+   "trades": 523,
+   "net_pct": 136352.28795650302,
+   "dd_pct": 0.0,
+   "score": 272704.57591300603
+  },
+  "engine": {
+   "trades": 521,
+   "net_usd": 134306.9,
+   "net_pct": 134306.9,
+   "dd_pct": 1.44,
+   "score": 93043.016,
+   "win_rate": 100.0,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:498:0.0",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL30 TP- hold1",
+  "screen": {
+   "trades": 22225,
+   "net_pct": 7149757.812361751,
+   "dd_pct": 0.02495094539624581,
+   "score": 14299515.624723502
+  },
+  "engine": {
+   "trades": 15443,
+   "net_usd": 4472436.6,
+   "net_pct": 4472436.6,
+   "dd_pct": 1.92,
+   "score": 2324033.396,
+   "win_rate": 93.1,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:498:0.1",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL30 TP- hold1",
+  "screen": {
+   "trades": 13197,
+   "net_pct": 6821569.881438739,
+   "dd_pct": 0.0,
+   "score": 13643139.762877477
+  },
+  "engine": {
+   "trades": 10145,
+   "net_usd": 4870592.7,
+   "net_pct": 4870592.7,
+   "dd_pct": 2.14,
+   "score": 2279519.798,
+   "win_rate": 96.8,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:498:0.2",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL30 TP- hold1",
+  "screen": {
+   "trades": 7219,
+   "net_pct": 5187138.922963951,
+   "dd_pct": 0.0,
+   "score": 10374277.845927902
+  },
+  "engine": {
+   "trades": 5973,
+   "net_usd": 4042865.88,
+   "net_pct": 4042865.88,
+   "dd_pct": 1.79,
+   "score": 2254161.305,
+   "win_rate": 97.8,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:498:0.3",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL30 TP- hold1",
+  "screen": {
+   "trades": 3905,
+   "net_pct": 3578156.4480815614,
+   "dd_pct": 0.0,
+   "score": 7156312.896163123
+  },
+  "engine": {
+   "trades": 3415,
+   "net_usd": 2967843.53,
+   "net_pct": 2967843.53,
+   "dd_pct": 1.47,
+   "score": 2017036.202,
+   "win_rate": 98.4,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:498:0.5",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL30 TP- hold1",
+  "screen": {
+   "trades": 1309,
+   "net_pct": 1619713.611913399,
+   "dd_pct": 0.0,
+   "score": 3239427.223826798
+  },
+  "engine": {
+   "trades": 1203,
+   "net_usd": 1422547.08,
+   "net_pct": 1422547.08,
+   "dd_pct": 1.72,
+   "score": 826674.877,
+   "win_rate": 98.4,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:523:0.0",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL30 TP50 hold1",
+  "screen": {
+   "trades": 22233,
+   "net_pct": 7125482.610305177,
+   "dd_pct": 0.004763509565097766,
+   "score": 14250965.220610354
+  },
+  "engine": {
+   "trades": 15766,
+   "net_usd": 4590712.35,
+   "net_pct": 4590712.35,
+   "dd_pct": 2.47,
+   "score": 1859185.735,
+   "win_rate": 93.2,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:523:0.1",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL30 TP50 hold1",
+  "screen": {
+   "trades": 13272,
+   "net_pct": 6813488.263153274,
+   "dd_pct": 0.0,
+   "score": 13626976.526306547
+  },
+  "engine": {
+   "trades": 10496,
+   "net_usd": 5019773.15,
+   "net_pct": 5019773.15,
+   "dd_pct": 2.28,
+   "score": 2204949.11,
+   "win_rate": 96.7,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:523:0.2",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL30 TP50 hold1",
+  "screen": {
+   "trades": 7312,
+   "net_pct": 5192355.482469945,
+   "dd_pct": 0.0,
+   "score": 10384710.96493989
+  },
+  "engine": {
+   "trades": 6281,
+   "net_usd": 4219394.58,
+   "net_pct": 4219394.58,
+   "dd_pct": 1.81,
+   "score": 2329154.127,
+   "win_rate": 97.7,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:523:0.3",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL30 TP50 hold1",
+  "screen": {
+   "trades": 4014,
+   "net_pct": 3593281.8094448163,
+   "dd_pct": 0.0,
+   "score": 7186563.618889633
+  },
+  "engine": {
+   "trades": 3707,
+   "net_usd": 3136113.51,
+   "net_pct": 3136113.51,
+   "dd_pct": 1.32,
+   "score": 2375496.402,
+   "win_rate": 97.9,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:523:0.5",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL30 TP50 hold1",
+  "screen": {
+   "trades": 1576,
+   "net_pct": 1750423.0900924748,
+   "dd_pct": 0.0,
+   "score": 3500846.1801849497
+  },
+  "engine": {
+   "trades": 1580,
+   "net_usd": 1682476.61,
+   "net_pct": 1682476.61,
+   "dd_pct": 1.4,
+   "score": 1200148.788,
+   "win_rate": 98.3,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:518:0.0",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL30 TP30 hold1",
+  "screen": {
+   "trades": 22436,
+   "net_pct": 7072587.429465108,
+   "dd_pct": 0.008758888470024812,
+   "score": 14145174.858930215
+  },
+  "engine": {
+   "trades": 17038,
+   "net_usd": 4865661.68,
+   "net_pct": 4865661.68,
+   "dd_pct": 3.6,
+   "score": 1349721.267,
+   "win_rate": 93.0,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:518:0.05",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL30 TP30 hold1",
+  "screen": {
+   "trades": 17750,
+   "net_pct": 7219360.508042686,
+   "dd_pct": 0.0,
+   "score": 14438721.016085371
+  },
+  "engine": {
+   "trades": 14347,
+   "net_usd": 5390125.5,
+   "net_pct": 5390125.5,
+   "dd_pct": 3.61,
+   "score": 1493176.852,
+   "win_rate": 95.4,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:518:0.1",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL30 TP30 hold1",
+  "screen": {
+   "trades": 13635,
+   "net_pct": 6776066.303708518,
+   "dd_pct": 0.0,
+   "score": 13552132.607417036
+  },
+  "engine": {
+   "trades": 11813,
+   "net_usd": 5434700.7,
+   "net_pct": 5434700.7,
+   "dd_pct": 1.94,
+   "score": 2795789.568,
+   "win_rate": 96.3,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:518:0.2",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL30 TP30 hold1",
+  "screen": {
+   "trades": 7982,
+   "net_pct": 5242483.896805196,
+   "dd_pct": 0.0,
+   "score": 10484967.793610392
+  },
+  "engine": {
+   "trades": 7694,
+   "net_usd": 4735726.39,
+   "net_pct": 4735726.39,
+   "dd_pct": 2.19,
+   "score": 2161648.26,
+   "win_rate": 97.4,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:518:0.3",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL30 TP30 hold1",
+  "screen": {
+   "trades": 5272,
+   "net_pct": 3929723.3862443436,
+   "dd_pct": 0.0,
+   "score": 7859446.772488687
+  },
+  "engine": {
+   "trades": 5425,
+   "net_usd": 3815838.5,
+   "net_pct": 3815838.5,
+   "dd_pct": 1.29,
+   "score": 2953176.909,
+   "win_rate": 97.8,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:518:0.5",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL30 TP30 hold1",
+  "screen": {
+   "trades": 416,
+   "net_pct": 72755.6731439173,
+   "dd_pct": 0.0,
+   "score": 145511.3462878346
+  },
+  "engine": {
+   "trades": 416,
+   "net_usd": 72756.43,
+   "net_pct": 72756.43,
+   "dd_pct": 0.93,
+   "score": 78117.011,
+   "win_rate": 100.0,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:468:0.0",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL20 TP- hold1",
+  "screen": {
+   "trades": 21895,
+   "net_pct": 7034251.302400275,
+   "dd_pct": 0.01021536204902494,
+   "score": 14068502.60480055
+  },
+  "engine": {
+   "trades": 15308,
+   "net_usd": 4387817.63,
+   "net_pct": 4387817.63,
+   "dd_pct": 2.47,
+   "score": 1777767.39,
+   "win_rate": 93.1,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:468:0.05",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL20 TP- hold1",
+  "screen": {
+   "trades": 17169,
+   "net_pct": 7129773.054471584,
+   "dd_pct": 0.0,
+   "score": 14259546.108943168
+  },
+  "engine": {
+   "trades": 12596,
+   "net_usd": 4828265.28,
+   "net_pct": 4828265.28,
+   "dd_pct": 2.14,
+   "score": 2254043.651,
+   "win_rate": 96.0,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:468:0.1",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL20 TP- hold1",
+  "screen": {
+   "trades": 12956,
+   "net_pct": 6659224.16791006,
+   "dd_pct": 0.0,
+   "score": 13318448.33582012
+  },
+  "engine": {
+   "trades": 10024,
+   "net_usd": 4787212.81,
+   "net_pct": 4787212.81,
+   "dd_pct": 2.18,
+   "score": 2200362.191,
+   "win_rate": 96.8,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:468:0.2",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL20 TP- hold1",
+  "screen": {
+   "trades": 7060,
+   "net_pct": 5046188.611459922,
+   "dd_pct": 0.0,
+   "score": 10092377.222919844
+  },
+  "engine": {
+   "trades": 5873,
+   "net_usd": 3966491.77,
+   "net_pct": 3966491.77,
+   "dd_pct": 1.43,
+   "score": 2769500.936,
+   "win_rate": 97.9,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:468:0.3",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL20 TP- hold1",
+  "screen": {
+   "trades": 3802,
+   "net_pct": 3461726.3857607907,
+   "dd_pct": 0.0,
+   "score": 6923452.771521581
+  },
+  "engine": {
+   "trades": 3347,
+   "net_usd": 2890779.13,
+   "net_pct": 2890779.13,
+   "dd_pct": 1.32,
+   "score": 2196515.113,
+   "win_rate": 98.3,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:468:0.5",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL20 TP- hold1",
+  "screen": {
+   "trades": 1264,
+   "net_pct": 1545918.2669821328,
+   "dd_pct": 0.0,
+   "score": 3091836.5339642656
+  },
+  "engine": {
+   "trades": 1171,
+   "net_usd": 1376530.72,
+   "net_pct": 1376530.72,
+   "dd_pct": 1.45,
+   "score": 948504.628,
+   "win_rate": 98.5,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:462:0.0",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL15 TP30 holdmax",
+  "screen": {
+   "trades": 8297,
+   "net_pct": 6127643.3320383355,
+   "dd_pct": 0.00025512386812376656,
+   "score": 12255286.664076671
+  },
+  "engine": {
+   "trades": 9183,
+   "net_usd": 5857420.58,
+   "net_pct": 5857420.58,
+   "dd_pct": 2.46,
+   "score": 2385142.674,
+   "win_rate": 93.1,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:462:0.05",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL15 TP30 holdmax",
+  "screen": {
+   "trades": 8287,
+   "net_pct": 6239565.531158196,
+   "dd_pct": 0.0,
+   "score": 12479131.062316392
+  },
+  "engine": {
+   "trades": 9143,
+   "net_usd": 5967867.01,
+   "net_pct": 5967867.01,
+   "dd_pct": 2.46,
+   "score": 2430094.949,
+   "win_rate": 93.5,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:462:0.1",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL15 TP30 holdmax",
+  "screen": {
+   "trades": 8219,
+   "net_pct": 6318556.65838984,
+   "dd_pct": 0.0,
+   "score": 12637113.31677968
+  },
+  "engine": {
+   "trades": 9050,
+   "net_usd": 6053627.94,
+   "net_pct": 6053627.94,
+   "dd_pct": 2.43,
+   "score": 2492627.48,
+   "win_rate": 93.8,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:462:0.2",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL15 TP30 holdmax",
+  "screen": {
+   "trades": 7969,
+   "net_pct": 6390813.060998784,
+   "dd_pct": 0.0,
+   "score": 12781626.121997569
+  },
+  "engine": {
+   "trades": 8722,
+   "net_usd": 6115014.93,
+   "net_pct": 6115014.93,
+   "dd_pct": 2.06,
+   "score": 2969232.971,
+   "win_rate": 94.2,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:462:0.3",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL15 TP30 holdmax",
+  "screen": {
+   "trades": 7721,
+   "net_pct": 6328897.967516543,
+   "dd_pct": 0.0,
+   "score": 12657795.935033087
+  },
+  "engine": {
+   "trades": 8421,
+   "net_usd": 6064564.42,
+   "net_pct": 6064564.42,
+   "dd_pct": 2.06,
+   "score": 2944936.73,
+   "win_rate": 94.4,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:lgbm_l:462:0.5",
+  "round": 2,
+  "source": "ml",
+  "desc": "lgbm_l",
+  "config": "x200 SL15 TP30 holdmax",
+  "screen": {
+   "trades": 1241,
+   "net_pct": 934358.0996035098,
+   "dd_pct": 0.0,
+   "score": 1868716.1992070195
+  },
+  "engine": {
+   "trades": 1234,
+   "net_usd": 925183.88,
+   "net_pct": 925183.88,
+   "dd_pct": 1.85,
+   "score": 498825.041,
+   "win_rate": 99.9,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:498:0.0",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL30 TP- hold1",
+  "screen": {
+   "trades": 22410,
+   "net_pct": 7126771.0850315085,
+   "dd_pct": 0.0,
+   "score": 14253542.170063017
+  },
+  "engine": {
+   "trades": 15559,
+   "net_usd": 4446692.45,
+   "net_pct": 4446692.45,
+   "dd_pct": 1.92,
+   "score": 2316251.358,
+   "win_rate": 93.3,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:498:0.1",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL30 TP- hold1",
+  "screen": {
+   "trades": 13633,
+   "net_pct": 6894939.877930253,
+   "dd_pct": 0.0,
+   "score": 13789879.755860506
+  },
+  "engine": {
+   "trades": 10428,
+   "net_usd": 4891695.05,
+   "net_pct": 4891695.05,
+   "dd_pct": 2.14,
+   "score": 2289384.123,
+   "win_rate": 96.7,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:498:0.2",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL30 TP- hold1",
+  "screen": {
+   "trades": 7580,
+   "net_pct": 5328237.01378184,
+   "dd_pct": 0.0,
+   "score": 10656474.02756368
+  },
+  "engine": {
+   "trades": 6251,
+   "net_usd": 4124698.05,
+   "net_pct": 4124698.05,
+   "dd_pct": 1.79,
+   "score": 2299811.396,
+   "win_rate": 97.8,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:498:0.3",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL30 TP- hold1",
+  "screen": {
+   "trades": 4093,
+   "net_pct": 3689147.126354629,
+   "dd_pct": 0.0,
+   "score": 7378294.252709258
+  },
+  "engine": {
+   "trades": 3569,
+   "net_usd": 3045625.46,
+   "net_pct": 3045625.46,
+   "dd_pct": 1.47,
+   "score": 2070158.506,
+   "win_rate": 98.3,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:498:0.5",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL30 TP- hold1",
+  "screen": {
+   "trades": 1361,
+   "net_pct": 1672494.0782205455,
+   "dd_pct": 0.0,
+   "score": 3344988.156441091
+  },
+  "engine": {
+   "trades": 1252,
+   "net_usd": 1469431.16,
+   "net_pct": 1469431.16,
+   "dd_pct": 1.72,
+   "score": 853910.335,
+   "win_rate": 98.4,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:523:0.0",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL30 TP50 hold1",
+  "screen": {
+   "trades": 22437,
+   "net_pct": 7100439.492386624,
+   "dd_pct": 0.0,
+   "score": 14200878.984773248
+  },
+  "engine": {
+   "trades": 15890,
+   "net_usd": 4563183.94,
+   "net_pct": 4563183.94,
+   "dd_pct": 2.47,
+   "score": 1849764.059,
+   "win_rate": 93.2,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:523:0.1",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL30 TP50 hold1",
+  "screen": {
+   "trades": 13686,
+   "net_pct": 6888186.794339421,
+   "dd_pct": 0.0,
+   "score": 13776373.588678842
+  },
+  "engine": {
+   "trades": 10776,
+   "net_usd": 5046369.23,
+   "net_pct": 5046369.23,
+   "dd_pct": 2.28,
+   "score": 2216668.278,
+   "win_rate": 96.6,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:523:0.2",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL30 TP50 hold1",
+  "screen": {
+   "trades": 7667,
+   "net_pct": 5331369.4384101555,
+   "dd_pct": 0.0,
+   "score": 10662738.876820311
+  },
+  "engine": {
+   "trades": 6559,
+   "net_usd": 4294618.12,
+   "net_pct": 4294618.12,
+   "dd_pct": 1.81,
+   "score": 2370630.655,
+   "win_rate": 97.6,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:523:0.3",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL30 TP50 hold1",
+  "screen": {
+   "trades": 4211,
+   "net_pct": 3711088.2977727125,
+   "dd_pct": 0.0,
+   "score": 7422176.595545425
+  },
+  "engine": {
+   "trades": 3868,
+   "net_usd": 3224631.77,
+   "net_pct": 3224631.77,
+   "dd_pct": 1.32,
+   "score": 2442417.201,
+   "win_rate": 98.0,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:523:0.5",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL30 TP50 hold1",
+  "screen": {
+   "trades": 1624,
+   "net_pct": 1799159.0364622562,
+   "dd_pct": 0.0,
+   "score": 3598318.0729245124
+  },
+  "engine": {
+   "trades": 1625,
+   "net_usd": 1726401.5,
+   "net_pct": 1726401.5,
+   "dd_pct": 1.4,
+   "score": 1230961.652,
+   "win_rate": 98.3,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:518:0.0",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL30 TP30 hold1",
+  "screen": {
+   "trades": 22604,
+   "net_pct": 7046727.470347815,
+   "dd_pct": 0.0,
+   "score": 14093454.94069563
+  },
+  "engine": {
+   "trades": 17133,
+   "net_usd": 4829631.03,
+   "net_pct": 4829631.03,
+   "dd_pct": 3.61,
+   "score": 1337907.083,
+   "win_rate": 93.1,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:518:0.05",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL30 TP30 hold1",
+  "screen": {
+   "trades": 18107,
+   "net_pct": 7243839.23891912,
+   "dd_pct": 0.0,
+   "score": 14487678.47783824
+  },
+  "engine": {
+   "trades": 14567,
+   "net_usd": 5368082.7,
+   "net_pct": 5368082.7,
+   "dd_pct": 3.6,
+   "score": 1489079.816,
+   "win_rate": 95.3,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:518:0.1",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL30 TP30 hold1",
+  "screen": {
+   "trades": 14024,
+   "net_pct": 6845817.260299106,
+   "dd_pct": 0.0,
+   "score": 13691634.520598212
+  },
+  "engine": {
+   "trades": 12063,
+   "net_usd": 5449339.21,
+   "net_pct": 5449339.21,
+   "dd_pct": 1.94,
+   "score": 2803301.472,
+   "win_rate": 96.3,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:518:0.2",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL30 TP30 hold1",
+  "screen": {
+   "trades": 8296,
+   "net_pct": 5366767.117983162,
+   "dd_pct": 0.0,
+   "score": 10733534.235966325
+  },
+  "engine": {
+   "trades": 7956,
+   "net_usd": 4815246.39,
+   "net_pct": 4815246.39,
+   "dd_pct": 2.19,
+   "score": 2194923.239,
+   "win_rate": 97.3,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:518:0.3",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL30 TP30 hold1",
+  "screen": {
+   "trades": 5401,
+   "net_pct": 4007713.106465254,
+   "dd_pct": 0.0,
+   "score": 8015426.212930508
+  },
+  "engine": {
+   "trades": 5533,
+   "net_usd": 3870034.7,
+   "net_pct": 3870034.7,
+   "dd_pct": 1.29,
+   "score": 2995147.011,
+   "win_rate": 97.8,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:518:0.5",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL30 TP30 hold1",
+  "screen": {
+   "trades": 539,
+   "net_pct": 197101.61138716637,
+   "dd_pct": 0.0,
+   "score": 394203.22277433274
+  },
+  "engine": {
+   "trades": 539,
+   "net_usd": 197077.65,
+   "net_pct": 197077.65,
+   "dd_pct": 1.22,
+   "score": 161030.702,
+   "win_rate": 100.0,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:468:0.0",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL20 TP- hold1",
+  "screen": {
+   "trades": 22093,
+   "net_pct": 7000042.958971788,
+   "dd_pct": 0.0,
+   "score": 14000085.917943576
+  },
+  "engine": {
+   "trades": 15428,
+   "net_usd": 4354363.6,
+   "net_pct": 4354363.6,
+   "dd_pct": 2.47,
+   "score": 1762038.61,
+   "win_rate": 93.2,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:468:0.05",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL20 TP- hold1",
+  "screen": {
+   "trades": 17529,
+   "net_pct": 7153983.072866872,
+   "dd_pct": 0.0,
+   "score": 14307966.145733744
+  },
+  "engine": {
+   "trades": 12815,
+   "net_usd": 4812459.3,
+   "net_pct": 4812459.3,
+   "dd_pct": 2.15,
+   "score": 2242305.255,
+   "win_rate": 95.7,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:468:0.1",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL20 TP- hold1",
+  "screen": {
+   "trades": 13365,
+   "net_pct": 6732014.629219948,
+   "dd_pct": 0.0,
+   "score": 13464029.258439897
+  },
+  "engine": {
+   "trades": 10282,
+   "net_usd": 4804033.91,
+   "net_pct": 4804033.91,
+   "dd_pct": 2.17,
+   "score": 2211157.184,
+   "win_rate": 96.7,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:468:0.2",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL20 TP- hold1",
+  "screen": {
+   "trades": 7407,
+   "net_pct": 5181175.1738975365,
+   "dd_pct": 0.0,
+   "score": 10362350.347795073
+  },
+  "engine": {
+   "trades": 6149,
+   "net_usd": 4042891.96,
+   "net_pct": 4042891.96,
+   "dd_pct": 1.43,
+   "score": 2822977.499,
+   "win_rate": 97.8,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:468:0.3",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL20 TP- hold1",
+  "screen": {
+   "trades": 3984,
+   "net_pct": 3570969.9411160946,
+   "dd_pct": 0.0,
+   "score": 7141939.882232189
+  },
+  "engine": {
+   "trades": 3496,
+   "net_usd": 2971470.18,
+   "net_pct": 2971470.18,
+   "dd_pct": 1.31,
+   "score": 2259975.832,
+   "win_rate": 98.3,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:468:0.5",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL20 TP- hold1",
+  "screen": {
+   "trades": 1316,
+   "net_pct": 1598802.5312484293,
+   "dd_pct": 0.0,
+   "score": 3197605.0624968586
+  },
+  "engine": {
+   "trades": 1218,
+   "net_usd": 1421210.62,
+   "net_pct": 1421210.62,
+   "dd_pct": 1.44,
+   "score": 987797.07,
+   "win_rate": 98.5,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:462:0.0",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL15 TP30 holdmax",
+  "screen": {
+   "trades": 8296,
+   "net_pct": 6123071.286238523,
+   "dd_pct": 0.0,
+   "score": 12246142.572477046
+  },
+  "engine": {
+   "trades": 9188,
+   "net_usd": 5853937.73,
+   "net_pct": 5853937.73,
+   "dd_pct": 2.46,
+   "score": 2379405.987,
+   "win_rate": 93.1,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:462:0.05",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL15 TP30 holdmax",
+  "screen": {
+   "trades": 8283,
+   "net_pct": 6228327.536987388,
+   "dd_pct": 0.0,
+   "score": 12456655.073974775
+  },
+  "engine": {
+   "trades": 9149,
+   "net_usd": 5962696.14,
+   "net_pct": 5962696.14,
+   "dd_pct": 2.46,
+   "score": 2428003.117,
+   "win_rate": 93.5,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:462:0.1",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL15 TP30 holdmax",
+  "screen": {
+   "trades": 8230,
+   "net_pct": 6312479.635382816,
+   "dd_pct": 0.0,
+   "score": 12624959.270765632
+  },
+  "engine": {
+   "trades": 9070,
+   "net_usd": 6048826.11,
+   "net_pct": 6048826.11,
+   "dd_pct": 2.43,
+   "score": 2490650.29,
+   "win_rate": 93.8,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:462:0.2",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL15 TP30 holdmax",
+  "screen": {
+   "trades": 7986,
+   "net_pct": 6394039.485434499,
+   "dd_pct": 0.0,
+   "score": 12788078.970868997
+  },
+  "engine": {
+   "trades": 8747,
+   "net_usd": 6121281.36,
+   "net_pct": 6121281.36,
+   "dd_pct": 2.06,
+   "score": 2972275.726,
+   "win_rate": 94.2,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:462:0.3",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL15 TP30 holdmax",
+  "screen": {
+   "trades": 7728,
+   "net_pct": 6331513.907920595,
+   "dd_pct": 0.0,
+   "score": 12663027.81584119
+  },
+  "engine": {
+   "trades": 8431,
+   "net_usd": 6063861.88,
+   "net_pct": 6063861.88,
+   "dd_pct": 2.06,
+   "score": 2944595.579,
+   "win_rate": 94.3,
+   "killed": false
+  }
+ },
+ {
+  "key": "ml:knn_1:462:0.5",
+  "round": 2,
+  "source": "ml",
+  "desc": "knn_1",
+  "config": "x200 SL15 TP30 holdmax",
+  "screen": {
+   "trades": 1483,
+   "net_pct": 1178481.592121595,
+   "dd_pct": 0.0,
+   "score": 2356963.18424319
+  },
+  "engine": {
+   "trades": 1469,
+   "net_usd": 1162083.22,
+   "net_pct": 1162083.22,
+   "dd_pct": 1.85,
+   "score": 626534.699,
+   "win_rate": 99.9,
+   "killed": false
+  }
+ }
+]

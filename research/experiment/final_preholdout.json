@@ -1,0 +1,20 @@
+{
+ "measured": {
+  "trades": 5533,
+  "net_usd": 3870034.7,
+  "net_pct": 3870034.7,
+  "dd_pct": 1.29,
+  "score": 2995147.011,
+  "win_rate": 97.8,
+  "killed": false
+ },
+ "stress_1_5x": {
+  "trades": 5533,
+  "net_usd": 3604116.2,
+  "net_pct": 3604116.2,
+  "dd_pct": 1.44,
+  "score": 2510067.836,
+  "win_rate": 97.7,
+  "killed": false
+ }
+}
