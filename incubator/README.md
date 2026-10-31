@@ -13,6 +13,7 @@ message.
 2. [One-time setup: Telegram](#one-time-setup-telegram)
 3. [What runs when](#what-runs-when)
 4. [The candidates](#the-candidates)
+4b. [New ideas pre-screened on 31 Oct 2026: none registered](#new-ideas-pre-screened-on-31-oct-2026-none-registered)
 5. [Reading the leaderboard](#reading-the-leaderboard)
 6. [The graduation rule](#the-graduation-rule)
 7. [Alerts: what they mean and what to do](#alerts-what-they-mean-and-what-to-do)
@@ -100,6 +101,90 @@ next, with the model file unchanged.
 | `f3_trend_pullback_4h_r5` | In a clear trend, wait for a short dip against it, then trade with the trend. | 4h |
 | `f9_eur_gbp_convergence_r5` | When EUR and GBP drift unusually far apart, buy the cheap one and sell the dear one (two trades at once), held up to 8 days. | daily |
 | `a1_ml_day_r5` | A machine-learning model, trained only on old data and never retrained, guesses each morning whether a pair rises by evening. It trades only when fairly sure. | 1h |
+
+## New ideas pre-screened on 31 Oct 2026: none registered
+
+On 31 Oct 2026 the owner asked for new candidate ideas, each to pass eight
+checks before registration: a written reason for the edge and how it differs
+from everything tested before; an expected move per trade of at least 3x the
+cost; at least 1.5 expected trades per trading day across the three pairs
+(so 100 trades come in about 90 days); executable under every CLAUDE.md rule;
+at most 5 settings chosen before testing; a pre-screen on data before
+2026-10-31 (the Phase 4 walk-forward extended by one round, out of sample
+2023-10-27 to 2026-10-26, 776 trading days) that is profitable before costs
+and beats the median of 200 coin-toss runs on the idea's own signals; the
+engine's look-ahead test; and no two candidates that are minor variants.
+
+**Result: fifteen ideas were pre-screened and none passes all eight checks,
+so no new candidate was registered.** Thirteen more were rejected on
+reasoning alone (too rare to reach 1.5 trades a day, outside the entry
+window, or a minor variant of something already tested); they are listed in
+`research/log.md`. N stays at 4 for the graduation rule. "No new candidate"
+is a normal result under these rules, and the one near miss is below.
+
+How to read the table: *gross* is the profit before any cost (the cost added
+back), in USD from a 100 USD start over the 36 months, with the average pips
+a trade in brackets; *net* is after Deriv's measured commission and slippage,
+and at 1.5x the commission; *coin toss* is the share of 200 random-direction
+replays of the same signals the idea beat (not run when the gross result was
+already negative, or when the idea fails the frequency check so the answer
+could not change the verdict). Files: `research/incubator_prescreen/<idea>/`.
+
+| Idea (strategy) | What it does, in plain words | Trades (per day) | Gross (pips/trade) | Net / at 1.5x | Coin toss | Why it fails |
+|---|---|---|---|---|---|---|
+| fix_reversal (i1) | Fade the hour before the 16:00 London fix, hold 2-4 h | 670 (0.86) | -11 (-1.4) | -57 / -78 | not run | loses before costs; too few trades; kill switch once |
+| turtle_soup (i2) | Fade a failed sweep of yesterday's high or low | 327 (0.42) | +0.2 (-0.1) | -28 / -35 | 52% | a coin toss; too few trades |
+| round_bounce (i3) | Fade a rejection at a 00 round number | 1,593 (2.05) | -36 (-1.0) | -142 / -185 | not run | loses before costs; kill switch twice |
+| round_break (i4) | Follow a close through a 00 round number | 1,088 (1.40) | -29 (-1.2) | -108 / -140 | not run | loses before costs; kill switch twice |
+| asia_fade (i5) | Fade the overnight move at the London open | 277 (0.36) | -19 (-3.0) | -37 / -44 | not run | loses before costs (the overnight move continues); too few trades |
+| us_data_drift (i6) | Follow the 12:00-14:00 (US data) move to 20:00 | 425 (0.55) | -22 (-3.1) | -48 / -61 | not run | loses before costs (the data move partly reverses); too few trades |
+| ny_into_asia (i7) | Follow the New York session's move overnight | 471 (0.61) | -5 (-0.3) | -37 / -47 | not run | a coin toss; too few trades |
+| london_reversal (i8) | Fade the London session's move at 14:00 | 457 (0.59) | +3 (+0.5) | -29 / -39 | 70% | too few trades; the edge is well below the cost |
+| range_exhaustion (i9) | Fade a day that has used its whole normal range | 271 (0.35) | -9 (-1.5) | -28 / -35 | not run | loses before costs; too few trades |
+| trend_intraday (i10) | Trade the 5-10 day trend during the day session only | 1,227 (1.58) | -54 (-2.3) | -134 / -164 | not run | loses before costs; kill switch twice |
+| ny_cut_breakout (i11) | Trade the first break out of the range pinned before the 10:00 New York option cut, to 20:00 | 1,109 (1.43) | +15 (+1.0) | -54 / -85 | 94% | the direction carries real information, but about 1 pip a trade against 4 of cost; 1.43 trades a day; kill switch once |
+| twap_pullback (i12) | Buy a pullback to the day's average price on an up day (mirror for down) | 357 (0.46) | -13 (-2.2) | -40 / -47 | not run | loses before costs; too few trades |
+| morning_overnight (i13) | A strong move by 08:00 (at least 0.4 of a normal day's range), followed and held to 06:00 the next day | 297 (0.38) | +45 (+7.2) | +17 / +4 | 100% | **passes every check except trades per day**: at 0.38 a day it would need about a year, not 90 days, to reach 100 trades (see below) |
+| ny_cut_overnight (i14) | Idea 11 held to 06:00 the next day | 871 (1.12) | +20 (+1.1) | -44 / -68 | see log | the information is spent by 20:00: the longer hold adds nothing; loses after costs |
+| knn_path (a2) | A nearest-neighbour model that matches the last 24 hours' shape to past days and votes on the direction to 20:00 | 443 (0.57) | +1 (+0.3) | -33 / -43 | not run | about zero before costs; every setting loses after costs; too few trades |
+
+**What the round taught.** At the 1-hour-to-1-day scale these pairs show mild
+*continuation*, not reversal: every fading idea (fix, round numbers, Asia,
+London session, range exhaustion, pullbacks) lost before costs, and the ideas
+that follow a move (NY cut break, morning move) are the ones with real
+directional information. The information is small (about 1 pip a trade) on
+the frequent signals and large (about 7 pips) only on rare, big-move days.
+That is the conflict with the 1.5-trades-a-day rule: the signals that are
+frequent enough are worth less than the 4 pips of cost, and the one signal
+worth more than the cost fires about twice a week.
+
+**A decision for the owner (nothing was registered).** `i13_morning_overnight`
+(settings: decision hour 08:00, move at least 0.4 of the 20-day average daily
+range, no stop, exit 06:00 the next day, no Friday signals) is the only idea
+of the whole project so far that is profitable after costs out of sample
+(+17 USD at the measured commission, +4 USD at 1.5x, 297 trades, no kill
+switch, profit before costs in 5 of 6 half-years, beat all 200 coin-toss
+runs; per pair EUR/USD +12, GBP/USD -8, USD/JPY +13). Its weaknesses: only
+0.38 trades a day, so the 100-trade bar would take about a year; the gain
+leans on USD/JPY; the neighbouring threshold (0.25 of a day's range) lost
+money, so the edge sits on rare, large moves only. Registering it would be a
+deliberate exception to the frequency check and would raise N to 5 for every
+candidate. The code is committed (`src/fxbot/strategies/families.py`,
+class `MorningOvernight`), so it can be registered in one command if you
+decide so:
+
+```
+python scripts/incubator.py register --id i13_morning_overnight_v1 --module families \
+    --class MorningOvernight --params '{"decision_hour": 8, "k": 0.4, "stop": 0.0}' \
+    --notes "pre-screen 31 Oct 2026: passes all checks except 1.5 trades/day (0.38)"
+```
+
+**Running the pre-screen on a new idea** (for a developer or an AI): add the
+strategy class to `src/fxbot/strategies/families.py`, declare its grid (at
+most 8 variants, 5 settings) in `fxbot.backtest.prescreen.IDEAS`, then
+`python scripts/prescreen.py all --idea <name>` (resumable, about 15 minutes
+of compute). It writes `research/incubator_prescreen/<name>/` and the rows in
+`research/log.md`. The data layer refuses anything dated 2026-10-31 or later.
 
 ## Reading the leaderboard
 

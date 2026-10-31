@@ -846,3 +846,53 @@ Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; s
 Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 443 trades (0.57/day), net -32.9 USD (1.5x: -42.63), gross before costs 1.41 USD (0.25 pips/trade), avg |move| 42.69 pips vs cost 3.94 pips (ratio 10.84), win rate 47.0%, PF 0.837, kill events 0, per pair net {EURUSD: -17.44 (115), GBPUSD: 3.81 (91), USDJPY: -19.27 (237)}, per window gross [15.5, 4.67, -7.83, -9.24, -0.12, -1.57]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_beats_random_median']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/knn_path/`.
 
 <!-- prescreen:knn_path end -->
+
+<!-- prescreen:ny_cut_overnight start -->
+
+### ny_cut_overnight (i14_ny_cut_overnight, 1h): 4 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | ny_cut_overnight v00 | range_hours=2, sl_frac=0.5 | 1589 | -116.58 | 2 | 2 |
+| 2026-10-31 | ny_cut_overnight v01 | range_hours=2, sl_frac=1.0 | 1516 | -124.28 | 2 | 3 |
+| 2026-10-31 | ny_cut_overnight v02 | range_hours=3, sl_frac=0.5 | 1426 | -120.48 | 2 | 1 |
+| 2026-10-31 | ny_cut_overnight v03 | range_hours=3, sl_frac=1.0 | 1375 | -110.55 | 2 | 4, 5, 6 |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 871 trades (1.12/day), net -44.36 USD (1.5x: -67.92), gross before costs 19.55 USD (1.13 pips/trade), avg |move| 25.13 pips vs cost 4.03 pips (ratio 6.24), win rate 39.2%, PF 0.802, kill events 0, per pair net {EURUSD: -16.68 (284), GBPUSD: -10.32 (306), USDJPY: -17.36 (281)}, per window gross [-0.47, 16.23, 0.26, 12.55, -9.21, 0.19]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_beats_random_median']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/ny_cut_overnight/`.
+
+<!-- prescreen:ny_cut_overnight end -->
+
+### Pre-screen round of 31 Oct 2026: summary (none registered)
+
+Fifteen ideas pre-screened (rows above), thirteen rejected on reasoning. No idea
+passes all eight owner checks; none was registered, N stays at 4. Columns: OOS
+2023-10-27 to 2026-10-26 (776 trading days), gross = before costs (pips/trade in
+brackets), net at the measured commission / at 1.5x, luck = share of 200
+coin-toss runs beaten (not run when the gross result was negative or the
+frequency check already failed).
+
+| Idea | Strategy | Trades (per day) | Gross USD (pips/trade) | Net / 1.5x | Move/cost | Luck | Kill | Checks failed |
+|---|---|---|---|---|---|---|---|---|
+| fix_reversal | i1_fix_reversal | 670 (0.86) | -11.18 (-1.4) | -57.17 / -77.91 | 5.1 | not run | 1 | trades/day, gross, luck, kill switch |
+| turtle_soup | i2_turtle_soup | 327 (0.42) | +0.23 (-0.1) | -27.89 / -35.03 | 6.3 | 52% | 0 | trades/day |
+| round_bounce | i3_round_bounce | 1593 (2.05) | -35.96 (-1.0) | -141.90 / -184.72 | 6.3 | not run | 2 | gross, luck, kill switch |
+| round_break | i4_round_break | 1088 (1.40) | -28.84 (-1.2) | -107.60 / -139.53 | 5.6 | not run | 2 | trades/day, gross, luck, kill switch |
+| asia_fade | i5_asia_fade | 277 (0.36) | -18.65 (-3.0) | -37.15 / -44.14 | 11.6 | not run | 0 | trades/day, gross, luck |
+| us_data_drift | i6_us_data_drift | 425 (0.55) | -21.91 (-3.1) | -48.36 / -60.85 | 6.8 | not run | 0 | trades/day, gross, luck |
+| ny_into_asia | i7_ny_into_asia | 471 (0.61) | -4.71 (-0.3) | -37.30 / -46.89 | 5.1 | not run | 0 | trades/day, gross, luck |
+| london_reversal | i8_london_reversal | 457 (0.59) | +2.88 (+0.5) | -28.53 / -39.08 | 6.4 | 70% | 0 | trades/day |
+| range_exhaustion | i9_range_exhaustion | 271 (0.35) | -8.83 (-1.5) | -28.32 / -34.91 | 6.4 | not run | 0 | trades/day, gross, luck |
+| trend_intraday | i10_trend_intraday | 1227 (1.58) | -53.55 (-2.3) | -134.40 / -164.36 | 10.5 | not run | 2 | gross, luck, kill switch |
+| ny_cut_breakout | i11_ny_cut_breakout | 1109 (1.43) | +14.87 (+1.0) | -54.09 / -85.10 | 4.3 | 94% | 1 | trades/day, kill switch |
+| twap_pullback | i12_twap_pullback | 357 (0.46) | -12.82 (-2.2) | -40.30 / -47.48 | 6.1 | not run | 0 | trades/day, gross, luck |
+| morning_overnight | i13_morning_overnight | 297 (0.38) | +44.62 (+7.2) | +17.47 / +3.90 | 11.9 | 100% | 0 | trades/day only |
+| ny_cut_overnight | i14_ny_cut_overnight | 871 (1.12) | +19.55 (+1.1) | -44.36 / -67.92 | 6.2 | LUCK_PENDING | 0 | trades/day (luck: see row above) |
+| knn_path | a2_knn_path (kNN, 8 settings, inner 18+6 selection per round) | 443 (0.57) | +1.41 (+0.3) | -32.90 / -42.63 | 10.8 | not run | 0 | trades/day, luck (not run: fails trades/day, gross about zero) |
+
+Ideas 13 and 14 were designed after the batch-1 results (idea 13 from family
+8's and idea 11's continuation signals, idea 14 from idea 11), in the Round 2
+tradition of designing from the previous round's near misses; they are logged
+as such and were judged on the same pre-screen. Running total of variants
+tried in this round: 100 (12 ideas x 4-8 rule variants, 8 kNN settings).

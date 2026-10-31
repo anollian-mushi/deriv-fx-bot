@@ -20,6 +20,12 @@ every weekday on new Deriv data with pretend money, on GitHub Actions, with
 a weekly Telegram leaderboard and alerts. Paper only: it never trades. Manual
 for running it alone: [incubator/README.md](incubator/README.md). Latest
 numbers: [incubator/leaderboard.md](incubator/leaderboard.md).
+On 31 Oct 2026 fifteen new ideas (fourteen rule-based, one nearest-neighbour
+model) were pre-screened for the incubator under the owner's eight checks;
+none passed all of them and none was registered. The one near miss (a strong
+morning move held overnight: profitable after costs, beat every coin-toss
+run, but only 0.38 trades a day) is left to the owner's decision in
+[incubator/README.md](incubator/README.md#new-ideas-pre-screened-on-31-oct-2026-none-registered).
 
 - Project rules, risk limits and research standards: [CLAUDE.md](CLAUDE.md)
 - Before trading real money: [docs/go_live_checklist.md](docs/go_live_checklist.md)
@@ -214,6 +220,20 @@ python scripts/research_family.py summary --family f1   # pass/fail checks, upda
   (`oos_rates.json`; if it predates the 30 Oct audit fix, run `oos` again first).
   Round 4 families use the candidate's own signal days and pairs with a
   coin-toss direction (`oos_signals.json`), 500 runs, 99th percentile.
+
+### Incubator pre-screen (31 Oct 2026)
+
+```bash
+python scripts/prescreen.py all --idea morning_overnight   # grid, walk-forward OOS, 200 coin-toss runs, summary
+python scripts/prescreen_ml.py table|fit|oos|luck|summary  # the kNN path idea (a2), refitted per round
+```
+
+- Same harness as Phase 4 with one more walk-forward round over the used-up
+  holdout (data to 2026-10-30; the untouched period from 2026-10-31 is
+  refused by the data layer). Ideas and grids: `fxbot.backtest.prescreen.IDEAS`;
+  strategies i1-i14 in `families.py`, a2 in `ml_day.py`.
+- Verdict per idea in `research/incubator_prescreen/<idea>/summary.json` and
+  rows in `research/log.md`; plain-language table in `incubator/README.md`.
 
 ### Round 4 track A: the machine-learning day strategy
 
