@@ -75,15 +75,17 @@ Never change, loosen or work around these without explicit approval.
   on news days, and update cost_by_hour.json. Runs alongside Phase 3 and
   does not block it.
 - Split data into train, validation and a final holdout.
-- Holdout: all Deriv data from 2026-04-28 onward. This start date is fixed
-  and never moves; data collected later is added to the holdout. It is
-  used once, at the end, and reported as-is. Because it is still small,
-  report its result as "consistent / inconsistent with validation", not
-  as proof.
-- No overlap: no data of any source dated 2026-04-28 or later may be used
+- Old holdout (Deriv data 2026-04-28 to 2026-10-30): used up in Phase 4
+  (owner, 31 Oct 2026). It is no longer a clean test of anything.
+- Untouched period: all Deriv data from 2026-10-31 onward. This start date
+  is fixed and never moves; data collected later is added to it. Code
+  enforces it (fxbot.data.split.UNTOUCHED_START): only the strategy
+  incubator may read it, and only for days after each candidate's
+  registration date.
+- No overlap: no data of any source dated 2026-10-31 or later may be used
   for training, validation, parameter choices or strategy selection. That
-  includes Dukascopy. The holdout period is never seen in any form until
-  the single final test.
+  includes Dukascopy. The untouched period is only ever used to score
+  registered incubator candidates forward.
 - Walk-forward validation is required.
 - A strategy passes only if it is profitable after costs on at least 2 of
   the 3 pairs, with 200+ out-of-sample trades in total.
@@ -91,10 +93,42 @@ Never change, loosen or work around these without explicit approval.
 - Log every variant tried in research/log.md.
 - Report: net return, max drawdown, win rate, average win and loss,
   profit factor, trade count, Monte Carlo drawdowns.
-- "No strategy passes" is a valid result. Never tune to pass the holdout.
-- Dukascopy history is for training and validation. The final holdout must
-  be the most recent Deriv data, because that's the price feed the bot
+- "No strategy passes" is a valid result. Never tune to pass the holdout
+  or the incubator.
+- Dukascopy history is for training and validation. Final tests must use
+  the most recent Deriv data, because that's the price feed the bot
   actually trades on.
+
+## Strategy incubator (incubator/, set by the owner 31 Oct 2026)
+- Paper only. The incubator never places orders, real or demo, and holds
+  no Deriv credentials. Graduation only sends a Telegram message.
+- Each candidate is registered once with its code, parameters, model
+  files, commit hash, SHA-256 fingerprint and registration date (the UTC
+  day it was registered; never backdated). A registered candidate is
+  never edited. A changed idea is a new candidate.
+- A candidate is scored only on Deriv data after its registration date,
+  replayed daily through the backtest engine with the measured commission
+  by hour, slippage, every hard risk limit and the calendar rules,
+  starting from 100 USD. The kill switch is enforced: if it fires, the
+  candidate is out for good.
+- Graduation rule (fixed; never loosened). All must hold on forward data
+  up to an exam cutoff day:
+  1. at least 90 calendar days since registration and at least 100
+     closed trades;
+  2. net profit above zero at the measured commission AND at 1.5x it;
+  3. max drawdown under 25% at the measured commission, and the kill
+     switch never fired;
+  4. luck check: net profit at the measured commission beats the
+     (1 - 0.05/N) percentile of random-direction runs on the candidate's
+     own forward signal days (same signals and timing, coin-toss
+     direction; two-leg trades stay hedged). N = candidates ever
+     registered + exam attempts ever started, across all candidates,
+     counting the current one. Runs: at least max(2000, 20 x N / 0.05),
+     so at least 20 random runs lie beyond the bar.
+- An exam starts when rules 1-3 hold. If the luck check fails, the next
+  attempt needs a cutoff at least 28 forward days after the previous one.
+- The graduation message includes per-pair forward results. The 2-of-3
+  pairs rule is not part of graduation.
 
 ## Engineering rules
 - Secrets never go into the repo. Read settings from environment variables
@@ -123,6 +157,10 @@ Folders marked (later) are created in the phase that needs them.
 - src/fxbot/risk/ (later): all hard risk limits; every order passes here
 - src/fxbot/live/ (later): live bot, reconnect, reconciliation, journal
 - src/fxbot/telegram/ (later): alerts and commands
+- incubator/: forward paper test of registered candidates (registry,
+  frozen candidate files, daily records, leaderboard; see its README)
+- src/fxbot/incubator/: incubator code (registry, forward runner, exam,
+  Telegram notices)
 - scripts/: runnable entry points and checks
 - deploy/ (later): systemd unit and VPS setup
 - tests/: pytest

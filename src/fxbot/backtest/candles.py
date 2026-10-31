@@ -2,9 +2,12 @@
 
 Sources (CLAUDE.md research rules):
 - before 2026-04-28: Dukascopy 1m mid prices (data_external/dukascopy/)
-- from 2026-04-28 (the holdout): Deriv 1m candles (data/), only with
-  include_holdout=True. Without it, asking for any holdout date raises
+- from 2026-04-28 (the old, used-up holdout): Deriv 1m candles (data/), only
+  with include_holdout=True. Without it, asking for any holdout date raises
   HoldoutError before a single holdout file is opened.
+- from 2026-10-31 (the untouched period): Deriv 1m candles, only with
+  forward=True, which only the strategy incubator uses. Otherwise
+  UntouchedError is raised.
 
 Minutes outside Deriv's trading hours (weekends, Friday after 20:55, closed
 days, early closes) are dropped (fxbot.sessions). Bigger candles are built
@@ -24,7 +27,7 @@ import numpy as np
 
 from fxbot import sessions
 from fxbot.data.candles import read_day
-from fxbot.data.split import HOLDOUT_START, HoldoutError
+from fxbot.data.split import HOLDOUT_START, UNTOUCHED_START, HoldoutError, UntouchedError
 
 ROOT = Path(__file__).resolve().parents[3]
 CACHE = ROOT / "cache"
@@ -52,7 +55,10 @@ class Bars:
         return out
 
 
-def check_dates(start: dt.date, end: dt.date, include_holdout: bool) -> None:
+def check_dates(start: dt.date, end: dt.date, include_holdout: bool, forward: bool = False) -> None:
+    if end >= UNTOUCHED_START and not forward:
+        raise UntouchedError(f"{end} is in the untouched period (from {UNTOUCHED_START}); "
+                             "only the strategy incubator may read it (forward=True)")
     if end >= HOLDOUT_START and not include_holdout:
         raise HoldoutError(f"{end} is in the holdout (from {HOLDOUT_START}); "
                            "pass include_holdout=True only for the single final test")
@@ -66,9 +72,13 @@ def _source_file(symbol: str, day: dt.date) -> Path:
 
 
 def load_m1(symbol: str, start: dt.date, end: dt.date, include_holdout: bool = False,
-            use_cache: bool = True) -> Bars:
-    """1m mid-price candles for start..end (inclusive), trading hours only."""
-    check_dates(start, end, include_holdout)
+            use_cache: bool = True, forward: bool = False) -> Bars:
+    """1m mid-price candles for start..end (inclusive), trading hours only.
+
+    forward=True is for the strategy incubator only: it may read the untouched period
+    (fxbot.data.split.UNTOUCHED_START onward) and is never cached."""
+    check_dates(start, end, include_holdout or forward, forward)
+    use_cache = use_cache and not forward
     key = f"m1_{start:%Y%m%d}_{end:%Y%m%d}{'_holdout' if include_holdout else ''}.npz"
     path = CACHE / symbol / key
     if use_cache and path.exists():
