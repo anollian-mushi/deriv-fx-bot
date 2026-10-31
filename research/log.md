@@ -614,3 +614,20 @@ Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; s
 Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 327 trades (0.42/day), net -27.89 USD (1.5x: -35.03), gross before costs 0.23 USD (-0.1 pips/trade), avg |move| 25.67 pips vs cost 4.1 pips (ratio 6.26), win rate 35.8%, PF 0.734, kill events 0, per pair net {EURUSD: -11.98 (112), GBPUSD: -10.19 (137), USDJPY: -5.72 (78)}, per window gross [6.43, 5.06, -0.79, -6.12, 1.19, -5.56]. Luck (200 coin-toss runs on the candidate's own signals): median net -28.29, share beaten 52%. Checks failed: ['c3_trades_per_day_1_5']. **Pre-screen (check 6): PASS**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/turtle_soup/`.
 
 <!-- prescreen:turtle_soup end -->
+
+<!-- prescreen:round_bounce start -->
+
+### round_bounce (i3_round_bounce, 1h): 4 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | round_bounce v00 | sl_frac=0.15, tp_frac=0.3 | 3536 | -298.73 | 5 | - |
+| 2026-10-31 | round_bounce v01 | sl_frac=0.15, tp_frac=0.6 | 3367 | -271.18 | 5 | 2 |
+| 2026-10-31 | round_bounce v02 | sl_frac=0.3, tp_frac=0.3 | 2894 | -240.65 | 4 | 5, 6 |
+| 2026-10-31 | round_bounce v03 | sl_frac=0.3, tp_frac=0.6 | 2663 | -233.31 | 4 | 1, 3, 4 |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 1593 trades (2.05/day), net -141.9 USD (1.5x: -184.72), gross before costs -35.96 USD (-0.97 pips/trade), avg |move| 26.93 pips vs cost 4.31 pips (ratio 6.26), win rate 37.5%, PF 0.655, kill events 2, per pair net {EURUSD: -44.11 (373), GBPUSD: -38.41 (525), USDJPY: -59.38 (695)}, per window gross [-1.94, 2.46, -16.92, -5.29, -8.83, -5.45]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c6_gross_positive', 'c6_beats_random_median', 'no_kill_switch']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/round_bounce/`.
+
+<!-- prescreen:round_bounce end -->
