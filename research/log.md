@@ -648,3 +648,24 @@ Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; s
 Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 1088 trades (1.4/day), net -107.6 USD (1.5x: -139.53), gross before costs -28.84 USD (-1.23 pips/trade), avg |move| 24.67 pips vs cost 4.38 pips (ratio 5.64), win rate 28.1%, PF 0.624, kill events 2, per pair net {EURUSD: -43.02 (293), GBPUSD: -28.63 (361), USDJPY: -35.95 (434)}, per window gross [0.33, -8.51, -25.69, 4.88, -0.31, 0.45]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_gross_positive', 'c6_beats_random_median', 'no_kill_switch']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/round_break/`.
 
 <!-- prescreen:round_break end -->
+
+<!-- prescreen:asia_fade start -->
+
+### asia_fade (i5_asia_fade, 1h): 8 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | asia_fade v00 | decision_hour=7, k=0.25, exit_hour=12 | 999 | -77.86 | 1 | - |
+| 2026-10-31 | asia_fade v01 | decision_hour=7, k=0.25, exit_hour=20 | 999 | -92.38 | 1 | - |
+| 2026-10-31 | asia_fade v02 | decision_hour=7, k=0.4, exit_hour=12 | 438 | -37.28 | 0 | 5 |
+| 2026-10-31 | asia_fade v03 | decision_hour=7, k=0.4, exit_hour=20 | 438 | -27.23 | 0 | 1, 2, 3, 4, 6 |
+| 2026-10-31 | asia_fade v04 | decision_hour=8, k=0.25, exit_hour=12 | 1201 | -98.76 | 1 | - |
+| 2026-10-31 | asia_fade v05 | decision_hour=8, k=0.25, exit_hour=20 | 1201 | -145.04 | 2 | - |
+| 2026-10-31 | asia_fade v06 | decision_hour=8, k=0.4, exit_hour=12 | 578 | -48.34 | 0 | - |
+| 2026-10-31 | asia_fade v07 | decision_hour=8, k=0.4, exit_hour=20 | 578 | -81.08 | 1 | - |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 277 trades (0.36/day), net -37.15 USD (1.5x: -44.14), gross before costs -18.65 USD (-3.03 pips/trade), avg |move| 46.71 pips vs cost 4.03 pips (ratio 11.58), win rate 44.0%, PF 0.708, kill events 0, per pair net {EURUSD: -7.07 (59), GBPUSD: -15.97 (61), USDJPY: -14.11 (157)}, per window gross [-11.85, 3.19, 0.79, -7.97, -4.76, 1.95]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_gross_positive', 'c6_beats_random_median']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/asia_fade/`.
+
+<!-- prescreen:asia_fade end -->
