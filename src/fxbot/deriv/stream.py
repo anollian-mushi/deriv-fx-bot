@@ -76,12 +76,20 @@ class StreamClient:
         req_id = next(self._ids)
         fut = asyncio.get_running_loop().create_future()
         self._pending[req_id] = fut
-        await self._ws.send(json.dumps({**payload, "req_id": req_id}))
-        msg = await asyncio.wait_for(fut, timeout)
+        try:
+            await self._ws.send(json.dumps({**payload, "req_id": req_id}))
+            msg = await asyncio.wait_for(fut, timeout)
+        finally:
+            self._pending.pop(req_id, None)
         error = msg.get("error")
         if error:
             raise DerivError(error.get("code", "Unknown"), error.get("message", ""))
         return msg
+
+    @property
+    def alive(self) -> bool:
+        """False once the connection has dropped (the reader task ended)."""
+        return self._reader is not None and not self._reader.done()
 
     def last_tick(self, symbol: str) -> dict | None:
         ticks = self.ticks.get(symbol)
