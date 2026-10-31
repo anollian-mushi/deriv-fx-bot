@@ -82,7 +82,8 @@ def _luck_task(job):
     tr = eng.state.trades
     from fxbot.backtest.audit import gross_of
     out = {"seed": seed, "trades": len(tr), "net_profit": round(sum(t["profit"] for t in tr), 2),
-           "gross": round(sum(gross_of(t) for t in tr), 2), "kill_events": len(eng.state.kill_events)}
+           "gross": round(sum(gross_of(t) for t in tr), 2), "kill_events": len(eng.state.kill_events),
+           "per_pair_net": {s: round(sum(t["profit"] for t in tr if t["symbol"] == s), 2) for s in spec.symbols}}
     _jdump(STATE / idea / "luck" / f"s{seed:03d}.json", out)
     return out
 
@@ -187,6 +188,13 @@ def stage_summary(idea):
     from fxbot.backtest.audit import gross_of
     gross = round(sum(gross_of(t) for t in trades), 2)
     lk = P.luck_summary([r["net_profit"] for r in luck], [r["gross"] for r in luck], net, gross)
+    if luck and "per_pair_net" in luck[0]:
+        # Share of coin-toss runs beaten on each pair alone (the runs are joint; this is a per-pair view).
+        lk["per_pair_share_beaten"] = {}
+        for s in P.IDEAS[idea].symbols:
+            own = sum(t["profit"] for t in trades if t["symbol"] == s)
+            rnd = [r["per_pair_net"].get(s, 0.0) for r in luck]
+            lk["per_pair_share_beaten"][s] = round(sum(x < own for x in rnd) / len(rnd), 3)
     res = {"idea": idea, "strategy": name, "timeframe": _registry()[name].timeframe,
            "symbols": list(P.IDEAS[idea].symbols), "cost_table": P.IDEAS[idea].table,
            **P.summary(trades, oos["stress_1_5x"], oos["kill_events"], lk, len(grid), len(grid[0]),
