@@ -1,0 +1,1402 @@
+[
+ {
+  "seed": 0,
+  "trades": 1129,
+  "net_profit": -77.09,
+  "gross": -0.1,
+  "kill_events": 1
+ },
+ {
+  "seed": 1,
+  "trades": 1128,
+  "net_profit": -62.05,
+  "gross": 13.97,
+  "kill_events": 1
+ },
+ {
+  "seed": 2,
+  "trades": 1127,
+  "net_profit": -91.0,
+  "gross": -18.82,
+  "kill_events": 1
+ },
+ {
+  "seed": 3,
+  "trades": 1130,
+  "net_profit": -77.18,
+  "gross": 1.98,
+  "kill_events": 1
+ },
+ {
+  "seed": 4,
+  "trades": 1131,
+  "net_profit": -83.31,
+  "gross": -8.11,
+  "kill_events": 1
+ },
+ {
+  "seed": 5,
+  "trades": 1131,
+  "net_profit": -80.98,
+  "gross": -2.79,
+  "kill_events": 1
+ },
+ {
+  "seed": 6,
+  "trades": 1122,
+  "net_profit": -76.64,
+  "gross": -0.49,
+  "kill_events": 1
+ },
+ {
+  "seed": 7,
+  "trades": 1129,
+  "net_profit": -83.55,
+  "gross": -7.05,
+  "kill_events": 1
+ },
+ {
+  "seed": 8,
+  "trades": 1117,
+  "net_profit": -66.68,
+  "gross": 8.59,
+  "kill_events": 1
+ },
+ {
+  "seed": 9,
+  "trades": 1122,
+  "net_profit": -75.57,
+  "gross": 1.02,
+  "kill_events": 1
+ },
+ {
+  "seed": 10,
+  "trades": 1130,
+  "net_profit": -84.26,
+  "gross": -11.77,
+  "kill_events": 1
+ },
+ {
+  "seed": 11,
+  "trades": 1127,
+  "net_profit": -78.59,
+  "gross": -2.48,
+  "kill_events": 1
+ },
+ {
+  "seed": 12,
+  "trades": 1129,
+  "net_profit": -74.96,
+  "gross": 0.83,
+  "kill_events": 1
+ },
+ {
+  "seed": 13,
+  "trades": 1126,
+  "net_profit": -83.24,
+  "gross": -6.0,
+  "kill_events": 1
+ },
+ {
+  "seed": 14,
+  "trades": 1134,
+  "net_profit": -97.48,
+  "gross": -25.42,
+  "kill_events": 1
+ },
+ {
+  "seed": 15,
+  "trades": 1129,
+  "net_profit": -75.05,
+  "gross": 0.46,
+  "kill_events": 1
+ },
+ {
+  "seed": 16,
+  "trades": 1134,
+  "net_profit": -87.72,
+  "gross": -11.52,
+  "kill_events": 1
+ },
+ {
+  "seed": 17,
+  "trades": 1124,
+  "net_profit": -70.07,
+  "gross": 5.4,
+  "kill_events": 1
+ },
+ {
+  "seed": 18,
+  "trades": 1127,
+  "net_profit": -90.33,
+  "gross": -15.77,
+  "kill_events": 1
+ },
+ {
+  "seed": 19,
+  "trades": 1125,
+  "net_profit": -66.01,
+  "gross": 8.48,
+  "kill_events": 1
+ },
+ {
+  "seed": 20,
+  "trades": 1127,
+  "net_profit": -78.95,
+  "gross": -1.29,
+  "kill_events": 1
+ },
+ {
+  "seed": 21,
+  "trades": 1130,
+  "net_profit": -68.82,
+  "gross": 6.7,
+  "kill_events": 1
+ },
+ {
+  "seed": 22,
+  "trades": 1123,
+  "net_profit": -79.29,
+  "gross": -2.91,
+  "kill_events": 1
+ },
+ {
+  "seed": 23,
+  "trades": 1126,
+  "net_profit": -73.52,
+  "gross": 3.26,
+  "kill_events": 1
+ },
+ {
+  "seed": 24,
+  "trades": 1126,
+  "net_profit": -88.14,
+  "gross": -14.45,
+  "kill_events": 1
+ },
+ {
+  "seed": 25,
+  "trades": 1125,
+  "net_profit": -92.27,
+  "gross": -16.63,
+  "kill_events": 1
+ },
+ {
+  "seed": 26,
+  "trades": 1121,
+  "net_profit": -80.12,
+  "gross": -1.49,
+  "kill_events": 1
+ },
+ {
+  "seed": 27,
+  "trades": 1123,
+  "net_profit": -78.09,
+  "gross": 5.35,
+  "kill_events": 1
+ },
+ {
+  "seed": 28,
+  "trades": 1130,
+  "net_profit": -81.02,
+  "gross": -5.64,
+  "kill_events": 1
+ },
+ {
+  "seed": 29,
+  "trades": 1123,
+  "net_profit": -82.74,
+  "gross": -9.08,
+  "kill_events": 1
+ },
+ {
+  "seed": 30,
+  "trades": 1121,
+  "net_profit": -71.27,
+  "gross": 7.79,
+  "kill_events": 1
+ },
+ {
+  "seed": 31,
+  "trades": 1128,
+  "net_profit": -91.99,
+  "gross": -14.61,
+  "kill_events": 1
+ },
+ {
+  "seed": 32,
+  "trades": 1119,
+  "net_profit": -52.0,
+  "gross": 15.88,
+  "kill_events": 1
+ },
+ {
+  "seed": 33,
+  "trades": 1124,
+  "net_profit": -73.18,
+  "gross": 2.09,
+  "kill_events": 1
+ },
+ {
+  "seed": 34,
+  "trades": 1125,
+  "net_profit": -78.58,
+  "gross": -1.03,
+  "kill_events": 1
+ },
+ {
+  "seed": 35,
+  "trades": 1129,
+  "net_profit": -76.23,
+  "gross": -1.58,
+  "kill_events": 1
+ },
+ {
+  "seed": 36,
+  "trades": 1120,
+  "net_profit": -80.6,
+  "gross": -9.41,
+  "kill_events": 1
+ },
+ {
+  "seed": 37,
+  "trades": 1129,
+  "net_profit": -55.63,
+  "gross": 16.57,
+  "kill_events": 1
+ },
+ {
+  "seed": 38,
+  "trades": 1126,
+  "net_profit": -73.56,
+  "gross": 5.58,
+  "kill_events": 1
+ },
+ {
+  "seed": 39,
+  "trades": 1129,
+  "net_profit": -76.62,
+  "gross": 2.04,
+  "kill_events": 1
+ },
+ {
+  "seed": 40,
+  "trades": 1121,
+  "net_profit": -80.22,
+  "gross": -4.28,
+  "kill_events": 1
+ },
+ {
+  "seed": 41,
+  "trades": 1126,
+  "net_profit": -84.99,
+  "gross": -8.15,
+  "kill_events": 1
+ },
+ {
+  "seed": 42,
+  "trades": 1123,
+  "net_profit": -78.51,
+  "gross": -1.43,
+  "kill_events": 1
+ },
+ {
+  "seed": 43,
+  "trades": 1134,
+  "net_profit": -63.86,
+  "gross": 10.77,
+  "kill_events": 1
+ },
+ {
+  "seed": 44,
+  "trades": 1132,
+  "net_profit": -90.47,
+  "gross": -16.91,
+  "kill_events": 1
+ },
+ {
+  "seed": 45,
+  "trades": 1123,
+  "net_profit": -61.32,
+  "gross": 15.64,
+  "kill_events": 1
+ },
+ {
+  "seed": 46,
+  "trades": 1123,
+  "net_profit": -87.12,
+  "gross": -14.35,
+  "kill_events": 1
+ },
+ {
+  "seed": 47,
+  "trades": 1125,
+  "net_profit": -88.96,
+  "gross": -15.37,
+  "kill_events": 1
+ },
+ {
+  "seed": 48,
+  "trades": 1129,
+  "net_profit": -86.97,
+  "gross": -10.12,
+  "kill_events": 1
+ },
+ {
+  "seed": 49,
+  "trades": 1121,
+  "net_profit": -58.44,
+  "gross": 15.91,
+  "kill_events": 1
+ },
+ {
+  "seed": 50,
+  "trades": 1125,
+  "net_profit": -89.01,
+  "gross": -9.34,
+  "kill_events": 1
+ },
+ {
+  "seed": 51,
+  "trades": 1130,
+  "net_profit": -79.55,
+  "gross": -4.56,
+  "kill_events": 1
+ },
+ {
+  "seed": 52,
+  "trades": 1123,
+  "net_profit": -63.96,
+  "gross": 11.1,
+  "kill_events": 1
+ },
+ {
+  "seed": 53,
+  "trades": 1121,
+  "net_profit": -65.93,
+  "gross": 8.92,
+  "kill_events": 1
+ },
+ {
+  "seed": 54,
+  "trades": 1118,
+  "net_profit": -87.1,
+  "gross": -11.95,
+  "kill_events": 1
+ },
+ {
+  "seed": 55,
+  "trades": 1130,
+  "net_profit": -87.55,
+  "gross": -10.19,
+  "kill_events": 1
+ },
+ {
+  "seed": 56,
+  "trades": 1124,
+  "net_profit": -75.83,
+  "gross": 3.04,
+  "kill_events": 1
+ },
+ {
+  "seed": 57,
+  "trades": 1132,
+  "net_profit": -70.94,
+  "gross": 2.3,
+  "kill_events": 1
+ },
+ {
+  "seed": 58,
+  "trades": 1127,
+  "net_profit": -66.77,
+  "gross": 10.54,
+  "kill_events": 1
+ },
+ {
+  "seed": 59,
+  "trades": 1126,
+  "net_profit": -66.7,
+  "gross": 8.88,
+  "kill_events": 1
+ },
+ {
+  "seed": 60,
+  "trades": 1124,
+  "net_profit": -85.16,
+  "gross": -9.33,
+  "kill_events": 1
+ },
+ {
+  "seed": 61,
+  "trades": 1125,
+  "net_profit": -68.46,
+  "gross": 8.28,
+  "kill_events": 1
+ },
+ {
+  "seed": 62,
+  "trades": 1121,
+  "net_profit": -63.11,
+  "gross": 14.07,
+  "kill_events": 1
+ },
+ {
+  "seed": 63,
+  "trades": 1120,
+  "net_profit": -46.61,
+  "gross": 27.54,
+  "kill_events": 0
+ },
+ {
+  "seed": 64,
+  "trades": 1130,
+  "net_profit": -80.93,
+  "gross": -4.11,
+  "kill_events": 1
+ },
+ {
+  "seed": 65,
+  "trades": 1128,
+  "net_profit": -47.37,
+  "gross": 27.45,
+  "kill_events": 0
+ },
+ {
+  "seed": 66,
+  "trades": 1124,
+  "net_profit": -87.75,
+  "gross": -15.02,
+  "kill_events": 1
+ },
+ {
+  "seed": 67,
+  "trades": 1126,
+  "net_profit": -88.08,
+  "gross": -12.29,
+  "kill_events": 1
+ },
+ {
+  "seed": 68,
+  "trades": 1125,
+  "net_profit": -92.14,
+  "gross": -16.98,
+  "kill_events": 1
+ },
+ {
+  "seed": 69,
+  "trades": 1122,
+  "net_profit": -82.18,
+  "gross": -4.86,
+  "kill_events": 1
+ },
+ {
+  "seed": 70,
+  "trades": 1131,
+  "net_profit": -71.9,
+  "gross": 5.17,
+  "kill_events": 1
+ },
+ {
+  "seed": 71,
+  "trades": 1121,
+  "net_profit": -57.25,
+  "gross": 13.3,
+  "kill_events": 1
+ },
+ {
+  "seed": 72,
+  "trades": 1125,
+  "net_profit": -74.58,
+  "gross": 3.3,
+  "kill_events": 1
+ },
+ {
+  "seed": 73,
+  "trades": 1119,
+  "net_profit": -52.1,
+  "gross": 25.0,
+  "kill_events": 1
+ },
+ {
+  "seed": 74,
+  "trades": 1137,
+  "net_profit": -84.73,
+  "gross": -5.55,
+  "kill_events": 1
+ },
+ {
+  "seed": 75,
+  "trades": 1123,
+  "net_profit": -48.36,
+  "gross": 19.88,
+  "kill_events": 0
+ },
+ {
+  "seed": 76,
+  "trades": 1128,
+  "net_profit": -65.29,
+  "gross": 10.99,
+  "kill_events": 1
+ },
+ {
+  "seed": 77,
+  "trades": 1125,
+  "net_profit": -79.74,
+  "gross": -2.26,
+  "kill_events": 1
+ },
+ {
+  "seed": 78,
+  "trades": 1122,
+  "net_profit": -46.73,
+  "gross": 18.66,
+  "kill_events": 0
+ },
+ {
+  "seed": 79,
+  "trades": 1132,
+  "net_profit": -64.32,
+  "gross": 11.93,
+  "kill_events": 1
+ },
+ {
+  "seed": 80,
+  "trades": 1126,
+  "net_profit": -64.93,
+  "gross": 12.39,
+  "kill_events": 1
+ },
+ {
+  "seed": 81,
+  "trades": 1124,
+  "net_profit": -65.65,
+  "gross": 11.58,
+  "kill_events": 1
+ },
+ {
+  "seed": 82,
+  "trades": 1127,
+  "net_profit": -66.06,
+  "gross": 9.76,
+  "kill_events": 1
+ },
+ {
+  "seed": 83,
+  "trades": 1122,
+  "net_profit": -60.47,
+  "gross": 12.59,
+  "kill_events": 1
+ },
+ {
+  "seed": 84,
+  "trades": 1117,
+  "net_profit": -54.15,
+  "gross": 16.96,
+  "kill_events": 1
+ },
+ {
+  "seed": 85,
+  "trades": 1127,
+  "net_profit": -74.61,
+  "gross": 5.97,
+  "kill_events": 1
+ },
+ {
+  "seed": 86,
+  "trades": 1127,
+  "net_profit": -74.86,
+  "gross": 1.09,
+  "kill_events": 1
+ },
+ {
+  "seed": 87,
+  "trades": 1127,
+  "net_profit": -64.07,
+  "gross": 11.53,
+  "kill_events": 1
+ },
+ {
+  "seed": 88,
+  "trades": 1128,
+  "net_profit": -70.49,
+  "gross": 3.84,
+  "kill_events": 1
+ },
+ {
+  "seed": 89,
+  "trades": 1123,
+  "net_profit": -78.86,
+  "gross": 0.78,
+  "kill_events": 1
+ },
+ {
+  "seed": 90,
+  "trades": 1128,
+  "net_profit": -98.1,
+  "gross": -24.57,
+  "kill_events": 1
+ },
+ {
+  "seed": 91,
+  "trades": 1123,
+  "net_profit": -66.66,
+  "gross": 9.57,
+  "kill_events": 1
+ },
+ {
+  "seed": 92,
+  "trades": 1134,
+  "net_profit": -79.04,
+  "gross": -5.39,
+  "kill_events": 1
+ },
+ {
+  "seed": 93,
+  "trades": 1124,
+  "net_profit": -76.36,
+  "gross": -1.15,
+  "kill_events": 1
+ },
+ {
+  "seed": 94,
+  "trades": 1119,
+  "net_profit": -55.56,
+  "gross": 20.36,
+  "kill_events": 1
+ },
+ {
+  "seed": 95,
+  "trades": 1119,
+  "net_profit": -75.54,
+  "gross": 0.04,
+  "kill_events": 1
+ },
+ {
+  "seed": 96,
+  "trades": 1117,
+  "net_profit": -70.94,
+  "gross": 4.96,
+  "kill_events": 1
+ },
+ {
+  "seed": 97,
+  "trades": 1128,
+  "net_profit": -60.71,
+  "gross": 12.47,
+  "kill_events": 1
+ },
+ {
+  "seed": 98,
+  "trades": 1127,
+  "net_profit": -70.31,
+  "gross": 5.19,
+  "kill_events": 1
+ },
+ {
+  "seed": 99,
+  "trades": 1125,
+  "net_profit": -73.24,
+  "gross": 0.69,
+  "kill_events": 1
+ },
+ {
+  "seed": 100,
+  "trades": 1121,
+  "net_profit": -52.41,
+  "gross": 17.53,
+  "kill_events": 1
+ },
+ {
+  "seed": 101,
+  "trades": 1117,
+  "net_profit": -61.7,
+  "gross": 13.46,
+  "kill_events": 1
+ },
+ {
+  "seed": 102,
+  "trades": 1130,
+  "net_profit": -81.25,
+  "gross": -5.6,
+  "kill_events": 1
+ },
+ {
+  "seed": 103,
+  "trades": 1131,
+  "net_profit": -73.82,
+  "gross": 0.7,
+  "kill_events": 1
+ },
+ {
+  "seed": 104,
+  "trades": 1122,
+  "net_profit": -66.09,
+  "gross": 8.72,
+  "kill_events": 1
+ },
+ {
+  "seed": 105,
+  "trades": 1128,
+  "net_profit": -88.68,
+  "gross": -13.54,
+  "kill_events": 1
+ },
+ {
+  "seed": 106,
+  "trades": 1129,
+  "net_profit": -83.2,
+  "gross": -7.92,
+  "kill_events": 1
+ },
+ {
+  "seed": 107,
+  "trades": 1131,
+  "net_profit": -93.02,
+  "gross": -16.26,
+  "kill_events": 1
+ },
+ {
+  "seed": 108,
+  "trades": 1122,
+  "net_profit": -65.65,
+  "gross": 12.67,
+  "kill_events": 1
+ },
+ {
+  "seed": 109,
+  "trades": 1116,
+  "net_profit": -61.32,
+  "gross": 15.73,
+  "kill_events": 1
+ },
+ {
+  "seed": 110,
+  "trades": 1123,
+  "net_profit": -62.76,
+  "gross": 12.82,
+  "kill_events": 1
+ },
+ {
+  "seed": 111,
+  "trades": 1129,
+  "net_profit": -73.51,
+  "gross": 3.55,
+  "kill_events": 1
+ },
+ {
+  "seed": 112,
+  "trades": 1122,
+  "net_profit": -86.33,
+  "gross": -13.63,
+  "kill_events": 1
+ },
+ {
+  "seed": 113,
+  "trades": 1128,
+  "net_profit": -86.28,
+  "gross": -13.19,
+  "kill_events": 1
+ },
+ {
+  "seed": 114,
+  "trades": 1120,
+  "net_profit": -44.49,
+  "gross": 28.15,
+  "kill_events": 0
+ },
+ {
+  "seed": 115,
+  "trades": 1125,
+  "net_profit": -82.58,
+  "gross": -6.97,
+  "kill_events": 1
+ },
+ {
+  "seed": 116,
+  "trades": 1122,
+  "net_profit": -82.96,
+  "gross": -8.52,
+  "kill_events": 1
+ },
+ {
+  "seed": 117,
+  "trades": 1128,
+  "net_profit": -89.6,
+  "gross": -15.24,
+  "kill_events": 1
+ },
+ {
+  "seed": 118,
+  "trades": 1132,
+  "net_profit": -71.04,
+  "gross": 5.08,
+  "kill_events": 1
+ },
+ {
+  "seed": 119,
+  "trades": 1133,
+  "net_profit": -77.12,
+  "gross": -2.62,
+  "kill_events": 1
+ },
+ {
+  "seed": 120,
+  "trades": 1127,
+  "net_profit": -81.77,
+  "gross": -10.21,
+  "kill_events": 1
+ },
+ {
+  "seed": 121,
+  "trades": 1130,
+  "net_profit": -53.41,
+  "gross": 19.55,
+  "kill_events": 1
+ },
+ {
+  "seed": 122,
+  "trades": 1132,
+  "net_profit": -89.5,
+  "gross": -15.62,
+  "kill_events": 1
+ },
+ {
+  "seed": 123,
+  "trades": 1121,
+  "net_profit": -60.47,
+  "gross": 18.37,
+  "kill_events": 1
+ },
+ {
+  "seed": 124,
+  "trades": 1127,
+  "net_profit": -70.83,
+  "gross": 2.49,
+  "kill_events": 1
+ },
+ {
+  "seed": 125,
+  "trades": 1121,
+  "net_profit": -63.87,
+  "gross": 8.65,
+  "kill_events": 1
+ },
+ {
+  "seed": 126,
+  "trades": 1123,
+  "net_profit": -81.29,
+  "gross": -2.99,
+  "kill_events": 1
+ },
+ {
+  "seed": 127,
+  "trades": 1116,
+  "net_profit": -56.25,
+  "gross": 18.61,
+  "kill_events": 1
+ },
+ {
+  "seed": 128,
+  "trades": 1128,
+  "net_profit": -86.6,
+  "gross": -13.0,
+  "kill_events": 1
+ },
+ {
+  "seed": 129,
+  "trades": 1133,
+  "net_profit": -81.35,
+  "gross": -6.9,
+  "kill_events": 1
+ },
+ {
+  "seed": 130,
+  "trades": 1126,
+  "net_profit": -77.8,
+  "gross": 0.2,
+  "kill_events": 1
+ },
+ {
+  "seed": 131,
+  "trades": 1130,
+  "net_profit": -53.62,
+  "gross": 17.09,
+  "kill_events": 1
+ },
+ {
+  "seed": 132,
+  "trades": 1127,
+  "net_profit": -59.54,
+  "gross": 18.44,
+  "kill_events": 1
+ },
+ {
+  "seed": 133,
+  "trades": 1127,
+  "net_profit": -86.84,
+  "gross": -10.44,
+  "kill_events": 1
+ },
+ {
+  "seed": 134,
+  "trades": 1119,
+  "net_profit": -81.28,
+  "gross": -6.96,
+  "kill_events": 1
+ },
+ {
+  "seed": 135,
+  "trades": 1127,
+  "net_profit": -72.12,
+  "gross": 3.82,
+  "kill_events": 1
+ },
+ {
+  "seed": 136,
+  "trades": 1124,
+  "net_profit": -70.02,
+  "gross": 8.59,
+  "kill_events": 1
+ },
+ {
+  "seed": 137,
+  "trades": 1132,
+  "net_profit": -68.16,
+  "gross": 6.61,
+  "kill_events": 1
+ },
+ {
+  "seed": 138,
+  "trades": 1124,
+  "net_profit": -65.27,
+  "gross": 13.29,
+  "kill_events": 1
+ },
+ {
+  "seed": 139,
+  "trades": 1131,
+  "net_profit": -87.12,
+  "gross": -13.47,
+  "kill_events": 1
+ },
+ {
+  "seed": 140,
+  "trades": 1121,
+  "net_profit": -77.89,
+  "gross": 1.06,
+  "kill_events": 1
+ },
+ {
+  "seed": 141,
+  "trades": 1129,
+  "net_profit": -69.0,
+  "gross": 5.03,
+  "kill_events": 1
+ },
+ {
+  "seed": 142,
+  "trades": 1127,
+  "net_profit": -70.63,
+  "gross": 7.73,
+  "kill_events": 1
+ },
+ {
+  "seed": 143,
+  "trades": 1123,
+  "net_profit": -68.95,
+  "gross": 6.62,
+  "kill_events": 1
+ },
+ {
+  "seed": 144,
+  "trades": 1123,
+  "net_profit": -67.96,
+  "gross": 8.87,
+  "kill_events": 1
+ },
+ {
+  "seed": 145,
+  "trades": 1131,
+  "net_profit": -82.9,
+  "gross": -4.67,
+  "kill_events": 1
+ },
+ {
+  "seed": 146,
+  "trades": 1126,
+  "net_profit": -83.15,
+  "gross": -8.72,
+  "kill_events": 1
+ },
+ {
+  "seed": 147,
+  "trades": 1132,
+  "net_profit": -91.9,
+  "gross": -17.64,
+  "kill_events": 1
+ },
+ {
+  "seed": 148,
+  "trades": 1126,
+  "net_profit": -87.97,
+  "gross": -13.35,
+  "kill_events": 1
+ },
+ {
+  "seed": 149,
+  "trades": 1124,
+  "net_profit": -94.07,
+  "gross": -19.17,
+  "kill_events": 1
+ },
+ {
+  "seed": 150,
+  "trades": 1130,
+  "net_profit": -59.59,
+  "gross": 15.14,
+  "kill_events": 1
+ },
+ {
+  "seed": 151,
+  "trades": 1126,
+  "net_profit": -59.28,
+  "gross": 12.92,
+  "kill_events": 1
+ },
+ {
+  "seed": 152,
+  "trades": 1128,
+  "net_profit": -72.3,
+  "gross": 0.46,
+  "kill_events": 1
+ },
+ {
+  "seed": 153,
+  "trades": 1123,
+  "net_profit": -52.06,
+  "gross": 20.55,
+  "kill_events": 1
+ },
+ {
+  "seed": 154,
+  "trades": 1126,
+  "net_profit": -94.05,
+  "gross": -22.75,
+  "kill_events": 1
+ },
+ {
+  "seed": 155,
+  "trades": 1127,
+  "net_profit": -64.42,
+  "gross": 10.37,
+  "kill_events": 1
+ },
+ {
+  "seed": 156,
+  "trades": 1126,
+  "net_profit": -69.04,
+  "gross": 7.28,
+  "kill_events": 1
+ },
+ {
+  "seed": 157,
+  "trades": 1127,
+  "net_profit": -74.82,
+  "gross": 3.46,
+  "kill_events": 1
+ },
+ {
+  "seed": 158,
+  "trades": 1120,
+  "net_profit": -71.61,
+  "gross": 0.8,
+  "kill_events": 1
+ },
+ {
+  "seed": 159,
+  "trades": 1131,
+  "net_profit": -73.24,
+  "gross": 4.87,
+  "kill_events": 1
+ },
+ {
+  "seed": 160,
+  "trades": 1128,
+  "net_profit": -65.12,
+  "gross": 14.89,
+  "kill_events": 1
+ },
+ {
+  "seed": 161,
+  "trades": 1124,
+  "net_profit": -60.94,
+  "gross": 17.18,
+  "kill_events": 1
+ },
+ {
+  "seed": 162,
+  "trades": 1121,
+  "net_profit": -57.52,
+  "gross": 8.64,
+  "kill_events": 1
+ },
+ {
+  "seed": 163,
+  "trades": 1121,
+  "net_profit": -52.66,
+  "gross": 14.89,
+  "kill_events": 1
+ },
+ {
+  "seed": 164,
+  "trades": 1126,
+  "net_profit": -78.27,
+  "gross": -1.98,
+  "kill_events": 1
+ },
+ {
+  "seed": 165,
+  "trades": 1134,
+  "net_profit": -87.84,
+  "gross": -13.74,
+  "kill_events": 1
+ },
+ {
+  "seed": 166,
+  "trades": 1121,
+  "net_profit": -60.14,
+  "gross": 14.8,
+  "kill_events": 1
+ },
+ {
+  "seed": 167,
+  "trades": 1124,
+  "net_profit": -73.77,
+  "gross": 1.1,
+  "kill_events": 1
+ },
+ {
+  "seed": 168,
+  "trades": 1117,
+  "net_profit": -63.76,
+  "gross": 10.15,
+  "kill_events": 1
+ },
+ {
+  "seed": 169,
+  "trades": 1131,
+  "net_profit": -99.17,
+  "gross": -24.42,
+  "kill_events": 1
+ },
+ {
+  "seed": 170,
+  "trades": 1126,
+  "net_profit": -87.01,
+  "gross": -12.68,
+  "kill_events": 1
+ },
+ {
+  "seed": 171,
+  "trades": 1129,
+  "net_profit": -76.82,
+  "gross": -1.7,
+  "kill_events": 1
+ },
+ {
+  "seed": 172,
+  "trades": 1127,
+  "net_profit": -95.13,
+  "gross": -22.72,
+  "kill_events": 1
+ },
+ {
+  "seed": 173,
+  "trades": 1122,
+  "net_profit": -79.15,
+  "gross": -2.76,
+  "kill_events": 1
+ },
+ {
+  "seed": 174,
+  "trades": 1124,
+  "net_profit": -85.56,
+  "gross": -6.48,
+  "kill_events": 1
+ },
+ {
+  "seed": 175,
+  "trades": 1125,
+  "net_profit": -82.43,
+  "gross": -6.19,
+  "kill_events": 1
+ },
+ {
+  "seed": 176,
+  "trades": 1118,
+  "net_profit": -73.23,
+  "gross": 6.85,
+  "kill_events": 1
+ },
+ {
+  "seed": 177,
+  "trades": 1134,
+  "net_profit": -84.35,
+  "gross": -6.27,
+  "kill_events": 1
+ },
+ {
+  "seed": 178,
+  "trades": 1118,
+  "net_profit": -70.48,
+  "gross": 8.24,
+  "kill_events": 1
+ },
+ {
+  "seed": 179,
+  "trades": 1123,
+  "net_profit": -66.46,
+  "gross": 8.86,
+  "kill_events": 1
+ },
+ {
+  "seed": 180,
+  "trades": 1121,
+  "net_profit": -88.88,
+  "gross": -14.25,
+  "kill_events": 1
+ },
+ {
+  "seed": 181,
+  "trades": 1131,
+  "net_profit": -82.2,
+  "gross": -2.81,
+  "kill_events": 1
+ },
+ {
+  "seed": 182,
+  "trades": 1130,
+  "net_profit": -78.6,
+  "gross": -3.79,
+  "kill_events": 1
+ },
+ {
+  "seed": 183,
+  "trades": 1121,
+  "net_profit": -77.31,
+  "gross": -2.46,
+  "kill_events": 1
+ },
+ {
+  "seed": 184,
+  "trades": 1131,
+  "net_profit": -74.88,
+  "gross": 0.74,
+  "kill_events": 1
+ },
+ {
+  "seed": 185,
+  "trades": 1121,
+  "net_profit": -68.7,
+  "gross": 7.31,
+  "kill_events": 1
+ },
+ {
+  "seed": 186,
+  "trades": 1132,
+  "net_profit": -94.96,
+  "gross": -18.55,
+  "kill_events": 1
+ },
+ {
+  "seed": 187,
+  "trades": 1129,
+  "net_profit": -59.15,
+  "gross": 10.56,
+  "kill_events": 1
+ },
+ {
+  "seed": 188,
+  "trades": 1124,
+  "net_profit": -78.81,
+  "gross": -4.0,
+  "kill_events": 1
+ },
+ {
+  "seed": 189,
+  "trades": 1128,
+  "net_profit": -76.44,
+  "gross": -3.93,
+  "kill_events": 1
+ },
+ {
+  "seed": 190,
+  "trades": 1122,
+  "net_profit": -105.97,
+  "gross": -33.62,
+  "kill_events": 2
+ },
+ {
+  "seed": 191,
+  "trades": 1117,
+  "net_profit": -80.33,
+  "gross": -5.77,
+  "kill_events": 1
+ },
+ {
+  "seed": 192,
+  "trades": 1123,
+  "net_profit": -86.2,
+  "gross": -12.69,
+  "kill_events": 1
+ },
+ {
+  "seed": 193,
+  "trades": 1131,
+  "net_profit": -77.42,
+  "gross": -0.49,
+  "kill_events": 1
+ },
+ {
+  "seed": 194,
+  "trades": 1128,
+  "net_profit": -65.3,
+  "gross": 12.88,
+  "kill_events": 1
+ },
+ {
+  "seed": 195,
+  "trades": 1126,
+  "net_profit": -74.34,
+  "gross": 1.85,
+  "kill_events": 1
+ },
+ {
+  "seed": 196,
+  "trades": 1127,
+  "net_profit": -97.43,
+  "gross": -25.62,
+  "kill_events": 1
+ },
+ {
+  "seed": 197,
+  "trades": 1122,
+  "net_profit": -58.31,
+  "gross": 15.88,
+  "kill_events": 1
+ },
+ {
+  "seed": 198,
+  "trades": 1123,
+  "net_profit": -77.76,
+  "gross": -0.9,
+  "kill_events": 1
+ },
+ {
+  "seed": 199,
+  "trades": 1132,
+  "net_profit": -93.84,
+  "gross": -17.25,
+  "kill_events": 1
+ }
+]

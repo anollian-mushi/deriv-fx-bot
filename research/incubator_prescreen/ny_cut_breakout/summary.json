@@ -57,7 +57,14 @@
   "ratio": 4.32
  },
  "luck": {
-  "runs": 0
+  "runs": 200,
+  "median_net": -75.69999999999999,
+  "p95_net": -53.37250000000001,
+  "p99_net": -46.7288,
+  "share_beaten_net": 0.94,
+  "median_gross": 0.76,
+  "share_beaten_gross": 0.875,
+  "beats_median": true
  },
  "grid_size": 4,
  "checks": {
@@ -65,10 +72,10 @@
   "c3_trades_per_day_1_5": false,
   "c5_params_5_or_fewer": true,
   "c6_gross_positive": true,
-  "c6_beats_random_median": false,
+  "c6_beats_random_median": true,
   "no_kill_switch": false
  },
- "prescreen_pass": false,
+ "prescreen_pass": true,
  "all_checks": false,
  "picks": [
   {
