@@ -12,13 +12,13 @@ age=$(( now - ${hb:-0} ))
 state=$(systemctl is-active fxbot 2>/dev/null || true)
 if [ "$age" -gt "$LIMIT" ]; then
   if [ ! -e "$FLAG" ]; then
-    if [ "$hb" -eq 0 ]; then what="has no heartbeat file"; else what="last heartbeat $((age / 60)) minutes ago"; fi
-    telegram "HEALTH ALERT: the bot $what (service: $state). It may be stuck or stopped. Open trades keep their stop loss and take profit at Deriv. See deploy/DEPLOY.md, 'Logs' and 'Start, stop, restart'."
+    if [ "${hb:-0}" -eq 0 ]; then what="the bot has no heartbeat file"; else what="the bot's last heartbeat was $((age / 60)) minutes ago"; fi
+    telegram "HEALTH ALERT: $what (service: ${state:-unknown}). It may be stuck or stopped. Open trades keep their stop loss and take profit at Deriv. See deploy/DEPLOY.md, 'Logs' and 'Start, stop, restart'."
     touch "$FLAG"
   fi
 else
   if [ -e "$FLAG" ]; then
-    telegram "Health OK again: the bot's heartbeat is fresh (service: $state)."
+    telegram "Health OK again: the bot's heartbeat is fresh (service: ${state:-unknown})."
     rm -f "$FLAG"
   fi
 fi

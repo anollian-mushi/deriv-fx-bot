@@ -12,7 +12,6 @@ then a machine-learning strategy and 2 original families in round 4; see
 the pipeline ([reports/audit_phase4.md](reports/audit_phase4.md)) confirmed
 it can see an edge and charges costs once. The 2026-04-28 holdout is now
 used up; Deriv data from **2026-10-31** onward is the new untouched period.
-No live bot.
 
 **Strategy incubator (from 31 Oct 2026):** four frozen candidates (the
 Phase 4 near-misses f1, f3-4h, f9 and the Round 4 ML model) are replayed
@@ -20,6 +19,17 @@ every weekday on new Deriv data with pretend money, on GitHub Actions, with
 a weekly Telegram leaderboard and alerts. Paper only: it never trades. Manual
 for running it alone: [incubator/README.md](incubator/README.md). Latest
 numbers: [incubator/leaderboard.md](incubator/leaderboard.md).
+
+**Live bot (demo only, from 31 Oct 2026):** runs one incubator candidate
+(`STRATEGY_ID`, or `leader` for the top of the leaderboard) on the Deriv demo
+account. It loads the candidate's frozen, fingerprinted copy and uses a
+pretend 100 USD ledger. Every order goes through the shared risk module plus
+a live cost gate that reads the commission in each quote. The bot keeps a
+SQLite journal (every signal, order, skip, close, P/L and quote with its
+exact commission rate) and has Telegram alerts and commands. It runs on a
+VPS under systemd with a health check and tested updates. Real money is
+refused unless the candidate has graduated, `DERIV_MODE=real` and
+`CONFIRM_REAL=yes`. Manual: [deploy/DEPLOY.md](deploy/DEPLOY.md).
 
 - Project rules, risk limits and research standards: [CLAUDE.md](CLAUDE.md)
 - Before trading real money: [docs/go_live_checklist.md](docs/go_live_checklist.md)
@@ -42,7 +52,13 @@ logged. See [.env.example](.env.example) for the full list.
 | `DERIV_ACCOUNT_ID` | optional | if empty, the demo account is picked automatically |
 | `DERIV_MODE` | | `demo` (default) or `real` |
 | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | alerts | also GitHub Secrets for the incubator jobs ([incubator/README.md](incubator/README.md#one-time-setup-telegram)) |
-| `TRADING_ENABLED` | | `false` (default). The bot only places orders when `true` |
+| `TRADING_ENABLED` | | `false` (default). The bot only places orders when `true` (otherwise: dry run) |
+| `STRATEGY_ID` | live bot | incubator candidate id, or `leader` |
+| `LEADER_FALLBACK` | live bot | candidate used while no candidate is active in the incubator |
+| `BOT_START_BALANCE` | live bot | pretend demo ledger, 50-100 USD (default 100) |
+| `COST_SAMPLING` | live bot | `true` (default): quote every pair hourly and journal the commission rate |
+| `CONFIRM_REAL` | live bot | must be `yes`, with `DERIV_MODE=real` and a graduated candidate, for real money |
+| `BOT_HOME` | live bot | journal, heartbeat, HALT file, downloaded candles (default `state/live`) |
 
 ## Setup: cloud sessions (claude.ai/code)
 
@@ -88,7 +104,25 @@ logged. See [.env.example](.env.example) for the full list.
    .venv/bin/python scripts/check_demo_balance.py
    ```
 
-Running the bot as a systemd service is added in a later phase (`deploy/`).
+To run the live bot as a service, use the installer instead:
+[deploy/DEPLOY.md](deploy/DEPLOY.md) (one `setup.sh` command, systemd, health
+check, updates and rollbacks, written for a phone SSH app).
+
+## Live bot
+
+```bash
+python scripts/live.py check                 # settings, candidate fingerprint, mode; no trading
+python scripts/live.py run --dry-run         # quotes and signals only, never buys
+python scripts/live.py run                   # demo orders when TRADING_ENABLED=true
+python scripts/live.py test-trade --symbol frxEURUSD --direction MULTUP   # one forced test trade (demo)
+python scripts/live.py unhalt                # clear a kill switch / Telegram /stop halt
+python scripts/live.py export --days 7       # journal as CSV into reviews/
+```
+
+Code: `src/fxbot/live/` (trader loop, broker, candles, journal, candidate
+loading, /stop), `src/fxbot/risk/live.py` (live cost gate and buy tickets;
+the hard limits stay in `src/fxbot/risk/limits.py`), `src/fxbot/telegram/`.
+Tests run against a mocked Deriv: `tests/test_live_bot.py`, `tests/test_live_candles.py`.
 
 ## Phase 0 check scripts
 
@@ -262,3 +296,6 @@ nothing in them is a strategy. Results go to `research/audit/`; the report is
 - `reviews/` trade exports for reviews
 - `incubator/` strategy incubator: frozen candidates, forward records,
   leaderboard ([manual](incubator/README.md))
+- `deploy/` VPS installer, systemd units, update/rollback, health check,
+  [DEPLOY.md](deploy/DEPLOY.md)
+- `state/` local bot state: live journal, heartbeat, backtest progress (not committed)

@@ -90,6 +90,11 @@ exponential backoff, always send `req_id`, check `error` on every reply,
 `forget` streams you no longer need. Error code `RateLimit` (WebSocket) or
 HTTP 429 (REST) means slow down.
 
+**Measured 2026-10-31 (live bot):** the `ping` message is needed. An idle
+demo trading connection with only WebSocket protocol pings was closed (code
+1006) after exactly 120 s. With `{"ping": 1}` sent every 25 s, it stayed open.
+`fxbot.deriv.stream.StreamClient` sends it automatically.
+
 ### Candle history (measured, Phase 1)
 
 - `ticks_history` with `style: "candles"` works on the public WebSocket for

@@ -2,6 +2,7 @@
 # Go back to the previous release (or a given one):  sudo /opt/fxbot/current/deploy/rollback.sh [TAG]
 set -euo pipefail
 FXBOT_ROOT=${FXBOT_ROOT:-/opt/fxbot}
+# shellcheck source=/dev/null
 . "$FXBOT_ROOT/releases/$(basename "$(readlink -f "$FXBOT_ROOT/current")")/deploy/lib.sh" 2>/dev/null || true
 [ "$(id -u)" -eq 0 ] || { echo "Run with sudo."; exit 1; }
 CUR=$(basename "$(readlink -f "$FXBOT_ROOT/current")")

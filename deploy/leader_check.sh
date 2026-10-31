@@ -7,7 +7,7 @@ cd "$FXBOT_ROOT/repo" || exit 0
 git fetch -q origin main 2>/dev/null || { telegram "Leader check: could not reach GitHub."; exit 0; }
 tmp=$(mktemp -d)
 git show origin/main:incubator/records/index.json > "$tmp/index.json" 2>/dev/null || exit 0
-cd "$FXBOT_ROOT/current"
+cd "$FXBOT_ROOT/current" || exit 0
 leader=$(.venv/bin/python scripts/live.py leader --index "$tmp/index.json" --plain 2>/dev/null)
 running=$(.venv/bin/python -c "import json,sys; print(json.load(open(sys.argv[1])).get('candidate',''))" "$BOT_HOME/status.json" 2>/dev/null)
 rm -rf "$tmp"
