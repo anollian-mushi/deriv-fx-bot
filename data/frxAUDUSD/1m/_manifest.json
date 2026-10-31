@@ -319,6 +319,72 @@
    "notes": [],
    "outside_session": 0,
    "small_missing": 0
+  },
+  "2026-06-08": {
+   "candles": 1440,
+   "dropped_duplicates": 0,
+   "dropped_invalid": 0,
+   "dropped_unaligned": 0,
+   "expected": 1440,
+   "gaps": [],
+   "notes": [],
+   "outside_session": 0,
+   "small_missing": 0
+  },
+  "2026-06-09": {
+   "candles": 1440,
+   "dropped_duplicates": 0,
+   "dropped_invalid": 0,
+   "dropped_unaligned": 0,
+   "expected": 1440,
+   "gaps": [],
+   "notes": [],
+   "outside_session": 0,
+   "small_missing": 0
+  },
+  "2026-06-10": {
+   "candles": 1440,
+   "dropped_duplicates": 0,
+   "dropped_invalid": 0,
+   "dropped_unaligned": 0,
+   "expected": 1440,
+   "gaps": [],
+   "notes": [],
+   "outside_session": 0,
+   "small_missing": 0
+  },
+  "2026-06-11": {
+   "candles": 1440,
+   "dropped_duplicates": 0,
+   "dropped_invalid": 0,
+   "dropped_unaligned": 0,
+   "expected": 1440,
+   "gaps": [],
+   "notes": [],
+   "outside_session": 0,
+   "small_missing": 0
+  },
+  "2026-06-12": {
+   "candles": 1255,
+   "dropped_duplicates": 0,
+   "dropped_invalid": 0,
+   "dropped_unaligned": 0,
+   "expected": 1255,
+   "gaps": [],
+   "notes": [],
+   "outside_session": 0,
+   "small_missing": 0
+  },
+  "2026-06-15": {
+   "candles": 1440,
+   "dropped_duplicates": 0,
+   "dropped_invalid": 0,
+   "dropped_unaligned": 0,
+   "expected": 1440,
+   "gaps": [],
+   "notes": [],
+   "outside_session": 0,
+   "small_missing": 0
   }
  },
  "granularity": "1m",
