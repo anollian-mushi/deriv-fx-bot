@@ -13,6 +13,14 @@ the pipeline ([reports/audit_phase4.md](reports/audit_phase4.md)) confirmed
 it can see an edge and charges costs once. The holdout is still untouched.
 No live bot.
 
+**Branch `experiment/perfect-fit` (not merged):** an owner-approved experiment
+that dropped the research safeguards and fitted one strategy as tightly as
+possible to the pre-holdout years. Fitted period: 100 -> 3.87 million USD,
+drawdown 1.3%. First unseen-data test (holdout, run once): -50%, kill switch on
+2 Oct 2026. A lesson in overfitting, never to be traded:
+[reports/experiment_perfect_fit.md](reports/experiment_perfect_fit.md). This
+used the holdout once.
+
 - Project rules, risk limits and research standards: [CLAUDE.md](CLAUDE.md)
 - Before trading real money: [docs/go_live_checklist.md](docs/go_live_checklist.md)
 - How the Deriv API and Multiplier contracts work: [docs/deriv_api_notes.md](docs/deriv_api_notes.md)

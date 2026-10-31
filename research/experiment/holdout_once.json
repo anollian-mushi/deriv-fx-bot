@@ -1,0 +1,28 @@
+{
+ "started_utc": "2026-10-31T09:58:32+00:00",
+ "holdout": "2026-04-28 to 2026-10-30",
+ "model_sha256": {
+  "knn.npz": "b9b82470dadaa0e4f842f4f2180cf8aea6862ffd9500359fa6858916aa091e15",
+  "spec.json": "83e4eea886116c944638b42fcb19f1c2ecc1ca97f1fb2f5f602ca6313f7b7e10"
+ },
+ "finished_utc": "2026-10-31T09:58:49+00:00",
+ "measured": {
+  "trades": 386,
+  "net_usd": -50.02,
+  "net_pct": -50.02,
+  "dd_pct": 50.41,
+  "score": -0.992,
+  "win_rate": 33.9,
+  "killed": true
+ },
+ "stress_1_5x": {
+  "trades": 277,
+  "net_usd": -50.02,
+  "net_pct": -50.02,
+  "dd_pct": 50.29,
+  "score": -0.995,
+  "win_rate": 29.2,
+  "killed": true
+ },
+ "report": "reports/backtests/experiment_perfect_fit_first_unseen_test_HOLDOUT"
+}

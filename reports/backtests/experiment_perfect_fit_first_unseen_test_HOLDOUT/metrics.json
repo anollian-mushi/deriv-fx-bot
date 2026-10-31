@@ -1,0 +1,113 @@
+{
+ "run": "experiment_perfect_fit_first_unseen_test",
+ "generated_utc": "2026-10-31T09:58Z",
+ "strategy": "fxbot.strategies.perfect_fit:PerfectFit",
+ "timeframe": "1h",
+ "label": "EXPERIMENT ONLY: fitted to the pre-holdout period on purpose",
+ "params": {
+  "model": {
+   "kind": "knn",
+   "k": 1,
+   "name": "knn_1"
+  },
+  "exit": {
+   "mult": 200,
+   "sl": 30,
+   "tp": 30,
+   "hold": 1
+  },
+  "threshold": 0.3
+ },
+ "symbols": [
+  "frxEURUSD",
+  "frxGBPUSD",
+  "frxUSDJPY"
+ ],
+ "start": "2026-04-28",
+ "end": "2026-10-30",
+ "warmup_from": "2026-02-27",
+ "include_holdout": true,
+ "starting_balance": 100.0,
+ "kill_switch_mode": "enforce",
+ "test": "first unseen-data test (run once)",
+ "measured": {
+  "trades": 386,
+  "final_balance": 49.98,
+  "net_profit": -50.02,
+  "net_return_pct": -50.02,
+  "max_drawdown_pct": 50.41,
+  "win_rate_pct": 33.9,
+  "avg_win": 0.29,
+  "avg_loss": -0.345,
+  "profit_factor": 0.432,
+  "avg_commission": 0.1032,
+  "min_target_met": false,
+  "late_fills": 5,
+  "avg_delay_min": 8.8,
+  "monte_carlo_drawdown_pct": {
+   "p50": 50.47,
+   "p95": 51.75,
+   "p99": 52.35,
+   "runs": 1000
+  }
+ },
+ "stress_1_5x": {
+  "trades": 277,
+  "final_balance": 49.98,
+  "net_profit": -50.02,
+  "net_return_pct": -50.02,
+  "max_drawdown_pct": 50.29,
+  "win_rate_pct": 29.2,
+  "avg_win": 0.269,
+  "avg_loss": -0.366,
+  "profit_factor": 0.303,
+  "avg_commission": 0.1542,
+  "min_target_met": false,
+  "late_fills": 1,
+  "avg_delay_min": 1.0,
+  "monte_carlo_drawdown_pct": {
+   "p50": 50.19,
+   "p95": 51.09,
+   "p99": 51.72,
+   "runs": 1000
+  }
+ },
+ "mt5_micro_comparison_only": {
+  "trades": 386,
+  "final_balance": 80.43,
+  "net_profit": -19.57,
+  "net_return_pct": -19.57,
+  "max_drawdown_pct": 20.93,
+  "win_rate_pct": 42.0,
+  "avg_win": 0.304,
+  "avg_loss": -0.307,
+  "profit_factor": 0.716,
+  "avg_commission": 0.1032,
+  "min_target_met": null,
+  "late_fills": 5,
+  "avg_delay_min": 8.8,
+  "monte_carlo_drawdown_pct": {
+   "p50": 21.47,
+   "p95": 24.71,
+   "p99": 25.87,
+   "runs": 1000
+  }
+ },
+ "signals_blocked_first_reason": {
+  "max_positions": 6
+ },
+ "signals_dropped": {
+  "expired": 1
+ },
+ "gate_blocked_signals": 0,
+ "kill_switch": true,
+ "kill_switch_stress": true,
+ "kill_events": [],
+ "kill_events_stress": [],
+ "exit_reasons": {
+  "strategy_exit": 342,
+  "take_profit": 23,
+  "stop_loss": 19,
+  "kill_switch": 2
+ }
+}
