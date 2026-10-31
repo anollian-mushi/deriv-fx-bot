@@ -669,3 +669,24 @@ Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; s
 Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 277 trades (0.36/day), net -37.15 USD (1.5x: -44.14), gross before costs -18.65 USD (-3.03 pips/trade), avg |move| 46.71 pips vs cost 4.03 pips (ratio 11.58), win rate 44.0%, PF 0.708, kill events 0, per pair net {EURUSD: -7.07 (59), GBPUSD: -15.97 (61), USDJPY: -14.11 (157)}, per window gross [-11.85, 3.19, 0.79, -7.97, -4.76, 1.95]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_gross_positive', 'c6_beats_random_median']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/asia_fade/`.
 
 <!-- prescreen:asia_fade end -->
+
+<!-- prescreen:us_data_drift start -->
+
+### us_data_drift (i6_us_data_drift, 1h): 8 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | us_data_drift v00 | k=0.2, exit_hour=17, stop=0.0 | 1268 | -89.91 | 1 | - |
+| 2026-10-31 | us_data_drift v01 | k=0.2, exit_hour=17, stop=0.5 | 1279 | -90.37 | 1 | - |
+| 2026-10-31 | us_data_drift v02 | k=0.2, exit_hour=20, stop=0.0 | 1268 | -92.57 | 1 | - |
+| 2026-10-31 | us_data_drift v03 | k=0.2, exit_hour=20, stop=0.5 | 1279 | -95.36 | 1 | - |
+| 2026-10-31 | us_data_drift v04 | k=0.3, exit_hour=17, stop=0.0 | 740 | -62.07 | 1 | - |
+| 2026-10-31 | us_data_drift v05 | k=0.3, exit_hour=17, stop=0.5 | 749 | -59.23 | 1 | 4, 5 |
+| 2026-10-31 | us_data_drift v06 | k=0.3, exit_hour=20, stop=0.0 | 740 | -60.93 | 1 | 1, 2, 3 |
+| 2026-10-31 | us_data_drift v07 | k=0.3, exit_hour=20, stop=0.5 | 749 | -63.85 | 1 | 6 |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 425 trades (0.55/day), net -48.36 USD (1.5x: -60.85), gross before costs -21.91 USD (-3.06 pips/trade), avg |move| 24.95 pips vs cost 3.65 pips (ratio 6.83), win rate 40.2%, PF 0.584, kill events 0, per pair net {EURUSD: -15.52 (159), GBPUSD: -19.68 (150), USDJPY: -13.16 (116)}, per window gross [-5.43, -11.74, 4.45, 1.77, -3.82, -7.15]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_gross_positive', 'c6_beats_random_median']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/us_data_drift/`.
+
+<!-- prescreen:us_data_drift end -->
