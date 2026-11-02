@@ -13,6 +13,10 @@ Measured in Phase 2 (reports/costs.md, sections 7, 8 and 10):
 - Manual and forced closes fill at the mid price (sells filled exactly at the
   shown price on all demo trades).
 - Profit is rounded to the nearest cent.
+- Stop-loss update (Deriv contract_update, TJR break-even variant): the stop
+  moves to the smallest stop loss Deriv accepts, commission + 0.02 USD, from the
+  minute after the trigger price was reached. It then fills like any stop loss
+  (1 pip past its level, or past a gap open).
 """
 
 from __future__ import annotations
@@ -46,7 +50,22 @@ class CommissionTable:
     def rate(self, symbol: str, epoch: int) -> float | None:
         """Rate for the UTC hour of `epoch`; None if no price was measured (paused hour)."""
         rates = self.by_hour.get((epoch % 86400) // 3600)
-        return rates[symbol] if rates else None
+        return rates.get(symbol) if rates else None
+
+    @classmethod
+    def merged(cls, paths: list[Path]) -> "CommissionTable":
+        """One table from several files with disjoint pairs (the majors table and the pairs2 table).
+        An hour without a price in one file stays without a price for that file's pairs only."""
+        tables = [cls(p) for p in paths]
+        out = tables[0]
+        for t in tables[1:]:
+            if set(t.base) & set(out.base):
+                raise ValueError("commission tables overlap: each pair must come from one file")
+            out.base.update(t.base)
+            for h in range(24):
+                a, b = out.by_hour.get(h), t.by_hour.get(h)
+                out.by_hour[h] = {**(a or {}), **(b or {})} or None
+        return out
 
 
 @dataclass
@@ -87,10 +106,17 @@ def entry_price(symbol: str, direction: str, mid_open: float) -> float:
     return mid_open + slip if direction == "MULTUP" else mid_open - slip
 
 
+def cost_pips(symbol: str, price: float, rate: float) -> float:
+    """Cost per trade in pips: commission (rate x price) plus the entry slippage."""
+    return rate * price / PIP[symbol] + ENTRY_SLIPPAGE_PIPS
+
+
 def open_position(symbol: str, direction: str, multiplier: int, stake: float, mid_open: float,
                   epoch: int, rate: float, stop_loss_pips: float | None = None,
-                  take_profit_pips: float | None = None, stress: float = 1.0) -> Position:
-    """Open a contract. Raises ValueError if the stop loss is too tight for Deriv."""
+                  take_profit_pips: float | None = None, stress: float = 1.0,
+                  require_stop: bool = False) -> Position:
+    """Open a contract. Raises ValueError if the stop loss is too tight for Deriv, or (with
+    require_stop) if the stop would lie at or beyond the stop out."""
     entry = entry_price(symbol, direction, mid_open)
     rate = rate * stress
     comm = mc.commission(stake, multiplier, rate)
@@ -102,6 +128,8 @@ def open_position(symbol: str, direction: str, multiplier: int, stake: float, mi
         amount = round(size * stop_loss_pips * PIP[symbol] / entry + comm, 2)
         if amount < round(comm + SL_MIN_ABOVE_COMMISSION, 2):
             raise ValueError("stop_loss_too_tight")
+        if amount >= stake and require_stop:
+            raise ValueError("stop_beyond_stop_out")
         if amount < stake:              # otherwise the stop out comes first anyway
             pos.sl_amount = amount
             pos.sl_price = mc.round_price(
@@ -112,6 +140,23 @@ def open_position(symbol: str, direction: str, multiplier: int, stake: float, mi
         pos.tp_price = mc.round_price(
             mc.take_profit_price(direction, stake, multiplier, entry, amount, comm), PIP_SIZE[symbol])
     return pos
+
+
+def min_stop_amount(pos: Position) -> float:
+    """Smallest stop loss Deriv accepts (USD): commission + 0.02."""
+    return round(pos.commission + SL_MIN_ABOVE_COMMISSION, 2)
+
+
+def move_stop_near_breakeven(pos: Position) -> bool:
+    """Deriv stop-loss update to the smallest allowed stop. False if it would not tighten the stop."""
+    amount = min_stop_amount(pos)
+    if pos.sl_amount is not None and amount >= pos.sl_amount:
+        return False
+    pos.sl_amount = amount
+    pos.sl_price = mc.round_price(
+        mc.stop_loss_price(pos.direction, pos.stake, pos.multiplier, pos.entry, amount, pos.commission),
+        PIP_SIZE[pos.symbol])
+    return True
 
 
 def profit_at(pos: Position, price: float) -> float:

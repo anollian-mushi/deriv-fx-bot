@@ -1,4 +1,4 @@
-"""1m price data and closed 1h / 4h / daily candles for the backtester.
+"""1m price data and closed 5m / 15m / 30m / 1h / 4h / daily candles for the backtester.
 
 Sources (CLAUDE.md research rules):
 - before 2026-04-28: Dukascopy 1m mid prices (data_external/dukascopy/)
@@ -31,7 +31,7 @@ from fxbot.data.split import HOLDOUT_START, UNTOUCHED_START, HoldoutError, Untou
 
 ROOT = Path(__file__).resolve().parents[3]
 CACHE = ROOT / "cache"
-TIMEFRAMES = {"1m": 60, "1h": 3600, "4h": 4 * 3600, "1d": 86400}
+TIMEFRAMES = {"1m": 60, "5m": 300, "15m": 900, "30m": 1800, "1h": 3600, "4h": 4 * 3600, "1d": 86400}
 
 
 @dataclass
