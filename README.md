@@ -39,6 +39,9 @@ exact commission rate) and has Telegram alerts and commands. It runs on a
 VPS under systemd with a health check and tested updates. Real money is
 refused unless the candidate has graduated, `DERIV_MODE=real` and
 `CONFIRM_REAL=yes`. Manual: [deploy/DEPLOY.md](deploy/DEPLOY.md).
+First end-to-end demo run on 2 Nov 2026 passed (real signal, forced
+disconnect, Telegram commands, /stop): [reports/demo_run_2026-11-02.md](reports/demo_run_2026-11-02.md).
+Release **v0.1.0** is the first VPS install.
 
 - Project rules, risk limits and research standards: [CLAUDE.md](CLAUDE.md)
 - Before trading real money: [docs/go_live_checklist.md](docs/go_live_checklist.md)

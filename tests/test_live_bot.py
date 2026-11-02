@@ -502,6 +502,9 @@ def test_forced_test_trade_goes_through_risk(tmp_path):
     run(start_and_tick(tr, clock))
     o = j.orders()[0]
     assert o["test"] == 1 and o["state"] == "open" and o["stake"] == 3.0
+    # The request (which carries its own "symbol" key) is journalled, never logged as refused (bug seen 2 Nov 2026).
+    assert [e for e in j.events(kinds=("test_trade_request",)) if e["symbol"] == "frxUSDJPY"]
+    assert not j.events(kinds=("test_trade_refused",))
     clock.t += 6 * 60
     run(tr.tick(clock()))
     assert j.orders()[0]["state"] == "closed" and j.orders()[0]["close_reason"] == "forced_deadline"

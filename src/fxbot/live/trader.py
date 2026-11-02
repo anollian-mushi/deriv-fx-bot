@@ -574,7 +574,7 @@ class Trader:
                 if sym in self.pending:
                     raise ValueError("a signal is already waiting on this pair")
                 self.pending[sym] = Pending(req, int(now), int(now) + 600, test={"hold_minutes": int(r.get("hold_minutes", 10))})
-                self.journal.event("test_trade_request", sym, **r)
+                self.journal.event("test_trade_request", sym, **{k: v for k, v in r.items() if k != "symbol"})
             except Exception as err:
                 self.journal.event("test_trade_refused", error=str(err), file=f.name)
             f.unlink(missing_ok=True)
