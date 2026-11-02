@@ -1,0 +1,39 @@
+# Create a release tag from the Actions tab ("Run workflow"), for example v0.1.0.
+# Cloud sessions can push branches but not tags, so the tag is made here with
+# the workflow's own token. deploy/setup.sh installs the newest v* tag.
+name: Tag a release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag name (vMAJOR.MINOR.PATCH)"
+        required: true
+      sha:
+        description: "Commit to tag (blank = the latest main)"
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create and push the tag
+        env:
+          TAG: ${{ inputs.tag }}
+          SHA: ${{ inputs.sha }}
+        run: |
+          set -euo pipefail
+          [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "::error::Tag must look like v0.1.0"; exit 1; }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          TARGET="${SHA:-$(git rev-parse origin/main)}"
+          git tag -a "$TAG" "$TARGET" -m "$TAG"
+          git push origin "refs/tags/$TAG"
+          echo "Tagged $TARGET as $TAG"
