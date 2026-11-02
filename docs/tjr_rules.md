@@ -1,14 +1,16 @@
-# TJR method: mechanical rules (draft for the owner's approval)
+# TJR method: mechanical rules
 
-Status: **Step 1 of the TJR test. Rules only: no data has been read and nothing has been
-tested.** Written 2 Nov 2026 on branch `tjr-smc` from the owner's 11 course notes
+Status: **approved by the owner on 2 Nov 2026, with changes to C18, C23 and C28** (marked
+"owner" below). No data has been read for this document. The code is
+`src/fxbot/strategies/tjr.py` and `tjr_calendar.py`; the Step 2 test plan is
+`docs/tjr_test_plan.md`. Written 2 Nov 2026 on branch `tjr-smc` from the owner's 11 course notes
 (1 Candlesticks, 2 Trends, 3 Break of structure, 4 Liquidity, 5 Fair value gaps, 6 News,
 7 Order block, 8 Equilibrium, 9 Execution, 10 Take profit and stop loss, 11 Final touch).
 
 The notes are written for a person looking at a chart. A backtest needs every word turned
 into a yes/no rule a program can check. Wherever the notes leave room for interpretation, this
 document makes one choice and names one alternative. They are numbered **C1, C2, ...** and
-collected in the table in section 14. The owner approves or changes them before Step 2.
+collected in the table in section 14.
 
 Two rules from the notes apply everywhere:
 
@@ -264,21 +266,39 @@ buy at the open of the next 1m candle, plus 0.5 pip of slippage (the project's s
 fill).
 
 - **Model 1:** the entry is at the first 1m open after the BOS candle closes.
-- **Models 2-4 (retracement):** the touch is checked on execution candles, not inside them
-  (note 1, closed candles only). The trade opens at the close of the **first execution
-  candle whose high reaches into the zone** and that **closes below the zone's top** (the
-  zone held). If that candle closes above the top, the zone is broken and the setup is
-  cancelled (C18).
-  - The setup is also cancelled if the take-profit level is reached before the entry
-    ("the market moved without you", note 7), or if the retracement has not happened
-    within the same N execution candles after the BOS, or after the session window
+- **Models 2-4 (retracement), owner's C18:** as notes 7 and 8 say, touching the zone is not
+  enough. Inside the zone, wait for a fresh **lower-timeframe sweep plus a break of
+  structure** on the *confirmation timeframe*: 1m candles for 5m execution, 5m candles for
+  15m execution.
+  1. **Touch:** a confirmation candle reaches into the zone (its high reaches the zone's
+     bottom, for a short). It must happen within N execution candles after the BOS. If
+     several zones are reached at once, the first one on the way (the lowest, for a short)
+     is used.
+  2. **Fresh sweep inside the zone:** a confirmation candle whose wick reaches into the zone
+     goes above a confirmation-timeframe swing high (k = 1) that formed *after* the BOS, and
+     closes back below it. Each such swing can be swept once.
+  3. **Break:** within N confirmation candles of that sweep, a confirmation candle closes
+     below the last confirmation-timeframe swing low that formed before the sweep candle.
+     The trade opens at that close. If price trades above the small sweep's wick first,
+     that small sweep is void and the next one is awaited.
+  - The zone is dropped if an execution candle closes beyond its far side (above the top,
+    for a short). The setup is cancelled when no zone is left, or when the session window
     ends.
+  - The setup is also cancelled if price trades through the 30m sweep wick (the stop level),
+    or if price reaches the "draw" before the entry. The draw is the nearest untaken opposing
+    liquidity level beyond the low made since the sweep ("the market moved without you",
+    note 7).
   - At the moment of entry, the entry price must be in premium for every short (note 8:
     "shorting below equilibrium ... is institutional suicide"). Model 1 is exempt: the
     BOS close is normally in discount, and note 9 says model 1 accepts a wider stop.
+  - **Labelled alternative (C18-alt, "touch"):** enter at the close of the first execution
+    candle that reached into the zone and closed below the zone's top. This was the first
+    draft's rule. It is tested as one variant per model, never as the main version.
 
 **One trade per sweep, and at most one trade per pair per session** (London, New York)
-(C19). The CLAUDE.md risk module still applies on top: at most 2 open trades, at most 1 per
+(C19). A pair has at most one setup at a time. While it waits, a new sweep on that pair is
+ignored, unless it trades through the waiting setup's stop level, which cancels the old
+setup first. The CLAUDE.md risk module still applies on top: at most 2 open trades, at most 1 per
 pair, and so on.
 
 Notes 7 and 8 also describe a "full top-down" version: price first retraces into a
@@ -293,20 +313,22 @@ Note 10: the stop goes "strictly just beyond the high or low of the initial liqu
 plus a spread buffer ("at least a 0.5-point buffer"). It is never placed at the small swing
 of the entry candle.
 
-**Rule (short).** Stop = **sweep extreme + 1 pip** (C21). The stop distance is measured from
-the actual entry price (slippage included). The same rule applies to all four models. In
-models 2-4 the entry is closer to the sweep, so the stop is tighter. That is the point of
-those models.
+**Rule (short).** Stop = **the 30m sweep candle's wick + 1 pip** (C21). That holds for all four
+models (owner's point 4, 2 Nov 2026). It is never placed at an execution-timeframe or
+confirmation-timeframe swing, not even after the 1m/5m confirmation of models 2-4. The stop
+distance is measured from the actual entry price (slippage included). In models 2-4 the
+entry is closer to the sweep, so the stop is tighter. That is the point of those models.
 
 Notes 7 and 10 allow a tighter stop behind an internal OB or FVG. That is not used: note 10
 warns that it raises the chance of being wicked out.
 
 **How it maps onto a Deriv Multiplier.** The stake is the most a trade can lose (CLAUDE.md:
 stake at most 3% of balance). The stop loss is set as a USD amount = stake x multiplier x
-(stop distance / entry price). A trade is skipped if its stop is beyond Deriv's stop-out
-distance for the chosen multiplier, because then the stop would never be the real exit
-(C22). That distance is about 1% of price at x100, about 116 pips on EUR/USD, and about
-0.5% at x200.
+(stop distance / entry price). The multiplier is x200, or x100 when the stop is wider than 0.4%
+of the price (80% of the x200 stop-out move). A trade is skipped if its stop is wider than
+0.8% of the price (C22), because then Deriv's stop out (about 1% at x100, about 116 pips on
+EUR/USD) could come first and the stop would not be the real exit. As a second guard, the
+engine refuses any stop at or beyond the stop out.
 
 **Cost rule (owner, Step 2):** a trade is skipped if its stop is closer than 4x its cost
 per trade. Cost per trade = commission at the rate for the entry hour (from
@@ -333,23 +355,27 @@ ratios", and sets targets at opposing liquidity: "Target 1 at the nearest liquid
 targets 2 and 3 at higher-timeframe gaps or swings", taken as partial profits.
 
 **Constraint.** One Deriv contract has one take profit, and CLAUDE.md allows only one open
-trade per pair. Partial profits (splitting into 3-4 positions) and note 11's "trail to break
-even" runner are therefore not possible in the same way. Each trade has one take profit and
-nothing moves the stop (C23).
+trade per pair. Partial profits (splitting into 3-4 positions) are therefore not possible.
+Owner's C23: **one contract, one target at opposing liquidity**, plus one variant with a
+stop update.
 
-Two take-profit modes (a Step 2 setting):
+- **Target (all variants):** the nearest untaken prominent level on the other side
+  (section 3: PDL, Asian low, London low, 30m swing lows for a short). Only levels beyond
+  the lowest price since the sweep count; levels the move already traded through are used
+  up. If that level is less than 1R from the entry (reward smaller than the risk), the next
+  one beyond it is used. If none exists within 5R, the target is 5R (C24).
+- **Break-even variant (owner's C23):** once price has moved 1R in the trade's favour, the
+  stop is moved with Deriv's stop-loss update (contract_update) to the smallest stop Deriv
+  accepts: **commission + 0.02 USD**. The trade can then lose only about the commission,
+  the 2 cents and the usual 1 pip of stop slippage. The backtest models it on 1m candles:
+  the update takes effect from the minute *after* the one that reached 1R. If a single
+  minute reaches 1R and falls back, the old stop still applies in that minute. After that,
+  the moved stop fills like any stop (1 pip past it, or past a gap open).
 
-- **Liquidity target (default, as in notes 4, 5, 10):** the nearest untaken prominent level
-  on the other side (section 3: PDL, Asian low, London low, 30m swing lows for a short),
-  measured beyond the entry. If that level is less than 1R away (reward smaller than the
-  risk), the next one beyond it is used. If none exists within 5R, the target is 5R (C24).
-- **Fixed R multiple:** take profit = k x the stop distance, k chosen from a short list in
-  Step 2 (for example 1, 2 or 3). Note 10 offers "1:1 risk-reward" as target 1.
-
-*Example.* Short at 1.16380, stop 1.16470 (9 pips, so R = 9 pips). With a liquidity target,
-the Asian low 1.16180 is 20 pips away (2.2R), so the take profit is 1.16180. With 2R, the
-take profit is 1.16200. (On EUR/USD this trade would be skipped anyway: a 9-pip stop is
-under the 13-pip cost floor.)
+*Example.* Short at 1.16380, stop 1.16470 (9 pips, so R = 9 pips). The Asian low 1.16180
+is 20 pips away (2.2R), so the take profit is 1.16180. In the break-even variant, the stop
+moves to about 1.16383 once price trades at 1.16290. (On EUR/USD this trade would be skipped
+anyway: a 9-pip stop is under the 13-pip cost floor.)
 
 **Time exit.** Every trade still open at **17:55 UTC** is closed at market (C25). TJR trades
 the morning sessions. This also gets out before FOMC statements (14:00 New York = 18:00 or
@@ -386,25 +412,23 @@ and claims days, "do not force trades".
 
 We have no historical calendar, so the rules use **known release times every weekday**,
 whether or not a release happened that day (C28). That blocks more than needed. It never
-blocks less than needed for releases at these times.
+blocks less than needed for releases at these times. Owner's C28 (2 Nov 2026) sets the full
+list:
 
 | Currency | Releases (all red folder) | Release time | No new entries |
 |---|---|---|---|
-| USD | CPI, PPI, NFP, jobless claims, retail sales, GDP, PCE | 08:30 New York | 08:00-09:00 New York, every weekday |
-| USD | ISM PMIs, JOLTS | 10:00 New York | 09:45-10:30 New York, every weekday |
-| USD | FOMC statement / press conference | 14:00 / 14:30 New York | after the session window anyway; all trades are closed by 17:55 UTC (section 11) |
-| GBP | UK CPI, GDP, jobs | 07:00 London | 06:45-07:30 London, every weekday |
-| GBP | Bank of England decision | 12:00 London, Thursdays | 11:45-12:30 London, Thursdays |
-| EUR | Euro area flash inflation | 11:00 Frankfurt | 10:45-11:30 Frankfurt, every weekday |
-| EUR | ECB decision and press conference | about 14:15 / 14:45 Frankfurt (earlier years about 13:45 / 14:30), Thursdays | 13:30-15:30 Frankfurt, Thursdays |
-| CAD | Canada jobs, CPI (08:30 NY); Bank of Canada (10:00 NY) | | covered by the two USD rows (applies to USD/CAD anyway) |
-| CHF | SNB decision | 09:30 Zurich, Thursdays | 09:15-10:00 Zurich, Thursdays |
-| JPY, AUD | Japan, Australia data and central banks | Asian hours | outside our sessions: no block needed |
+| USD | CPI, PPI, NFP, jobless claims (and the other 08:30 data) | 08:30 New York | **08:15-09:00 New York, every weekday** |
+| GBP | UK CPI, GDP, jobs | 07:00 London | **06:45-07:30 London, every weekday** |
+| USD | FOMC statement / press conference | 14:00 / 14:30 New York | after the session window anyway; **all trades are closed by 17:55 UTC** (section 11) |
 
 - A block applies to a pair if either of its currencies is in the row. For example, the
-  USD rows apply to EUR/USD and USD/JPY but not to EUR/GBP or GBP/JPY.
-- The "no new entries" windows start 15 minutes before a release (30 for the 08:30 slot)
-  and end 30 minutes after it (note 6: wait 15-30 minutes).
+  USD row applies to EUR/USD, USD/JPY and USD/CAD but not to EUR/GBP or GBP/JPY. The GBP
+  row applies to GBP/USD, EUR/GBP and GBP/JPY.
+- The first draft's 09:45-10:30 New York block (ISM, JOLTS) is removed. Its euro-area, ECB,
+  Bank of England and SNB rows are not part of the owner's list either, so they are not
+  used.
+- Each window starts 15 minutes before the release and ends 30 minutes after it (note 6:
+  wait 15-30 minutes).
 - Trades already open are kept through a release, protected by their stop (C29). The notes
   forbid *executing* during news. They do not say to close.
 - Each local time follows its own city's summer-time changes.
@@ -435,17 +459,17 @@ blocks less than needed for releases at these times.
 | C15 | Order block zone | last opposite candle before the sweep extreme, full range | the same candle's body only (open to close), a tighter zone |
 | C16 | Dealing range | sweep extreme to the lowest low since the sweep | the most recent 4h swing high to swing low (note 8 mentions 4H) |
 | C17 | Model 4 "inside premium" | the whole zone above equilibrium | the zone's midpoint above equilibrium |
-| C18 | Retracement entry | at the close of the first execution candle that touched the zone and closed back on the trade side | wait for a 1m break of structure inside the zone (notes 7, 8 "LTF confirmation") |
+| C18 | Retracement entry | **owner:** inside the zone, a fresh confirmation-timeframe sweep plus a break (1m for 5m execution, 5m for 15m) | the first draft's touch-and-close, kept as one labelled alternative variant ("touch") |
 | C19 | Trade count | one per sweep, at most one per pair per session | one per sweep, no session cap (only the risk module's limits) |
 | C20 | Top-down HTF zone version | not tested (not one of the four models) | add as a fifth model: 1h order block or FVG retracement, then 5m sweep and BOS inside it |
 | C21 | Stop buffer | 1 pip beyond the sweep wick | 0.5 pip (note 10's "0.5 point") |
-| C22 | Stop beyond Deriv stop out | skip the trade | take it and let Deriv's stop out act as the stop |
-| C23 | Partials / break even | none: one take profit, the stop never moves | move the stop to entry at +1R (Deriv allows changing the stop on an open contract) |
-| C24 | Liquidity target | nearest untaken opposing level at least 1R away, else 5R | nearest opposing level whatever its distance; skip the trade if under 1R |
+| C22 | Stop beyond Deriv stop out | x200; x100 if the stop is wider than 0.4% of price; skip if wider than 0.8% | take it and let Deriv's stop out act as the stop |
+| C23 | Partials / break even | **owner:** one contract, one target at opposing liquidity; fixed-R targets dropped | variant: at +1R the stop moves to Deriv's smallest stop (commission + 0.02) via contract_update, modelled in the backtest |
+| C24 | Liquidity target | nearest untaken opposing level beyond the low since the sweep and at least 1R away, else 5R | nearest opposing level whatever its distance; skip the trade if under 1R |
 | C25 | Time exit | close everything at 17:55 UTC | hold until stop or target, up to 20:30 UTC |
 | C26 | Session windows | London 02:00-05:00 NY, New York 07:00-11:00 NY | the whole CLAUDE.md entry window 06:00-17:59 UTC |
 | C27 | Bank holidays | no trading on U.S. Federal Reserve holidays, all pairs | only pairs containing USD |
-| C28 | News calendar | block the known release times every weekday | build a dated calendar from official archives (Fed, ECB, BoE, BLS) and block only real release days, plus the whole day on CPI, PPI, NFP and FOMC days (note 11) |
+| C28 | News calendar | **owner:** every weekday, USD pairs 08:15-09:00 New York, GBP pairs 06:45-07:30 London; FOMC avoided by the 17:55 UTC flat time | build a dated calendar from official archives (Fed, BLS, ONS) and block only real release days, plus the whole day on CPI, PPI, NFP and FOMC days (note 11) |
 | C29 | Open trades at news | kept, protected by the stop | closed 5 minutes before a blocked release |
 | C30 | Messy chart after news | not modelled | skip the rest of the day if the release's 30m candle is over 2x the pair's average 30m range |
 
@@ -459,15 +483,19 @@ most 2 open trades and 1 per pair, x100 or x200 only, the live cost gate (skip i
 commission is above 1.5x the pair's base rate), the entry window 06:00-17:59 UTC, the daily
 pause, and flat before weekends.
 
-**Points that need the owner's explicit OK in Step 2:**
+**Approved by the owner (2 Nov 2026):**
 
-1. **5m and 15m execution.** CLAUDE.md's fixed decisions say "research 1h and 4h candles ...
-   15m is out" because of cost. Your Step 2 request asks for 5m and 15m, which I read as an
-   exception for this research only. The 4x-cost stop rule is the safeguard. The engine
-   currently runs 1h, 4h and daily strategies. Step 2 adds 5m/15m support without changing
-   how existing strategies behave. A 5m/15m signal that cannot fill at the next minute
-   (blocked by a limit or the calendar) is dropped, not delayed.
-2. **News by fixed times** (C28) rather than a dated calendar.
+1. **5m and 15m execution, for this research only.** This is an exception to CLAUDE.md's
+   "research 1h and 4h candles ... 15m is out". The 4x-cost stop rule is the safeguard. The
+   engine now also runs 1m, 5m and 15m strategies; existing strategies behave exactly as
+   before. A 1m/5m/15m signal that cannot fill within 2 minutes (blocked by a limit or the
+   calendar) is dropped, not delayed.
+2. **The 4x-cost stop rule**, C3, C5, C10, C12 and C26 as written.
+3. **News by fixed times** (C28, as changed by the owner).
+
+The live bot (`src/fxbot/live/`) does not yet know the stop-loss update or the 1m/5m/15m
+timeframes. That is only needed if a TJR variant ever passes and is approved for more than
+paper testing.
 
 **Honest expectations (from earlier research, before any TJR test).**
 - The incubator pre-screen already tested a close cousin of model 1 on 1h candles,
@@ -483,6 +511,6 @@ pause, and flat before weekends.
 **No data has been read for this document.** In Step 2, all data stays strictly before
 2026-10-31 (`fxbot.data.split.UNTOUCHED_START`).
 
-**Next:** the owner approves or changes C1-C30 and the two points above. After approval,
-Step 2 fixes the variant list (at most 30, each with at most 5 settings) in writing before
-anything runs.
+**Next:** Step 2 (`docs/tjr_test_plan.md`). The 30 variants are fixed there before anything
+runs. The runs start only after the 3 and 5 Nov clock-change re-check has updated
+`research/phase2/cost_by_hour.json`.

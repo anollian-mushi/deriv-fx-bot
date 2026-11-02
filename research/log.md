@@ -923,3 +923,23 @@ day) is waived for this candidate as for i13 (its expected trades per day is
 reported, never used to reject it); check 8 (diversity) is waived because it
 is deliberately the same rule as i13 on other pairs. All other checks apply
 unchanged. Results are appended below by the Monday run.
+
+## TJR test (branch tjr-smc, 2 Nov 2026): rules approved, 30 variants fixed, NOT run yet
+
+Owner's request: test whether TJR's method (owner's 11 course notes) has an edge on our data at
+Deriv's costs. Step 1: rules in docs/tjr_rules.md, approved 2 Nov 2026 with three changes:
+C18 (retracement entries need a fresh 1m/5m sweep plus break inside the zone; touch-and-close
+only as a labelled alternative), C23 (one contract, one target at opposing liquidity, plus a
+break-even stop-update variant), C28 (USD pairs no entries 08:15-09:00 New York and GBP pairs
+06:45-07:30 London every weekday; flat by 17:55 UTC). 5m/15m execution is an owner-approved
+research exception.
+
+Step 2 plan (docs/tjr_test_plan.md), fixed before any run: 8 ideas (4 entry models x 5m/15m
+execution), walk-forward choice of n in {6, 12} (16 variants), plus a break-even variant per
+idea (8) and a touch-and-close variant for models 2-4 (6): 30 variants, 4 settings each. Same
+method as the incubator pre-screen (six rounds, OOS 2023-10-27 to 2026-10-26, data before
+2026-10-31 only), 4x-cost stop floor, 200 coin-toss runs on the variant's own signals, the 8
+checks, trades/day check waivable only at 0.3/day or more. Runs wait for the 3 and 5 Nov
+clock-change re-check of research/phase2/cost_by_hour.json (owner). Variant rows are added
+here when they run.
+

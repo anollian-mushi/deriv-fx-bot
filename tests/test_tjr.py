@@ -313,3 +313,24 @@ def test_replay_keeps_signals_and_tosses_directions():
     r2 = tjr.TJRReplay("1m", sigs, seed=7, symbols=(SYM,))
     bars = Bars(*(np.array([v]) for v in (940, 1000, 1.1, 1.1, 1.1, 1.1)))
     assert r2.on_candle(SYM, bars, None, False)[0].direction == dirs[0]
+
+
+# ----------------------------------------------------------------------------- Step 2 plan
+def test_step2_has_30_variants_with_at_most_5_settings():
+    from fxbot.backtest import tjr_test as TT
+    assert TT.variant_count() == 30
+    assert len(TT.ideas()) == 8 and len(TT.derived()) == 14
+    assert all(len(p) <= 5 for i in TT.ideas().values() for p in i["grid"])
+    assert {d["change"]["confirm"] for d in TT.derived().values() if "confirm" in d["change"]} == {"touch"}
+    assert not any(k.startswith("m1_") and k.endswith("_touch") for k in TT.derived())
+
+
+def test_luck_data_keeps_only_05_to_18_utc_of_signal_days():
+    from fxbot.backtest import tjr_test as TT
+    m1 = _m1_path(MORNING, WICKS)
+    day = T(0) // 86400
+    b = TT.signal_day_windows(m1, {day})
+    assert b.epoch.min() == T(5) and b.epoch.max() == T(17, 59)
+    assert TT.parse_signals([[SYM, T(7, 40), repr(Enter("MULTDOWN", stop_loss_pips=3.0))]])[(SYM, T(7, 40))].stop_loss_pips == 3.0
+    with pytest.raises(Exception):
+        TT.parse_signals([[SYM, 1, "__import__('os')"]])
