@@ -25,6 +25,7 @@ from pathlib import Path
 
 import numpy as np
 
+from fxbot.backtest import fills
 from fxbot.backtest.candles import Bars, aggregate, load_m1
 from fxbot.backtest.engine import Engine
 from fxbot.backtest.metrics import max_drawdown
@@ -33,7 +34,7 @@ from fxbot.incubator.registry import ROOT, Candidate, load_strategy
 from fxbot.risk.limits import RiskLimits
 from fxbot.strategies.base import Strategy
 
-SYMBOLS = ("frxEURUSD", "frxGBPUSD", "frxUSDJPY")
+SYMBOLS = ("frxEURUSD", "frxGBPUSD", "frxUSDJPY")      # the default; each candidate carries its own list
 START_BALANCE = 100.0
 STRESS = 1.5
 DATA = ROOT / "data"
@@ -44,6 +45,7 @@ ENGINE_FILES = ("src/fxbot/backtest/engine.py", "src/fxbot/backtest/fills.py", "
                 "src/fxbot/risk/limits.py", "src/fxbot/sessions.py", "src/fxbot/strategies/base.py",
                 "src/fxbot/data/candles.py", "src/fxbot/incubator/forward.py",
                 "src/fxbot/incubator/exam.py", "research/phase2/cost_by_hour.json",
+                "research/phase2/cost_by_hour_pairs2.json", "src/fxbot/symbols.py",
                 "config/contract_specs.yaml")
 
 
@@ -68,10 +70,10 @@ def iso(epoch: int) -> str:
 
 
 # ----------------------------------------------------------------------------- data
-def latest_complete_day(data_dir: Path = DATA) -> dt.date | None:
+def latest_complete_day(data_dir: Path = DATA, symbols=SYMBOLS) -> dt.date | None:
     """Newest day with a Deriv 1m file for every pair."""
     days = []
-    for s in SYMBOLS:
+    for s in symbols:
         files = sorted((data_dir / s / "1m").glob("????-??-??.csv.gz"))
         if not files:
             return None
@@ -91,7 +93,7 @@ def forward_data(c: Candidate, end: dt.date, m1_cache: dict | None = None) -> di
         raise ForwardViolation(f"{c.id}: first scored day {c.first_day} is before the untouched period")
     warm = c.first_day - dt.timedelta(days=c.warmup_days)
     out = {}
-    for s in SYMBOLS:
+    for s in c.symbols:
         key = (s, warm, end)
         if m1_cache is not None and key in m1_cache:
             m1 = m1_cache[key]
@@ -128,10 +130,11 @@ class CoinToss(Forward):
     direction, same stops, exits and limits. Two-leg strategies stay hedged: both legs share one
     draw per candle, so one leg goes Up and the other Down."""
 
-    def __init__(self, inner, start_epoch: int, signals, seed: int, legs: dict | None = None):
+    def __init__(self, inner, start_epoch: int, signals, seed: int, legs: dict | None = None,
+                 symbols=SYMBOLS):
         super().__init__(inner, start_epoch)
         self.signals = {(str(s), int(t)) for s, t in signals}
-        self.seed, self.legs = int(seed), legs
+        self.seed, self.legs, self.symbols = int(seed), legs, tuple(symbols)
         inner.entry = self._entry
 
     def _entry(self, symbol, c):
@@ -143,15 +146,15 @@ class CoinToss(Forward):
                 return None
             d = np.random.default_rng([self.seed, t]).random()
             return "MULTUP" if (d < 0.5) == (self.legs[symbol] > 0) else "MULTDOWN"
-        d = np.random.default_rng([self.seed, t, SYMBOLS.index(symbol)]).random()
+        d = np.random.default_rng([self.seed, t, self.symbols.index(symbol)]).random()
         return "MULTUP" if d < 0.5 else "MULTDOWN"
 
 
 # ----------------------------------------------------------------------------- runs
 def run(c: Candidate, data: dict, stress: float = 1.0, strategy: Strategy | None = None) -> Engine:
     s = strategy or Forward(load_strategy(c), c.start_epoch)
-    eng = Engine(s, list(SYMBOLS), c.first_day, c.first_day, limits=RiskLimits(starting_balance=START_BALANCE),
-                 stress=stress, data=data, kill_switch="enforce")
+    eng = Engine(s, list(c.symbols), c.first_day, c.first_day, limits=RiskLimits(starting_balance=START_BALANCE),
+                 stress=stress, data=data, kill_switch="enforce", table=fills.CommissionTable(ROOT / c.cost_table))
     eng.run()
     return eng
 
@@ -183,7 +186,7 @@ class Result:
     signals: list[tuple[str, int]]
 
 
-def summarise(eng: Engine) -> dict:
+def summarise(eng: Engine, symbols=SYMBOLS) -> dict:
     trades = eng.state.trades
     closed = [t for t in trades if t["reason"] != "end_of_data"]
     open_ = [t for t in trades if t["reason"] == "end_of_data"]
@@ -191,7 +194,7 @@ def summarise(eng: Engine) -> dict:
     losses = [t["profit"] for t in closed if t["profit"] <= 0]
     curve = [START_BALANCE] + [e for _, e in eng.state.equity]
     per_pair = {}
-    for s in SYMBOLS:
+    for s in symbols:
         ts = [t for t in closed if t["symbol"] == s]
         per_pair[s] = {"trades": len(ts), "net": round(sum(t["profit"] for t in ts), 2),
                        "wins": sum(t["profit"] > 0 for t in ts)}
@@ -238,8 +241,10 @@ def evaluate(c: Candidate, end: dt.date, m1_cache: dict | None = None) -> dict:
         "first_scored_day": c.first_day.isoformat(),
         "data_end": end.isoformat(),
         "forward_days": max(days, 0),
-        "measured": summarise(measured),
-        "stress_1_5x": summarise(stressed),
+        "measured": summarise(measured, c.symbols),
+        "stress_1_5x": summarise(stressed, c.symbols),
+        "symbols": list(c.symbols),
+        "cost_table": c.cost_table,
         "engine_fingerprint": engine_fingerprint(),
         "_engines": (measured, stressed),
     }

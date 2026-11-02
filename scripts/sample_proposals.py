@@ -183,19 +183,19 @@ async def _sample_pair(sym: str, open_ws, rows: list[dict]) -> None:
                     await quote("edge", "MULTUP", m, stake, lo)
 
 
-async def run(label: str | None, connection: str, open_ws) -> Path:
+async def run(label: str | None, connection: str, open_ws, symbols=SYMBOLS, out_dir: Path = OUT_DIR) -> Path:
     started = datetime.now(timezone.utc)
     name = f"proposals_{started:%Y%m%dT%H%M}Z" + (f"_{label}" if label else "") + f"_{connection}"
-    path = OUT_DIR / f"{name}.jsonl.gz"
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    path = out_dir / f"{name}.jsonl.gz"
+    out_dir.mkdir(parents=True, exist_ok=True)
     async with open_ws() as ws:
         server_time = (await ws_request(ws, {"time": 1}))["time"]
-        symbols = {s["underlying_symbol"]: s for s in
-                   (await ws_request(ws, {"active_symbols": "brief"}))["active_symbols"]}
+        active = {s["underlying_symbol"]: s for s in
+                  (await ws_request(ws, {"active_symbols": "brief"}))["active_symbols"]}
         meta = {"kind": "meta", "started_utc": started.isoformat(), "server_time": server_time,
-                "connection": connection}
-        for sym in SYMBOLS:
-            info = symbols.get(sym, {})
+                "connection": connection, "symbols": list(symbols)}
+        for sym in symbols:
+            info = active.get(sym, {})
             avail = (await ws_request(ws, {"contracts_for": sym}))["contracts_for"]["available"]
             meta[sym] = {
                 "pip_size": info.get("pip_size"),
@@ -206,7 +206,7 @@ async def run(label: str | None, connection: str, open_ws) -> Path:
                     for m in a.get("multiplier_range", [])
                 }),
             }
-    per_symbol = await asyncio.gather(*(_sample_symbol(sym, open_ws) for sym in SYMBOLS))
+    per_symbol = await asyncio.gather(*(_sample_symbol(sym, open_ws) for sym in symbols))
     rows = [meta] + [r for rs in per_symbol for r in rs]
 
     with gzip.open(path, "wt", encoding="utf-8") as f:
@@ -225,7 +225,7 @@ def report(path: Path, t0: float) -> None:
     ok = sum(r["accepted"] for r in quotes)
     print(f"{len(quotes)} quotes ({ok} accepted) in {time.time() - t0:.0f}s -> {path.name}")
     grid = [r for r in quotes if r["kind"] == "grid"]
-    for sym in SYMBOLS:
+    for sym in rows[0].get("symbols", SYMBOLS):
         works = sorted({r["multiplier"] for r in grid if r["symbol"] == sym and r["accepted"]})
         fails = sorted({r["multiplier"] for r in grid if r["symbol"] == sym and not r["accepted"]})
         print(f"  {sym}: accepted {works}, rejected {fails}")
@@ -235,9 +235,12 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--label", help="optional tag added to the file name")
     parser.add_argument("--demo", action="store_true", help="quote through the demo account")
+    parser.add_argument("--symbols", nargs="+", default=list(SYMBOLS), help="Deriv symbols to quote")
+    parser.add_argument("--out-dir", type=Path, default=OUT_DIR)
     args = parser.parse_args()
     t0 = time.time()
-    path = asyncio.run(run(args.label, *(("demo", _demo_ws) if args.demo else ("public", _public_ws))))
+    path = asyncio.run(run(args.label, *(("demo", _demo_ws) if args.demo else ("public", _public_ws)),
+                           symbols=tuple(args.symbols), out_dir=args.out_dir))
     report(path, t0)
     return 0
 

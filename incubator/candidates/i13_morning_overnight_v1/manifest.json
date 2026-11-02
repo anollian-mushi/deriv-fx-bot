@@ -1,0 +1,33 @@
+{
+ "class": "MorningOvernight",
+ "files": {
+  "code/__init__.py": "5710077ce7ec3bc1c093ecb94eafcb38a89e359428acc0bf46f4df7968dfbdb8",
+  "code/families.py": "03a2436c074d1d26f776cfcf4c48b7501000802e861d218a00d1ae5eb609bccd",
+  "code/ml_day.py": "1ab8e4fb9100ef03c4197b72898fbf88849c6e8ec160f7635dd3d07c0849dee9"
+ },
+ "first_scored_day": "2026-11-01",
+ "id": "i13_morning_overnight_v1",
+ "legs": null,
+ "model_source": {},
+ "module": "families",
+ "notes": "Pre-screen 31 Oct 2026 (research/incubator_prescreen/morning_overnight): a move of at least 0.4 of the 20-day average daily range by the 08:00 UTC close, followed and held to 06:00 the next day, no stop, no Friday signals. Passed every owner check except 1.5 trades/day (0.38); the owner approved that exception on 31 Oct 2026 with all graduation rules unchanged. Out of sample 2023-10-27 to 2026-10-26: 297 trades, +17.47 USD measured, +3.90 at 1.5x, beat all 200 coin-toss runs; the gain leaned on USD/JPY (+13) and EUR/USD (+12), GBP/USD lost 8.",
+ "origin": {
+  "approved_exception": "1.5 trades per day (owner, 31 Oct 2026)",
+  "prescreen": "research/incubator_prescreen/morning_overnight/summary.json"
+ },
+ "params": {
+  "decision_hour": 8,
+  "k": 0.4,
+  "stop": 0.0
+ },
+ "registered": "2026-10-31",
+ "registered_at": "2026-10-31T15:46:04Z",
+ "source_commit": "d9da181ba39ae155b6e64908759dd49dd8525f0e",
+ "source_sha256": {
+  "families.py": "03a2436c074d1d26f776cfcf4c48b7501000802e861d218a00d1ae5eb609bccd",
+  "ml_day.py": "d89dc19bc926fd0e5a0100c0f55e4607687aa275e38296b4e5c03cb168eab165"
+ },
+ "strategy_name": "i13_morning_overnight",
+ "timeframe": "1h",
+ "warmup_days": 120
+}

@@ -538,3 +538,388 @@ new research variants; no parameter was chosen for the incubator.
 | 2026-10-31 | f3_trend_pullback_4h_r5 | trend_len=20, pullback=15, sl_atr=2.5, tp_r=2.5 |
 | 2026-10-31 | f9_eur_gbp_convergence_r5 | length=60, z_in=1.5, hold_days=8 |
 | 2026-10-31 | a1_ml_day_r5 | gb, own features, pooled, margin=0.08, models/round5_full.pkl |
+| 2026-10-31 | i13_morning_overnight_v1 | decision_hour=8, k=0.4, stop=0.0 (pre-screen pick; registered by the owner's approved exception to the 1.5 trades/day check, graduation rules unchanged) |
+## Incubator ideas (31 Oct 2026): new candidates for the strategy incubator
+
+Owner's rules for a new candidate (31 Oct 2026): a written reason for the edge
+and how it differs from everything Phase 4 and Round 4 tested; expected move per
+trade at least 3x the cost (about 4 pips with slippage); at least 1.5 expected
+trades per trading day across the three pairs; executable by the bot under
+every CLAUDE.md rule; at most 5 settings chosen before testing; a pre-screen on
+data before 2026-10-31 only (walk-forward as in Phase 4, extended by one round:
+Dukascopy to 2026-04-27, then the used-up Deriv holdout to 2026-10-30; six
+rounds, out of sample 2023-10-27 to 2026-10-26) that is profitable before costs
+and beats the median of 200 coin-toss runs on the idea's own signals; the
+engine's look-ahead test; and no two candidates that are minor variants.
+Harness: `src/fxbot/backtest/prescreen.py`, `scripts/prescreen.py`,
+`scripts/prescreen_ml.py`. The untouched period is never read (the data layer
+raises). Every idea pre-screened has its rows below; ideas rejected on reasoning
+alone (never run) are listed first.
+
+### Rejected without a run (fail a check by construction)
+
+| Date | Idea | Why it was not run |
+|---|---|---|
+| 2026-10-31 | Month-end fix flows (rebalancing into the last fix of the month) | about 1 signal day a month: fails the 1.5 trades/day check |
+| 2026-10-31 | Weekend gap fill on Monday morning | at most 3 signals a week, most gaps under 10 pips: fails trades/day |
+| 2026-10-31 | Friday afternoon squaring of the week's move | 3 signals a week at most: fails trades/day |
+| 2026-10-31 | Carry drift (always long USD/JPY, no overnight fee on Multipliers) | the expected drift over a day or two is 1-3 pips, below 3x cost; a spot position earns no interest, only the swap would, and Deriv pays none; re-entry each Monday after the Friday close |
+| 2026-10-31 | Tokyo fix (00:55 UTC) reversal on Japanese settlement days | the reversal is over before the 06:00 entry window opens |
+| 2026-10-31 | US jobs report (NFP) continuation | one signal a month, in the 12:00-13:59 cost-gate hours |
+| 2026-10-31 | Last-half-hour intraday momentum (Elaut et al. 2018) | the predicted interval is 21:30-22:00 UTC, inside Deriv's pause and 12x commission |
+| 2026-10-31 | Beta-residual reversion (a pair's move minus what the other two imply) | a smoother statistic for family 12 (lone mover reverts), which was at the coin-toss median; a minor variant |
+| 2026-10-31 | A 3-day reversal rule | the rule the Round 4 models learned; writing it as a rule is tuning to past data, which the owner ruled out |
+| 2026-10-31 | Asian-range sweep (Judas swing) | the same mechanism as idea 2 (turtle soup) with a different level: a minor variant |
+| 2026-10-31 | EUR/GBP traded directly as a new pair (family 9 with one commission) | family 9 made 0.1 trades a day; one leg instead of two halves the cost but not the frequency |
+| 2026-10-31 | High-volatility crosses (GBP/JPY, EUR/JPY) as new pairs | the cost is a percentage of the position, so the move-to-cost ratio improves only by the volatility ratio (about 1.5x), and the commission on crosses is unmeasured; no idea here is specific to a cross, so no new pair was prepared and no Monday cost sampling scheduled |
+| 2026-10-31 | Flipped versions of any idea that loses (fade instead of follow) | choosing the direction from our own data is the data-mining the owner ruled out with family 5 |
+
+<!-- prescreen:fix_reversal start -->
+
+### fix_reversal (i1_fix_reversal, 1h): 8 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | fix_reversal v00 | k=0.1, hold_hours=2, stop=0.0 | 1843 | -142.7 | 2 | - |
+| 2026-10-31 | fix_reversal v01 | k=0.1, hold_hours=2, stop=0.5 | 1852 | -141.38 | 2 | - |
+| 2026-10-31 | fix_reversal v02 | k=0.1, hold_hours=4, stop=0.0 | 1843 | -129.56 | 2 | 4 |
+| 2026-10-31 | fix_reversal v03 | k=0.1, hold_hours=4, stop=0.5 | 1852 | -133.57 | 2 | - |
+| 2026-10-31 | fix_reversal v04 | k=0.2, hold_hours=2, stop=0.0 | 988 | -89.84 | 1 | - |
+| 2026-10-31 | fix_reversal v05 | k=0.2, hold_hours=2, stop=0.5 | 989 | -84.34 | 1 | - |
+| 2026-10-31 | fix_reversal v06 | k=0.2, hold_hours=4, stop=0.0 | 988 | -90.33 | 1 | 3, 6 |
+| 2026-10-31 | fix_reversal v07 | k=0.2, hold_hours=4, stop=0.5 | 989 | -86.17 | 1 | 1, 2, 5 |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 670 trades (0.86/day), net -57.17 USD (1.5x: -77.91), gross before costs -11.18 USD (-1.4 pips/trade), avg |move| 18.24 pips vs cost 3.59 pips (ratio 5.09), win rate 40.3%, PF 0.606, kill events 1, per pair net {EURUSD: -17.93 (247), GBPUSD: -15.92 (257), USDJPY: -23.32 (166)}, per window gross [-3.12, -4.53, 2.07, -15.19, 12.18, -2.58]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_gross_positive', 'c6_beats_random_median', 'no_kill_switch']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/fix_reversal/`.
+
+<!-- prescreen:fix_reversal end -->
+
+<!-- prescreen:turtle_soup start -->
+
+### turtle_soup (i2_turtle_soup, 1h): 8 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | turtle_soup v00 | sl_frac=0.25, tp_frac=0.5, cutoff=12 | 561 | -39.05 | 0 | 1, 4 |
+| 2026-10-31 | turtle_soup v01 | sl_frac=0.25, tp_frac=0.5, cutoff=17 | 955 | -69.99 | 1 | - |
+| 2026-10-31 | turtle_soup v02 | sl_frac=0.25, tp_frac=0.75, cutoff=12 | 561 | -43.37 | 0 | 3, 5 |
+| 2026-10-31 | turtle_soup v03 | sl_frac=0.25, tp_frac=0.75, cutoff=17 | 952 | -77.37 | 1 | - |
+| 2026-10-31 | turtle_soup v04 | sl_frac=0.5, tp_frac=0.5, cutoff=12 | 558 | -46.67 | 0 | 2, 6 |
+| 2026-10-31 | turtle_soup v05 | sl_frac=0.5, tp_frac=0.5, cutoff=17 | 947 | -83.97 | 1 | - |
+| 2026-10-31 | turtle_soup v06 | sl_frac=0.5, tp_frac=0.75, cutoff=12 | 557 | -57.09 | 1 | - |
+| 2026-10-31 | turtle_soup v07 | sl_frac=0.5, tp_frac=0.75, cutoff=17 | 943 | -94.58 | 1 | - |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 327 trades (0.42/day), net -27.89 USD (1.5x: -35.03), gross before costs 0.23 USD (-0.1 pips/trade), avg |move| 25.67 pips vs cost 4.1 pips (ratio 6.26), win rate 35.8%, PF 0.734, kill events 0, per pair net {EURUSD: -11.98 (112), GBPUSD: -10.19 (137), USDJPY: -5.72 (78)}, per window gross [6.43, 5.06, -0.79, -6.12, 1.19, -5.56]. Luck (200 coin-toss runs on the candidate's own signals): median net -28.29, share beaten 52%. Checks failed: ['c3_trades_per_day_1_5']. **Pre-screen (check 6): PASS**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/turtle_soup/`.
+
+<!-- prescreen:turtle_soup end -->
+
+<!-- prescreen:round_bounce start -->
+
+### round_bounce (i3_round_bounce, 1h): 4 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | round_bounce v00 | sl_frac=0.15, tp_frac=0.3 | 3536 | -298.73 | 5 | - |
+| 2026-10-31 | round_bounce v01 | sl_frac=0.15, tp_frac=0.6 | 3367 | -271.18 | 5 | 2 |
+| 2026-10-31 | round_bounce v02 | sl_frac=0.3, tp_frac=0.3 | 2894 | -240.65 | 4 | 5, 6 |
+| 2026-10-31 | round_bounce v03 | sl_frac=0.3, tp_frac=0.6 | 2663 | -233.31 | 4 | 1, 3, 4 |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 1593 trades (2.05/day), net -141.9 USD (1.5x: -184.72), gross before costs -35.96 USD (-0.97 pips/trade), avg |move| 26.93 pips vs cost 4.31 pips (ratio 6.26), win rate 37.5%, PF 0.655, kill events 2, per pair net {EURUSD: -44.11 (373), GBPUSD: -38.41 (525), USDJPY: -59.38 (695)}, per window gross [-1.94, 2.46, -16.92, -5.29, -8.83, -5.45]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c6_gross_positive', 'c6_beats_random_median', 'no_kill_switch']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/round_bounce/`.
+
+<!-- prescreen:round_bounce end -->
+
+<!-- prescreen:round_break start -->
+
+### round_break (i4_round_break, 1h): 4 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | round_break v00 | thru=0.05, sl_frac=0.15 | 2905 | -240.37 | 4 | - |
+| 2026-10-31 | round_break v01 | thru=0.05, sl_frac=0.3 | 2370 | -214.5 | 4 | 3 |
+| 2026-10-31 | round_break v02 | thru=0.1, sl_frac=0.15 | 1894 | -141.97 | 2 | 1, 2, 4, 5 |
+| 2026-10-31 | round_break v03 | thru=0.1, sl_frac=0.3 | 1752 | -160.32 | 3 | 6 |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 1088 trades (1.4/day), net -107.6 USD (1.5x: -139.53), gross before costs -28.84 USD (-1.23 pips/trade), avg |move| 24.67 pips vs cost 4.38 pips (ratio 5.64), win rate 28.1%, PF 0.624, kill events 2, per pair net {EURUSD: -43.02 (293), GBPUSD: -28.63 (361), USDJPY: -35.95 (434)}, per window gross [0.33, -8.51, -25.69, 4.88, -0.31, 0.45]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_gross_positive', 'c6_beats_random_median', 'no_kill_switch']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/round_break/`.
+
+<!-- prescreen:round_break end -->
+
+<!-- prescreen:asia_fade start -->
+
+### asia_fade (i5_asia_fade, 1h): 8 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | asia_fade v00 | decision_hour=7, k=0.25, exit_hour=12 | 999 | -77.86 | 1 | - |
+| 2026-10-31 | asia_fade v01 | decision_hour=7, k=0.25, exit_hour=20 | 999 | -92.38 | 1 | - |
+| 2026-10-31 | asia_fade v02 | decision_hour=7, k=0.4, exit_hour=12 | 438 | -37.28 | 0 | 5 |
+| 2026-10-31 | asia_fade v03 | decision_hour=7, k=0.4, exit_hour=20 | 438 | -27.23 | 0 | 1, 2, 3, 4, 6 |
+| 2026-10-31 | asia_fade v04 | decision_hour=8, k=0.25, exit_hour=12 | 1201 | -98.76 | 1 | - |
+| 2026-10-31 | asia_fade v05 | decision_hour=8, k=0.25, exit_hour=20 | 1201 | -145.04 | 2 | - |
+| 2026-10-31 | asia_fade v06 | decision_hour=8, k=0.4, exit_hour=12 | 578 | -48.34 | 0 | - |
+| 2026-10-31 | asia_fade v07 | decision_hour=8, k=0.4, exit_hour=20 | 578 | -81.08 | 1 | - |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 277 trades (0.36/day), net -37.15 USD (1.5x: -44.14), gross before costs -18.65 USD (-3.03 pips/trade), avg |move| 46.71 pips vs cost 4.03 pips (ratio 11.58), win rate 44.0%, PF 0.708, kill events 0, per pair net {EURUSD: -7.07 (59), GBPUSD: -15.97 (61), USDJPY: -14.11 (157)}, per window gross [-11.85, 3.19, 0.79, -7.97, -4.76, 1.95]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_gross_positive', 'c6_beats_random_median']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/asia_fade/`.
+
+<!-- prescreen:asia_fade end -->
+
+<!-- prescreen:us_data_drift start -->
+
+### us_data_drift (i6_us_data_drift, 1h): 8 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | us_data_drift v00 | k=0.2, exit_hour=17, stop=0.0 | 1268 | -89.91 | 1 | - |
+| 2026-10-31 | us_data_drift v01 | k=0.2, exit_hour=17, stop=0.5 | 1279 | -90.37 | 1 | - |
+| 2026-10-31 | us_data_drift v02 | k=0.2, exit_hour=20, stop=0.0 | 1268 | -92.57 | 1 | - |
+| 2026-10-31 | us_data_drift v03 | k=0.2, exit_hour=20, stop=0.5 | 1279 | -95.36 | 1 | - |
+| 2026-10-31 | us_data_drift v04 | k=0.3, exit_hour=17, stop=0.0 | 740 | -62.07 | 1 | - |
+| 2026-10-31 | us_data_drift v05 | k=0.3, exit_hour=17, stop=0.5 | 749 | -59.23 | 1 | 4, 5 |
+| 2026-10-31 | us_data_drift v06 | k=0.3, exit_hour=20, stop=0.0 | 740 | -60.93 | 1 | 1, 2, 3 |
+| 2026-10-31 | us_data_drift v07 | k=0.3, exit_hour=20, stop=0.5 | 749 | -63.85 | 1 | 6 |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 425 trades (0.55/day), net -48.36 USD (1.5x: -60.85), gross before costs -21.91 USD (-3.06 pips/trade), avg |move| 24.95 pips vs cost 3.65 pips (ratio 6.83), win rate 40.2%, PF 0.584, kill events 0, per pair net {EURUSD: -15.52 (159), GBPUSD: -19.68 (150), USDJPY: -13.16 (116)}, per window gross [-5.43, -11.74, 4.45, 1.77, -3.82, -7.15]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_gross_positive', 'c6_beats_random_median']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/us_data_drift/`.
+
+<!-- prescreen:us_data_drift end -->
+
+<!-- prescreen:ny_into_asia start -->
+
+### ny_into_asia (i7_ny_into_asia, 1h): 8 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | ny_into_asia v00 | k=0.25, exit_hour=0, stop=0.0 | 1175 | -98.65 | 1 | - |
+| 2026-10-31 | ny_into_asia v01 | k=0.25, exit_hour=0, stop=0.5 | 1177 | -92.55 | 1 | 1, 4 |
+| 2026-10-31 | ny_into_asia v02 | k=0.25, exit_hour=6, stop=0.0 | 1176 | -136.68 | 2 | - |
+| 2026-10-31 | ny_into_asia v03 | k=0.25, exit_hour=6, stop=0.5 | 1178 | -115.73 | 2 | - |
+| 2026-10-31 | ny_into_asia v04 | k=0.4, exit_hour=0, stop=0.0 | 628 | -51.03 | 1 | 5, 6 |
+| 2026-10-31 | ny_into_asia v05 | k=0.4, exit_hour=0, stop=0.5 | 630 | -49.29 | 0 | 3 |
+| 2026-10-31 | ny_into_asia v06 | k=0.4, exit_hour=6, stop=0.0 | 628 | -72.69 | 1 | - |
+| 2026-10-31 | ny_into_asia v07 | k=0.4, exit_hour=6, stop=0.5 | 630 | -63.42 | 1 | 2 |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 471 trades (0.61/day), net -37.3 USD (1.5x: -46.89), gross before costs -4.71 USD (-0.33 pips/trade), avg |move| 18.29 pips vs cost 3.59 pips (ratio 5.1), win rate 35.7%, PF 0.643, kill events 0, per pair net {EURUSD: -22.42 (164), GBPUSD: -13.58 (186), USDJPY: -1.3 (121)}, per window gross [-3.66, 9.19, -0.87, -2.06, -2.19, -5.12]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_gross_positive', 'c6_beats_random_median']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/ny_into_asia/`.
+
+<!-- prescreen:ny_into_asia end -->
+
+<!-- prescreen:london_reversal start -->
+
+### london_reversal (i8_london_reversal, 1h): 8 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | london_reversal v00 | k=0.4, exit_hour=17, stop=0.0 | 1164 | -78.1 | 1 | - |
+| 2026-10-31 | london_reversal v01 | k=0.4, exit_hour=17, stop=0.5 | 1177 | -73.98 | 1 | 3 |
+| 2026-10-31 | london_reversal v02 | k=0.4, exit_hour=20, stop=0.0 | 1164 | -73.89 | 1 | - |
+| 2026-10-31 | london_reversal v03 | k=0.4, exit_hour=20, stop=0.5 | 1177 | -67.75 | 1 | 2 |
+| 2026-10-31 | london_reversal v04 | k=0.6, exit_hour=17, stop=0.0 | 598 | -34.66 | 0 | 4, 5, 6 |
+| 2026-10-31 | london_reversal v05 | k=0.6, exit_hour=17, stop=0.5 | 605 | -34.89 | 0 | - |
+| 2026-10-31 | london_reversal v06 | k=0.6, exit_hour=20, stop=0.0 | 598 | -41.26 | 0 | - |
+| 2026-10-31 | london_reversal v07 | k=0.6, exit_hour=20, stop=0.5 | 605 | -37.28 | 0 | 1 |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 457 trades (0.59/day), net -28.53 USD (1.5x: -39.08), gross before costs 2.88 USD (0.52 pips/trade), avg |move| 23.61 pips vs cost 3.69 pips (ratio 6.4), win rate 45.3%, PF 0.748, kill events 0, per pair net {EURUSD: -8.44 (163), GBPUSD: -4.56 (159), USDJPY: -15.53 (135)}, per window gross [-6.85, 1.37, 0.6, 3.76, 1.74, 2.25]. Luck (200 coin-toss runs on the candidate's own signals): median net -33.17, share beaten 70%. Checks failed: ['c3_trades_per_day_1_5']. **Pre-screen (check 6): PASS**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/london_reversal/`.
+
+<!-- prescreen:london_reversal end -->
+
+<!-- prescreen:range_exhaustion start -->
+
+### range_exhaustion (i9_range_exhaustion, 1h): 4 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | range_exhaustion v00 | r=1.0, sl_frac=0.25 | 731 | -64.8 | 1 | - |
+| 2026-10-31 | range_exhaustion v01 | r=1.0, sl_frac=0.5 | 716 | -46.98 | 1 | 4, 5 |
+| 2026-10-31 | range_exhaustion v02 | r=1.3, sl_frac=0.25 | 359 | -40.39 | 0 | - |
+| 2026-10-31 | range_exhaustion v03 | r=1.3, sl_frac=0.5 | 350 | -34.69 | 0 | 1, 2, 3, 6 |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 271 trades (0.35/day), net -28.32 USD (1.5x: -34.91), gross before costs -8.83 USD (-1.46 pips/trade), avg |move| 24.96 pips vs cost 3.89 pips (ratio 6.42), win rate 43.2%, PF 0.63, kill events 0, per pair net {EURUSD: -8.12 (82), GBPUSD: -8.97 (99), USDJPY: -11.23 (90)}, per window gross [-7.32, 0.26, -1.46, -1.0, 0.25, 0.45]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_gross_positive', 'c6_beats_random_median']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/range_exhaustion/`.
+
+<!-- prescreen:range_exhaustion end -->
+
+<!-- prescreen:trend_intraday start -->
+
+### trend_intraday (i10_trend_intraday, 1h): 8 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | trend_intraday v00 | lookback=5, k=0.5, stop=0.0 | 2229 | -208.11 | 4 | - |
+| 2026-10-31 | trend_intraday v01 | lookback=5, k=0.5, stop=0.5 | 2235 | -200.09 | 4 | - |
+| 2026-10-31 | trend_intraday v02 | lookback=5, k=1.0, stop=0.0 | 1570 | -133.88 | 2 | 1 |
+| 2026-10-31 | trend_intraday v03 | lookback=5, k=1.0, stop=0.5 | 1573 | -117.27 | 2 | 6 |
+| 2026-10-31 | trend_intraday v04 | lookback=10, k=0.5, stop=0.0 | 2391 | -150.97 | 3 | 4 |
+| 2026-10-31 | trend_intraday v05 | lookback=10, k=0.5, stop=0.5 | 2397 | -156.97 | 3 | 3, 5 |
+| 2026-10-31 | trend_intraday v06 | lookback=10, k=1.0, stop=0.0 | 2008 | -147.61 | 2 | 2 |
+| 2026-10-31 | trend_intraday v07 | lookback=10, k=1.0, stop=0.5 | 2012 | -147.92 | 2 | - |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 1227 trades (1.58/day), net -134.4 USD (1.5x: -164.36), gross before costs -53.55 USD (-2.3 pips/trade), avg |move| 40.76 pips vs cost 3.87 pips (ratio 10.52), win rate 42.8%, PF 0.733, kill events 2, per pair net {EURUSD: -42.31 (410), GBPUSD: -38.55 (409), USDJPY: -53.54 (408)}, per window gross [-10.96, -4.89, -0.99, -15.97, -20.21, -0.52]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c6_gross_positive', 'c6_beats_random_median', 'no_kill_switch']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/trend_intraday/`.
+
+<!-- prescreen:trend_intraday end -->
+
+<!-- prescreen:ny_cut_breakout start -->
+
+### ny_cut_breakout (i11_ny_cut_breakout, 1h): 4 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | ny_cut_breakout v00 | range_hours=2, sl_frac=0.5 | 1992 | -115.56 | 2 | - |
+| 2026-10-31 | ny_cut_breakout v01 | range_hours=2, sl_frac=1.0 | 1891 | -93.07 | 1 | 2, 4, 5, 6 |
+| 2026-10-31 | ny_cut_breakout v02 | range_hours=3, sl_frac=0.5 | 1787 | -116.83 | 2 | 1 |
+| 2026-10-31 | ny_cut_breakout v03 | range_hours=3, sl_frac=1.0 | 1718 | -94.31 | 1 | 3 |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 1109 trades (1.43/day), net -54.09 USD (1.5x: -85.1), gross before costs 14.87 USD (1.02 pips/trade), avg |move| 16.65 pips vs cost 3.85 pips (ratio 4.32), win rate 39.3%, PF 0.699, kill events 1, per pair net {EURUSD: -21.05 (356), GBPUSD: -13.28 (389), USDJPY: -19.76 (364)}, per window gross [-1.41, 3.62, 1.67, 14.24, -7.76, 4.51]. Luck (200 coin-toss runs on the candidate's own signals): median net -75.7, share beaten 94%. Checks failed: ['c3_trades_per_day_1_5', 'no_kill_switch']. **Pre-screen (check 6): PASS**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/ny_cut_breakout/`.
+
+<!-- prescreen:ny_cut_breakout end -->
+
+<!-- prescreen:twap_pullback start -->
+
+### twap_pullback (i12_twap_pullback, 1h): 4 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | twap_pullback v00 | k=0.3, sl_frac=0.2 | 1385 | -95.76 | 1 | - |
+| 2026-10-31 | twap_pullback v01 | k=0.3, sl_frac=0.4 | 1230 | -81.5 | 1 | 6 |
+| 2026-10-31 | twap_pullback v02 | k=0.5, sl_frac=0.2 | 462 | -24.9 | 0 | 3, 5 |
+| 2026-10-31 | twap_pullback v03 | k=0.5, sl_frac=0.4 | 431 | -24.7 | 0 | 1, 2, 4 |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 357 trades (0.46/day), net -40.3 USD (1.5x: -47.48), gross before costs -12.82 USD (-2.15 pips/trade), avg |move| 25.73 pips vs cost 4.25 pips (ratio 6.05), win rate 35.6%, PF 0.625, kill events 0, per pair net {EURUSD: -12.67 (100), GBPUSD: -6.87 (106), USDJPY: -20.76 (151)}, per window gross [12.35, -5.31, -10.8, -4.59, 1.35, -5.82]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_gross_positive', 'c6_beats_random_median']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/twap_pullback/`.
+
+<!-- prescreen:twap_pullback end -->
+
+<!-- prescreen:morning_overnight start -->
+
+### morning_overnight (i13_morning_overnight, 1h): 8 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | morning_overnight v00 | decision_hour=8, k=0.25, stop=0.0 | 958 | -23.81 | 1 | - |
+| 2026-10-31 | morning_overnight v01 | decision_hour=8, k=0.25, stop=0.5 | 960 | -54.65 | 1 | - |
+| 2026-10-31 | morning_overnight v02 | decision_hour=8, k=0.4, stop=0.0 | 457 | 5.99 | 0 | 1, 4, 5, 6 |
+| 2026-10-31 | morning_overnight v03 | decision_hour=8, k=0.4, stop=0.5 | 458 | -5.25 | 0 | 2, 3 |
+| 2026-10-31 | morning_overnight v04 | decision_hour=10, k=0.25, stop=0.0 | 1227 | -31.01 | 1 | - |
+| 2026-10-31 | morning_overnight v05 | decision_hour=10, k=0.25, stop=0.5 | 1229 | -69.45 | 1 | - |
+| 2026-10-31 | morning_overnight v06 | decision_hour=10, k=0.4, stop=0.0 | 688 | -54.58 | 1 | - |
+| 2026-10-31 | morning_overnight v07 | decision_hour=10, k=0.4, stop=0.5 | 690 | -68.87 | 1 | - |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 297 trades (0.38/day), net 17.47 USD (1.5x: 3.9), gross before costs 44.62 USD (7.15 pips/trade), avg |move| 47.79 pips vs cost 4.03 pips (ratio 11.86), win rate 50.2%, PF 1.117, kill events 0, per pair net {EURUSD: 11.95 (76), GBPUSD: -7.51 (83), USDJPY: 13.03 (138)}, per window gross [6.77, 3.41, -1.45, 18.05, 8.25, 9.6]. Luck (200 coin-toss runs on the candidate's own signals): median net -31.65, share beaten 100%. Checks failed: ['c3_trades_per_day_1_5']. **Pre-screen (check 6): PASS**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/morning_overnight/`.
+
+<!-- prescreen:morning_overnight end -->
+
+<!-- prescreen:knn_path start -->
+
+### knn_path (a2_knn_path, 1h): 8 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | knn_path v00 | model=knn50, feats=path, pool=pair, margin=0.05 | 1146 | -80.18 | 0 | - |
+| 2026-10-31 | knn_path v01 | model=knn50, feats=path, pool=pair, margin=0.1 | 636 | -25.56 | 0 | 1 |
+| 2026-10-31 | knn_path v02 | model=knn50, feats=pathpeers, pool=pair, margin=0.05 | 1072 | -111.77 | 0 | - |
+| 2026-10-31 | knn_path v03 | model=knn50, feats=pathpeers, pool=pair, margin=0.1 | 520 | -15.89 | 0 | 2, 3, 5 |
+| 2026-10-31 | knn_path v04 | model=knn200, feats=path, pool=pair, margin=0.05 | 803 | -57.17 | 0 | - |
+| 2026-10-31 | knn_path v05 | model=knn200, feats=path, pool=pair, margin=0.1 | 237 | -21.41 | 0 | 4 |
+| 2026-10-31 | knn_path v06 | model=knn200, feats=pathpeers, pool=pair, margin=0.05 | 759 | -78.18 | 0 | 6 |
+| 2026-10-31 | knn_path v07 | model=knn200, feats=pathpeers, pool=pair, margin=0.1 | 140 | -0.28 | 0 | - |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 443 trades (0.57/day), net -32.9 USD (1.5x: -42.63), gross before costs 1.41 USD (0.25 pips/trade), avg |move| 42.69 pips vs cost 3.94 pips (ratio 10.84), win rate 47.0%, PF 0.837, kill events 0, per pair net {EURUSD: -17.44 (115), GBPUSD: 3.81 (91), USDJPY: -19.27 (237)}, per window gross [15.5, 4.67, -7.83, -9.24, -0.12, -1.57]. Luck (0 coin-toss runs on the candidate's own signals): median net 0, share beaten 0%. Checks failed: ['c3_trades_per_day_1_5', 'c6_beats_random_median']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/knn_path/`.
+
+<!-- prescreen:knn_path end -->
+
+<!-- prescreen:ny_cut_overnight start -->
+
+### ny_cut_overnight (i14_ny_cut_overnight, 1h): 4 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-10-31 | ny_cut_overnight v00 | range_hours=2, sl_frac=0.5 | 1589 | -116.58 | 2 | 2 |
+| 2026-10-31 | ny_cut_overnight v01 | range_hours=2, sl_frac=1.0 | 1516 | -124.28 | 2 | 3 |
+| 2026-10-31 | ny_cut_overnight v02 | range_hours=3, sl_frac=0.5 | 1426 | -120.48 | 2 | 1 |
+| 2026-10-31 | ny_cut_overnight v03 | range_hours=3, sl_frac=1.0 | 1375 | -110.55 | 2 | 4, 5, 6 |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 871 trades (1.12/day), net -44.36 USD (1.5x: -67.92), gross before costs 19.55 USD (1.13 pips/trade), avg |move| 25.13 pips vs cost 4.03 pips (ratio 6.24), win rate 39.2%, PF 0.802, kill events 0, per pair net {EURUSD: -16.68 (284), GBPUSD: -10.32 (306), USDJPY: -17.36 (281)}, per window gross [-0.47, 16.23, 0.26, 12.55, -9.21, 0.19]. Luck (200 coin-toss runs on the candidate's own signals): median net -61.47, share beaten 88%. Checks failed: ['c3_trades_per_day_1_5']. **Pre-screen (check 6): PASS**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/ny_cut_overnight/`.
+
+<!-- prescreen:ny_cut_overnight end -->
+
+### Pre-screen round of 31 Oct 2026: summary (one registered by exception)
+
+Fifteen ideas pre-screened (rows above), thirteen rejected on reasoning. No idea
+passes all eight owner checks. One (morning_overnight) was registered as
+`i13_morning_overnight_v1` on the owner's approval of an exception to the
+1.5 trades/day check (31 Oct 2026); N is now 5. Columns: OOS
+2023-10-27 to 2026-10-26 (776 trading days), gross = before costs (pips/trade in
+brackets), net at the measured commission / at 1.5x, luck = share of 200
+coin-toss runs beaten (not run when the gross result was negative or the
+frequency check already failed).
+
+| Idea | Strategy | Trades (per day) | Gross USD (pips/trade) | Net / 1.5x | Move/cost | Luck | Kill | Checks failed |
+|---|---|---|---|---|---|---|---|---|
+| fix_reversal | i1_fix_reversal | 670 (0.86) | -11.18 (-1.4) | -57.17 / -77.91 | 5.1 | not run | 1 | trades/day, gross, luck, kill switch |
+| turtle_soup | i2_turtle_soup | 327 (0.42) | +0.23 (-0.1) | -27.89 / -35.03 | 6.3 | 52% | 0 | trades/day |
+| round_bounce | i3_round_bounce | 1593 (2.05) | -35.96 (-1.0) | -141.90 / -184.72 | 6.3 | not run | 2 | gross, luck, kill switch |
+| round_break | i4_round_break | 1088 (1.40) | -28.84 (-1.2) | -107.60 / -139.53 | 5.6 | not run | 2 | trades/day, gross, luck, kill switch |
+| asia_fade | i5_asia_fade | 277 (0.36) | -18.65 (-3.0) | -37.15 / -44.14 | 11.6 | not run | 0 | trades/day, gross, luck |
+| us_data_drift | i6_us_data_drift | 425 (0.55) | -21.91 (-3.1) | -48.36 / -60.85 | 6.8 | not run | 0 | trades/day, gross, luck |
+| ny_into_asia | i7_ny_into_asia | 471 (0.61) | -4.71 (-0.3) | -37.30 / -46.89 | 5.1 | not run | 0 | trades/day, gross, luck |
+| london_reversal | i8_london_reversal | 457 (0.59) | +2.88 (+0.5) | -28.53 / -39.08 | 6.4 | 70% | 0 | trades/day |
+| range_exhaustion | i9_range_exhaustion | 271 (0.35) | -8.83 (-1.5) | -28.32 / -34.91 | 6.4 | not run | 0 | trades/day, gross, luck |
+| trend_intraday | i10_trend_intraday | 1227 (1.58) | -53.55 (-2.3) | -134.40 / -164.36 | 10.5 | not run | 2 | gross, luck, kill switch |
+| ny_cut_breakout | i11_ny_cut_breakout | 1109 (1.43) | +14.87 (+1.0) | -54.09 / -85.10 | 4.3 | 94% | 1 | trades/day, kill switch |
+| twap_pullback | i12_twap_pullback | 357 (0.46) | -12.82 (-2.2) | -40.30 / -47.48 | 6.1 | not run | 0 | trades/day, gross, luck |
+| morning_overnight | i13_morning_overnight | 297 (0.38) | +44.62 (+7.2) | +17.47 / +3.90 | 11.9 | 100% | 0 | trades/day only |
+| ny_cut_overnight | i14_ny_cut_overnight | 871 (1.12) | +19.55 (+1.1) | -44.36 / -67.92 | 6.2 | 88% | 0 | trades/day |
+| knn_path | a2_knn_path (kNN, 8 settings, inner 18+6 selection per round) | 443 (0.57) | +1.41 (+0.3) | -32.90 / -42.63 | 10.8 | not run | 0 | trades/day, luck (not run: fails trades/day, gross about zero) |
+
+Ideas 13 and 14 were designed after the batch-1 results (idea 13 from family
+8's and idea 11's continuation signals, idea 14 from idea 11), in the Round 2
+tradition of designing from the previous round's near misses; they are logged
+as such and were judged on the same pre-screen. Running total of variants
+tried in this round: 100 (12 ideas x 4-8 rule variants, 8 kNN settings).
+
+### Multi-pair test of the i13 rule (set up 31 Oct 2026, decided Monday 2 Nov)
+
+Owner's request (31 Oct 2026): run the i13 rule with EXACTLY the same settings
+(decision hour 08:00, move at least 0.4 of the 20-day average daily range, no
+stop, exit 06:00 next day, no Friday signals) on six more Deriv pairs, to
+raise its trade count honestly. Pairs fixed before any data was seen:
+AUD/USD, USD/CAD, USD/CHF, EUR/GBP, EUR/JPY, GBP/JPY (all offer x100/x200
+Multipliers; NZD/USD does not). Steps: Dukascopy 1m history to 2026-10-30
+(GitHub Actions backfill) and Deriv 1m from 2026-04-28; quotes-only commission
+sampling on Monday 2 Nov, hourly 06:07-18:07 UTC on the demo connection
+(research/phase2/pairs2/), then research/phase2/cost_by_hour_pairs2.json; a
+pair is dropped only if the rule's expected move is under 3x its cost at the
+base rate (scripts/pairs2_cost_rule.py), never for its result; then the
+pre-screen of the unchanged rule on the survivors (idea
+`morning_overnight_pairs2`, one variant) with per-pair results; if it passes,
+ONE candidate covering exactly the surviving new pairs (never the three majors,
+so it does not duplicate i13_morning_overnight_v1's trades).
+
+Owner's decisions before the results (31 Oct 2026): check 3 (1.5 trades a
+day) is waived for this candidate as for i13 (its expected trades per day is
+reported, never used to reject it); check 8 (diversity) is waived because it
+is deliberately the same rule as i13 on other pairs. All other checks apply
+unchanged. Results are appended below by the Monday run.

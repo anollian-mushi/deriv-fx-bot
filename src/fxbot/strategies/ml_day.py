@@ -52,9 +52,18 @@ OWN = ["r_on", "r_l1", "r_1d", "r_3d", "r_5d", "r_20d", "range_y", "vol_ratio", 
        "dow_tue", "dow_wed", "dow_thu", "dow_fri"]
 PEER = [f"usd_{s[3:]}_{h}" for s in SYMBOLS for h in ("on", "1d", "5d")]
 PAIR = [f"pair_{s[3:]}" for s in SYMBOLS]
-FEATURE_SETS = {"own": OWN, "peers": OWN + PEER}
-ALL_COLUMNS = OWN + PEER + PAIR
+# Incubator idea a2 (31 Oct 2026): the raw path. The last 24 hourly close-to-close moves up to
+# 08:00 (p_1 = the most recent hour), and the other two pairs' last 8 hourly moves in the
+# dollar's direction, all divided by the pair's 20-day average daily range.
+PATH_HOURS, PATH_PEER_HOURS = 24, 8
+PATH = [f"p_{i}" for i in range(1, PATH_HOURS + 1)]
+# Peer paths are named by position (a = the first other pair in SYMBOLS order, b = the second), so
+# the same columns exist for every pair and a per-pair model can use them.
+PATH_PEER = [f"q_{j}_{i}" for j in ("a", "b") for i in range(1, PATH_PEER_HOURS + 1)]
+FEATURE_SETS = {"own": OWN, "peers": OWN + PEER, "path": PATH, "pathpeers": PATH + PATH_PEER}
+ALL_COLUMNS = OWN + PEER + PAIR + PATH + PATH_PEER
 MODEL_KINDS = ("lr", "gb")
+KNN_KINDS = ("knn50", "knn200")          # k-nearest-neighbour analogues: 50 or 200 neighbours
 POOLS = ("all", "pair")
 
 PLAIN = {
@@ -131,6 +140,15 @@ def own_features(c: Bars) -> dict | None:
     }
 
 
+def path_features(c: Bars, r20: float, hours: int) -> dict | None:
+    """The last `hours` hourly close-to-close moves ending at c's last candle (index 1 = the
+    newest), each divided by r20: the last `hours` traded hours, across a weekend if need be."""
+    if len(c) < hours + 1:
+        return None
+    d = np.diff(c.close[-(hours + 1):]) / r20
+    return {f"p_{i}": float(d[-i]) for i in range(1, hours + 1)}
+
+
 def features_at(symbol: str, c: Bars, peers: dict) -> dict | None:
     """All feature columns for `symbol` at the 08:00 close of c (peers: other pairs' closed candles).
 
@@ -141,6 +159,18 @@ def features_at(symbol: str, c: Bars, peers: dict) -> dict | None:
     if own is None:
         return None
     out = dict(own)
+    r20 = float(np.mean(np.subtract(*_completed_days(c, LOOKBACK_DAYS)[:2])))
+    path = path_features(c, r20, PATH_HOURS)
+    out.update(path or {k: float("nan") for k in PATH})
+    for j, s in zip(("a", "b"), [s for s in SYMBOLS if s != symbol]):
+        p = peers.get(s)
+        q = None
+        if p is not None and len(p) and int(p.end[-1]) == int(c.end[-1]):
+            ph, pl, _ = _completed_days(p, LOOKBACK_DAYS)
+            if len(ph) == LOOKBACK_DAYS and float(np.mean(ph - pl)) > 0:
+                q = path_features(p, float(np.mean(ph - pl)), PATH_PEER_HOURS)
+        for i in range(1, PATH_PEER_HOURS + 1):
+            out[f"q_{j}_{i}"] = USD_SIGN[s] * q[f"p_{i}"] if q else float("nan")
     for s in SYMBOLS:
         out[f"pair_{s[3:]}"] = float(s == symbol)
         if s == symbol:
@@ -215,7 +245,10 @@ def make_model(kind: str, seed: int = SEED):
     from sklearn.linear_model import LogisticRegression
     from sklearn.pipeline import Pipeline
     from sklearn.preprocessing import StandardScaler
-    if kind == "lr":
+    if kind in KNN_KINDS:
+        from sklearn.neighbors import KNeighborsClassifier
+        clf = KNeighborsClassifier(n_neighbors=int(kind[3:]), weights="uniform")
+    elif kind == "lr":
         clf = LogisticRegression(C=1.0, max_iter=2000, random_state=seed)
     elif kind == "gb":
         clf = HistGradientBoostingClassifier(max_iter=150, learning_rate=0.05, max_depth=3,
@@ -356,3 +389,25 @@ class MLDay(FamilyStrategy):
     def exit_now(self, symbol, c, position: PositionView):
         e = position.entry_epoch
         return int(c.end[-1]) >= e - e % DAY + EXIT_HOUR * HOUR
+
+
+class KnnPath(MLDay):
+    """Incubator idea a2 (31 Oct 2026): nearest-neighbour analogues of the last 24 hours.
+
+    At the 08:00 UTC close, the last 24 hourly moves of the pair (and, with "pathpeers", the
+    other two pairs' last 8 hourly moves in the dollar's direction), each divided by the 20-day
+    average daily range, describe the shape of the last day. The model finds the K most similar
+    past days in its (frozen) training set and votes on whether the pair was higher at 20:00 on
+    those days; trade Up (Down) when the share is at least 0.5 + margin (at most 0.5 - margin).
+    Reason: short-term FX price paths repeat because the same participants react to the same
+    intraday shapes (a failed overnight breakout, a slow one-way grind, a sharp reversal) in
+    the same way; a nearest-neighbour lookup can represent such shapes without a hand-written
+    rule. Different from a1 in both representation (the raw path, no engineered features) and
+    learner (no parametric fit; the training rows are the model). Exit 20:00; no stop.
+    """
+    name = "a2_knn_path"
+    family = "a2"
+    defaults = {"model": "knn200", "feats": "path", "pool": "pair", "margin": 0.05, "model_file": ""}
+
+
+REGISTRY = {cls.name: cls for cls in (MLDay, KnnPath)}

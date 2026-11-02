@@ -21,12 +21,12 @@ import json
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from fxbot import symbols
 from fxbot.contracts import multiplier as mc
 
 ROOT = Path(__file__).resolve().parents[3]
 COST_TABLE = ROOT / "research" / "phase2" / "cost_by_hour.json"
-PIP = {"frxEURUSD": 0.0001, "frxGBPUSD": 0.0001, "frxUSDJPY": 0.01}
-PIP_SIZE = {"frxEURUSD": 0.00001, "frxGBPUSD": 0.00001, "frxUSDJPY": 0.001}
+PIP, PIP_SIZE = symbols.PIP, symbols.PIP_SIZE          # every pair the project knows (fxbot.symbols)
 ENTRY_SLIPPAGE_PIPS = 0.5
 SL_SLIPPAGE_PIPS = 1.0
 SL_MIN_ABOVE_COMMISSION = 0.02

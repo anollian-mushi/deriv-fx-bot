@@ -39,6 +39,15 @@ INSTRUMENTS = {
     "frxEURUSD": ("EURUSD", 100_000, 6),
     "frxGBPUSD": ("GBPUSD", 100_000, 6),
     "frxUSDJPY": ("USDJPY", 1_000, 4),
+    # Added 31 Oct 2026 for the multi-pair test of i13 (owner's request): the same encoding
+    # (points per unit and decimals of the mid) as the majors above; JPY crosses are quoted
+    # to 3 decimals like USD/JPY.
+    "frxAUDUSD": ("AUDUSD", 100_000, 6),
+    "frxUSDCAD": ("USDCAD", 100_000, 6),
+    "frxUSDCHF": ("USDCHF", 100_000, 6),
+    "frxEURGBP": ("EURGBP", 100_000, 6),
+    "frxEURJPY": ("EURJPY", 1_000, 4),
+    "frxGBPJPY": ("GBPJPY", 1_000, 4),
 }
 RECORD = struct.Struct(">5if")
 

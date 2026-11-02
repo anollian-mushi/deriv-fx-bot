@@ -17,7 +17,9 @@ from fxbot.incubator import exam
 from fxbot.incubator import forward as fw
 from fxbot.incubator.registry import INCUBATOR, TamperedError, candidates, verify
 
-PAIR = {"frxEURUSD": "EUR/USD", "frxGBPUSD": "GBP/USD", "frxUSDJPY": "USD/JPY"}
+from fxbot.symbols import display as pair_name
+
+PAIR = {"frxEURUSD": "EUR/USD", "frxGBPUSD": "GBP/USD", "frxUSDJPY": "USD/JPY"}   # leaderboard columns
 
 
 def records_dir(root: Path = INCUBATOR) -> Path:
@@ -40,7 +42,7 @@ def per_pair_lines(summary: dict) -> list[str]:
     for key, label in (("measured", "measured commission"), ("stress_1_5x", "1.5x commission")):
         out.append(f"Per pair, {label}:")
         for s, v in summary[key]["per_pair"].items():
-            out.append(f"  {PAIR[s]}: {v['trades']} trades, {v['wins']} wins, net {v['net']:+.2f} USD")
+            out.append(f"  {pair_name(s)}: {v['trades']} trades, {v['wins']} wins, net {v['net']:+.2f} USD")
     return out
 
 
@@ -86,7 +88,9 @@ def run_daily(root: Path = INCUBATOR, data_dir: Path = fw.DATA, exam_budget_s: f
     now = now or dt.datetime.now(dt.timezone.utc)
     t_start = time.time()
     notices, problems = [], []
-    end = fw.latest_complete_day(data_dir)
+    # The newest day every candidate's pairs have data for (candidates may trade different pairs).
+    all_symbols = sorted({s for c in candidates(root) for s in c.symbols}) or list(fw.SYMBOLS)
+    end = fw.latest_complete_day(data_dir, all_symbols)
     index = {"data_end": end.isoformat() if end else None,
              "engine_fingerprint": fw.engine_fingerprint(), "candidates": {}}
     cache: dict = {}

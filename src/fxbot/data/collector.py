@@ -208,17 +208,25 @@ async def collect_series(
     today: dt.date,
     deadline: float,
     log=print,
+    not_before: dt.date | None = None,
 ) -> SeriesResult:
-    """Download every finished trading day that has no file yet."""
+    """Download every finished trading day that has no file yet.
+
+    not_before: start the series on this day instead of searching for the oldest history Deriv
+    has (used for pairs added later, whose research history comes from Dukascopy before the
+    2026-04-28 holdout start; Deriv data is only needed from that day on)."""
     seconds = GRANULARITIES[granularity]
     result = SeriesResult(symbol, granularity)
     manifest = Manifest.load(series_dir(root, symbol, granularity) / "_manifest.json", symbol, granularity)
 
     if manifest.data["history_start"] is None:
-        if time.monotonic() >= deadline:
-            result.pending = -1  # not started: history start still unknown
-            return result
-        start = await find_history_start(feed, symbol, seconds, today)
+        if not_before is not None:
+            start = not_before
+        else:
+            if time.monotonic() >= deadline:
+                result.pending = -1  # not started: history start still unknown
+                return result
+            start = await find_history_start(feed, symbol, seconds, today)
         manifest.data["history_start"] = start.isoformat()
         manifest.save()
         log(f"  {symbol} {granularity}: history starts {start}")

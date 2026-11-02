@@ -1,0 +1,74 @@
+[
+ {
+  "round": 1,
+  "train": "2021-10-27..2023-10-26",
+  "test": "2023-10-27..2024-04-26",
+  "variant": 2,
+  "params": {
+   "range_hours": 3,
+   "sl_frac": 0.5
+  },
+  "train_score": -0.959,
+  "train_trades": 707
+ },
+ {
+  "round": 2,
+  "train": "2022-04-27..2024-04-26",
+  "test": "2024-04-27..2024-10-26",
+  "variant": 1,
+  "params": {
+   "range_hours": 2,
+   "sl_frac": 1.0
+  },
+  "train_score": -0.944,
+  "train_trades": 733
+ },
+ {
+  "round": 3,
+  "train": "2022-10-27..2024-10-26",
+  "test": "2024-10-27..2025-04-26",
+  "variant": 3,
+  "params": {
+   "range_hours": 3,
+   "sl_frac": 1.0
+  },
+  "train_score": -0.912,
+  "train_trades": 656
+ },
+ {
+  "round": 4,
+  "train": "2023-04-27..2025-04-26",
+  "test": "2025-04-27..2025-10-26",
+  "variant": 1,
+  "params": {
+   "range_hours": 2,
+   "sl_frac": 1.0
+  },
+  "train_score": -0.874,
+  "train_trades": 751
+ },
+ {
+  "round": 5,
+  "train": "2023-10-27..2025-10-26",
+  "test": "2025-10-27..2026-04-26",
+  "variant": 1,
+  "params": {
+   "range_hours": 2,
+   "sl_frac": 1.0
+  },
+  "train_score": -0.75,
+  "train_trades": 749
+ },
+ {
+  "round": 6,
+  "train": "2024-04-27..2026-04-26",
+  "test": "2026-04-27..2026-10-26",
+  "variant": 1,
+  "params": {
+   "range_hours": 2,
+   "sl_frac": 1.0
+  },
+  "train_score": -0.964,
+  "train_trades": 770
+ }
+]

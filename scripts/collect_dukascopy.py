@@ -27,11 +27,13 @@ def main() -> int:
     parser.add_argument("--max-minutes", type=float, default=9)
     parser.add_argument("--min-interval", type=float, default=0.5, help="seconds between requests")
     parser.add_argument("--data-dir", type=Path, default=REPO_ROOT / "data_external" / "dukascopy")
+    parser.add_argument("--end", type=dt.date.fromisoformat, default=None,
+                        help="last day to fetch (default yesterday); research data must stop at 2026-10-30")
     args = parser.parse_args()
 
     started = time.monotonic()
     deadline = started + args.max_minutes * 60
-    last_day = dt.datetime.now(dt.timezone.utc).date() - dt.timedelta(days=1)
+    last_day = args.end or dt.datetime.now(dt.timezone.utc).date() - dt.timedelta(days=1)
     first_day = last_day - dt.timedelta(days=round(args.years * 365.25))
     print(f"Dukascopy 1m, {first_day} to {last_day}, time limit {args.max_minutes:g} min")
 

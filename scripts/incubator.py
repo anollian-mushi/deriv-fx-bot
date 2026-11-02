@@ -26,7 +26,9 @@ from fxbot.incubator import registry
 
 def cmd_register(a) -> int:
     c = registry.register(a.id, a.module, a.cls, json.loads(a.params), a.model_file or [],
-                          notes=a.notes, origin=json.loads(a.origin) if a.origin else None)
+                          notes=a.notes, origin=json.loads(a.origin) if a.origin else None,
+                          symbols=tuple(a.symbols or registry.DEFAULT_SYMBOLS),
+                          cost_table=a.cost_table or registry.DEFAULT_COST_TABLE)
     print(f"registered {c.id} on {c.manifest['registered']} (first scored day "
           f"{c.manifest['first_scored_day']}), fingerprint {c.fingerprint}")
     return 0
@@ -103,6 +105,8 @@ def main(argv=None) -> int:
     r.add_argument("--model-file", action="append")
     r.add_argument("--notes", default="")
     r.add_argument("--origin", default="", help="JSON object: where the idea came from")
+    r.add_argument("--symbols", nargs="+", help="pairs the candidate trades (default: the three majors)")
+    r.add_argument("--cost-table", help="commission table it is replayed with (default: research/phase2/cost_by_hour.json)")
     r.set_defaults(func=cmd_register)
     sub.add_parser("verify").set_defaults(func=cmd_verify)
     d = sub.add_parser("daily", help="forward replay of every candidate + graduation exams")
