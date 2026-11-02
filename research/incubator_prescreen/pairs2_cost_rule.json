@@ -1,0 +1,78 @@
+{
+ "table": "research/phase2/cost_by_hour_pairs2.json",
+ "oos_span": [
+  "2023-10-27",
+  "2026-10-26"
+ ],
+ "min_ratio": 3.0,
+ "pairs": {
+  "frxAUDUSD": {
+   "trades": 147,
+   "avg_abs_move_pips": 28.89,
+   "base_rate_pct": 0.04,
+   "price": 0.70167,
+   "commission_pips": 2.81,
+   "cost_pips": 3.31,
+   "ratio": 8.74,
+   "keep": true
+  },
+  "frxUSDCAD": {
+   "trades": 63,
+   "avg_abs_move_pips": 30.14,
+   "base_rate_pct": 0.0212,
+   "price": 1.39736,
+   "commission_pips": 2.96,
+   "cost_pips": 3.46,
+   "ratio": 8.7,
+   "keep": true
+  },
+  "frxUSDCHF": {
+   "trades": 68,
+   "avg_abs_move_pips": 35.17,
+   "base_rate_pct": 0.036,
+   "price": 0.81981,
+   "commission_pips": 2.95,
+   "cost_pips": 3.45,
+   "ratio": 10.19,
+   "keep": true
+  },
+  "frxEURGBP": {
+   "trades": 94,
+   "avg_abs_move_pips": 15.63,
+   "base_rate_pct": 0.0243,
+   "price": 0.83505,
+   "commission_pips": 2.03,
+   "cost_pips": 2.53,
+   "ratio": 6.18,
+   "keep": true
+  },
+  "frxEURJPY": {
+   "trades": 138,
+   "avg_abs_move_pips": 61.43,
+   "base_rate_pct": 0.025,
+   "price": 176.868,
+   "commission_pips": 4.42,
+   "cost_pips": 4.92,
+   "ratio": 12.48,
+   "keep": true
+  },
+  "frxGBPJPY": {
+   "trades": 115,
+   "avg_abs_move_pips": 76.62,
+   "base_rate_pct": 0.0238,
+   "price": 211.794,
+   "commission_pips": 5.04,
+   "cost_pips": 5.54,
+   "ratio": 13.83,
+   "keep": true
+  }
+ },
+ "kept": [
+  "frxAUDUSD",
+  "frxUSDCAD",
+  "frxUSDCHF",
+  "frxEURGBP",
+  "frxEURJPY",
+  "frxGBPJPY"
+ ]
+}
