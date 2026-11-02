@@ -943,3 +943,9 @@ checks, trades/day check waivable only at 0.3/day or more. Runs wait for the 3 a
 clock-change re-check of research/phase2/cost_by_hour.json (owner). Variant rows are added
 here when they run.
 
+Owner's approval (2 Nov 2026, before any result): rules, detail choices and the 30-variant plan
+approved as written; C28 as changed is the complete news rule. If GBP/JPY (or any new pair) fails
+Monday's cost check, run on the pairs that passed and say so in the report. Start only after
+BOTH Monday's new-pairs cost decision and the 5 Nov clock-change re-check have updated the cost
+tables; scheduled start Friday 6 Nov 2026, after `scripts/tjr_test.py preflight` passes.
+

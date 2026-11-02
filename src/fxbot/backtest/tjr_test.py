@@ -82,17 +82,66 @@ def sha256(path: str) -> str:
     return hashlib.sha256((ROOT / path).read_bytes()).hexdigest()
 
 
-def pair_list() -> tuple[tuple[str, ...], list[str]]:
-    """(symbols, commission table files): the majors plus the new pairs kept by Monday's cost check."""
+def pair_list() -> tuple[tuple[str, ...], list[str], list[str]]:
+    """(symbols, commission table files, new pairs dropped for cost): the majors plus the new pairs
+    kept by Monday's cost check. Owner (2 Nov 2026, before results): if GBP/JPY fails that check,
+    run on the pairs that passed and say in the report that GBP/JPY was dropped for cost."""
     rule = ROOT / PAIRS2_RULE
     if not rule.exists():
         raise SystemExit(f"{PAIRS2_RULE} is missing: run Monday's cost check (scripts/pairs2_cost_rule.py) first")
     kept = json.loads(rule.read_text())["kept"]
-    if REQUIRED_NEW_PAIR not in kept:
-        raise SystemExit(f"{REQUIRED_NEW_PAIR} did not pass Monday's cost check (kept: {kept}); "
-                         "ask the owner before running without it")
+    dropped = [s for s in symbols_mod.PAIRS2 if s not in kept]
     syms = symbols_mod.MAJORS + tuple(s for s in symbols_mod.PAIRS2 if s in kept)
-    return symbols_mod.check(syms), [MAJORS_TABLE, PAIRS2_TABLE]
+    # The new pairs' rates may have been merged into the main table, or live in their own file.
+    main = json.loads((ROOT / MAJORS_TABLE).read_text())["base_rate_pct"]
+    tables = [MAJORS_TABLE] if all(s in main for s in syms) else [MAJORS_TABLE, PAIRS2_TABLE]
+    return symbols_mod.check(syms), tables, dropped
+
+
+RECHECK_DAY = dt.date(2026, 11, 5)          # the Thursday clock-change re-check
+
+
+def preflight() -> dict:
+    """Are both cost inputs final? (owner, 2 Nov 2026: start only after Monday's new-pairs decision
+    AND the 5 Nov clock-change re-check have updated the cost tables.) Facts plus a verdict;
+    the person starting the run still reads research/log.md to confirm both are done."""
+    import subprocess
+    problems, facts = [], {}
+
+    def last_commit(path):
+        out = subprocess.run(["git", "log", "-1", "--format=%cI", "--", path], cwd=ROOT,
+                             capture_output=True, text=True).stdout.strip()
+        return dt.datetime.fromisoformat(out) if out else None
+
+    rule = ROOT / PAIRS2_RULE
+    if not rule.exists():
+        problems.append(f"{PAIRS2_RULE} missing: Monday's new-pairs cost decision not done")
+    else:
+        facts["pairs2_kept"] = json.loads(rule.read_text()).get("kept")
+    for path in (MAJORS_TABLE, PAIRS2_TABLE):
+        f = ROOT / path
+        if not f.exists():
+            if path == PAIRS2_TABLE:
+                problems.append(f"{path} missing: Monday's new-pairs commission table not built")
+            continue
+        data = json.loads(f.read_text())
+        when = last_commit(path)
+        facts[path] = {"last_commit": when.isoformat() if when else "not committed",
+                       "pairs": sorted(data.get("base_rate_pct", {})), "note": data.get("_note", "")}
+        if when is None:
+            problems.append(f"{path} is not committed")
+    if not problems:
+        try:
+            syms, tables, dropped = pair_list()
+            facts.update({"symbols": list(syms), "tables": tables, "dropped_for_cost": dropped})
+        except SystemExit as e:
+            problems.append(str(e))
+    when = last_commit(MAJORS_TABLE)
+    if when is None or when.date() < RECHECK_DAY:
+        problems.append(f"{MAJORS_TABLE} last changed {when}: the 5 Nov clock-change re-check has not updated it")
+    elif "provisional" in facts.get(MAJORS_TABLE, {}).get("note", "").lower():
+        facts["warning"] = "the main table changed after 5 Nov but its note still says PROVISIONAL: read it"
+    return {"ok": not problems, "problems": problems, "facts": facts}
 
 
 def table(paths: list[str]) -> fills.CommissionTable:

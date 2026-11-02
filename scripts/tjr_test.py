@@ -3,14 +3,16 @@
 Plan and variants: docs/tjr_test_plan.md, fxbot.backtest.tjr_test. Data before 2026-10-31 only
 (fxbot.backtest.prescreen never reads the untouched period).
 
-Run ONLY after the 3 and 5 Nov clock-change re-check has updated
-research/phase2/cost_by_hour.json (owner, 2 Nov 2026). `setup` refuses to start without
---costs-rechecked, records the commission tables' SHA-256, and every later stage stops if a table
+Run ONLY after BOTH Monday's (2 Nov) new-pairs cost decision and the 5 Nov clock-change re-check
+have updated the cost tables (owner, 2 Nov 2026; scheduled start Friday 6 Nov). `setup` refuses
+to start without --costs-rechecked or if `preflight` finds a problem, records the commission
+tables' SHA-256 and the new pairs dropped for cost, and every later stage stops if a table
 changed after setup.
 
 Every stage saves progress and stops before its time budget (default 8.5 minutes, exit code 2):
 run the same command again to continue.
 
+  python scripts/tjr_test.py preflight          # are both cost inputs final? (exit 2 if not)
   python scripts/tjr_test.py setup --costs-rechecked
   python scripts/tjr_test.py grid          # 16 walk-forward variants over 2021-10-27..2026-10-30
   python scripts/tjr_test.py oos           # 22 schedules x (measured, 1.5x) out of sample
@@ -80,14 +82,26 @@ def setup_info() -> dict:
     return info
 
 
+def stage_preflight() -> bool:
+    res = TT.preflight()
+    print(json.dumps(res, indent=1, default=str))
+    return res["ok"]
+
+
 def stage_setup(rechecked: bool) -> bool:
     if not rechecked:
-        raise SystemExit("not started: the owner's rule is to run only after the 3 and 5 Nov clock-change "
-                         "re-check has updated research/phase2/cost_by_hour.json (pass --costs-rechecked)")
-    syms, tables = TT.pair_list()
+        raise SystemExit("not started: the owner's rule is to run only after BOTH Monday's new-pairs cost "
+                         "decision and the 5 Nov clock-change re-check have updated the cost tables "
+                         "(check with `preflight`, then pass --costs-rechecked)")
+    pre = TT.preflight()
+    if not pre["ok"]:
+        print(json.dumps(pre, indent=1, default=str))
+        raise SystemExit("not started: the cost inputs are not final (see problems above)")
+    syms, tables, dropped = TT.pair_list()
     commit = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
     info = {"created_utc": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"), "commit": commit,
             "symbols": list(syms), "tables": tables, "table_sha256": {p: TT.sha256(p) for p in tables},
+            "new_pairs_dropped_for_cost": dropped, "preflight": pre["facts"],
             "data_end": P.DATA_END.isoformat(), "oos_span": [d.isoformat() for d in P.oos_span()],
             "variants": TT.variant_count()}
     _jdump(OUT / "setup.json", info)
@@ -317,7 +331,9 @@ def stage_summary(runs) -> bool:
         lines.append(f"| {v} | {r['trades']} ({r['trades_per_day']}) | {r['gross_pips']['all']} | {r['net_measured']} / "
                      f"{r['net_1_5x']} | {r['cost_share_of_risk']['median']} | "
                      f"{str(round(100 * lk['share_beaten_net'])) + '%' if lk.get('runs') else 'not run'} | {failed or 'none'} |")
-    (OUT / "results.md").write_text("\n".join(lines) + "\n")
+    head = [f"Pairs: {', '.join(info['symbols'])}. New pairs dropped by Monday's cost check: "
+            f"{', '.join(info.get('new_pairs_dropped_for_cost') or []) or 'none'}.", ""]
+    (OUT / "results.md").write_text("\n".join(head + lines) + "\n")
     print("\n".join(lines))
     return True
 
@@ -335,7 +351,7 @@ def stage_status() -> bool:
 
 def main() -> int:
     p = argparse.ArgumentParser()
-    p.add_argument("stage", choices=("setup", "grid", "oos", "luck", "summary", "status"))
+    p.add_argument("stage", choices=("preflight", "setup", "grid", "oos", "luck", "summary", "status"))
     p.add_argument("--costs-rechecked", action="store_true")
     p.add_argument("--max-minutes", type=float, default=8.5)
     p.add_argument("--workers", type=int, default=2)
@@ -343,7 +359,9 @@ def main() -> int:
     a = p.parse_args()
     t0 = time.time()
     budget = a.max_minutes * 60
-    if a.stage == "setup":
+    if a.stage == "preflight":
+        ok = stage_preflight()
+    elif a.stage == "setup":
         ok = stage_setup(a.costs_rechecked)
     elif a.stage == "status":
         ok = stage_status()

@@ -1,9 +1,17 @@
 # TJR test, Step 2: the plan, fixed before any run
 
-Status (2 Nov 2026): **written and coded; nothing has been run on market data.** On the owner's
-instruction, the runs start only after the 3 and 5 Nov clock-change re-check has updated
-`research/phase2/cost_by_hour.json`. The New York session (11:00-16:00 UTC) overlaps the hours
-that file currently marks as raised. The rules are in `docs/tjr_rules.md` (approved 2 Nov
+Status (2 Nov 2026): **approved by the owner in full; written and coded; nothing has been run on
+market data.** On the owner's instruction, the runs start only after **both** of these have
+updated the cost tables:
+
+- Monday 2 Nov: the new-pairs cost decision (`research/incubator_prescreen/pairs2_cost_rule.json`
+  and the new pairs' commission table);
+- Thursday 5 Nov: the clock-change re-check of `research/phase2/cost_by_hour.json`. The New York
+  session (11:00-16:00 UTC) overlaps the hours that file currently marks as raised.
+
+The start is scheduled for **Friday 6 Nov 2026**. Before starting, `python scripts/tjr_test.py
+preflight` checks that both are in place. The research log is also read to confirm both are
+final. If either is missing, nothing starts. The rules are in `docs/tjr_rules.md` (approved 2 Nov
 2026). The results will go in `reports/tjr_test.md`.
 
 Everything below is decided now, before any result is seen. Nothing in it may be changed
@@ -15,8 +23,10 @@ because of a result.
   2026-10-30. `fxbot.backtest.prescreen` cannot read the untouched period; it raises an
   error first.
 - **Pairs:** EUR/USD, GBP/USD, USD/JPY, plus every new pair kept by Monday's cost check
-  (`research/incubator_prescreen/pairs2_cost_rule.json`). The owner asked for GBP/JPY by name,
-  so if GBP/JPY is not kept, the runner stops and asks. Results are reported per pair.
+  (`research/incubator_prescreen/pairs2_cost_rule.json`). Owner's decision, made before any
+  result: if GBP/JPY fails that check, the test still runs on all pairs that passed. The
+  report then says GBP/JPY was dropped for cost; the same applies to any other new pair that
+  failed. Results are reported per pair.
 - **Commission:** the rate for the UTC hour each trade opens. The majors' rates come from
   `research/phase2/cost_by_hour.json` and the new pairs' from
   `research/phase2/cost_by_hour_pairs2.json`. `setup` records both files' SHA-256, and every
@@ -135,6 +145,7 @@ Each command stops before about 9 minutes and saves its progress. Run it again u
 prints "0 left".
 
 ```bash
+python scripts/tjr_test.py preflight        # both cost inputs final? (exit 2 if not)
 python scripts/tjr_test.py setup --costs-rechecked
 python scripts/tjr_test.py grid
 python scripts/tjr_test.py oos

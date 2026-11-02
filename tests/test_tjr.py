@@ -334,3 +334,27 @@ def test_luck_data_keeps_only_05_to_18_utc_of_signal_days():
     assert TT.parse_signals([[SYM, T(7, 40), repr(Enter("MULTDOWN", stop_loss_pips=3.0))]])[(SYM, T(7, 40))].stop_loss_pips == 3.0
     with pytest.raises(Exception):
         TT.parse_signals([[SYM, 1, "__import__('os')"]])
+
+
+def test_pairs_failing_the_cost_check_are_dropped_not_fatal(tmp_path, monkeypatch):
+    import json
+    from fxbot.backtest import tjr_test as TT
+    (tmp_path / "research" / "phase2").mkdir(parents=True)
+    (tmp_path / "research" / "incubator_prescreen").mkdir(parents=True)
+    (tmp_path / TT.MAJORS_TABLE).write_text(json.dumps({"base_rate_pct": {s: 0.02 for s in ("frxEURUSD", "frxGBPUSD", "frxUSDJPY")}}))
+    (tmp_path / TT.PAIRS2_RULE).write_text(json.dumps({"kept": ["frxAUDUSD", "frxEURJPY"]}))
+    monkeypatch.setattr(TT, "ROOT", tmp_path)
+    syms, tables, dropped = TT.pair_list()
+    assert syms == ("frxEURUSD", "frxGBPUSD", "frxUSDJPY", "frxAUDUSD", "frxEURJPY")
+    assert "frxGBPJPY" in dropped and tables == [TT.MAJORS_TABLE, TT.PAIRS2_TABLE]
+    # new pairs merged into the main table: one file is enough
+    (tmp_path / TT.MAJORS_TABLE).write_text(json.dumps({"base_rate_pct": {s: 0.02 for s in syms}}))
+    assert TT.pair_list()[1] == [TT.MAJORS_TABLE]
+
+
+def test_preflight_blocks_until_both_cost_inputs_are_final():
+    from fxbot.backtest import tjr_test as TT
+    res = TT.preflight()
+    if not res["ok"]:
+        assert res["problems"]
+
