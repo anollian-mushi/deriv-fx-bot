@@ -28,6 +28,9 @@ trades a day) was registered as `i13_morning_overnight_v1` by the owner's
 approved exception to the frequency check; it needs about a year to reach
 100 forward trades. Details in
 [incubator/README.md](incubator/README.md#new-ideas-pre-screened-on-31-oct-2026-one-registered-by-exception).
+On 2 Nov 2026 the same rule was tested, unchanged, on six more pairs
+(AUD/USD, USD/CAD, USD/CHF, EUR/GBP, EUR/JPY, GBP/JPY) with their own measured
+costs: it lost before costs, so no second candidate was registered.
 
 **Live bot (demo only, from 31 Oct 2026):** runs one incubator candidate
 (`STRATEGY_ID`, or `leader` for the top of the leaderboard) on the Deriv demo

@@ -923,3 +923,42 @@ day) is waived for this candidate as for i13 (its expected trades per day is
 reported, never used to reject it); check 8 (diversity) is waived because it
 is deliberately the same rule as i13 on other pairs. All other checks apply
 unchanged. Results are appended below by the Monday run.
+
+**Result (Mon 2 Nov 2026): no pair dropped for cost; pre-screen FAILED; nothing
+registered.** Costs (highest x100 rate per hour, 12 hourly demo samples 06:00-18:00
+UTC, 14:00 missing because the scheduled sample arrived late): base rates
+AUD/USD 0.0400%, USD/CAD 0.0212%, USD/CHF 0.0360%, EUR/GBP 0.0243%, EUR/JPY
+0.0250%, GBP/JPY 0.0238%; 06:00 slightly raised (1.1-1.2x) on four pairs, 18:00
+about 2x on all six (outside the entry window anyway). Cost rule (expected move
+vs base-rate cost + 0.5 pip slippage): 8.7x, 8.7x, 10.2x, 6.2x, 12.5x, 13.8x,
+all far above 3x, so all six pairs stayed in. Pre-screen of the unchanged rule
+on the six pairs, data before 2026-10-31, six walk-forward rounds stitched
+(2023-10-27 to 2026-10-26): 572 trades (0.74 a day), **gross before costs
+-1.38 USD** (2.06 pips a trade), net -41.38 USD at the measured commission and
+-58.06 at 1.5x, win rate 44.8%, profit factor 0.82, no kill switch. Per pair,
+net / gross (trades): AUD/USD -30.65 / -17.60 (134), USD/CAD -2.11 / +0.54
+(53), USD/CHF +3.00 / +8.23 (61), EUR/GBP -3.82 / +1.69 (86), EUR/JPY +2.94 /
++10.40 (129), GBP/JPY -10.74 / -4.65 (109). Luck: beat 73% of 200 coin-toss
+runs on net (62% on gross), i.e. above the median but nowhere near the i13
+result on the majors (100%). Check 6 (profitable before costs) fails, so the
+rule does not carry to these pairs as a group. Checks 3 and 8 were waived by
+the owner and played no part. Picking only the pairs that happened to win
+(USD/CHF, EUR/JPY) is forbidden by the plan ("never pick pairs because of
+their pre-screen results"), so no candidate was registered. The cost table
+research/phase2/cost_by_hour_pairs2.json, the Dukascopy and Deriv history for
+the six pairs and the multi-pair engine support stay in the repo for future
+ideas. N stays 5.
+
+<!-- prescreen:morning_overnight_pairs2 start -->
+
+### morning_overnight_pairs2 (i13_morning_overnight, 1h): 1 variants
+
+Full-period result (2021-10-27 to 2026-10-30, measured cost) is for reference; selection used only each round's training window.
+
+| Date | Variant | Params | Full-period trades | Full-period net USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|
+| 2026-11-02 | morning_overnight_pairs2 v00 | decision_hour=8, k=0.4, stop=0.0 | 913 | -83.44 | 1 | 1, 2, 3, 4, 5, 6 |
+
+Stitched OOS (2023-10-27 to 2026-10-26, 776 trading days): 572 trades (0.74/day), net -41.38 USD (1.5x: -58.06), gross before costs -1.38 USD (2.06 pips/trade), avg |move| 44.97 pips vs cost 3.9 pips (ratio 11.55), win rate 44.8%, PF 0.823, kill events 0, per pair net/gross {AUDUSD: -30.65/-17.6 (134), USDCAD: -2.11/0.54 (53), USDCHF: 3.0/8.23 (61), EURGBP: -3.82/1.69 (86), EURJPY: 2.94/10.4 (129), GBPJPY: -10.74/-4.65 (109)}, per window gross [-6.84, -2.67, -2.24, -4.56, 10.03, 4.9]. Luck (200 coin-toss runs on the candidate's own signals): median net -55.97, share beaten 73%. Checks failed: ['c3_trades_per_day_1_5', 'c6_gross_positive']. **Pre-screen (check 6): FAIL**; all 2/3/5/6 checks: False. Files: `research/incubator_prescreen/morning_overnight_pairs2/`.
+
+<!-- prescreen:morning_overnight_pairs2 end -->

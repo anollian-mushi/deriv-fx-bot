@@ -1,0 +1,3002 @@
+[
+ {
+  "seed": 0,
+  "trades": 572,
+  "net_profit": -57.1,
+  "gross": -7.58,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -37.27,
+   "frxUSDCAD": -0.88,
+   "frxUSDCHF": -2.17,
+   "frxEURGBP": -14.1,
+   "frxEURJPY": 4.09,
+   "frxGBPJPY": -6.77
+  }
+ },
+ {
+  "seed": 1,
+  "trades": 572,
+  "net_profit": -104.64,
+  "gross": -58.64,
+  "kill_events": 2,
+  "per_pair_net": {
+   "frxAUDUSD": -14.02,
+   "frxUSDCAD": -3.77,
+   "frxUSDCHF": -9.48,
+   "frxEURGBP": -20.3,
+   "frxEURJPY": -49.69,
+   "frxGBPJPY": -7.38
+  }
+ },
+ {
+  "seed": 2,
+  "trades": 572,
+  "net_profit": -58.83,
+  "gross": -3.66,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -37.7,
+   "frxUSDCAD": -9.87,
+   "frxUSDCHF": 20.3,
+   "frxEURGBP": -3.05,
+   "frxEURJPY": -17.36,
+   "frxGBPJPY": -11.15
+  }
+ },
+ {
+  "seed": 3,
+  "trades": 572,
+  "net_profit": -72.84,
+  "gross": -26.36,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -24.7,
+   "frxUSDCAD": -1.82,
+   "frxUSDCHF": -20.45,
+   "frxEURGBP": -7.49,
+   "frxEURJPY": -19.67,
+   "frxGBPJPY": 1.29
+  }
+ },
+ {
+  "seed": 4,
+  "trades": 572,
+  "net_profit": -82.13,
+  "gross": -31.22,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -23.19,
+   "frxUSDCAD": -7.34,
+   "frxUSDCHF": -0.59,
+   "frxEURGBP": -13.82,
+   "frxEURJPY": -21.09,
+   "frxGBPJPY": -16.1
+  }
+ },
+ {
+  "seed": 5,
+  "trades": 572,
+  "net_profit": -22.27,
+  "gross": 26.58,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -16.59,
+   "frxUSDCAD": -12.22,
+   "frxUSDCHF": 3.38,
+   "frxEURGBP": 0.23,
+   "frxEURJPY": 2.63,
+   "frxGBPJPY": 0.3
+  }
+ },
+ {
+  "seed": 6,
+  "trades": 572,
+  "net_profit": -76.41,
+  "gross": -30.88,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -40.2,
+   "frxUSDCAD": 4.58,
+   "frxUSDCHF": 8.25,
+   "frxEURGBP": -2.14,
+   "frxEURJPY": -14.51,
+   "frxGBPJPY": -32.39
+  }
+ },
+ {
+  "seed": 7,
+  "trades": 572,
+  "net_profit": -36.22,
+  "gross": 7.6,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -6.56,
+   "frxUSDCAD": -8.97,
+   "frxUSDCHF": 2.53,
+   "frxEURGBP": -4.52,
+   "frxEURJPY": -11.41,
+   "frxGBPJPY": -7.29
+  }
+ },
+ {
+  "seed": 8,
+  "trades": 572,
+  "net_profit": -41.65,
+  "gross": 5.28,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -27.34,
+   "frxUSDCAD": -1.19,
+   "frxUSDCHF": 4.44,
+   "frxEURGBP": 2.69,
+   "frxEURJPY": -18.79,
+   "frxGBPJPY": -1.46
+  }
+ },
+ {
+  "seed": 9,
+  "trades": 572,
+  "net_profit": 14.14,
+  "gross": 79.02,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": 14.71,
+   "frxUSDCAD": 3.51,
+   "frxUSDCHF": -11.26,
+   "frxEURGBP": 1.93,
+   "frxEURJPY": -7.01,
+   "frxGBPJPY": 12.26
+  }
+ },
+ {
+  "seed": 10,
+  "trades": 572,
+  "net_profit": -27.57,
+  "gross": 15.79,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -9.57,
+   "frxUSDCAD": -1.64,
+   "frxUSDCHF": 2.89,
+   "frxEURGBP": -0.01,
+   "frxEURJPY": -4.54,
+   "frxGBPJPY": -14.7
+  }
+ },
+ {
+  "seed": 11,
+  "trades": 572,
+  "net_profit": -15.56,
+  "gross": 38.42,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -7.77,
+   "frxUSDCAD": -0.61,
+   "frxUSDCHF": 3.87,
+   "frxEURGBP": 3.21,
+   "frxEURJPY": -7.68,
+   "frxGBPJPY": -6.58
+  }
+ },
+ {
+  "seed": 12,
+  "trades": 572,
+  "net_profit": -85.47,
+  "gross": -38.34,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -33.08,
+   "frxUSDCAD": -11.94,
+   "frxUSDCHF": -4.39,
+   "frxEURGBP": -3.25,
+   "frxEURJPY": -12.88,
+   "frxGBPJPY": -19.93
+  }
+ },
+ {
+  "seed": 13,
+  "trades": 572,
+  "net_profit": -75.94,
+  "gross": -29.81,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -27.6,
+   "frxUSDCAD": -10.06,
+   "frxUSDCHF": 7.35,
+   "frxEURGBP": -12.96,
+   "frxEURJPY": -11.73,
+   "frxGBPJPY": -20.94
+  }
+ },
+ {
+  "seed": 14,
+  "trades": 572,
+  "net_profit": -68.23,
+  "gross": -22.41,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -34.82,
+   "frxUSDCAD": -4.11,
+   "frxUSDCHF": 11.58,
+   "frxEURGBP": -3.02,
+   "frxEURJPY": -30.33,
+   "frxGBPJPY": -7.53
+  }
+ },
+ {
+  "seed": 15,
+  "trades": 572,
+  "net_profit": -24.12,
+  "gross": 24.32,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -5.61,
+   "frxUSDCAD": -1.88,
+   "frxUSDCHF": -3.37,
+   "frxEURGBP": -4.14,
+   "frxEURJPY": 7.13,
+   "frxGBPJPY": -16.25
+  }
+ },
+ {
+  "seed": 16,
+  "trades": 572,
+  "net_profit": -57.62,
+  "gross": -13.44,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -29.82,
+   "frxUSDCAD": -5.89,
+   "frxUSDCHF": -3.52,
+   "frxEURGBP": 6.92,
+   "frxEURJPY": -16.1,
+   "frxGBPJPY": -9.21
+  }
+ },
+ {
+  "seed": 17,
+  "trades": 572,
+  "net_profit": -11.12,
+  "gross": 42.04,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": 13.53,
+   "frxUSDCAD": -5.89,
+   "frxUSDCHF": 11.04,
+   "frxEURGBP": -15.31,
+   "frxEURJPY": 2.95,
+   "frxGBPJPY": -17.44
+  }
+ },
+ {
+  "seed": 18,
+  "trades": 572,
+  "net_profit": -57.65,
+  "gross": -13.23,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -8.16,
+   "frxUSDCAD": 4.7,
+   "frxUSDCHF": -13.38,
+   "frxEURGBP": -1.7,
+   "frxEURJPY": -11.66,
+   "frxGBPJPY": -27.45
+  }
+ },
+ {
+  "seed": 19,
+  "trades": 572,
+  "net_profit": -91.71,
+  "gross": -49.21,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -47.48,
+   "frxUSDCAD": -10.59,
+   "frxUSDCHF": -8.15,
+   "frxEURGBP": -9.77,
+   "frxEURJPY": -18.81,
+   "frxGBPJPY": 3.09
+  }
+ },
+ {
+  "seed": 20,
+  "trades": 572,
+  "net_profit": -9.61,
+  "gross": 46.42,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -7.17,
+   "frxUSDCAD": -5.74,
+   "frxUSDCHF": 11.82,
+   "frxEURGBP": -6.96,
+   "frxEURJPY": -1.85,
+   "frxGBPJPY": 0.29
+  }
+ },
+ {
+  "seed": 21,
+  "trades": 572,
+  "net_profit": -41.96,
+  "gross": 6.68,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -39.17,
+   "frxUSDCAD": -6.0,
+   "frxUSDCHF": 5.1,
+   "frxEURGBP": -5.35,
+   "frxEURJPY": -24.51,
+   "frxGBPJPY": 27.97
+  }
+ },
+ {
+  "seed": 22,
+  "trades": 572,
+  "net_profit": -67.14,
+  "gross": -20.52,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -31.8,
+   "frxUSDCAD": -5.94,
+   "frxUSDCHF": -1.66,
+   "frxEURGBP": -6.39,
+   "frxEURJPY": -15.55,
+   "frxGBPJPY": -5.8
+  }
+ },
+ {
+  "seed": 23,
+  "trades": 572,
+  "net_profit": -79.99,
+  "gross": -34.18,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -16.97,
+   "frxUSDCAD": -7.55,
+   "frxUSDCHF": -9.68,
+   "frxEURGBP": -11.56,
+   "frxEURJPY": -24.92,
+   "frxGBPJPY": -9.31
+  }
+ },
+ {
+  "seed": 24,
+  "trades": 572,
+  "net_profit": -28.69,
+  "gross": 18.85,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -2.48,
+   "frxUSDCAD": 10.06,
+   "frxUSDCHF": 2.78,
+   "frxEURGBP": -8.46,
+   "frxEURJPY": -18.32,
+   "frxGBPJPY": -12.27
+  }
+ },
+ {
+  "seed": 25,
+  "trades": 572,
+  "net_profit": -49.75,
+  "gross": -7.22,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -29.37,
+   "frxUSDCAD": -3.68,
+   "frxUSDCHF": -5.48,
+   "frxEURGBP": -1.59,
+   "frxEURJPY": 1.42,
+   "frxGBPJPY": -11.05
+  }
+ },
+ {
+  "seed": 26,
+  "trades": 572,
+  "net_profit": -113.69,
+  "gross": -68.56,
+  "kill_events": 2,
+  "per_pair_net": {
+   "frxAUDUSD": -46.44,
+   "frxUSDCAD": 3.05,
+   "frxUSDCHF": -19.49,
+   "frxEURGBP": 1.01,
+   "frxEURJPY": -22.93,
+   "frxGBPJPY": -28.89
+  }
+ },
+ {
+  "seed": 27,
+  "trades": 572,
+  "net_profit": -70.8,
+  "gross": -23.68,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -35.15,
+   "frxUSDCAD": -7.87,
+   "frxUSDCHF": 2.9,
+   "frxEURGBP": -12.34,
+   "frxEURJPY": -6.0,
+   "frxGBPJPY": -12.34
+  }
+ },
+ {
+  "seed": 28,
+  "trades": 572,
+  "net_profit": -93.61,
+  "gross": -49.42,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -33.69,
+   "frxUSDCAD": -17.25,
+   "frxUSDCHF": 0.01,
+   "frxEURGBP": -10.01,
+   "frxEURJPY": -24.7,
+   "frxGBPJPY": -7.97
+  }
+ },
+ {
+  "seed": 29,
+  "trades": 572,
+  "net_profit": -27.91,
+  "gross": 25.68,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -20.46,
+   "frxUSDCAD": -11.41,
+   "frxUSDCHF": 0.52,
+   "frxEURGBP": -4.54,
+   "frxEURJPY": 7.66,
+   "frxGBPJPY": 0.32
+  }
+ },
+ {
+  "seed": 30,
+  "trades": 572,
+  "net_profit": -53.24,
+  "gross": -3.49,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -0.63,
+   "frxUSDCAD": 1.73,
+   "frxUSDCHF": -12.62,
+   "frxEURGBP": -2.33,
+   "frxEURJPY": -26.8,
+   "frxGBPJPY": -12.59
+  }
+ },
+ {
+  "seed": 31,
+  "trades": 572,
+  "net_profit": -57.64,
+  "gross": -7.88,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -33.52,
+   "frxUSDCAD": 9.43,
+   "frxUSDCHF": 7.73,
+   "frxEURGBP": -8.5,
+   "frxEURJPY": -17.32,
+   "frxGBPJPY": -15.46
+  }
+ },
+ {
+  "seed": 32,
+  "trades": 572,
+  "net_profit": -52.26,
+  "gross": -5.97,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -18.79,
+   "frxUSDCAD": -3.05,
+   "frxUSDCHF": -9.84,
+   "frxEURGBP": -6.31,
+   "frxEURJPY": -11.87,
+   "frxGBPJPY": -2.4
+  }
+ },
+ {
+  "seed": 33,
+  "trades": 572,
+  "net_profit": -26.24,
+  "gross": 24.97,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -6.52,
+   "frxUSDCAD": -3.56,
+   "frxUSDCHF": 11.21,
+   "frxEURGBP": -4.9,
+   "frxEURJPY": -13.74,
+   "frxGBPJPY": -8.73
+  }
+ },
+ {
+  "seed": 34,
+  "trades": 572,
+  "net_profit": -95.62,
+  "gross": -51.8,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -22.59,
+   "frxUSDCAD": -7.42,
+   "frxUSDCHF": -5.34,
+   "frxEURGBP": -4.48,
+   "frxEURJPY": -39.75,
+   "frxGBPJPY": -16.04
+  }
+ },
+ {
+  "seed": 35,
+  "trades": 572,
+  "net_profit": -62.22,
+  "gross": -20.08,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -23.72,
+   "frxUSDCAD": 0.18,
+   "frxUSDCHF": -2.61,
+   "frxEURGBP": -0.07,
+   "frxEURJPY": -4.26,
+   "frxGBPJPY": -31.74
+  }
+ },
+ {
+  "seed": 36,
+  "trades": 572,
+  "net_profit": -44.47,
+  "gross": 2.36,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -2.96,
+   "frxUSDCAD": -9.33,
+   "frxUSDCHF": 1.66,
+   "frxEURGBP": 2.38,
+   "frxEURJPY": -31.13,
+   "frxGBPJPY": -5.09
+  }
+ },
+ {
+  "seed": 37,
+  "trades": 572,
+  "net_profit": -10.38,
+  "gross": 37.5,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": 16.49,
+   "frxUSDCAD": -4.79,
+   "frxUSDCHF": 6.22,
+   "frxEURGBP": -11.44,
+   "frxEURJPY": -2.78,
+   "frxGBPJPY": -14.08
+  }
+ },
+ {
+  "seed": 38,
+  "trades": 572,
+  "net_profit": -42.34,
+  "gross": 7.34,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -16.4,
+   "frxUSDCAD": 2.77,
+   "frxUSDCHF": -1.21,
+   "frxEURGBP": -15.95,
+   "frxEURJPY": -15.06,
+   "frxGBPJPY": 3.51
+  }
+ },
+ {
+  "seed": 39,
+  "trades": 572,
+  "net_profit": -72.42,
+  "gross": -20.07,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -25.23,
+   "frxUSDCAD": -11.22,
+   "frxUSDCHF": -17.59,
+   "frxEURGBP": 2.64,
+   "frxEURJPY": -1.29,
+   "frxGBPJPY": -19.73
+  }
+ },
+ {
+  "seed": 40,
+  "trades": 572,
+  "net_profit": -30.88,
+  "gross": 21.97,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -1.17,
+   "frxUSDCAD": -1.48,
+   "frxUSDCHF": -2.85,
+   "frxEURGBP": -8.84,
+   "frxEURJPY": 3.61,
+   "frxGBPJPY": -20.15
+  }
+ },
+ {
+  "seed": 41,
+  "trades": 572,
+  "net_profit": -31.48,
+  "gross": 19.75,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -12.13,
+   "frxUSDCAD": -0.75,
+   "frxUSDCHF": 1.84,
+   "frxEURGBP": -0.38,
+   "frxEURJPY": 3.91,
+   "frxGBPJPY": -23.97
+  }
+ },
+ {
+  "seed": 42,
+  "trades": 572,
+  "net_profit": 5.05,
+  "gross": 69.63,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -2.86,
+   "frxUSDCAD": -0.88,
+   "frxUSDCHF": -0.26,
+   "frxEURGBP": -3.93,
+   "frxEURJPY": 19.17,
+   "frxGBPJPY": -6.19
+  }
+ },
+ {
+  "seed": 43,
+  "trades": 572,
+  "net_profit": -67.51,
+  "gross": -25.17,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -20.76,
+   "frxUSDCAD": -2.57,
+   "frxUSDCHF": -20.26,
+   "frxEURGBP": -10.25,
+   "frxEURJPY": -20.71,
+   "frxGBPJPY": 7.04
+  }
+ },
+ {
+  "seed": 44,
+  "trades": 572,
+  "net_profit": -82.79,
+  "gross": -36.34,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -32.88,
+   "frxUSDCAD": 11.68,
+   "frxUSDCHF": -8.81,
+   "frxEURGBP": -6.61,
+   "frxEURJPY": -24.89,
+   "frxGBPJPY": -21.28
+  }
+ },
+ {
+  "seed": 45,
+  "trades": 572,
+  "net_profit": -34.2,
+  "gross": 12.88,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -7.27,
+   "frxUSDCAD": -3.89,
+   "frxUSDCHF": -7.17,
+   "frxEURGBP": -8.24,
+   "frxEURJPY": -5.01,
+   "frxGBPJPY": -2.62
+  }
+ },
+ {
+  "seed": 46,
+  "trades": 572,
+  "net_profit": -37.15,
+  "gross": 15.56,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -27.18,
+   "frxUSDCAD": -4.83,
+   "frxUSDCHF": 15.14,
+   "frxEURGBP": -1.61,
+   "frxEURJPY": -15.53,
+   "frxGBPJPY": -3.14
+  }
+ },
+ {
+  "seed": 47,
+  "trades": 572,
+  "net_profit": -87.14,
+  "gross": -47.54,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -37.09,
+   "frxUSDCAD": -0.96,
+   "frxUSDCHF": -2.35,
+   "frxEURGBP": -9.25,
+   "frxEURJPY": -15.46,
+   "frxGBPJPY": -22.03
+  }
+ },
+ {
+  "seed": 48,
+  "trades": 572,
+  "net_profit": -30.84,
+  "gross": 15.5,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": 2.02,
+   "frxUSDCAD": -0.84,
+   "frxUSDCHF": -8.17,
+   "frxEURGBP": -12.26,
+   "frxEURJPY": -6.44,
+   "frxGBPJPY": -5.15
+  }
+ },
+ {
+  "seed": 49,
+  "trades": 572,
+  "net_profit": -63.78,
+  "gross": -17.45,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -10.79,
+   "frxUSDCAD": -1.32,
+   "frxUSDCHF": -18.91,
+   "frxEURGBP": -5.93,
+   "frxEURJPY": -8.99,
+   "frxGBPJPY": -17.84
+  }
+ },
+ {
+  "seed": 50,
+  "trades": 572,
+  "net_profit": -46.36,
+  "gross": -3.46,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -5.95,
+   "frxUSDCAD": 3.44,
+   "frxUSDCHF": -18.39,
+   "frxEURGBP": -8.19,
+   "frxEURJPY": -0.76,
+   "frxGBPJPY": -16.51
+  }
+ },
+ {
+  "seed": 51,
+  "trades": 572,
+  "net_profit": -70.19,
+  "gross": -21.34,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -4.13,
+   "frxUSDCAD": -3.43,
+   "frxUSDCHF": -24.91,
+   "frxEURGBP": -15.48,
+   "frxEURJPY": -8.18,
+   "frxGBPJPY": -14.06
+  }
+ },
+ {
+  "seed": 52,
+  "trades": 572,
+  "net_profit": -34.99,
+  "gross": 16.69,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -36.46,
+   "frxUSDCAD": -0.16,
+   "frxUSDCHF": 8.44,
+   "frxEURGBP": -1.57,
+   "frxEURJPY": 3.33,
+   "frxGBPJPY": -8.57
+  }
+ },
+ {
+  "seed": 53,
+  "trades": 572,
+  "net_profit": -46.28,
+  "gross": 7.12,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -16.68,
+   "frxUSDCAD": -6.2,
+   "frxUSDCHF": -10.62,
+   "frxEURGBP": -2.39,
+   "frxEURJPY": -17.04,
+   "frxGBPJPY": 6.65
+  }
+ },
+ {
+  "seed": 54,
+  "trades": 572,
+  "net_profit": -70.08,
+  "gross": -18.74,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -28.25,
+   "frxUSDCAD": -4.01,
+   "frxUSDCHF": -8.28,
+   "frxEURGBP": -9.87,
+   "frxEURJPY": -19.9,
+   "frxGBPJPY": 0.23
+  }
+ },
+ {
+  "seed": 55,
+  "trades": 572,
+  "net_profit": -94.29,
+  "gross": -52.28,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -4.51,
+   "frxUSDCAD": -3.34,
+   "frxUSDCHF": -27.42,
+   "frxEURGBP": -1.59,
+   "frxEURJPY": -33.29,
+   "frxGBPJPY": -24.14
+  }
+ },
+ {
+  "seed": 56,
+  "trades": 572,
+  "net_profit": -34.73,
+  "gross": 23.56,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -26.92,
+   "frxUSDCAD": -16.79,
+   "frxUSDCHF": 3.46,
+   "frxEURGBP": -4.83,
+   "frxEURJPY": 17.43,
+   "frxGBPJPY": -7.08
+  }
+ },
+ {
+  "seed": 57,
+  "trades": 572,
+  "net_profit": -62.14,
+  "gross": -14.51,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -33.17,
+   "frxUSDCAD": -7.99,
+   "frxUSDCHF": 5.73,
+   "frxEURGBP": -6.27,
+   "frxEURJPY": -12.46,
+   "frxGBPJPY": -7.98
+  }
+ },
+ {
+  "seed": 58,
+  "trades": 572,
+  "net_profit": -42.18,
+  "gross": 8.91,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -0.26,
+   "frxUSDCAD": -9.23,
+   "frxUSDCHF": 8.75,
+   "frxEURGBP": -9.07,
+   "frxEURJPY": -18.04,
+   "frxGBPJPY": -14.33
+  }
+ },
+ {
+  "seed": 59,
+  "trades": 572,
+  "net_profit": -72.46,
+  "gross": -20.2,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -17.65,
+   "frxUSDCAD": -11.02,
+   "frxUSDCHF": -0.8,
+   "frxEURGBP": -4.49,
+   "frxEURJPY": -28.71,
+   "frxGBPJPY": -9.79
+  }
+ },
+ {
+  "seed": 60,
+  "trades": 572,
+  "net_profit": -44.08,
+  "gross": -4.45,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -28.42,
+   "frxUSDCAD": -4.73,
+   "frxUSDCHF": 5.9,
+   "frxEURGBP": -19.13,
+   "frxEURJPY": -0.35,
+   "frxGBPJPY": 2.65
+  }
+ },
+ {
+  "seed": 61,
+  "trades": 572,
+  "net_profit": -88.13,
+  "gross": -44.67,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -28.18,
+   "frxUSDCAD": -6.47,
+   "frxUSDCHF": 2.87,
+   "frxEURGBP": -7.65,
+   "frxEURJPY": -8.98,
+   "frxGBPJPY": -39.72
+  }
+ },
+ {
+  "seed": 62,
+  "trades": 572,
+  "net_profit": -89.11,
+  "gross": -45.74,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -28.84,
+   "frxUSDCAD": -4.39,
+   "frxUSDCHF": -6.61,
+   "frxEURGBP": -18.12,
+   "frxEURJPY": -15.82,
+   "frxGBPJPY": -15.33
+  }
+ },
+ {
+  "seed": 63,
+  "trades": 572,
+  "net_profit": -81.26,
+  "gross": -34.85,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -20.66,
+   "frxUSDCAD": -0.72,
+   "frxUSDCHF": -11.89,
+   "frxEURGBP": -17.15,
+   "frxEURJPY": -11.48,
+   "frxGBPJPY": -19.36
+  }
+ },
+ {
+  "seed": 64,
+  "trades": 572,
+  "net_profit": -56.13,
+  "gross": -14.97,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -13.01,
+   "frxUSDCAD": -4.21,
+   "frxUSDCHF": -1.39,
+   "frxEURGBP": -12.02,
+   "frxEURJPY": -9.71,
+   "frxGBPJPY": -15.79
+  }
+ },
+ {
+  "seed": 65,
+  "trades": 572,
+  "net_profit": -61.49,
+  "gross": -13.81,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -10.36,
+   "frxUSDCAD": -12.91,
+   "frxUSDCHF": -15.93,
+   "frxEURGBP": -10.23,
+   "frxEURJPY": 3.37,
+   "frxGBPJPY": -15.43
+  }
+ },
+ {
+  "seed": 66,
+  "trades": 572,
+  "net_profit": -16.51,
+  "gross": 36.24,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": 13.67,
+   "frxUSDCAD": -1.56,
+   "frxUSDCHF": -10.19,
+   "frxEURGBP": -7.83,
+   "frxEURJPY": -6.37,
+   "frxGBPJPY": -4.23
+  }
+ },
+ {
+  "seed": 67,
+  "trades": 572,
+  "net_profit": -57.98,
+  "gross": 0.17,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -31.23,
+   "frxUSDCAD": 13.26,
+   "frxUSDCHF": -21.43,
+   "frxEURGBP": -0.65,
+   "frxEURJPY": -9.03,
+   "frxGBPJPY": -8.9
+  }
+ },
+ {
+  "seed": 68,
+  "trades": 572,
+  "net_profit": -31.29,
+  "gross": 15.11,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": 3.14,
+   "frxUSDCAD": -13.22,
+   "frxUSDCHF": 9.47,
+   "frxEURGBP": -5.87,
+   "frxEURJPY": 4.17,
+   "frxGBPJPY": -28.98
+  }
+ },
+ {
+  "seed": 69,
+  "trades": 572,
+  "net_profit": -89.01,
+  "gross": -43.67,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -45.52,
+   "frxUSDCAD": -7.08,
+   "frxUSDCHF": -13.45,
+   "frxEURGBP": -2.25,
+   "frxEURJPY": -4.57,
+   "frxGBPJPY": -16.14
+  }
+ },
+ {
+  "seed": 70,
+  "trades": 572,
+  "net_profit": -81.09,
+  "gross": -32.17,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -29.04,
+   "frxUSDCAD": 0.4,
+   "frxUSDCHF": -3.16,
+   "frxEURGBP": -6.71,
+   "frxEURJPY": -19.99,
+   "frxGBPJPY": -22.59
+  }
+ },
+ {
+  "seed": 71,
+  "trades": 572,
+  "net_profit": -27.79,
+  "gross": 20.69,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -4.2,
+   "frxUSDCAD": -4.48,
+   "frxUSDCHF": 5.61,
+   "frxEURGBP": 0.94,
+   "frxEURJPY": -11.1,
+   "frxGBPJPY": -14.56
+  }
+ },
+ {
+  "seed": 72,
+  "trades": 572,
+  "net_profit": -49.34,
+  "gross": 0.08,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -5.21,
+   "frxUSDCAD": -7.09,
+   "frxUSDCHF": -3.49,
+   "frxEURGBP": 0.7,
+   "frxEURJPY": -11.86,
+   "frxGBPJPY": -22.39
+  }
+ },
+ {
+  "seed": 73,
+  "trades": 572,
+  "net_profit": -52.28,
+  "gross": -2.54,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": 13.3,
+   "frxUSDCAD": -8.9,
+   "frxUSDCHF": -4.9,
+   "frxEURGBP": -10.61,
+   "frxEURJPY": -24.14,
+   "frxGBPJPY": -17.03
+  }
+ },
+ {
+  "seed": 74,
+  "trades": 572,
+  "net_profit": -52.39,
+  "gross": -8.74,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -10.78,
+   "frxUSDCAD": -2.83,
+   "frxUSDCHF": -5.08,
+   "frxEURGBP": 3.16,
+   "frxEURJPY": -19.43,
+   "frxGBPJPY": -17.43
+  }
+ },
+ {
+  "seed": 75,
+  "trades": 572,
+  "net_profit": -45.23,
+  "gross": 3.27,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -22.56,
+   "frxUSDCAD": -8.28,
+   "frxUSDCHF": 2.56,
+   "frxEURGBP": 2.64,
+   "frxEURJPY": -15.03,
+   "frxGBPJPY": -4.56
+  }
+ },
+ {
+  "seed": 76,
+  "trades": 572,
+  "net_profit": -54.18,
+  "gross": -7.44,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -28.45,
+   "frxUSDCAD": 6.62,
+   "frxUSDCHF": -16.82,
+   "frxEURGBP": -6.87,
+   "frxEURJPY": -1.44,
+   "frxGBPJPY": -7.22
+  }
+ },
+ {
+  "seed": 77,
+  "trades": 572,
+  "net_profit": -47.84,
+  "gross": -0.29,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -19.97,
+   "frxUSDCAD": 0.86,
+   "frxUSDCHF": -1.97,
+   "frxEURGBP": -10.5,
+   "frxEURJPY": -3.48,
+   "frxGBPJPY": -12.78
+  }
+ },
+ {
+  "seed": 78,
+  "trades": 572,
+  "net_profit": -81.51,
+  "gross": -32.16,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -32.74,
+   "frxUSDCAD": -4.84,
+   "frxUSDCHF": -12.92,
+   "frxEURGBP": -5.25,
+   "frxEURJPY": -32.15,
+   "frxGBPJPY": 6.39
+  }
+ },
+ {
+  "seed": 79,
+  "trades": 572,
+  "net_profit": 3.58,
+  "gross": 67.54,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": 18.28,
+   "frxUSDCAD": 3.76,
+   "frxUSDCHF": -11.3,
+   "frxEURGBP": -0.3,
+   "frxEURJPY": -7.09,
+   "frxGBPJPY": 0.23
+  }
+ },
+ {
+  "seed": 80,
+  "trades": 572,
+  "net_profit": -61.92,
+  "gross": -15.35,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -23.05,
+   "frxUSDCAD": -4.24,
+   "frxUSDCHF": -1.85,
+   "frxEURGBP": 3.7,
+   "frxEURJPY": -20.66,
+   "frxGBPJPY": -15.82
+  }
+ },
+ {
+  "seed": 81,
+  "trades": 572,
+  "net_profit": -56.72,
+  "gross": -9.44,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -12.4,
+   "frxUSDCAD": 3.63,
+   "frxUSDCHF": -21.75,
+   "frxEURGBP": -1.97,
+   "frxEURJPY": -27.02,
+   "frxGBPJPY": 2.79
+  }
+ },
+ {
+  "seed": 82,
+  "trades": 572,
+  "net_profit": -40.76,
+  "gross": 2.61,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": 9.0,
+   "frxUSDCAD": -3.53,
+   "frxUSDCHF": -17.95,
+   "frxEURGBP": -22.01,
+   "frxEURJPY": 1.0,
+   "frxGBPJPY": -7.27
+  }
+ },
+ {
+  "seed": 83,
+  "trades": 572,
+  "net_profit": -43.87,
+  "gross": 0.32,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -25.61,
+   "frxUSDCAD": -6.06,
+   "frxUSDCHF": -3.86,
+   "frxEURGBP": 0.58,
+   "frxEURJPY": -10.22,
+   "frxGBPJPY": 1.3
+  }
+ },
+ {
+  "seed": 84,
+  "trades": 572,
+  "net_profit": -55.81,
+  "gross": -8.63,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -31.08,
+   "frxUSDCAD": -5.24,
+   "frxUSDCHF": -8.71,
+   "frxEURGBP": -9.32,
+   "frxEURJPY": 4.08,
+   "frxGBPJPY": -5.54
+  }
+ },
+ {
+  "seed": 85,
+  "trades": 572,
+  "net_profit": -77.32,
+  "gross": -29.3,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -34.43,
+   "frxUSDCAD": -10.62,
+   "frxUSDCHF": -15.17,
+   "frxEURGBP": 3.91,
+   "frxEURJPY": -4.3,
+   "frxGBPJPY": -16.71
+  }
+ },
+ {
+  "seed": 86,
+  "trades": 571,
+  "net_profit": -66.73,
+  "gross": -23.92,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -12.07,
+   "frxUSDCAD": 2.78,
+   "frxUSDCHF": -8.05,
+   "frxEURGBP": -11.7,
+   "frxEURJPY": -17.62,
+   "frxGBPJPY": -20.07
+  }
+ },
+ {
+  "seed": 87,
+  "trades": 572,
+  "net_profit": -58.94,
+  "gross": -13.08,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -44.63,
+   "frxUSDCAD": 11.8,
+   "frxUSDCHF": -9.24,
+   "frxEURGBP": 1.45,
+   "frxEURJPY": -7.48,
+   "frxGBPJPY": -10.84
+  }
+ },
+ {
+  "seed": 88,
+  "trades": 572,
+  "net_profit": -42.66,
+  "gross": 3.58,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -3.19,
+   "frxUSDCAD": 0.93,
+   "frxUSDCHF": -15.28,
+   "frxEURGBP": -0.34,
+   "frxEURJPY": -17.7,
+   "frxGBPJPY": -7.08
+  }
+ },
+ {
+  "seed": 89,
+  "trades": 572,
+  "net_profit": -18.13,
+  "gross": 35.69,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -9.56,
+   "frxUSDCAD": -5.49,
+   "frxUSDCHF": -11.28,
+   "frxEURGBP": -2.0,
+   "frxEURJPY": -11.45,
+   "frxGBPJPY": 21.65
+  }
+ },
+ {
+  "seed": 90,
+  "trades": 572,
+  "net_profit": -47.12,
+  "gross": -3.25,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -15.16,
+   "frxUSDCAD": 2.33,
+   "frxUSDCHF": -22.69,
+   "frxEURGBP": 3.05,
+   "frxEURJPY": 1.49,
+   "frxGBPJPY": -16.14
+  }
+ },
+ {
+  "seed": 91,
+  "trades": 572,
+  "net_profit": -45.05,
+  "gross": 0.1,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -28.94,
+   "frxUSDCAD": -0.96,
+   "frxUSDCHF": -7.01,
+   "frxEURGBP": -15.28,
+   "frxEURJPY": 1.04,
+   "frxGBPJPY": 6.1
+  }
+ },
+ {
+  "seed": 92,
+  "trades": 572,
+  "net_profit": -62.97,
+  "gross": -16.06,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -10.27,
+   "frxUSDCAD": -9.47,
+   "frxUSDCHF": 5.89,
+   "frxEURGBP": -10.82,
+   "frxEURJPY": -21.94,
+   "frxGBPJPY": -16.36
+  }
+ },
+ {
+  "seed": 93,
+  "trades": 572,
+  "net_profit": -42.57,
+  "gross": 2.39,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -0.32,
+   "frxUSDCAD": -0.98,
+   "frxUSDCHF": 5.44,
+   "frxEURGBP": -11.22,
+   "frxEURJPY": -5.62,
+   "frxGBPJPY": -29.87
+  }
+ },
+ {
+  "seed": 94,
+  "trades": 572,
+  "net_profit": -46.71,
+  "gross": 3.45,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -7.63,
+   "frxUSDCAD": -3.19,
+   "frxUSDCHF": 17.82,
+   "frxEURGBP": -10.28,
+   "frxEURJPY": -29.89,
+   "frxGBPJPY": -13.54
+  }
+ },
+ {
+  "seed": 95,
+  "trades": 572,
+  "net_profit": -47.62,
+  "gross": 2.13,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -22.05,
+   "frxUSDCAD": -8.96,
+   "frxUSDCHF": 3.92,
+   "frxEURGBP": 1.24,
+   "frxEURJPY": -6.11,
+   "frxGBPJPY": -15.66
+  }
+ },
+ {
+  "seed": 96,
+  "trades": 572,
+  "net_profit": -63.38,
+  "gross": -10.83,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -17.02,
+   "frxUSDCAD": 5.99,
+   "frxUSDCHF": -10.01,
+   "frxEURGBP": -0.1,
+   "frxEURJPY": -32.91,
+   "frxGBPJPY": -9.33
+  }
+ },
+ {
+  "seed": 97,
+  "trades": 572,
+  "net_profit": -59.73,
+  "gross": -10.75,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -37.06,
+   "frxUSDCAD": -6.71,
+   "frxUSDCHF": -4.37,
+   "frxEURGBP": 3.39,
+   "frxEURJPY": -19.28,
+   "frxGBPJPY": 4.3
+  }
+ },
+ {
+  "seed": 98,
+  "trades": 572,
+  "net_profit": -70.68,
+  "gross": -22.42,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -17.85,
+   "frxUSDCAD": -6.11,
+   "frxUSDCHF": 4.55,
+   "frxEURGBP": -2.07,
+   "frxEURJPY": -22.16,
+   "frxGBPJPY": -27.04
+  }
+ },
+ {
+  "seed": 99,
+  "trades": 572,
+  "net_profit": -38.85,
+  "gross": 2.35,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -12.11,
+   "frxUSDCAD": -1.16,
+   "frxUSDCHF": -11.91,
+   "frxEURGBP": 2.7,
+   "frxEURJPY": -24.47,
+   "frxGBPJPY": 8.1
+  }
+ },
+ {
+  "seed": 100,
+  "trades": 572,
+  "net_profit": -70.33,
+  "gross": -27.09,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -18.31,
+   "frxUSDCAD": -11.46,
+   "frxUSDCHF": 10.29,
+   "frxEURGBP": -3.37,
+   "frxEURJPY": -15.09,
+   "frxGBPJPY": -32.39
+  }
+ },
+ {
+  "seed": 101,
+  "trades": 572,
+  "net_profit": -85.3,
+  "gross": -41.72,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -48.68,
+   "frxUSDCAD": -2.17,
+   "frxUSDCHF": -10.78,
+   "frxEURGBP": -6.84,
+   "frxEURJPY": -21.98,
+   "frxGBPJPY": 5.15
+  }
+ },
+ {
+  "seed": 102,
+  "trades": 572,
+  "net_profit": -28.16,
+  "gross": 18.26,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -16.21,
+   "frxUSDCAD": -0.45,
+   "frxUSDCHF": 9.56,
+   "frxEURGBP": -1.88,
+   "frxEURJPY": -16.69,
+   "frxGBPJPY": -2.49
+  }
+ },
+ {
+  "seed": 103,
+  "trades": 572,
+  "net_profit": -67.33,
+  "gross": -20.12,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -19.8,
+   "frxUSDCAD": -6.58,
+   "frxUSDCHF": 4.11,
+   "frxEURGBP": -9.42,
+   "frxEURJPY": -35.46,
+   "frxGBPJPY": -0.18
+  }
+ },
+ {
+  "seed": 104,
+  "trades": 572,
+  "net_profit": -44.36,
+  "gross": -3.16,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -20.76,
+   "frxUSDCAD": 7.42,
+   "frxUSDCHF": 1.02,
+   "frxEURGBP": -5.38,
+   "frxEURJPY": -24.18,
+   "frxGBPJPY": -2.48
+  }
+ },
+ {
+  "seed": 105,
+  "trades": 572,
+  "net_profit": -27.01,
+  "gross": 19.7,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -9.9,
+   "frxUSDCAD": -12.83,
+   "frxUSDCHF": 0.11,
+   "frxEURGBP": -8.12,
+   "frxEURJPY": 0.21,
+   "frxGBPJPY": 3.52
+  }
+ },
+ {
+  "seed": 106,
+  "trades": 572,
+  "net_profit": -17.12,
+  "gross": 36.76,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -13.99,
+   "frxUSDCAD": -3.71,
+   "frxUSDCHF": 9.57,
+   "frxEURGBP": 0.11,
+   "frxEURJPY": -25.08,
+   "frxGBPJPY": 15.98
+  }
+ },
+ {
+  "seed": 107,
+  "trades": 572,
+  "net_profit": -61.12,
+  "gross": -16.57,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -19.14,
+   "frxUSDCAD": 3.87,
+   "frxUSDCHF": -9.13,
+   "frxEURGBP": -12.52,
+   "frxEURJPY": -17.28,
+   "frxGBPJPY": -6.92
+  }
+ },
+ {
+  "seed": 108,
+  "trades": 572,
+  "net_profit": -43.91,
+  "gross": -5.97,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -20.66,
+   "frxUSDCAD": -10.89,
+   "frxUSDCHF": 7.23,
+   "frxEURGBP": 2.43,
+   "frxEURJPY": -14.73,
+   "frxGBPJPY": -7.29
+  }
+ },
+ {
+  "seed": 109,
+  "trades": 572,
+  "net_profit": -49.54,
+  "gross": -5.92,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -19.54,
+   "frxUSDCAD": -6.67,
+   "frxUSDCHF": -4.93,
+   "frxEURGBP": -7.83,
+   "frxEURJPY": 0.74,
+   "frxGBPJPY": -11.31
+  }
+ },
+ {
+  "seed": 110,
+  "trades": 572,
+  "net_profit": -36.18,
+  "gross": 4.19,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -24.76,
+   "frxUSDCAD": -5.36,
+   "frxUSDCHF": 2.76,
+   "frxEURGBP": -3.66,
+   "frxEURJPY": -5.83,
+   "frxGBPJPY": 0.67
+  }
+ },
+ {
+  "seed": 111,
+  "trades": 572,
+  "net_profit": -59.58,
+  "gross": -4.87,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -3.0,
+   "frxUSDCAD": 1.24,
+   "frxUSDCHF": -16.35,
+   "frxEURGBP": -5.07,
+   "frxEURJPY": -33.42,
+   "frxGBPJPY": -2.98
+  }
+ },
+ {
+  "seed": 112,
+  "trades": 572,
+  "net_profit": -76.31,
+  "gross": -28.38,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -21.6,
+   "frxUSDCAD": -10.79,
+   "frxUSDCHF": -3.38,
+   "frxEURGBP": -0.52,
+   "frxEURJPY": -19.92,
+   "frxGBPJPY": -20.1
+  }
+ },
+ {
+  "seed": 113,
+  "trades": 572,
+  "net_profit": -80.08,
+  "gross": -30.47,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -14.13,
+   "frxUSDCAD": -5.58,
+   "frxUSDCHF": -15.21,
+   "frxEURGBP": -2.53,
+   "frxEURJPY": -29.81,
+   "frxGBPJPY": -12.82
+  }
+ },
+ {
+  "seed": 114,
+  "trades": 572,
+  "net_profit": -64.96,
+  "gross": -15.44,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -32.21,
+   "frxUSDCAD": -4.45,
+   "frxUSDCHF": 0.47,
+   "frxEURGBP": -6.09,
+   "frxEURJPY": -13.53,
+   "frxGBPJPY": -9.15
+  }
+ },
+ {
+  "seed": 115,
+  "trades": 572,
+  "net_profit": -79.94,
+  "gross": -37.17,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -38.34,
+   "frxUSDCAD": 3.06,
+   "frxUSDCHF": 3.07,
+   "frxEURGBP": -9.84,
+   "frxEURJPY": -18.37,
+   "frxGBPJPY": -19.52
+  }
+ },
+ {
+  "seed": 116,
+  "trades": 572,
+  "net_profit": -27.39,
+  "gross": 23.29,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -35.66,
+   "frxUSDCAD": -1.54,
+   "frxUSDCHF": 13.28,
+   "frxEURGBP": -7.73,
+   "frxEURJPY": 3.7,
+   "frxGBPJPY": 0.56
+  }
+ },
+ {
+  "seed": 117,
+  "trades": 572,
+  "net_profit": -74.0,
+  "gross": -24.91,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -20.42,
+   "frxUSDCAD": -13.06,
+   "frxUSDCHF": -6.17,
+   "frxEURGBP": -1.21,
+   "frxEURJPY": -13.33,
+   "frxGBPJPY": -19.81
+  }
+ },
+ {
+  "seed": 118,
+  "trades": 572,
+  "net_profit": -94.04,
+  "gross": -52.54,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -33.79,
+   "frxUSDCAD": -4.58,
+   "frxUSDCHF": -14.05,
+   "frxEURGBP": 3.6,
+   "frxEURJPY": -17.48,
+   "frxGBPJPY": -27.74
+  }
+ },
+ {
+  "seed": 119,
+  "trades": 572,
+  "net_profit": -93.37,
+  "gross": -46.59,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -28.19,
+   "frxUSDCAD": -13.28,
+   "frxUSDCHF": 6.75,
+   "frxEURGBP": -10.37,
+   "frxEURJPY": -35.87,
+   "frxGBPJPY": -12.41
+  }
+ },
+ {
+  "seed": 120,
+  "trades": 572,
+  "net_profit": -65.7,
+  "gross": -22.21,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -6.05,
+   "frxUSDCAD": -6.43,
+   "frxUSDCHF": -12.06,
+   "frxEURGBP": -3.77,
+   "frxEURJPY": -18.3,
+   "frxGBPJPY": -19.09
+  }
+ },
+ {
+  "seed": 121,
+  "trades": 572,
+  "net_profit": -57.42,
+  "gross": -5.72,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -16.08,
+   "frxUSDCAD": 2.92,
+   "frxUSDCHF": -17.94,
+   "frxEURGBP": -0.27,
+   "frxEURJPY": -12.46,
+   "frxGBPJPY": -13.59
+  }
+ },
+ {
+  "seed": 122,
+  "trades": 572,
+  "net_profit": -83.99,
+  "gross": -40.4,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -19.04,
+   "frxUSDCAD": -8.83,
+   "frxUSDCHF": -17.09,
+   "frxEURGBP": -5.78,
+   "frxEURJPY": -26.24,
+   "frxGBPJPY": -7.01
+  }
+ },
+ {
+  "seed": 123,
+  "trades": 572,
+  "net_profit": -81.55,
+  "gross": -36.17,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -24.33,
+   "frxUSDCAD": -5.82,
+   "frxUSDCHF": -20.01,
+   "frxEURGBP": -10.88,
+   "frxEURJPY": -6.46,
+   "frxGBPJPY": -14.05
+  }
+ },
+ {
+  "seed": 124,
+  "trades": 572,
+  "net_profit": -56.89,
+  "gross": -13.81,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -37.4,
+   "frxUSDCAD": 0.04,
+   "frxUSDCHF": -0.23,
+   "frxEURGBP": -1.77,
+   "frxEURJPY": -9.01,
+   "frxGBPJPY": -8.52
+  }
+ },
+ {
+  "seed": 125,
+  "trades": 572,
+  "net_profit": -37.63,
+  "gross": 2.78,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -3.63,
+   "frxUSDCAD": -1.21,
+   "frxUSDCHF": -4.57,
+   "frxEURGBP": -10.64,
+   "frxEURJPY": -18.37,
+   "frxGBPJPY": 0.79
+  }
+ },
+ {
+  "seed": 126,
+  "trades": 572,
+  "net_profit": -55.25,
+  "gross": -1.02,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -23.61,
+   "frxUSDCAD": 2.57,
+   "frxUSDCHF": 15.38,
+   "frxEURGBP": -7.03,
+   "frxEURJPY": -10.65,
+   "frxGBPJPY": -31.91
+  }
+ },
+ {
+  "seed": 127,
+  "trades": 572,
+  "net_profit": -38.6,
+  "gross": -0.31,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -12.27,
+   "frxUSDCAD": -6.67,
+   "frxUSDCHF": -0.67,
+   "frxEURGBP": -6.33,
+   "frxEURJPY": -17.99,
+   "frxGBPJPY": 5.33
+  }
+ },
+ {
+  "seed": 128,
+  "trades": 572,
+  "net_profit": -80.97,
+  "gross": -34.68,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -13.79,
+   "frxUSDCAD": -2.13,
+   "frxUSDCHF": -10.65,
+   "frxEURGBP": -4.29,
+   "frxEURJPY": -26.87,
+   "frxGBPJPY": -23.24
+  }
+ },
+ {
+  "seed": 129,
+  "trades": 572,
+  "net_profit": -94.11,
+  "gross": -49.79,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -47.47,
+   "frxUSDCAD": -5.71,
+   "frxUSDCHF": 6.09,
+   "frxEURGBP": -7.09,
+   "frxEURJPY": -29.23,
+   "frxGBPJPY": -10.7
+  }
+ },
+ {
+  "seed": 130,
+  "trades": 572,
+  "net_profit": -97.24,
+  "gross": -51.72,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -32.45,
+   "frxUSDCAD": 2.81,
+   "frxUSDCHF": -11.97,
+   "frxEURGBP": -8.01,
+   "frxEURJPY": -27.74,
+   "frxGBPJPY": -19.88
+  }
+ },
+ {
+  "seed": 131,
+  "trades": 572,
+  "net_profit": -80.75,
+  "gross": -35.84,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -36.01,
+   "frxUSDCAD": -1.04,
+   "frxUSDCHF": -13.77,
+   "frxEURGBP": -1.09,
+   "frxEURJPY": -16.19,
+   "frxGBPJPY": -12.65
+  }
+ },
+ {
+  "seed": 132,
+  "trades": 572,
+  "net_profit": -29.15,
+  "gross": 24.4,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -19.17,
+   "frxUSDCAD": -3.16,
+   "frxUSDCHF": -21.49,
+   "frxEURGBP": 5.61,
+   "frxEURJPY": 6.83,
+   "frxGBPJPY": 2.23
+  }
+ },
+ {
+  "seed": 133,
+  "trades": 572,
+  "net_profit": -85.2,
+  "gross": -41.1,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -36.46,
+   "frxUSDCAD": -7.13,
+   "frxUSDCHF": -9.59,
+   "frxEURGBP": -10.98,
+   "frxEURJPY": -20.57,
+   "frxGBPJPY": -0.47
+  }
+ },
+ {
+  "seed": 134,
+  "trades": 572,
+  "net_profit": -46.91,
+  "gross": -3.75,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -29.82,
+   "frxUSDCAD": -1.75,
+   "frxUSDCHF": -18.12,
+   "frxEURGBP": -3.61,
+   "frxEURJPY": 4.93,
+   "frxGBPJPY": 1.46
+  }
+ },
+ {
+  "seed": 135,
+  "trades": 572,
+  "net_profit": -28.06,
+  "gross": 18.85,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -12.01,
+   "frxUSDCAD": -0.52,
+   "frxUSDCHF": 4.85,
+   "frxEURGBP": -6.31,
+   "frxEURJPY": 10.27,
+   "frxGBPJPY": -24.34
+  }
+ },
+ {
+  "seed": 136,
+  "trades": 572,
+  "net_profit": -35.31,
+  "gross": 8.56,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -11.75,
+   "frxUSDCAD": -3.37,
+   "frxUSDCHF": 7.54,
+   "frxEURGBP": -3.93,
+   "frxEURJPY": -40.77,
+   "frxGBPJPY": 16.97
+  }
+ },
+ {
+  "seed": 137,
+  "trades": 572,
+  "net_profit": -51.4,
+  "gross": -6.5,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -6.17,
+   "frxUSDCAD": -10.0,
+   "frxUSDCHF": -10.36,
+   "frxEURGBP": -6.38,
+   "frxEURJPY": -3.33,
+   "frxGBPJPY": -15.16
+  }
+ },
+ {
+  "seed": 138,
+  "trades": 572,
+  "net_profit": -67.78,
+  "gross": -23.57,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -17.71,
+   "frxUSDCAD": -7.83,
+   "frxUSDCHF": 6.69,
+   "frxEURGBP": -5.07,
+   "frxEURJPY": -15.5,
+   "frxGBPJPY": -28.36
+  }
+ },
+ {
+  "seed": 139,
+  "trades": 572,
+  "net_profit": -23.22,
+  "gross": 26.12,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -13.35,
+   "frxUSDCAD": 1.87,
+   "frxUSDCHF": 14.1,
+   "frxEURGBP": -16.09,
+   "frxEURJPY": -2.3,
+   "frxGBPJPY": -7.45
+  }
+ },
+ {
+  "seed": 140,
+  "trades": 572,
+  "net_profit": -71.3,
+  "gross": -23.89,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -25.64,
+   "frxUSDCAD": 3.92,
+   "frxUSDCHF": -0.71,
+   "frxEURGBP": -7.0,
+   "frxEURJPY": -24.6,
+   "frxGBPJPY": -17.27
+  }
+ },
+ {
+  "seed": 141,
+  "trades": 572,
+  "net_profit": -33.58,
+  "gross": 11.97,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -6.5,
+   "frxUSDCAD": -7.0,
+   "frxUSDCHF": -17.21,
+   "frxEURGBP": -7.07,
+   "frxEURJPY": -13.96,
+   "frxGBPJPY": 18.16
+  }
+ },
+ {
+  "seed": 142,
+  "trades": 572,
+  "net_profit": -55.25,
+  "gross": -8.78,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -17.43,
+   "frxUSDCAD": -9.79,
+   "frxUSDCHF": -0.41,
+   "frxEURGBP": -3.48,
+   "frxEURJPY": -7.77,
+   "frxGBPJPY": -16.37
+  }
+ },
+ {
+  "seed": 143,
+  "trades": 572,
+  "net_profit": -39.91,
+  "gross": 0.93,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -22.53,
+   "frxUSDCAD": 1.45,
+   "frxUSDCHF": -16.57,
+   "frxEURGBP": 3.0,
+   "frxEURJPY": 5.27,
+   "frxGBPJPY": -10.53
+  }
+ },
+ {
+  "seed": 144,
+  "trades": 572,
+  "net_profit": -53.53,
+  "gross": -8.56,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -21.94,
+   "frxUSDCAD": -0.11,
+   "frxUSDCHF": -4.95,
+   "frxEURGBP": 1.09,
+   "frxEURJPY": -29.43,
+   "frxGBPJPY": 1.81
+  }
+ },
+ {
+  "seed": 145,
+  "trades": 572,
+  "net_profit": -67.35,
+  "gross": -20.46,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -13.34,
+   "frxUSDCAD": 1.83,
+   "frxUSDCHF": -14.57,
+   "frxEURGBP": -11.48,
+   "frxEURJPY": -23.41,
+   "frxGBPJPY": -6.38
+  }
+ },
+ {
+  "seed": 146,
+  "trades": 572,
+  "net_profit": -31.54,
+  "gross": 21.55,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -1.47,
+   "frxUSDCAD": -4.96,
+   "frxUSDCHF": -14.29,
+   "frxEURGBP": -0.41,
+   "frxEURJPY": -14.68,
+   "frxGBPJPY": 4.27
+  }
+ },
+ {
+  "seed": 147,
+  "trades": 572,
+  "net_profit": -90.59,
+  "gross": -46.69,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -32.4,
+   "frxUSDCAD": -9.49,
+   "frxUSDCHF": -1.92,
+   "frxEURGBP": -10.5,
+   "frxEURJPY": -27.8,
+   "frxGBPJPY": -8.48
+  }
+ },
+ {
+  "seed": 148,
+  "trades": 572,
+  "net_profit": -42.04,
+  "gross": 10.96,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -6.69,
+   "frxUSDCAD": -5.73,
+   "frxUSDCHF": -2.06,
+   "frxEURGBP": -5.45,
+   "frxEURJPY": -10.26,
+   "frxGBPJPY": -11.85
+  }
+ },
+ {
+  "seed": 149,
+  "trades": 572,
+  "net_profit": -64.66,
+  "gross": -17.8,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -18.04,
+   "frxUSDCAD": -9.27,
+   "frxUSDCHF": -5.95,
+   "frxEURGBP": -3.99,
+   "frxEURJPY": 2.61,
+   "frxGBPJPY": -30.02
+  }
+ },
+ {
+  "seed": 150,
+  "trades": 572,
+  "net_profit": -70.83,
+  "gross": -24.21,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -47.88,
+   "frxUSDCAD": 2.56,
+   "frxUSDCHF": 3.13,
+   "frxEURGBP": -1.88,
+   "frxEURJPY": -16.54,
+   "frxGBPJPY": -10.22
+  }
+ },
+ {
+  "seed": 151,
+  "trades": 572,
+  "net_profit": -38.73,
+  "gross": 3.18,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -27.53,
+   "frxUSDCAD": -7.96,
+   "frxUSDCHF": -5.19,
+   "frxEURGBP": -3.24,
+   "frxEURJPY": -2.1,
+   "frxGBPJPY": 7.29
+  }
+ },
+ {
+  "seed": 152,
+  "trades": 572,
+  "net_profit": -32.72,
+  "gross": 20.47,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -29.71,
+   "frxUSDCAD": 5.96,
+   "frxUSDCHF": 0.78,
+   "frxEURGBP": -11.0,
+   "frxEURJPY": -7.85,
+   "frxGBPJPY": 9.1
+  }
+ },
+ {
+  "seed": 153,
+  "trades": 572,
+  "net_profit": -60.69,
+  "gross": -14.83,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -2.89,
+   "frxUSDCAD": -4.21,
+   "frxUSDCHF": -6.36,
+   "frxEURGBP": -16.83,
+   "frxEURJPY": -19.45,
+   "frxGBPJPY": -10.95
+  }
+ },
+ {
+  "seed": 154,
+  "trades": 572,
+  "net_profit": -45.42,
+  "gross": -2.77,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -12.85,
+   "frxUSDCAD": -8.84,
+   "frxUSDCHF": 1.36,
+   "frxEURGBP": -12.57,
+   "frxEURJPY": -0.54,
+   "frxGBPJPY": -11.98
+  }
+ },
+ {
+  "seed": 155,
+  "trades": 572,
+  "net_profit": -124.34,
+  "gross": -79.13,
+  "kill_events": 2,
+  "per_pair_net": {
+   "frxAUDUSD": -24.9,
+   "frxUSDCAD": -8.58,
+   "frxUSDCHF": -22.28,
+   "frxEURGBP": -15.21,
+   "frxEURJPY": -31.1,
+   "frxGBPJPY": -22.27
+  }
+ },
+ {
+  "seed": 156,
+  "trades": 572,
+  "net_profit": -56.95,
+  "gross": -3.52,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -21.66,
+   "frxUSDCAD": -17.93,
+   "frxUSDCHF": 5.17,
+   "frxEURGBP": -9.47,
+   "frxEURJPY": -5.46,
+   "frxGBPJPY": -7.6
+  }
+ },
+ {
+  "seed": 157,
+  "trades": 572,
+  "net_profit": -50.46,
+  "gross": 0.73,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -46.06,
+   "frxUSDCAD": 2.67,
+   "frxUSDCHF": 1.85,
+   "frxEURGBP": -0.96,
+   "frxEURJPY": -2.89,
+   "frxGBPJPY": -5.07
+  }
+ },
+ {
+  "seed": 158,
+  "trades": 572,
+  "net_profit": -51.96,
+  "gross": -5.1,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -31.64,
+   "frxUSDCAD": -6.53,
+   "frxUSDCHF": -3.77,
+   "frxEURGBP": 1.42,
+   "frxEURJPY": -7.38,
+   "frxGBPJPY": -4.06
+  }
+ },
+ {
+  "seed": 159,
+  "trades": 572,
+  "net_profit": -61.48,
+  "gross": -11.18,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -4.25,
+   "frxUSDCAD": -8.67,
+   "frxUSDCHF": -15.32,
+   "frxEURGBP": -5.26,
+   "frxEURJPY": -11.26,
+   "frxGBPJPY": -16.72
+  }
+ },
+ {
+  "seed": 160,
+  "trades": 572,
+  "net_profit": -41.49,
+  "gross": 3.51,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -20.98,
+   "frxUSDCAD": 5.38,
+   "frxUSDCHF": -7.76,
+   "frxEURGBP": 2.24,
+   "frxEURJPY": -23.07,
+   "frxGBPJPY": 2.7
+  }
+ },
+ {
+  "seed": 161,
+  "trades": 572,
+  "net_profit": -45.51,
+  "gross": -4.88,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -19.69,
+   "frxUSDCAD": -1.94,
+   "frxUSDCHF": 2.16,
+   "frxEURGBP": -2.8,
+   "frxEURJPY": -10.76,
+   "frxGBPJPY": -12.48
+  }
+ },
+ {
+  "seed": 162,
+  "trades": 572,
+  "net_profit": -53.96,
+  "gross": -7.42,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -11.87,
+   "frxUSDCAD": -15.18,
+   "frxUSDCHF": -13.67,
+   "frxEURGBP": -4.15,
+   "frxEURJPY": 3.21,
+   "frxGBPJPY": -12.3
+  }
+ },
+ {
+  "seed": 163,
+  "trades": 572,
+  "net_profit": -64.06,
+  "gross": -13.59,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -4.99,
+   "frxUSDCAD": 0.52,
+   "frxUSDCHF": -2.92,
+   "frxEURGBP": -8.65,
+   "frxEURJPY": -28.0,
+   "frxGBPJPY": -20.02
+  }
+ },
+ {
+  "seed": 164,
+  "trades": 572,
+  "net_profit": -45.08,
+  "gross": -0.61,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -22.53,
+   "frxUSDCAD": 1.22,
+   "frxUSDCHF": 15.58,
+   "frxEURGBP": -7.27,
+   "frxEURJPY": -13.45,
+   "frxGBPJPY": -18.63
+  }
+ },
+ {
+  "seed": 165,
+  "trades": 572,
+  "net_profit": -60.31,
+  "gross": -14.72,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -31.87,
+   "frxUSDCAD": -1.96,
+   "frxUSDCHF": -8.79,
+   "frxEURGBP": -7.07,
+   "frxEURJPY": -3.03,
+   "frxGBPJPY": -7.59
+  }
+ },
+ {
+  "seed": 166,
+  "trades": 572,
+  "net_profit": -92.57,
+  "gross": -44.89,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -35.44,
+   "frxUSDCAD": 5.62,
+   "frxUSDCHF": -0.9,
+   "frxEURGBP": -10.27,
+   "frxEURJPY": -27.14,
+   "frxGBPJPY": -24.44
+  }
+ },
+ {
+  "seed": 167,
+  "trades": 572,
+  "net_profit": -42.97,
+  "gross": -0.72,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -17.38,
+   "frxUSDCAD": -5.95,
+   "frxUSDCHF": -7.33,
+   "frxEURGBP": -6.1,
+   "frxEURJPY": -16.52,
+   "frxGBPJPY": 10.31
+  }
+ },
+ {
+  "seed": 168,
+  "trades": 572,
+  "net_profit": -56.27,
+  "gross": -15.14,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -25.33,
+   "frxUSDCAD": -6.96,
+   "frxUSDCHF": -25.55,
+   "frxEURGBP": -0.05,
+   "frxEURJPY": 5.58,
+   "frxGBPJPY": -3.96
+  }
+ },
+ {
+  "seed": 169,
+  "trades": 572,
+  "net_profit": -30.83,
+  "gross": 19.79,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -23.5,
+   "frxUSDCAD": -3.46,
+   "frxUSDCHF": -16.81,
+   "frxEURGBP": -4.18,
+   "frxEURJPY": 10.42,
+   "frxGBPJPY": 6.7
+  }
+ },
+ {
+  "seed": 170,
+  "trades": 572,
+  "net_profit": -61.05,
+  "gross": -10.59,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -24.24,
+   "frxUSDCAD": -8.24,
+   "frxUSDCHF": -8.41,
+   "frxEURGBP": 7.01,
+   "frxEURJPY": -9.24,
+   "frxGBPJPY": -17.93
+  }
+ },
+ {
+  "seed": 171,
+  "trades": 572,
+  "net_profit": -40.47,
+  "gross": 10.47,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -25.11,
+   "frxUSDCAD": -2.39,
+   "frxUSDCHF": -20.1,
+   "frxEURGBP": -0.42,
+   "frxEURJPY": -2.56,
+   "frxGBPJPY": 10.11
+  }
+ },
+ {
+  "seed": 172,
+  "trades": 572,
+  "net_profit": -17.96,
+  "gross": 33.79,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": 15.75,
+   "frxUSDCAD": 6.84,
+   "frxUSDCHF": 6.04,
+   "frxEURGBP": -17.07,
+   "frxEURJPY": -6.87,
+   "frxGBPJPY": -22.65
+  }
+ },
+ {
+  "seed": 173,
+  "trades": 572,
+  "net_profit": -33.14,
+  "gross": 12.53,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": 6.15,
+   "frxUSDCAD": -9.17,
+   "frxUSDCHF": -0.46,
+   "frxEURGBP": -9.42,
+   "frxEURJPY": -14.47,
+   "frxGBPJPY": -5.77
+  }
+ },
+ {
+  "seed": 174,
+  "trades": 572,
+  "net_profit": -53.84,
+  "gross": -12.74,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -18.85,
+   "frxUSDCAD": -2.61,
+   "frxUSDCHF": 2.44,
+   "frxEURGBP": -0.56,
+   "frxEURJPY": -6.35,
+   "frxGBPJPY": -27.91
+  }
+ },
+ {
+  "seed": 175,
+  "trades": 572,
+  "net_profit": -65.05,
+  "gross": -19.57,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -18.19,
+   "frxUSDCAD": -7.11,
+   "frxUSDCHF": -4.58,
+   "frxEURGBP": -3.39,
+   "frxEURJPY": -12.02,
+   "frxGBPJPY": -19.76
+  }
+ },
+ {
+  "seed": 176,
+  "trades": 572,
+  "net_profit": -91.66,
+  "gross": -49.32,
+  "kill_events": 2,
+  "per_pair_net": {
+   "frxAUDUSD": -24.07,
+   "frxUSDCAD": -3.0,
+   "frxUSDCHF": -20.57,
+   "frxEURGBP": -5.03,
+   "frxEURJPY": -11.58,
+   "frxGBPJPY": -27.41
+  }
+ },
+ {
+  "seed": 177,
+  "trades": 572,
+  "net_profit": -39.0,
+  "gross": 2.23,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -19.42,
+   "frxUSDCAD": 0.24,
+   "frxUSDCHF": -14.11,
+   "frxEURGBP": -5.82,
+   "frxEURJPY": -5.61,
+   "frxGBPJPY": 5.72
+  }
+ },
+ {
+  "seed": 178,
+  "trades": 572,
+  "net_profit": -34.43,
+  "gross": 8.62,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -15.74,
+   "frxUSDCAD": -5.68,
+   "frxUSDCHF": -16.97,
+   "frxEURGBP": 2.39,
+   "frxEURJPY": -5.63,
+   "frxGBPJPY": 7.2
+  }
+ },
+ {
+  "seed": 179,
+  "trades": 572,
+  "net_profit": -52.66,
+  "gross": -5.47,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -20.52,
+   "frxUSDCAD": -0.76,
+   "frxUSDCHF": 3.21,
+   "frxEURGBP": -7.85,
+   "frxEURJPY": -4.42,
+   "frxGBPJPY": -22.32
+  }
+ },
+ {
+  "seed": 180,
+  "trades": 572,
+  "net_profit": -12.48,
+  "gross": 36.21,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -3.77,
+   "frxUSDCAD": 4.56,
+   "frxUSDCHF": -6.99,
+   "frxEURGBP": -1.85,
+   "frxEURJPY": -2.28,
+   "frxGBPJPY": -2.15
+  }
+ },
+ {
+  "seed": 181,
+  "trades": 572,
+  "net_profit": -68.21,
+  "gross": -21.13,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -31.3,
+   "frxUSDCAD": -9.22,
+   "frxUSDCHF": -33.21,
+   "frxEURGBP": 5.83,
+   "frxEURJPY": 3.99,
+   "frxGBPJPY": -4.3
+  }
+ },
+ {
+  "seed": 182,
+  "trades": 572,
+  "net_profit": -83.43,
+  "gross": -38.52,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -50.42,
+   "frxUSDCAD": -6.86,
+   "frxUSDCHF": 6.75,
+   "frxEURGBP": -2.38,
+   "frxEURJPY": -34.34,
+   "frxGBPJPY": 3.82
+  }
+ },
+ {
+  "seed": 183,
+  "trades": 572,
+  "net_profit": -73.26,
+  "gross": -21.56,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -47.73,
+   "frxUSDCAD": -3.52,
+   "frxUSDCHF": 0.83,
+   "frxEURGBP": -5.41,
+   "frxEURJPY": 7.76,
+   "frxGBPJPY": -25.19
+  }
+ },
+ {
+  "seed": 184,
+  "trades": 572,
+  "net_profit": -20.51,
+  "gross": 25.56,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -9.74,
+   "frxUSDCAD": 2.87,
+   "frxUSDCHF": 2.99,
+   "frxEURGBP": -6.02,
+   "frxEURJPY": -2.2,
+   "frxGBPJPY": -8.41
+  }
+ },
+ {
+  "seed": 185,
+  "trades": 572,
+  "net_profit": -47.9,
+  "gross": -1.62,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -24.41,
+   "frxUSDCAD": 0.48,
+   "frxUSDCHF": -14.17,
+   "frxEURGBP": 0.73,
+   "frxEURJPY": -6.28,
+   "frxGBPJPY": -4.25
+  }
+ },
+ {
+  "seed": 186,
+  "trades": 572,
+  "net_profit": -41.35,
+  "gross": -2.29,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -8.84,
+   "frxUSDCAD": -6.62,
+   "frxUSDCHF": -6.45,
+   "frxEURGBP": 1.69,
+   "frxEURJPY": -13.77,
+   "frxGBPJPY": -7.36
+  }
+ },
+ {
+  "seed": 187,
+  "trades": 572,
+  "net_profit": -66.59,
+  "gross": -18.74,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -37.3,
+   "frxUSDCAD": -5.41,
+   "frxUSDCHF": 2.07,
+   "frxEURGBP": -8.34,
+   "frxEURJPY": 11.57,
+   "frxGBPJPY": -29.18
+  }
+ },
+ {
+  "seed": 188,
+  "trades": 572,
+  "net_profit": -66.97,
+  "gross": -24.31,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -15.69,
+   "frxUSDCAD": -5.78,
+   "frxUSDCHF": 5.78,
+   "frxEURGBP": -4.31,
+   "frxEURJPY": -28.2,
+   "frxGBPJPY": -18.77
+  }
+ },
+ {
+  "seed": 189,
+  "trades": 572,
+  "net_profit": -88.9,
+  "gross": -45.17,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -33.51,
+   "frxUSDCAD": -7.86,
+   "frxUSDCHF": -3.67,
+   "frxEURGBP": -16.19,
+   "frxEURJPY": -13.9,
+   "frxGBPJPY": -13.77
+  }
+ },
+ {
+  "seed": 190,
+  "trades": 572,
+  "net_profit": -93.17,
+  "gross": -50.75,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -43.35,
+   "frxUSDCAD": -3.2,
+   "frxUSDCHF": -23.82,
+   "frxEURGBP": -11.89,
+   "frxEURJPY": 3.39,
+   "frxGBPJPY": -14.3
+  }
+ },
+ {
+  "seed": 191,
+  "trades": 572,
+  "net_profit": -62.89,
+  "gross": -16.12,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -30.88,
+   "frxUSDCAD": 1.77,
+   "frxUSDCHF": 6.96,
+   "frxEURGBP": -19.0,
+   "frxEURJPY": -13.46,
+   "frxGBPJPY": -8.28
+  }
+ },
+ {
+  "seed": 192,
+  "trades": 572,
+  "net_profit": -41.2,
+  "gross": 2.56,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": -35.25,
+   "frxUSDCAD": -1.9,
+   "frxUSDCHF": 2.46,
+   "frxEURGBP": -2.73,
+   "frxEURJPY": -2.02,
+   "frxGBPJPY": -1.76
+  }
+ },
+ {
+  "seed": 193,
+  "trades": 572,
+  "net_profit": -63.83,
+  "gross": -12.06,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -17.82,
+   "frxUSDCAD": -7.92,
+   "frxUSDCHF": -11.13,
+   "frxEURGBP": -6.48,
+   "frxEURJPY": -3.57,
+   "frxGBPJPY": -16.91
+  }
+ },
+ {
+  "seed": 194,
+  "trades": 572,
+  "net_profit": -56.95,
+  "gross": -7.79,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -37.87,
+   "frxUSDCAD": 0.3,
+   "frxUSDCHF": -5.71,
+   "frxEURGBP": -5.57,
+   "frxEURJPY": 17.11,
+   "frxGBPJPY": -25.21
+  }
+ },
+ {
+  "seed": 195,
+  "trades": 572,
+  "net_profit": -69.92,
+  "gross": -16.09,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -43.66,
+   "frxUSDCAD": -6.03,
+   "frxUSDCHF": -8.08,
+   "frxEURGBP": -0.24,
+   "frxEURJPY": -13.2,
+   "frxGBPJPY": 1.29
+  }
+ },
+ {
+  "seed": 196,
+  "trades": 572,
+  "net_profit": -59.71,
+  "gross": -13.32,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -24.39,
+   "frxUSDCAD": 1.34,
+   "frxUSDCHF": -12.99,
+   "frxEURGBP": -6.08,
+   "frxEURJPY": -5.75,
+   "frxGBPJPY": -11.84
+  }
+ },
+ {
+  "seed": 197,
+  "trades": 572,
+  "net_profit": -51.78,
+  "gross": 0.35,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -25.54,
+   "frxUSDCAD": 1.39,
+   "frxUSDCHF": 9.29,
+   "frxEURGBP": -8.08,
+   "frxEURJPY": -19.76,
+   "frxGBPJPY": -9.08
+  }
+ },
+ {
+  "seed": 198,
+  "trades": 572,
+  "net_profit": -57.78,
+  "gross": -12.72,
+  "kill_events": 1,
+  "per_pair_net": {
+   "frxAUDUSD": -33.5,
+   "frxUSDCAD": -3.33,
+   "frxUSDCHF": -10.53,
+   "frxEURGBP": -6.27,
+   "frxEURJPY": 20.08,
+   "frxGBPJPY": -24.23
+  }
+ },
+ {
+  "seed": 199,
+  "trades": 572,
+  "net_profit": -22.72,
+  "gross": 27.43,
+  "kill_events": 0,
+  "per_pair_net": {
+   "frxAUDUSD": 6.8,
+   "frxUSDCAD": -4.26,
+   "frxUSDCHF": 11.24,
+   "frxEURGBP": -12.24,
+   "frxEURJPY": -7.84,
+   "frxGBPJPY": -16.42
+  }
+ }
+]

@@ -180,6 +180,24 @@ N = 5 or more). This raised N from 4 to 5 for every candidate. Two things to
 watch on the leaderboard: whether USD/JPY alone carries its result, as in the
 pre-screen, and whether the trade count grows at roughly 8 a month.
 
+**Multi-pair test of the i13 rule (Mon 2 Nov 2026): not registered.** The
+owner asked whether the same rule, with exactly the same settings, works on
+six more Deriv pairs (AUD/USD, USD/CAD, USD/CHF, EUR/GBP, EUR/JPY, GBP/JPY),
+to raise its trade count honestly; the pairs were fixed before any data was
+seen, their commission was measured by hour on 2 Nov (quotes only; table in
+`research/phase2/cost_by_hour_pairs2.json`), and no pair was dropped for cost
+(expected move 6 to 14 times the cost). The owner had waived the frequency
+check (as for i13) and the diversity check (same rule on other pairs on
+purpose) in advance. On data before 31 Oct 2026 the rule on the six pairs
+lost money **before** costs (-1.4 USD gross over 572 trades, -41 USD after
+the measured commission), with two pairs ahead (USD/CHF, EUR/JPY) and four
+behind (AUD/USD worst). That fails the pre-screen, and keeping only the two
+winners is exactly the kind of after-the-fact picking the plan forbids, so
+nothing was registered and N stays 5. Plain reading: the morning-move edge
+that showed on the majors does not generalise; the i13 candidate's own
+forward test is the only honest judge left. Details: `research/log.md`,
+"Multi-pair test of the i13 rule".
+
 **Running the pre-screen on a new idea** (for a developer or an AI): add the
 strategy class to `src/fxbot/strategies/families.py`, declare its grid (at
 most 8 variants, 5 settings) in `fxbot.backtest.prescreen.IDEAS`, then
