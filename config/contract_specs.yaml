@@ -8,7 +8,7 @@
 # changes by hour and around news. Backtests take commission ONLY from
 # research/phase2/cost_by_hour.json (CLAUDE.md). The figures here are a
 # record of what was measured, not a cost model.
-generated_utc: 2026-11-03T18:16Z
+generated_utc: 2026-11-03T19:15Z
 measured:
   proposals_20261028T1622Z_manual_public.jsonl.gz: 2026-10-28 16:22Z
   proposals_20261028T1630Z_manual_public.jsonl.gz: 2026-10-28 16:30Z
@@ -55,6 +55,7 @@ measured:
   proposals_20261103T1612Z_clockcheck_demo.jsonl.gz: 2026-11-03 16:12Z
   proposals_20261103T1712Z_clockcheck_demo.jsonl.gz: 2026-11-03 17:12Z
   proposals_20261103T1811Z_clockcheck_demo.jsonl.gz: 2026-11-03 18:11Z
+  proposals_20261103T1911Z_clockcheck_demo.jsonl.gz: 2026-11-03 19:11Z
 notes:
   multiplier_list_depends_on_connection: The public (no login) connection quotes 50/100/150/250/500. The
     demo account's own connection quotes and buys 100/200/300/500/800 (= contracts_for) and refuses 50/150/250
@@ -401,6 +402,7 @@ connections:
     - 2026-11-03 16:12Z
     - 2026-11-03 17:12Z
     - 2026-11-03 18:11Z
+    - 2026-11-03 19:11Z
     symbols:
       frxEURUSD:
         pip_size: 1.0e-05
@@ -427,12 +429,12 @@ connections:
         take_profit_min_usd:
         - 0.1
         stop_loss_rule_holds: true
-        stop_loss_at_exact_min_rejected: 37
+        stop_loss_at_exact_min_rejected: 40
         multipliers:
           100:
             commission_rate_pct:
               _warning: 'record only, mixes hours: never use for pricing (use research/phase2/cost_by_hour.json)'
-              median: 0.0239
+              median: 0.02445
               min: 0.0239
               max: 0.2868
               by_sample:
@@ -471,12 +473,13 @@ connections:
                 2026-11-03 16:12Z: 0.0239
                 2026-11-03 17:12Z: 0.0239
                 2026-11-03 18:11Z: 0.0239
+                2026-11-03 19:11Z: 0.02808
             take_profit_max_per_usd_stake:
             - 50.0
           200:
             commission_rate_pct:
               _warning: 'record only, mixes hours: never use for pricing (use research/phase2/cost_by_hour.json)'
-              median: 0.0239
+              median: 0.02445
               min: 0.0239
               max: 0.2868
               by_sample:
@@ -515,12 +518,13 @@ connections:
                 2026-11-03 16:12Z: 0.0239
                 2026-11-03 17:12Z: 0.0239
                 2026-11-03 18:11Z: 0.0239
+                2026-11-03 19:11Z: 0.02808
             take_profit_max_per_usd_stake:
             - 50.0
           300:
             commission_rate_pct:
               _warning: 'record only, mixes hours: never use for pricing (use research/phase2/cost_by_hour.json)'
-              median: 0.0239
+              median: 0.02445
               min: 0.0239
               max: 0.2868
               by_sample:
@@ -559,6 +563,7 @@ connections:
                 2026-11-03 16:12Z: 0.0239
                 2026-11-03 17:12Z: 0.0239
                 2026-11-03 18:11Z: 0.0239
+                2026-11-03 19:11Z: 0.02808
             take_profit_max_per_usd_stake:
             - 50.0
           500:
@@ -602,6 +607,7 @@ connections:
                 2026-11-03 16:12Z: 0.0239
                 2026-11-03 17:12Z: 0.0239
                 2026-11-03 18:11Z: 0.0239
+                2026-11-03 19:11Z: 0.02808
             take_profit_max_per_usd_stake:
             - 50.0
           800:
@@ -644,9 +650,10 @@ connections:
                 2026-11-03 16:12Z: 0.0239
                 2026-11-03 17:12Z: 0.0239
                 2026-11-03 18:11Z: 0.0239
+                2026-11-03 19:11Z: 0.02808
             take_profit_max_per_usd_stake:
             - 50.0
-        median_spot: 1.11543
+        median_spot: 1.11544
       frxGBPUSD:
         pip_size: 1.0e-05
         multipliers_accepted:
@@ -716,6 +723,7 @@ connections:
                 2026-11-03 16:12Z: 0.0203
                 2026-11-03 17:12Z: 0.0203
                 2026-11-03 18:11Z: 0.0203
+                2026-11-03 19:11Z: 0.02244
             take_profit_max_per_usd_stake:
             - 50.0
           200:
@@ -760,6 +768,7 @@ connections:
                 2026-11-03 16:12Z: 0.0203
                 2026-11-03 17:12Z: 0.0203
                 2026-11-03 18:11Z: 0.0203
+                2026-11-03 19:11Z: 0.02243
             take_profit_max_per_usd_stake:
             - 50.0
           300:
@@ -804,6 +813,7 @@ connections:
                 2026-11-03 16:12Z: 0.0203
                 2026-11-03 17:12Z: 0.0203
                 2026-11-03 18:11Z: 0.0203
+                2026-11-03 19:11Z: 0.02243
             take_profit_max_per_usd_stake:
             - 50.0
           500:
@@ -847,6 +857,7 @@ connections:
                 2026-11-03 16:12Z: 0.0203
                 2026-11-03 17:12Z: 0.0203
                 2026-11-03 18:11Z: 0.0203
+                2026-11-03 19:11Z: 0.02243
             take_profit_max_per_usd_stake:
             - 50.0
           800:
@@ -890,9 +901,10 @@ connections:
                 2026-11-03 16:12Z: 0.0203
                 2026-11-03 17:12Z: 0.0203
                 2026-11-03 18:11Z: 0.0203
+                2026-11-03 19:11Z: 0.02243
             take_profit_max_per_usd_stake:
             - 50.0
-        median_spot: 1.33324
+        median_spot: 1.33329
       frxUSDJPY:
         pip_size: 0.001
         multipliers_accepted:
@@ -923,7 +935,7 @@ connections:
           100:
             commission_rate_pct:
               _warning: 'record only, mixes hours: never use for pricing (use research/phase2/cost_by_hour.json)'
-              median: 0.02832
+              median: 0.02845
               min: 0.0275
               max: 0.33
               by_sample:
@@ -962,12 +974,13 @@ connections:
                 2026-11-03 16:12Z: 0.02872
                 2026-11-03 17:12Z: 0.03026
                 2026-11-03 18:11Z: 0.03218
+                2026-11-03 19:11Z: 0.03622
             take_profit_max_per_usd_stake:
             - 50.0
           200:
             commission_rate_pct:
               _warning: 'record only, mixes hours: never use for pricing (use research/phase2/cost_by_hour.json)'
-              median: 0.02833
+              median: 0.02845
               min: 0.0275
               max: 0.33
               by_sample:
@@ -1006,12 +1019,13 @@ connections:
                 2026-11-03 16:12Z: 0.02871
                 2026-11-03 17:12Z: 0.03025
                 2026-11-03 18:11Z: 0.03218
+                2026-11-03 19:11Z: 0.03622
             take_profit_max_per_usd_stake:
             - 50.0
           300:
             commission_rate_pct:
               _warning: 'record only, mixes hours: never use for pricing (use research/phase2/cost_by_hour.json)'
-              median: 0.02833
+              median: 0.02845
               min: 0.0275
               max: 0.33
               by_sample:
@@ -1050,12 +1064,13 @@ connections:
                 2026-11-03 16:12Z: 0.02871
                 2026-11-03 17:12Z: 0.03025
                 2026-11-03 18:11Z: 0.03217
+                2026-11-03 19:11Z: 0.03622
             take_profit_max_per_usd_stake:
             - 50.0
           500:
             commission_rate_pct:
               _warning: 'record only, mixes hours: never use for pricing (use research/phase2/cost_by_hour.json)'
-              median: 0.0282
+              median: 0.02832
               min: 0.0275
               max: 0.16244
               by_sample:
@@ -1093,12 +1108,13 @@ connections:
                 2026-11-03 16:12Z: 0.02871
                 2026-11-03 17:12Z: 0.03025
                 2026-11-03 18:11Z: 0.03218
+                2026-11-03 19:11Z: 0.03622
             take_profit_max_per_usd_stake:
             - 50.0
           800:
             commission_rate_pct:
               _warning: 'record only, mixes hours: never use for pricing (use research/phase2/cost_by_hour.json)'
-              median: 0.02808
+              median: 0.0282
               min: 0.0275
               max: 0.11699
               by_sample:
@@ -1135,9 +1151,10 @@ connections:
                 2026-11-03 16:12Z: 0.02871
                 2026-11-03 17:12Z: 0.03025
                 2026-11-03 18:11Z: 0.03217
+                2026-11-03 19:11Z: 0.03622
             take_profit_max_per_usd_stake:
             - 50.0
-        median_spot: 157.89
+        median_spot: 157.8955
   public:
     samples:
     - 2026-10-28 16:22Z
