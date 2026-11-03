@@ -28,15 +28,15 @@ Commission rate = median over all samples on that connection.
 | Pair | Multiplier | Position size | Commission | Commission % of stake | Break-even move | Stop-out distance | Stop-out distance as 1h medians |
 |---|---|---|---|---|---|---|---|
 | frxEURUSD | x100 | 100 USD | 0.0269 USD | 2.7% | 3.0 pips | 108.5 pips | 11.8 |
-| frxEURUSD | x200 | 200 USD | 0.0539 USD | 5.4% | 3.0 pips | 52.7 pips | 5.7 |
-| frxEURUSD | x300 | 300 USD | 0.0808 USD | 8.1% | 3.0 pips | 34.2 pips | 3.7 |
-| frxEURUSD | x500 | 500 USD | 0.1345 USD | 13.4% | 3.0 pips | 19.3 pips | 2.1 |
-| frxEURUSD | x800 | 800 USD | 0.2149 USD | 21.5% | 3.0 pips | 10.9 pips | 1.2 |
-| frxGBPUSD | x100 | 100 USD | 0.0236 USD | 2.4% | 3.1 pips | 130.1 pips | 10.6 |
-| frxGBPUSD | x200 | 200 USD | 0.0471 USD | 4.7% | 3.1 pips | 63.5 pips | 5.2 |
-| frxGBPUSD | x300 | 300 USD | 0.0707 USD | 7.1% | 3.1 pips | 41.3 pips | 3.4 |
-| frxGBPUSD | x500 | 500 USD | 0.1175 USD | 11.8% | 3.1 pips | 23.5 pips | 1.9 |
-| frxGBPUSD | x800 | 800 USD | 0.1880 USD | 18.8% | 3.1 pips | 13.5 pips | 1.1 |
+| frxEURUSD | x200 | 200 USD | 0.0538 USD | 5.4% | 3.0 pips | 52.8 pips | 5.7 |
+| frxEURUSD | x300 | 300 USD | 0.0807 USD | 8.1% | 3.0 pips | 34.2 pips | 3.7 |
+| frxEURUSD | x500 | 500 USD | 0.1343 USD | 13.4% | 3.0 pips | 19.3 pips | 2.1 |
+| frxEURUSD | x800 | 800 USD | 0.2133 USD | 21.3% | 3.0 pips | 11.0 pips | 1.2 |
+| frxGBPUSD | x100 | 100 USD | 0.0235 USD | 2.3% | 3.1 pips | 130.1 pips | 10.6 |
+| frxGBPUSD | x200 | 200 USD | 0.0470 USD | 4.7% | 3.1 pips | 63.5 pips | 5.2 |
+| frxGBPUSD | x300 | 300 USD | 0.0705 USD | 7.0% | 3.1 pips | 41.3 pips | 3.4 |
+| frxGBPUSD | x500 | 500 USD | 0.1172 USD | 11.7% | 3.1 pips | 23.5 pips | 1.9 |
+| frxGBPUSD | x800 | 800 USD | 0.1874 USD | 18.7% | 3.1 pips | 13.5 pips | 1.1 |
 | frxUSDJPY | x100 | 100 USD | 0.0275 USD | 2.8% | 4.3 pips | 153.5 pips | 10.4 |
 | frxUSDJPY | x200 | 200 USD | 0.0550 USD | 5.5% | 4.3 pips | 74.6 pips | 5.0 |
 | frxUSDJPY | x300 | 300 USD | 0.0825 USD | 8.2% | 4.3 pips | 48.3 pips | 3.3 |
