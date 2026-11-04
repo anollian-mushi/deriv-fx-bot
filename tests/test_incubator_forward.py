@@ -160,6 +160,11 @@ def test_daily_run_end_to_end_on_past_deriv_data(tmp_path, monkeypatch):
     """Registered 2026-09-30 in a scratch incubator: replay, records, an exam with lowered
     thresholds (test only), a result and the notices. Real Deriv data, single process."""
     monkeypatch.setattr(fw, "UNTOUCHED_START", dt.date(2026, 1, 1))
+    # Cap the replay at a fixed day so the test never depends on how far the real Deriv data
+    # reaches (it broke on 3 Nov 2026 when the first new day arrived and blocked the daily jobs).
+    real_latest = fw.latest_complete_day
+    monkeypatch.setattr(fw, "latest_complete_day",
+                        lambda *a, **k: min(real_latest(*a, **k), dt.date(2026, 10, 30)))
     c = reg.register("f9_e2e", "families", "EurGbpConvergence", {"length": 20, "z_in": 1.0, "hold_days": 3},
                      root=tmp_path, now=dt.datetime(2026, 9, 30, 12, tzinfo=UTC), require_clean=False)
     monkeypatch.setattr(exam, "rules_1_to_3", lambda s: {"days": {"ok": True}})

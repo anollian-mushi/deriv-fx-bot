@@ -33,11 +33,11 @@ jobs:
       - name: Install
         run: pip install -r requirements.txt
 
-      - name: Tests
-        # A changed incubator candidate must not stop data collection; the forward test checks it.
-        run: python -m pytest -q --deselect tests/test_incubator_registry.py::test_real_registry_is_intact
-
+      # Prices are collected and committed FIRST, so no test failure can ever stop data
+      # collection (on 3-4 Nov 2026 a date-dependent test blocked it). Tests run afterwards
+      # and only send an alert.
       - name: Collect candles and commit new files
+        id: collect
         run: |
           set -uo pipefail
           rc=0   # 0 = complete, 2 = time limit (partial), 1 = error
@@ -60,6 +60,22 @@ jobs:
           [ "$rc" -eq 1 ] && { echo "::error::Collector failed"; exit 1; }
           [ "$rc" -eq 2 ] && echo "::warning::Time limit reached; the next run continues."
           exit 0
+
+      - name: Tests (alert only; the new candles are already saved)
+        id: tests
+        if: ${{ !cancelled() }}
+        continue-on-error: true
+        # A changed incubator candidate is checked by the forward test, not here.
+        run: python -m pytest -q --deselect tests/test_incubator_registry.py::test_real_registry_is_intact
+
+      - name: Telegram alert on test failure
+        if: ${{ !cancelled() && steps.tests.outcome == 'failure' }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          python scripts/incubator.py notify --text "ALERT: a test failed in today's Deriv collector run. The new candles WERE saved (collection runs before the tests), so nothing is lost and the forward test still runs. A developer or AI should look at the failing test. Run: $RUN_URL"
 
       - name: Telegram alert on failure
         if: failure()
