@@ -1,0 +1,85 @@
+{
+ "cost_table": "research/phase2/cost_by_hour.json",
+ "data_end": "2026-11-03",
+ "engine_fingerprint": "000fa1dad6d8ebc17c834bffa1f2a754c75625db66ab74e042d4a7029d03ed5a",
+ "fingerprint": "0ea5db6d8e8b26d484f3fd6936f594e24239659f0b3857f5a68b26111bf2a840",
+ "first_scored_day": "2026-11-01",
+ "forward_days": 3,
+ "id": "a1_ml_day_r5",
+ "measured": {
+  "avg_commission": 0.0663,
+  "avg_loss": -0.16,
+  "avg_win": null,
+  "blocked_first_reason": {},
+  "cost_gate_skips": 0,
+  "final_equity": 99.68,
+  "kill_switch_fired": false,
+  "max_drawdown_pct": 1.61,
+  "net_profit": -0.32,
+  "open_profit": 0,
+  "open_trades": 0,
+  "per_pair": {
+   "frxEURUSD": {
+    "net": -0.15,
+    "trades": 1,
+    "wins": 0
+   },
+   "frxGBPUSD": {
+    "net": -0.17,
+    "trades": 1,
+    "wins": 0
+   },
+   "frxUSDJPY": {
+    "net": 0,
+    "trades": 0,
+    "wins": 0
+   }
+  },
+  "profit_factor": 0.0,
+  "refused": {},
+  "signals": 2,
+  "trades": 2,
+  "win_rate_pct": 0.0
+ },
+ "registered": "2026-10-31",
+ "stress_1_5x": {
+  "avg_commission": 0.0994,
+  "avg_loss": -0.195,
+  "avg_win": null,
+  "blocked_first_reason": {},
+  "cost_gate_skips": 0,
+  "final_equity": 99.61,
+  "kill_switch_fired": false,
+  "max_drawdown_pct": 1.61,
+  "net_profit": -0.39,
+  "open_profit": 0,
+  "open_trades": 0,
+  "per_pair": {
+   "frxEURUSD": {
+    "net": -0.19,
+    "trades": 1,
+    "wins": 0
+   },
+   "frxGBPUSD": {
+    "net": -0.2,
+    "trades": 1,
+    "wins": 0
+   },
+   "frxUSDJPY": {
+    "net": 0,
+    "trades": 0,
+    "wins": 0
+   }
+  },
+  "profit_factor": 0.0,
+  "refused": {},
+  "signals": 2,
+  "trades": 2,
+  "win_rate_pct": 0.0
+ },
+ "symbols": [
+  "frxEURUSD",
+  "frxGBPUSD",
+  "frxUSDJPY"
+ ]
+}
