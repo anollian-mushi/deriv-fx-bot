@@ -1,10 +1,12 @@
 import datetime as dt
+from pathlib import Path
 
 import numpy as np
 import pytest
 
 from backtest_helpers import data_for
 from fxbot.backtest.candles import Bars, aggregate
+from fxbot.backtest import fills
 from fxbot.backtest.engine import Engine
 from fxbot.strategies.base import CancelPending, Enter, ExitPosition, Strategy
 
@@ -43,8 +45,14 @@ class SmaCross(Strategy):
         return []
 
 
+# The 28-29 Oct 2026 table: its 12:00-13:59 UTC hours are raised (3x on EUR/USD), which the
+# cost-gate tests rely on. The live table (re-checked after the 1 Nov clock change) has them at base.
+GATE_TABLE = fills.CommissionTable(Path(__file__).resolve().parents[1] / "research/phase2/cost_by_hour_2026-10-29.json")
+
+
 def run(strategy, symbols=("frxEURUSD",), days=5, data=None, **kw):
     data = data or data_for(symbols, strategy.timeframe, MON, days)
+    kw.setdefault("table", GATE_TABLE)
     e = Engine(strategy, list(symbols), MON, MON + dt.timedelta(days=days), data=data, **kw)
     e.run()
     return e.state

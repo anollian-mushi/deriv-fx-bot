@@ -8,7 +8,10 @@ from fxbot.backtest import fills as f
 from fxbot.contracts import multiplier as mc
 
 ROOT = Path(__file__).resolve().parents[1]
-TABLE = f.CommissionTable()
+# The 28-29 Oct 2026 table, as measured before the US clock change: the Phase 2 demo trades
+# below were opened on 28 Oct, and its raised noon hour exercises the hourly lookup.
+TABLE = f.CommissionTable(ROOT / "research/phase2/cost_by_hour_2026-10-29.json")
+LIVE_TABLE = f.CommissionTable()
 T0 = int(dt.datetime(2025, 3, 4, 10, 0, tzinfo=dt.timezone.utc).timestamp())
 
 
@@ -17,6 +20,11 @@ def test_commission_comes_from_hourly_table():
     noon = T0 + 2 * 3600
     assert TABLE.rate("frxEURUSD", noon) == pytest.approx(3 * 0.000239, rel=1e-3)
     assert TABLE.base["frxGBPUSD"] == pytest.approx(0.000203)
+
+
+def test_live_table_keeps_the_measured_base_rates():
+    assert LIVE_TABLE.base == pytest.approx({"frxEURUSD": 0.000239, "frxGBPUSD": 0.000203, "frxUSDJPY": 0.000275})
+    assert LIVE_TABLE.rate("frxEURUSD", T0) == pytest.approx(0.000239)
 
 
 def test_demo_trades_reproduced_within_a_cent():
