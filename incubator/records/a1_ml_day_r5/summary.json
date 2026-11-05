@@ -1,7 +1,7 @@
 {
  "cost_table": "research/phase2/cost_by_hour.json",
  "data_end": "2026-11-04",
- "engine_fingerprint": "880df0c4aa21855b3e81de9acdbf51b9f35c0bbf3964e9d292cc018d3ffd0e5c",
+ "engine_fingerprint": "7835e1ed5de117a2747ebe2584b204bc4f95596d6c8829ed4ed848c31d0aa28d",
  "fingerprint": "0ea5db6d8e8b26d484f3fd6936f594e24239659f0b3857f5a68b26111bf2a840",
  "first_scored_day": "2026-11-01",
  "forward_days": 4,
