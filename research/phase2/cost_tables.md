@@ -41,7 +41,7 @@ Commission rate = median over all samples on that connection.
 | frxUSDJPY | x200 | 200 USD | 0.0573 USD | 5.7% | 4.5 pips | 74.4 pips | 5.0 |
 | frxUSDJPY | x300 | 300 USD | 0.0859 USD | 8.6% | 4.5 pips | 48.1 pips | 3.3 |
 | frxUSDJPY | x500 | 500 USD | 0.1433 USD | 14.3% | 4.5 pips | 27.1 pips | 1.8 |
-| frxUSDJPY | x800 | 800 USD | 0.2289 USD | 22.9% | 4.5 pips | 15.2 pips | 1.0 |
+| frxUSDJPY | x800 | 800 USD | 0.2292 USD | 22.9% | 4.5 pips | 15.2 pips | 1.0 |
 
 ## public connection
 
