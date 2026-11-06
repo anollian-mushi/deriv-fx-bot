@@ -664,6 +664,12 @@ class TJRReplay(Strategy):
     def __init__(self, timeframe: str, signals: dict, seed: int, symbols: tuple):
         self.timeframe = timeframe
         self.signals, self.seed, self.symbols = signals, seed, tuple(symbols)
+        # The replay acts only at a signal or at the 17:55-18:00 UTC close on a signal day (every
+        # trade opens and closes on a signal day), so the engine need not call it at other
+        # candles. Same trades, much faster.
+        days = {int(t) - int(t) % 86400 for _, t in signals}
+        self.wake_epochs = {int(t) for _, t in signals} | {
+            d + cal.FLAT_SECOND_OF_DAY + 60 * k for d in days for k in range(6)}   # 17:55 ... 18:00
 
     def on_candle(self, symbol, candles, position, pending):
         t = int(candles.end[-1])

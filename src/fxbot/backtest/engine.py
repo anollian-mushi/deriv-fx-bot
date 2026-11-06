@@ -165,8 +165,14 @@ class Engine:
         st = self.state
         ends = self.tf_end[sym]
         i = st.tf_pos[sym]
+        # Optional speed hint: a strategy that acts only at known candle ends (the TJR coin-toss
+        # replay) lists them in wake_epochs; it is not called at any other candle. None (every
+        # other strategy) = called at every candle, as before.
+        wake = getattr(self.strategy, "wake_epochs", None)
         while i < len(ends) and ends[i] <= t:
             i += 1
+            if wake is not None and ends[i - 1] not in wake:
+                continue
             pos = st.positions.get(sym)
             view = PositionView(pos.direction, pos.multiplier, pos.entry, pos.entry_epoch) if pos else None
             sig_epoch = ends[i - 1]

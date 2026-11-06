@@ -358,3 +358,22 @@ def test_preflight_blocks_until_both_cost_inputs_are_final():
     if not res["ok"]:
         assert res["problems"]
 
+
+
+def test_replay_wake_hint_gives_the_same_trades():
+    syms = ["frxEURUSD", "frxGBPUSD"]
+    start = dt.date(2025, 1, 6)
+    data = data_for(syms, "1m", start, 30, seed=11)
+    base = Engine(tjr.TJR5m(model=1), syms, start, start + dt.timedelta(days=30), data=data)
+    base.run()
+    from fxbot.backtest import tjr_test as TT
+    sigs = TT.parse_signals([[s, t, a] for t, s, a in base.state.signals if a.startswith("Enter(")])
+    runs = []
+    for wake in (False, True):
+        r = tjr.TJRReplay("1m", sigs, 5, tuple(syms))
+        if not wake:
+            r.wake_epochs = None
+        e = Engine(r, syms, start, start + dt.timedelta(days=30), data=TT.replay_data(data, sigs, "1m"))
+        e.run()
+        runs.append([(t["symbol"], t["entry_epoch"], t["exit_epoch"], t["profit"]) for t in e.state.trades])
+    assert runs[0] == runs[1]
