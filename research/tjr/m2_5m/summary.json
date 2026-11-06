@@ -1,0 +1,242 @@
+{
+ "oos_span": [
+  "2023-10-27",
+  "2026-10-26"
+ ],
+ "trading_days": 776,
+ "trades": 3,
+ "trades_per_day": 0.0,
+ "net_measured": 1.86,
+ "net_1_5x": 1.62,
+ "gross": 2.47,
+ "gross_pips_per_trade": 22.9,
+ "win_rate_pct": 33.3,
+ "avg_win": 4.3,
+ "avg_loss": -1.22,
+ "profit_factor": 1.762,
+ "kill_events": 0,
+ "per_pair": {
+  "frxEURUSD": {
+   "trades": 0,
+   "net": 0,
+   "gross": 0
+  },
+  "frxGBPUSD": {
+   "trades": 0,
+   "net": 0,
+   "gross": 0
+  },
+  "frxUSDJPY": {
+   "trades": 1,
+   "net": -1.19,
+   "gross": -0.95
+  },
+  "frxAUDUSD": {
+   "trades": 0,
+   "net": 0,
+   "gross": 0
+  },
+  "frxUSDCAD": {
+   "trades": 0,
+   "net": 0,
+   "gross": 0
+  },
+  "frxUSDCHF": {
+   "trades": 0,
+   "net": 0,
+   "gross": 0
+  },
+  "frxEURGBP": {
+   "trades": 0,
+   "net": 0,
+   "gross": 0
+  },
+  "frxEURJPY": {
+   "trades": 2,
+   "net": 3.05,
+   "gross": 3.42
+  },
+  "frxGBPJPY": {
+   "trades": 0,
+   "net": 0,
+   "gross": 0
+  }
+ },
+ "per_window_net": [
+  0,
+  3.05,
+  -1.19,
+  0,
+  0,
+  0
+ ],
+ "per_window_gross": [
+  0,
+  3.42,
+  -0.95,
+  0,
+  0,
+  0
+ ],
+ "move_vs_cost": {
+  "avg_abs_move_pips": 57.95,
+  "avg_cost_pips": 5.28,
+  "ratio": 10.97
+ },
+ "luck": {
+  "runs": 200,
+  "median_net": 1.86,
+  "p95_net": 3.08,
+  "p99_net": 3.08,
+  "share_beaten_net": 0.46,
+  "median_gross": 2.47,
+  "share_beaten_gross": 0.46,
+  "beats_median": false,
+  "complete": true
+ },
+ "grid_size": 2,
+ "checks": {
+  "c2_move_3x_cost": true,
+  "c3_trades_per_day_1_5": false,
+  "c5_params_5_or_fewer": true,
+  "c6_gross_positive": true,
+  "c6_beats_random_median": false,
+  "no_kill_switch": true,
+  "c3_waivable_at_0_3": false
+ },
+ "prescreen_pass": false,
+ "all_checks": false,
+ "variant": "m2_5m",
+ "idea": "m2_5m",
+ "schedule": [
+  [
+   1698364800,
+   {
+    "model": 2,
+    "n": 12,
+    "breakeven": false,
+    "confirm": "ltf"
+   }
+  ],
+  [
+   1714176000,
+   {
+    "model": 2,
+    "n": 12,
+    "breakeven": false,
+    "confirm": "ltf"
+   }
+  ],
+  [
+   1729987200,
+   {
+    "model": 2,
+    "n": 6,
+    "breakeven": false,
+    "confirm": "ltf"
+   }
+  ],
+  [
+   1745712000,
+   {
+    "model": 2,
+    "n": 6,
+    "breakeven": false,
+    "confirm": "ltf"
+   }
+  ],
+  [
+   1761523200,
+   {
+    "model": 2,
+    "n": 6,
+    "breakeven": false,
+    "confirm": "ltf"
+   }
+  ],
+  [
+   1777248000,
+   {
+    "model": 2,
+    "n": 6,
+    "breakeven": false,
+    "confirm": "ltf"
+   }
+  ]
+ ],
+ "metrics": {
+  "trades": 3,
+  "final_balance": 101.86,
+  "net_profit": 1.86,
+  "net_return_pct": 1.86,
+  "max_drawdown_pct": 1.25,
+  "win_rate_pct": 33.3,
+  "avg_win": 4.3,
+  "avg_loss": -1.22,
+  "profit_factor": 1.762,
+  "avg_commission": 0.1586,
+  "min_target_met": true,
+  "late_fills": 0,
+  "avg_delay_min": 0.0,
+  "monte_carlo_drawdown_pct": {
+   "p50": 2.39,
+   "p95": 2.39,
+   "p99": 2.39,
+   "runs": 1000
+  }
+ },
+ "gross_pips": {
+  "all": 22.9,
+  "per_pair": {
+   "frxEURJPY": 45.88,
+   "frxUSDJPY": -23.06
+  }
+ },
+ "cost_share_of_risk": {
+  "median": 0.159,
+  "mean": 0.146,
+  "avg_stop_pips": 37.1
+ },
+ "mt5_majors": {
+  "pairs": [
+   "frxEURUSD",
+   "frxGBPUSD",
+   "frxUSDJPY"
+  ],
+  "trades": 1,
+  "net_mt5": -1.05,
+  "net_deriv_same_trades": -1.19
+ },
+ "funnel": {
+  "sweeps": 32843,
+  "sweep_outside_session": 20276,
+  "setups": 3588,
+  "bos": 1137,
+  "cancel_draw_reached_before_entry": 301,
+  "sweep_against_bias": 8569,
+  "cancel_stop_level_traded": 1753,
+  "zone_touched": 434,
+  "sweep_both_sides": 342,
+  "ltf_sweeps": 423,
+  "cancel_session_ended": 292,
+  "cancel_no_retrace_in_time": 250,
+  "cancel_no_bos_in_time": 865,
+  "sweep_while_active": 62,
+  "ltf_bos": 105,
+  "signals": 17,
+  "sweep_session_used": 6,
+  "skip_us_bank_holiday": 1,
+  "cancel_entry_not_in_premium_discount": 85,
+  "cancel_zones_invalidated": 22,
+  "skip_news": 2
+ },
+ "engine_refused": {
+  "stop_under_cost_floor": 11,
+  "expired": 3
+ },
+ "engine_blocked": {
+  "no_price": 3
+ },
+ "stops_moved": 0,
+ "pairs_profitable": 1
+}

@@ -10,22 +10,22 @@
    "breakeven": false,
    "confirm": "ltf"
   },
-  "train_score": null,
-  "train_trades": 0
+  "train_score": -0.878,
+  "train_trades": 293
  },
  {
   "round": 2,
   "train": "2022-04-27..2024-04-26",
   "test": "2024-04-27..2024-10-26",
-  "variant": 0,
+  "variant": 1,
   "params": {
    "model": 1,
-   "n": 6,
+   "n": 12,
    "breakeven": false,
    "confirm": "ltf"
   },
-  "train_score": null,
-  "train_trades": 0
+  "train_score": -0.917,
+  "train_trades": 315
  },
  {
   "round": 3,
@@ -38,8 +38,8 @@
    "breakeven": false,
    "confirm": "ltf"
   },
-  "train_score": null,
-  "train_trades": 0
+  "train_score": -0.794,
+  "train_trades": 280
  },
  {
   "round": 4,
@@ -52,8 +52,8 @@
    "breakeven": false,
    "confirm": "ltf"
   },
-  "train_score": 4.46,
-  "train_trades": 5
+  "train_score": -0.941,
+  "train_trades": 270
  },
  {
   "round": 5,
@@ -66,8 +66,8 @@
    "breakeven": false,
    "confirm": "ltf"
   },
-  "train_score": 4.46,
-  "train_trades": 5
+  "train_score": -0.878,
+  "train_trades": 262
  },
  {
   "round": 6,
@@ -80,7 +80,7 @@
    "breakeven": false,
    "confirm": "ltf"
   },
-  "train_score": 4.46,
-  "train_trades": 5
+  "train_score": -0.895,
+  "train_trades": 245
  }
 ]

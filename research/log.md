@@ -987,3 +987,64 @@ approved as written; C28 as changed is the complete news rule. If GBP/JPY (or an
 Monday's cost check, run on the pairs that passed and say so in the report. Start only after
 BOTH Monday's new-pairs cost decision and the 5 Nov clock-change re-check have updated the cost
 tables; scheduled start Friday 6 Nov 2026, after `scripts/tjr_test.py preflight` passes.
+
+### TJR test results (run 6 Nov 2026): no variant passes; nothing registered
+
+Pairs: 9 (all six new pairs kept by Monday's cost check, GBP/JPY included). Cost tables: the majors' after the
+5 Nov re-check, and Monday's new-pairs table. Data before 2026-10-31 only. Report: reports/tjr_test.md;
+files: research/tjr/.
+
+Grid (full period 2021-10-27 to 2026-10-30, for reference; the walk-forward used only the training windows):
+
+| Date | Variant | Settings | Trades | Net USD | Gross USD | Kill events | Picked in rounds |
+|---|---|---|---|---|---|---|---|
+| 2026-11-06 | m1_5m v0 | model=1, n=6, breakeven=False, confirm=ltf | 661 | -84.23 | 16.43 | 1 | - |
+| 2026-11-06 | m1_5m v1 | model=1, n=12, breakeven=False, confirm=ltf | 826 | -78.37 | 50.92 | 1 | 1, 2, 3, 4, 5, 6 |
+| 2026-11-06 | m2_5m v0 | model=2, n=6, breakeven=False, confirm=ltf | 5 | 2.85 | 3.87 | 0 | 3, 4, 5, 6 |
+| 2026-11-06 | m2_5m v1 | model=2, n=12, breakeven=False, confirm=ltf | 8 | 6.07 | 7.74 | 0 | 1, 2 |
+| 2026-11-06 | m3_5m v0 | model=3, n=6, breakeven=False, confirm=ltf | 2 | -2.26 | -1.84 | 0 | 1, 2, 3, 4, 5, 6 |
+| 2026-11-06 | m3_5m v1 | model=3, n=12, breakeven=False, confirm=ltf | 2 | -2.26 | -1.84 | 0 | - |
+| 2026-11-06 | m4_5m v0 | model=4, n=6, breakeven=False, confirm=ltf | 3 | -3.48 | -2.86 | 0 | 1, 2, 3, 4, 5, 6 |
+| 2026-11-06 | m4_5m v1 | model=4, n=12, breakeven=False, confirm=ltf | 4 | -4.99 | -4.09 | 0 | - |
+| 2026-11-06 | m1_15m v0 | model=1, n=6, breakeven=False, confirm=ltf | 644 | -87.98 | 8.41 | 1 | 1, 3, 4, 5, 6 |
+| 2026-11-06 | m1_15m v1 | model=1, n=12, breakeven=False, confirm=ltf | 706 | -105.47 | -0.83 | 2 | 2 |
+| 2026-11-06 | m2_15m v0 | model=2, n=6, breakeven=False, confirm=ltf | 1 | 1.88 | 2.06 | 0 | 1, 2, 3, 4, 5, 6 |
+| 2026-11-06 | m2_15m v1 | model=2, n=12, breakeven=False, confirm=ltf | 1 | 1.88 | 2.06 | 0 | - |
+| 2026-11-06 | m3_15m v0 | model=3, n=6, breakeven=False, confirm=ltf | 0 | 0 | 0 | 0 | 1, 2, 3, 4, 5, 6 |
+| 2026-11-06 | m3_15m v1 | model=3, n=12, breakeven=False, confirm=ltf | 0 | 0 | 0 | 0 | - |
+| 2026-11-06 | m4_15m v0 | model=4, n=6, breakeven=False, confirm=ltf | 1 | 1.88 | 2.06 | 0 | 1, 2, 3, 4, 5, 6 |
+| 2026-11-06 | m4_15m v1 | model=4, n=12, breakeven=False, confirm=ltf | 1 | 1.88 | 2.06 | 0 | - |
+
+Stitched out of sample (2023-10-27 to 2026-10-26, 776 trading days, from 100 USD):
+
+| Variant | Trades (/day) | Gross pips/trade | Net / 1.5x USD | Max DD % | Coin toss beaten (p95 net) | Pairs profitable after costs | Verdict |
+|---|---|---|---|---|---|---|---|
+| m1_5m | 413 (0.53) | 2.77 | -30.66 / -47.82 | 33.64 | 90% (-21.2) | 2 of 9 | fails CLAUDE.md pass rule (net loss; 1 of 3 majors); clears the 8 checks only with the 0.3/day waiver |
+| m1_5m_be | 416 (0.54) | 2.93 | -26.12 / -45.21 | 31.42 | 92% (-20.0) | 2 of 9 | fails CLAUDE.md pass rule (net loss; 1 of 3 majors); clears the 8 checks only with the 0.3/day waiver |
+| m1_15m | 358 (0.46) | 0.84 | -46.35 / -69.75 | 49.6 | 72% (-32.6) | 1 of 9 | fails CLAUDE.md pass rule (net loss; 1 of 3 majors); clears the 8 checks only with the 0.3/day waiver |
+| m1_15m_be | 359 (0.46) | 1.03 | -43.41 / -62.32 | 47.51 | 79% (-34.5) | 1 of 9 | fails CLAUDE.md pass rule (net loss; 1 of 3 majors); clears the 8 checks only with the 0.3/day waiver |
+| m2_5m | 3 (0.0) | 22.9 | 1.86 / 1.62 | 1.25 | 46% (3.1) | 1 of 9 | too few trades / not profitable before costs |
+| m2_5m_be | 3 (0.0) | 22.9 | 1.86 / 1.62 | 1.25 | 46% (3.9) | 1 of 9 | too few trades / not profitable before costs |
+| m2_5m_touch | 15 (0.02) | 23.66 | 11.63 / 10.47 | 4.97 | 84% (15.6) | 6 of 9 | too few trades / not profitable before costs |
+| m2_15m | 1 (0.0) | 29.2 | 1.88 / 1.81 | 0.0 | 52% (1.9) | 1 of 9 | too few trades / not profitable before costs |
+| m2_15m_be | 1 (0.0) | 29.2 | 1.88 / 1.81 | 0.0 | 52% (1.9) | 1 of 9 | too few trades / not profitable before costs |
+| m2_15m_touch | 11 (0.01) | 9.49 | 0.02 / -0.73 | 4.52 | 84% (3.4) | 3 of 9 | too few trades / not profitable before costs |
+| m3_5m | 1 (0.0) | -26.41 | -1.29 / -1.37 | 1.29 | not run | 0 of 9 | too few trades / not profitable before costs |
+| m3_5m_be | 1 (0.0) | -26.41 | -1.29 / -1.37 | 1.29 | not run | 0 of 9 | too few trades / not profitable before costs |
+| m3_5m_touch | 5 (0.01) | -1.98 | -1.48 / -1.86 | 2.16 | not run | 0 of 9 | too few trades / not profitable before costs |
+| m3_15m | 0 (0.0) | None | 0 / 0 | 0.0 | not run | 0 of 9 | too few trades / not profitable before costs |
+| m3_15m_be | 0 (0.0) | None | 0 / 0 | 0.0 | not run | 0 of 9 | too few trades / not profitable before costs |
+| m3_15m_touch | 4 (0.01) | -5.55 | -1.51 / -1.79 | 3.04 | not run | 1 of 9 | too few trades / not profitable before costs |
+| m4_5m | 2 (0.0) | -27.31 | -2.52 / -2.68 | 2.52 | not run | 0 of 9 | too few trades / not profitable before costs |
+| m4_5m_be | 2 (0.0) | -27.31 | -2.52 / -2.68 | 2.52 | not run | 0 of 9 | too few trades / not profitable before costs |
+| m4_5m_touch | 9 (0.01) | 20.46 | 4.07 / 3.33 | 5.61 | 64% (14.4) | 3 of 9 | too few trades / not profitable before costs |
+| m4_15m | 1 (0.0) | 29.2 | 1.88 / 1.81 | 0.0 | 52% (1.9) | 1 of 9 | too few trades / not profitable before costs |
+| m4_15m_be | 1 (0.0) | 29.2 | 1.88 / 1.81 | 0.0 | 52% (1.9) | 1 of 9 | too few trades / not profitable before costs |
+| m4_15m_touch | 12 (0.02) | 6.8 | -1.85 / -2.67 | 6.3 | 52% (4.7) | 3 of 9 | too few trades / not profitable before costs |
+
+Model 1 has a real but small edge before costs (+2.8 pips a trade on 5m) against about 4.2 pips of
+Deriv cost, so it loses after costs. Models 2-4 almost never complete the notes' confirmation chain
+(0-3 trades in three years). At MT5 micro costs the model 1 trades on the majors roughly break even
+(+14 to +18 USD), almost all from EUR/USD: not a convincing pass either. Runner fault found and fixed
+before these results: 14 runs first resumed leftover synthetic-test engine files; they were deleted and
+rerun (report section 6). Variants tried in this test: 30. N for the incubator stays 5.

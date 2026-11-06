@@ -1,5 +1,8 @@
 # TJR test, Step 2: the plan, fixed before any run
 
+**Run on 6 Nov 2026 after both cost inputs were final; results in `reports/tjr_test.md` (no variant
+passes).**
+
 Status (2 Nov 2026): **approved by the owner in full; written and coded; nothing has been run on
 market data.** On the owner's instruction, the runs start only after **both** of these have
 updated the cost tables:

@@ -313,6 +313,9 @@ python scripts/tjr_test.py grid|oos|luck|summary     # each resumes; repeat unti
   stop-beyond-stop-out skip, and Deriv's stop-loss update to near break-even. Older
   strategies are unchanged.
 - Results go to `research/tjr/` and `reports/tjr_test.md`.
+- **Result (6 Nov 2026): no variant passes; nothing registered.** Model 1 has a small edge
+  before costs (about 2.8 pips a trade) but Deriv's cost is about 4.2; models 2-4 almost never
+  trigger. See `reports/tjr_test.md`.
 
 ## Pipeline audit
 

@@ -42,6 +42,7 @@ from fxbot.backtest import prescreen as P
 from fxbot.backtest import research as R
 from fxbot.backtest import tjr_test as TT
 from fxbot.backtest.audit import gross_of
+from fxbot.backtest import engine as E
 from fxbot.backtest.engine import Engine
 from fxbot.backtest.metrics import summarise
 from fxbot.strategies.tjr import TJRReplay
@@ -141,8 +142,13 @@ def _run(job) -> bool:
         start = v0 - dt.timedelta(days=cls.warmup_days)
         data = TT.replay_data(P.market_data(cls.timeframe, start, end, syms), sigs, cls.timeframe)
         stress = 1.0
+    # Resumable engine states live under state/tjr/engine/ and carry this setup's id, so a state
+    # left by an earlier setup or a test run can never be resumed by mistake (6 Nov 2026: leftover
+    # synthetic-data states under state/backtest/ were resumed by four grid and ten OOS runs).
+    E.STATE_DIR = STATE / "engine"
+    sid = TT.hashlib.sha256(info["created_utc"].encode()).hexdigest()[:10]
     eng = Engine(strat, list(syms), start, end, stress=stress, data=data, kill_switch="observe",
-                 table=_table(info), run_name=None if kind == "luck" else f"tjr_{kind}_{key}")
+                 table=_table(info), run_name=None if kind == "luck" else f"tjr_{kind}_{key}_{sid}")
     if not eng.run(max_seconds=budget):
         return False
     st = eng.state
