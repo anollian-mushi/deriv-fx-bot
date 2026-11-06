@@ -1,0 +1,165 @@
+{
+ "buy": {
+  "balance_after": 9964.43,
+  "buy_price": 1.0,
+  "contract_id": 19642142299,
+  "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in EUR/USD, multiplied by 100, minus commissions.",
+  "payout": 0,
+  "purchase_time": 1793988066,
+  "shortcode": "MULTUP_FRXEURUSD_1.00_100_1793988066_4947609600_0_0.00_N1_0",
+  "start_time": 1793988066,
+  "transaction_id": 37611094979
+ },
+ "commission": "0.02",
+ "contract_id": 19642142299,
+ "direction": "MULTUP",
+ "entry_spot": "1.11470",
+ "multiplier": 100,
+ "opened": "2026-11-06 18:01:06 UTC",
+ "proposal": {
+  "ask_price": 1.0,
+  "commission": 0.02,
+  "contract_details": {
+   "maximum_stake": "2000.00",
+   "minimum_stake": "1.00"
+  },
+  "date_expiry": 4947609600,
+  "date_start": 1793988066,
+  "id": "c027ed56-b6e0-4771-8d76-39b6496ebfe9",
+  "limit_order": {
+   "stop_loss": {
+    "display_name": "Stop loss",
+    "display_order_amount": "-0.20",
+    "order_amount": -0.2,
+    "order_date": 1793988066,
+    "value": "1.11272"
+   },
+   "stop_out": {
+    "display_name": "Stop out",
+    "display_order_amount": "-1.00",
+    "order_amount": -1.0,
+    "order_date": 1793988066,
+    "value": "1.10380"
+   }
+  },
+  "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in EUR/USD, multiplied by 100, minus commissions.",
+  "multiplier": 100,
+  "payout": 0,
+  "spot": 1.11469,
+  "spot_time": 1793988066,
+  "validation_params": {
+   "stake": {
+    "max": "2000.00",
+    "min": "1.00"
+   },
+   "stop_loss": {
+    "max": "1.00",
+    "min": "0.10"
+   },
+   "take_profit": {
+    "max": "50.00",
+    "min": "0.10"
+   }
+  }
+ },
+ "purchase_time": 1793988066,
+ "stake": 1.0,
+ "state_after_open": {
+  "at": "2026-11-06 18:01:10 UTC",
+  "balance": {
+   "balance": 9964.43,
+   "currency": "USD",
+   "loginid": "DOT92887729"
+  },
+  "contract": {
+   "account_id": 57954601,
+   "barrier_count": 1,
+   "bid_price": "0.97",
+   "buy_price": "1.00",
+   "commission": "0.02",
+   "contract_id": 19642142299,
+   "contract_type": "MULTUP",
+   "currency": "USD",
+   "current_spot": "1.11462",
+   "current_spot_time": 1793988069,
+   "date_expiry": 4947609600,
+   "date_settlement": 4947696000,
+   "date_start": 1793988066,
+   "entry_spot": "1.11470",
+   "entry_spot_time": 1793988067,
+   "expiry_time": 4947609600,
+   "is_expired": 0,
+   "is_intraday": 0,
+   "is_path_dependent": 1,
+   "is_settleable": 0,
+   "is_sold": 0,
+   "is_valid_to_cancel": 0,
+   "is_valid_to_sell": 1,
+   "is_valid_to_update": {
+    "stop_loss": 1,
+    "stop_out": 0,
+    "take_profit": 1
+   },
+   "limit_order": {
+    "stop_loss": {
+     "display_name": "Stop loss",
+     "display_order_amount": "-0.20",
+     "order_amount": -0.2,
+     "order_date": 1793988066,
+     "value": "1.11273"
+    },
+    "stop_out": {
+     "display_name": "Stop out",
+     "display_order_amount": "-1.00",
+     "order_amount": -1.0,
+     "order_date": 1793988066,
+     "value": "1.10381"
+    }
+   },
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in EUR/USD, multiplied by 100, minus commissions.",
+   "multiplier": 100,
+   "profit": "-0.03",
+   "profit_percentage": -3,
+   "purchase_time": 1793988066,
+   "shortcode": "MULTUP_FRXEURUSD_1.00_100_1793988066_4947609600_0_0.00_N1_0",
+   "status": "open",
+   "transaction_ids": {
+    "buy": 37611094979
+   },
+   "underlying_symbol": "frxEURUSD",
+   "validation_params": {
+    "stake": {
+     "max": "2000.00",
+     "min": "1.00"
+    },
+    "stop_loss": {
+     "max": "1.00",
+     "min": "0.10"
+    },
+    "take_profit": {
+     "max": "50.00",
+     "min": "0.10"
+    }
+   }
+  },
+  "statement": [
+   {
+    "action_type": "buy",
+    "amount": -1.0,
+    "app_id": "33E1EFiiwCxheaIzatO7W",
+    "balance_after": 9964.43,
+    "contract_id": 19642142299,
+    "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in EUR/USD, multiplied by 100, minus commissions.",
+    "payout": 0.0,
+    "reference_id": null,
+    "shortcode": "MULTUP_FRXEURUSD_1.00_100_1793988066_4947609600_0_0.00_N1_0",
+    "transaction_id": 37611094979,
+    "transaction_time": 1793988066
+   }
+  ]
+ },
+ "stop_loss_price": "1.11273",
+ "stop_loss_usd": 0.2,
+ "stop_out_price": "1.10381",
+ "symbol": "frxEURUSD"
+}

@@ -1,0 +1,94 @@
+{
+ "at": "2026-11-06 18:01:18 UTC",
+ "balance": {
+  "balance": 9964.43,
+  "currency": "USD",
+  "loginid": "DOT92887729"
+ },
+ "contract": {
+  "account_id": 57954601,
+  "barrier_count": 1,
+  "bid_price": "0.97",
+  "buy_price": "1.00",
+  "commission": "0.02",
+  "contract_id": 19642142299,
+  "contract_type": "MULTUP",
+  "currency": "USD",
+  "current_spot": "1.11464",
+  "current_spot_time": 1793988077,
+  "date_expiry": 4947609600,
+  "date_settlement": 4947696000,
+  "date_start": 1793988066,
+  "entry_spot": "1.11470",
+  "entry_spot_time": 1793988067,
+  "expiry_time": 4947609600,
+  "is_expired": 0,
+  "is_intraday": 0,
+  "is_path_dependent": 1,
+  "is_settleable": 0,
+  "is_sold": 0,
+  "is_valid_to_cancel": 0,
+  "is_valid_to_sell": 1,
+  "is_valid_to_update": {
+   "stop_loss": 1,
+   "stop_out": 0,
+   "take_profit": 1
+  },
+  "limit_order": {
+   "stop_loss": {
+    "display_name": "Stop loss",
+    "display_order_amount": "-0.20",
+    "order_amount": -0.2,
+    "order_date": 1793988066,
+    "value": "1.11273"
+   },
+   "stop_out": {
+    "display_name": "Stop out",
+    "display_order_amount": "-1.00",
+    "order_amount": -1.0,
+    "order_date": 1793988066,
+    "value": "1.10381"
+   }
+  },
+  "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in EUR/USD, multiplied by 100, minus commissions.",
+  "multiplier": 100,
+  "profit": "-0.03",
+  "profit_percentage": -3,
+  "purchase_time": 1793988066,
+  "shortcode": "MULTUP_FRXEURUSD_1.00_100_1793988066_4947609600_0_0.00_N1_0",
+  "status": "open",
+  "transaction_ids": {
+   "buy": 37611094979
+  },
+  "underlying_symbol": "frxEURUSD",
+  "validation_params": {
+   "stake": {
+    "max": "2000.00",
+    "min": "1.00"
+   },
+   "stop_loss": {
+    "max": "1.00",
+    "min": "0.10"
+   },
+   "take_profit": {
+    "max": "50.00",
+    "min": "0.10"
+   }
+  }
+ },
+ "statement": [
+  {
+   "action_type": "buy",
+   "amount": -1.0,
+   "app_id": "33E1EFiiwCxheaIzatO7W",
+   "balance_after": 9964.43,
+   "contract_id": 19642142299,
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in EUR/USD, multiplied by 100, minus commissions.",
+   "payout": 0.0,
+   "reference_id": null,
+   "shortcode": "MULTUP_FRXEURUSD_1.00_100_1793988066_4947609600_0_0.00_N1_0",
+   "transaction_id": 37611094979,
+   "transaction_time": 1793988066
+  }
+ ]
+}
