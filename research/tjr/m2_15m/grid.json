@@ -1,0 +1,70 @@
+[
+ {
+  "variant": 0,
+  "model": 2,
+  "n": 6,
+  "breakeven": false,
+  "confirm": "ltf",
+  "trades": 1,
+  "net_profit": 1.88,
+  "gross": 2.06,
+  "kill_events": 0,
+  "stats": {
+   "sweeps": 54694,
+   "sweep_outside_session": 33435,
+   "sweep_against_bias": 14054,
+   "sweep_both_sides": 581,
+   "setups": 6127,
+   "cancel_stop_level_traded": 3758,
+   "cancel_no_bos_in_time": 1166,
+   "bos": 1339,
+   "cancel_draw_reached_before_entry": 428,
+   "cancel_session_ended": 611,
+   "zone_touched": 489,
+   "sweep_while_active": 497,
+   "cancel_no_retrace_in_time": 104,
+   "ltf_sweeps": 177,
+   "ltf_bos": 36,
+   "cancel_entry_not_in_premium_discount": 33,
+   "cancel_zones_invalidated": 24,
+   "signals": 3
+  },
+  "refused": {
+   "expired": 2
+  }
+ },
+ {
+  "variant": 1,
+  "model": 2,
+  "n": 12,
+  "breakeven": false,
+  "confirm": "ltf",
+  "trades": 1,
+  "net_profit": 1.88,
+  "gross": 2.06,
+  "kill_events": 0,
+  "stats": {
+   "sweeps": 54694,
+   "sweep_outside_session": 33342,
+   "sweep_against_bias": 13985,
+   "sweep_both_sides": 581,
+   "setups": 6125,
+   "cancel_stop_level_traded": 4084,
+   "cancel_no_bos_in_time": 576,
+   "bos": 1610,
+   "cancel_draw_reached_before_entry": 475,
+   "cancel_session_ended": 923,
+   "zone_touched": 536,
+   "sweep_while_active": 661,
+   "ltf_sweeps": 180,
+   "ltf_bos": 38,
+   "cancel_entry_not_in_premium_discount": 35,
+   "cancel_zones_invalidated": 24,
+   "cancel_no_retrace_in_time": 5,
+   "signals": 3
+  },
+  "refused": {
+   "expired": 2
+  }
+ }
+]
