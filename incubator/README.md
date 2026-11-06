@@ -180,6 +180,24 @@ N = 5 or more). This raised N from 4 to 5 for every candidate. Two things to
 watch on the leaderboard: whether USD/JPY alone carries its result, as in the
 pre-screen, and whether the trade count grows at roughly 8 a month.
 
+**Multi-pair test of the i13 rule (Mon 2 Nov 2026): not registered.** The
+owner asked whether the same rule, with exactly the same settings, works on
+six more Deriv pairs (AUD/USD, USD/CAD, USD/CHF, EUR/GBP, EUR/JPY, GBP/JPY),
+to raise its trade count honestly; the pairs were fixed before any data was
+seen, their commission was measured by hour on 2 Nov (quotes only; table in
+`research/phase2/cost_by_hour_pairs2.json`), and no pair was dropped for cost
+(expected move 6 to 14 times the cost). The owner had waived the frequency
+check (as for i13) and the diversity check (same rule on other pairs on
+purpose) in advance. On data before 31 Oct 2026 the rule on the six pairs
+lost money **before** costs (-1.4 USD gross over 572 trades, -41 USD after
+the measured commission), with two pairs ahead (USD/CHF, EUR/JPY) and four
+behind (AUD/USD worst). That fails the pre-screen, and keeping only the two
+winners is exactly the kind of after-the-fact picking the plan forbids, so
+nothing was registered and N stays 5. Plain reading: the morning-move edge
+that showed on the majors does not generalise; the i13 candidate's own
+forward test is the only honest judge left. Details: `research/log.md`,
+"Multi-pair test of the i13 rule".
+
 **Running the pre-screen on a new idea** (for a developer or an AI): add the
 strategy class to `src/fxbot/strategies/families.py`, declare its grid (at
 most 8 variants, 5 settings) in `fxbot.backtest.prescreen.IDEAS`, then
@@ -265,7 +283,9 @@ you can judge that yourself.
 | Telegram message | What it means | What to do |
 |---|---|---|
 | **ALERT: the daily Deriv collector failed** | GitHub could not download yesterday's prices (Deriv down, network trouble, or a change on Deriv's side). | Nothing at first: it retries at the next run and fills in the missed days. If it repeats for 3+ days, open **Actions → Collect Deriv candles**, open the red run and read the red lines. If Deriv changed its API, a developer or AI has to update `src/fxbot/data/collector.py`. |
-| **ALERT: the daily forward test failed** | The replay or one of its checks broke. | Open **Actions → Incubator daily forward test → the red run**. Read the step with the red cross. A failing "Incubator tests" step means files were changed by hand (see TAMPERED below). One failure followed by a success the next day can be ignored. |
+| **ALERT: the daily forward test failed** | The replay itself broke, or the integrity check failed (the registry chain or a candidate's fingerprint no longer matches). Only the integrity check blocks scoring. | Open **Actions → Incubator daily forward test → the red run**. Read the step with the red cross. A failing "Integrity check" step means files were changed by hand (see TAMPERED below). One failure followed by a success the next day can be ignored. |
+| **ALERT: a test failed in today's Deriv collector run** | The candles were collected and saved first, so no data is lost; a test that runs afterwards failed. | Nothing urgent. If it repeats, a developer or AI should open **Actions → Collect Deriv candles**, read the "Tests" step and fix the test. |
+| **ALERT: an incubator test failed in today's forward test run** | The integrity check passed, so scoring still ran and the records were updated; one of the other incubator tests failed. | Nothing urgent. If it repeats, a developer or AI should read the "Incubator tests" step of that run and fix the test. |
 | **STALE: ... has not succeeded for 2 or more scheduled days** | A daily job has stopped running at all. | Open **Actions** and look for a yellow banner such as "This scheduled workflow is disabled". If it is there, open that workflow and click **Enable workflow**. Otherwise run it by hand (**Run workflow**) and see whether it fails. |
 | **STALE: the weekly leaderboard ...** | The Monday job has not run for more than 8 days. | Same as above, for **Incubator weekly leaderboard**. |
 | **Incubator daily run found problems: TAMPERED ...** | A frozen candidate's files no longer match their fingerprint. Someone edited them. | That candidate is skipped until its files are restored. Restore them to how they were with `git checkout <commit-before-the-edit> -- incubator/candidates/<id>` (or ask someone to). Never "fix" the fingerprint: a changed idea must be registered as a new candidate. |

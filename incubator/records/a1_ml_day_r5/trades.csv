@@ -1,0 +1,4 @@
+symbol,direction,multiplier,stake,signal_time,entry_time,entry,exit_time,exit,reason,rate_pct,commission,profit,balance_after
+frxEURUSD,MULTUP,100,3.0,2026-11-02 08:00,2026-11-02 08:00,1.1197400000000002,2026-11-02 20:00,1.11945,strategy_exit,0.0239,0.0717,-0.15,99.85
+frxGBPUSD,MULTUP,100,3.0,2026-11-02 08:00,2026-11-02 08:00,1.3415000000000001,2026-11-02 20:00,1.34103,strategy_exit,0.0203,0.0609,-0.17,99.68
+frxGBPUSD,MULTUP,100,2.99,2026-11-04 08:00,2026-11-04 08:00,1.3477700000000001,2026-11-04 20:00,1.3468,strategy_exit,0.0203,0.0607,-0.28,99.4

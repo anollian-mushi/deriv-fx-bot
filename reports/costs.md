@@ -279,6 +279,7 @@ uses the unrounded rate (`src/fxbot/contracts/multiplier.py`).
   and 12:00–19:00 UTC are re-sampled on two weekdays (quotes only) to check
   whether the cheap window moved, and whether 12:00–13:59 is raised every
   day or only on news days.
+  **Result (5 Nov): the window did not move; see section 13.**
 - **Live cost gate (risk module):** before every buy, the bot skips the trade
   if the quoted commission rate is above 1.5× the pair's base rate:
 
@@ -310,12 +311,93 @@ uses the unrounded rate (`src/fxbot/contracts/multiplier.py`).
 - **Only 11 demo trades.** The fill results are consistent but small in
   number. The Phase 6 demo run will add many more.
 
+## 13. Clock-change re-check (after 1 Nov 2026)
+
+**Short answer: the cheap window did not move.** From 06:00 to 17:59 UTC
+the commission stayed at, or within 1.15x of, the base rate on all three
+days sampled after the US clock change, well under the 1.5x cost gate. The
+12:00-13:59 rise seen on Thursday 29 Oct did not come back on any day, so it
+looks like a news-day effect, not a daily pattern. The evening is cheaper
+than before at 19:00, but 18:00 is still raised on some days.
+
+**What was sampled.** Quotes only, on the demo connection, no trades:
+05:00-07:00 and 12:00-19:00 UTC on Tuesday 3 and Thursday 5 November, plus
+Monday 2 November hourly from 06:00 to 18:00 (taken for the new-pairs test,
+which also quoted the three majors). Two hours are missing: Tuesday 13:00
+(the sample started 52 minutes late and fell into 14:00) and Monday 14:00 and
+19:00 (not sampled or late). Each other re-checked hour has two or three days.
+
+**The readings**, as a multiple of each pair's base rate, for EUR/USD /
+GBP/USD / USD/JPY:
+
+| UTC hour | Wed 28 Oct | Thu 29 Oct | Mon 2 Nov | Tue 3 Nov | Thu 5 Nov |
+|---|---|---|---|---|---|
+| 05 | | 1.1 / 1.2 / 1.0 | | 1.2 / 1.2 / 1.1 | 1.2 / 1.2 / 1.1 |
+| 06 | | 1.0 / 1.0 / 1.0 | 1.1 / 1.2 / 1.0 | 1.1 / 1.2 / 1.0 | 1.1 / 1.2 / 1.0 |
+| 07 | | 1.0 / 1.0 / 1.0 | 1.0 / 1.0 / 1.0 | 1.0 / 1.1 / 1.0 | 1.0 / 1.1 / 1.0 |
+| 12 | | **3.0 / 3.0 / 3.0** | 1.0 / 1.0 / 1.1 | 1.0 / 1.0 / 1.1 | 1.0 / 1.0 / 1.1 |
+| 13 | | **3.0** / 1.0 / 1.0 | 1.0 / 1.0 / 1.1 | missing | 1.0 / 1.0 / 1.0 |
+| 14-17 | 1.0 (16:00) | 1.0 / 1.0 / 1.0 | 1.0 / 1.0 / 1.0-1.1 | 1.0 / 1.0 / 1.0-1.1 | 1.0 / 1.0 / 1.0-1.1 |
+| 18 | **3.0 / 3.0 / 3.0** | **2.0 / 2.0 / 2.1** | **2.3 / 2.2 / 2.5** (18:21) | 1.0 / 1.0 / 1.2 (18:11) | 1.0 / 1.0 / 1.2 (18:11) |
+| 19 | | **2.3 / 2.3 / 2.5** | missing | 1.2 / 1.1 / 1.3 | 1.2 / 1.1 / 1.3 |
+
+**Did the cheap window move?**
+- **Morning:** no. 05:00 is slightly raised (1.1-1.2x) and 06:00 only just
+  above base on EUR/USD and GBP/USD (1.1-1.2x). From 07:00 it is at base,
+  as before. The window can keep starting at 06:00: those readings are far
+  under the 1.5x gate, which would still block a trade on a bad day.
+- **Afternoon:** 12:00-17:59 is at base on every post-change day. USD/JPY
+  sits a little above its lowest-ever rate (1.05-1.14x) most afternoons.
+- **Evening:** it seems to have shifted about an hour later. Before the US
+  change, 18:00 was 2-3x and 19:00 about 2.3x. After it, 19:10 is only
+  1.1-1.3x and 18:11 is near base, but Monday's 18:21 reading was still
+  2.2-2.5x. The rise probably starts within the 18:00 hour now. Nothing
+  changes for the bot, because new trades already stop at 17:59.
+
+**Was 12:00-13:59 raised every day or only on news days?** Only on Thursday
+29 Oct. It was at base on Monday 2, Tuesday 3 and Thursday 5 November.
+Scheduled news, for context only (**not verified**: taken from public
+economic calendars, not from Deriv):
+- Thu 29 Oct: ECB rate decision, listed for 13:15 UTC (14:15 CET), with the
+  press conference after it. That fits the 3x seen at 12:32 on all pairs and
+  at 13:16 on EUR/USD only.
+- Wed 28 Oct: US Federal Reserve decision, listed for 18:00 UTC. That fits
+  the 3x at 18:07.
+- Tue 3 Nov: US election day; no big release found for 12:00-14:00 UTC.
+- Thu 5 Nov: Bank of England decision, listed for 12:00 UTC. The 12:12
+  sample was at base, so the rise, if any, did not last past the release or
+  did not happen.
+So the pattern fits "raised around big central-bank news, otherwise base",
+but three quiet days are not proof.
+
+**What changed in the cost table.** `research/phase2/cost_by_hour.json` now
+uses only the post-1-Nov samples for 05:00-07:00 and 12:00-19:00 UTC, the
+highest reading per hour, and records the dates each hour comes from. The
+other hours keep their 28-29 Oct readings. Base rates are unchanged.
+Main changes for backtests and the incubator: 12:00 and 13:00 drop from 3x
+to base, 18:00 from 3x to about 2.3x, 19:00 from 2.3x to about 1.2x, and
+05:00-07:00 rise slightly (1.05-1.2x). The incubator replays every
+candidate with the current table, so its forward results will be repriced
+with these rates from the next daily run; the engine fingerprint changes
+for that reason. The 28-29 Oct table is kept unchanged as
+`research/phase2/cost_by_hour_2026-10-29.json` (archive, never used for
+pricing).
+
+**Proposed CLAUDE.md wording (needs the owner's approval; not changed).**
+Replace the last two sentences of the "Entry window" bullet with:
+
+> Fixed, not a tunable parameter. Re-checked after the US clock change
+> (2, 3 and 5 Nov 2026; reports/costs.md section 13): the window did not
+> move. 12:00-13:59 UTC is raised only around big news, which the live cost
+> gate handles.
+
 ## Files
 
 | What | Where |
 |---|---|
 | All measured specs (rebuilt by `scripts/build_contract_specs.py`) | `config/contract_specs.yaml` |
 | Commission by hour (`scripts/cost_by_hour.py`) | `research/phase2/cost_by_hour.md` / `.json` |
+| The 28-29 Oct table before the re-check (archive, not for pricing) | `research/phase2/cost_by_hour_2026-10-29.json` |
 | Stop-out check (`scripts/check_stopout.py`) | `research/phase2/stopout_check.md` |
 | Real vs demo, same-time pairs | `research/phase2/real_vs_demo.md` |
 | Every demo trade | `research/demo_cost_trades.csv`; raw replies in `research/phase2/demo_raw/` |

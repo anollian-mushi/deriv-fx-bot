@@ -2,31 +2,31 @@
 
 Base rate (lowest seen): EUR/USD 0.0239%, GBP/USD 0.0203%, USD/JPY 0.0275%. New trades are refused 20:55-21:30 UTC.
 
-The 06:00-17:59 UTC base window is **provisional**: it was measured 28-29 Oct 2026, between the European (25 Oct) and US (1 Nov) clock changes, and is re-checked in the week after 1 Nov.
+The 06:00-17:59 UTC base window was measured 28-29 Oct 2026 and re-checked after the US clock change (Mon 2, Tue 3 and Thu 5 Nov 2026; reports/costs.md section 13). Hours 05-07 and 12-19 UTC use only the post-1-Nov samples; the other hours use 28-29 Oct.
 
-| UTC hour | Samples | EUR/USD max rate (x base) | GBP/USD | USD/JPY | EUR/USD cost | GBP/USD cost | USD/JPY cost |
+| UTC hour | Samples | EUR/USD max rate (x base) | GBP/USD max rate (x base) | USD/JPY max rate (x base) | EUR/USD cost | GBP/USD cost | USD/JPY cost |
 |---|---|---|---|---|---|---|---|
-| 00 | Thu 00:12 | 0.0269% (1.1x) | 0.0256% (1.3x) | 0.0288% (1.0x) | 3.1 pips | 3.4 pips | 4.5 pips |
-| 01 | Thu 01:11 | 0.0284% (1.2x) | 0.0266% (1.3x) | 0.0299% (1.1x) | 3.3 pips | 3.6 pips | 4.7 pips |
-| 02 | Thu 02:11 | 0.0276% (1.2x) | 0.0248% (1.2x) | 0.0283% (1.0x) | 3.2 pips | 3.3 pips | 4.4 pips |
-| 03 | Thu 03:11 | 0.0275% (1.1x) | 0.0244% (1.2x) | 0.0279% (1.0x) | 3.2 pips | 3.3 pips | 4.4 pips |
-| 04 | Thu 04:11 | 0.0274% (1.1x) | 0.0238% (1.2x) | 0.0275% (1.0x) | 3.2 pips | 3.2 pips | 4.3 pips |
-| 05 | Thu 05:11 | 0.0265% (1.1x) | 0.0236% (1.2x) | 0.0275% (1.0x) | 3.1 pips | 3.2 pips | 4.3 pips |
-| 06 | Thu 06:16 | 0.0239% (1.0x) | 0.0203% (1.0x) | 0.0275% (1.0x) | 2.8 pips | 2.7 pips | 4.3 pips |
-| 07 | Thu 07:12 | 0.0239% (1.0x) | 0.0203% (1.0x) | 0.0275% (1.0x) | 2.8 pips | 2.7 pips | 4.3 pips |
-| 08 | Thu 08:12, Thu 08:17 | 0.0239% (1.0x) | 0.0203% (1.0x) | 0.0275% (1.0x) | 2.8 pips | 2.7 pips | 4.3 pips |
-| 09 | Thu 09:12 | 0.0239% (1.0x) | 0.0203% (1.0x) | 0.0275% (1.0x) | 2.8 pips | 2.7 pips | 4.3 pips |
-| 10 | Thu 10:14 | 0.0239% (1.0x) | 0.0203% (1.0x) | 0.0275% (1.0x) | 2.8 pips | 2.7 pips | 4.3 pips |
-| 11 | Thu 11:15 | 0.0239% (1.0x) | 0.0203% (1.0x) | 0.0275% (1.0x) | 2.8 pips | 2.7 pips | 4.3 pips |
-| 12 | Thu 12:32 | 0.0717% (3.0x) | 0.0609% (3.0x) | 0.0825% (3.0x) | 8.4 pips | 8.2 pips | 12.9 pips |
-| 13 | Thu 13:16 | 0.0717% (3.0x) | 0.0203% (1.0x) | 0.0275% (1.0x) | 8.4 pips | 2.7 pips | 4.3 pips |
-| 14 | Thu 14:24 | 0.0239% (1.0x) | 0.0203% (1.0x) | 0.0275% (1.0x) | 2.8 pips | 2.7 pips | 4.3 pips |
-| 15 | Thu 15:21 | 0.0239% (1.0x) | 0.0203% (1.0x) | 0.0275% (1.0x) | 2.8 pips | 2.7 pips | 4.3 pips |
-| 16 | Wed 16:35, Thu 16:13 | 0.0239% (1.0x) | 0.0203% (1.0x) | 0.0275% (1.0x) | 2.8 pips | 2.7 pips | 4.3 pips |
-| 17 | Thu 17:16 | 0.0239% (1.0x) | 0.0203% (1.0x) | 0.0275% (1.0x) | 2.8 pips | 2.7 pips | 4.3 pips |
-| 18 | Wed 18:07, Thu 18:15 | 0.0717% (3.0x) | 0.0609% (3.0x) | 0.0825% (3.0x) | 8.4 pips | 8.2 pips | 12.9 pips |
-| 19 | Thu 19:15 | 0.0555% (2.3x) | 0.0459% (2.3x) | 0.0678% (2.5x) | 6.5 pips | 6.2 pips | 10.6 pips |
-| 20 | Wed 20:01, Wed 20:03 | 0.0893% (3.7x) | 0.0743% (3.7x) | 0.1101% (4.0x) | 10.4 pips | 10.0 pips | 17.2 pips |
-| 21 | Wed 21:14 (paused), Wed 21:36 | 0.2868% (12.0x) | 0.2436% (12.0x) | 0.3300% (12.0x) | 33.5 pips | 32.7 pips | 51.7 pips |
-| 22 | Wed 22:13 | 0.1419% (5.9x) | 0.1195% (5.9x) | 0.1624% (5.9x) | 16.6 pips | 16.0 pips | 25.4 pips |
-| 23 | Wed 23:11 | 0.1029% (4.3x) | 0.0937% (4.6x) | 0.1170% (4.3x) | 12.0 pips | 12.6 pips | 18.3 pips |
+| 00 | Thu 29 Oct 00:12 | 0.0269% (1.1x) | 0.0256% (1.3x) | 0.0288% (1.0x) | 3.1 pips | 3.4 pips | 4.5 pips |
+| 01 | Thu 29 Oct 01:11 | 0.0284% (1.2x) | 0.0266% (1.3x) | 0.0299% (1.1x) | 3.3 pips | 3.6 pips | 4.7 pips |
+| 02 | Thu 29 Oct 02:11 | 0.0276% (1.2x) | 0.0248% (1.2x) | 0.0283% (1.0x) | 3.2 pips | 3.3 pips | 4.4 pips |
+| 03 | Thu 29 Oct 03:11 | 0.0275% (1.1x) | 0.0244% (1.2x) | 0.0279% (1.0x) | 3.2 pips | 3.3 pips | 4.4 pips |
+| 04 | Thu 29 Oct 04:11 | 0.0274% (1.1x) | 0.0238% (1.2x) | 0.0275% (1.0x) | 3.2 pips | 3.2 pips | 4.3 pips |
+| 05 | Tue 03 Nov 05:11, Thu 05 Nov 05:11 | 0.0289% (1.2x) | 0.0240% (1.2x) | 0.0298% (1.1x) | 3.4 pips | 3.2 pips | 4.7 pips |
+| 06 | Mon 02 Nov 06:12, Tue 03 Nov 06:12, Thu 05 Nov 06:12 | 0.0269% (1.1x) | 0.0234% (1.2x) | 0.0281% (1.0x) | 3.1 pips | 3.1 pips | 4.4 pips |
+| 07 | Mon 02 Nov 07:16, Tue 03 Nov 07:11, Thu 05 Nov 07:12 | 0.0250% (1.0x) | 0.0220% (1.1x) | 0.0283% (1.0x) | 2.9 pips | 2.9 pips | 4.4 pips |
+| 08 | Thu 29 Oct 08:12, Thu 29 Oct 08:17 | 0.0239% (1.0x) | 0.0203% (1.0x) | 0.0275% (1.0x) | 2.8 pips | 2.7 pips | 4.3 pips |
+| 09 | Thu 29 Oct 09:12 | 0.0239% (1.0x) | 0.0203% (1.0x) | 0.0275% (1.0x) | 2.8 pips | 2.7 pips | 4.3 pips |
+| 10 | Thu 29 Oct 10:14 | 0.0239% (1.0x) | 0.0203% (1.0x) | 0.0275% (1.0x) | 2.8 pips | 2.7 pips | 4.3 pips |
+| 11 | Thu 29 Oct 11:15 | 0.0239% (1.0x) | 0.0203% (1.0x) | 0.0275% (1.0x) | 2.8 pips | 2.7 pips | 4.3 pips |
+| 12 | Mon 02 Nov 12:15, Tue 03 Nov 12:12, Thu 05 Nov 12:12 | 0.0239% (1.0x) | 0.0203% (1.0x) | 0.0295% (1.1x) | 2.8 pips | 2.7 pips | 4.6 pips |
+| 13 | Mon 02 Nov 13:12, Thu 05 Nov 13:17 | 0.0239% (1.0x) | 0.0203% (1.0x) | 0.0297% (1.1x) | 2.8 pips | 2.7 pips | 4.7 pips |
+| 14 | Tue 03 Nov 14:10, Tue 03 Nov 14:15, Thu 05 Nov 14:14 | 0.0239% (1.0x) | 0.0203% (1.0x) | 0.0289% (1.1x) | 2.8 pips | 2.7 pips | 4.5 pips |
+| 15 | Mon 02 Nov 15:19, Tue 03 Nov 15:15, Thu 05 Nov 15:11 | 0.0239% (1.0x) | 0.0203% (1.0x) | 0.0288% (1.0x) | 2.8 pips | 2.7 pips | 4.5 pips |
+| 16 | Mon 02 Nov 16:28, Tue 03 Nov 16:12, Thu 05 Nov 16:15 | 0.0239% (1.0x) | 0.0203% (1.0x) | 0.0297% (1.1x) | 2.8 pips | 2.7 pips | 4.7 pips |
+| 17 | Mon 02 Nov 17:20, Tue 03 Nov 17:12, Thu 05 Nov 17:12 | 0.0239% (1.0x) | 0.0203% (1.0x) | 0.0312% (1.1x) | 2.8 pips | 2.7 pips | 4.9 pips |
+| 18 | Mon 02 Nov 18:21, Tue 03 Nov 18:11, Thu 05 Nov 18:11 | 0.0541% (2.3x) | 0.0443% (2.2x) | 0.0700% (2.5x) | 6.3 pips | 5.9 pips | 11.0 pips |
+| 19 | Tue 03 Nov 19:11, Thu 05 Nov 19:10 | 0.0281% (1.2x) | 0.0224% (1.1x) | 0.0362% (1.3x) | 3.3 pips | 3.0 pips | 5.7 pips |
+| 20 | Wed 28 Oct 20:01, Wed 28 Oct 20:03 | 0.0893% (3.7x) | 0.0743% (3.7x) | 0.1101% (4.0x) | 10.4 pips | 10.0 pips | 17.2 pips |
+| 21 | Wed 28 Oct 21:14 (paused), Wed 28 Oct 21:36 | 0.2868% (12.0x) | 0.2436% (12.0x) | 0.3300% (12.0x) | 33.5 pips | 32.7 pips | 51.7 pips |
+| 22 | Wed 28 Oct 22:13 | 0.1419% (5.9x) | 0.1195% (5.9x) | 0.1624% (5.9x) | 16.6 pips | 16.0 pips | 25.4 pips |
+| 23 | Wed 28 Oct 23:11 | 0.1029% (4.3x) | 0.0937% (4.6x) | 0.1170% (4.3x) | 12.0 pips | 12.6 pips | 18.3 pips |

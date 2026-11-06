@@ -27,9 +27,20 @@ plain language in every report.
   No tick scalping.
 - Entry window: new trades open only 06:00-17:59 UTC, where Deriv charges
   its base commission outside big news. Never 20:55-21:30 UTC (Deriv
-  refuses new trades). Fixed, not a tunable parameter. PROVISIONAL: it was
-  measured between the European (25 Oct) and US (1 Nov) clock changes and
-  is re-checked after 1 Nov (see Research rules).
+  refuses new trades). Fixed, not a tunable parameter. Re-checked after the
+  US clock change (2, 3 and 5 Nov 2026; reports/costs.md section 13): the
+  window did not move. 12:00-13:59 UTC is raised only around big news,
+  which the live cost gate handles.
+- Cost-table changes (owner, 5 Nov 2026): any change to a commission table
+  used for pricing (research/phase2/cost_by_hour.json,
+  research/phase2/cost_by_hour_pairs2.json) is first recorded in the log
+  below, with the date, what changes and why, and only then applied.
+  Log:
+  - 2026-11-05: cost_by_hour.json, hours 05-07 and 12-19 UTC now use only
+    the post-clock-change samples of 2, 3 and 5 Nov (highest per hour);
+    other hours and the base rates unchanged; the old table is archived as
+    research/phase2/cost_by_hour_2026-10-29.json (not for pricing). Applied
+    the same day, just before this rule was set.
 - Stack: Python 3.12, pytest, Ubuntu VPS with systemd, Telegram for
   alerts and control.
 - Data: candles as compressed daily files in data/. No raw ticks in git.

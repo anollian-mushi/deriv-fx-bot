@@ -1,0 +1,402 @@
+{
+ "_note": "Measured Mon 2 Nov 2026, hourly 06:07-18:07 UTC, demo connection, quotes only",
+ "provisional_base_window_utc": "06:00-17:59",
+ "symbols": [
+  "frxAUDUSD",
+  "frxUSDCAD",
+  "frxUSDCHF",
+  "frxEURGBP",
+  "frxEURJPY",
+  "frxGBPJPY"
+ ],
+ "base_rate_pct": {
+  "frxAUDUSD": 0.04,
+  "frxUSDCAD": 0.0212,
+  "frxUSDCHF": 0.036,
+  "frxEURGBP": 0.0243,
+  "frxEURJPY": 0.025,
+  "frxGBPJPY": 0.0238
+ },
+ "price_used": {
+  "frxAUDUSD": 0.70167,
+  "frxUSDCAD": 1.39736,
+  "frxUSDCHF": 0.81981,
+  "frxEURGBP": 0.83505,
+  "frxEURJPY": 176.868,
+  "frxGBPJPY": 211.794
+ },
+ "hours": {
+  "0": {
+   "samples": "none",
+   "max_rate_pct": null
+  },
+  "1": {
+   "samples": "none",
+   "max_rate_pct": null
+  },
+  "2": {
+   "samples": "none",
+   "max_rate_pct": null
+  },
+  "3": {
+   "samples": "none",
+   "max_rate_pct": null
+  },
+  "4": {
+   "samples": "none",
+   "max_rate_pct": null
+  },
+  "5": {
+   "samples": "none",
+   "max_rate_pct": null
+  },
+  "6": {
+   "samples": "Mon 06:12",
+   "max_rate_pct": {
+    "frxAUDUSD": 0.04,
+    "frxUSDCAD": 0.02312,
+    "frxUSDCHF": 0.04252,
+    "frxEURGBP": 0.02892,
+    "frxEURJPY": 0.025,
+    "frxGBPJPY": 0.02604
+   },
+   "multiple_of_base": {
+    "frxAUDUSD": 1.0,
+    "frxUSDCAD": 1.09,
+    "frxUSDCHF": 1.18,
+    "frxEURGBP": 1.19,
+    "frxEURJPY": 1.0,
+    "frxGBPJPY": 1.09
+   },
+   "cost_pips": {
+    "frxAUDUSD": 2.8,
+    "frxUSDCAD": 3.2,
+    "frxUSDCHF": 3.5,
+    "frxEURGBP": 2.4,
+    "frxEURJPY": 4.4,
+    "frxGBPJPY": 5.5
+   }
+  },
+  "7": {
+   "samples": "Mon 07:16",
+   "max_rate_pct": {
+    "frxAUDUSD": 0.04,
+    "frxUSDCAD": 0.0212,
+    "frxUSDCHF": 0.036,
+    "frxEURGBP": 0.0243,
+    "frxEURJPY": 0.025,
+    "frxGBPJPY": 0.0238
+   },
+   "multiple_of_base": {
+    "frxAUDUSD": 1.0,
+    "frxUSDCAD": 1.0,
+    "frxUSDCHF": 1.0,
+    "frxEURGBP": 1.0,
+    "frxEURJPY": 1.0,
+    "frxGBPJPY": 1.0
+   },
+   "cost_pips": {
+    "frxAUDUSD": 2.8,
+    "frxUSDCAD": 3.0,
+    "frxUSDCHF": 3.0,
+    "frxEURGBP": 2.0,
+    "frxEURJPY": 4.4,
+    "frxGBPJPY": 5.0
+   }
+  },
+  "8": {
+   "samples": "Mon 08:21",
+   "max_rate_pct": {
+    "frxAUDUSD": 0.04,
+    "frxUSDCAD": 0.0212,
+    "frxUSDCHF": 0.036,
+    "frxEURGBP": 0.0243,
+    "frxEURJPY": 0.025,
+    "frxGBPJPY": 0.0238
+   },
+   "multiple_of_base": {
+    "frxAUDUSD": 1.0,
+    "frxUSDCAD": 1.0,
+    "frxUSDCHF": 1.0,
+    "frxEURGBP": 1.0,
+    "frxEURJPY": 1.0,
+    "frxGBPJPY": 1.0
+   },
+   "cost_pips": {
+    "frxAUDUSD": 2.8,
+    "frxUSDCAD": 3.0,
+    "frxUSDCHF": 3.0,
+    "frxEURGBP": 2.0,
+    "frxEURJPY": 4.4,
+    "frxGBPJPY": 5.0
+   }
+  },
+  "9": {
+   "samples": "Mon 09:08",
+   "max_rate_pct": {
+    "frxAUDUSD": 0.04,
+    "frxUSDCAD": 0.0212,
+    "frxUSDCHF": 0.036,
+    "frxEURGBP": 0.0243,
+    "frxEURJPY": 0.025,
+    "frxGBPJPY": 0.0238
+   },
+   "multiple_of_base": {
+    "frxAUDUSD": 1.0,
+    "frxUSDCAD": 1.0,
+    "frxUSDCHF": 1.0,
+    "frxEURGBP": 1.0,
+    "frxEURJPY": 1.0,
+    "frxGBPJPY": 1.0
+   },
+   "cost_pips": {
+    "frxAUDUSD": 2.8,
+    "frxUSDCAD": 3.0,
+    "frxUSDCHF": 3.0,
+    "frxEURGBP": 2.0,
+    "frxEURJPY": 4.4,
+    "frxGBPJPY": 5.0
+   }
+  },
+  "10": {
+   "samples": "Mon 10:15",
+   "max_rate_pct": {
+    "frxAUDUSD": 0.04,
+    "frxUSDCAD": 0.0212,
+    "frxUSDCHF": 0.036,
+    "frxEURGBP": 0.0243,
+    "frxEURJPY": 0.025,
+    "frxGBPJPY": 0.0238
+   },
+   "multiple_of_base": {
+    "frxAUDUSD": 1.0,
+    "frxUSDCAD": 1.0,
+    "frxUSDCHF": 1.0,
+    "frxEURGBP": 1.0,
+    "frxEURJPY": 1.0,
+    "frxGBPJPY": 1.0
+   },
+   "cost_pips": {
+    "frxAUDUSD": 2.8,
+    "frxUSDCAD": 3.0,
+    "frxUSDCHF": 3.0,
+    "frxEURGBP": 2.0,
+    "frxEURJPY": 4.4,
+    "frxGBPJPY": 5.0
+   }
+  },
+  "11": {
+   "samples": "Mon 11:11",
+   "max_rate_pct": {
+    "frxAUDUSD": 0.04,
+    "frxUSDCAD": 0.0212,
+    "frxUSDCHF": 0.036,
+    "frxEURGBP": 0.0243,
+    "frxEURJPY": 0.025,
+    "frxGBPJPY": 0.0238
+   },
+   "multiple_of_base": {
+    "frxAUDUSD": 1.0,
+    "frxUSDCAD": 1.0,
+    "frxUSDCHF": 1.0,
+    "frxEURGBP": 1.0,
+    "frxEURJPY": 1.0,
+    "frxGBPJPY": 1.0
+   },
+   "cost_pips": {
+    "frxAUDUSD": 2.8,
+    "frxUSDCAD": 3.0,
+    "frxUSDCHF": 3.0,
+    "frxEURGBP": 2.0,
+    "frxEURJPY": 4.4,
+    "frxGBPJPY": 5.0
+   }
+  },
+  "12": {
+   "samples": "Mon 12:15",
+   "max_rate_pct": {
+    "frxAUDUSD": 0.04,
+    "frxUSDCAD": 0.0212,
+    "frxUSDCHF": 0.036,
+    "frxEURGBP": 0.0243,
+    "frxEURJPY": 0.025,
+    "frxGBPJPY": 0.0238
+   },
+   "multiple_of_base": {
+    "frxAUDUSD": 1.0,
+    "frxUSDCAD": 1.0,
+    "frxUSDCHF": 1.0,
+    "frxEURGBP": 1.0,
+    "frxEURJPY": 1.0,
+    "frxGBPJPY": 1.0
+   },
+   "cost_pips": {
+    "frxAUDUSD": 2.8,
+    "frxUSDCAD": 3.0,
+    "frxUSDCHF": 3.0,
+    "frxEURGBP": 2.0,
+    "frxEURJPY": 4.4,
+    "frxGBPJPY": 5.0
+   }
+  },
+  "13": {
+   "samples": "Mon 13:12",
+   "max_rate_pct": {
+    "frxAUDUSD": 0.04,
+    "frxUSDCAD": 0.0212,
+    "frxUSDCHF": 0.036,
+    "frxEURGBP": 0.0243,
+    "frxEURJPY": 0.025,
+    "frxGBPJPY": 0.0238
+   },
+   "multiple_of_base": {
+    "frxAUDUSD": 1.0,
+    "frxUSDCAD": 1.0,
+    "frxUSDCHF": 1.0,
+    "frxEURGBP": 1.0,
+    "frxEURJPY": 1.0,
+    "frxGBPJPY": 1.0
+   },
+   "cost_pips": {
+    "frxAUDUSD": 2.8,
+    "frxUSDCAD": 3.0,
+    "frxUSDCHF": 3.0,
+    "frxEURGBP": 2.0,
+    "frxEURJPY": 4.4,
+    "frxGBPJPY": 5.0
+   }
+  },
+  "14": {
+   "samples": "none",
+   "max_rate_pct": null
+  },
+  "15": {
+   "samples": "Mon 15:19",
+   "max_rate_pct": {
+    "frxAUDUSD": 0.04,
+    "frxUSDCAD": 0.0212,
+    "frxUSDCHF": 0.036,
+    "frxEURGBP": 0.0243,
+    "frxEURJPY": 0.025,
+    "frxGBPJPY": 0.0238
+   },
+   "multiple_of_base": {
+    "frxAUDUSD": 1.0,
+    "frxUSDCAD": 1.0,
+    "frxUSDCHF": 1.0,
+    "frxEURGBP": 1.0,
+    "frxEURJPY": 1.0,
+    "frxGBPJPY": 1.0
+   },
+   "cost_pips": {
+    "frxAUDUSD": 2.8,
+    "frxUSDCAD": 3.0,
+    "frxUSDCHF": 3.0,
+    "frxEURGBP": 2.0,
+    "frxEURJPY": 4.4,
+    "frxGBPJPY": 5.0
+   }
+  },
+  "16": {
+   "samples": "Mon 16:28",
+   "max_rate_pct": {
+    "frxAUDUSD": 0.04,
+    "frxUSDCAD": 0.0212,
+    "frxUSDCHF": 0.036,
+    "frxEURGBP": 0.0243,
+    "frxEURJPY": 0.025,
+    "frxGBPJPY": 0.0238
+   },
+   "multiple_of_base": {
+    "frxAUDUSD": 1.0,
+    "frxUSDCAD": 1.0,
+    "frxUSDCHF": 1.0,
+    "frxEURGBP": 1.0,
+    "frxEURJPY": 1.0,
+    "frxGBPJPY": 1.0
+   },
+   "cost_pips": {
+    "frxAUDUSD": 2.8,
+    "frxUSDCAD": 3.0,
+    "frxUSDCHF": 3.0,
+    "frxEURGBP": 2.0,
+    "frxEURJPY": 4.4,
+    "frxGBPJPY": 5.0
+   }
+  },
+  "17": {
+   "samples": "Mon 17:20",
+   "max_rate_pct": {
+    "frxAUDUSD": 0.04,
+    "frxUSDCAD": 0.0212,
+    "frxUSDCHF": 0.036,
+    "frxEURGBP": 0.0243,
+    "frxEURJPY": 0.02528,
+    "frxGBPJPY": 0.0238
+   },
+   "multiple_of_base": {
+    "frxAUDUSD": 1.0,
+    "frxUSDCAD": 1.0,
+    "frxUSDCHF": 1.0,
+    "frxEURGBP": 1.0,
+    "frxEURJPY": 1.01,
+    "frxGBPJPY": 1.0
+   },
+   "cost_pips": {
+    "frxAUDUSD": 2.8,
+    "frxUSDCAD": 3.0,
+    "frxUSDCHF": 3.0,
+    "frxEURGBP": 2.0,
+    "frxEURJPY": 4.5,
+    "frxGBPJPY": 5.0
+   }
+  },
+  "18": {
+   "samples": "Mon 18:21",
+   "max_rate_pct": {
+    "frxAUDUSD": 0.09008,
+    "frxUSDCAD": 0.0424,
+    "frxUSDCHF": 0.072,
+    "frxEURGBP": 0.04874,
+    "frxEURJPY": 0.0549,
+    "frxGBPJPY": 0.04888
+   },
+   "multiple_of_base": {
+    "frxAUDUSD": 2.25,
+    "frxUSDCAD": 2.0,
+    "frxUSDCHF": 2.0,
+    "frxEURGBP": 2.01,
+    "frxEURJPY": 2.2,
+    "frxGBPJPY": 2.05
+   },
+   "cost_pips": {
+    "frxAUDUSD": 6.3,
+    "frxUSDCAD": 5.9,
+    "frxUSDCHF": 5.9,
+    "frxEURGBP": 4.1,
+    "frxEURJPY": 9.7,
+    "frxGBPJPY": 10.4
+   }
+  },
+  "19": {
+   "samples": "none",
+   "max_rate_pct": null
+  },
+  "20": {
+   "samples": "none",
+   "max_rate_pct": null
+  },
+  "21": {
+   "samples": "none",
+   "max_rate_pct": null
+  },
+  "22": {
+   "samples": "none",
+   "max_rate_pct": null
+  },
+  "23": {
+   "samples": "none",
+   "max_rate_pct": null
+  }
+ }
+}

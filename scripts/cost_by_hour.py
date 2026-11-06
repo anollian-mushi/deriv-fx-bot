@@ -12,6 +12,12 @@ table shows every reading and the highest one; backtests use the highest
 Cost in pips = rate x price / pip, with price = median close before
 2026-04-28 (research/typical_moves.json; holdout data is not used).
 
+Clock-change re-check (CLAUDE.md research rules): the US clock change on 1 Nov 2026 could
+move Deriv's cheap window, so the hours 05:00-07:00 and 12:00-19:00 UTC were sampled again on
+Mon 2 Nov (research/phase2/pairs2/, majors included), Tue 3 Nov and Thu 5 Nov. For those hours
+the main table uses ONLY samples from 1 Nov onward (highest reading per hour); every other hour
+keeps its 28-29 Oct samples. Each hour records the dates its readings come from.
+
 Writes research/phase2/cost_by_hour.json and research/phase2/cost_by_hour.md.
 
 Run: python scripts/cost_by_hour.py
@@ -25,7 +31,7 @@ import json
 import statistics
 import sys
 from collections import defaultdict
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 
 import _bootstrap  # noqa: F401
@@ -37,16 +43,19 @@ PHASE2 = ROOT / "research" / "phase2"
 SYMBOLS = ("frxEURUSD", "frxGBPUSD", "frxUSDJPY")
 PIP = symbols_mod.PIP
 PAUSE = "20:55-21:30"
+CLOCK_CHANGE = date(2026, 11, 1)                       # US clock change
+RESAMPLED_HOURS = frozenset([5, 6, 7, *range(12, 20)])   # re-checked after it (CLAUDE.md)
 # Set on the command line for another sample set (31 Oct 2026: the six extra pairs sampled on
 # Monday 2 Nov into research/phase2/pairs2/, priced from the quotes' own spot price).
 SAMPLE_DIR = PHASE2
 SPOT: dict[str, list[float]] = defaultdict(list)
 
 
-def samples(symbols=None) -> list[dict]:
+def samples(symbols=None, dirs=None) -> list[dict]:
     symbols = symbols or SYMBOLS
     out = []
-    for path in sorted(SAMPLE_DIR.glob("proposals_*.jsonl.gz")):
+    paths = sorted(p for d in (dirs or [SAMPLE_DIR]) for p in d.glob("proposals_*.jsonl.gz"))
+    for path in paths:
         with gzip.open(path, "rt") as f:
             rows = [json.loads(line) for line in f]
         meta = rows[0]
@@ -71,7 +80,8 @@ def samples(symbols=None) -> list[dict]:
                     best = (size, r["proposal"]["commission"] / size)
             if best:
                 rates[sym] = best[1]
-        out.append({"time": t.strftime("%a %H:%M"), "hour": t.hour, "connection": meta["connection"],
+        out.append({"time": t.strftime("%a %H:%M"), "date": t.date(), "hour": t.hour,
+                    "connection": meta["connection"],
                     "rates": rates, "paused": paused and not rates})
     return out
 
@@ -85,8 +95,17 @@ def main() -> int:
     ap.add_argument("--note", default="", help="note stored in the table")
     a = ap.parse_args()
     SAMPLE_DIR, SYMBOLS = a.samples_dir, tuple(a.symbols)
-    all_samples = samples(SYMBOLS)
-    if a.out == "cost_by_hour":
+    main_table = a.out == "cost_by_hour"
+    if main_table:
+        # Re-sampled hours: post-clock-change samples only (Mon 2 Nov majors live in pairs2/).
+        found = samples(SYMBOLS, [SAMPLE_DIR, SAMPLE_DIR / "pairs2"])
+        all_samples = [x for x in found
+                       if (x["date"] >= CLOCK_CHANGE) == (x["hour"] in RESAMPLED_HOURS)]
+        for x in all_samples:
+            x["time"] = x["date"].strftime("%a %d %b ") + x["time"][4:]
+    else:
+        all_samples = samples(SYMBOLS)
+    if main_table:
         moves = json.loads((ROOT / "research" / "typical_moves.json").read_text())
         if moves.get("_meta", {}).get("includes_holdout"):
             raise SystemExit("typical_moves.json includes holdout data; re-run scripts/typical_moves.py")
@@ -102,10 +121,14 @@ def main() -> int:
     for x in all_samples:
         by_hour[x["hour"]].append(x)
 
-    table = {"_note": a.note or ("The only commission source for backtests (CLAUDE.md). The 06:00-17:59 UTC "
-                                 "base window is PROVISIONAL: measured 28-29 Oct 2026, between the European "
-                                 "(25 Oct) and US (1 Nov) clock changes; re-checked in the week after 1 Nov."),
-             "provisional_base_window_utc": "06:00-17:59",
+    window_note = (
+        "The 06:00-17:59 UTC base window was measured 28-29 Oct 2026 and re-checked after the US clock "
+        "change (Mon 2, Tue 3 and Thu 5 Nov 2026; reports/costs.md section 13). Hours 05-07 and 12-19 UTC "
+        "use only the post-1-Nov samples; the other hours use 28-29 Oct." if main_table else
+        "The 06:00-17:59 UTC base window is PROVISIONAL: measured 28-29 Oct 2026, between the European "
+        "(25 Oct) and US (1 Nov) clock changes; re-checked in the week after 1 Nov.")
+    table = {"_note": a.note or ("The only commission source for backtests (CLAUDE.md). " + window_note),
+             ("base_window_utc" if main_table else "provisional_base_window_utc"): "06:00-17:59",
              "symbols": list(SYMBOLS),
              "base_rate_pct": {s: round(base[s] * 100, 5) for s in SYMBOLS},
              "price_used": price, "hours": {}}
@@ -124,6 +147,7 @@ def main() -> int:
         mx = {s: max(x["rates"][s] for x in priced if s in x["rates"]) for s in SYMBOLS}
         cost = {s: mx[s] * price[s] / PIP[s] for s in SYMBOLS}
         table["hours"][h] = {"samples": times,
+                             "dates": sorted({x["date"].isoformat() for x in priced}),
                              "max_rate_pct": {s: round(mx[s] * 100, 5) for s in SYMBOLS},
                              "multiple_of_base": {s: round(mx[s] / base[s], 2) for s in SYMBOLS},
                              "cost_pips": {s: round(cost[s], 1) for s in SYMBOLS}}
@@ -134,10 +158,7 @@ def main() -> int:
     (PHASE2 / f"{a.out}.md").write_text(
         "# Commission by UTC hour (generated by scripts/cost_by_hour.py)\n\n"
         "Base rate (lowest seen): " + ", ".join(f"{symbols_mod.display(s)} {base[s] * 100:.4f}%" for s in SYMBOLS)
-        + f". New trades are refused {PAUSE} UTC.\n\n"
-        "The 06:00-17:59 UTC base window is **provisional**: it was measured 28-29 Oct "
-        "2026, between the European (25 Oct) and US (1 Nov) clock changes, and is re-checked "
-        "in the week after 1 Nov.\n\n" + "\n".join(lines) + "\n")
+        + f". New trades are refused {PAUSE} UTC.\n\n" + window_note + "\n\n" + "\n".join(lines) + "\n")
     print("\n".join(lines))
     return 0
 
