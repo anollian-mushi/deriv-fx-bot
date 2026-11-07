@@ -1,28 +1,30 @@
 {
  "cost_table": "research/phase2/cost_by_hour.json",
- "data_end": "2026-11-05",
+ "data_end": "2026-11-06",
  "engine_fingerprint": "d40cef23c4e0d4eebfda3b8c45ee7f8ebd5c0421b59c46bc0a95bf210ddb70ce",
  "fingerprint": "bd17ae2181ec6f5d41762810927c144ae56871092f6d71434dac628afbffbc5a",
  "first_scored_day": "2026-11-01",
- "forward_days": 5,
+ "forward_days": 6,
  "id": "f3_trend_pullback_4h_r5",
  "measured": {
-  "avg_commission": null,
-  "avg_loss": null,
-  "avg_win": null,
-  "blocked_first_reason": {},
+  "avg_commission": 0.0801,
+  "avg_loss": -0.55,
+  "avg_win": 1.75,
+  "blocked_first_reason": {
+   "max_positions": 2
+  },
   "cost_gate_skips": 0,
-  "final_equity": 100.67,
+  "final_equity": 101.2,
   "kill_switch_fired": false,
   "max_drawdown_pct": 2.49,
-  "net_profit": 0.67,
-  "open_profit": 0.67,
-  "open_trades": 2,
+  "net_profit": 1.2,
+  "open_profit": 0,
+  "open_trades": 0,
   "per_pair": {
    "frxEURUSD": {
-    "net": 0,
-    "trades": 0,
-    "wins": 0
+    "net": 1.75,
+    "trades": 1,
+    "wins": 1
    },
    "frxGBPUSD": {
     "net": 0,
@@ -30,35 +32,39 @@
     "wins": 0
    },
    "frxUSDJPY": {
-    "net": 0,
-    "trades": 0,
+    "net": -0.55,
+    "trades": 1,
     "wins": 0
    }
   },
-  "profit_factor": null,
-  "refused": {},
-  "signals": 2,
-  "trades": 0,
-  "win_rate_pct": null
+  "profit_factor": 3.182,
+  "refused": {
+   "expired": 2
+  },
+  "signals": 4,
+  "trades": 2,
+  "win_rate_pct": 50.0
  },
  "registered": "2026-10-31",
  "stress_1_5x": {
-  "avg_commission": null,
-  "avg_loss": null,
-  "avg_win": null,
-  "blocked_first_reason": {},
+  "avg_commission": 0.1201,
+  "avg_loss": -0.59,
+  "avg_win": 1.72,
+  "blocked_first_reason": {
+   "max_positions": 2
+  },
   "cost_gate_skips": 0,
-  "final_equity": 100.59,
+  "final_equity": 101.13,
   "kill_switch_fired": false,
   "max_drawdown_pct": 2.51,
-  "net_profit": 0.59,
-  "open_profit": 0.59,
-  "open_trades": 2,
+  "net_profit": 1.13,
+  "open_profit": 0,
+  "open_trades": 0,
   "per_pair": {
    "frxEURUSD": {
-    "net": 0,
-    "trades": 0,
-    "wins": 0
+    "net": 1.72,
+    "trades": 1,
+    "wins": 1
    },
    "frxGBPUSD": {
     "net": 0,
@@ -66,16 +72,18 @@
     "wins": 0
    },
    "frxUSDJPY": {
-    "net": 0,
-    "trades": 0,
+    "net": -0.59,
+    "trades": 1,
     "wins": 0
    }
   },
-  "profit_factor": null,
-  "refused": {},
-  "signals": 2,
-  "trades": 0,
-  "win_rate_pct": null
+  "profit_factor": 2.915,
+  "refused": {
+   "expired": 2
+  },
+  "signals": 4,
+  "trades": 2,
+  "win_rate_pct": 50.0
  },
  "symbols": [
   "frxEURUSD",
