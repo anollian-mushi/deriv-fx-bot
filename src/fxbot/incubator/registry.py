@@ -3,7 +3,9 @@
 A candidate is registered once. Registration copies everything it needs into
 incubator/candidates/<id>/ and never touches it again:
 
-    code/__init__.py, code/families.py, code/ml_day.py   frozen strategy code
+    code/__init__.py, code/families.py, code/ml_day.py,
+    code/tjr.py, code/tjr_calendar.py                    frozen strategy code (candidates registered
+                                                         before 8 Nov 2026 have only the first two)
     models/<file>                                        model files (as they are)
     manifest.json                                        id, class, parameters, commit, date,
                                                          SHA-256 of every file above
@@ -40,7 +42,7 @@ INCUBATOR = ROOT / "incubator"
 STRATEGY_SRC = ROOT / "src" / "fxbot" / "strategies"
 # Strategy modules frozen with every candidate. base.py is not frozen: it defines the action
 # types (Enter, ExitPosition) the engine and risk module understand.
-FROZEN_MODULES = ("families.py", "ml_day.py")
+FROZEN_MODULES = ("families.py", "ml_day.py", "tjr.py", "tjr_calendar.py")
 DEFAULT_SYMBOLS = ("frxEURUSD", "frxGBPUSD", "frxUSDJPY")
 DEFAULT_COST_TABLE = "research/phase2/cost_by_hour.json"
 ID_RE = re.compile(r"^[a-z0-9][a-z0-9_]{2,60}$")
@@ -144,9 +146,15 @@ class Candidate:
         return tuple(self.manifest.get("symbols") or DEFAULT_SYMBOLS)
 
     @property
-    def cost_table(self) -> str:
-        """Commission table (repo-relative path) its replays use."""
+    def cost_table(self):
+        """Commission table(s) its replays use, as stored: one repo-relative path, or a list of
+        paths with disjoint pairs (merged at run time, e.g. the majors table + the pairs2 table)."""
         return self.manifest.get("cost_table") or DEFAULT_COST_TABLE
+
+    @property
+    def cost_tables(self) -> list[str]:
+        t = self.cost_table
+        return list(t) if isinstance(t, (list, tuple)) else [t]
 
 
 def registry_path(root: Path = INCUBATOR) -> Path:
@@ -241,6 +249,8 @@ def _import_frozen(c: Candidate):
     sys.modules[pkg] = mod
     spec.loader.exec_module(mod)
     for name in FROZEN_MODULES:
+        if not (code / name).exists():
+            continue            # older candidates froze fewer modules; they never import the others
         sub = importlib.import_module(f"{pkg}.{name[:-3]}")
         if hasattr(sub, "pickle"):
             sub.pickle = _PickleShim(pkg)
@@ -266,27 +276,37 @@ def _git(*args: str) -> str:
     return subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
 
 
+_FROZEN_NAMES = "|".join(n[:-3] for n in FROZEN_MODULES)
+
+
 def _freeze_source(text: str) -> str:
     # The frozen modules import each other from the candidate's own copy.
-    return re.sub(r"^from fxbot\.strategies\.(families|ml_day) import", r"from .\1 import", text, flags=re.M)
+    text = re.sub(rf"^from fxbot\.strategies\.({_FROZEN_NAMES}) import", r"from .\1 import", text, flags=re.M)
+    return re.sub(rf"^from fxbot\.strategies import ({_FROZEN_NAMES})\b", r"from . import \1", text, flags=re.M)
 
 
 def register(cid: str, module: str, class_name: str, params: dict, model_files: list[Path] = (),
              notes: str = "", origin: dict | None = None, *, root: Path = INCUBATOR,
              now: dt.datetime | None = None, require_clean: bool = True,
-             symbols=DEFAULT_SYMBOLS, cost_table: str = DEFAULT_COST_TABLE) -> Candidate:
+             symbols=DEFAULT_SYMBOLS, cost_table: str | list[str] = DEFAULT_COST_TABLE) -> Candidate:
     """Register a new candidate. Refuses an existing id, a date earlier than the last
     registration, unknown classes, unknown symbols, a commission table without every symbol,
     and (by default) uncommitted strategy code or models."""
     from fxbot import symbols as symbols_mod
     from fxbot.backtest.fills import CommissionTable
     symbols = symbols_mod.check(symbols)
-    table_path = ROOT / cost_table
-    if not table_path.exists():
-        raise RegistryError(f"commission table {cost_table} does not exist")
-    missing = [s for s in symbols if s not in CommissionTable(table_path).base]
+    tables = list(cost_table) if isinstance(cost_table, (list, tuple)) else [cost_table]
+    for t in tables:
+        if not (ROOT / t).exists():
+            raise RegistryError(f"commission table {t} does not exist")
+    try:
+        merged = CommissionTable.merged([ROOT / t for t in tables])
+    except ValueError as err:
+        raise RegistryError(str(err)) from err
+    missing = [s for s in symbols if s not in merged.base]
     if missing:
-        raise RegistryError(f"commission table {cost_table} has no base rate for {missing}")
+        raise RegistryError(f"commission table(s) {tables} have no base rate for {missing}")
+    cost_table = tables[0] if len(tables) == 1 else tables
     now = now or dt.datetime.now(dt.timezone.utc)
     registered = now.astimezone(dt.timezone.utc).date()
     if not ID_RE.match(cid):

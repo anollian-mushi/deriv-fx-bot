@@ -17,6 +17,7 @@ then rejects any signal or trade dated before that day.
 
 from __future__ import annotations
 
+import dataclasses
 import datetime as dt
 import hashlib
 import json
@@ -32,7 +33,7 @@ from fxbot.backtest.metrics import max_drawdown
 from fxbot.data.split import UNTOUCHED_START
 from fxbot.incubator.registry import ROOT, Candidate, load_strategy
 from fxbot.risk.limits import RiskLimits
-from fxbot.strategies.base import Strategy
+from fxbot.strategies.base import Enter, ExitPosition, Strategy
 
 SYMBOLS = ("frxEURUSD", "frxGBPUSD", "frxUSDJPY")      # the default; each candidate carries its own list
 START_BALANCE = 100.0
@@ -125,17 +126,47 @@ class Forward(Strategy):
         return self.inner.on_candle(symbol, candles, position, pending)
 
 
+# Frozen modules whose strategies do not choose their direction through the entry() hook (the
+# TJR strategies decide everything inside on_candle). Their luck runs toss the coin on the
+# Enter action itself: same signal candle, same stop, target, multiplier and stop rule.
+ACTION_TOSS_MODULES = ("tjr",)
+
+
 class CoinToss(Forward):
     """Luck check: the candidate's own forward signals (same pair, same candle), coin-toss
     direction, same stops, exits and limits. Two-leg strategies stay hedged: both legs share one
-    draw per candle, so one leg goes Up and the other Down."""
+    draw per candle, so one leg goes Up and the other Down.
+
+    mode "entry" (families, ml_day): the coin replaces the strategy's entry() hook.
+    mode "actions" (tjr): the strategy runs unchanged; each Enter it sends on one of the
+    candidate's signal candles gets a coin-toss direction, and any other Enter is dropped (the
+    candidate never sent it). Its setup logic does not depend on direction, so it sends the same
+    signals with the same stops; exits (17:55 UTC) pass through."""
 
     def __init__(self, inner, start_epoch: int, signals, seed: int, legs: dict | None = None,
-                 symbols=SYMBOLS):
+                 symbols=SYMBOLS, mode: str = "entry"):
         super().__init__(inner, start_epoch)
+        if mode not in ("entry", "actions"):
+            raise ValueError("mode must be 'entry' or 'actions'")
         self.signals = {(str(s), int(t)) for s, t in signals}
-        self.seed, self.legs, self.symbols = int(seed), legs, tuple(symbols)
-        inner.entry = self._entry
+        self.seed, self.legs, self.symbols, self.mode = int(seed), legs, tuple(symbols), mode
+        if mode == "entry":
+            inner.entry = self._entry
+
+    def on_candle(self, symbol, candles, position, pending):
+        acts = super().on_candle(symbol, candles, position, pending)
+        if self.mode == "entry":
+            return acts
+        t = int(candles.end[-1])
+        out = []
+        for a in acts:
+            if isinstance(a, Enter):
+                if (symbol, t) not in self.signals:
+                    continue
+                d = np.random.default_rng([self.seed, t, self.symbols.index(symbol)]).random()
+                a = dataclasses.replace(a, direction="MULTUP" if d < 0.5 else "MULTDOWN")
+            out.append(a)
+        return out
 
     def _entry(self, symbol, c):
         t = int(c.end[-1])
@@ -151,10 +182,19 @@ class CoinToss(Forward):
 
 
 # ----------------------------------------------------------------------------- runs
+def coin_toss_mode(c: Candidate) -> str:
+    return "actions" if c.manifest.get("module") in ACTION_TOSS_MODULES else "entry"
+
+
+def commission_table(c: Candidate) -> fills.CommissionTable:
+    paths = [ROOT / p for p in c.cost_tables]
+    return fills.CommissionTable(paths[0]) if len(paths) == 1 else fills.CommissionTable.merged(paths)
+
+
 def run(c: Candidate, data: dict, stress: float = 1.0, strategy: Strategy | None = None) -> Engine:
     s = strategy or Forward(load_strategy(c), c.start_epoch)
     eng = Engine(s, list(c.symbols), c.first_day, c.first_day, limits=RiskLimits(starting_balance=START_BALANCE),
-                 stress=stress, data=data, kill_switch="enforce", table=fills.CommissionTable(ROOT / c.cost_table))
+                 stress=stress, data=data, kill_switch="enforce", table=commission_table(c))
     eng.run()
     return eng
 
@@ -216,6 +256,7 @@ def summarise(eng: Engine, symbols=SYMBOLS) -> dict:
         "blocked_first_reason": dict(eng.state.blocked),
         "refused": dict(eng.state.refused),
         "cost_gate_skips": len(eng.state.gate_skips),
+        "stops_moved": sum(1 for t in trades if t.get("stop_moved_time")),   # break-even stop updates
     }
 
 

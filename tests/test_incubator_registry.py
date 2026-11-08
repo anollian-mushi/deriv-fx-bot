@@ -21,7 +21,8 @@ def test_register_writes_manifest_fingerprint_and_chain(tmp_path):
     m = json.loads((c.dir / "manifest.json").read_text())
     assert m["registered"] == "2026-11-01" and m["first_scored_day"] == "2026-11-02"
     assert m["params"] == F1 and m["class"] == "LondonBreakout" and len(m["source_commit"]) >= 7
-    assert set(m["files"]) == {"code/__init__.py", "code/families.py", "code/ml_day.py"}
+    assert set(m["files"]) == {"code/__init__.py", "code/families.py", "code/ml_day.py", "code/tjr.py",
+                               "code/tjr_calendar.py"}   # every frozen module (8 Nov 2026: tjr added)
     assert reg.fingerprint(m) == c.fingerprint
     entries = reg.read_chain(reg.registry_path(tmp_path))
     assert entries[0]["id"] == "f1_test" and entries[0]["fingerprint"] == c.fingerprint

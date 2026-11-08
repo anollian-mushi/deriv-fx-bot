@@ -149,7 +149,8 @@ def _init_worker(c: Candidate, cutoff: str, signals: list) -> None:
 
 def _one_run(seed: int) -> float:
     c = _W["c"]
-    s = fw.CoinToss(load_strategy(c, check=False), c.start_epoch, _W["signals"], seed, c.legs, c.symbols)
+    s = fw.CoinToss(load_strategy(c, check=False), c.start_epoch, _W["signals"], seed, c.legs, c.symbols,
+                    mode=fw.coin_toss_mode(c))
     return fw.net_profit(fw.run(c, _W["data"], strategy=s))
 
 
