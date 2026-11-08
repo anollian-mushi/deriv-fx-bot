@@ -1,0 +1,237 @@
+{
+ "oos_span": [
+  "2023-10-27",
+  "2026-10-26"
+ ],
+ "trading_days": 776,
+ "trades": 1,
+ "trades_per_day": 0.0,
+ "net_measured": 1.88,
+ "net_1_5x": 1.81,
+ "gross": 2.06,
+ "gross_pips_per_trade": 29.2,
+ "win_rate_pct": 100.0,
+ "avg_win": 1.88,
+ "avg_loss": null,
+ "profit_factor": null,
+ "kill_events": 0,
+ "per_pair": {
+  "frxEURUSD": {
+   "trades": 0,
+   "net": 0,
+   "gross": 0
+  },
+  "frxGBPUSD": {
+   "trades": 0,
+   "net": 0,
+   "gross": 0
+  },
+  "frxUSDJPY": {
+   "trades": 0,
+   "net": 0,
+   "gross": 0
+  },
+  "frxAUDUSD": {
+   "trades": 0,
+   "net": 0,
+   "gross": 0
+  },
+  "frxUSDCAD": {
+   "trades": 0,
+   "net": 0,
+   "gross": 0
+  },
+  "frxUSDCHF": {
+   "trades": 0,
+   "net": 0,
+   "gross": 0
+  },
+  "frxEURGBP": {
+   "trades": 1,
+   "net": 1.88,
+   "gross": 2.06
+  },
+  "frxEURJPY": {
+   "trades": 0,
+   "net": 0,
+   "gross": 0
+  },
+  "frxGBPJPY": {
+   "trades": 0,
+   "net": 0,
+   "gross": 0
+  }
+ },
+ "per_window_net": [
+  0,
+  1.88,
+  0,
+  0,
+  0,
+  0
+ ],
+ "per_window_gross": [
+  0,
+  2.06,
+  0,
+  0,
+  0,
+  0
+ ],
+ "move_vs_cost": {
+  "avg_abs_move_pips": 28.7,
+  "avg_cost_pips": 2.57,
+  "ratio": 11.19
+ },
+ "luck": {
+  "runs": 200,
+  "median_net": -1.06,
+  "p95_net": 1.88,
+  "p99_net": 1.88,
+  "share_beaten_net": 0.52,
+  "median_gross": -0.81,
+  "share_beaten_gross": 0.52,
+  "beats_median": true,
+  "complete": true
+ },
+ "grid_size": 2,
+ "checks": {
+  "c2_move_3x_cost": true,
+  "c3_trades_per_day_1_5": false,
+  "c5_params_5_or_fewer": true,
+  "c6_gross_positive": true,
+  "c6_beats_random_median": true,
+  "no_kill_switch": true,
+  "c3_waivable_at_0_3": false
+ },
+ "prescreen_pass": true,
+ "all_checks": false,
+ "variant": "m2_15m",
+ "idea": "m2_15m",
+ "schedule": [
+  [
+   1698364800,
+   {
+    "model": 2,
+    "n": 6,
+    "breakeven": false,
+    "confirm": "ltf"
+   }
+  ],
+  [
+   1714176000,
+   {
+    "model": 2,
+    "n": 6,
+    "breakeven": false,
+    "confirm": "ltf"
+   }
+  ],
+  [
+   1729987200,
+   {
+    "model": 2,
+    "n": 6,
+    "breakeven": false,
+    "confirm": "ltf"
+   }
+  ],
+  [
+   1745712000,
+   {
+    "model": 2,
+    "n": 6,
+    "breakeven": false,
+    "confirm": "ltf"
+   }
+  ],
+  [
+   1761523200,
+   {
+    "model": 2,
+    "n": 6,
+    "breakeven": false,
+    "confirm": "ltf"
+   }
+  ],
+  [
+   1777248000,
+   {
+    "model": 2,
+    "n": 6,
+    "breakeven": false,
+    "confirm": "ltf"
+   }
+  ]
+ ],
+ "metrics": {
+  "trades": 1,
+  "final_balance": 101.88,
+  "net_profit": 1.88,
+  "net_return_pct": 1.88,
+  "max_drawdown_pct": 0.0,
+  "win_rate_pct": 100.0,
+  "avg_win": 1.88,
+  "avg_loss": 0.0,
+  "profit_factor": null,
+  "avg_commission": 0.1458,
+  "min_target_met": true,
+  "late_fills": 0,
+  "avg_delay_min": 0.0,
+  "monte_carlo_drawdown_pct": {
+   "p50": 0.0,
+   "p95": 0.0,
+   "p99": 0.0,
+   "runs": 1000
+  }
+ },
+ "gross_pips": {
+  "all": 29.2,
+  "per_pair": {
+   "frxEURGBP": 29.2
+  }
+ },
+ "cost_share_of_risk": {
+  "median": 0.216,
+  "mean": 0.216,
+  "avg_stop_pips": 11.9
+ },
+ "mt5_majors": {
+  "pairs": [
+   "frxEURUSD",
+   "frxGBPUSD",
+   "frxUSDJPY"
+  ],
+  "trades": 0,
+  "net_mt5": 0,
+  "net_deriv_same_trades": 0
+ },
+ "funnel": {
+  "sweeps": 32843,
+  "sweep_outside_session": 20246,
+  "setups": 3594,
+  "sweep_against_bias": 8357,
+  "sweep_while_active": 304,
+  "cancel_no_bos_in_time": 678,
+  "cancel_stop_level_traded": 2207,
+  "sweep_both_sides": 342,
+  "bos": 791,
+  "cancel_draw_reached_before_entry": 258,
+  "zone_touched": 281,
+  "cancel_session_ended": 356,
+  "cancel_no_retrace_in_time": 69,
+  "ltf_sweeps": 103,
+  "cancel_zones_invalidated": 10,
+  "ltf_bos": 16,
+  "cancel_entry_not_in_premium_discount": 14,
+  "signals": 2
+ },
+ "engine_refused": {
+  "expired": 1
+ },
+ "engine_blocked": {
+  "no_price": 1
+ },
+ "stops_moved": 0,
+ "pairs_profitable": 1
+}

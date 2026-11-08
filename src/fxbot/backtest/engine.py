@@ -13,7 +13,13 @@ work across pairs):
    c. a pending signal asks the risk module; if approved it opens at this
       open (+0.5 pip) and is checked against the rest of this candle; if the
       answer is "not now" it waits, at most the fixed wait for its timeframe
-      (1h: 1 hour, 4h: 4 hours, daily: 12 hours; strategies.base).
+      (1h: 1 hour, 4h: 4 hours, daily: 12 hours, 1m/5m/15m: 2 minutes;
+      strategies.base). Optional per-signal rules (strategies.base.Enter):
+      skip if the stop is under a multiple of the cost per trade, skip if the
+      stop lies beyond Deriv's stop out;
+   d. stop-loss update: an open trade with move_stop_at_r whose candle reached
+      the trigger price gets its stop moved to Deriv's smallest stop
+      (commission + 0.02 USD) from the next minute.
 4. Equity = balance + open profit at this minute's close. Kill switch -> all
    trades closed at this close, run stops.
 
@@ -54,6 +60,7 @@ class Pending:
     signal_epoch: int
     expires: int
     first_block: str = ""
+    enter: Enter | None = None
 
 
 @dataclass
@@ -150,6 +157,7 @@ class Engine:
             "commission": round(p.commission, 4), "sl_amount": p.sl_amount, "tp_amount": p.tp_amount,
             "profit": ex.profit, "balance_after": st.balance,
             "entry_epoch": p.entry_epoch, "exit_epoch": ex.epoch,
+            "sl_pips": p.extra.get("sl_pips"), "stop_moved_time": p.extra.get("stop_moved_time"),
         })
         st.equity.append((ex.epoch, self._equity()))
 
@@ -157,8 +165,14 @@ class Engine:
         st = self.state
         ends = self.tf_end[sym]
         i = st.tf_pos[sym]
+        # Optional speed hint: a strategy that acts only at known candle ends (the TJR coin-toss
+        # replay) lists them in wake_epochs; it is not called at any other candle. None (every
+        # other strategy) = called at every candle, as before.
+        wake = getattr(self.strategy, "wake_epochs", None)
         while i < len(ends) and ends[i] <= t:
             i += 1
+            if wake is not None and ends[i - 1] not in wake:
+                continue
             pos = st.positions.get(sym)
             view = PositionView(pos.direction, pos.multiplier, pos.entry, pos.entry_epoch) if pos else None
             sig_epoch = ends[i - 1]
@@ -172,7 +186,7 @@ class Engine:
                 if isinstance(a, Enter):
                     req = OrderRequest(sym, a.direction, a.multiplier, a.risk_fraction,
                                        a.stop_loss_pips, a.take_profit_pips, self.strategy.name)
-                    st.pending[sym] = Pending(req, sig_epoch, sig_epoch + self.max_wait)
+                    st.pending[sym] = Pending(req, sig_epoch, sig_epoch + self.max_wait, enter=a)
                 elif isinstance(a, ExitPosition) and sym in st.positions:
                     st.exit_requests.add(sym)
                 elif isinstance(a, CancelPending):
@@ -201,16 +215,40 @@ class Engine:
             return
         st.pending.pop(sym)
         r = d.approval.request
+        ent = pend.enter
+        if ent is not None and ent.min_stop_cost_multiple is not None:
+            # Owner's cost rule: judged at the measured rate (never the stressed one), so the
+            # measured and 1.5x runs keep the same trades.
+            floor = ent.min_stop_cost_multiple * fills.cost_pips(sym, fills.entry_price(sym, r.direction, o), rate)
+            if r.stop_loss_pips is None or r.stop_loss_pips < floor:
+                st.refused["stop_under_cost_floor"] += 1
+                return
         try:
             p = fills.open_position(sym, r.direction, r.multiplier, d.approval.stake, o, t, rate,
-                                    r.stop_loss_pips, r.take_profit_pips, self.stress)
+                                    r.stop_loss_pips, r.take_profit_pips, self.stress,
+                                    require_stop=bool(ent and ent.require_stop))
         except ValueError as err:
             st.refused[str(err)] += 1
             return
+        if r.stop_loss_pips is not None:
+            p.extra["sl_pips"] = round(r.stop_loss_pips, 2)
+        if ent is not None and ent.move_stop_at_r and p.sl_price is not None:
+            dist = r.stop_loss_pips * fills.PIP[sym] * ent.move_stop_at_r
+            p.extra["be_trigger"] = p.entry + dist if p.up else p.entry - dist
         p.deadline = self.risk.exit_deadline(t, r.multiplier)
         p.signal_epoch = pend.signal_epoch
         p.strategy = self.strategy.name
         st.positions[sym] = p
+
+    def _maybe_move_stop(self, pos: fills.Position, t: int, h: float, low: float) -> None:
+        """Break-even variant: once this minute reached the trigger, move the stop (next minute on)."""
+        trig = pos.extra.get("be_trigger")
+        if trig is None or pos.extra.get("stop_moved_time"):
+            return
+        if (h >= trig) if pos.up else (low <= trig):
+            if fills.move_stop_near_breakeven(pos):
+                pos.extra["stop_moved_time"] = _iso(t + 60)
+            pos.extra["be_trigger"] = None
 
     def _restart_after_kill(self, t: int, equity: float) -> None:
         """Observe mode: record the event, then reset the balance as a manual restart would."""
@@ -265,6 +303,8 @@ class Engine:
                         ex = fills.check_bar(pos, t, o, h, low, c)
                         if ex:
                             self._close(sym, ex)
+                        else:
+                            self._maybe_move_stop(pos, t, h, low)
                 if sym in st.pending:
                     self._try_entry(sym, t, o)
                     pos = st.positions.get(sym)
@@ -272,6 +312,8 @@ class Engine:
                         ex = fills.check_bar(pos, t, pos.entry, h, low, c)
                         if ex:
                             self._close(sym, ex)
+                        else:
+                            self._maybe_move_stop(pos, t, h, low)
                 st.last_close[sym] = c
             if self.risk.kill_switch_hit(self._account()):
                 equity = self._equity()

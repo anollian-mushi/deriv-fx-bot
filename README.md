@@ -295,6 +295,28 @@ python scripts/research_ml.py summary   # checks, what the picked models learned
   with more threads each, the gradient-boosting fits crawl).
 - Needs `scikit-learn` (pinned in `requirements.txt`).
 
+### TJR test (branch `tjr-smc`, owner's request of 2 Nov 2026)
+
+Tests whether the TJR "smart money" method (liquidity sweep, break of structure, order block,
+FVG, equilibrium) has an edge at Deriv's costs. Rules: `docs/tjr_rules.md` (approved). Plan,
+30 variants and checks: `docs/tjr_test_plan.md`. Code: `src/fxbot/strategies/tjr.py`,
+`tjr_calendar.py`, `src/fxbot/backtest/tjr_test.py`.
+
+```bash
+python scripts/tjr_test.py setup --costs-rechecked   # only after the 3/5 Nov cost re-check
+python scripts/tjr_test.py grid|oos|luck|summary     # each resumes; repeat until "0 left"
+```
+
+- 5m and 15m execution is an owner-approved exception for this research only (CLAUDE.md
+  otherwise keeps 15m out). The engine runs 1m/5m/15m strategies with a fixed 2-minute
+  signal wait, and supports three optional per-signal rules: the 4x-cost stop floor, the
+  stop-beyond-stop-out skip, and Deriv's stop-loss update to near break-even. Older
+  strategies are unchanged.
+- Results go to `research/tjr/` and `reports/tjr_test.md`.
+- **Result (6 Nov 2026): no variant passes; nothing registered.** Model 1 has a small edge
+  before costs (about 2.8 pips a trade) but Deriv's cost is about 4.2; models 2-4 almost never
+  trigger. See `reports/tjr_test.md`.
+
 ## Pipeline audit
 
 ```bash

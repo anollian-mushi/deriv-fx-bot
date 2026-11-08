@@ -1,0 +1,71 @@
+[
+ {
+  "variant": 0,
+  "model": 1,
+  "n": 6,
+  "breakeven": false,
+  "confirm": "ltf",
+  "trades": 644,
+  "net_profit": -87.98,
+  "gross": 8.41,
+  "kill_events": 1,
+  "stats": {
+   "sweeps": 54694,
+   "sweep_outside_session": 33454,
+   "sweep_against_bias": 14264,
+   "sweep_both_sides": 581,
+   "setups": 6044,
+   "cancel_stop_level_traded": 3573,
+   "cancel_no_bos_in_time": 1145,
+   "bos": 1326,
+   "skip_outside_session": 237,
+   "signals": 929,
+   "sweep_session_used": 83,
+   "skip_news": 105,
+   "skip_busy": 8,
+   "sweep_while_active": 268,
+   "skip_us_bank_holiday": 36,
+   "skip_stop_too_wide": 17,
+   "skip_bias_changed": 2
+  },
+  "refused": {
+   "expired": 136,
+   "stop_under_cost_floor": 141
+  }
+ },
+ {
+  "variant": 1,
+  "model": 1,
+  "n": 12,
+  "breakeven": false,
+  "confirm": "ltf",
+  "trades": 706,
+  "net_profit": -105.47,
+  "gross": -0.83,
+  "kill_events": 2,
+  "stats": {
+   "sweeps": 54694,
+   "sweep_outside_session": 33381,
+   "sweep_against_bias": 14226,
+   "sweep_both_sides": 581,
+   "setups": 6041,
+   "cancel_stop_level_traded": 3882,
+   "cancel_no_bos_in_time": 566,
+   "bos": 1593,
+   "skip_outside_session": 401,
+   "signals": 1016,
+   "sweep_session_used": 84,
+   "sweep_while_active": 381,
+   "skip_news": 105,
+   "skip_busy": 9,
+   "skip_us_bank_holiday": 40,
+   "skip_stop_too_wide": 19,
+   "skip_after_flat_time": 9,
+   "skip_bias_changed": 3
+  },
+  "refused": {
+   "expired": 155,
+   "stop_under_cost_floor": 146
+  }
+ }
+]

@@ -1,0 +1,77 @@
+{
+ "created_utc": "2026-11-06T08:03:01+00:00",
+ "commit": "492f15d202d80c139c9cb4b910d1c24f1bfb0039",
+ "symbols": [
+  "frxEURUSD",
+  "frxGBPUSD",
+  "frxUSDJPY",
+  "frxAUDUSD",
+  "frxUSDCAD",
+  "frxUSDCHF",
+  "frxEURGBP",
+  "frxEURJPY",
+  "frxGBPJPY"
+ ],
+ "tables": [
+  "research/phase2/cost_by_hour.json",
+  "research/phase2/cost_by_hour_pairs2.json"
+ ],
+ "table_sha256": {
+  "research/phase2/cost_by_hour.json": "c4e991e10a9089f97f8c1cafdba0eb788a83675280cd0525e6aa9a683daf1d74",
+  "research/phase2/cost_by_hour_pairs2.json": "0296e4d82a082b4351244583d561f121d888e155a9222370635ba23e2652a8db"
+ },
+ "new_pairs_dropped_for_cost": [],
+ "preflight": {
+  "pairs2_kept": [
+   "frxAUDUSD",
+   "frxUSDCAD",
+   "frxUSDCHF",
+   "frxEURGBP",
+   "frxEURJPY",
+   "frxGBPJPY"
+  ],
+  "research/phase2/cost_by_hour.json": {
+   "last_commit": "2026-11-05T19:24:10+00:00",
+   "pairs": [
+    "frxEURUSD",
+    "frxGBPUSD",
+    "frxUSDJPY"
+   ],
+   "note": "The only commission source for backtests (CLAUDE.md). The 06:00-17:59 UTC base window was measured 28-29 Oct 2026 and re-checked after the US clock change (Mon 2, Tue 3 and Thu 5 Nov 2026; reports/costs.md section 13). Hours 05-07 and 12-19 UTC use only the post-1-Nov samples; the other hours use 28-29 Oct."
+  },
+  "research/phase2/cost_by_hour_pairs2.json": {
+   "last_commit": "2026-11-02T18:47:38+00:00",
+   "pairs": [
+    "frxAUDUSD",
+    "frxEURGBP",
+    "frxEURJPY",
+    "frxGBPJPY",
+    "frxUSDCAD",
+    "frxUSDCHF"
+   ],
+   "note": "Measured Mon 2 Nov 2026, hourly 06:07-18:07 UTC, demo connection, quotes only"
+  },
+  "symbols": [
+   "frxEURUSD",
+   "frxGBPUSD",
+   "frxUSDJPY",
+   "frxAUDUSD",
+   "frxUSDCAD",
+   "frxUSDCHF",
+   "frxEURGBP",
+   "frxEURJPY",
+   "frxGBPJPY"
+  ],
+  "tables": [
+   "research/phase2/cost_by_hour.json",
+   "research/phase2/cost_by_hour_pairs2.json"
+  ],
+  "dropped_for_cost": []
+ },
+ "data_end": "2026-10-30",
+ "oos_span": [
+  "2023-10-27",
+  "2026-10-26"
+ ],
+ "variants": 30
+}

@@ -1,0 +1,243 @@
+{
+ "oos_span": [
+  "2023-10-27",
+  "2026-10-26"
+ ],
+ "trading_days": 776,
+ "trades": 9,
+ "trades_per_day": 0.01,
+ "net_measured": 4.07,
+ "net_1_5x": 3.33,
+ "gross": 6.03,
+ "gross_pips_per_trade": 20.46,
+ "win_rate_pct": 44.4,
+ "avg_win": 2.83,
+ "avg_loss": -1.45,
+ "profit_factor": 1.561,
+ "kill_events": 0,
+ "per_pair": {
+  "frxEURUSD": {
+   "trades": 0,
+   "net": 0,
+   "gross": 0
+  },
+  "frxGBPUSD": {
+   "trades": 1,
+   "net": -2.01,
+   "gross": -1.8
+  },
+  "frxUSDJPY": {
+   "trades": 4,
+   "net": 1.19,
+   "gross": 2.05
+  },
+  "frxAUDUSD": {
+   "trades": 0,
+   "net": 0,
+   "gross": 0
+  },
+  "frxUSDCAD": {
+   "trades": 0,
+   "net": 0,
+   "gross": 0
+  },
+  "frxUSDCHF": {
+   "trades": 1,
+   "net": -1.76,
+   "gross": -1.42
+  },
+  "frxEURGBP": {
+   "trades": 1,
+   "net": 1.95,
+   "gross": 2.14
+  },
+  "frxEURJPY": {
+   "trades": 0,
+   "net": 0,
+   "gross": 0
+  },
+  "frxGBPJPY": {
+   "trades": 2,
+   "net": 4.7,
+   "gross": 5.06
+  }
+ },
+ "per_window_net": [
+  0.42,
+  7.83,
+  -4.18,
+  0,
+  0,
+  0
+ ],
+ "per_window_gross": [
+  0.84,
+  8.58,
+  -3.39,
+  0,
+  0,
+  0
+ ],
+ "move_vs_cost": {
+  "avg_abs_move_pips": 49.19,
+  "avg_cost_pips": 4.78,
+  "ratio": 10.29
+ },
+ "luck": {
+  "runs": 200,
+  "median_net": 2.285,
+  "p95_net": 14.415499999999998,
+  "p99_net": 16.14249999999997,
+  "share_beaten_net": 0.635,
+  "median_gross": 4.17,
+  "share_beaten_gross": 0.635,
+  "beats_median": true,
+  "complete": true
+ },
+ "grid_size": 2,
+ "checks": {
+  "c2_move_3x_cost": true,
+  "c3_trades_per_day_1_5": false,
+  "c5_params_5_or_fewer": true,
+  "c6_gross_positive": true,
+  "c6_beats_random_median": true,
+  "no_kill_switch": true,
+  "c3_waivable_at_0_3": false
+ },
+ "prescreen_pass": true,
+ "all_checks": false,
+ "variant": "m4_5m_touch",
+ "idea": "m4_5m",
+ "schedule": [
+  [
+   1698364800,
+   {
+    "model": 4,
+    "n": 6,
+    "breakeven": false,
+    "confirm": "touch"
+   }
+  ],
+  [
+   1714176000,
+   {
+    "model": 4,
+    "n": 6,
+    "breakeven": false,
+    "confirm": "touch"
+   }
+  ],
+  [
+   1729987200,
+   {
+    "model": 4,
+    "n": 6,
+    "breakeven": false,
+    "confirm": "touch"
+   }
+  ],
+  [
+   1745712000,
+   {
+    "model": 4,
+    "n": 6,
+    "breakeven": false,
+    "confirm": "touch"
+   }
+  ],
+  [
+   1761523200,
+   {
+    "model": 4,
+    "n": 6,
+    "breakeven": false,
+    "confirm": "touch"
+   }
+  ],
+  [
+   1777248000,
+   {
+    "model": 4,
+    "n": 6,
+    "breakeven": false,
+    "confirm": "touch"
+   }
+  ]
+ ],
+ "metrics": {
+  "trades": 9,
+  "final_balance": 104.07,
+  "net_profit": 4.07,
+  "net_return_pct": 4.07,
+  "max_drawdown_pct": 5.61,
+  "win_rate_pct": 44.4,
+  "avg_win": 2.83,
+  "avg_loss": -1.45,
+  "profit_factor": 1.561,
+  "avg_commission": 0.167,
+  "min_target_met": true,
+  "late_fills": 0,
+  "avg_delay_min": 0.0,
+  "monte_carlo_drawdown_pct": {
+   "p50": 3.86,
+   "p95": 5.66,
+   "p99": 6.61,
+   "runs": 1000
+  }
+ },
+ "gross_pips": {
+  "all": 20.46,
+  "per_pair": {
+   "frxUSDJPY": 13.07,
+   "frxEURGBP": 29.56,
+   "frxGBPJPY": 78.71,
+   "frxGBPUSD": -35.98,
+   "frxUSDCHF": -19.2
+  }
+ },
+ "cost_share_of_risk": {
+  "median": 0.187,
+  "mean": 0.178,
+  "avg_stop_pips": 26.0
+ },
+ "mt5_majors": {
+  "pairs": [
+   "frxEURUSD",
+   "frxGBPUSD",
+   "frxUSDJPY"
+  ],
+  "trades": 5,
+  "net_mt5": -0.17,
+  "net_deriv_same_trades": -0.82
+ },
+ "funnel": {
+  "sweeps": 32843,
+  "sweep_outside_session": 20278,
+  "setups": 3566,
+  "bos": 1043,
+  "cancel_draw_reached_before_entry": 221,
+  "sweep_against_bias": 8585,
+  "cancel_stop_level_traded": 1493,
+  "signals": 119,
+  "sweep_both_sides": 342,
+  "cancel_no_bos_in_time": 1059,
+  "cancel_zones_invalidated": 158,
+  "cancel_no_retrace_in_time": 310,
+  "cancel_session_ended": 135,
+  "sweep_while_active": 44,
+  "skip_news": 9,
+  "sweep_session_used": 28,
+  "skip_us_bank_holiday": 6,
+  "cancel_entry_not_in_premium_discount": 53,
+  "skip_outside_session": 3
+ },
+ "engine_refused": {
+  "stop_under_cost_floor": 89,
+  "expired": 21
+ },
+ "engine_blocked": {
+  "no_price": 21
+ },
+ "stops_moved": 0,
+ "pairs_profitable": 3
+}
