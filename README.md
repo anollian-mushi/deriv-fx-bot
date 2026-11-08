@@ -316,6 +316,8 @@ python scripts/tjr_test.py grid|oos|luck|summary     # each resumes; repeat unti
 - **Result (6 Nov 2026): no variant passes; nothing registered.** Model 1 has a small edge
   before costs (about 2.8 pips a trade) but Deriv's cost is about 4.2; models 2-4 almost never
   trigger. See `reports/tjr_test.md`.
+- Model 1, 5m, break-even was registered in the incubator by the owner's approval on 8 Nov 2026
+  (`tjr_m1_5m_be_v1`, all 9 pairs); a forward loss is the expected result.
 
 ## Pipeline audit
 

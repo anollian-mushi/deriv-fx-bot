@@ -38,5 +38,13 @@
   "seq": 4,
   "prev": "138f266e9f95d73ee5a0e53e676fa820dfacc8f5e9b6c0cfd4f85661caa1b8c7",
   "entry_hash": "46acf15eec1f1e17fb95ee85cd650eaea25f3d6f05903172c8be0a4aa31eb0a8"
+ },
+ {
+  "id": "tjr_m1_5m_be_v1",
+  "registered": "2026-11-08",
+  "fingerprint": "22d1cef4141564efeb1704a5f833b6e9fce3b3a9658019d77af4526409ea754f",
+  "seq": 5,
+  "prev": "46acf15eec1f1e17fb95ee85cd650eaea25f3d6f05903172c8be0a4aa31eb0a8",
+  "entry_hash": "7630c767abdedeaa89d22330137c4971327a60d6fb58718746ae98374cc4e33b"
  }
 ]

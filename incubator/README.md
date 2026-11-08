@@ -92,10 +92,11 @@ takes about 2-5 minutes. An exam adds up to 25 minutes a day while it runs.
 
 ## The candidates
 
-All five were registered on 2026-10-31 and are scored from 2026-11-01. The
-first four are frozen exactly as the research left them: the settings they
+The first five were registered on 2026-10-31 and are scored from 2026-11-01.
+The first four are frozen exactly as the research left them: the settings they
 would have used next, with the model file unchanged. The fifth is frozen with
-the settings its pre-screen picked.
+the settings its pre-screen picked. The sixth, `tjr_m1_5m_be_v1`, was
+registered on 2026-11-08 and is scored from 2026-11-09 (see below the table).
 
 | Candidate | Idea, in plain words | Candles |
 |---|---|---|
@@ -104,6 +105,7 @@ the settings its pre-screen picked.
 | `f9_eur_gbp_convergence_r5` | When EUR and GBP drift unusually far apart, buy the cheap one and sell the dear one (two trades at once), held up to 8 days. | daily |
 | `a1_ml_day_r5` | A machine-learning model, trained only on old data and never retrained, guesses each morning whether a pair rises by evening. It trades only when fairly sure. | 1h |
 | `i13_morning_overnight_v1` | When a pair has already moved at least 0.4 of a normal day's range by 08:00 UTC, follow that move and hold it until 06:00 the next morning (no stop beyond Deriv's stop out; no new trades on Fridays). Registered 31 Oct 2026 by the owner's approved exception to the 1.5-trades-a-day check: it signals about 0.38 times a day, so it needs **about a year, not 90 days, to reach the 100 forward trades** the graduation rule asks for. Its pre-screen gain leaned on USD/JPY (+13 USD of +17; GBP/USD lost), so watch the per-pair line. | 1h |
+| `tjr_m1_5m_be_v1` | From the owner's TJR course: when a 30-minute candle in the London or New York session pokes past a well-known high or low (yesterday's, the Asian or London session's, or a recent 30-minute swing) and closes back inside, against the daily and 4-hour trend, wait for a 5-minute candle to close past the last swing, then trade with the trend. Stop just beyond the poke, target the nearest untouched high or low on the other side, stop moved to about break-even once the trade is 1:1 in profit, everything closed by 17:55 UTC. **All 9 pairs** (the majors plus AUD/USD, USD/CAD, USD/CHF, EUR/GBP, EUR/JPY, GBP/JPY), commission from both tables. Fed 1-minute candles. **Before-cost edge about 2.9 pips a trade against about 4.2 pips of cost, so a forward loss is the expected result.** | 1m (5m execution) |
 
 ## New ideas pre-screened on 31 Oct 2026: one registered by exception
 
@@ -198,6 +200,32 @@ that showed on the majors does not generalise; the i13 candidate's own
 forward test is the only honest judge left. Details: `research/log.md`,
 "Multi-pair test of the i13 rule".
 
+**TJR test, registered by the owner's approval (8 Nov 2026).** The owner's TJR
+course notes were turned into mechanical rules (`docs/tjr_rules.md`) and 30
+variants were tested on data before 31 Oct 2026 (`reports/tjr_test.md`).
+Model 1 on 5m execution with the break-even stop (`tjr_m1_5m_be_v1`) passed
+the 8 entry checks agreed before the test, using the 0.3-trades-a-day waiver
+(it made 0.54 a day). It **fails the CLAUDE.md research pass rule**: it lost
+money after costs over the three test years and was profitable on only 1 of
+the 3 majors (EUR/USD). The owner approved registering it anyway, as was done
+for f1 and f3. Read its forward result with that in mind:
+
+- Before costs it captured about **2.9 pips a trade**. Deriv's commission and
+  slippage took about **4.2 pips a trade**. **A forward loss is the expected
+  result**; a forward profit would be a surprise worth a sceptical look.
+- It trades about 0.5 times a day across the nine pairs, so the 100 forward
+  trades the graduation rule needs should take about 8-9 months.
+- Its replay is heavier than the others' (1-minute candles, nine pairs), but a
+  daily run takes only a few minutes. If it ever reached an exam, the luck check
+  replays the whole strategy for each coin-toss run, so an exam could take two
+  weeks or more of daily runs.
+- The incubator was extended for it on 8 Nov 2026: it freezes the TJR code,
+  merges the two commission tables, and tosses the coin on its trade orders
+  (it has no separate direction hook). The five earlier candidates' forward
+  results were checked to be identical after the change.
+
+N is now 6 for the graduation rule.
+
 **Running the pre-screen on a new idea** (for a developer or an AI): add the
 strategy class to `src/fxbot/strategies/families.py`, declare its grid (at
 most 8 variants, 5 settings) in `fxbot.backtest.prescreen.IDEAS`, then
@@ -257,13 +285,13 @@ must hold on forward data (days after registration):
    these coin-toss runs:
    - It must beat the **(1 - 0.05/N)** share of them. **N** counts every
      candidate ever registered plus every exam attempt ever started,
-     including the current one. With 5 candidates the first exam has N = 6,
-     so the candidate must beat 99.2% of the coin-toss runs.
+     including the current one. With 6 candidates the first exam has N = 7,
+     so the candidate must beat 99.3% of the coin-toss runs.
    - N only ever grows. Every new candidate and every retake makes the bar
      a little higher. The more ideas you test, the more likely one passes
      by pure luck, and the growing bar corrects for that.
    - Number of coin-toss runs: at least 2,000, or 20 × N / 0.05 if that is
-     more (2,400 at N = 6, 2,800 at N = 7). That leaves at least 20 runs above the bar, so
+     more (2,800 at N = 7, 3,200 at N = 8). That leaves at least 20 runs above the bar, so
      the bar itself is measured reliably.
 
 **How an exam runs:** it starts automatically on the first daily run where

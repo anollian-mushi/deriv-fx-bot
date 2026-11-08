@@ -4,6 +4,9 @@ Run 6 Nov 2026 on branch `tjr-smc`. Rules: `docs/tjr_rules.md` (approved 2 Nov 2
 variants and checks: `docs/tjr_test_plan.md` (approved 2 Nov 2026, fixed before any run).
 Raw results: `research/tjr/`.
 
+**Update, 8 Nov 2026:** the owner approved registering m1_5m_be in the incubator despite the CLAUDE.md pass
+rule, as `tjr_m1_5m_be_v1` (see `incubator/README.md`). The verdict below is unchanged.
+
 ## The short answer
 
 **No variant passes. Nothing is proposed for the incubator.**

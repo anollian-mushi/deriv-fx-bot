@@ -1048,3 +1048,20 @@ Deriv cost, so it loses after costs. Models 2-4 almost never complete the notes'
 (+14 to +18 USD), almost all from EUR/USD: not a convincing pass either. Runner fault found and fixed
 before these results: 14 runs first resumed leftover synthetic-test engine files; they were deleted and
 rerun (report section 6). Variants tried in this test: 30. N for the incubator stays 5.
+
+### Registered in the incubator: tjr_m1_5m_be_v1 (owner's approval, 8 Nov 2026)
+
+The owner approved registering TJR "model 1, 5m execution, break-even stop" (variant m1_5m_be)
+exactly as tested, despite the CLAUDE.md research pass rule (as for f1 and f3): it passed the 8
+entry checks agreed before the test with the 0.3/day waiver (0.54 trades a day), but lost money
+after costs and was profitable on 1 of 3 majors. Frozen settings: model=1, n=12 (picked in all six
+walk-forward rounds), breakeven=True, confirm=ltf; all 9 pairs; commission from
+research/phase2/cost_by_hour.json + research/phase2/cost_by_hour_pairs2.json (merged). Strategy
+code byte-identical to the tested commit 394c7a08 (tjr.py, tjr_calendar.py); engine files
+unchanged since then. Registered 2026-11-08, first scored day 2026-11-09, fingerprint
+22d1cef4141564efeb1704a5f833b6e9fce3b3a9658019d77af4526409ea754f. Expected forward result: a
+loss (before-cost edge about 2.9 pips a trade against about 4.2 pips of cost). Incubator support
+added first (frozen tjr modules, merged cost tables, coin toss on the Enter action for strategies
+without an entry() hook), with tests; the five earlier candidates' forward results to 2026-11-06
+are identical after the change. N is now 6.
+

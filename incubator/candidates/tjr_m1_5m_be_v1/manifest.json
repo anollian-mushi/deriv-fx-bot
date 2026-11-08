@@ -1,0 +1,58 @@
+{
+ "class": "TJR5m",
+ "cost_table": [
+  "research/phase2/cost_by_hour.json",
+  "research/phase2/cost_by_hour_pairs2.json"
+ ],
+ "files": {
+  "code/__init__.py": "629ddeca4fc878504021a96fda93d605d6cb95135f9615568738d8d18268f06a",
+  "code/families.py": "cbe05d93f7cb58a7a08aa07fc0c680265eca55e6655ed8cb462053741eb43cef",
+  "code/ml_day.py": "1ab8e4fb9100ef03c4197b72898fbf88849c6e8ec160f7635dd3d07c0849dee9",
+  "code/tjr.py": "dd070e44c92b35e0c4496b1b6773308ee5fb85754e82dee2dd57f368ddba08a0",
+  "code/tjr_calendar.py": "e9e4169542956b0d4631380c1ea9a98eed505287afaf7b8a49a4e6798371e32d"
+ },
+ "first_scored_day": "2026-11-09",
+ "id": "tjr_m1_5m_be_v1",
+ "legs": null,
+ "model_source": {},
+ "module": "tjr",
+ "notes": "TJR model 1 (30m liquidity sweep with the daily+4h bias, 5m break of structure, entry on the break), break-even stop update at 1R, flat by 17:55 UTC. Before-cost edge about 2.9 pips a trade against about 4.2 pips of cost in the pre-screen, so a forward loss is the expected result.",
+ "origin": {
+  "oos": "2023-10-27..2026-10-26",
+  "owner_approval": "2026-11-08: registered despite the CLAUDE.md research pass rule (as for f1 and f3); passed the 8 pre-screen checks agreed before the test, with the 0.3/day frequency waiver",
+  "test": "reports/tjr_test.md",
+  "tested_commit": "394c7a08",
+  "tested_on_branch": "tjr-smc",
+  "variant": "m1_5m_be",
+  "walk_forward_picks": "n=12 in all six rounds"
+ },
+ "params": {
+  "breakeven": true,
+  "confirm": "ltf",
+  "model": 1,
+  "n": 12
+ },
+ "registered": "2026-11-08",
+ "registered_at": "2026-11-08T10:36:04Z",
+ "source_commit": "79bcb88b29a6183aeeba7b371a88928005265e89",
+ "source_sha256": {
+  "families.py": "cbe05d93f7cb58a7a08aa07fc0c680265eca55e6655ed8cb462053741eb43cef",
+  "ml_day.py": "d89dc19bc926fd0e5a0100c0f55e4607687aa275e38296b4e5c03cb168eab165",
+  "tjr.py": "690a7b19bf276222d29170051df803ce52995f020b178648065b51229e7be9c8",
+  "tjr_calendar.py": "e9e4169542956b0d4631380c1ea9a98eed505287afaf7b8a49a4e6798371e32d"
+ },
+ "strategy_name": "tjr_5m",
+ "symbols": [
+  "frxEURUSD",
+  "frxGBPUSD",
+  "frxUSDJPY",
+  "frxAUDUSD",
+  "frxUSDCAD",
+  "frxUSDCHF",
+  "frxEURGBP",
+  "frxEURJPY",
+  "frxGBPJPY"
+ ],
+ "timeframe": "1m",
+ "warmup_days": 70
+}
