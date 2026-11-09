@@ -269,51 +269,147 @@
    "open": 1.11488
   },
   {
-   "close": 1.11489,
+   "close": 1.11492,
    "epoch": 1794183720,
-   "high": 1.11489,
-   "low": 1.11489,
+   "high": 1.11493,
+   "low": 1.11487,
    "open": 1.11489
+  },
+  {
+   "close": 1.11493,
+   "epoch": 1794183780,
+   "high": 1.11494,
+   "low": 1.1149,
+   "open": 1.11491
+  },
+  {
+   "close": 1.11512,
+   "epoch": 1794183840,
+   "high": 1.11513,
+   "low": 1.11495,
+   "open": 1.11495
+  },
+  {
+   "close": 1.11511,
+   "epoch": 1794183900,
+   "high": 1.11516,
+   "low": 1.1151,
+   "open": 1.11512
+  },
+  {
+   "close": 1.11509,
+   "epoch": 1794183960,
+   "high": 1.11511,
+   "low": 1.11505,
+   "open": 1.11511
+  },
+  {
+   "close": 1.11503,
+   "epoch": 1794184020,
+   "high": 1.11512,
+   "low": 1.11503,
+   "open": 1.11508
+  },
+  {
+   "close": 1.11495,
+   "epoch": 1794184080,
+   "high": 1.11502,
+   "low": 1.11492,
+   "open": 1.11502
+  },
+  {
+   "close": 1.11488,
+   "epoch": 1794184140,
+   "high": 1.11495,
+   "low": 1.11486,
+   "open": 1.11495
+  },
+  {
+   "close": 1.11488,
+   "epoch": 1794184200,
+   "high": 1.11488,
+   "low": 1.11488,
+   "open": 1.11488
   }
  ],
  "charges_besides_buy_and_sell": [],
- "checked": "2026-11-09 00:22:07 UTC",
+ "checked": "2026-11-09 06:30:58 UTC",
  "contract_id": 19642142299,
  "direction": "MULTUP",
  "entry_spot": "1.11470",
- "exit_spot": null,
- "fill_past_stop_pips": null,
+ "exit_spot": "1.11625",
+ "fill_past_stop_pips": -35.2,
  "friday_last_close": 1.1138,
  "gap_pips": 9.3,
  "gap_through_stop": false,
- "is_sold": 0,
+ "is_sold": 1,
  "loss_over_stake": false,
  "monday_first_open": 1.11473,
- "profit": "-0.01",
+ "profit": "0.12",
  "raw_contract": {
   "account_id": 57954601,
+  "audit_details": {
+   "contract_start": [
+    {
+     "epoch": 1793988064,
+     "tick": 1.1147,
+     "tick_display_value": "1.11470"
+    },
+    {
+     "epoch": 1793988065,
+     "tick": 1.11469,
+     "tick_display_value": "1.11469"
+    },
+    {
+     "epoch": 1793988066,
+     "flag": "highlight_time",
+     "name": "Start Time",
+     "tick": 1.11469,
+     "tick_display_value": "1.11469"
+    },
+    {
+     "epoch": 1793988067,
+     "flag": "highlight_tick",
+     "name": "Entry Spot",
+     "tick": 1.1147,
+     "tick_display_value": "1.11470"
+    },
+    {
+     "epoch": 1793988068,
+     "tick": 1.1147,
+     "tick_display_value": "1.11470"
+    },
+    {
+     "epoch": 1793988069,
+     "tick": 1.11462,
+     "tick_display_value": "1.11462"
+    }
+   ]
+  },
   "barrier_count": 1,
-  "bid_price": "0.99",
+  "bid_price": "1.12",
   "buy_price": "1.00",
   "commission": "0.02",
   "contract_id": 19642142299,
   "contract_type": "MULTUP",
   "currency": "USD",
-  "current_spot": "1.11489",
-  "current_spot_time": 1794183727,
+  "current_spot": "1.11625",
+  "current_spot_time": 1794205858,
   "date_expiry": 4947609600,
   "date_settlement": 4947696000,
   "date_start": 1793988066,
   "entry_spot": "1.11470",
   "entry_spot_time": 1793988067,
+  "exit_spot": "1.11625",
+  "exit_spot_time": 1794205856,
   "expiry_time": 4947609600,
   "is_expired": 0,
   "is_intraday": 0,
   "is_path_dependent": 1,
-  "is_settleable": 0,
-  "is_sold": 0,
+  "is_settleable": 1,
+  "is_sold": 1,
   "is_valid_to_cancel": 0,
-  "is_valid_to_sell": 1,
+  "is_valid_to_sell": 0,
   "is_valid_to_update": {
    "stop_loss": 1,
    "stop_out": 0,
@@ -337,15 +433,21 @@
   },
   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in EUR/USD, multiplied by 100, minus commissions.",
   "multiplier": 100,
-  "profit": "-0.01",
-  "profit_percentage": -1,
+  "profit": "0.12",
+  "profit_percentage": 12,
   "purchase_time": 1793988066,
+  "sell_price": "1.12",
+  "sell_time": 1794205856,
   "shortcode": "MULTUP_FRXEURUSD_1.00_100_1793988066_4947609600_0_0.00_N1_0",
-  "status": "open",
+  "status": "sold",
   "transaction_ids": {
-   "buy": 37611094979
+   "buy": 37611094979,
+   "sell": 38161012319
   },
   "underlying_symbol": "frxEURUSD",
+  "validation_error": "This contract has been sold.",
+  "validation_error_code": "ContractAlreadySold",
+  "validation_error_code_args": null,
   "validation_params": {
    "stake": {
     "max": "2000.00",
@@ -357,12 +459,12 @@
    },
    "take_profit": {
     "max": "50.00",
-    "min": "0.10"
+    "min": "0.13"
    }
   }
  },
- "sell_price": null,
- "sell_time": "",
+ "sell_price": "1.12",
+ "sell_time": "2026-11-09 06:30:56 UTC",
  "statement_other_entries": [
   {
    "action_type": "sell",
@@ -395,6 +497,20 @@
  ],
  "statement_this_contract": [
   {
+   "action_type": "sell",
+   "amount": 1.12,
+   "app_id": "33E1EFiiwCxheaIzatO7W",
+   "balance_after": 9973.1,
+   "contract_id": 19642142299,
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in EUR/USD, multiplied by 100, minus commissions.",
+   "payout": 0.0,
+   "purchase_time": 1793988066,
+   "reference_id": 37611094979,
+   "shortcode": "MULTUP_FRXEURUSD_1.00_100_1793988066_4947609600_0_0.00_N1_0",
+   "transaction_id": 38161012319,
+   "transaction_time": 1794205856
+  },
+  {
    "action_type": "buy",
    "amount": -1.0,
    "app_id": "33E1EFiiwCxheaIzatO7W",
@@ -408,7 +524,7 @@
    "transaction_time": 1793988066
   }
  ],
- "status": "open",
+ "status": "sold",
  "stop_loss_price": 1.11273,
  "stop_loss_usd": 0.2,
  "stop_out_price": "1.10381"

@@ -234,7 +234,16 @@ Answered in Phase 2 (`reports/costs.md`):
   no spread.
 - **Limits:** do not change with stake size.
 
+Answered in Phase 6 (`reports/weekend_test.md`, 6-9 Nov 2026):
+- **Weekend charge:** none. A demo contract held Friday 18:01 to Monday 06:30
+  UTC shows only its buy and sell in the statement; profit = price move minus
+  the commission paid at the start.
+- Deriv's EUR/USD prices stop on Friday at 20:55 UTC and restart on Monday at
+  00:00 UTC. Open contracts can be sold again from Monday 00:00 UTC (ours was
+  sold at 06:30).
+
 Still open, for the Phase 6 demo run:
-- Weekend: any charge, and what a Monday gap does to an open contract (stop
-  loss fill, stop out).
+- What a Monday gap AGAINST an open contract does to its stop loss (fill at
+  the gapped price or worse) and stop out. The one weekend tested gapped
+  9.3 pips in the trade's favour, so the stop was not reached.
 - Commission by hour on more than one day, especially on news days.

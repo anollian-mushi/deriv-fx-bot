@@ -241,16 +241,18 @@ uses the unrounded rate (`src/fxbot/contracts/multiplier.py`).
 - **Daily pause:** new trades are refused 20:55–21:30 UTC on weekdays. Deriv
   says "Trading is not available from 20:55:00 to 21:30:00", although its
   trading hours list nothing. Open trades are not affected.
-- **Weekend: still unknown.** Neither the docs nor our tests answer two
-  questions:
-  1. Is anything charged over a weekend?
-  2. What happens when Monday opens far from Friday's close? Does the stop
-     loss fill at the gapped price, can a gap reach the stop out, and does it
-     ever lose more than the stake?
-
-  Deriv's terms say a Multiplier can never lose more than its stake.
-  **Open question for the Phase 6 demo run**: hold one small demo contract
-  over a weekend and record all three.
+- **Weekend: no charge (measured 6-9 Nov 2026, `reports/weekend_test.md`).**
+  - A demo EUR/USD Up contract, x100, 1 USD, stop loss 0.20 USD, was held from
+    Friday 18:01 to Monday 06:30 UTC.
+  - The statement shows only the buy (-1.00) and the sell (+1.12). The +0.12
+    profit is the price move minus the 0.02 commission paid at the start,
+    so nothing at all was charged for the weekend.
+  - The Monday gap was 9.3 pips in the trade's favour, so the stop loss was
+    not reached. **Still open:** what a large gap against a trade does to the
+    stop loss (fill at the gapped price, or worse) and to the stop out.
+    Deriv's terms say a Multiplier never loses more than its stake.
+  - Recommendation: keep the "no weekend holding" rule until a gap against a
+    trade has been seen; repeat with one Up and one Down contract.
 
 ## 10. What the backtester must use (from these results)
 
