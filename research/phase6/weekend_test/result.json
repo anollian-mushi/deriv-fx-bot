@@ -1,0 +1,415 @@
+{
+ "candles_friday": [
+  {
+   "close": 1.11384,
+   "epoch": 1793997600,
+   "high": 1.11389,
+   "low": 1.11379,
+   "open": 1.1138
+  },
+  {
+   "close": 1.11383,
+   "epoch": 1793997660,
+   "high": 1.11385,
+   "low": 1.1138,
+   "open": 1.11384
+  },
+  {
+   "close": 1.11383,
+   "epoch": 1793997720,
+   "high": 1.11384,
+   "low": 1.1138,
+   "open": 1.11383
+  },
+  {
+   "close": 1.11383,
+   "epoch": 1793997780,
+   "high": 1.11384,
+   "low": 1.11381,
+   "open": 1.11383
+  },
+  {
+   "close": 1.11388,
+   "epoch": 1793997840,
+   "high": 1.11389,
+   "low": 1.11382,
+   "open": 1.11383
+  },
+  {
+   "close": 1.11391,
+   "epoch": 1793997900,
+   "high": 1.11392,
+   "low": 1.11384,
+   "open": 1.11388
+  },
+  {
+   "close": 1.11382,
+   "epoch": 1793997960,
+   "high": 1.11391,
+   "low": 1.11378,
+   "open": 1.11391
+  },
+  {
+   "close": 1.11377,
+   "epoch": 1793998020,
+   "high": 1.11382,
+   "low": 1.11374,
+   "open": 1.11382
+  },
+  {
+   "close": 1.11379,
+   "epoch": 1793998080,
+   "high": 1.11383,
+   "low": 1.11377,
+   "open": 1.11377
+  },
+  {
+   "close": 1.11375,
+   "epoch": 1793998140,
+   "high": 1.11379,
+   "low": 1.11373,
+   "open": 1.11378
+  },
+  {
+   "close": 1.1137,
+   "epoch": 1793998200,
+   "high": 1.11375,
+   "low": 1.11368,
+   "open": 1.11374
+  },
+  {
+   "close": 1.11374,
+   "epoch": 1793998260,
+   "high": 1.11374,
+   "low": 1.11366,
+   "open": 1.1137
+  },
+  {
+   "close": 1.11374,
+   "epoch": 1793998320,
+   "high": 1.11376,
+   "low": 1.11368,
+   "open": 1.11373
+  },
+  {
+   "close": 1.11378,
+   "epoch": 1793998380,
+   "high": 1.11378,
+   "low": 1.11374,
+   "open": 1.11374
+  },
+  {
+   "close": 1.1138,
+   "epoch": 1793998440,
+   "high": 1.11382,
+   "low": 1.11377,
+   "open": 1.11379
+  },
+  {
+   "close": 1.1138,
+   "epoch": 1793998500,
+   "high": 1.1138,
+   "low": 1.1138,
+   "open": 1.1138
+  }
+ ],
+ "candles_monday": [
+  {
+   "close": 1.11482,
+   "epoch": 1794182400,
+   "high": 1.11491,
+   "low": 1.11472,
+   "open": 1.11473
+  },
+  {
+   "close": 1.11479,
+   "epoch": 1794182460,
+   "high": 1.11486,
+   "low": 1.11473,
+   "open": 1.11482
+  },
+  {
+   "close": 1.11472,
+   "epoch": 1794182520,
+   "high": 1.11489,
+   "low": 1.11472,
+   "open": 1.11479
+  },
+  {
+   "close": 1.11478,
+   "epoch": 1794182580,
+   "high": 1.11483,
+   "low": 1.11472,
+   "open": 1.11472
+  },
+  {
+   "close": 1.11486,
+   "epoch": 1794182640,
+   "high": 1.11489,
+   "low": 1.1147,
+   "open": 1.11478
+  },
+  {
+   "close": 1.11485,
+   "epoch": 1794182700,
+   "high": 1.11485,
+   "low": 1.11474,
+   "open": 1.11483
+  },
+  {
+   "close": 1.11475,
+   "epoch": 1794182760,
+   "high": 1.11488,
+   "low": 1.11472,
+   "open": 1.11485
+  },
+  {
+   "close": 1.11482,
+   "epoch": 1794182820,
+   "high": 1.11482,
+   "low": 1.11474,
+   "open": 1.11475
+  },
+  {
+   "close": 1.1148,
+   "epoch": 1794182880,
+   "high": 1.11484,
+   "low": 1.11475,
+   "open": 1.11482
+  },
+  {
+   "close": 1.11474,
+   "epoch": 1794182940,
+   "high": 1.1148,
+   "low": 1.11471,
+   "open": 1.1148
+  },
+  {
+   "close": 1.11483,
+   "epoch": 1794183000,
+   "high": 1.11484,
+   "low": 1.11472,
+   "open": 1.11473
+  },
+  {
+   "close": 1.11487,
+   "epoch": 1794183060,
+   "high": 1.11498,
+   "low": 1.11481,
+   "open": 1.11484
+  },
+  {
+   "close": 1.11495,
+   "epoch": 1794183120,
+   "high": 1.11503,
+   "low": 1.11486,
+   "open": 1.11486
+  },
+  {
+   "close": 1.11506,
+   "epoch": 1794183180,
+   "high": 1.11506,
+   "low": 1.11494,
+   "open": 1.11494
+  },
+  {
+   "close": 1.11506,
+   "epoch": 1794183240,
+   "high": 1.11506,
+   "low": 1.115,
+   "open": 1.11506
+  },
+  {
+   "close": 1.11499,
+   "epoch": 1794183300,
+   "high": 1.11513,
+   "low": 1.11499,
+   "open": 1.11506
+  },
+  {
+   "close": 1.11512,
+   "epoch": 1794183360,
+   "high": 1.11512,
+   "low": 1.11499,
+   "open": 1.11499
+  },
+  {
+   "close": 1.11506,
+   "epoch": 1794183420,
+   "high": 1.11516,
+   "low": 1.11505,
+   "open": 1.11512
+  },
+  {
+   "close": 1.11508,
+   "epoch": 1794183480,
+   "high": 1.1151,
+   "low": 1.11505,
+   "open": 1.11506
+  },
+  {
+   "close": 1.11513,
+   "epoch": 1794183540,
+   "high": 1.11516,
+   "low": 1.11506,
+   "open": 1.11508
+  },
+  {
+   "close": 1.11488,
+   "epoch": 1794183600,
+   "high": 1.11513,
+   "low": 1.11488,
+   "open": 1.11513
+  },
+  {
+   "close": 1.11489,
+   "epoch": 1794183660,
+   "high": 1.11489,
+   "low": 1.11483,
+   "open": 1.11488
+  },
+  {
+   "close": 1.11489,
+   "epoch": 1794183720,
+   "high": 1.11489,
+   "low": 1.11489,
+   "open": 1.11489
+  }
+ ],
+ "charges_besides_buy_and_sell": [],
+ "checked": "2026-11-09 00:22:07 UTC",
+ "contract_id": 19642142299,
+ "direction": "MULTUP",
+ "entry_spot": "1.11470",
+ "exit_spot": null,
+ "fill_past_stop_pips": null,
+ "friday_last_close": 1.1138,
+ "gap_pips": 9.3,
+ "gap_through_stop": false,
+ "is_sold": 0,
+ "loss_over_stake": false,
+ "monday_first_open": 1.11473,
+ "profit": "-0.01",
+ "raw_contract": {
+  "account_id": 57954601,
+  "barrier_count": 1,
+  "bid_price": "0.99",
+  "buy_price": "1.00",
+  "commission": "0.02",
+  "contract_id": 19642142299,
+  "contract_type": "MULTUP",
+  "currency": "USD",
+  "current_spot": "1.11489",
+  "current_spot_time": 1794183727,
+  "date_expiry": 4947609600,
+  "date_settlement": 4947696000,
+  "date_start": 1793988066,
+  "entry_spot": "1.11470",
+  "entry_spot_time": 1793988067,
+  "expiry_time": 4947609600,
+  "is_expired": 0,
+  "is_intraday": 0,
+  "is_path_dependent": 1,
+  "is_settleable": 0,
+  "is_sold": 0,
+  "is_valid_to_cancel": 0,
+  "is_valid_to_sell": 1,
+  "is_valid_to_update": {
+   "stop_loss": 1,
+   "stop_out": 0,
+   "take_profit": 1
+  },
+  "limit_order": {
+   "stop_loss": {
+    "display_name": "Stop loss",
+    "display_order_amount": "-0.20",
+    "order_amount": -0.2,
+    "order_date": 1793988066,
+    "value": "1.11273"
+   },
+   "stop_out": {
+    "display_name": "Stop out",
+    "display_order_amount": "-1.00",
+    "order_amount": -1.0,
+    "order_date": 1793988066,
+    "value": "1.10381"
+   }
+  },
+  "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in EUR/USD, multiplied by 100, minus commissions.",
+  "multiplier": 100,
+  "profit": "-0.01",
+  "profit_percentage": -1,
+  "purchase_time": 1793988066,
+  "shortcode": "MULTUP_FRXEURUSD_1.00_100_1793988066_4947609600_0_0.00_N1_0",
+  "status": "open",
+  "transaction_ids": {
+   "buy": 37611094979
+  },
+  "underlying_symbol": "frxEURUSD",
+  "validation_params": {
+   "stake": {
+    "max": "2000.00",
+    "min": "1.00"
+   },
+   "stop_loss": {
+    "max": "1.00",
+    "min": "0.10"
+   },
+   "take_profit": {
+    "max": "50.00",
+    "min": "0.10"
+   }
+  }
+ },
+ "sell_price": null,
+ "sell_time": "",
+ "statement_other_entries": [
+  {
+   "action_type": "sell",
+   "amount": 4.01,
+   "app_id": "33E1EFiiwCxheaIzatO7W",
+   "balance_after": 9971.98,
+   "contract_id": 19590159679,
+   "longcode": "If you select 'Down', your total profit/loss will be the percentage decrease in EUR/USD, multiplied by 295, minus commissions.",
+   "payout": 0.0,
+   "purchase_time": 1793948408,
+   "reference_id": 37508330819,
+   "shortcode": "MULTDOWN_FRXEURUSD_2.95_100_1793948408_4947609600_0_2.80_N1_0",
+   "transaction_id": 37632957979,
+   "transaction_time": 1793995208
+  },
+  {
+   "action_type": "sell",
+   "amount": 3.54,
+   "app_id": "33E1EFiiwCxheaIzatO7W",
+   "balance_after": 9967.97,
+   "contract_id": 19590158159,
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in USD/JPY, multiplied by 295, minus commissions.",
+   "payout": 0.0,
+   "purchase_time": 1793948407,
+   "reference_id": 37508327999,
+   "shortcode": "MULTUP_FRXUSDJPY_2.95_100_1793948407_4947609600_0_2.66_N1_0",
+   "transaction_id": 37632955859,
+   "transaction_time": 1793995207
+  }
+ ],
+ "statement_this_contract": [
+  {
+   "action_type": "buy",
+   "amount": -1.0,
+   "app_id": "33E1EFiiwCxheaIzatO7W",
+   "balance_after": 9964.43,
+   "contract_id": 19642142299,
+   "longcode": "If you select 'Up', your total profit/loss will be the percentage increase in EUR/USD, multiplied by 100, minus commissions.",
+   "payout": 0.0,
+   "reference_id": null,
+   "shortcode": "MULTUP_FRXEURUSD_1.00_100_1793988066_4947609600_0_0.00_N1_0",
+   "transaction_id": 37611094979,
+   "transaction_time": 1793988066
+  }
+ ],
+ "status": "open",
+ "stop_loss_price": 1.11273,
+ "stop_loss_usd": 0.2,
+ "stop_out_price": "1.10381"
+}
