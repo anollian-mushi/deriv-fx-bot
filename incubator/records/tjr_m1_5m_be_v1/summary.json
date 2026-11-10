@@ -1,0 +1,160 @@
+{
+ "cost_table": [
+  "research/phase2/cost_by_hour.json",
+  "research/phase2/cost_by_hour_pairs2.json"
+ ],
+ "data_end": "2026-11-09",
+ "engine_fingerprint": "07972a6670389fbf4073996d47f1482bc5183e6ef3976a8fdfddf47f1d2348e5",
+ "fingerprint": "22d1cef4141564efeb1704a5f833b6e9fce3b3a9658019d77af4526409ea754f",
+ "first_scored_day": "2026-11-09",
+ "forward_days": 1,
+ "id": "tjr_m1_5m_be_v1",
+ "measured": {
+  "avg_commission": null,
+  "avg_loss": null,
+  "avg_win": null,
+  "blocked_first_reason": {},
+  "cost_gate_skips": 0,
+  "final_equity": 100.0,
+  "kill_switch_fired": false,
+  "max_drawdown_pct": 0.0,
+  "net_profit": 0.0,
+  "open_profit": 0,
+  "open_trades": 0,
+  "per_pair": {
+   "frxAUDUSD": {
+    "net": 0,
+    "trades": 0,
+    "wins": 0
+   },
+   "frxEURGBP": {
+    "net": 0,
+    "trades": 0,
+    "wins": 0
+   },
+   "frxEURJPY": {
+    "net": 0,
+    "trades": 0,
+    "wins": 0
+   },
+   "frxEURUSD": {
+    "net": 0,
+    "trades": 0,
+    "wins": 0
+   },
+   "frxGBPJPY": {
+    "net": 0,
+    "trades": 0,
+    "wins": 0
+   },
+   "frxGBPUSD": {
+    "net": 0,
+    "trades": 0,
+    "wins": 0
+   },
+   "frxUSDCAD": {
+    "net": 0,
+    "trades": 0,
+    "wins": 0
+   },
+   "frxUSDCHF": {
+    "net": 0,
+    "trades": 0,
+    "wins": 0
+   },
+   "frxUSDJPY": {
+    "net": 0,
+    "trades": 0,
+    "wins": 0
+   }
+  },
+  "profit_factor": null,
+  "refused": {
+   "stop_under_cost_floor": 1
+  },
+  "signals": 1,
+  "stops_moved": 0,
+  "trades": 0,
+  "win_rate_pct": null
+ },
+ "registered": "2026-11-08",
+ "stress_1_5x": {
+  "avg_commission": null,
+  "avg_loss": null,
+  "avg_win": null,
+  "blocked_first_reason": {},
+  "cost_gate_skips": 0,
+  "final_equity": 100.0,
+  "kill_switch_fired": false,
+  "max_drawdown_pct": 0.0,
+  "net_profit": 0.0,
+  "open_profit": 0,
+  "open_trades": 0,
+  "per_pair": {
+   "frxAUDUSD": {
+    "net": 0,
+    "trades": 0,
+    "wins": 0
+   },
+   "frxEURGBP": {
+    "net": 0,
+    "trades": 0,
+    "wins": 0
+   },
+   "frxEURJPY": {
+    "net": 0,
+    "trades": 0,
+    "wins": 0
+   },
+   "frxEURUSD": {
+    "net": 0,
+    "trades": 0,
+    "wins": 0
+   },
+   "frxGBPJPY": {
+    "net": 0,
+    "trades": 0,
+    "wins": 0
+   },
+   "frxGBPUSD": {
+    "net": 0,
+    "trades": 0,
+    "wins": 0
+   },
+   "frxUSDCAD": {
+    "net": 0,
+    "trades": 0,
+    "wins": 0
+   },
+   "frxUSDCHF": {
+    "net": 0,
+    "trades": 0,
+    "wins": 0
+   },
+   "frxUSDJPY": {
+    "net": 0,
+    "trades": 0,
+    "wins": 0
+   }
+  },
+  "profit_factor": null,
+  "refused": {
+   "stop_under_cost_floor": 1
+  },
+  "signals": 1,
+  "stops_moved": 0,
+  "trades": 0,
+  "win_rate_pct": null
+ },
+ "symbols": [
+  "frxEURUSD",
+  "frxGBPUSD",
+  "frxUSDJPY",
+  "frxAUDUSD",
+  "frxUSDCAD",
+  "frxUSDCHF",
+  "frxEURGBP",
+  "frxEURJPY",
+  "frxGBPJPY"
+ ]
+}

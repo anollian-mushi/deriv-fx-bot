@@ -1,10 +1,10 @@
 {
  "cost_table": "research/phase2/cost_by_hour.json",
- "data_end": "2026-11-06",
- "engine_fingerprint": "d40cef23c4e0d4eebfda3b8c45ee7f8ebd5c0421b59c46bc0a95bf210ddb70ce",
+ "data_end": "2026-11-09",
+ "engine_fingerprint": "07972a6670389fbf4073996d47f1482bc5183e6ef3976a8fdfddf47f1d2348e5",
  "fingerprint": "bdb1434fa3c7f5f13f60002c5cab74452c67b3b37c5c94fc07b6bb9fd7f067a8",
  "first_scored_day": "2026-11-01",
- "forward_days": 6,
+ "forward_days": 9,
  "id": "f9_eur_gbp_convergence_r5",
  "measured": {
   "avg_commission": 0.0755,
@@ -38,8 +38,11 @@
    }
   },
   "profit_factor": 0.839,
-  "refused": {},
-  "signals": 2,
+  "refused": {
+   "expired": 2
+  },
+  "signals": 4,
+  "stops_moved": 0,
   "trades": 2,
   "win_rate_pct": 50.0
  },
@@ -76,8 +79,11 @@
    }
   },
   "profit_factor": 0.792,
-  "refused": {},
-  "signals": 2,
+  "refused": {
+   "expired": 2
+  },
+  "signals": 4,
+  "stops_moved": 0,
   "trades": 2,
   "win_rate_pct": 50.0
  },
