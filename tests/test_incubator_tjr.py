@@ -61,7 +61,11 @@ def test_tables_must_cover_every_pair_and_not_overlap(tmp_path):
 
 
 def test_existing_candidates_still_load_from_their_frozen_copies():
-    for c in reg.candidates():
+    # Only the five candidates registered on 31 Oct 2026, before TJR support existed. Later
+    # candidates (tjr_m1_5m_be_v1 from 8 Nov) may use tjr code and several cost tables.
+    first = [c for c in reg.candidates() if c.manifest.get("registered") == "2026-10-31"]
+    assert len(first) == 5
+    for c in first:
         assert reg.verify_all()[c.id] == "ok"
         s = reg.load_strategy(c)
         assert type(s).__module__.startswith(f"_fxinc_{c.id}_")

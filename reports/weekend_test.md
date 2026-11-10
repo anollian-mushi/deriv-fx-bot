@@ -62,6 +62,10 @@ live bot on the VPS, and were left out of every number above.
 
 The CLAUDE.md rule is unchanged until the owner decides.
 
+**Owner's decision (10 Nov 2026): keep "no weekend holding".** The repeat
+test with one Up and one Down contract on 13-16 Nov is skipped. Every open
+trade is still closed by Friday 20:30 UTC, in the bot and in the backtester.
+
 ## Files
 
 - `research/phase6/weekend_test/open.json`: the buy, proposal, stop loss and

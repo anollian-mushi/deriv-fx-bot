@@ -60,7 +60,11 @@ def test_register_stores_symbols_and_table_and_checks_them(tmp_path, monkeypatch
 def test_old_manifests_default_to_the_majors_and_the_phase2_table():
     c = registry.Candidate("x", registry.INCUBATOR / "candidates" / "x", {"module": "families"}, "fp", 0)
     assert c.symbols == S.MAJORS and c.cost_table == "research/phase2/cost_by_hour.json"
-    for real in registry.candidates():
+    # The five candidates registered on 31 Oct 2026 use the defaults; later ones (tjr_m1_5m_be_v1,
+    # 8 Nov) may name their own pairs and tables.
+    first = [c for c in registry.candidates() if c.manifest.get("registered") == "2026-10-31"]
+    assert len(first) == 5
+    for real in first:
         assert real.symbols == S.MAJORS and real.cost_table == registry.DEFAULT_COST_TABLE
 
 
