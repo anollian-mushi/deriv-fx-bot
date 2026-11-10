@@ -49,6 +49,7 @@ Release **v0.1.0** is the first VPS install.
 - Project rules, risk limits and research standards: [CLAUDE.md](CLAUDE.md)
 - Before trading real money: [docs/go_live_checklist.md](docs/go_live_checklist.md)
 - How the Deriv API and Multiplier contracts work: [docs/deriv_api_notes.md](docs/deriv_api_notes.md)
+- Swapping the VPS's Deriv token for one that cannot reach real money: [docs/token_swap.md](docs/token_swap.md)
 - What the historical data looks like: [reports/data_quality.md](reports/data_quality.md)
 - What a trade really costs: [reports/costs.md](reports/costs.md)
 - Multipliers vs MT5, and the research plan: [reports/product_choice.md](reports/product_choice.md)
