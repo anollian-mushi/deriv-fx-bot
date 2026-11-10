@@ -1065,3 +1065,21 @@ added first (frozen tjr modules, merged cost tables, coin toss on the Enter acti
 without an entry() hook), with tests; the five earlier candidates' forward results to 2026-11-06
 are identical after the change. N is now 6.
 
+
+## Session 1: time-of-day test (branch session1-timeofday, 10 Nov 2026), measurement only
+
+Owner's request: hour-of-day and session drift on EUR/USD, GBP/USD, USD/JPY (Dukascopy 1m,
+2021-10-27 to 2026-10-27, UTC 1h candles over Deriv trading minutes), the Ranaldo (2009)
+home-currency test, real commission by opening hour, older/newer halves (split 2024-04-27), 200
+within-day shuffles. Definition fixed and committed before the run
+(research/session1/definition.md). Tests counted: 93 (72 hour x pair, 15 session x pair, 6
+Ranaldo predictions). **Result: 0 of 93 pass** (same sign and positive after cost in both halves).
+Best after cost: sell EUR/USD 15:00 UTC, -1.07 pips before cost (both halves negative), -1.82
+pips after cost in its weaker half. Before cost the best pattern is matched by 19% of shuffles;
+37 of 72 hour x pair cells keep their sign in both halves (coin-flip rate). Ranaldo: 5 of 6
+predicted signs (p about 0.11), all small and negative after cost; USD/JPY rises in New York
+hours (+2.5 pips/day, t 3.0, against the theory) but costs 4.3. Strongest effects at the
+21:00-22:00 rollover, where Deriv charges up to 12x and pauses entries. Attempts: 2. Attempt 2
+changed only the luck check (costs stay with their hour; attempt 1's definition contradicted
+itself); real numbers and verdict unchanged. Report: reports/session1_time_of_day.md. No trades,
+nothing registered.

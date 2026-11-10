@@ -1,0 +1,25 @@
+{
+ "attempt": 2,
+ "change": "luck check only: costs stay with their hour; returns shuffled",
+ "luck": {
+  "shuffles": 200,
+  "seed": 20261110,
+  "after_cost": {
+   "real_best_S": -1.8167206070660096,
+   "shuffled_median": -2.112477266059158,
+   "shuffled_p95": -1.8323273754628462,
+   "share_shuffles_at_least_as_good": 0.045,
+   "real_passes": 0,
+   "shuffled_passes_median": 0.0,
+   "shuffled_passes_p95": 0.0,
+   "share_shuffles_with_as_many_passes": 1.0
+  },
+  "before_cost": {
+   "real_best_S_gross": 1.0551459293394427,
+   "shuffled_median": 0.9257125789383824,
+   "shuffled_p95": 1.330415959252954,
+   "share_shuffles_at_least_as_good": 0.19
+  }
+ },
+ "runtime_s": 32.7
+}
