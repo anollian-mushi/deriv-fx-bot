@@ -1,6 +1,7 @@
 """Session 1: time-of-day test (definition: research/session1/definition.md, fixed before the run).
 
-    python scripts/session1_time_of_day.py
+    python scripts/session1_time_of_day.py              # attempt 1 (as first defined)
+    python scripts/session1_time_of_day.py --attempt2   # second attempt: luck check only, costs stay with the hour
 
 Reads Dukascopy 1m mid prices dated 2021-10-27 to 2026-10-27 (never anything on or after
 2026-10-31), builds UTC 1h candles over Deriv trading minutes, and writes
@@ -133,8 +134,9 @@ def best_hourly(data: dict, costs: dict, split_ord: int, ret_override: dict | No
     return best, best_g, passes
 
 
-def shuffle_within_days(d: dict, cost: np.ndarray, rng) -> tuple[np.ndarray, np.ndarray]:
-    """Shuffle each day's hourly returns (with their costs) among that day's hours."""
+def shuffle_within_days(d: dict, cost: np.ndarray, rng, costs_stay: bool = False) -> tuple[np.ndarray, np.ndarray]:
+    """Shuffle each day's hourly returns among that day's hours. Attempt 1 moved each return's cost
+    with it; the second attempt (costs_stay) leaves every cost on its own hour."""
     order = np.argsort(d["day"], kind="stable")
     day = d["day"][order]
     starts = np.r_[0, np.flatnonzero(np.diff(day)) + 1]
@@ -144,12 +146,15 @@ def shuffle_within_days(d: dict, cost: np.ndarray, rng) -> tuple[np.ndarray, np.
         idx = order[a:b]
         perm = idx[rng.permutation(len(idx))]
         new_ret[idx] = d["ret"][perm]
-        new_cost[idx] = cost[perm]
+        if not costs_stay:
+            new_cost[idx] = cost[perm]
     return new_ret, new_cost
 
 
 # ----------------------------------------------------------------------------- main
 def main() -> int:
+    attempt2 = "--attempt2" in sys.argv[1:]
+    out = OUT.with_name("results_attempt2.json") if attempt2 else OUT
     t0 = time.time()
     table = json.loads(COST_TABLE.read_text())
     data = {p: hourly(p) for p in PAIRS}
@@ -200,7 +205,7 @@ def main() -> int:
         rng = np.random.default_rng(SEED + k)
         rets, cs = {}, {}
         for p in PAIRS:
-            rets[p], cs[p] = shuffle_within_days(data[p], costs[p], rng)
+            rets[p], cs[p] = shuffle_within_days(data[p], costs[p], rng, costs_stay=attempt2)
         b, bg, n = best_hourly(data, costs, split_ord, rets, cs)
         sh_best.append(b)
         sh_best_g.append(bg)
@@ -219,9 +224,13 @@ def main() -> int:
                         "share_shuffles_at_least_as_good": float((sbg >= real_best_g).mean())},
     }
     res["runtime_s"] = round(time.time() - t0, 1)
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(res, indent=1, default=lambda x: x.item() if hasattr(x, "item") else str(x)) + "\n")
-    print(f"wrote {OUT.relative_to(ROOT)} ({res['runtime_s']}s)")
+    res["attempt"] = 2 if attempt2 else 1
+    if attempt2:
+        res = {"attempt": 2, "change": "luck check only: costs stay with their hour; returns shuffled",
+               "luck": res["luck"], "runtime_s": res["runtime_s"]}
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(res, indent=1, default=lambda x: x.item() if hasattr(x, "item") else str(x)) + "\n")
+    print(f"wrote {out.relative_to(ROOT)} ({res['runtime_s']}s)")
     return 0
 
 

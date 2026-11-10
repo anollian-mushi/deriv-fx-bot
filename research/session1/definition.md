@@ -104,3 +104,18 @@ Fixed UTC hours, no summer-time shifts:
 ## No trades
 
 This is a measurement only. No engine run, no orders, no demo, no registration.
+
+## Amendment after attempt 1 (10 Nov 2026): a second attempt, for the luck check only
+
+**Why:** the "Luck" section above contradicts itself. It says the returns *and their costs* are
+shuffled, and also that "the cost stays with the hour, as in real trading". The script followed
+the first reading. That moves the very expensive late-evening costs into every hour, so the
+shuffled after-cost scores are pushed down, and the after-cost luck comparison of attempt 1 is
+not a fair one. The before-cost luck comparison and every real (unshuffled) number are not
+affected.
+
+**Second attempt, changed this one thing only:** only the returns are shuffled within each day.
+The cost stays with the hour label, as the definition intended: a trade at 21:00 pays the 21:00
+rate. Same seeds, same 200 shuffles, same statistic. It is written to
+`research/session1/results_attempt2.json`. Attempt 1 stays in `results.json` and both are
+reported.
