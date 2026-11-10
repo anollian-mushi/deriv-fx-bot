@@ -1,0 +1,906 @@
+{
+ "_meta": {
+  "data_before": "2026-10-31",
+  "entry_window_utc": "06:00-17:59",
+  "move": "mean and median of high-low per candle, Deriv trading hours"
+ },
+ "pairs": {
+  "frxEURUSD": {
+   "name": "EUR/USD",
+   "cost_table": "research/phase2/cost_by_hour.json",
+   "cost": {
+    "base_rate_pct": 0.0239,
+    "window_max_rate_pct": 0.02686,
+    "price_used": 1.1668,
+    "base_pips": 2.79,
+    "window_max_pips": 3.13,
+    "hours_sampled": 12
+   },
+   "moves": {
+    "dukascopy_1m": {
+     "15m": {
+      "candles": 121691,
+      "range_mean": 6.8,
+      "range_median": 5.4
+     },
+     "1h": {
+      "candles": 30425,
+      "range_mean": 14.1,
+      "range_median": 11.1
+     },
+     "4h": {
+      "candles": 7806,
+      "range_mean": 28.4,
+      "range_median": 23.0
+     },
+     "period": [
+      "2021-10-27",
+      "2026-10-27"
+     ]
+    },
+    "deriv_1m": {
+     "15m": {
+      "candles": 24406,
+      "range_mean": 5.5,
+      "range_median": 4.5
+     },
+     "1h": {
+      "candles": 6103,
+      "range_mean": 11.3,
+      "range_median": 9.3
+     },
+     "4h": {
+      "candles": 1566,
+      "range_mean": 22.9,
+      "range_median": 19.0
+     },
+     "period": [
+      "2025-10-29",
+      "2026-10-30"
+     ]
+    }
+   },
+   "data": {
+    "deriv_1m": {
+     "first": "2025-10-29",
+     "last": "2026-10-30",
+     "days": 261,
+     "closed_days": [
+      "2025-12-25",
+      "2026-01-01"
+     ],
+     "gaps_5min_plus": 2,
+     "short_blips_minutes": 4,
+     "bad_candles": 0,
+     "duplicates": 0
+    },
+    "deriv_15m": {
+     "first": "2025-10-29",
+     "last": "2026-10-30",
+     "days": 261,
+     "closed_days": [
+      "2025-12-25",
+      "2026-01-01"
+     ],
+     "gaps_5min_plus": 2,
+     "short_blips_minutes": 0,
+     "bad_candles": 0,
+     "duplicates": 0
+    },
+    "deriv_1h": {
+     "first": "2025-10-29",
+     "last": "2026-10-30",
+     "days": 261,
+     "closed_days": [
+      "2025-12-25",
+      "2026-01-01"
+     ],
+     "gaps_5min_plus": 2,
+     "short_blips_minutes": 0,
+     "bad_candles": 0,
+     "duplicates": 0
+    },
+    "dukascopy_1m": {
+     "first": "2021-10-27",
+     "last": "2026-10-27",
+     "days": 1305,
+     "closed_days": [],
+     "gaps_5min_plus": 132,
+     "short_blips_minutes": 6934,
+     "bad_candles": 0,
+     "duplicates": 0
+    }
+   },
+   "cost_share_of_mean_move": {
+    "dukascopy_1m": {
+     "15m": 0.46,
+     "1h": 0.222,
+     "4h": 0.11
+    },
+    "deriv_1m": {
+     "15m": 0.569,
+     "1h": 0.277,
+     "4h": 0.137
+    }
+   }
+  },
+  "frxGBPUSD": {
+   "name": "GBP/USD",
+   "cost_table": "research/phase2/cost_by_hour.json",
+   "cost": {
+    "base_rate_pct": 0.0203,
+    "window_max_rate_pct": 0.02342,
+    "price_used": 1.34082,
+    "base_pips": 2.72,
+    "window_max_pips": 3.14,
+    "hours_sampled": 12
+   },
+   "moves": {
+    "dukascopy_1m": {
+     "15m": {
+      "candles": 121688,
+      "range_mean": 8.7,
+      "range_median": 7.0
+     },
+     "1h": {
+      "candles": 30425,
+      "range_mean": 17.9,
+      "range_median": 14.4
+     },
+     "4h": {
+      "candles": 7806,
+      "range_mean": 36.1,
+      "range_median": 29.5
+     },
+     "period": [
+      "2021-10-27",
+      "2026-10-27"
+     ]
+    },
+    "deriv_1m": {
+     "15m": {
+      "candles": 24406,
+      "range_mean": 7.2,
+      "range_median": 6.0
+     },
+     "1h": {
+      "candles": 6103,
+      "range_mean": 14.9,
+      "range_median": 12.3
+     },
+     "4h": {
+      "candles": 1566,
+      "range_mean": 30.0,
+      "range_median": 25.3
+     },
+     "period": [
+      "2025-10-29",
+      "2026-10-30"
+     ]
+    }
+   },
+   "data": {
+    "deriv_1m": {
+     "first": "2025-10-29",
+     "last": "2026-10-30",
+     "days": 261,
+     "closed_days": [
+      "2025-12-25",
+      "2026-01-01"
+     ],
+     "gaps_5min_plus": 2,
+     "short_blips_minutes": 4,
+     "bad_candles": 0,
+     "duplicates": 0
+    },
+    "deriv_15m": {
+     "first": "2025-10-29",
+     "last": "2026-10-30",
+     "days": 261,
+     "closed_days": [
+      "2025-12-25",
+      "2026-01-01"
+     ],
+     "gaps_5min_plus": 2,
+     "short_blips_minutes": 0,
+     "bad_candles": 0,
+     "duplicates": 0
+    },
+    "deriv_1h": {
+     "first": "2025-10-29",
+     "last": "2026-10-30",
+     "days": 261,
+     "closed_days": [
+      "2025-12-25",
+      "2026-01-01"
+     ],
+     "gaps_5min_plus": 2,
+     "short_blips_minutes": 0,
+     "bad_candles": 0,
+     "duplicates": 0
+    },
+    "dukascopy_1m": {
+     "first": "2021-10-27",
+     "last": "2026-10-27",
+     "days": 1305,
+     "closed_days": [],
+     "gaps_5min_plus": 133,
+     "short_blips_minutes": 7113,
+     "bad_candles": 0,
+     "duplicates": 0
+    }
+   },
+   "cost_share_of_mean_move": {
+    "dukascopy_1m": {
+     "15m": 0.361,
+     "1h": 0.175,
+     "4h": 0.087
+    },
+    "deriv_1m": {
+     "15m": 0.436,
+     "1h": 0.211,
+     "4h": 0.105
+    }
+   }
+  },
+  "frxUSDJPY": {
+   "name": "USD/JPY",
+   "cost_table": "research/phase2/cost_by_hour.json",
+   "cost": {
+    "base_rate_pct": 0.0275,
+    "window_max_rate_pct": 0.03124,
+    "price_used": 156.6385,
+    "base_pips": 4.31,
+    "window_max_pips": 4.89,
+    "hours_sampled": 12
+   },
+   "moves": {
+    "dukascopy_1m": {
+     "15m": {
+      "candles": 121695,
+      "range_mean": 11.0,
+      "range_median": 8.7
+     },
+     "1h": {
+      "candles": 30425,
+      "range_mean": 22.8,
+      "range_median": 18.2
+     },
+     "4h": {
+      "candles": 7806,
+      "range_mean": 46.7,
+      "range_median": 37.9
+     },
+     "period": [
+      "2021-10-27",
+      "2026-10-27"
+     ]
+    },
+    "deriv_1m": {
+     "15m": {
+      "candles": 24406,
+      "range_mean": 8.9,
+      "range_median": 7.0
+     },
+     "1h": {
+      "candles": 6103,
+      "range_mean": 18.6,
+      "range_median": 14.9
+     },
+     "4h": {
+      "candles": 1566,
+      "range_mean": 38.2,
+      "range_median": 31.7
+     },
+     "period": [
+      "2025-10-29",
+      "2026-10-30"
+     ]
+    }
+   },
+   "data": {
+    "deriv_1m": {
+     "first": "2025-10-29",
+     "last": "2026-10-30",
+     "days": 261,
+     "closed_days": [
+      "2025-12-25",
+      "2026-01-01"
+     ],
+     "gaps_5min_plus": 2,
+     "short_blips_minutes": 4,
+     "bad_candles": 0,
+     "duplicates": 0
+    },
+    "deriv_15m": {
+     "first": "2025-10-29",
+     "last": "2026-10-30",
+     "days": 261,
+     "closed_days": [
+      "2025-12-25",
+      "2026-01-01"
+     ],
+     "gaps_5min_plus": 2,
+     "short_blips_minutes": 0,
+     "bad_candles": 0,
+     "duplicates": 0
+    },
+    "deriv_1h": {
+     "first": "2025-10-29",
+     "last": "2026-10-30",
+     "days": 261,
+     "closed_days": [
+      "2025-12-25",
+      "2026-01-01"
+     ],
+     "gaps_5min_plus": 2,
+     "short_blips_minutes": 0,
+     "bad_candles": 0,
+     "duplicates": 0
+    },
+    "dukascopy_1m": {
+     "first": "2021-10-27",
+     "last": "2026-10-27",
+     "days": 1305,
+     "closed_days": [],
+     "gaps_5min_plus": 101,
+     "short_blips_minutes": 5576,
+     "bad_candles": 0,
+     "duplicates": 0
+    }
+   },
+   "cost_share_of_mean_move": {
+    "dukascopy_1m": {
+     "15m": 0.445,
+     "1h": 0.214,
+     "4h": 0.105
+    },
+    "deriv_1m": {
+     "15m": 0.549,
+     "1h": 0.263,
+     "4h": 0.128
+    }
+   }
+  },
+  "frxAUDUSD": {
+   "name": "AUD/USD",
+   "cost_table": "research/phase2/cost_by_hour_pairs2.json",
+   "cost": {
+    "base_rate_pct": 0.04,
+    "window_max_rate_pct": 0.04,
+    "price_used": 0.70167,
+    "base_pips": 2.81,
+    "window_max_pips": 2.81,
+    "hours_sampled": 11
+   },
+   "moves": {
+    "dukascopy_1m": {
+     "15m": {
+      "candles": 121688,
+      "range_mean": 6.0,
+      "range_median": 5.0
+     },
+     "1h": {
+      "candles": 30424,
+      "range_mean": 12.3,
+      "range_median": 10.2
+     },
+     "4h": {
+      "candles": 7806,
+      "range_mean": 24.8,
+      "range_median": 20.9
+     },
+     "period": [
+      "2021-11-01",
+      "2026-10-30"
+     ]
+    },
+    "deriv_1m": {
+     "15m": {
+      "candles": 12540,
+      "range_mean": 4.3,
+      "range_median": 3.6
+     },
+     "1h": {
+      "candles": 3135,
+      "range_mean": 8.9,
+      "range_median": 7.6
+     },
+     "4h": {
+      "candles": 804,
+      "range_mean": 17.7,
+      "range_median": 15.3
+     },
+     "period": [
+      "2026-04-28",
+      "2026-10-30"
+     ]
+    }
+   },
+   "data": {
+    "deriv_1m": {
+     "first": "2026-04-28",
+     "last": "2026-10-30",
+     "days": 134,
+     "closed_days": [],
+     "gaps_5min_plus": 0,
+     "short_blips_minutes": 1,
+     "bad_candles": 0,
+     "duplicates": 0
+    },
+    "dukascopy_1m": {
+     "first": "2021-11-01",
+     "last": "2026-10-30",
+     "days": 1305,
+     "closed_days": [],
+     "gaps_5min_plus": 179,
+     "short_blips_minutes": 9787,
+     "bad_candles": 0,
+     "duplicates": 0
+    }
+   },
+   "cost_share_of_mean_move": {
+    "dukascopy_1m": {
+     "15m": 0.468,
+     "1h": 0.228,
+     "4h": 0.113
+    },
+    "deriv_1m": {
+     "15m": 0.653,
+     "1h": 0.316,
+     "4h": 0.159
+    }
+   }
+  },
+  "frxUSDCAD": {
+   "name": "USD/CAD",
+   "cost_table": "research/phase2/cost_by_hour_pairs2.json",
+   "cost": {
+    "base_rate_pct": 0.0212,
+    "window_max_rate_pct": 0.02312,
+    "price_used": 1.39736,
+    "base_pips": 2.96,
+    "window_max_pips": 3.23,
+    "hours_sampled": 11
+   },
+   "moves": {
+    "dukascopy_1m": {
+     "15m": {
+      "candles": 121682,
+      "range_mean": 7.1,
+      "range_median": 5.7
+     },
+     "1h": {
+      "candles": 30425,
+      "range_mean": 14.4,
+      "range_median": 11.7
+     },
+     "4h": {
+      "candles": 7806,
+      "range_mean": 28.8,
+      "range_median": 23.2
+     },
+     "period": [
+      "2021-11-01",
+      "2026-10-30"
+     ]
+    },
+    "deriv_1m": {
+     "15m": {
+      "candles": 12540,
+      "range_mean": 4.8,
+      "range_median": 4.1
+     },
+     "1h": {
+      "candles": 3135,
+      "range_mean": 10.0,
+      "range_median": 8.6
+     },
+     "4h": {
+      "candles": 804,
+      "range_mean": 20.5,
+      "range_median": 17.5
+     },
+     "period": [
+      "2026-04-28",
+      "2026-10-30"
+     ]
+    }
+   },
+   "data": {
+    "deriv_1m": {
+     "first": "2026-04-28",
+     "last": "2026-10-30",
+     "days": 134,
+     "closed_days": [],
+     "gaps_5min_plus": 0,
+     "short_blips_minutes": 1,
+     "bad_candles": 0,
+     "duplicates": 0
+    },
+    "dukascopy_1m": {
+     "first": "2021-11-01",
+     "last": "2026-10-30",
+     "days": 1303,
+     "closed_days": [],
+     "gaps_5min_plus": 186,
+     "short_blips_minutes": 9747,
+     "bad_candles": 0,
+     "duplicates": 0
+    }
+   },
+   "cost_share_of_mean_move": {
+    "dukascopy_1m": {
+     "15m": 0.455,
+     "1h": 0.224,
+     "4h": 0.112
+    },
+    "deriv_1m": {
+     "15m": 0.673,
+     "1h": 0.323,
+     "4h": 0.158
+    }
+   }
+  },
+  "frxUSDCHF": {
+   "name": "USD/CHF",
+   "cost_table": "research/phase2/cost_by_hour_pairs2.json",
+   "cost": {
+    "base_rate_pct": 0.036,
+    "window_max_rate_pct": 0.04252,
+    "price_used": 0.81981,
+    "base_pips": 2.95,
+    "window_max_pips": 3.49,
+    "hours_sampled": 11
+   },
+   "moves": {
+    "dukascopy_1m": {
+     "15m": {
+      "candles": 121648,
+      "range_mean": 6.0,
+      "range_median": 4.8
+     },
+     "1h": {
+      "candles": 30417,
+      "range_mean": 12.3,
+      "range_median": 9.9
+     },
+     "4h": {
+      "candles": 7805,
+      "range_mean": 24.8,
+      "range_median": 20.0
+     },
+     "period": [
+      "2021-11-01",
+      "2026-10-30"
+     ]
+    },
+    "deriv_1m": {
+     "15m": {
+      "candles": 12540,
+      "range_mean": 4.5,
+      "range_median": 3.8
+     },
+     "1h": {
+      "candles": 3135,
+      "range_mean": 9.5,
+      "range_median": 7.9
+     },
+     "4h": {
+      "candles": 804,
+      "range_mean": 19.3,
+      "range_median": 16.6
+     },
+     "period": [
+      "2026-04-28",
+      "2026-10-30"
+     ]
+    }
+   },
+   "data": {
+    "deriv_1m": {
+     "first": "2026-04-28",
+     "last": "2026-10-30",
+     "days": 134,
+     "closed_days": [],
+     "gaps_5min_plus": 0,
+     "short_blips_minutes": 1,
+     "bad_candles": 0,
+     "duplicates": 0
+    },
+    "dukascopy_1m": {
+     "first": "2021-11-01",
+     "last": "2026-10-30",
+     "days": 1305,
+     "closed_days": [],
+     "gaps_5min_plus": 284,
+     "short_blips_minutes": 11700,
+     "bad_candles": 0,
+     "duplicates": 0
+    }
+   },
+   "cost_share_of_mean_move": {
+    "dukascopy_1m": {
+     "15m": 0.582,
+     "1h": 0.284,
+     "4h": 0.141
+    },
+    "deriv_1m": {
+     "15m": 0.776,
+     "1h": 0.367,
+     "4h": 0.181
+    }
+   }
+  },
+  "frxEURGBP": {
+   "name": "EUR/GBP",
+   "cost_table": "research/phase2/cost_by_hour_pairs2.json",
+   "cost": {
+    "base_rate_pct": 0.0243,
+    "window_max_rate_pct": 0.02892,
+    "price_used": 0.83505,
+    "base_pips": 2.03,
+    "window_max_pips": 2.41,
+    "hours_sampled": 11
+   },
+   "moves": {
+    "dukascopy_1m": {
+     "15m": {
+      "candles": 121694,
+      "range_mean": 4.1,
+      "range_median": 3.2
+     },
+     "1h": {
+      "candles": 30425,
+      "range_mean": 8.2,
+      "range_median": 6.4
+     },
+     "4h": {
+      "candles": 7806,
+      "range_mean": 16.1,
+      "range_median": 12.7
+     },
+     "period": [
+      "2021-11-01",
+      "2026-10-30"
+     ]
+    },
+    "deriv_1m": {
+     "15m": {
+      "candles": 12540,
+      "range_mean": 2.4,
+      "range_median": 2.0
+     },
+     "1h": {
+      "candles": 3135,
+      "range_mean": 4.8,
+      "range_median": 4.0
+     },
+     "4h": {
+      "candles": 804,
+      "range_mean": 9.8,
+      "range_median": 8.5
+     },
+     "period": [
+      "2026-04-28",
+      "2026-10-30"
+     ]
+    }
+   },
+   "data": {
+    "deriv_1m": {
+     "first": "2026-04-28",
+     "last": "2026-10-30",
+     "days": 134,
+     "closed_days": [],
+     "gaps_5min_plus": 0,
+     "short_blips_minutes": 1,
+     "bad_candles": 0,
+     "duplicates": 0
+    },
+    "dukascopy_1m": {
+     "first": "2021-11-01",
+     "last": "2026-10-30",
+     "days": 1305,
+     "closed_days": [],
+     "gaps_5min_plus": 141,
+     "short_blips_minutes": 9795,
+     "bad_candles": 0,
+     "duplicates": 0
+    }
+   },
+   "cost_share_of_mean_move": {
+    "dukascopy_1m": {
+     "15m": 0.588,
+     "1h": 0.294,
+     "4h": 0.15
+    },
+    "deriv_1m": {
+     "15m": 1.004,
+     "1h": 0.502,
+     "4h": 0.246
+    }
+   }
+  },
+  "frxEURJPY": {
+   "name": "EUR/JPY",
+   "cost_table": "research/phase2/cost_by_hour_pairs2.json",
+   "cost": {
+    "base_rate_pct": 0.025,
+    "window_max_rate_pct": 0.02528,
+    "price_used": 176.868,
+    "base_pips": 4.42,
+    "window_max_pips": 4.47,
+    "hours_sampled": 11
+   },
+   "moves": {
+    "dukascopy_1m": {
+     "15m": {
+      "candles": 121679,
+      "range_mean": 11.9,
+      "range_median": 9.7
+     },
+     "1h": {
+      "candles": 30425,
+      "range_mean": 24.4,
+      "range_median": 19.7
+     },
+     "4h": {
+      "candles": 7806,
+      "range_mean": 49.2,
+      "range_median": 40.6
+     },
+     "period": [
+      "2021-11-01",
+      "2026-10-30"
+     ]
+    },
+    "deriv_1m": {
+     "15m": {
+      "candles": 12540,
+      "range_mean": 8.8,
+      "range_median": 6.8
+     },
+     "1h": {
+      "candles": 3135,
+      "range_mean": 18.8,
+      "range_median": 14.3
+     },
+     "4h": {
+      "candles": 804,
+      "range_mean": 39.0,
+      "range_median": 29.2
+     },
+     "period": [
+      "2026-04-28",
+      "2026-10-30"
+     ]
+    }
+   },
+   "data": {
+    "deriv_1m": {
+     "first": "2026-04-28",
+     "last": "2026-10-30",
+     "days": 134,
+     "closed_days": [],
+     "gaps_5min_plus": 0,
+     "short_blips_minutes": 1,
+     "bad_candles": 0,
+     "duplicates": 0
+    },
+    "dukascopy_1m": {
+     "first": "2021-11-01",
+     "last": "2026-10-30",
+     "days": 1301,
+     "closed_days": [],
+     "gaps_5min_plus": 359,
+     "short_blips_minutes": 3935,
+     "bad_candles": 0,
+     "duplicates": 0
+    }
+   },
+   "cost_share_of_mean_move": {
+    "dukascopy_1m": {
+     "15m": 0.376,
+     "1h": 0.183,
+     "4h": 0.091
+    },
+    "deriv_1m": {
+     "15m": 0.508,
+     "1h": 0.238,
+     "4h": 0.115
+    }
+   }
+  },
+  "frxGBPJPY": {
+   "name": "GBP/JPY",
+   "cost_table": "research/phase2/cost_by_hour_pairs2.json",
+   "cost": {
+    "base_rate_pct": 0.0238,
+    "window_max_rate_pct": 0.02604,
+    "price_used": 211.794,
+    "base_pips": 5.04,
+    "window_max_pips": 5.52,
+    "hours_sampled": 11
+   },
+   "moves": {
+    "dukascopy_1m": {
+     "15m": {
+      "candles": 121677,
+      "range_mean": 15.1,
+      "range_median": 12.4
+     },
+     "1h": {
+      "candles": 30425,
+      "range_mean": 30.6,
+      "range_median": 24.9
+     },
+     "4h": {
+      "candles": 7806,
+      "range_mean": 61.5,
+      "range_median": 51.2
+     },
+     "period": [
+      "2021-11-01",
+      "2026-10-30"
+     ]
+    },
+    "deriv_1m": {
+     "15m": {
+      "candles": 12540,
+      "range_mean": 11.2,
+      "range_median": 8.9
+     },
+     "1h": {
+      "candles": 3135,
+      "range_mean": 23.5,
+      "range_median": 18.4
+     },
+     "4h": {
+      "candles": 804,
+      "range_mean": 48.1,
+      "range_median": 38.0
+     },
+     "period": [
+      "2026-04-28",
+      "2026-10-30"
+     ]
+    }
+   },
+   "data": {
+    "deriv_1m": {
+     "first": "2026-04-28",
+     "last": "2026-10-30",
+     "days": 134,
+     "closed_days": [],
+     "gaps_5min_plus": 0,
+     "short_blips_minutes": 1,
+     "bad_candles": 0,
+     "duplicates": 0
+    },
+    "dukascopy_1m": {
+     "first": "2021-11-01",
+     "last": "2026-10-30",
+     "days": 1295,
+     "closed_days": [],
+     "gaps_5min_plus": 367,
+     "short_blips_minutes": 4116,
+     "bad_candles": 0,
+     "duplicates": 0
+    }
+   },
+   "cost_share_of_mean_move": {
+    "dukascopy_1m": {
+     "15m": 0.366,
+     "1h": 0.18,
+     "4h": 0.09
+    },
+    "deriv_1m": {
+     "15m": 0.493,
+     "1h": 0.235,
+     "4h": 0.115
+    }
+   }
+  }
+ }
+}
