@@ -1,25 +1,25 @@
 {
  "cost_table": "research/phase2/cost_by_hour.json",
- "data_end": "2026-11-09",
+ "data_end": "2026-11-10",
  "engine_fingerprint": "07972a6670389fbf4073996d47f1482bc5183e6ef3976a8fdfddf47f1d2348e5",
  "fingerprint": "bdb1434fa3c7f5f13f60002c5cab74452c67b3b37c5c94fc07b6bb9fd7f067a8",
  "first_scored_day": "2026-11-01",
- "forward_days": 9,
+ "forward_days": 10,
  "id": "f9_eur_gbp_convergence_r5",
  "measured": {
   "avg_commission": 0.0755,
   "avg_loss": -1.55,
   "avg_win": 1.3,
   "blocked_first_reason": {
-   "outside_entry_window": 2
+   "outside_entry_window": 4
   },
   "cost_gate_skips": 0,
-  "final_equity": 99.75,
+  "final_equity": 100.27,
   "kill_switch_fired": false,
   "max_drawdown_pct": 0.87,
-  "net_profit": -0.25,
-  "open_profit": 0,
-  "open_trades": 0,
+  "net_profit": 0.27,
+  "open_profit": 0.52,
+  "open_trades": 2,
   "per_pair": {
    "frxEURUSD": {
     "net": -1.55,
@@ -41,7 +41,7 @@
   "refused": {
    "expired": 2
   },
-  "signals": 4,
+  "signals": 6,
   "stops_moved": 0,
   "trades": 2,
   "win_rate_pct": 50.0
@@ -52,15 +52,15 @@
   "avg_loss": -1.59,
   "avg_win": 1.26,
   "blocked_first_reason": {
-   "outside_entry_window": 2
+   "outside_entry_window": 4
   },
   "cost_gate_skips": 0,
-  "final_equity": 99.67,
+  "final_equity": 100.12,
   "kill_switch_fired": false,
   "max_drawdown_pct": 0.87,
-  "net_profit": -0.33,
-  "open_profit": 0,
-  "open_trades": 0,
+  "net_profit": 0.12,
+  "open_profit": 0.45,
+  "open_trades": 2,
   "per_pair": {
    "frxEURUSD": {
     "net": -1.59,
@@ -82,7 +82,7 @@
   "refused": {
    "expired": 2
   },
-  "signals": 4,
+  "signals": 6,
   "stops_moved": 0,
   "trades": 2,
   "win_rate_pct": 50.0

@@ -1,1 +1,2 @@
 symbol,direction,multiplier,stake,signal_time,entry_time,entry,exit_time,exit,reason,rate_pct,commission,profit,balance_after
+frxAUDUSD,MULTDOWN,200,3.0,2026-11-10 09:10,2026-11-10 09:10,0.69136,2026-11-10 13:30,0.68904,take_profit,0.04,0.24,1.77,101.77
