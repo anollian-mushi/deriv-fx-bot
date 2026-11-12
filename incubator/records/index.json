@@ -3,13 +3,13 @@
   "a1_ml_day_r5": {
    "exam": null,
    "first_scored_day": "2026-11-01",
-   "forward_days": 10,
+   "forward_days": 11,
    "measured": {
     "avg_loss": -0.2,
-    "avg_win": 1.335,
+    "avg_win": 1.44,
     "kill_switch_fired": false,
     "max_drawdown_pct": 2.01,
-    "net_profit": 4.74,
+    "net_profit": 6.6,
     "open_trades": 0,
     "per_pair": {
      "frxEURUSD": {
@@ -23,14 +23,14 @@
       "wins": 2
      },
      "frxUSDJPY": {
-      "net": 0,
-      "trades": 0,
-      "wins": 0
+      "net": 1.86,
+      "trades": 1,
+      "wins": 1
      }
     },
-    "profit_factor": 8.9,
-    "trades": 7,
-    "win_rate_pct": 57.1
+    "profit_factor": 12.0,
+    "trades": 8,
+    "win_rate_pct": 62.5
    },
    "registered": "2026-10-31",
    "rules": {
@@ -42,29 +42,29 @@
     "trades": false
    },
    "status": "active",
-   "stress_net": 4.5
+   "stress_net": 6.31
   },
   "f1_london_breakout_r5": {
    "exam": null,
    "first_scored_day": "2026-11-01",
-   "forward_days": 10,
+   "forward_days": 11,
    "measured": {
     "avg_loss": -0.458,
-    "avg_win": 0.559,
+    "avg_win": 0.59,
     "kill_switch_fired": false,
     "max_drawdown_pct": 3.64,
-    "net_profit": 1.16,
+    "net_profit": 2.56,
     "open_trades": 0,
     "per_pair": {
      "frxEURUSD": {
-      "net": 1.0,
-      "trades": 6,
-      "wins": 4
+      "net": 1.69,
+      "trades": 7,
+      "wins": 5
      },
      "frxGBPUSD": {
-      "net": -0.4,
-      "trades": 6,
-      "wins": 2
+      "net": 0.31,
+      "trades": 7,
+      "wins": 3
      },
      "frxUSDJPY": {
       "net": 0.56,
@@ -72,9 +72,9 @@
       "wins": 1
      }
     },
-    "profit_factor": 1.422,
-    "trades": 13,
-    "win_rate_pct": 53.8
+    "profit_factor": 1.931,
+    "trades": 15,
+    "win_rate_pct": 60.0
    },
    "registered": "2026-10-31",
    "rules": {
@@ -86,18 +86,18 @@
     "trades": false
    },
    "status": "active",
-   "stress_net": 0.69
+   "stress_net": 2.01
   },
   "f3_trend_pullback_4h_r5": {
    "exam": null,
    "first_scored_day": "2026-11-01",
-   "forward_days": 10,
+   "forward_days": 11,
    "measured": {
     "avg_loss": -0.55,
     "avg_win": 1.75,
     "kill_switch_fired": false,
     "max_drawdown_pct": 2.49,
-    "net_profit": 1.43,
+    "net_profit": -0.22,
     "open_trades": 1,
     "per_pair": {
      "frxEURUSD": {
@@ -125,28 +125,28 @@
     "days": false,
     "kill_switch": true,
     "max_drawdown": true,
-    "net_1_5x": true,
-    "net_measured": true,
+    "net_1_5x": false,
+    "net_measured": false,
     "trades": false
    },
    "status": "active",
-   "stress_net": 1.33
+   "stress_net": -0.32
   },
   "f9_eur_gbp_convergence_r5": {
    "exam": null,
    "first_scored_day": "2026-11-01",
-   "forward_days": 10,
+   "forward_days": 11,
    "measured": {
-    "avg_loss": -1.55,
+    "avg_loss": -2.13,
     "avg_win": 1.3,
     "kill_switch_fired": false,
     "max_drawdown_pct": 0.87,
-    "net_profit": 0.27,
-    "open_trades": 2,
+    "net_profit": 0.75,
+    "open_trades": 1,
     "per_pair": {
      "frxEURUSD": {
-      "net": -1.55,
-      "trades": 1,
+      "net": -4.26,
+      "trades": 2,
       "wins": 0
      },
      "frxGBPUSD": {
@@ -160,9 +160,9 @@
       "wins": 0
      }
     },
-    "profit_factor": 0.839,
-    "trades": 2,
-    "win_rate_pct": 50.0
+    "profit_factor": 0.305,
+    "trades": 3,
+    "win_rate_pct": 33.3
    },
    "registered": "2026-10-31",
    "rules": {
@@ -174,12 +174,12 @@
     "trades": false
    },
    "status": "active",
-   "stress_net": 0.12
+   "stress_net": 0.6
   },
   "i13_morning_overnight_v1": {
    "exam": null,
    "first_scored_day": "2026-11-01",
-   "forward_days": 10,
+   "forward_days": 11,
    "measured": {
     "avg_loss": -0.17,
     "avg_win": 0.547,
@@ -223,7 +223,7 @@
   "tjr_m1_5m_be_v1": {
    "exam": null,
    "first_scored_day": "2026-11-09",
-   "forward_days": 2,
+   "forward_days": 3,
    "measured": {
     "avg_loss": null,
     "avg_win": 1.77,
@@ -295,6 +295,6 @@
    "stress_net": 1.65
   }
  },
- "data_end": "2026-11-10",
+ "data_end": "2026-11-11",
  "engine_fingerprint": "07972a6670389fbf4073996d47f1482bc5183e6ef3976a8fdfddf47f1d2348e5"
 }

@@ -3,11 +3,11 @@
   "research/phase2/cost_by_hour.json",
   "research/phase2/cost_by_hour_pairs2.json"
  ],
- "data_end": "2026-11-10",
+ "data_end": "2026-11-11",
  "engine_fingerprint": "07972a6670389fbf4073996d47f1482bc5183e6ef3976a8fdfddf47f1d2348e5",
  "fingerprint": "22d1cef4141564efeb1704a5f833b6e9fce3b3a9658019d77af4526409ea754f",
  "first_scored_day": "2026-11-09",
- "forward_days": 2,
+ "forward_days": 3,
  "id": "tjr_m1_5m_be_v1",
  "measured": {
   "avg_commission": 0.24,
