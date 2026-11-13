@@ -1,0 +1,38 @@
+# Manual only: is the cTrader demo account reachable with the saved credentials?
+# Read-only: connects, checks the account is a DEMO account, prints balance (account id masked),
+# the three majors' contract details, a few candles and one price. Places no order.
+# Needs the repository secrets CTRADER_CLIENT_ID, CTRADER_CLIENT_SECRET, CTRADER_ACCESS_TOKEN.
+name: cTrader connection check
+
+on:
+  workflow_dispatch:
+    inputs:
+      probe_only:
+        description: "Only test the connection (no credentials used)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install packages
+        run: pip install -r requirements.txt
+      - name: Connection probe (no credentials)
+        run: python scripts/check_ctrader.py --probe
+      - name: Account check (read-only)
+        if: ${{ !inputs.probe_only }}
+        env:
+          CTRADER_CLIENT_ID: ${{ secrets.CTRADER_CLIENT_ID }}
+          CTRADER_CLIENT_SECRET: ${{ secrets.CTRADER_CLIENT_SECRET }}
+          CTRADER_ACCESS_TOKEN: ${{ secrets.CTRADER_ACCESS_TOKEN }}
+          CTRADER_MODE: demo
+        run: python scripts/check_ctrader.py
