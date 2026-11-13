@@ -1564,6 +1564,17 @@
    "notes": [],
    "outside_session": 0,
    "small_missing": 0
+  },
+  "2026-11-12": {
+   "candles": 1439,
+   "dropped_duplicates": 0,
+   "dropped_invalid": 0,
+   "dropped_unaligned": 0,
+   "expected": 1440,
+   "gaps": [],
+   "notes": [],
+   "outside_session": 0,
+   "small_missing": 1
   }
  },
  "granularity": "1m",
