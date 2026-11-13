@@ -85,6 +85,7 @@ class CTraderBroker:
         self._account_id: int | None = None
         self._money_digits = 2
         self._currency = "?"
+        self._usd_rate = 1.0            # USD value of one unit of the account currency (1.0 for USD)
         self._assets: dict[int, str] = {}
         self._symbol_ids: dict[str, int] = {}       # project symbol -> symbol id
         self._light: dict[int, Any] = {}            # symbol id -> ProtoOALightSymbol
@@ -161,8 +162,14 @@ class CTraderBroker:
         balance = trader.balance / 10 ** md
         pnl, _ = await self._call(self.client.unrealized_pnl())
         equity = balance + sum(net for _, net in pnl.values())
+        r = await self._refresh_usd_rate()
+        # Amounts are always USD; the account's own currency is in self.account_currency.
         return AccountInfo(broker=self.name, account_id=str(self._account_id), is_demo=True,
-                           currency=self._currency, balance=balance, equity=equity)
+                           currency="USD", balance=round(balance * r, 2), equity=round(equity * r, 2))
+
+    @property
+    def account_currency(self) -> str:
+        return self._currency
 
     # ---------------------------------------------------------------- symbols
 
@@ -279,6 +286,24 @@ class CTraderBroker:
             return 1.0 / s.bid if invert else s.ask
         raise BrokerError("no_conversion", f"no symbol to convert {quote_ccy} to USD")
 
+    async def _refresh_usd_rate(self) -> float:
+        """Accounts in another currency (e.g. EUR): every amount this adapter returns is converted to USD
+        at the current mid price (EURUSD, or 1 / USDxxx), because the risk module works in USD."""
+        ccy = self._currency
+        if ccy == "USD" or ccy == "?":
+            self._usd_rate = 1.0
+            return 1.0
+        for name, invert in ((ccy + "USD", False), ("USD" + ccy, True)):
+            try:
+                sid = self._match_symbol("frx" + name)
+            except BrokerError:
+                continue
+            s = await self._call(self.client.spot(sid))
+            mid = (s.bid + s.ask) / 2
+            self._usd_rate = 1.0 / mid if invert else mid
+            return self._usd_rate
+        raise BrokerError("no_conversion", f"no symbol to convert the account currency {ccy} to USD")
+
     # ---------------------------------------------------------------- quote / open
 
     def _commission_per_side(self, d, units: float, notional_usd: float, q2usd: float) -> tuple[float, float]:
@@ -312,8 +337,7 @@ class CTraderBroker:
             raise BrokerError(BELOW_MINIMUM_SIZE, "max_loss_usd must be positive")
         if len(intent.client_order_id) > MAX_CLIENT_ORDER_ID or not intent.client_order_id:
             raise BrokerError("invalid_request", f"client_order_id must be 1-{MAX_CLIENT_ORDER_ID} characters")
-        if self._currency != "USD":
-            raise BrokerError("unsupported_account_currency", f"account currency {self._currency}; USD expected")
+        await self._refresh_usd_rate()          # amounts in USD whatever the account currency (see account())
         sid, d = await self._symbol(intent.symbol)
         if d.tradingMode != model.ENABLED:
             raise BrokerError(REJECTED, f"{intent.symbol}: trading mode {d.tradingMode} (not enabled)")
@@ -502,13 +526,15 @@ class CTraderBroker:
             entry_price=p.price, entry_epoch=td.openTimestamp / 1000 if td.HasField("openTimestamp") else 0.0,
             stop_loss_price=p.stopLoss if p.HasField("stopLoss") else None,
             take_profit_price=p.takeProfit if p.HasField("takeProfit") else None,
-            open_profit_usd=pnl.get(p.positionId, (0.0, 0.0))[1], is_open=True,
-            client_order_id=td.label or None, cost_usd=commission - p.swap / scale)
+            open_profit_usd=pnl.get(p.positionId, (0.0, 0.0))[1] * self._usd_rate, is_open=True,
+            client_order_id=td.label or None, cost_usd=(commission - p.swap / scale) * self._usd_rate)
 
     async def positions(self) -> list[BrokerPosition]:
         self._require_demo()
         rec = await self._call(self.client.reconcile())
         pnl, _ = await self._call(self.client.unrealized_pnl()) if rec.position else ({}, 0)
+        if rec.position:
+            await self._refresh_usd_rate()
         return [self._from_open(p, pnl) for p in rec.position]
 
     async def _close_reason(self, closing_deal, direction: str, entry: float) -> str:
@@ -537,6 +563,7 @@ class CTraderBroker:
     async def position(self, ref: str) -> BrokerPosition:
         self._require_demo()
         pid = int(ref)
+        await self._refresh_usd_rate()
         rec = await self._call(self.client.reconcile())
         for p in rec.position:
             if p.positionId == pid:
@@ -574,9 +601,9 @@ class CTraderBroker:
             ref=ref, symbol=symbol, direction=direction, size=(opened or closed) / VOLUME_SCALE,
             entry_price=entry, entry_epoch=first.executionTimestamp / 1000, stop_loss_price=None,
             take_profit_price=None, open_profit_usd=0.0, is_open=False, exit_price=last.executionPrice,
-            exit_epoch=last.executionTimestamp / 1000, profit_usd=round(profit, 8),
+            exit_epoch=last.executionTimestamp / 1000, profit_usd=round(profit * self._usd_rate, 8),
             close_reason=await self._close_reason(last, direction, entry),
-            client_order_id=first.label or None, cost_usd=round(costs, 8))
+            client_order_id=first.label or None, cost_usd=round(costs * self._usd_rate, 8))
 
     async def modify(self, ref: str, *, stop_loss_price: float | None = None,
                      take_profit_price: float | None = None) -> BrokerPosition:

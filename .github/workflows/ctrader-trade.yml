@@ -1,0 +1,38 @@
+# One cTrader DEMO trade at the minimum size, start to finish (scripts/ctrader_lifecycle.py):
+# quote with stop loss and take profit -> market order -> move both -> close -> read the deals back.
+# Runs only when .github/ctrader/trade-request.txt changes on this branch. Demo only: the script
+# refuses an account cTrader does not report as demo, and refuses if the minimum size could lose more
+# than 3% of the balance. It closes the trade again if anything goes wrong.
+name: cTrader demo trade
+
+on:
+  push:
+    branches: [ctrader-connection-check]
+    paths: [".github/ctrader/trade-request.txt"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ctrader-demo-trade
+  cancel-in-progress: false
+
+jobs:
+  trade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install packages
+        run: pip install -r requirements.txt
+      - name: One demo trade, minimum size
+        env:
+          CTRADER_CLIENT_ID: ${{ secrets.CTRADER_CLIENT_ID }}
+          CTRADER_CLIENT_SECRET: ${{ secrets.CTRADER_CLIENT_SECRET }}
+          CTRADER_ACCESS_TOKEN: ${{ secrets.CTRADER_ACCESS_TOKEN }}
+          CTRADER_MODE: demo
+          TRADING_ENABLED: "true"
+        run: python scripts/ctrader_lifecycle.py frxEURUSD --sl 20 --tp 40
