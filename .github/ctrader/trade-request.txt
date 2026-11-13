@@ -1,1 +1,1 @@
-requested 2026-11-13T19:40:03Z: one minimum-size demo trade on EUR/USD (SL 20, TP 40 pips)
+close 302958132

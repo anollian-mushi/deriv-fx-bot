@@ -1,3 +1,5 @@
+# The first line of .github/ctrader/trade-request.txt picks the action: 'close REF...' closes those demo
+# positions, 'list' lists them, anything else runs the trade below.
 # One cTrader DEMO trade at the minimum size, start to finish (scripts/ctrader_lifecycle.py):
 # quote with stop loss and take profit -> market order -> move both -> close -> read the deals back.
 # Runs only when .github/ctrader/trade-request.txt changes on this branch. Demo only: the script
@@ -35,4 +37,10 @@ jobs:
           CTRADER_ACCESS_TOKEN: ${{ secrets.CTRADER_ACCESS_TOKEN }}
           CTRADER_MODE: demo
           TRADING_ENABLED: "true"
-        run: python scripts/ctrader_lifecycle.py frxEURUSD --sl 20 --tp 40
+        run: |
+          REQ=$(head -1 .github/ctrader/trade-request.txt)
+          case "$REQ" in
+            close*) python scripts/ctrader_positions.py --close ${REQ#close } ;;
+            list*)  python scripts/ctrader_positions.py ;;
+            *)      python scripts/ctrader_lifecycle.py frxEURUSD --sl 20 --tp 40 ;;
+          esac

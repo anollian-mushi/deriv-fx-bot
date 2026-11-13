@@ -673,12 +673,30 @@ class CTraderClient:
                 unique.append(d)
         return unique
 
-    async def deals_for_position(self, position_id: int, from_ms: int = 0, to_ms: int | None = None) -> list:
-        req = oa.ProtoOADealListByPositionIdReq(ctidTraderAccountId=self._acct(), positionId=position_id,
-                                                fromTimestamp=int(from_ms),
-                                                toTimestamp=int(to_ms or 2147483646000))
-        res = (await self.request(req)).message
-        return sorted(res.deal, key=lambda d: d.executionTimestamp)
+    async def deals_for_position(self, position_id: int, from_ms: int = 0, to_ms: int | None = None,
+                                 max_weeks: int = 8) -> list:
+        """Deals of one position. The real server refuses a period longer than about a week
+        (INCORRECT_BOUNDARIES, seen on the demo server 13 Nov 2026), so ask week by week, newest first,
+        back to from_ms or max_weeks (stopping once the position's opening deal is found)."""
+        week = 7 * 86400 * 1000 - 1000
+        end = int(to_ms or (time.time() + 60) * 1000)
+        floor = max(int(from_ms), end - max_weeks * week)
+        out = []
+        while end > floor:
+            start = max(floor, end - week)
+            req = oa.ProtoOADealListByPositionIdReq(ctidTraderAccountId=self._acct(), positionId=position_id,
+                                                    fromTimestamp=start, toTimestamp=end)
+            batch = list((await self.request(req)).message.deal)
+            out.extend(batch)
+            if any(not d.HasField("closePositionDetail") for d in batch):   # the opening deal: done
+                break
+            end = start
+        seen, uniq = set(), []
+        for d in sorted(out, key=lambda d: d.executionTimestamp):
+            if d.dealId not in seen:
+                seen.add(d.dealId)
+                uniq.append(d)
+        return uniq
 
     async def order_details(self, order_id: int):
         res = (await self.request(oa.ProtoOAOrderDetailsReq(ctidTraderAccountId=self._acct(),
