@@ -4,7 +4,11 @@
 # Needs the repository secrets CTRADER_CLIENT_ID, CTRADER_CLIENT_SECRET, CTRADER_ACCESS_TOKEN.
 name: cTrader connection check
 
+# GitHub lists hand-started jobs only from the default branch, and main is not changed here, so this
+# job also runs when this branch is pushed. To run it again: Actions -> the run -> Re-run all jobs.
 on:
+  push:
+    branches: [ctrader-connection-check]
   workflow_dispatch:
     inputs:
       probe_only:
@@ -29,7 +33,7 @@ jobs:
       - name: Connection probe (no credentials)
         run: python scripts/check_ctrader.py --probe
       - name: Account check (read-only)
-        if: ${{ !inputs.probe_only }}
+        if: ${{ github.event_name == 'push' || !inputs.probe_only }}
         env:
           CTRADER_CLIENT_ID: ${{ secrets.CTRADER_CLIENT_ID }}
           CTRADER_CLIENT_SECRET: ${{ secrets.CTRADER_CLIENT_SECRET }}
