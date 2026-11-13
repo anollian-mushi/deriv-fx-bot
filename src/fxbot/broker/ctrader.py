@@ -569,7 +569,9 @@ class CTraderBroker:
             if p.positionId == pid:
                 pnl, _ = await self._call(self.client.unrealized_pnl())
                 return self._from_open(p, pnl)
-        deals = await self._call(self.client.deals_for_position(pid))
+        # The deal list by position id is refused by the real server whatever the window (INCORRECT_BOUNDARIES,
+        # 13 Nov 2026); the plain deal list works, so read it week by week, newest first, and filter.
+        deals = await self._deals_of_position(pid)
         deals = [d for d in deals if d.dealStatus in (model.FILLED, model.PARTIALLY_FILLED)]
         if not deals:
             raise BrokerError(NOT_FOUND, f"position {ref} not found")
@@ -626,6 +628,19 @@ class CTraderBroker:
             raise BrokerError("stop_widening_refused", f"moving the stop from {cur} to {sl} adds risk")
         await self._call(self.client.amend_position_sltp(int(ref), sl, tp))
         return await self.position(ref)
+
+    async def _deals_of_position(self, pid: int, max_weeks: int = 8) -> list:
+        week = 7 * 86400
+        end = self.clock() + 60
+        out = []
+        for _ in range(max_weeks):
+            batch = [d for d in await self._call(self.client.deals(int((end - week) * 1000), int(end * 1000)))
+                     if d.positionId == pid]
+            out = batch + out
+            if any(not d.HasField("closePositionDetail") for d in batch):    # reached the opening deal
+                break
+            end -= week
+        return sorted({d.dealId: d for d in out}.values(), key=lambda d: d.executionTimestamp)
 
     async def close_position(self, ref: str) -> BrokerPosition:
         self._require_demo()
