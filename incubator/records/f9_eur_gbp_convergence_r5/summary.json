@@ -1,10 +1,10 @@
 {
  "cost_table": "research/phase2/cost_by_hour.json",
- "data_end": "2026-11-11",
+ "data_end": "2026-11-12",
  "engine_fingerprint": "07972a6670389fbf4073996d47f1482bc5183e6ef3976a8fdfddf47f1d2348e5",
  "fingerprint": "bdb1434fa3c7f5f13f60002c5cab74452c67b3b37c5c94fc07b6bb9fd7f067a8",
  "first_scored_day": "2026-11-01",
- "forward_days": 11,
+ "forward_days": 12,
  "id": "f9_eur_gbp_convergence_r5",
  "measured": {
   "avg_commission": 0.0771,
@@ -14,11 +14,11 @@
    "outside_entry_window": 4
   },
   "cost_gate_skips": 0,
-  "final_equity": 100.75,
+  "final_equity": 101.74,
   "kill_switch_fired": false,
   "max_drawdown_pct": 0.87,
-  "net_profit": 0.75,
-  "open_profit": 3.71,
+  "net_profit": 1.74,
+  "open_profit": 4.7,
   "open_trades": 1,
   "per_pair": {
    "frxEURUSD": {
@@ -55,11 +55,11 @@
    "outside_entry_window": 4
   },
   "cost_gate_skips": 0,
-  "final_equity": 100.6,
+  "final_equity": 101.59,
   "kill_switch_fired": false,
   "max_drawdown_pct": 0.87,
-  "net_profit": 0.6,
-  "open_profit": 3.68,
+  "net_profit": 1.59,
+  "open_profit": 4.67,
   "open_trades": 1,
   "per_pair": {
    "frxEURUSD": {
