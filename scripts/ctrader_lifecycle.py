@@ -102,7 +102,7 @@ async def run(symbol: str, sl_pips: float, tp_pips: float) -> int:
         closed = await broker.close_position(position.ref)
         show("Closed", closed)
         position = closed
-        deals = await broker.client.deals_for_position(int(closed.ref))
+        deals = await broker._deals_of_position(int(closed.ref))   # the by-position request is refused by the real server
         print(f"\n{len(deals)} deal(s) for position {closed.ref}:")
         for d in deals:
             line = (f"  deal {d.dealId} order {d.orderId} side {d.tradeSide} filled {d.filledVolume / 100:g} "
