@@ -1,29 +1,29 @@
 {
  "cost_table": "research/phase2/cost_by_hour.json",
- "data_end": "2026-11-12",
+ "data_end": "2026-11-13",
  "engine_fingerprint": "07972a6670389fbf4073996d47f1482bc5183e6ef3976a8fdfddf47f1d2348e5",
  "fingerprint": "0ea5db6d8e8b26d484f3fd6936f594e24239659f0b3857f5a68b26111bf2a840",
  "first_scored_day": "2026-11-01",
- "forward_days": 12,
+ "forward_days": 13,
  "id": "a1_ml_day_r5",
  "measured": {
-  "avg_commission": 0.0705,
-  "avg_loss": -0.233,
+  "avg_commission": 0.0711,
+  "avg_loss": -0.41,
   "avg_win": 1.44,
   "blocked_first_reason": {
    "max_positions": 1
   },
   "cost_gate_skips": 0,
-  "final_equity": 106.27,
+  "final_equity": 105.15,
   "kill_switch_fired": false,
   "max_drawdown_pct": 2.01,
-  "net_profit": 6.27,
+  "net_profit": 5.15,
   "open_profit": 0,
   "open_trades": 0,
   "per_pair": {
    "frxEURUSD": {
-    "net": 3.16,
-    "trades": 3,
+    "net": 2.04,
+    "trades": 4,
     "wins": 2
    },
    "frxGBPUSD": {
@@ -37,34 +37,34 @@
     "wins": 1
    }
   },
-  "profit_factor": 7.742,
+  "profit_factor": 3.512,
   "refused": {
    "expired": 1
   },
-  "signals": 10,
+  "signals": 11,
   "stops_moved": 0,
-  "trades": 9,
-  "win_rate_pct": 55.6
+  "trades": 10,
+  "win_rate_pct": 50.0
  },
  "registered": "2026-10-31",
  "stress_1_5x": {
-  "avg_commission": 0.1055,
-  "avg_loss": -0.267,
+  "avg_commission": 0.1063,
+  "avg_loss": -0.444,
   "avg_win": 1.402,
   "blocked_first_reason": {
    "max_positions": 1
   },
   "cost_gate_skips": 0,
-  "final_equity": 105.94,
+  "final_equity": 104.79,
   "kill_switch_fired": false,
   "max_drawdown_pct": 2.06,
-  "net_profit": 5.94,
+  "net_profit": 4.79,
   "open_profit": 0,
   "open_trades": 0,
   "per_pair": {
    "frxEURUSD": {
-    "net": 3.04,
-    "trades": 3,
+    "net": 1.89,
+    "trades": 4,
     "wins": 2
    },
    "frxGBPUSD": {
@@ -78,14 +78,14 @@
     "wins": 1
    }
   },
-  "profit_factor": 6.551,
+  "profit_factor": 3.158,
   "refused": {
    "expired": 1
   },
-  "signals": 10,
+  "signals": 11,
   "stops_moved": 0,
-  "trades": 9,
-  "win_rate_pct": 55.6
+  "trades": 10,
+  "win_rate_pct": 50.0
  },
  "symbols": [
   "frxEURUSD",

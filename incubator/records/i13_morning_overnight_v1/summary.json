@@ -1,10 +1,10 @@
 {
  "cost_table": "research/phase2/cost_by_hour.json",
- "data_end": "2026-11-12",
+ "data_end": "2026-11-13",
  "engine_fingerprint": "07972a6670389fbf4073996d47f1482bc5183e6ef3976a8fdfddf47f1d2348e5",
  "fingerprint": "d3719760a5a98cec1719c23863309bf7fa777a2b75ec3d1fa2b3093fe8e21c4b",
  "first_scored_day": "2026-11-01",
- "forward_days": 12,
+ "forward_days": 13,
  "id": "i13_morning_overnight_v1",
  "measured": {
   "avg_commission": 0.0672,
