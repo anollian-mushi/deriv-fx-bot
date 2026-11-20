@@ -3,24 +3,24 @@
   "research/phase2/cost_by_hour.json",
   "research/phase2/cost_by_hour_pairs2.json"
  ],
- "data_end": "2026-11-18",
+ "data_end": "2026-11-19",
  "engine_fingerprint": "07972a6670389fbf4073996d47f1482bc5183e6ef3976a8fdfddf47f1d2348e5",
  "fingerprint": "22d1cef4141564efeb1704a5f833b6e9fce3b3a9658019d77af4526409ea754f",
  "first_scored_day": "2026-11-09",
- "forward_days": 10,
+ "forward_days": 11,
  "id": "tjr_m1_5m_be_v1",
  "measured": {
-  "avg_commission": 0.1742,
-  "avg_loss": -0.815,
+  "avg_commission": 0.1673,
+  "avg_loss": -0.867,
   "avg_win": 1.285,
   "blocked_first_reason": {
-   "no_price": 2
+   "no_price": 3
   },
   "cost_gate_skips": 0,
-  "final_equity": 103.51,
+  "final_equity": 102.54,
   "kill_switch_fired": false,
   "max_drawdown_pct": 1.82,
-  "net_profit": 3.51,
+  "net_profit": 2.54,
   "open_profit": 0,
   "open_trades": 0,
   "per_pair": {
@@ -50,8 +50,8 @@
     "wins": 0
    },
    "frxGBPUSD": {
-    "net": 0,
-    "trades": 0,
+    "net": -0.97,
+    "trades": 1,
     "wins": 0
    },
    "frxUSDCAD": {
@@ -70,29 +70,29 @@
     "wins": 0
    }
   },
-  "profit_factor": 3.153,
+  "profit_factor": 1.977,
   "refused": {
-   "expired": 2,
+   "expired": 3,
    "stop_under_cost_floor": 4
   },
-  "signals": 12,
+  "signals": 14,
   "stops_moved": 1,
-  "trades": 6,
-  "win_rate_pct": 66.7
+  "trades": 7,
+  "win_rate_pct": 57.1
  },
  "registered": "2026-11-08",
  "stress_1_5x": {
-  "avg_commission": 0.2607,
-  "avg_loss": -0.885,
+  "avg_commission": 0.2503,
+  "avg_loss": -0.937,
   "avg_win": 1.193,
   "blocked_first_reason": {
-   "no_price": 2
+   "no_price": 3
   },
   "cost_gate_skips": 0,
-  "final_equity": 103.0,
+  "final_equity": 101.96,
   "kill_switch_fired": false,
   "max_drawdown_pct": 1.89,
-  "net_profit": 3.0,
+  "net_profit": 1.96,
   "open_profit": 0,
   "open_trades": 0,
   "per_pair": {
@@ -122,8 +122,8 @@
     "wins": 0
    },
    "frxGBPUSD": {
-    "net": 0,
-    "trades": 0,
+    "net": -1.04,
+    "trades": 1,
     "wins": 0
    },
    "frxUSDCAD": {
@@ -142,15 +142,15 @@
     "wins": 0
    }
   },
-  "profit_factor": 2.695,
+  "profit_factor": 1.698,
   "refused": {
-   "expired": 2,
+   "expired": 3,
    "stop_under_cost_floor": 4
   },
-  "signals": 12,
+  "signals": 14,
   "stops_moved": 1,
-  "trades": 6,
-  "win_rate_pct": 66.7
+  "trades": 7,
+  "win_rate_pct": 57.1
  },
  "symbols": [
   "frxEURUSD",
