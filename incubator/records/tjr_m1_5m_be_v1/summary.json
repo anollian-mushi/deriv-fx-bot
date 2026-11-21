@@ -3,24 +3,24 @@
   "research/phase2/cost_by_hour.json",
   "research/phase2/cost_by_hour_pairs2.json"
  ],
- "data_end": "2026-11-19",
+ "data_end": "2026-11-20",
  "engine_fingerprint": "07972a6670389fbf4073996d47f1482bc5183e6ef3976a8fdfddf47f1d2348e5",
  "fingerprint": "22d1cef4141564efeb1704a5f833b6e9fce3b3a9658019d77af4526409ea754f",
  "first_scored_day": "2026-11-09",
- "forward_days": 11,
+ "forward_days": 12,
  "id": "tjr_m1_5m_be_v1",
  "measured": {
-  "avg_commission": 0.1673,
-  "avg_loss": -0.867,
+  "avg_commission": 0.1647,
+  "avg_loss": -0.682,
   "avg_win": 1.285,
   "blocked_first_reason": {
    "no_price": 3
   },
   "cost_gate_skips": 0,
-  "final_equity": 102.54,
+  "final_equity": 102.41,
   "kill_switch_fired": false,
   "max_drawdown_pct": 1.82,
-  "net_profit": 2.54,
+  "net_profit": 2.41,
   "open_profit": 0,
   "open_trades": 0,
   "per_pair": {
@@ -45,8 +45,8 @@
     "wins": 2
    },
    "frxGBPJPY": {
-    "net": -1.0,
-    "trades": 1,
+    "net": -1.13,
+    "trades": 2,
     "wins": 0
    },
    "frxGBPUSD": {
@@ -70,29 +70,29 @@
     "wins": 0
    }
   },
-  "profit_factor": 1.977,
+  "profit_factor": 1.883,
   "refused": {
    "expired": 3,
-   "stop_under_cost_floor": 4
+   "stop_under_cost_floor": 5
   },
-  "signals": 14,
+  "signals": 16,
   "stops_moved": 1,
-  "trades": 7,
-  "win_rate_pct": 57.1
+  "trades": 8,
+  "win_rate_pct": 50.0
  },
  "registered": "2026-11-08",
  "stress_1_5x": {
-  "avg_commission": 0.2503,
-  "avg_loss": -0.937,
+  "avg_commission": 0.2462,
+  "avg_loss": -0.753,
   "avg_win": 1.193,
   "blocked_first_reason": {
    "no_price": 3
   },
   "cost_gate_skips": 0,
-  "final_equity": 101.96,
+  "final_equity": 101.76,
   "kill_switch_fired": false,
   "max_drawdown_pct": 1.89,
-  "net_profit": 1.96,
+  "net_profit": 1.76,
   "open_profit": 0,
   "open_trades": 0,
   "per_pair": {
@@ -117,8 +117,8 @@
     "wins": 2
    },
    "frxGBPJPY": {
-    "net": -1.07,
-    "trades": 1,
+    "net": -1.27,
+    "trades": 2,
     "wins": 0
    },
    "frxGBPUSD": {
@@ -142,15 +142,15 @@
     "wins": 0
    }
   },
-  "profit_factor": 1.698,
+  "profit_factor": 1.585,
   "refused": {
    "expired": 3,
-   "stop_under_cost_floor": 4
+   "stop_under_cost_floor": 5
   },
-  "signals": 14,
+  "signals": 16,
   "stops_moved": 1,
-  "trades": 7,
-  "win_rate_pct": 57.1
+  "trades": 8,
+  "win_rate_pct": 50.0
  },
  "symbols": [
   "frxEURUSD",

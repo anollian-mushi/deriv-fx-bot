@@ -3,19 +3,19 @@
   "a1_ml_day_r5": {
    "exam": null,
    "first_scored_day": "2026-11-01",
-   "forward_days": 19,
+   "forward_days": 20,
    "measured": {
     "avg_loss": -0.33,
-    "avg_win": 1.134,
+    "avg_win": 1.031,
     "kill_switch_fired": false,
     "max_drawdown_pct": 2.2,
-    "net_profit": 5.63,
+    "net_profit": 5.94,
     "open_trades": 0,
     "per_pair": {
      "frxEURUSD": {
-      "net": 2.19,
-      "trades": 5,
-      "wins": 3
+      "net": 2.5,
+      "trades": 6,
+      "wins": 4
      },
      "frxGBPUSD": {
       "net": 2.17,
@@ -28,9 +28,9 @@
       "wins": 1
      }
     },
-    "profit_factor": 3.437,
-    "trades": 14,
-    "win_rate_pct": 50.0
+    "profit_factor": 3.571,
+    "trades": 15,
+    "win_rate_pct": 53.3
    },
    "registered": "2026-10-31",
    "rules": {
@@ -42,39 +42,39 @@
     "trades": false
    },
    "status": "active",
-   "stress_net": 5.11
+   "stress_net": 5.38
   },
   "f1_london_breakout_r5": {
    "exam": null,
    "first_scored_day": "2026-11-01",
-   "forward_days": 19,
+   "forward_days": 20,
    "measured": {
-    "avg_loss": -0.5,
-    "avg_win": 0.555,
+    "avg_loss": -0.519,
+    "avg_win": 0.589,
     "kill_switch_fired": false,
-    "max_drawdown_pct": 3.64,
-    "net_profit": -0.9,
+    "max_drawdown_pct": 4.48,
+    "net_profit": -1.24,
     "open_trades": 0,
     "per_pair": {
      "frxEURUSD": {
-      "net": 0.75,
-      "trades": 10,
+      "net": 0.11,
+      "trades": 11,
       "wins": 6
      },
      "frxGBPUSD": {
-      "net": -0.32,
-      "trades": 10,
+      "net": -0.99,
+      "trades": 11,
       "wins": 4
      },
      "frxUSDJPY": {
-      "net": -1.33,
-      "trades": 5,
-      "wins": 1
+      "net": -0.36,
+      "trades": 6,
+      "wins": 2
      }
     },
-    "profit_factor": 0.871,
-    "trades": 25,
-    "win_rate_pct": 44.0
+    "profit_factor": 0.851,
+    "trades": 28,
+    "win_rate_pct": 42.9
    },
    "registered": "2026-10-31",
    "rules": {
@@ -86,19 +86,19 @@
     "trades": false
    },
    "status": "active",
-   "stress_net": -1.79
+   "stress_net": -2.23
   },
   "f3_trend_pullback_4h_r5": {
    "exam": null,
    "first_scored_day": "2026-11-01",
-   "forward_days": 19,
+   "forward_days": 20,
    "measured": {
-    "avg_loss": -1.24,
+    "avg_loss": -1.188,
     "avg_win": 1.75,
     "kill_switch_fired": false,
-    "max_drawdown_pct": 3.35,
-    "net_profit": -0.46,
-    "open_trades": 1,
+    "max_drawdown_pct": 4.62,
+    "net_profit": -3.0,
+    "open_trades": 0,
     "per_pair": {
      "frxEURUSD": {
       "net": 1.75,
@@ -111,14 +111,14 @@
       "wins": 0
      },
      "frxUSDJPY": {
-      "net": -0.55,
-      "trades": 1,
+      "net": -2.82,
+      "trades": 3,
       "wins": 0
      }
     },
-    "profit_factor": 0.706,
-    "trades": 3,
-    "win_rate_pct": 33.3
+    "profit_factor": 0.368,
+    "trades": 5,
+    "win_rate_pct": 20.0
    },
    "registered": "2026-10-31",
    "rules": {
@@ -130,29 +130,29 @@
     "trades": false
    },
    "status": "active",
-   "stress_net": -0.6
+   "stress_net": -3.18
   },
   "f9_eur_gbp_convergence_r5": {
    "exam": null,
    "first_scored_day": "2026-11-01",
-   "forward_days": 19,
+   "forward_days": 20,
    "measured": {
-    "avg_loss": -2.13,
-    "avg_win": 3.22,
+    "avg_loss": -1.597,
+    "avg_win": 2.95,
     "kill_switch_fired": false,
     "max_drawdown_pct": 0.87,
     "net_profit": 4.06,
-    "open_trades": 2,
+    "open_trades": 0,
     "per_pair": {
      "frxEURUSD": {
-      "net": -4.26,
-      "trades": 2,
+      "net": -4.79,
+      "trades": 3,
       "wins": 0
      },
      "frxGBPUSD": {
-      "net": 6.44,
-      "trades": 2,
-      "wins": 2
+      "net": 8.85,
+      "trades": 3,
+      "wins": 3
      },
      "frxUSDJPY": {
       "net": 0,
@@ -160,8 +160,8 @@
       "wins": 0
      }
     },
-    "profit_factor": 1.512,
-    "trades": 4,
+    "profit_factor": 1.848,
+    "trades": 6,
     "win_rate_pct": 50.0
    },
    "registered": "2026-10-31",
@@ -179,7 +179,7 @@
   "i13_morning_overnight_v1": {
    "exam": null,
    "first_scored_day": "2026-11-01",
-   "forward_days": 19,
+   "forward_days": 20,
    "measured": {
     "avg_loss": -0.17,
     "avg_win": 0.61,
@@ -223,13 +223,13 @@
   "tjr_m1_5m_be_v1": {
    "exam": null,
    "first_scored_day": "2026-11-09",
-   "forward_days": 11,
+   "forward_days": 12,
    "measured": {
-    "avg_loss": -0.867,
+    "avg_loss": -0.682,
     "avg_win": 1.285,
     "kill_switch_fired": false,
     "max_drawdown_pct": 1.82,
-    "net_profit": 2.54,
+    "net_profit": 2.41,
     "open_trades": 0,
     "per_pair": {
      "frxAUDUSD": {
@@ -253,8 +253,8 @@
       "wins": 2
      },
      "frxGBPJPY": {
-      "net": -1.0,
-      "trades": 1,
+      "net": -1.13,
+      "trades": 2,
       "wins": 0
      },
      "frxGBPUSD": {
@@ -278,9 +278,9 @@
       "wins": 0
      }
     },
-    "profit_factor": 1.977,
-    "trades": 7,
-    "win_rate_pct": 57.1
+    "profit_factor": 1.883,
+    "trades": 8,
+    "win_rate_pct": 50.0
    },
    "registered": "2026-11-08",
    "rules": {
@@ -292,9 +292,9 @@
     "trades": false
    },
    "status": "active",
-   "stress_net": 1.96
+   "stress_net": 1.76
   }
  },
- "data_end": "2026-11-19",
+ "data_end": "2026-11-20",
  "engine_fingerprint": "07972a6670389fbf4073996d47f1482bc5183e6ef3976a8fdfddf47f1d2348e5"
 }

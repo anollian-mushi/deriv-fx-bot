@@ -1,15 +1,15 @@
 {
  "cost_table": "research/phase2/cost_by_hour.json",
- "data_end": "2026-11-19",
+ "data_end": "2026-11-20",
  "engine_fingerprint": "07972a6670389fbf4073996d47f1482bc5183e6ef3976a8fdfddf47f1d2348e5",
  "fingerprint": "bdb1434fa3c7f5f13f60002c5cab74452c67b3b37c5c94fc07b6bb9fd7f067a8",
  "first_scored_day": "2026-11-01",
- "forward_days": 19,
+ "forward_days": 20,
  "id": "f9_eur_gbp_convergence_r5",
  "measured": {
-  "avg_commission": 0.0753,
-  "avg_loss": -2.13,
-  "avg_win": 3.22,
+  "avg_commission": 0.0759,
+  "avg_loss": -1.597,
+  "avg_win": 2.95,
   "blocked_first_reason": {
    "outside_entry_window": 6
   },
@@ -18,18 +18,18 @@
   "kill_switch_fired": false,
   "max_drawdown_pct": 0.87,
   "net_profit": 4.06,
-  "open_profit": 1.88,
-  "open_trades": 2,
+  "open_profit": 0,
+  "open_trades": 0,
   "per_pair": {
    "frxEURUSD": {
-    "net": -4.26,
-    "trades": 2,
+    "net": -4.79,
+    "trades": 3,
     "wins": 0
    },
    "frxGBPUSD": {
-    "net": 6.44,
-    "trades": 2,
-    "wins": 2
+    "net": 8.85,
+    "trades": 3,
+    "wins": 3
    },
    "frxUSDJPY": {
     "net": 0,
@@ -37,20 +37,20 @@
     "wins": 0
    }
   },
-  "profit_factor": 1.512,
+  "profit_factor": 1.848,
   "refused": {
    "expired": 2
   },
   "signals": 8,
   "stops_moved": 0,
-  "trades": 4,
+  "trades": 6,
   "win_rate_pct": 50.0
  },
  "registered": "2026-10-31",
  "stress_1_5x": {
-  "avg_commission": 0.1129,
-  "avg_loss": -2.17,
-  "avg_win": 3.185,
+  "avg_commission": 0.1138,
+  "avg_loss": -1.637,
+  "avg_win": 2.913,
   "blocked_first_reason": {
    "outside_entry_window": 6
   },
@@ -59,18 +59,18 @@
   "kill_switch_fired": false,
   "max_drawdown_pct": 0.87,
   "net_profit": 3.83,
-  "open_profit": 1.8,
-  "open_trades": 2,
+  "open_profit": 0,
+  "open_trades": 0,
   "per_pair": {
    "frxEURUSD": {
-    "net": -4.34,
-    "trades": 2,
+    "net": -4.91,
+    "trades": 3,
     "wins": 0
    },
    "frxGBPUSD": {
-    "net": 6.37,
-    "trades": 2,
-    "wins": 2
+    "net": 8.74,
+    "trades": 3,
+    "wins": 3
    },
    "frxUSDJPY": {
     "net": 0,
@@ -78,13 +78,13 @@
     "wins": 0
    }
   },
-  "profit_factor": 1.468,
+  "profit_factor": 1.78,
   "refused": {
    "expired": 2
   },
   "signals": 8,
   "stops_moved": 0,
-  "trades": 4,
+  "trades": 6,
   "win_rate_pct": 50.0
  },
  "symbols": [
