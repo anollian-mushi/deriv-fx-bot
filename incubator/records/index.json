@@ -3,13 +3,13 @@
   "a1_ml_day_r5": {
    "exam": null,
    "first_scored_day": "2026-11-01",
-   "forward_days": 23,
+   "forward_days": 24,
    "measured": {
-    "avg_loss": -0.562,
+    "avg_loss": -0.539,
     "avg_win": 1.207,
     "kill_switch_fired": false,
     "max_drawdown_pct": 2.2,
-    "net_profit": 6.36,
+    "net_profit": 6.01,
     "open_trades": 0,
     "per_pair": {
      "frxEURUSD": {
@@ -23,14 +23,14 @@
       "wins": 3
      },
      "frxUSDJPY": {
-      "net": 1.27,
-      "trades": 4,
+      "net": 0.92,
+      "trades": 5,
       "wins": 1
      }
     },
-    "profit_factor": 2.413,
-    "trades": 17,
-    "win_rate_pct": 52.9
+    "profit_factor": 2.239,
+    "trades": 18,
+    "win_rate_pct": 50.0
    },
    "registered": "2026-10-31",
    "rules": {
@@ -42,39 +42,39 @@
     "trades": false
    },
    "status": "active",
-   "stress_net": 5.72
+   "stress_net": 5.33
   },
   "f1_london_breakout_r5": {
    "exam": null,
    "first_scored_day": "2026-11-01",
-   "forward_days": 23,
+   "forward_days": 24,
    "measured": {
-    "avg_loss": -0.537,
-    "avg_win": 0.589,
+    "avg_loss": -0.528,
+    "avg_win": 0.608,
     "kill_switch_fired": false,
-    "max_drawdown_pct": 5.58,
-    "net_profit": -3.13,
+    "max_drawdown_pct": 6.35,
+    "net_profit": -3.18,
     "open_trades": 0,
     "per_pair": {
      "frxEURUSD": {
-      "net": -0.62,
-      "trades": 12,
+      "net": -1.17,
+      "trades": 13,
       "wins": 6
      },
      "frxGBPUSD": {
-      "net": -1.74,
-      "trades": 12,
-      "wins": 4
+      "net": -0.9,
+      "trades": 13,
+      "wins": 5
      },
      "frxUSDJPY": {
-      "net": -0.77,
-      "trades": 7,
+      "net": -1.11,
+      "trades": 8,
       "wins": 2
      }
     },
-    "profit_factor": 0.693,
-    "trades": 31,
-    "win_rate_pct": 38.7
+    "profit_factor": 0.713,
+    "trades": 34,
+    "win_rate_pct": 38.2
    },
    "registered": "2026-10-31",
    "rules": {
@@ -86,19 +86,19 @@
     "trades": false
    },
    "status": "active",
-   "stress_net": -4.2
+   "stress_net": -4.36
   },
   "f3_trend_pullback_4h_r5": {
    "exam": null,
    "first_scored_day": "2026-11-01",
-   "forward_days": 23,
+   "forward_days": 24,
    "measured": {
     "avg_loss": -1.188,
     "avg_win": 1.75,
     "kill_switch_fired": false,
-    "max_drawdown_pct": 4.62,
-    "net_profit": -2.36,
-    "open_trades": 1,
+    "max_drawdown_pct": 4.85,
+    "net_profit": -2.76,
+    "open_trades": 2,
     "per_pair": {
      "frxEURUSD": {
       "net": 1.75,
@@ -130,12 +130,12 @@
     "trades": false
    },
    "status": "active",
-   "stress_net": -2.58
+   "stress_net": -3.01
   },
   "f9_eur_gbp_convergence_r5": {
    "exam": null,
    "first_scored_day": "2026-11-01",
-   "forward_days": 23,
+   "forward_days": 24,
    "measured": {
     "avg_loss": -1.597,
     "avg_win": 2.95,
@@ -179,14 +179,14 @@
   "i13_morning_overnight_v1": {
    "exam": null,
    "first_scored_day": "2026-11-01",
-   "forward_days": 23,
+   "forward_days": 24,
    "measured": {
-    "avg_loss": -1.133,
+    "avg_loss": -1.345,
     "avg_win": 0.61,
     "kill_switch_fired": false,
     "max_drawdown_pct": 5.71,
-    "net_profit": -3.11,
-    "open_trades": 1,
+    "net_profit": -2.94,
+    "open_trades": 0,
     "per_pair": {
      "frxEURUSD": {
       "net": -3.26,
@@ -194,8 +194,8 @@
       "wins": 0
      },
      "frxGBPUSD": {
-      "net": 2.01,
-      "trades": 4,
+      "net": 0.03,
+      "trades": 5,
       "wins": 3
      },
      "frxUSDJPY": {
@@ -204,9 +204,9 @@
       "wins": 1
      }
     },
-    "profit_factor": 0.718,
-    "trades": 7,
-    "win_rate_pct": 57.1
+    "profit_factor": 0.454,
+    "trades": 8,
+    "win_rate_pct": 50.0
    },
    "registered": "2026-10-31",
    "rules": {
@@ -218,12 +218,12 @@
     "trades": false
    },
    "status": "active",
-   "stress_net": -3.31
+   "stress_net": -3.15
   },
   "tjr_m1_5m_be_v1": {
    "exam": null,
    "first_scored_day": "2026-11-09",
-   "forward_days": 15,
+   "forward_days": 16,
    "measured": {
     "avg_loss": -0.682,
     "avg_win": 1.047,
@@ -295,6 +295,6 @@
    "stress_net": 2.76
   }
  },
- "data_end": "2026-11-23",
+ "data_end": "2026-11-24",
  "engine_fingerprint": "07972a6670389fbf4073996d47f1482bc5183e6ef3976a8fdfddf47f1d2348e5"
 }
