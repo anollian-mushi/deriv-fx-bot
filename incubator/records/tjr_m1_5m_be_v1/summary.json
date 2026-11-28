@@ -3,11 +3,11 @@
   "research/phase2/cost_by_hour.json",
   "research/phase2/cost_by_hour_pairs2.json"
  ],
- "data_end": "2026-11-26",
+ "data_end": "2026-11-27",
  "engine_fingerprint": "07972a6670389fbf4073996d47f1482bc5183e6ef3976a8fdfddf47f1d2348e5",
  "fingerprint": "22d1cef4141564efeb1704a5f833b6e9fce3b3a9658019d77af4526409ea754f",
  "first_scored_day": "2026-11-09",
- "forward_days": 18,
+ "forward_days": 19,
  "id": "tjr_m1_5m_be_v1",
  "measured": {
   "avg_commission": 0.1584,
@@ -73,9 +73,9 @@
   "profit_factor": 1.61,
   "refused": {
    "expired": 5,
-   "stop_under_cost_floor": 8
+   "stop_under_cost_floor": 9
   },
-  "signals": 24,
+  "signals": 25,
   "stops_moved": 1,
   "trades": 11,
   "win_rate_pct": 54.5
@@ -145,9 +145,9 @@
   "profit_factor": 1.361,
   "refused": {
    "expired": 5,
-   "stop_under_cost_floor": 8
+   "stop_under_cost_floor": 9
   },
-  "signals": 24,
+  "signals": 25,
   "stops_moved": 1,
   "trades": 11,
   "win_rate_pct": 54.5
